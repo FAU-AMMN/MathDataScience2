@@ -1,0 +1,8 @@
+format: jb-book
+root: intro
+chapters:
+- file: ableitungen/ableitungen.md
+  sections:
+  - file: ableitungen/part_diff.md
+  - file: ableitungen/first_order.md
+- file: references.md

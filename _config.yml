@@ -1,0 +1,37 @@
+title: "Mathematik für Physikstudierende C"
+logo: img/FAU-DMM-Logo-rgb-10cm.png
+execute:
+  execute_notebooks: "off"
+
+html:
+  favicon: "img/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath
+    - dollarmath
+    - colon_fence
+
+sphinx:
+  extra_extensions:
+    - sphinx_proof
+  config:
+    mathjax_config:
+      TeX:
+        Macros:
+          "N": "\\mathbb{N}"
+          "floor": ["\\lfloor#1\\rfloor", 1]
+          "bmat" : ["\\left[\\begin{array}"]
+          "emat" : ["\\end{array}\\right]"]
+          "R"    : ["\\mathbb{R}"]
+          "norm" : ["{\\Vert#1\\Vert}",1]
+          "coloneqq": ["{:=}"]
+          "emph" : ["\\pmb#1",1]
+          "tr"   : ["tr"]
+          "dv"   : "\\mathrm{div}~"
+          "rot"   : "\\mathrm{rot}~"
+
+bibtex_bibfiles:
+    - bibliography.bib
