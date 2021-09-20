@@ -66,6 +66,8 @@ Anders als im eindimensionalen Fall gilt beispielsweise nicht, dass aus der part
 Das soll uns das folgende Beispiel vor Augen führen.
 
 ````{prf:example}
+:label: bsp:partiell_diffbar_nicht_stetig
+
 Wir betrachten im Folgenden eine Funktion auf $\R^n$ mit $n\geq 2$ die zeigt, dass aus partieller Differenzierbarkeit keine Stetigkeit folgt. 
 Dazu definieren wir
 \begin{align*}

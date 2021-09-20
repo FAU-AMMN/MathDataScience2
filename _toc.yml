@@ -1,8 +1,13 @@
 format: jb-book
 root: intro
+options:  # The options key will be applied to all chapters, but not sub-sections
+  numbered: True
 chapters:
 - file: ableitungen/ableitungen.md
   sections:
   - file: ableitungen/part_diff.md
   - file: ableitungen/first_order.md
+  - file: ableitungen/higher_order.md
+  - file: ableitungen/tot_diff.md
+  - file: ableitungen/taylor.md
 - file: references.md

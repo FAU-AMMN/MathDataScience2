@@ -17,6 +17,7 @@ parse:
 sphinx:
   extra_extensions:
     - sphinx_proof
+    - sphinx_tojupyter
   config:
     mathjax_config:
       TeX:
@@ -27,11 +28,24 @@ sphinx:
           "emat" : ["\\end{array}\\right]"]
           "R"    : ["\\mathbb{R}"]
           "norm" : ["{\\Vert#1\\Vert}",1]
+          "abs" : ["{|#1|}",1]
           "coloneqq": ["{:=}"]
+          "eqqcolon": ["{=:}"]
           "emph" : ["\\pmb#1",1]
           "tr"   : ["tr"]
           "dv"   : "\\mathrm{div}~"
           "rot"   : "\\mathrm{rot}~"
+    # mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js
+    tojupyter_target_html: true
+    tojupyter_lang_synonyms: ["ipython", "ipython3", "python"]
+    tojupyter_kernels:
+      python3:
+        kernelspec:
+          display_name: "Python"
+          language: python3
+          name: python3
+        file_extension: ".py"
+    tojupyter_images_markdown: true
 
 bibtex_bibfiles:
     - bibliography.bib
