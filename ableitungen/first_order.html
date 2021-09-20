@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Differentialoperatoren erster Ordnung &#8212; Mathematik für Physikstudierende C</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "coloneqq": ["{:=}"], "emph": ["\\pmb#1", 1], "tr": ["tr"], "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="../references.html" />
+    <link rel="prev" title="Partielle Differenzierbarkeit" href="part_diff.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Physikstudierende C</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ableitungen.html">
+   Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="part_diff.html">
+     Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ableitungen/first_order.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="differentialoperatoren-erster-ordnung">
+<h1>Differentialoperatoren erster Ordnung<a class="headerlink" href="#differentialoperatoren-erster-ordnung" title="Permalink to this headline">¶</a></h1>
+<p>In diesem Abschnitt wollen wir einige wichtige Operatoren einführen, welche direkt auf dem Konzept der partiellen Differenzierbarkeit von Funktionen basieren.
+Insbesondere werden wir den Gradienten, die Divergenz und die Rotation als Differentialoperatoren erster Ordnung kennenlernen, für deren Definition man nur erste partielle Ableitungen verwendet, und die eine zentrale Rolle in der Mathematik und Physik spielen.</p>
+<p>Der erste Operator, den wir diskutieren wollen, ist der sogenannte <em>Gradient</em>, der alle partiellen Ableitungen einer Funktionen in einem Vektor sammelt.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span> (Gradient)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine Teilmenge.
+Für eine partiell differenzierbare Funktion <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> heißt der Spaltenvektor</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\nabla f (x) \ \coloneqq \  \left(\frac{\partial f}{\partial x_1} (x),\ldots,\frac{\partial f}{\partial x_n} (x)\right)^T \ = \ \left(\partial_1 f(x),\ldots,\partial_n f(x)\right)^T
+\end{align*}\]</div>
+<p>der <em>Gradient</em> von <span class="math notranslate nohighlight">\(f\)</span> an der Stelle <span class="math notranslate nohighlight">\(x\in U\)</span>.</p>
+<p>Das Symbol <span class="math notranslate nohighlight">\(\nabla\)</span> bezeichnet man hierbei häufig als den <em>Nabla-Operator</em>.</p>
+</div>
+</div><p>Wir wollen den Gradienten einer Funktion für ein bereits bekanntes Beispiel im Folgenden berechnen.</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 3 </span> (Gradient der Euklidischen Norm)</p>
+<div class="example-content section" id="proof-content">
+<p>Für die Euklidische Norm aus Beispiel \ref{bsp:norm} hat der Gradient für alle <span class="math notranslate nohighlight">\(x\neq 0\)</span> die Form</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\nabla \, \norm{x}{}_2 \ = \ \left( \partial_1 ||x||_2, \ldots, \partial_n ||x||_2 \right)^T \ = \ \left( \frac{x_1}{||x||_2}, \ldots, \frac{x_n}{||x||_2} \right)^T \ = \ \frac{x}{\norm{x}{}_2}.
+\end{align*}\]</div>
+<p>Offensichtlich ist der Gradient der Norm selbst normiert, d.h., es gilt <span class="math notranslate nohighlight">\(\big\|\nabla \norm{x}{}_2\big\|_2 = 1\)</span>.</p>
+</div>
+</div><p>Viele Rechenregeln der Differentiation für Funktionen mit nur einer Veränderlichen lassen sich problemlos auf Funktionen mit mehreren Veränderlichen generalisieren.
+Mit den bisherigen Definitionen können wir bereits die Produktregel für die Ableitung auf den Gradienten einer Funktionen verallgemeinern.</p>
+<div class="proof lemma admonition" id="lemma-2">
+<p class="admonition-title"><span class="caption-number">Lemma 1 </span> (Produktregel für den Gradienten)</p>
+<div class="lemma-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge und seien <span class="math notranslate nohighlight">\(f,g:U\rightarrow\R\)</span> zwei partiell differenzierbare Funktion.
+Dann gilt die folgende Produktregel für den Gradienten des Produkts der Funktionen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\nabla (f\cdot g)(x) \ = \ [f\cdot (\nabla g) + (\nabla f)\cdot g] (x), \quad \text{ für alle } x \in U.
+\end{equation*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Aus Gründen der Übersichtlichkeit verzichten wir bei diesem Beweis auf die Angabe des Funktionsarguments <span class="math notranslate nohighlight">\(x \in U\)</span>, wodurch die Notation zwar unpräzise, jedoch deutlich übersichtlicher wird.
+Wir schreiben den Gradienten des Produkts der beiden Funktionen zunächst mittels partiellen Ableitungen, so dass wir komponentenweise die Produktregel für eindimensionale Funktionen anwenden können, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+\nabla(f\cdot g) \ &amp;= \ ( \partial_1 (f\cdot g), \ldots, \partial_n (f \cdot g))^T \\
+\ &amp;= \ ( \partial_1 f \cdot g + f \cdot \partial_1 g, \ldots, \partial_n f \cdot g + f \cdot \partial_n g)^T 
+\end{split}
+\end{equation*}\]</div>
+<p>Wir können den entstehenden Vektor nun linear auseinander ziehen und erhalten somit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+\nabla(f\cdot g) \ &amp;= \  ( \partial_1 f \cdot g + f \cdot \partial_1 g, \ldots, \partial_n f \cdot g + f \cdot \partial_n g)^T \\
+\ &amp;= \ (\partial_1 f, \ldots, \partial_n f)^T \cdot g \: + \: f \cdot (\partial_1 g, \ldots, \partial_n g)^T\\
+\ &amp;= \ \nabla f \cdot g + f \cdot \nabla g. 
+\end{split}
+\end{equation*}\]</div>
+</div>
+<div class="proof remark admonition" id="remark-3">
+<p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge.
+Folgende Interpretationen des Gradienten-Operators sind ebenfalls geläufig.</p>
+<ul class="simple">
+<li><p>Mit etwas missbräuchlicher Notation kann man den Gradienten auch als mehrdimensionale Abbildung interpretieren mit</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\nabla \colon U \ &amp;\rightarrow \ \R^n\\
+x \ &amp;\mapsto \ \nabla(x).
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Funktionen <span class="math notranslate nohighlight">\(v: U\rightarrow \R^n\)</span> werden auch \emph{Vektorfelder} genannt.
+In diesem Sinne kann der Gradient als Vektorfeld auf <span class="math notranslate nohighlight">\(U\)</span> interpretiert werden.</p></li>
+</ul>
+</div>
+</div><p>Für partiell differenzierbare Vektorfelder <span class="math notranslate nohighlight">\(v \colon U \rightarrow \R^n\)</span> (d.h. jede Komponente <span class="math notranslate nohighlight">\(v_i\)</span> von <span class="math notranslate nohighlight">\(v\)</span> ist partiell differenzierbar) gibt es weitere Differentialoperatoren erster Ordnung.
+Im Folgenden führen wir den Begriff der Divergenz eines Vektorfelds <span class="math notranslate nohighlight">\(v\)</span> ein.
+\begin{definition}[Divergenz eines Vektorfelds]
+Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge.
+Für ein partiell differenzierbares Vektorfeld <span class="math notranslate nohighlight">\(v:U\rightarrow \R^n\)</span> nennt man</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\dv v(x) \ \coloneqq \  \sum_{i=1}^{n} \frac{\partial v_i}{ \partial x_i} (x)  \ = \ \sum_{i=1}^{n} \partial_i v_i(x)
+\end{equation*}\]</div>
+<p>die <em>Divergenz</em> von <span class="math notranslate nohighlight">\(v\)</span> an der Stelle <span class="math notranslate nohighlight">\(x\in U\)</span>.</p>
+<p>Oft wird die Divergenz auch als Skalarprodukt des Nabla-Operators <span class="math notranslate nohighlight">\(\nabla\)</span> mit einen Vektorfeld <span class="math notranslate nohighlight">\(v\)</span> notiert, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\dv v \ = \ \langle \nabla, v \rangle.
+\end{equation*}\]</div>
+<p>\end{definition}</p>
+<div class="proof remark admonition" id="remark-4">
+<p class="admonition-title"><span class="caption-number">Remark 2 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Die Divergenz eines Vektorfeldes <span class="math notranslate nohighlight">\(v \colon U \rightarrow \R^n\)</span> besitzt eine einfache physikalische Interpretation.
+Es misst anschaulich den Fluss des Vektorfeldes im Punkt <span class="math notranslate nohighlight">\(x\)</span>.
+Man kann also an Hand der Divergenz entscheiden ob mehr Fluss in den Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> hinein- als hinausfließt oder anders herum.</p>
+<ul class="simple">
+<li><p>Ist die Divergenz in einem Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> <em>positiv</em> d.h., gilt <span class="math notranslate nohighlight">\(\dv v(x) &gt; 0\)</span> so spricht man davon, dass das der Punkt eine <strong>Quelle</strong> des Vektorfelds darstellt.
+Anschaulich könnte man den Punkt <span class="math notranslate nohighlight">\(x\)</span> mit einem <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen Würfel umschließen und die Menge an Fluss, die aus dem Würfel austritt wäre größer als die Menge an Fluss die hineinfließt.</p></li>
+<li><p>Ist die Divergenz in einem Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> <em>negativ</em> d.h., gilt <span class="math notranslate nohighlight">\(\dv v(x) &lt; 0\)</span> so spricht man davon, dass das der Punkt eine <strong>Senke</strong> des Vektorfelds darstellt.
+Die Menge an Fluss, die in den umschließenden <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen Würfel hineinfließt wäre größer als die Menge an Fluss die austritt.</p></li>
+<li><p>Ist die Divergenz in einem Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> <em>Null</em>, d.h., gilt <span class="math notranslate nohighlight">\(\dv v(x) = 0\)</span>, so nennen wir das Vektorfeld <em>divergenzfrei</em> im Punkt <span class="math notranslate nohighlight">\(x\)</span>.
+Die Menge an Fluss, die in den umschließenden <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen Würfel hineinfließt entspricht in diesem Fall der Menge an Fluss die austritt.</p></li>
+</ul>
+</div>
+</div><p>Im Folgenden wollen wir die Divergenz für ein dreidimensionales Vektorfeld konkret ausrechnen und bezüglich ihres Vorzeichens das Vektorfeld charakterisieren.</p>
+<div class="proof example admonition" id="bsp:divergenz">
+<p class="admonition-title"><span class="caption-number">Example 4 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(v \colon \R^3 \rightarrow \R^3\)</span> ein Vektorfeld mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+v(x,y,z) \ \coloneqq \ 
+\frac{1}{2}
+\begin{pmatrix}
+x^2\\
+-4xz\\
+6z
+\end{pmatrix}, \quad \text{ für alle } (x,y,z)^T \in \R^3.
+\end{equation*}\]</div>
+<p>Wir berechnen die Divergenz des Vektorfelds für allgemeine Punkte <span class="math notranslate nohighlight">\((x,y,z)^T \in \R^3\)</span> als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+\dv v(x,y,z) \ &amp;= \ \partial_x v_1 (x,y,z) + \partial_y v_2 (x,y,z) + \partial_z v_3 (x,y,z) \ = \ \frac{1}{2} \cdot (\partial_x  x^2 - \partial_y 4xz + \partial_z 6z)\\
+&amp;= \ x - 0 + 3 \ = \ x + 3.
+\end{split}
+\end{equation*}\]</div>
+<p>Wir erkennen also, dass die Divergenz des Vektorfelds <span class="math notranslate nohighlight">\(v\)</span> maßgeblich von der <span class="math notranslate nohighlight">\(x\)</span>-Koordinate abhängt.
+Für <span class="math notranslate nohighlight">\(x &gt; -3\)</span> ist jeder Punkt <span class="math notranslate nohighlight">\((x,y,z) \in \R^3\)</span> <em>Quelle</em> des Vektorfelds, für <span class="math notranslate nohighlight">\(x &lt; -3\)</span> ist jeder Punkt <span class="math notranslate nohighlight">\((x,y,z) \in \R^3\)</span> <em>Senke</em> des Vektorfelds und nur bei <span class="math notranslate nohighlight">\(x=-3\)</span> ist jeder Punkt <span class="math notranslate nohighlight">\((x,y,z) \in \R^3\)</span> des Vektorfelds <em>divergenzfrei</em>.</p>
+</div>
+</div><p>Auch für die Divergenz lässt sich eine Produktregel für das Produkt einer reellwertigen Funktion und eines Vektorfeldes herleiten.</p>
+<div class="proof lemma admonition" id="lemma-6">
+<p class="admonition-title"><span class="caption-number">Lemma 2 </span> (Produktregel für die Divergenz)</p>
+<div class="lemma-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge und es sei <span class="math notranslate nohighlight">\(v:U\rightarrow \R^n\)</span> ein partiell differenzierbares Vektorfeld (d.h. jede Komponente <span class="math notranslate nohighlight">\(v_i\)</span> von <span class="math notranslate nohighlight">\(v\)</span> ist partiell differenzierbar) und <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> eine partiell differenzierbare Funktion.
+Dann gilt die folgende Produktregel für die Divergenz:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\dv (f\cdot v)(x) \ = \ \langle \nabla f(x), v(x)\rangle + f(x) \cdot \dv v(x), \quad \text{ für alle } x\in U.
+\end{equation*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. In der Hausaufgabe zu zeigen.</p>
+</div>
+<p>Der letzte Differentialoperator erster Ordnung, den wir einführen wollen, ist a priori nur im Fall <span class="math notranslate nohighlight">\(U\subset\R^3\)</span> definiert ist und spielt insbesondere in physikalischen Anwendungen eine wichtige Rolle.
+Der sogenannte Rotations-Operator hat seinen Namen dadurch erhalten, dass er bei Anwendung auf ein Strömungsfeld für jeden Ort das Doppelte der Winkelgeschwindigkeit angibt, mit der sich ein mitschwimmender Körper dreht.</p>
+<div class="proof definition admonition" id="definition-7">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span> (Rotation)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U\subset\R^3\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(v:U\rightarrow\R^3\)</span> ein partiell differenzierbares Vektorfeld (d.h. jede Komponente <span class="math notranslate nohighlight">\(v_i\)</span> von <span class="math notranslate nohighlight">\(v\)</span> ist partiell differenzierbar).
+Dann heißt  der folgende Operator</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\rot v \coloneqq \ 
+\left(\partial_2 v_3 - \partial_3 v_2, 
+\partial_3 v_1 - \partial_1 v_3,
+\partial_1 v_2 - \partial_2 v_1\right)
+\end{align*}\]</div>
+<p><em>Rotation</em> von <span class="math notranslate nohighlight">\(v\)</span>.
+Er bildet also ein Vektorfeld wieder auf ein Vektorfeld ab.</p>
+<p>Oft wird die Rotation als auch Vektorprodukt (vgl. Definition \ref{def:vektorprodukt}) des Nabla-Operators <span class="math notranslate nohighlight">\(\nabla\)</span> mit einen Vektorfeld <span class="math notranslate nohighlight">\(v\)</span> notiert, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\rot v \ = \ \nabla \times v.
+\end{align*}\]</div>
+</div>
+</div><p>Wir wollen die Rotation für das Vektorfeld aus Beispiel <a class="reference internal" href="#bsp:divergenz">Example 4</a> nachrechnen.</p>
+<div class="proof example admonition" id="example-8">
+<p class="admonition-title"><span class="caption-number">Example 5 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(v \colon \R^3 \rightarrow \R^3\)</span> ein Vektorfeld mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+v(x,y,z) \ \coloneqq \ 
+\frac{1}{2}
+\begin{pmatrix}
+x^2\\
+-4xz\\
+6z
+\end{pmatrix}, \quad \text{ für alle } (x,y,z)^T \in \R^3.
+\end{equation*}\]</div>
+<p>Wir berechnen die Rotation des Vektorfelds für allgemeine Punkte <span class="math notranslate nohighlight">\((x,y,z)^T \in \R^3\)</span> als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+\rot v(x,y,z) \ &amp;= \ \left(\partial_y v_3 - \partial_z v_2, 
+\partial_z v_1 - \partial_x v_3,
+\partial_x v_2 - \partial_y v_1\right)(x,y,z) \\
+\ &amp;= \ \left(\partial_y 6z + \partial_z 4xz, 
+\partial_z x^2 - \partial_x 6z,
+- \partial_x 4xz - \partial_y x^2\right) \\
+\ &amp;= \ (4x, 0, -4z).
+\end{split}
+\end{equation*}\]</div>
+<p>Wir erkennen also, dass die Rotation des Vektorfelds nicht von der <span class="math notranslate nohighlight">\(y\)</span>-Koordinate abhängt.</p>
+</div>
+</div></div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ableitungen"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="part_diff.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Partielle Differenzierbarkeit</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../references.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Bibliography</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
