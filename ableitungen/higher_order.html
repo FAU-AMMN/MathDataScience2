@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.3. Differentialoperatoren höherer Ordnung &#8212; Mathematik für Data Science 2</title>
+    <title>4.3. Differentialoperatoren höherer Ordnung &#8212; Mathematik für Data Science 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": ["tr"], "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.4. Totale Differenzierbarkeit" href="tot_diff.html" />
-    <link rel="prev" title="1.2. Differentialoperatoren erster Ordnung" href="first_order.html" />
+    <link rel="next" title="4.4. Totale Differenzierbarkeit" href="tot_diff.html" />
+    <link rel="prev" title="4.2. Differentialoperatoren erster Ordnung" href="first_order.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -97,47 +97,189 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../eigenwerte/eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="ableitungen.html">
-   1. Differentiation von Funktionen mehrerer Veränderlicher
+   4. Differentiation von Funktionen mehrerer Veränderlicher
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="part_diff.html">
-     1.1. Partielle Differenzierbarkeit
+     4.1. Partielle Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="first_order.html">
-     1.2. Differentialoperatoren erster Ordnung
+     4.2. Differentialoperatoren erster Ordnung
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.3. Differentialoperatoren höherer Ordnung
+     4.3. Differentialoperatoren höherer Ordnung
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tot_diff.html">
-     1.4. Totale Differenzierbarkeit
+     4.4. Totale Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="taylor.html">
-     1.5. Taylor-Formel
+     4.5. Taylor-Formel
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
-   2. Bibliography
+   5. Bibliography
   </a>
  </li>
 </ul>
@@ -233,17 +375,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#der-satz-von-schwarz">
-   1.3.1. Der Satz von Schwarz
+   4.3.1. Der Satz von Schwarz
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#die-hesse-matrix">
-   1.3.2. Die Hesse-Matrix
+   4.3.2. Die Hesse-Matrix
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#der-laplace-operator">
-   1.3.3. Der Laplace-Operator
+   4.3.3. Der Laplace-Operator
   </a>
  </li>
 </ul>
@@ -258,16 +400,16 @@
               <div>
                 
   <div class="section" id="differentialoperatoren-hoherer-ordnung">
-<h1><span class="section-number">1.3. </span>Differentialoperatoren höherer Ordnung<a class="headerlink" href="#differentialoperatoren-hoherer-ordnung" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.3. </span>Differentialoperatoren höherer Ordnung<a class="headerlink" href="#differentialoperatoren-hoherer-ordnung" title="Permalink to this headline">¶</a></h1>
 <p>Analog zum eindimensionalen Fall kann man höhere Ableitungen definieren, d.h., wir wollen die Funktion <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> mehrmals ableiten. Induktiv bezeichnet man <span class="math notranslate nohighlight">\(f\)</span> als <span class="math notranslate nohighlight">\((k+1)\)</span>-mal differenzierbar, falls  <span class="math notranslate nohighlight">\(f\)</span> <span class="math notranslate nohighlight">\(k\)</span>-mal differenzierbar ist und für eine beliebige Kombination von Richtungen <span class="math notranslate nohighlight">\((i_1,\ldots,i_k)\)</span> die Funktion <span class="math notranslate nohighlight">\(\partial_{i_1}\ldots \partial_{i_k} f\)</span> wieder partiell differenzierbar ist. Hierbei ist a priori nicht klar, dass die partiellen Ableitungen vertauschbar sind.
 Wir stellen uns also die Frage ob für eine zweimal partiell differenzierbare Funktion <span class="math notranslate nohighlight">\(f\)</span> die Gleichheit</p>
 <div class="math notranslate nohighlight" id="equation-eq-partielle-ableitungen-vertauschbar">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-eq-partielle-ableitungen-vertauschbar" title="Permalink to this equation">¶</a></span>\[\partial_i\partial_j f(x) \ = \ \partial_j \partial_i f(x)\]</div>
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-eq-partielle-ableitungen-vertauschbar" title="Permalink to this equation">¶</a></span>\[\partial_i\partial_j f(x) \ = \ \partial_j \partial_i f(x)\]</div>
 <p>für alle <span class="math notranslate nohighlight">\(i,j\in\{1,\ldots,n\}\)</span> gilt.</p>
 <p>In der Tat reicht die Eigenschaft zweimal partiell differenzierbar zu sein <strong>nicht</strong> für die Gleichheit in
-<a class="reference internal" href="#equation-eq-partielle-ableitungen-vertauschbar">(1.1)</a> aus, wie das folgende Beispiel zeigt.</p>
+<a class="reference internal" href="#equation-eq-partielle-ableitungen-vertauschbar">(4.1)</a> aus, wie das folgende Beispiel zeigt.</p>
 <div class="proof example admonition" id="bsp:partielle_ableitungen_nicht_vertauschbar">
-<p class="admonition-title"><span class="caption-number">Example 1.6 </span> (Vertauschbarkeit partieller Ableitungen)</p>
+<p class="admonition-title"><span class="caption-number">Example 4.6 </span> (Vertauschbarkeit partieller Ableitungen)</p>
 <div class="example-content section" id="proof-content">
 <p>Wir betrachten die Funktion</p>
 <div class="amsmath math notranslate nohighlight">
@@ -282,8 +424,8 @@ Wir berechnen die ersten partiellen Ableitungen</p>
 \partial_y f(x,y) \ &amp;= \ \frac{(x^3-3xy^2)(x^2+y^2) - (x^3y-xy^3)\cdot 2y}{(x^2 + y^2)^2} \ = \ x~\frac{x^4 - 4 x^2y^2-y^4}{(x^2 + y^2)^2}.
 \end{align*}\]</div>
 <p>Wir betrachten nun die \textbf{zweiten} partiellen Ableitungen von <span class="math notranslate nohighlight">\(f\)</span> im Punkt <span class="math notranslate nohighlight">\((x,y) = (0,0)\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight" id="equation-046056e1-6243-4a62-b9ed-6cc36c2a5e38">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-046056e1-6243-4a62-b9ed-6cc36c2a5e38" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:bsp_ableitungen_nicht_vertauschbar}
+<div class="amsmath math notranslate nohighlight" id="equation-0b2006e4-32c4-4e26-98c1-e8214c1b5b0a">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-0b2006e4-32c4-4e26-98c1-e8214c1b5b0a" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:bsp_ableitungen_nicht_vertauschbar}
 \begin{split}
 \partial_y\partial_x f(0,0) \ &amp;= \ \lim_{h\rightarrow 0} \frac{\partial_x f(0, h) - \partial_x f(0,0)}{h} \ = \ 
 \lim_{h\rightarrow 0} ~ \frac{h}{h}~\frac{0 + 0-h^4}{(0 + h^2)^2} - 0 \ = \ -1,\\
@@ -294,11 +436,11 @@ Wir berechnen die ersten partiellen Ableitungen</p>
 <p>Wir erkennen, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> zwar zweimal partiell differenzierbar ist im Nullpunkt, jedoch ist die Reihenfolge der partiellen Ableitungen nicht vertauschbar.</p>
 </div>
 </div><div class="section" id="der-satz-von-schwarz">
-<h2><span class="section-number">1.3.1. </span>Der Satz von Schwarz<a class="headerlink" href="#der-satz-von-schwarz" title="Permalink to this headline">¶</a></h2>
-<p>Um eine Bedingung zu erarbeiten, die die Vertauschbarkeit von höheren partiellen Ableitungen versichert, fragt man sich zunächst weshalb die Funktion aus <a class="reference internal" href="#bsp:partielle_ableitungen_nicht_vertauschbar">Example 1.6</a> diese Eigenschaft verletzt.
-Betrachtet man die zweiten partiellen Ableitungen <span class="math notranslate nohighlight">\(\partial_i\partial_j f\)</span> in <a class="reference internal" href="#bsp:partielle_ableitungen_nicht_vertauschbar">Example 1.6</a> so fällt auf, dass diese nicht stetig im Punkt <span class="math notranslate nohighlight">\((0,0)\)</span> sind. Die Vermutung liegt also nahe, dass gerade die fehlende Stetigkeit die Vertauschbarkeit verhindert. Diese Vermutung lässt sich tatsächlich auch beweisen, was gemeinhin als der folgende <em>Satz von Schwarz</em> bekannt ist.</p>
+<h2><span class="section-number">4.3.1. </span>Der Satz von Schwarz<a class="headerlink" href="#der-satz-von-schwarz" title="Permalink to this headline">¶</a></h2>
+<p>Um eine Bedingung zu erarbeiten, die die Vertauschbarkeit von höheren partiellen Ableitungen versichert, fragt man sich zunächst weshalb die Funktion aus <a class="reference internal" href="#bsp:partielle_ableitungen_nicht_vertauschbar">Example 4.6</a> diese Eigenschaft verletzt.
+Betrachtet man die zweiten partiellen Ableitungen <span class="math notranslate nohighlight">\(\partial_i\partial_j f\)</span> in <a class="reference internal" href="#bsp:partielle_ableitungen_nicht_vertauschbar">Example 4.6</a> so fällt auf, dass diese nicht stetig im Punkt <span class="math notranslate nohighlight">\((0,0)\)</span> sind. Die Vermutung liegt also nahe, dass gerade die fehlende Stetigkeit die Vertauschbarkeit verhindert. Diese Vermutung lässt sich tatsächlich auch beweisen, was gemeinhin als der folgende <em>Satz von Schwarz</em> bekannt ist.</p>
 <div class="proof theorem admonition" id="satz:schwarz">
-<p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Satz von Schwarz)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 4.1 </span> (Satz von Schwarz)</p>
 <div class="theorem-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> eine zweimal stetig partiell differenzierbare Funktion.
 Dann gilt</p>
@@ -358,8 +500,8 @@ r^\prime(\eta_y) \ = \ \partial_2\partial_1 f(\xi_x + \bar x, \eta_y + \bar y).
 \end{split}
 \end{equation*}\]</div>
 <p>Insgesamt gilt also für alle <span class="math notranslate nohighlight">\((x,y)\in B^\infty_\delta(0,0)\)</span> die folgende Gleichung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4dc37489-ebdf-4e28-858e-9678f363bcc7">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-4dc37489-ebdf-4e28-858e-9678f363bcc7" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:schwarz_1}
+<div class="amsmath math notranslate nohighlight" id="equation-a431313d-900c-445f-9d5b-e14394dfd5bd">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-a431313d-900c-445f-9d5b-e14394dfd5bd" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:schwarz_1}
 \partial_2\partial_1 f(\xi_x + \bar x, \eta_y + \bar y) \cdot xy \ = \ f(x+\bar x, y + \bar y) - f(x + \bar x, \bar y)  - f(\bar x, y+\bar y) - f(\bar x, \bar y).
 \end{equation}\]</div>
 <p>Mit vertauschten Rollen wenden wir die Argumente für ein festes <span class="math notranslate nohighlight">\(x\in (\bar x -\delta, \bar x + \delta)\)</span> analog auf die eindimensionale Funktion</p>
@@ -406,7 +548,7 @@ Diese Folge induziert mit den obigen Argumenten zwei weitere Nullfolgen <span cl
 </div>
 <p>Das folgende Korollar sagt aus, dass die Vertauschbarkeit nicht nur für zwei Ableitungsrichtungen gilt, sondern für eine beliebige Permutation von partiellen Ableitungen gegeben ist.</p>
 <div class="proof corollary admonition" id="corollary-2">
-<p class="admonition-title"><span class="caption-number">Corollary 1.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Corollary 4.1 </span></p>
 <div class="corollary-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> eine <span class="math notranslate nohighlight">\(k\)</span>-mal stetig partiell differenzierbare Funktion.
 Dann gilt für jede bijektive Abbildung <span class="math notranslate nohighlight">\(\pi:\{1,\ldots,k\}\rightarrow \{1,\ldots,k\}\)</span> (auch \emph{Permutation} genannt)</p>
@@ -420,7 +562,7 @@ Dann gilt für jede bijektive Abbildung <span class="math notranslate nohighligh
 <p>Proof. In der Hausaufgabe zu zeigen.</p>
 </div>
 <div class="proof remark admonition" id="remark-3">
-<p class="admonition-title"><span class="caption-number">Remark 1.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 4.3 </span></p>
 <div class="remark-content section" id="proof-content">
 <ul class="simple">
 <li><p>Für mehrfache partielle Ableitung in die gleiche Koordinatenrichtung schreibt man häufig kurz</p></li>
@@ -446,10 +588,10 @@ Dann gilt für jede bijektive Abbildung <span class="math notranslate nohighligh
 </div>
 </div></div>
 <div class="section" id="die-hesse-matrix">
-<h2><span class="section-number">1.3.2. </span>Die Hesse-Matrix<a class="headerlink" href="#die-hesse-matrix" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3.2. </span>Die Hesse-Matrix<a class="headerlink" href="#die-hesse-matrix" title="Permalink to this headline">¶</a></h2>
 <p>Analog zur zweiten Ableitung von Funktionen in einer Veränderlichen kann man für mehrdimensionale Funktionen einen Operator definieren, der alle zweiten Ableitungen sammelt - die sogenannte <em>Hesse-Matrix</em>.</p>
 <div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 1.4 </span> (Hesse-Matrix)</p>
+<p class="admonition-title"><span class="caption-number">Definition 4.4 </span> (Hesse-Matrix)</p>
 <div class="definition-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f : U \rightarrow R\)</span> eine zweimal stetig partiell differenzierbare Funktion. Dann ist die <em>Hesse-Matrix</em> von <span class="math notranslate nohighlight">\(f\)</span> im Punkt <span class="math notranslate nohighlight">\(x \in U\)</span> definiert als</p>
 <div class="amsmath math notranslate nohighlight">
@@ -463,13 +605,13 @@ H_f(x) \ \coloneqq \ \left( \frac{\partial^2 f}{\partial x_i \partial x_j}(x) \r
 \end{equation*}\]</div>
 </div>
 </div><div class="proof remark admonition" id="remark-5">
-<p class="admonition-title"><span class="caption-number">Remark 1.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 4.4 </span></p>
 <div class="remark-content section" id="proof-content">
 <p>Die Hesse-Matrix <span class="math notranslate nohighlight">\(H_f\)</span> einer zweimal stetig partiell differenzierbaren Funktion <span class="math notranslate nohighlight">\(f\)</span> ist symmetrisch, da die Reihenfolge der partiellen Ableitungen vertauscht werden kann und somit gilt <span class="math notranslate nohighlight">\(H_f = H_f^T\)</span>.</p>
 </div>
 </div><p>Wir wollen im folgenden Beispiel die Hesse-Matrix einer zweidimensionalen Funktion berechnen.</p>
 <div class="proof example admonition" id="bsp:hesse_matrix">
-<p class="admonition-title"><span class="caption-number">Example 1.7 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 4.7 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f \colon \R^2 \rightarrow \R\)</span> eine zweimal stetig partiell differenzierbare Funktion mit</p>
 <div class="amsmath math notranslate nohighlight">
@@ -511,7 +653,7 @@ H_f(x) \ = \
 </div>
 </div></div>
 <div class="section" id="der-laplace-operator">
-<h2><span class="section-number">1.3.3. </span>Der Laplace-Operator<a class="headerlink" href="#der-laplace-operator" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3.3. </span>Der Laplace-Operator<a class="headerlink" href="#der-laplace-operator" title="Permalink to this headline">¶</a></h2>
 <p>Den letzten Operator den wir in diesem Abschnitt kennenlernen wollen ist der sogenannte Laplace-Operator.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -519,7 +661,7 @@ H_f(x) \ = \
 <a class="reference external" href="https://en.wikipedia.org/wiki/Pierre-Simon_Laplace">Pierre-Simon Laplace</a> (1749-1827) benannt.</p>
 </div>
 <div class="proof definition admonition" id="definition-7">
-<p class="admonition-title"><span class="caption-number">Definition 1.5 </span> (Laplace-Operator)</p>
+<p class="admonition-title"><span class="caption-number">Definition 4.5 </span> (Laplace-Operator)</p>
 <div class="definition-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> offen und <span class="math notranslate nohighlight">\(f:U\rightarrow\R\)</span> eine zweimal stetig differenzierbare Funktion, dann heißt</p>
 <div class="amsmath math notranslate nohighlight">
@@ -534,9 +676,9 @@ als Differtialoperator geschrieben werden,</p>
 \Delta f \ \eqqcolon \ \langle \nabla, \nabla f\rangle \ \eqqcolon \ \nabla^2 f.
 \end{align*}\]</div>
 </div>
-</div><p>Wir wollen den Laplace Operator für die Funktion aus Beispiel <a class="reference internal" href="#bsp:hesse_matrix">Example 1.7</a> im Folgenden berechnen.</p>
+</div><p>Wir wollen den Laplace Operator für die Funktion aus Beispiel <a class="reference internal" href="#bsp:hesse_matrix">Example 4.7</a> im Folgenden berechnen.</p>
 <div class="proof example admonition" id="example-8">
-<p class="admonition-title"><span class="caption-number">Example 1.8 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 4.8 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f \colon \R^2 \rightarrow \R\)</span> eine zweimal stetig partiell differenzierbare Funktion mit</p>
 <div class="amsmath math notranslate nohighlight">
@@ -558,7 +700,7 @@ f(x,y) \ \coloneqq \ x^2y - \sin(x).
 \end{equation*}\]</div>
 </div>
 </div><div class="proof remark admonition" id="remark-9">
-<p class="admonition-title"><span class="caption-number">Remark 1.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 4.5 </span></p>
 <div class="remark-content section" id="proof-content">
 <p>Der Laplace Operator <span class="math notranslate nohighlight">\(\Delta f\)</span> einer zweimal stetig partiell differenzierbaren Funktion <span class="math notranslate nohighlight">\(f\)</span> lässt sich ebenfalls als Spur der Hesse-Matrix <span class="math notranslate nohighlight">\(H_f\)</span> von <span class="math notranslate nohighlight">\(f\)</span> darstellen durch:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -603,7 +745,7 @@ f(x,y) \ \coloneqq \ x^2y - \sin(x).
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">1.2. </span>Differentialoperatoren erster Ordnung</p>
+                <p class="prevnext-title"><span class="section-number">4.2. </span>Differentialoperatoren erster Ordnung</p>
             </div>
         </a>
     </div>
@@ -611,7 +753,7 @@ f(x,y) \ \coloneqq \ x^2y - \sin(x).
         <a class="right-next" href="tot_diff.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">1.4. </span>Totale Differenzierbarkeit</p>
+                <p class="prevnext-title"><span class="section-number">4.4. </span>Totale Differenzierbarkeit</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

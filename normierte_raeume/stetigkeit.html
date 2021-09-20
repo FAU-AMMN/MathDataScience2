@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.1. Partielle Differenzierbarkeit &#8212; Mathematik für Data Science 2</title>
+    <title>3.2. Stetigkeit &#8212; Mathematik für Data Science 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.2. Differentialoperatoren erster Ordnung" href="first_order.html" />
-    <link rel="prev" title="4. Differentiation von Funktionen mehrerer Veränderlicher" href="ableitungen.html" />
+    <link rel="next" title="3.3. Kompaktheit" href="kompaktheit.html" />
+    <link rel="prev" title="3.1. Konvergenz von Folgen" href="konvergenz.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -208,70 +208,70 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="normierte_raeume.html">
    3. Normierte Vektorräume
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+    <a class="reference internal" href="konvergenz.html">
      3.1. Konvergenz von Folgen
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      3.2. Stetigkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+    <a class="reference internal" href="kompaktheit.html">
      3.3. Kompaktheit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+    <a class="reference internal" href="hilbert.html">
      3.4. Hilberträume
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="ableitungen.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
    4. Differentiation von Funktionen mehrerer Veränderlicher
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
      4.1. Partielle Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="first_order.html">
+    <a class="reference internal" href="../ableitungen/first_order.html">
      4.2. Differentialoperatoren erster Ordnung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="higher_order.html">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
      4.3. Differentialoperatoren höherer Ordnung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="tot_diff.html">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
      4.4. Totale Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="taylor.html">
+    <a class="reference internal" href="../ableitungen/taylor.html">
      4.5. Taylor-Formel
     </a>
    </li>
@@ -323,7 +323,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/ableitungen/part_diff.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/normierte_raeume/stetigkeit.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -356,114 +356,149 @@
         
               <div>
                 
-  <div class="section" id="partielle-differenzierbarkeit">
-<h1><span class="section-number">4.1. </span>Partielle Differenzierbarkeit<a class="headerlink" href="#partielle-differenzierbarkeit" title="Permalink to this headline">¶</a></h1>
-<p>Um den Begriff der Ableitung auf Funktionen mehrerer Variablen zu übertragen, betrachtet man zunächst deren Änderungsverhalten entlang einzelner Koordinatenrichtungen.
-Wir fixieren also einen Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> und betrachten die Funktion</p>
+  <div class="section" id="stetigkeit">
+<h1><span class="section-number">3.2. </span>Stetigkeit<a class="headerlink" href="#stetigkeit" title="Permalink to this headline">¶</a></h1>
+<p>Aus \cite[Kapitel 5]{burger_2020} sind Sie bereits mit den verschiedenen Stetigkeitsbegriffen auf metrischen Räumen vertraut.
+Im Fall von normierten Vektorräumen lassen sich diese Konzepte durch Verwendung der Norm für den Abstandsbegriff analog definieren.
+\begin{definition}[Stetigkeit]
+Wir wollen im Folgenden die wichtigsten Definitionen für Stetigkeit wiederholen.
+Hierbei betrachten wir eine Funktion <span class="math notranslate nohighlight">\( f\colon X \rightarrow Y \)</span> zwischen zwei normierten Vektorräumen <span class="math notranslate nohighlight">\((X, ||\cdot||_X)\)</span> und <span class="math notranslate nohighlight">\((Y, ||\cdot||_Y)\)</span>.
+\begin{enumerate}
+\item Die Funktion <span class="math notranslate nohighlight">\(f\)</span>  ist genau dann \emph{stetig} in einem Punkt <span class="math notranslate nohighlight">\(x_0 \in X\)</span>, wenn es für alle <span class="math notranslate nohighlight">\( \varepsilon &gt; 0 \)</span> ein <span class="math notranslate nohighlight">\( \delta &gt; 0 \)</span> gibt, so dass  für alle Punkte <span class="math notranslate nohighlight">\(x \in X\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\tilde{f}(\xi) \ \coloneqq \ f(x_1,\ldots,x_{i-1},\xi,x_{i+1},\ldots,x_n).
+||x - x_0||_X \: &lt; \: \delta
 \end{equation*}\]</div>
-<p>Anschaulich gesprochen halten wir alle Variablen, bis auf die <span class="math notranslate nohighlight">\(i\)</span>-te fest und erhalten somit eine eindimensionale Funktion.
-Dies erlaubt es uns den Ableitungsbegriff auf die schon bekannte Definition für Funktionen in einer Veränderlichen herunterzubrechen, was zum Begriff der partiellen Differenzierbarkeit führt.</p>
-<div class="proof definition admonition" id="def:partielle_diffbarkeit">
-<p class="admonition-title"><span class="caption-number">Definition 4.1 </span> (Partielle Differnzierbarkeit)</p>
-<div class="definition-content section" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(U\subset \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> eine Funktion.</p>
-<p><em>i)</em> Wir nennen die Funktion <span class="math notranslate nohighlight">\(f\)</span> <em>(lokal) partiell differenzierbar</em> im Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> in die <span class="math notranslate nohighlight">\(i\)</span>-te Koordinatenrichtung falls folgender Grenzwert existiert,</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial f}{\partial x_i} (x) \ \coloneqq \ \partial_i f(x) \      \coloneqq \ \lim_{h\rightarrow 0} \frac{f(x + h\cdot e_i) - f(x)}{h}.\]</div>
-<p><em>ii)</em> Wir nennen die Funktion <span class="math notranslate nohighlight">\(f\)</span> <em>(global) partiell differenzierbar</em> falls sie für jedes <span class="math notranslate nohighlight">\(x\in U\)</span> und jede Koordinatenrichtung <span class="math notranslate nohighlight">\(i\in\{1,\ldots,n\}\)</span> partiell differenzierbar ist.</p>
-<p><em>iii)</em> Ist die Funktion <span class="math notranslate nohighlight">\(\partial_i f:U\rightarrow \R\)</span> partiell differenzierbar und zudem stetig für jedes <span class="math notranslate nohighlight">\(i\in\{1,\ldots,n\}\)</span>, so nennen wir <span class="math notranslate nohighlight">\(f\)</span> <em>stetig partiell differenzierbar</em>.</p>
+<p>für den Abstand der Funktionswerte gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+||f(x) - f(x_0)||_Y \: &lt; \: \epsilon.
+\end{equation*}\]</div>
+<p>\item Die Funktion <span class="math notranslate nohighlight">\(f\)</span> ist genau dann \emph{gleichmäßig stetig}, wenn es für alle <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span> ein
+<span class="math notranslate nohighlight">\( \delta &gt; 0 \)</span> so gibt, dass für alle Punkte <span class="math notranslate nohighlight">\(x, y \in X\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\norm[X]{x-y} \: &lt; \: \delta
+\end{equation*}\]</div>
+<p>für den Abstand der Funktionswerte gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\norm[Y]{f(x)-f(y)} \: &lt; \: \varepsilon.
+\end{equation*}\]</div>
+<p>\item Die Funktion <span class="math notranslate nohighlight">\(f\)</span> ist genau dann \emph{Hölder-stetig} mit Exponent <span class="math notranslate nohighlight">\( 0 &lt; \alpha \leq 1 \)</span>, wenn
+für alle <span class="math notranslate nohighlight">\( x, y \in X \)</span> gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\norm[Y]{f(x) - f(y)} \: \leq \: L \cdot \norm[X]{x-y}^\alpha
+\end{equation*}\]</div>
+<p>für eine nicht-negative Konstante <span class="math notranslate nohighlight">\(L \in \R^+_0\)</span>.</p>
+<p>Im Spezialfall <span class="math notranslate nohighlight">\(\alpha = 1\)</span> nennen wir <span class="math notranslate nohighlight">\(f\)</span> auch \emph{Lipschitz-stetig}.
+Gilt sogar <span class="math notranslate nohighlight">\(0 \leq L &lt; 1\)</span>, so nennen wir die Funktion <span class="math notranslate nohighlight">\(f\)</span> eine Kontraktion.
+\end{enumerate}
+\end{definition}</p>
+<p>Natürlich sind diese Stetigkeitsbegriffe unterschiedlich stark, wie folgende Bemerkung feststellt.
+\begin{comment}
+Für eine Funktion <span class="math notranslate nohighlight">\(f \colon X \rightarrow Y\)</span> zwischen normierten Vektorräumen <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> gelten folgende Implikationen:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+f \text{ ist Hölder-stetig } \ \Rightarrow \ f \text{ ist gleichmäßig stetig } \ \Rightarrow \ f \text{ ist stetig }.
+\end{equation*}\]</div>
+<p>\end{comment}</p>
+<p>Folgende Beispiele zeigen den Unterschied zwischen den Stetigkeitsbegriffen.
+\begin{bsp}
+Die Wurzel-Funktion</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\sqrt{\cdot} \: \colon \R_0^+ \ \rightarrow \ \R_0^+
+\end{equation*}\]</div>
+<p>ist stetig.
+Sie ist jedoch nicht Lipschitz-stetig in <span class="math notranslate nohighlight">\(x=0\)</span>.
+\end{bsp}
+\begin{proof}
+In der Hausaufgabe zu zeigen.
+\end{proof}</p>
+<p>\begin{bsp}
+Die Betragsfunktion</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+|\cdot| \: \colon \R \ \rightarrow \ \R_0^+
+\end{equation*}\]</div>
+<p>Lipschitz-stetig mit Lipschitz Konstante <span class="math notranslate nohighlight">\(L = 1\)</span>.
+\end{bsp}</p>
+<p>Eine besonders interessante Klasse von stetigen Funktionen sind sogenannte \emph{Homöomorphismen}.
+Diese Funktionen erlauben es zu untersuchen wann Teilmengen (topologischer) Vektorräume ineinander überführt werden können, z.B. durch Dehnen, Stauchen, Drehen oder Verzerren der Mengen.
+Die folgende Definition charakterisiert Homöomorphismen genauer
+\begin{definition}[Homöomorphismus]
+Seien <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> zwei normierte Vektorräume.
+Wir nennen eine Funktion <span class="math notranslate nohighlight">\(f \colon X \rightarrow Y\)</span> einen \emph{Homöomorphismus}, falls folgende Bedingungen erfüllt sind:
+\begin{itemize}
+\item <span class="math notranslate nohighlight">\(f\)</span> ist stetig,
+\item <span class="math notranslate nohighlight">\(f\)</span> ist bijektiv,
+\item die Umkehrfunktion <span class="math notranslate nohighlight">\(f^{-1}\)</span> ist ebenfalls stetig.
+\end{itemize}
+\end{definition}</p>
+<p>Der folgende berühmte Satz ist ein wichtiges Hilfsmittel zur Untersuchung von Fixpunktgleichungen, z.B. in der Numerik, und wird uns später bei der Behandlung von gewöhnlichen Differentialgleichungen noch hilfreich sein.
+\begin{thm}[Fixpunktsatz von Banach]
+Es sei <span class="math notranslate nohighlight">\(X\)</span> ein Banachraum und <span class="math notranslate nohighlight">\( F\colon X\rightarrow X \)</span> eine Lipschitz-stetige Funktion mit Lipschitz-Konstante <span class="math notranslate nohighlight">\( L &lt; 1 \)</span>, d.h. es gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  	 ||F(x) - F(y)|| \ \leq \ L \cdot ||x - y|| \quad \text{ für alle } x, y \in X.
+\end{equation*}\]</div>
+<p>Dann existiert ein genau ein Fixpunkt <span class="math notranslate nohighlight">\(\bar{x} \in X \)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F(\bar{x}) \ = \ \bar{x}.
+\end{equation*}\]</div>
+<p>\end{thm}
+\begin{proof}
+Es sei <span class="math notranslate nohighlight">\(x_0 \in X\)</span> beliebiger Startwert der Folge <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span>, die durch wiederholte Anwendung der Funktion <span class="math notranslate nohighlight">\(F\)</span> definiert ist, d.h,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+x_k \ \coloneqq \ F(x_{k-1}), \quad k \geq 1.
+\end{equation*}\]</div>
+<p>Wir werden im Folgenden zeigen, dass <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span> eine Cauchy-Folge in <span class="math notranslate nohighlight">\(X\)</span> ist.
+Da <span class="math notranslate nohighlight">\(F\)</span> Lipschitz-stetig mit Lipschitz Konstante <span class="math notranslate nohighlight">\(L\)</span> ist, gilt offensichtlich für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+||x_{n+1} - x_n|| \ = \ ||F(x_n) - F(x_{n-1})|| \ \leq L \cdot || x_n - x_{n-1}||.
+\end{equation*}\]</div>
+<p>Damit folgt induktiv aber auch schon, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+||x_{n+1} - x_n|| \ \leq L^n \cdot || x_1 - x_0||.
+\end{equation*}\]</div>
+<p>Seien nun <span class="math notranslate nohighlight">\(n,m \in \mathbb{N}\)</span> zwei beliebige Indizes mit <span class="math notranslate nohighlight">\(1 \leq n &lt; m\)</span>, dann gilt wegen der Dreiecksungleichung der Norm und unter Ausnutzung der geometrischen Reihe:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+||x_m - x_n|| \ &amp;\leq \ \sum_{k=n+1}^m ||x_k - x_{k-1}|| \ \leq \ ||x_1 - x_0|| \cdot \sum_{k=n+1}^m L^{k-1} \\
+\ &amp;= \ ||x_1 - x_0|| \cdot L^n \sum_{k=0}^{m-n-1} L^{k} \ \leq \ ||x_1 - x_0|| \cdot L^n \sum_{k=0}^\infty L^{k} \ = \ ||x_1 - x_0|| \cdot \frac{L^n}{1 - L}.
+\end{split} 
+\end{equation*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(L &lt; 1\)</span> nach Voraussetzung ist folgt, dass <span class="math notranslate nohighlight">\(L^n \rightarrow 0\)</span> für <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> und somit gilt auch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\lim_{n, m \rightarrow \infty} ||x_m - x_n|| \ = \ 0
+\end{equation*}\]</div>
+<p>und daraus folgt, dass <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span> eine Cauchy-Folge in <span class="math notranslate nohighlight">\(X\)</span> ist.
+Da <span class="math notranslate nohighlight">\(X\)</span> vollständig ist, muss <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span> nach Definition \ref{def:banachraum} konvergieren gegen einen Grenzwert <span class="math notranslate nohighlight">\(\bar{x} \in X\)</span>.
+Das heißt wir haben gezeigt, dass die Funktion einen Fixpunkt <span class="math notranslate nohighlight">\(\bar{x} = F(\bar{x})\)</span> besitzt, da gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\lim_{k \rightarrow \infty} F(x_k) \ = \ \lim_{k \rightarrow \infty} x_{k+1} \ = \ \bar{x}.
+\end{equation*}\]</div>
+<p>Sei <span class="math notranslate nohighlight">\(\hat{x} \in X\)</span> nun ein weiterer Fixpunkt von <span class="math notranslate nohighlight">\(F\)</span> mit <span class="math notranslate nohighlight">\(F(\hat{x}) = \hat{x}\)</span>, dann gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+||\bar{x} - \hat{x}|| \ = \ ||F(\bar{x}) - F(\hat{x})|| \ \leq \ L \cdot ||\bar{x} - \hat{x}||.
+\end{equation*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(L &lt; 1\)</span> ist kann diese Ungleichung nur gelten wenn <span class="math notranslate nohighlight">\(||\bar{x} - \hat{x}||  = 0\)</span> ist.
+Aus der positiven Definitheit der Norm folgt dann schon, dass <span class="math notranslate nohighlight">\(\bar{x} = \hat{x}\)</span> sein muss, d.h., der Fixpunkt ist eindeutig.
+\end{proof}</p>
+<p>\begin{remark}
+Der Banach’sche Fixpunktsatz kann noch allgemeiner für abgeschlossene Untermengen vollständiger metrischer Vektorräume formuliert werden, da man nur einen Abstandsbegriff (also eine Metrik) und die Existenz des Grenzwertes benötigt.
+\end{remark}</p>
 </div>
-</div><p>In der obigen Definition bezeichnet</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-e_i \ \coloneqq \ (0,\ldots,0,\underbrace{1}_{i\text{-te Stelle}},0,\ldots,0)\in\R^n
-\end{equation*}\]</div>
-<p>den <span class="math notranslate nohighlight">\(i\)</span>-ten Einheitsvektor des <span class="math notranslate nohighlight">\(\R^n\)</span>.
-Im Grenzwert für <span class="math notranslate nohighlight">\(h\rightarrow 0\)</span> sind nur Nullfolgen <span class="math notranslate nohighlight">\((h_k)_{k\in\N}\)</span> erlaubt, welche die Bedingung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-(x+h_k\cdot e_i) \in U \quad \text{ mit } \quad h_k \neq 0, \ \forall k\in \N
-\end{equation*}\]</div>
-<p>erfüllen.
-Das Symbol <span class="math notranslate nohighlight">\(\partial\)</span> ist hierbei eine stilisierte Version des Buchstaben d (manchmal auch del ausgesprochen).</p>
-<p>Im folgenden Beispiel berechnen wir die partielle Ableitung der Euklidischen Norm im <span class="math notranslate nohighlight">\(\R^n\)</span>.</p>
-<div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 4.1 </span></p>
-<div class="example-content section" id="proof-content">
-<p>Wir betrachten die Abbildung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f :\R^n \ &amp;\rightarrow \ \R_0^+\\
-x \ &amp;\mapsto \ \norm{x}{}_2 \ \coloneqq \ \sqrt{\sum_{i=1}^n x_i^2},
-\end{align*}\]</div>
-<p>welche die Euklidische Norm im <span class="math notranslate nohighlight">\(\R^n\)</span> darstellt.
-Wir betrachten die <em>Niveaumengen</em> <span class="math notranslate nohighlight">\(N_f \subset \R^n\)</span> von <span class="math notranslate nohighlight">\(f\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-N_f(c) \ \coloneqq \ \{x\in \R^n:f(x) = c\} \ = \ \{f^{-1}(c)\}.
-\end{align*}\]</div>
-<p>In diesem Fall sind die Niveaumengen <span class="math notranslate nohighlight">\(N_{f}(c)\)</span> Sphären mit Radius <span class="math notranslate nohighlight">\(c\in \R^+_0\)</span>.
-Weiterhin sieht man leicht, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> auf der Menge <span class="math notranslate nohighlight">\(\R^n \setminus \{0\}\)</span> partiell differenzierbar
-ist, da wir für <span class="math notranslate nohighlight">\(x\neq 0\)</span> mittels Kettenregel die folgende partielle Ableitung erhalten</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\partial_i \norm{x}{}_2 \ &amp;= \ \partial_i \left( (\sum_{i=1}^n x_i)^{\frac{1}{2}} \right) \ = \ \partial_i \left(x_i^2 + \sum_{j\neq i} x_j^2\right)^{1/2}\\
-\ &amp;= \ \frac{1}{2}\left(x_i^2+\sum_{j\neq i} x_j^2\right)^{-1/2}\cdot 2x_i \ = \ \frac{x_i}{\norm{x}{}_2}.
-\end{align*}\]</div>
-</div>
-</div><p>Der Begriff der partiellen Differenzierbarkeit in Definition <a class="reference internal" href="#def:partielle_diffbarkeit">Definition 4.1</a> ist der schwächste Ableitungsbegriff für Funktionen in mehreren Veränderlichen.
-Anders als im eindimensionalen Fall gilt beispielsweise nicht, dass aus der partiellen Differenzierbarkeit einer Funktion schon folgt, dass diese stetig ist.
-Das soll uns das folgende Beispiel vor Augen führen.</p>
-<div class="proof example admonition" id="bsp:partiell_diffbar_nicht_stetig">
-<p class="admonition-title"><span class="caption-number">Example 4.2 </span></p>
-<div class="example-content section" id="proof-content">
-<p>Wir betrachten im Folgenden eine Funktion auf <span class="math notranslate nohighlight">\(\R^n\)</span> mit <span class="math notranslate nohighlight">\(n\geq 2\)</span> die zeigt, dass aus partieller Differenzierbarkeit keine Stetigkeit folgt.
-Dazu definieren wir</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f(x) \ \coloneqq \
-\begin{cases}
-\ \frac{x_1 \cdot x_2 \cdot \ldots \cdot x_n}{\norm{x}{}_2^n}, \quad &amp;\text{falls } x\neq 0,\\
-\ 0, \quad &amp;\text{falls } x=0.
-\end{cases}
-\end{align*}\]</div>
-<p>Man sieht sofort, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> auf <span class="math notranslate nohighlight">\(\R^n\setminus \{0\}\)</span> stetig und auch partiell differenzierbar ist.</p>
-<p>Wir überprüfen nun die partielle Differenzierbarkeit im Punkt <span class="math notranslate nohighlight">\(x=0\)</span>.
-Hierzu betrachten wir für <span class="math notranslate nohighlight">\(h\neq 0\)</span></p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f(0+h\cdot e_i) \, - \, f(0) \ = \ \frac{0 \cdot \ldots \cdot 0\cdot h\cdot 0\cdot \ldots \cdot 0}{\norm{h\cdot e_i}{}_2^n} \, - \, 0 \ = \ 0  
-\end{align*}\]</div>
-<p>und somit folgt direkt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\lim_{h\rightarrow 0} \frac{f(0+h\cdot e_i) - f(0)}{h} \ = \ 0
-\end{align*}\]</div>
-<p>für alle Richtungen <span class="math notranslate nohighlight">\(i\in\{1,\ldots,n\}\)</span>.
-Daher wissen wir also, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> auch im Punkt <span class="math notranslate nohighlight">\(x=0\)</span> partiell differenzierbar ist.</p>
-<p>Tatsächlich ist die Funktion aber nicht stetig in der Null.
-Dafür betrachten wir eine Folge <span class="math notranslate nohighlight">\((a_k)_{k\in \N}\subset\R^n\setminus \{0\}\)</span>, die diagonal in den Nullpunkt hineinläuft, d.h., konkret betrachten wir</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-a_k \ \coloneqq \ (\frac1k,\ldots,\frac1k)^T, \quad k\in\N.
-\end{equation*}\]</div>
-<p>Für jedes Folgeglied <span class="math notranslate nohighlight">\(a_k, k\in\N\)</span>, der Folge gilt dann <span class="math notranslate nohighlight">\(\norm{a_k}{}_2 = \frac{\sqrt{n}}{k}\)</span> und somit ist der Funktionswert von <span class="math notranslate nohighlight">\(f\)</span> für diese Folgeglieder gegeben durch</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}} \right)^n \ = \ n^{-\frac{n}{2}}, \quad k\in\N.
-\end{align*}\]</div>
-<p>Daraus folgt aber schon, dass</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\lim_{k\rightarrow\infty} f(a_k) \ \equiv \ n^{-\frac{n}{2}} \ \neq \ 0 \ = \ f(0) \ = \ f(\lim_{k\rightarrow\infty} a_k).
-\end{align*}\]</div>
-<p>Das bedeutet also, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> nicht stetig im Punkt <span class="math notranslate nohighlight">\(x=0\)</span> ist.</p>
-<p>Man bemerke, dass diese Konstruktion nur für höherdimensionale Räume <span class="math notranslate nohighlight">\(\R^n\)</span> mit <span class="math notranslate nohighlight">\(n\geq 2\)</span> möglich ist, da die analog  definierte Funktion im Eindimensionalen nicht differenzierbar ist.</p>
-</div>
-</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -478,7 +513,7 @@ f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}}
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./ableitungen"
+            path: "./normierte_raeume"
         },
         predefinedOutput: true
     }
@@ -495,19 +530,19 @@ f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}}
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="ableitungen.html" title="previous page">
+        <a class="left-prev" href="konvergenz.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">4. </span>Differentiation von Funktionen mehrerer Veränderlicher</p>
+                <p class="prevnext-title"><span class="section-number">3.1. </span>Konvergenz von Folgen</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="first_order.html" title="next page">
+        <a class="right-next" href="kompaktheit.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">4.2. </span>Differentialoperatoren erster Ordnung</p>
+                <p class="prevnext-title"><span class="section-number">3.3. </span>Kompaktheit</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

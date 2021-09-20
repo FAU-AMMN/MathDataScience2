@@ -1,0 +1,1754 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.6. Die Jordansche Normalform &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Euklidische und unitäre Vektorräume" href="../vektoraeume/vektoraeume.html" />
+    <link rel="prev" title="1.5. Trigonalisierbarkeit" href="triag.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   4. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     4.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     4.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     4.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     4.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     4.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   5. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/eigenwerte/jordan.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="die-jordansche-normalform">
+<h1><span class="section-number">1.6. </span>Die Jordansche Normalform<a class="headerlink" href="#die-jordansche-normalform" title="Permalink to this headline">¶</a></h1>
+<p>An einer Triagonalmatrix können wir bereits Rang und Eigenwerte ablesen, jedoch keine weiteren charakteristischen Eigenschaften des zu Grunde liegenden Endomorphismus, wie z.B. die Dimension der Eigenräume.
+Außerdem kann die obere, rechte Dreiecksmatrix voll besetzt in der oberen Hälfte sein, so dass sie für numerische Verfahren eher ungünstig ist.
+Das wirkt sich vor allem bei der Potenzierung von Endomorphismen in iterativen Verfahren aus, bei der diese Mehrfachanwendung zu unerwünschten Rechenoperationen führt.
+Ein weiteres Problem ist, das allgemeine Triagonalmatrizen ungeeignet sind um explizite Lösungen von Systemen linearer Differentialgleichungen anzugeben, da die Gleichungen nicht hinreichend entkoppeln in dieser Darstellung.</p>
+<p>Es ist also ganz natürlich sich die Frage zu stellen, ob für eine gegebene trigonalisierbare Matrix <span class="math notranslate nohighlight">\(A\)</span> eine kanonische Wahl einer oberen, rechten Dreiecksmatrix existiert, die einfach und interpretierbar aufgebaut ist und nur wenige Wahlmöglichkeiten bei der Bestimmung zulässt.
+Die Frage, wie durch geschickte Wahl einer Basis <span class="math notranslate nohighlight">\(B\)</span> von des endlich-dimensionalen Vektorraums <span class="math notranslate nohighlight">\(V\)</span> die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F)\)</span> des Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> auf eine möglichst einfache und eindeutige Gestalt gebracht werden kann, ist allerdings deutlich schwieriger als die bereits bekannte Triagonalisierung einer Matrix.
+Diese Frage wird zentral in der Normalformentheorie von Endomorphismen behandelt.
+Wie wir im Folgenden sehen werden existiert glücklicherweise eine kanonische Darstellung einer trigonalisierbaren Matrix, welche \emph{Jordansche Normalform} genannt wird, und die die gewünschten Eigenschaften hat.</p>
+<p>Bevor wir uns jedoch mit dem Studium dieser Normalform beschäftigen führen die Definition eines nilpotenten Endomorphismus ein.
+\begin{definition}[Nilpotenz]
+Wir definieren den Begriff der \emph{Nilpotenz} im folgenden sowohl für Endomorphismen als auch für Matrizen.
+\begin{enumerate}
+\item Ein Endormorphismus <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> eines <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span> heißt \emph{nilpotent}, falls es einen Index <span class="math notranslate nohighlight">\(k\in \mathbb{N}\)</span> gibt, so dass <span class="math notranslate nohighlight">\(F^k =\!\!\!\!\!\!\underbrace{F \circ \ldots \circ F}_{k\text{-fache Anwendung}} \!\!\!\!\!\!= 0\)</span> ist.\
+Der kleinste solche Index <span class="math notranslate nohighlight">\(k\)</span> heißt dann \emph{Nilpotenzindex}.</p>
+<p>\item  Eine Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> heißt \emph{nilpotent}, falls es einen Index <span class="math notranslate nohighlight">\(k\in \mathbb{N}\)</span> gibt, so dass <span class="math notranslate nohighlight">\(A^k =\!\!\!\!\!\!\underbrace{A \cdot \ldots \cdot A}_{k\text{-fache Anwendung}} \!\!\!\!\!\!= 0\)</span> ist.\
+Der kleinste solche Index <span class="math notranslate nohighlight">\(k\)</span> heißt dann \emph{Nilpotenzindex}.
+\end{enumerate}
+\end{definition}</p>
+<p>\begin{bsp}\label{bsp:nilpotenz}
+Wir wollen im Folgenden den Nilpotenzindex zweier Matrizen durch ihre Potenzierung bestimmen.
+\begin{enumerate}
+\item Wir betrachten die Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{3 \times 3}\)</span>  mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ \coloneqq \ 
+\begin{pmatrix}
+5 &amp; -3 &amp; 2\\
+15 &amp; -9 &amp; 6\\
+10 &amp; -6 &amp; 4
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir betrachten Potenzen von <span class="math notranslate nohighlight">\(A\)</span> und erhalten:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A^2 \ = \ 
+\begin{pmatrix}
+0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Erstaunlicherweise ist der Nilpotenzindex der Matrix <span class="math notranslate nohighlight">\(A\)</span> schon <span class="math notranslate nohighlight">\(k = 2\)</span>.
+\item Wir betrachten die Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{4 \times 4}\)</span>  mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \ 
+\begin{pmatrix}
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir betrachten Potenzen von <span class="math notranslate nohighlight">\(A\)</span> und erhalten:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A^2 \ = \ 
+\begin{pmatrix}
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix},  \quad
+A^3 \ = \ 
+\begin{pmatrix}
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}, \quad
+ A^4 \ = \ 
+\begin{pmatrix}
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Der Nilpotenzindex der Matrix <span class="math notranslate nohighlight">\(A\)</span> ist also <span class="math notranslate nohighlight">\(k = 4\)</span>.
+\end{enumerate}
+\end{bsp}</p>
+<p>Die Matrix <span class="math notranslate nohighlight">\(A\)</span> aus dem zweiten Beispiel \ref{bsp:nilpotenz} ist in einer besonderen Form, welche wir näher betrachten werden.
+\begin{definition}[Normalform für nilpotente Matrizen]\label{def:normalform_nilpotent}
+Sei <span class="math notranslate nohighlight">\(k \in \mathbb{N}, k \geq 1\)</span>, dann definieren wir eine \emph{nilpotente Matrix in Normalform} <span class="math notranslate nohighlight">\(N_k \in \mathbb{K}^{k\times k}\)</span> durch:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+(N_k)_{i,j} \ \coloneqq \ \delta_{i,j-1} \ = \ \begin{cases}1, \quad \text{ falls } i=j-1,\\ 0, \quad \text{ sonst }.  \end{cases}
+\end{equation*}\]</div>
+<p>Hierbei bezeichnet <span class="math notranslate nohighlight">\(\delta_{i,j}\)</span> das Kronecker-Delta.
+Das heißt <span class="math notranslate nohighlight">\(N_k\)</span> ist eine Matrix, die nur auf der oberen, ersten Nebendiagonale Einsen besitzt und deren sonstige Einträge alle Null sind.
+Diese Normalform von nilpotenten Matrizen wird auch \emph{Jordanmatrix} genannt.
+\end{definition}</p>
+<p>Wir wollen im Folgenden einige nützliche Eigenschaften von nilpotenten Matrizen angeben.
+\begin{lemma}\label{lem:dreieck_nilpotent}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine strikte obere, rechte Dreiecksmatrix, d.h., für die Diagonalelemente gilt <span class="math notranslate nohighlight">\(a_{ii} = 0, 1 \leq i \leq n\)</span>. Dann ist <span class="math notranslate nohighlight">\(A\)</span> nilpotent ist und besitzt einen Nilpotenzindex von <span class="math notranslate nohighlight">\(k\leq n\)</span>.
+\end{lemma}
+\begin{proof}
+Wir beweisen die Behauptung per vollständige Induktion über die Dimension <span class="math notranslate nohighlight">\( n \)</span> von <span class="math notranslate nohighlight">\( A \)</span>: \[0.2cm]
+\textbf{Induktionsanfang <span class="math notranslate nohighlight">\( n = 1 \)</span>:}\[0.1cm]
+Falls <span class="math notranslate nohighlight">\( n= 1 \)</span>, so <span class="math notranslate nohighlight">\( A = (0) \)</span> und <span class="math notranslate nohighlight">\( A \)</span> ist offensichtlich nilpotent mit Index <span class="math notranslate nohighlight">\( 1 \leq n \)</span>.\[0.3cm]
+\textbf{Induktionsschritt <span class="math notranslate nohighlight">\( n-1 \rightarrow n \)</span>, <span class="math notranslate nohighlight">\( n &gt; 1  \)</span>:}\[0.1cm]
+Wenn <span class="math notranslate nohighlight">\( A \in \mathbb{K}^{n\times n } \)</span> eine strikte obere Dreiecksmatrix ist, dann
+gibt es eine strikte obere Dreiecksmatrix <span class="math notranslate nohighlight">\( A' \in \mathbb{K}^{(n-1)\times(n-1)} \)</span>, so dass
+\begin{equation*}
+A = \begin{pmatrix}
+&amp; \star \
+A’ &amp; \vdots \
+&amp; \star \
+0_{n-1} &amp; 0
+\end{pmatrix}.
+\end{equation*}
+Hierbei kennzeichnet <span class="math notranslate nohighlight">\( \star \)</span> einen Eintrag, welcher nicht notwendigerweise Null ist.
+Wir sehen, dass
+\begin{equation*}
+A^2 =
+\begin{pmatrix}
+(A’)^2 &amp; A’(\star,\dots,\star)^T \
+0_{n-1} &amp; 0
+\end{pmatrix}.
+\end{equation*}
+Per Induktionsvoraussetzung ist <span class="math notranslate nohighlight">\( A' \)</span> nilpotent mit Nilpotenzindex <span class="math notranslate nohighlight">\( \ell \leq n-1 \)</span>.
+Wir rechnen nun
+\begin{equation*}
+A^\ell =
+\begin{pmatrix}
+(A’)^\ell &amp; (A’)^{\ell-1}(\star,\dots,\star)^T \
+0_{n-1} &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+\mathbf{0}<em>{(n-1)\times(n-1)} &amp; (A’)^{\ell-1}(\star,\dots,\star)^T \
+0</em>{n-1} &amp; 0
+\end{pmatrix}.
+\end{equation*}
+Eine weitere Multiplikation mit <span class="math notranslate nohighlight">\( A \)</span> von links zeigt
+\begin{equation*}
+A
+\begin{pmatrix}
+\mathbf{0}<em>{(n-1)\times(n-1)} &amp; (A’)^{\ell-1}(\star,\dots,\star)^T \
+0</em>{n-1} &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+\mathbf{0}<em>{(n-1)\times(n-1)} &amp; (A’)^{\ell}(\star,\dots,\star)^T \
+0</em>{n-1} &amp; 0
+\end{pmatrix}
+=
+\mathbf{0}_{n\times n}
+\end{equation*}
+und der Nilpotenzindex von <span class="math notranslate nohighlight">\( A \)</span> ist höchstens <span class="math notranslate nohighlight">\( \ell+1 \leq n \)</span>.
+\end{proof}</p>
+<p>Wir wollen im folgenden Satz Kriterien herleiten, die aussagen wann eine obere, rechte Dreiecksmatrix nilpotent ist.
+\begin{satz}\label{satz:nilpotent_eigenschaften}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n\times n}\)</span> eine obere, rechte Dreiecksmatrix. Dann gelten die folgenden Aussagen:
+\begin{enumerate}[i)]
+\item <span class="math notranslate nohighlight">\(A\)</span> ist genau dann nilpotent, wenn alle Diagonalelemente <span class="math notranslate nohighlight">\(a_{ii}, 1\leq i\leq n\)</span>, gleich <span class="math notranslate nohighlight">\(0\)</span> sind.
+\item <span class="math notranslate nohighlight">\(A\)</span> ist genau dann nilpotent und diagonalisierbar, wenn <span class="math notranslate nohighlight">\(A\)</span> die Nullmatrix <span class="math notranslate nohighlight">\(\mymathbb{0} \in \mathbb{K}^{n \times n}\)</span> ist.
+\item Ist <span class="math notranslate nohighlight">\(A\)</span> nilpotent, so hat <span class="math notranslate nohighlight">\(A\)</span> nur den Eigenwert <span class="math notranslate nohighlight">\(0\)</span>.
+\end{enumerate}
+\end{satz}
+\begin{proof}
+~\[-0.5cm]
+\begin{enumerate}[i)]
+\item Man kann leicht zeigen, dass für eine obere, rechte Dreiecksmatrix <span class="math notranslate nohighlight">\(A\)</span> stets gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A^j \ = \
+\begin{pmatrix}
+a_{11}^j &amp;  &amp; *\\
+ &amp; \ddots &amp; \\
+ 0 &amp; &amp; a_{nn}^j
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Damit <span class="math notranslate nohighlight">\(A\)</span> nilpotent ist, muss also für alle Diagonalelemente <span class="math notranslate nohighlight">\(a_{ii} = 0, 1 \leq i \leq n\)</span>, gelten.</p>
+<p>Sei umgekehrt <span class="math notranslate nohighlight">\(A\)</span> eine obere, rechte Dreiecksmatrix deren Diagonalelemente <span class="math notranslate nohighlight">\(a_{ii} = 0\)</span> sind für <span class="math notranslate nohighlight">\(1 \leq i \leq n\)</span>. Dann folgt die Behauptung direkt mit Lemma \ref{lem:dreieck_nilpotent}.
+\item Falls <span class="math notranslate nohighlight">\(A = 0\)</span> die Nullmatrix ist, so ist <span class="math notranslate nohighlight">\(A\)</span> nilpotent vom Index <span class="math notranslate nohighlight">\(1\)</span> und trivialerweise diagonalisierbar.</p>
+<p>Sei umgekehrt <span class="math notranslate nohighlight">\(A\)</span> nilpotent und diagonalisierbar, dann existiert eine reguläre Matrix <span class="math notranslate nohighlight">\(S \in \GL(n; \mathbb{K})\)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+S \cdot A \cdot S^{-1} \ = \
+\begin{pmatrix}
+\lambda_1 &amp; &amp; \\
+&amp; \ddots &amp; \\
+&amp; &amp; \lambda_n
+\end{pmatrix} \ \eqqcolon \ D,
+\end{equation*}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(\lambda_i, 1 \leq i \leq n\)</span>, die Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span> sind.
+Sei <span class="math notranslate nohighlight">\(k\)</span> der Nilpotenzindex von <span class="math notranslate nohighlight">\(A\)</span>.
+Wie man leicht einsieht gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D^k \ = \ (S \cdot A \cdot S^{-1})^k \ = \ S \cdot A^k \cdot S^{-1} \ = \
+\begin{pmatrix}
+\lambda_1^k &amp; &amp; \\
+&amp; \ddots &amp; \\
+&amp; &amp; \lambda_n^k
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(A^k = 0\)</span> die Nullmatrix ist, folgt schon, dass <span class="math notranslate nohighlight">\(\lambda_i = 0, 1 \leq i \leq n\)</span>, gelten muss.
+Darum ist auch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \ S^{-1} \cdot D \cdot S \ = \ 0.
+\end{equation*}\]</div>
+<p>\item Wir führen einen Beweis über Widerspruch. Nehmen wir an, dass die Behauptung nicht gelte, dann existiert ein Eigenwert <span class="math notranslate nohighlight">\(\lambda \neq 0\)</span> und ein zugehörigen Eigenvektor <span class="math notranslate nohighlight">\(v \neq \vec{0}\)</span>, so dass <span class="math notranslate nohighlight">\(Av = \lambda v\)</span>.</p>
+<p>Da <span class="math notranslate nohighlight">\(A\)</span> nilpotent ist, existiert ein Index <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span>, so dass <span class="math notranslate nohighlight">\(A^{k-1} \neq 0\)</span>, jedoch <span class="math notranslate nohighlight">\(A^k = 0\)</span> gilt.
+Aus der Eigenwertgleichung können wir folgern, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+0 \ = \ A^kv \ = \ A^{k-1} \lambda v \ = \ \lambda^k v.
+\end{equation*}\]</div>
+<p>Daraus folgt aber, dass <span class="math notranslate nohighlight">\(\lambda = 0\)</span> oder <span class="math notranslate nohighlight">\(v = 0\)</span> gilt, was zum Widerspruch führt.
+\end{enumerate}
+\end{proof}</p>
+<p>Der folgende Satz sagt uns, dass wir für jeden nilpotenten Endomorphismus eine darstellende Matrix finden können, die eine strikte obere, rechte Dreiecksgestalt besitzt.
+\begin{satz}\label{satz:nilpotenz}
+Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein nilpotenter Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
+Dann existiert eine Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span>, so dass die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F)\)</span> von <span class="math notranslate nohighlight">\(F\)</span> bezüglich <span class="math notranslate nohighlight">\(B\)</span> eine obere, rechte Dreiecksmatrix mit Nullen auf der Hauptdiagonale ist, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+M_B(F) \ = \
+\begin{pmatrix}
+0 &amp; &amp; * \\
+   &amp; \ddots &amp; \\
+0 &amp; &amp; 0
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>und es gilt <span class="math notranslate nohighlight">\(P_F(t) = (-1)^n t^n\)</span>.
+\end{satz}
+\begin{proof}
+Wir führen den Beweis durch Induktion über <span class="math notranslate nohighlight">\(n = \dim V\)</span>.</p>
+<p>\textbf{Induktionsanfang: <span class="math notranslate nohighlight">\(n=1\)</span>}\
+Die Aussage ist trivialerweise erfüllt, da für einen nilpotenten Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> eines eindimensionalen Vektorraums <span class="math notranslate nohighlight">\(V\)</span> gelten muss <span class="math notranslate nohighlight">\(F \equiv 0\)</span>.
+Dadurch ist die darstellende Matrix für eine beliebige Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span> gegeben durch <span class="math notranslate nohighlight">\(M_B(F) = 0\)</span> und das charakteristische Polynom ist dementsprechend <span class="math notranslate nohighlight">\(P_F(t) = 0-t = (-1)^1 \cdot t^1\)</span>.</p>
+<p>\textbf{Induktionsschritt: <span class="math notranslate nohighlight">\(n-1 \rightarrow n\)</span>}\
+Die Induktionsannahme ist, dass die Aussage bereits für den Fall <span class="math notranslate nohighlight">\(n-1\)</span> gezeigt wurde.
+Sei <span class="math notranslate nohighlight">\(F\)</span> nun ein nilpotenter Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span> mit <span class="math notranslate nohighlight">\(F \not \equiv 0\)</span> (da ansonsten die Situation vom Induktionsanfang vorliegt).
+Da nach Satz \ref{satz:nilpotent_eigenschaften} Null der einzige Eigenwert von <span class="math notranslate nohighlight">\(F\)</span> ist wissen wir, dass <span class="math notranslate nohighlight">\(\dim \Bild(F(V)) &lt; \dim V\)</span> gilt und somit muss schon gelten, dass der Kern von <span class="math notranslate nohighlight">\(F\)</span> nicht-trivial ist, d.h., <span class="math notranslate nohighlight">\(\Kern F \neq \vec{0}\)</span>.</p>
+<p>Sei nun <span class="math notranslate nohighlight">\(v_1 \in \Kern(F), v \neq \vec{0}\)</span>. Wir ergänzen <span class="math notranslate nohighlight">\(v_1\)</span> zu einer Basis <span class="math notranslate nohighlight">\(B' = (v_1, w_2, \ldots, w_n)\)</span> von <span class="math notranslate nohighlight">\(V\)</span>.
+Mit Hilfe des Algorithmus \ref{alg:trigonalisierung} zur Trigonalisierung einer Matrix erhalten wir also:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+M_{B'}(F) \ = \
+\begin{pmatrix}
+0 &amp; a_{12} &amp; \dots &amp; a_{1n} \\
+\vdots &amp; &amp; \\
+\vdots &amp; &amp; B &amp; \\
+0 &amp; &amp; &amp;
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(W \coloneqq \lin(\lbrace w_2, \ldots, w_n \rbrace)\)</span> im Allgemeinen nicht <span class="math notranslate nohighlight">\(F\)</span>-invariant ist, definieren wir die linearen Abbildungen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+H(w_j) \ = \ a_{1j} v_1 \quad \text{ und } \quad G(w_j) \ = \ a_{2j}w_2 + \ldots + a_{nj}w_n.
+\end{equation*}\]</div>
+<p>Dann können wir den Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> schreiben als: <span class="math notranslate nohighlight">\(F(w) = H(w) + G(w)\)</span> für alle <span class="math notranslate nohighlight">\(w \in W\)</span>.
+Bezüglich der Basis <span class="math notranslate nohighlight">\(\tilde{B}' = (w_2, \ldots, w_n)\)</span> gilt dann <span class="math notranslate nohighlight">\(B = M_{\tilde{B}'}(G)\)</span>.
+Außerdem gilt, dass <span class="math notranslate nohighlight">\(\operatorname{Bild}(H) \subset \Kern(F)\)</span> und <span class="math notranslate nohighlight">\(G\)</span> ist nilpotent, da auf Grund der Nilpotenz von <span class="math notranslate nohighlight">\(F\)</span> für alle <span class="math notranslate nohighlight">\(w \in W\)</span> gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+0 \ = \ F^k(w) \ &amp;= \ F^{k-1}(F(w)) \\
+&amp;= \ F^{k-1}(H(w) + G(w)) \ = \ F^{k-1}(\lambda v_1 + G(w)) \\
+&amp;= \ F^{k-1}(G(w)) \ = \ \dots \ = \ F^{k-2}(G^2(w)) \ = \ \ldots \ = \ G^k(w).
+\end{split}
+\end{equation*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(\dim W = \dim V - 1\)</span> gilt, können wir auf <span class="math notranslate nohighlight">\(G\)</span> die Induktionsvoraussetzung anwenden, d.h., es gibt eine Basis <span class="math notranslate nohighlight">\(\tilde{B} = (v_2, \ldots, v_n)\)</span> von <span class="math notranslate nohighlight">\(W\)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+M_{\tilde{B}}(G) \ = \
+\begin{pmatrix}
+0 &amp; &amp; * \\
+   &amp; \ddots &amp; \\
+0 &amp; &amp; 0
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>Damit folgt schon für die Basis <span class="math notranslate nohighlight">\(B = (v_1, \ldots, v_n)\)</span> von <span class="math notranslate nohighlight">\(V\)</span>, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+M_B(F) \ = \
+\begin{pmatrix}
+0 &amp; &amp; * \\
+   &amp; \ddots &amp; \\
+0 &amp; &amp; 0
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>und das charakteristische Polynom ist dementsprechend <span class="math notranslate nohighlight">\(P_F(t) \ = \ (-1)^nt^n\)</span>.
+\end{proof}</p>
+<p>Man kann sogar noch mehr zeigen als die Aussage der vorangegangenen Sätze und Lemmata, nämlich eine vollständige Charakterisierung von nilpotenten Endomorphismen, wie der folgende Satz zeigt.
+\begin{satz}\label{satz:nilpotent_charakterisierung}
+Sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>. Dann sind folgende Aussagen äquivalent:
+\begin{enumerate}[i)]
+\item <span class="math notranslate nohighlight">\(F\)</span> ist nilpotent.
+\item <span class="math notranslate nohighlight">\(F^k = 0\)</span> für ein <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span>.
+\item Das charakterstische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span> hat die Form <span class="math notranslate nohighlight">\(P_F(t) = (-1)^n t^n\)</span>.
+\item Es gibt eine Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span>, so dass die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F)\)</span> von <span class="math notranslate nohighlight">\(F\)</span> die folgende Gestalt hat:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+M_B(F) \ = \
+\begin{pmatrix}
+0 &amp; &amp; * \\
+   &amp; \ddots &amp; \\
+0 &amp; &amp; 0
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>\end{enumerate}
+\end{satz}
+\begin{proof}
+Siehe \cite[Satz 4.5.7]{fischer}
+\end{proof}</p>
+<p>\begin{remark}
+Nilpotente Endomorphismen bzw. Matrizen besitzen nur den Eigenwert <span class="math notranslate nohighlight">\(\lambda = 0\)</span>, daher haben ihre darstellenden Matrizen keinen vollen Rang. Andersherum gibt es jedoch quadratische Matrizen, die nicht vollen Rang haben, jedoch nicht nilpotent sind, z.B. die Matrix</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ \coloneqq \
+\begin{pmatrix}
+1 &amp; 1\\
+0 &amp; 0
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>mit <span class="math notranslate nohighlight">\(A^k = A\)</span> für alle <span class="math notranslate nohighlight">\(k \in \mathbb{K}\)</span> und den Eigenwerten <span class="math notranslate nohighlight">\(\lambda_1 = 0\)</span> und <span class="math notranslate nohighlight">\(\lambda_2 = 1\)</span> von <span class="math notranslate nohighlight">\(A\)</span>.
+\end{remark}</p>
+<p>Eine wichtige Erkenntnis zur Konstruktion der Jordanschen Normalform ist, dass der Kern des Endomorphismus <span class="math notranslate nohighlight">\(G \coloneqq (F - \lambda \operatorname{Id}_V)\)</span> mit jeder Potenz von <span class="math notranslate nohighlight">\(G\)</span> größer werden kann, wie folgendes Lemma zeigt.
+\begin{lemma}\label{lem:einbettung_kern}
+Sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus des endlich-dimensionalen <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span> mit Eigenwert <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span>. Dann gilt für alle <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Kern(F - \lambda \operatorname{Id}_V) \ \subset \ \Kern([F - \lambda \operatorname{Id}_V]^k).
+\end{equation*}\]</div>
+<p>\end{lemma}
+\begin{proof}
+Sei <span class="math notranslate nohighlight">\(G \coloneqq (F - \lambda \operatorname{Id}_V)\)</span>. Wir müssen zeigen, dass für beliebiges <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span> gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+v \in \Kern(G) \ \Rightarrow \ v \in \Kern(G^k), \quad \text{ für alle } v\in V.
+\end{equation*}\]</div>
+<p>Sei also <span class="math notranslate nohighlight">\(v \in \Kern(G)\)</span>, dann gilt offensichtlich <span class="math notranslate nohighlight">\(G v = 0\)</span>. Sei nun <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span> eine beliebige Potenz, dann betrachten wir</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+G^k v \ = \ G^{k-1} \underbrace{G v}_{= 0} \ = \ 0.
+\end{equation*}\]</div>
+<p>Daraus folgt also schon, dass <span class="math notranslate nohighlight">\(v \in \Kern(G^k)\)</span> gilt.
+\end{proof}</p>
+<p>Nach Satz \ref{satz:diagonalisierbarkeit} wissen wir, dass sich der Vektorraum <span class="math notranslate nohighlight">\(V\)</span> genau dann in eine direkte Summe von <span class="math notranslate nohighlight">\(F\)</span>-invarianten Eigenräumen <span class="math notranslate nohighlight">\(\Eig(F; \lambda_i), i=1,\ldots,k,\)</span> zerlegen lässt, wenn die Dimension jedes Eigenraums der algebraischen Vielfachheit <span class="math notranslate nohighlight">\(r_i \in \mathbb{N}\)</span> der Nullstellen des charakteristischen Polynoms entspricht, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\dim \Eig(F; \lambda_i) \ = \ r_i, ¸\quad \text{ für } i=1,\ldots,k.
+\end{equation*}\]</div>
+<p>Falls die Dimension eines Eigenraums <span class="math notranslate nohighlight">\(\Eig(F; \lambda_i)\)</span> jedoch zu klein ist, so lässt sie sich durch Potenzieren mit <span class="math notranslate nohighlight">\(r_i\)</span> passend vergrößern, denn nach Lemma \ref{lem:einbettung_kern} gilt:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e837d106-d8ef-4e36-ac0a-327a364754ef">
+<span class="eqno">(1.14)<a class="headerlink" href="#equation-e837d106-d8ef-4e36-ac0a-327a364754ef" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:eigenraum_potenz} 
+\Eig(F; \lambda_i) \ = \ \Kern(F - \lambda_i \operatorname{Id}_V) \ \subset \ \Kern([F - \lambda_i \operatorname{Id}_V]^{r_i}).
+\end{equation}\]</div>
+<p>Die Einbettung in \eqref{eq:eigenraum_potenz} motiviert folgende Definition des Hauptraums.
+\begin{definition}[Hauptraum und Hauptvektoren]
+Sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus des <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span>.
+Sei außerdem <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> ein Eigenwert von <span class="math notranslate nohighlight">\(F\)</span> der algebraischen Vielfachheit <span class="math notranslate nohighlight">\(r \geq 1\)</span>.
+Dann definieren wir den \emph{Hauptraum} oder \emph{verallgemeinerten Eigenraum} <span class="math notranslate nohighlight">\(\Hau(F; \lambda)\)</span> von <span class="math notranslate nohighlight">\(F\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda\)</span> als Kern der <span class="math notranslate nohighlight">\(r\)</span>-fachen Anwendung von <span class="math notranslate nohighlight">\((F - \lambda \operatorname{Id}_V)\)</span>, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Hau(F; \lambda) \ \coloneqq \ \Kern([F - \lambda \operatorname{Id}_V]^r).
+\end{equation*}\]</div>
+<p>Die Vektoren <span class="math notranslate nohighlight">\(v \in \Hau(F; \lambda)\)</span> werden \emph{Hauptvektoren} der Stufe <span class="math notranslate nohighlight">\(d \geq 1\)</span> genannt, wenn gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+[F - \lambda \operatorname{Id}_V]^d (v) \ = \ 0, \quad [F - \lambda \operatorname{Id}_V]^{d-1} (v) \ \neq \ 0.
+\end{equation*}\]</div>
+<p>Damit ergibt sich, dass alle Eigenvektoren Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(d=1\)</span> sind.
+\end{definition}</p>
+<p>Um zu verstehen, wie sich die Potenzierung der Endomorphismen auswirkt betrachten wir einen Eigenwert <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> des Endomorphismus <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> und Potenzen des Endomorphimus <span class="math notranslate nohighlight">\(G \coloneqq F - \lambda \operatorname{Id}_V\)</span>.
+Wir stellen fest, dass wir folgende Inklusionsketten erhalten:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lbrace{\vec{0}\rbrace} &amp;\subset \Kern G \subset \Kern G^2 \subset \ldots \subset \Kern G^l ,\\
+V &amp;\supset \Bild G \supset \Bild G^2 \supset \ldots \supset \Bild G^l.
+\end{align*}\]</div>
+<p>Außerdem gilt nach dem Dimensionssatz \cite[Satz 2.2.4]{fischer}, dass <span class="math notranslate nohighlight">\(\dim \Kern G^l + \dim \Bild G^l = \dim V\)</span> ist.
+Jedoch sind die Mengen im Allgemeinen nicht disjunkt wie bei einer direkten Summe, d.h., wir haben nicht</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Kern G^l \cap \Bild G^l \ \neq \ \lbrace{\vec{0}\rbrace}.
+\end{equation*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(V\)</span> jedoch endlich-dimensional ist, können die beiden obigen Inklusionsketten nicht beliebig auf- bzw. absteigen.</p>
+<p>Das folgende nützliche Lemma charakterisiert die Eigenschaften dieser Inklusionsketten noch genauer.
+\begin{lemma}[Lemma von Fitting]\label{lem:fitting}
+Sei <span class="math notranslate nohighlight">\(G \colon V \rightarrow V\)</span> ein Endomorphismus des <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span>.
+Sei außerdem <span class="math notranslate nohighlight">\(\lambda = 0\)</span> ein Eigenwert von <span class="math notranslate nohighlight">\(G\)</span> mit algebraischer Vielfachheit <span class="math notranslate nohighlight">\(r \in \mathbb{N}, r \geq 1\)</span>.
+Wir betrachten die kleinste Potenz <span class="math notranslate nohighlight">\(d \in \mathbb{N}\)</span> für die der Kern von <span class="math notranslate nohighlight">\(G\)</span> sich nicht mehr ändert, d.h.,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0037ace6-bf8e-44d1-a7bc-3523f17d541d">
+<span class="eqno">(1.15)<a class="headerlink" href="#equation-0037ace6-bf8e-44d1-a7bc-3523f17d541d" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:fitting_index}
+d \ \coloneqq \ \min\lbrace{l \in \mathbb{N} \: | \: \Kern(G^l) \, = \, \Kern(G^{l+1}) \rbrace},
+\end{equation}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(G^0 \coloneqq \operatorname{Id}_V\)</span> gilt.
+Dann gelten die folgenden Aussagen:
+\begin{enumerate}
+\item <span class="math notranslate nohighlight">\(d \, = \, \min \lbrace{l \in \mathbb{N} \: | \: \Bild(G^l) \, = \, \Bild(G^{l+1}) \rbrace}\)</span>,
+\item <span class="math notranslate nohighlight">\(\Kern(G^{d+i}) = \Kern(G^{d}), \quad \Bild(G^{d+i}) = \Bild(G^{d})\)</span> \quad für alle <span class="math notranslate nohighlight">\(i \in \mathbb{N}\)</span>,
+\item Die Räume <span class="math notranslate nohighlight">\(U \coloneqq \Kern(G^d)\)</span> und <span class="math notranslate nohighlight">\(W \coloneqq \Bild(G^d)\)</span> sind <span class="math notranslate nohighlight">\(G\)</span>-invariant,
+\item <span class="math notranslate nohighlight">\((G|_{U})^d \ = \ 0\)</span> \ und \ <span class="math notranslate nohighlight">\(G|_{W} \colon W \rightarrow W\)</span> ist ein Isomorphismus,
+\item <span class="math notranslate nohighlight">\(V \ = \ U \oplus W\)</span>.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Wir nehmen an <span class="math notranslate nohighlight">\(d \in \mathbb{N}\)</span> sei der kleinste Index mit der Eigenschaft aus \eqref{eq:fitting_index}.
+Dann können wir mit der Dimensionsformel \cite[Satz 2.2.4]{fischer} folgern, dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+\Kern(G^{d+1}) \, = \, \Kern(G^{d}) \ &amp;\Leftrightarrow \ \dim(\Kern(G^{d+1})) \, = \, \dim(\Kern(G^{d})) \\
+&amp;\Leftrightarrow \ \dim(\Bild(G^{d+1})) \, = \, \dim(\Bild(G^{d})) \\
+&amp;\Leftrightarrow \ \Bild(G^{d+1}) \, = \, \Bild(G^{d}).
+\end{split}
+\end{equation*}\]</div>
+<p>Das bedeutet schon, dass die Abbildung <span class="math notranslate nohighlight">\(G|_W\)</span> für <span class="math notranslate nohighlight">\(W \coloneqq \Bild(G^d)\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+G|_W \colon W \rightarrow \Bild(G^{d+1}) = W
+\end{equation*}\]</div>
+<p>ein Isomorphismus ist.
+Aus dieser Beobachtung folgen schon die ersten drei Aussagen, sowie der zweite Teil der vierten Aussage.
+Die Nilpotenz der Abbildung <span class="math notranslate nohighlight">\(G|_U\)</span> mit Nilpotenzindex <span class="math notranslate nohighlight">\(d\)</span> ist auch klar, da für alle <span class="math notranslate nohighlight">\(v \in U = \Kern(G^k)\)</span> gilt, dass <span class="math notranslate nohighlight">\(G^d (v) = 0\)</span>  ist.</p>
+<p>Sei nun <span class="math notranslate nohighlight">\(v \in U \cap W\)</span>, dann ist <span class="math notranslate nohighlight">\(G^d(v) = 0\)</span> und es muss ein <span class="math notranslate nohighlight">\(w \in V\)</span> geben, so dass <span class="math notranslate nohighlight">\(G^d(w) = v\)</span> ist.
+Setzen wir die erste Beobachtung in die zweite Beobachtung ein erhalten wir, dass auch <span class="math notranslate nohighlight">\(G^{2d}(w) = 0\)</span> sein muss und somit gilt nach der zweiten Aussage des Lemmas, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+w \in \Kern(G^{2d}) = \Kern(G^{d}).
+\end{equation*}\]</div>
+<p>Damit folgt aber schon, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+0 \ = \ G^d(w) \ = \ v,
+\end{equation*}\]</div>
+<p>und somit gilt <span class="math notranslate nohighlight">\(V = U \oplus W\)</span>.
+\end{proof}</p>
+<p>Durch die Betrachtung von Haupträumen anstatt Eigenräumen lässt sich eine mögliche Differenz zwischen algebraischen und geometrischen Vielfachheiten der Eigenwerte eines Endomorphismus ausgleichen.
+Wie wir im folgenden Satz sehen werden lässt sich der Vektorraum <span class="math notranslate nohighlight">\(V\)</span> nun in eine innere direkte Summe der Haupträume zerlegen.
+Dies war bisher nur für diagonalisierbare Endomorphismen mit Hilfe der Eigenräume in Satz \ref{satz:diagonalisierbarkeit} möglich und bringt uns einen großen Schritt in Richtung der Jordanschen Normalform voran.
+\begin{satz}[Hauptraumzerlegung]\label{satz:hauptraumzerlegung}
+Sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus des <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span> und sei</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_F(t) \ = \ \pm (t - \lambda_1)^{r_1} \cdot \ldots \cdot (t  - \lambda_k)^{r_k}
+\end{equation*}\]</div>
+<p>das charakteristische Polynom von <span class="math notranslate nohighlight">\(F\)</span> mit paarweisen verschiedenen <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_k \in \mathbb{K}\)</span>, die die Eigenwerte von <span class="math notranslate nohighlight">\(F\)</span> darstellen und deren algebraischen Vielfachheiten <span class="math notranslate nohighlight">\(r_i \in \mathbb{N}, r_i \geq 1\)</span> sind.
+Es sei außerdem <span class="math notranslate nohighlight">\(V_i \coloneqq \Hau(F; \lambda_i) \subset V\)</span> für jedes <span class="math notranslate nohighlight">\(\lambda_i\)</span> der entsprechende Hauptraum.
+Dann gelten die folgenden Aussagen:
+\begin{enumerate}
+\item <span class="math notranslate nohighlight">\(V \ = \ V_1 \, \oplus \ldots \oplus \, V_k\)</span>
+\item <span class="math notranslate nohighlight">\(F(V_i) \subset V_i\)</span> und <span class="math notranslate nohighlight">\(\dim V_i = r_i\)</span> für <span class="math notranslate nohighlight">\(i = 1,\ldots,k\)</span>
+\item <span class="math notranslate nohighlight">\(F\)</span> hat eine Zerlegung <span class="math notranslate nohighlight">\(F = F_D + F_N\)</span> mit:
+\begin{enumerate}[a)]
+\item <span class="math notranslate nohighlight">\(F_D\)</span> ist diagonalisierbar
+\item <span class="math notranslate nohighlight">\(F_N\)</span> ist nilpotent
+\item <span class="math notranslate nohighlight">\(F_N\)</span> und <span class="math notranslate nohighlight">\(F_D\)</span> kommutieren, d.h., <span class="math notranslate nohighlight">\(F_D \circ F_N = F_N \circ F_D\)</span>
+\end{enumerate}
+\end{enumerate}
+\end{satz}
+\begin{proof}
+Wir führen den Beweis mittels vollständiger Induktion über die Zahl <span class="math notranslate nohighlight">\(k \geq 1\)</span> der paarweise verschiedenen Eigenwerte von <span class="math notranslate nohighlight">\(F\)</span>.
+~\[0.3cm]
+\textbf{Induktionsanfang: <span class="math notranslate nohighlight">\(k=1\)</span>}\
+Für <span class="math notranslate nohighlight">\(k=1\)</span> existiert nur ein Eigenwert <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> von <span class="math notranslate nohighlight">\(F\)</span>.
+Das bedeutet, dass das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> von der Form ist</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_F(t) \ = \ \pm (t - \lambda)^n
+\end{equation*}\]</div>
+<p>und somit hat <span class="math notranslate nohighlight">\(\lambda\)</span> die algebraische Vielfachheit <span class="math notranslate nohighlight">\(n = \dim(V)\)</span>.
+Damit gilt für <span class="math notranslate nohighlight">\(V_1 = \Hau(F; \lambda)\)</span> schon</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+V_1 \ = \ \Kern([F - \lambda \operatorname{Id}_V]^n) \ = \ V,
+\end{equation*}\]</div>
+<p>da <span class="math notranslate nohighlight">\(F - \lambda \operatorname{Id}_V\)</span> nilpotent ist mit Nilpotenzindex <span class="math notranslate nohighlight">\(k \leq n\)</span> und wir erhalten damit die triviale Zerlegung aus der ersten Behauptung.</p>
+<p>Da <span class="math notranslate nohighlight">\(F\)</span> Endomorphismus ist folgt trivialerweise, dass <span class="math notranslate nohighlight">\(F(V_1) \subset V_1 = V\)</span> und <span class="math notranslate nohighlight">\(\dim(V_1) = \dim(V) = n\)</span> gilt, was die zweite Behauptung zeigt.</p>
+<p>Da das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span> in Linearfaktoren zerfällt wissen wir mit Satz \ref{satz:trigonalisierbarkeit}, dass eine Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span> existiert, so dass die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F)\)</span> eine obere, rechte Dreiecksgestalt hat.
+Wir können die darstellende Matrix dann zerlegen in <span class="math notranslate nohighlight">\(M_B(F) = D + N\)</span>, wobei <span class="math notranslate nohighlight">\(D\)</span> eine Diagonalmatrix der Form <span class="math notranslate nohighlight">\(D = \lambda E_n\)</span> ist und <span class="math notranslate nohighlight">\(N\)</span> eine strikte obere, rechte Dreiecksmatrix ist.
+Mit Satz \ref{satz:nilpotent_charakterisierung} wissen wir, dass <span class="math notranslate nohighlight">\(N\)</span> nilpotent sein muss.
+Eine einfache Rechnung zeigt, dass <span class="math notranslate nohighlight">\(D\)</span> und <span class="math notranslate nohighlight">\(N\)</span> kommutieren mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D \cdot N \ = \ \lambda \cdot N \ = \ N \cdot D,
+\end{equation*}\]</div>
+<p>womit die dritte Behauptung gezeigt ist.
+~\[0.3cm]
+\textbf{Induktionsschritt: <span class="math notranslate nohighlight">\(k-1 \rightarrow k\)</span>}\
+Die Induktionsannahme ist, dass die Aussage bereits für den Fall <span class="math notranslate nohighlight">\(k-1\)</span> gezeigt wurde.
+Wir definieren uns also für den Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 \in \mathbb{K}\)</span> von <span class="math notranslate nohighlight">\(F\)</span> mit algebraischer Vielfachheit <span class="math notranslate nohighlight">\(r_1 \in \mathbb{N}, r_1 \geq 1\)</span> die Abbildung <span class="math notranslate nohighlight">\(G \ \coloneqq \ F - \lambda_1 \operatorname{Id}_V\)</span>. Seien <span class="math notranslate nohighlight">\(A\)</span> eine darstellende Matrix von <span class="math notranslate nohighlight">\(G\)</span> und <span class="math notranslate nohighlight">\(B\)</span> eine darstellende Matrix von <span class="math notranslate nohighlight">\(F\)</span> bezüglich einer beliebigen gemeinsamen Basis. Dann gilt offensichtlich <span class="math notranslate nohighlight">\(A = B - \lambda_1 I_n\)</span>. Damit sehen wir nun ein, dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+P_G(t-\lambda_1) \ &amp;= \ P_A(t - \lambda_1) \ = \ \det(A - (t - \lambda_1)I_n) \ \\
+&amp;= \ \det(B - \lambda_1I_n - (t - \lambda_1)I_n) \ = \ \det(B - tI_n) \ = \ P_B(t) \ = \ P_F(t),
+\end{split}
+\end{equation*}\]</div>
+<p>womit schon folgt, dass <span class="math notranslate nohighlight">\(0\)</span> ein Eigenwert von <span class="math notranslate nohighlight">\(G\)</span> mit algebraischer Vielfachheit <span class="math notranslate nohighlight">\(r_1\)</span> ist, da</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_F(\lambda_1) \ = \ P_G(\lambda_1 - \lambda_1) \ = \ P_G(0). 
+\end{equation*}\]</div>
+<p>Nach dem Lemma \ref{lem:fitting} von Fitting lässt sich <span class="math notranslate nohighlight">\(V\)</span> als direkte Summe schreiben mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+V \ = \ \operatorname{Haupt}(F; \lambda_1) \: \oplus \: \Bild(G^{r_1}).%\Bild( [F - \lambda_1 \operatorname{Id}_V]^{r_1} ).
+\end{equation*}\]</div>
+<p>Für <span class="math notranslate nohighlight">\(v \in \Hau(F; \lambda_1)\)</span> gilt, dass <span class="math notranslate nohighlight">\([F - \lambda_1 \operatorname{Id}_V]^{r_1} (v) = 0\)</span>.
+Außerdem sieht man durch die Kommutativität der Identität ein, dass</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e2386ce9-0ae7-4786-9d7f-299da1d85af4">
+<span class="eqno">(1.16)<a class="headerlink" href="#equation-e2386ce9-0ae7-4786-9d7f-299da1d85af4" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:kommutativ_identität}
+[F - \lambda_1 \operatorname{Id}_V] (F(v)) \ = \ (F^2 - \lambda_1 F)(v) \ = \ F \circ (F - \lambda_1 \operatorname{Id}_V)(v)
+\end{equation}\]</div>
+<p>und somit durch sukzessive Anwendung von \eqref{eq:kommutativ_identität} auch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+[F - \lambda_1 \operatorname{Id}_V]^{r_1}(F(v)) \ = \ F \circ \underbrace{[F - \lambda_1 \operatorname{Id}_V]^{r_1}(v)}_{=0} \ = \ 0.
+\end{equation*}\]</div>
+<p>Das zeigt, dass <span class="math notranslate nohighlight">\(F(v) \in \Hau(F; \lambda_1)\)</span> für alle <span class="math notranslate nohighlight">\(v \in \Hau(F; \lambda_1)\)</span>, d.h, dass der Unterraum <span class="math notranslate nohighlight">\(\Hau(F; \lambda_1)\)</span> <span class="math notranslate nohighlight">\(F\)</span>-invariant ist.</p>
+<p>Für <span class="math notranslate nohighlight">\(v \in V\)</span> gilt, dass <span class="math notranslate nohighlight">\(G^{r_1}(v) \eqqcolon w \in \Bild(G^{r_1})\)</span> ist.
+Außerdem sehen wir ein, dass mit <span class="math notranslate nohighlight">\(F = (G + \lambda_1 \operatorname{Id}_V)\)</span> gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F(w) \ = \ (G + \lambda_1 \operatorname{Id}_V)(w) \ = \ G(w) + \lambda_1 w = \ G \circ G^{r_1}(v) + \lambda_1 w \ \in \Bild(G^{r_1}),
+\end{equation*}\]</div>
+<p>da <span class="math notranslate nohighlight">\(\Bild(G^{r_1+1}) \subset \Bild(G^{r_1})\)</span> ist.
+Das zeigt, dass <span class="math notranslate nohighlight">\(F(w) \in \Bild([F-\lambda_1 \operatorname{Id}_V]^{r_1})\)</span> für alle <span class="math notranslate nohighlight">\(w \in \Bild([F-\lambda_1 \operatorname{Id}_V]^{r_1})\)</span> ist, d.h., der Unterraum <span class="math notranslate nohighlight">\(\Bild([F-\lambda_1 \operatorname{Id}_V]^{r_1})\)</span> ist auch <span class="math notranslate nohighlight">\(F\)</span>-invariant.</p>
+<p>Betrachten wir die Einschränkung <span class="math notranslate nohighlight">\(F|_W\)</span> von <span class="math notranslate nohighlight">\(F\)</span> auf den Unterraum <span class="math notranslate nohighlight">\(W\)</span> so stellen wir fest, dass das charakteristische Polynom <span class="math notranslate nohighlight">\(P_{F|_W}\)</span> in Linearfaktoren zerfällt mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_{F|_W}(t) \ = \ \pm (t - \lambda_2)^{r_2} \cdot \ldots \cdot (t - \lambda_k)^{r_k}.
+\end{equation*}\]</div>
+<p>Da wir nun einen Endomorphismus betrachten, der <span class="math notranslate nohighlight">\(k-1\)</span> verschiedene Eigenwerte besitzt und dessen charakteristischen Polynom in Linearfaktoren zerfällt, können wir die Induktionsvoraussetzung anwenden.
+Damit folgen direkt schon die ersten beiden Aussagen des Satzes.</p>
+<p>Die Zerlegung aus der dritten Aussage des Satzes erhält man durch die folgenden darstellenden Matrizen in Blockdiagonalgestalt, die existieren, da der Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> trigonalisierbar ist nach Satz \ref{satz:trigonalisierbarkeit}:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D \ \coloneqq \
+\begin{pmatrix}
+\lambda_1 E_{r_1} &amp; &amp; \\
+&amp; \ddots &amp; \\
+&amp; &amp; \lambda_k E_{r_k}
+\end{pmatrix}, \quad
+N \ \coloneqq \
+\begin{pmatrix}
+N_1 &amp; &amp; \\
+&amp; \ddots &amp; \\
+&amp; &amp; N_k
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Man kann durch Nachrechnen leicht zeigen, dass gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D \cdot N \ = \
+\begin{pmatrix}
+\lambda_1 N_1 &amp; &amp; \\
+&amp; \ddots &amp; \\
+&amp; &amp; \lambda_k N_k
+\end{pmatrix}
+\ = \ N \cdot D.
+\end{equation*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(N\)</span> und <span class="math notranslate nohighlight">\(D\)</span> die darstellenden Matrizen der Endomorphismen <span class="math notranslate nohighlight">\(F_D\)</span> und <span class="math notranslate nohighlight">\(F_N\)</span> sind, folgt die Kommutativität jener.
+\end{proof}</p>
+<p>Im Fall von Matrizen lässt sich die Aussage von Satz \ref{satz:hauptraumzerlegung} wie folgt formulieren.
+\begin{cor}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine Matrix, für die das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> in Linearfaktoren zerfällt, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_A(t) \ = \ \pm (t - \lambda_1)^{r_1} \cdot \ldots \cdot (t  - \lambda_k)^{r_k}.
+\end{equation*}\]</div>
+<p>Dann existiert eine invertierbare Matrix <span class="math notranslate nohighlight">\(S \in \GL(n; \mathbb{K})\)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+SAS^{-1} \ = \
+\tikz[baseline=(M.west)]{%
+    \node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&amp;,  minimum height=1.2cm] (M) {%
+\lambda_1 I_{r_1} + N_1 \&amp; \&amp; 0\\
+ \&amp; \ddots \&amp; \\
+ 0 \&amp; \&amp; \lambda_k I_{r_k} + N_k \\
+  };
+\node[draw,fit=(M-1-1), inner sep=-1pt, minimum height=1.6cm] {};
+\node[draw,fit=(M-3-3),inner sep=-1pt, minimum height=1.6cm] {};
+} \ =: \ \tilde{A}.
+\end{equation*}\]</div>
+<p>Jede Blockmatrix für <span class="math notranslate nohighlight">\(i=1,\ldots,k\)</span> hat hierbei die Gestalt einer rechten oberen Dreiecksmatrix, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\lambda_i I_{r_i} + N_i \ = \ \begin{pmatrix} \lambda_i &amp; &amp; *\\ &amp; \ddots &amp; \\ 0 &amp; &amp; \lambda_i \end{pmatrix} \in \mathbb{K}^{r_i\times r_i}, \quad i=1,\ldots,k.
+\end{equation*}\]</div>
+<p>Insbesondere lässt sich die  Matrix <span class="math notranslate nohighlight">\(\tilde{A}\)</span> zerlegen in <span class="math notranslate nohighlight">\(\tilde{A} = D + N\)</span>, wobei <span class="math notranslate nohighlight">\(D\)</span> Diagonalmatrix und <span class="math notranslate nohighlight">\(N\)</span> nilpotent ist.
+Schließlich gilt außerdem, dass <span class="math notranslate nohighlight">\(D\)</span> und <span class="math notranslate nohighlight">\(N\)</span> kommutieren, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D \cdot N \ = \ N \cdot D.
+\end{equation*}\]</div>
+<p>\end{cor}</p>
+<p>\begin{remark}
+Die in Satz \ref{satz:hauptraumzerlegung} beschriebene Zerlegung <span class="math notranslate nohighlight">\(F = F_D + F_N\)</span> ist die einzige Zerlegung in einen diagonalisierbaren und einen nilpotenten Endomorphismus, die kommutieren.
+\end{remark}</p>
+<p>Die Hauptraumzerlegung liefert uns zwar eine Blockdiagonalmatrix, die der Gestalt einer vollbesetzten oberen, rechten Dreiecksmatrix vorzuziehen ist, jedoch geben wir uns noch nicht zufrieden mit diesem Resultat.
+Bisher haben wir die nilpotenten Anteile des Endomorphismus als gegeben angesehen.
+Es stellt sich jedoch heraus, dass es möglich ist diese durch geschickte Basiswahl in die Normalform einer Jordanmatrix in Definition \ref{def:normalform_nilpotent} zu überführen, wie der folgende Satz aussagt.
+\begin{satz}[Normalisierung nilpotenter Endomorphismen]\label{satz:normalform_nilpotent}
+Es sei <span class="math notranslate nohighlight">\( G \in \End(V) \)</span> nilpotent mit Nilpotenzindex <span class="math notranslate nohighlight">\( d \in \mathbb{N} \)</span> über einem <span class="math notranslate nohighlight">\( \mathbb{K} \)</span>-Vektorraum <span class="math notranslate nohighlight">\( V \)</span>.
+Dann gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    	\{0\}\subseteq
+    	\Kern G \subseteq \Kern G^2
+        \subseteq \dots \subseteq 
+        \Kern G^d = V
+\end{equation*}\]</div>
+<p>und es gibt Koeffizienten <span class="math notranslate nohighlight">\( s_i \in \mathbb{N}, 1 \leq i \leq d \)</span>, so dass eine Zahlpartition existiert mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+s_1\cdot 1 + s_2\cdot 2 \dots + s_d \cdot d = n \coloneqq \Dim V.
+\end{equation*}\]</div>
+<p>Die Koeffizienten der Zahlpartition sind für den Endomorphismus <span class="math notranslate nohighlight">\(G\)</span> eindeutig festgelegt durch die folgende Differenz:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+s_i \ = \ \Delta_i - \Delta_{i+1}, \quad 1 \leq i \leq d,
+\end{equation*}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(\Delta_i \coloneqq \dim \Kern(G_i) - \dim \Kern(G_{i-1})\)</span> gerade die Anzahl der Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(i\)</span> sind.</p>
+<p>Außerdem gibt es eine Basis <span class="math notranslate nohighlight">\( B \)</span> von <span class="math notranslate nohighlight">\( V \)</span>, so dass die darstellende Matrix von <span class="math notranslate nohighlight">\(G\)</span> bezüglich <span class="math notranslate nohighlight">\(B\)</span> eine Blockdiagonalmatrix mit folgender Gestalt ist</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ec994566-9672-41c5-8845-7307876aeca7">
+<span class="eqno">(1.17)<a class="headerlink" href="#equation-ec994566-9672-41c5-8845-7307876aeca7" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{equ:BJMF} % Block - Jordanmatrix - Form
+        M_B(G)=
+    	\diag\left(
+          	\underset{s_d-\mathrm{mal}}{\underbrace{J_d,\dots,J_d}},
+            \underset{s_{d-1}-\mathrm{mal}}{\underbrace{J_{d-1},\dots,J_{d-1}}},
+        \dots\underset{s_{1}-\mathrm{mal}}{\underbrace{J_{1},\dots,J_{1}}} \right)
+\end{equation}\]</div>
+<p>wobei, die Matrizen <span class="math notranslate nohighlight">\(J_k\)</span>, <span class="math notranslate nohighlight">\(1 \leq k \leq d\)</span>, <span class="math notranslate nohighlight">\(k\)</span>-dimensionale Jordanmatrizen aus Definition \ref{def:normalform_nilpotent} sind mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+      J_k \ = \ \begin{pmatrix}
+        	0 &amp; 1 &amp;   &amp;   &amp; &amp; \\
+              &amp; 0 &amp; 1 &amp;   &amp; \mathbf{0} &amp; \\
+              &amp;   &amp; 0 &amp; 1 \\
+              &amp; \mathbf{0}  &amp;   &amp;  \ddots &amp; \ddots 
+    \end{pmatrix} \in \mathbb{K}^{k \times k}.
+\end{equation*}\]</div>
+<p>\end{satz}
+\begin{proof}
+Siehe \cite[Theorem 4.6.5]{fischer}.
+\end{proof}
+Wir verzichten an dieser Stelle bewusst auf einen konstruktiven Beweis dieses wichtigen Satzes, da wir für ein vollständiges Verständnis viel mehr Theorie benötigen, die jedoch nicht Bestandteil dieser Vorlesung sein kann.
+Diese unbefriedigende Lücke in der Normalformentheorie werden wir stattdessen mit der Diskussion eines Algorithmus zur Überführung der nilpotenten Anteile des Endomorphismus in die Normalform aus Satz \ref{satz:normalform_nilpotent} füllen.</p>
+<p>\begin{algorithm}[Normalisierung einer nilpotenten Matrix]\label{alg:normalform_nilpotent}
+Sei <span class="math notranslate nohighlight">\(B\)</span> eine kanonische Basis des <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(A \coloneqq M_B(G)\)</span> darstellende Matrix eines nilpotenten Endomorphismus <span class="math notranslate nohighlight">\(G \colon V \rightarrow V\)</span> mit Nilpotenzindex <span class="math notranslate nohighlight">\(d \in \mathbb{N}\)</span>.</p>
+<p>Um eine Transformationsmatrix <span class="math notranslate nohighlight">\(S \in \GL(\mathbb{K}; n)\)</span> zu erhalten, so dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+N \ = \ S A S^{-1},
+\end{equation*}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(N\)</span> eine Jordanmatrix ist, müssen wir geschickt Basisvektoren aus den verschiedenen Kernen der Potenzen von <span class="math notranslate nohighlight">\(G\)</span> wählen.</p>
+<p>\paragraph{Vorbereitung}
+\begin{enumerate}
+\item Berechne Potenzen von <span class="math notranslate nohighlight">\(A\)</span> als <span class="math notranslate nohighlight">\(A^i\)</span> für <span class="math notranslate nohighlight">\(1 \leq i \leq d\)</span>
+\item Bestimme Basen <span class="math notranslate nohighlight">\(K_i\)</span> der jeweiligen Kerne <span class="math notranslate nohighlight">\(\Kern(A^i)\)</span> für <span class="math notranslate nohighlight">\(1 \leq i \leq d\)</span>
+\item Berechne die Differenzen der aufeinanderfolgenden Kerndimensionen:\ <span class="math notranslate nohighlight">\( \Delta_1 = \Dim\Kern(A) - \Dim\Kern(E_n)\)</span>,
+\dots, <span class="math notranslate nohighlight">\( \Delta_d = \Dim\Kern(A^d)-\Dim\Kern(A^{d-1}) \)</span>
+\end{enumerate}
+\paragraph{0. Schritt: Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(d\)</span>}
+\begin{enumerate}
+\item Wähle <span class="math notranslate nohighlight">\( s_d \coloneqq \Delta_d - \Delta_{d+1} = \Delta_d\)</span> Hauptvektoren <span class="math notranslate nohighlight">\( v^{(d)}_1,\dots, v_{s_d}^{(d)} \)</span> der Stufe <span class="math notranslate nohighlight">\(d\)</span> aus <span class="math notranslate nohighlight">\(K_d\)</span>
+%aus <span class="math notranslate nohighlight">\( K_d \)</span>, welche linear unabhängig zu Vektoren aus <span class="math notranslate nohighlight">\( \Kern(A^{(d-1)}) \)</span> sind.
+\item  Notiere das Schema für den Aufbau von Jordanketten wie folgt\[.5cm]
+\begin{tabular}{c | c | c |}
+<span class="math notranslate nohighlight">\( v^{(d)}_1 \)</span> &amp; <span class="math notranslate nohighlight">\( \dots \)</span>&amp; <span class="math notranslate nohighlight">\(  v_{s_d}^{(d)} \)</span> \
+\hline
+\end{tabular}.
+\end{enumerate}</p>
+<p>\paragraph{1. Schritt: Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(d-1\)</span>}
+\begin{enumerate}
+\item Multipliziere alle Vektoren des vorigen Schritts (die unterste Zeile im Schema) mit <span class="math notranslate nohighlight">\(A\)</span> und trage die resultierenden Vektoren
+<span class="math notranslate nohighlight">\( A v^{(d)}_1, \dots, A v_{s_d}^{(d)} \)</span> in eine neue Zeile \textbf{unter} das Schema ein.
+\item Ergänze um <span class="math notranslate nohighlight">\( s_{d-1} = \Delta_{d-1}-\Delta_{d}\)</span> Hauptvektoren
+<span class="math notranslate nohighlight">\( v^{(d-1)}_1,\dots, v_{s_{d-1}}^{(d-1)} \)</span> der Stufe <span class="math notranslate nohighlight">\(d-1\)</span> aus <span class="math notranslate nohighlight">\(K_{d-1}\)</span> und trage sie \textbf{rechts} neben die unterste Zeile des Schemas ein.
+\item Das resultierende Schema für den Aufbau von Jordanketten sollte die folgende Gestalt haben:\[.5cm]
+\begin{tabular}{c | c | c || c | c | c |}
+<span class="math notranslate nohighlight">\( v^{(d)}_1 \)</span> &amp; <span class="math notranslate nohighlight">\( \dots \)</span> &amp; <span class="math notranslate nohighlight">\( v_{s_d}^{(d)} \)</span> &amp; &amp; &amp; \
+\hline
+<span class="math notranslate nohighlight">\( A v^{(d)}_1 \)</span> &amp; <span class="math notranslate nohighlight">\( \dots \)</span> &amp; <span class="math notranslate nohighlight">\( A v_{s_d}^{(d)} \)</span> &amp;
+<span class="math notranslate nohighlight">\( v^{(d-1)}_1 \)</span> &amp; <span class="math notranslate nohighlight">\( \dots \)</span> &amp; <span class="math notranslate nohighlight">\( v_{s_{d-1}}^{(d-1)} \)</span>\
+\hline
+\end{tabular}.
+\end{enumerate}</p>
+<p>\paragraph{<span class="math notranslate nohighlight">\(i\)</span>. Schritt: Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(d-i\)</span>}
+\begin{enumerate}
+\item Multipliziere alle Vektoren des vorigen Schritts (die unterste Zeile im Schema) mit <span class="math notranslate nohighlight">\(A\)</span> und trage die resultierenden Vektoren
+in eine neue Zeile \textbf{unter} das Schema ein.
+\item Ergänze um <span class="math notranslate nohighlight">\( s_{d-i} = \Delta_{d-i} - \Delta_{d-i+1}\)</span> Hauptvektoren
+<span class="math notranslate nohighlight">\( v^{(d-i)}_1,\dots, v^{(d-i)}_{s_{d-i}} \)</span> der Stufe <span class="math notranslate nohighlight">\(d-i\)</span> aus <span class="math notranslate nohighlight">\(K_{d-i}\)</span> und trage sie \textbf{rechts} neben die unterste Zeile des Schemas ein.
+\item Das resultierende Schema für den Aufbau von Jordanketten sollte die folgende Gestalt haben:\[.5cm]
+\begin{tabular}{c | c | c || c || c | c | c |}
+\vdots &amp; \vdots &amp; \vdots &amp; &amp; &amp; &amp;  \
+\hline
+<span class="math notranslate nohighlight">\( A^{i-1}v^{(d)}_1 \)</span> &amp; <span class="math notranslate nohighlight">\(\dots \)</span> &amp; <span class="math notranslate nohighlight">\( A^{i-1}v^{(d)}_{s_d}\)</span> &amp;
+<span class="math notranslate nohighlight">\( \dots \)</span> &amp; &amp; &amp; \
+\hline
+<span class="math notranslate nohighlight">\( A^{i}v^{(d)}_1 \)</span> &amp; <span class="math notranslate nohighlight">\( \dots \)</span> &amp; <span class="math notranslate nohighlight">\( A^{i}v^{(d)}_{s_d} \)</span> &amp;
+<span class="math notranslate nohighlight">\( \dots \)</span> &amp;
+<span class="math notranslate nohighlight">\( v^{(d-
+            i)}_1 \)</span> &amp; <span class="math notranslate nohighlight">\( \dots \)</span> &amp; <span class="math notranslate nohighlight">\( v^{(d-i)}_{s_{d-i}} \)</span>\
+%\hline
+%<span class="math notranslate nohighlight">\( \uparrow \)</span> &amp; \dots &amp; <span class="math notranslate nohighlight">\( \uparrow \)</span>&amp; &amp; &amp; &amp; \
+%Jordankette &amp; &amp; Jordankette &amp; &amp; &amp; &amp;
+\end{tabular}.
+\end{enumerate}</p>
+<p>\paragraph{<span class="math notranslate nohighlight">\(d-1\)</span>. Schritt: Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(1\)</span>}
+\begin{enumerate}
+\item Multipliziere alle Vektoren des vorigen Schritts (die unterste Zeile im Schema) mit <span class="math notranslate nohighlight">\(A\)</span> und trage die resultierenden Vektoren
+in eine neue Zeile \textbf{unter} das Schema ein.
+\item Ergänze um <span class="math notranslate nohighlight">\( s_{1} = \Delta_{1} - \Delta_{2}\)</span> Hauptvektoren
+<span class="math notranslate nohighlight">\( v^{(1)}_1,\dots, v^{(1)}_{s_{1}} \)</span> der Stufe <span class="math notranslate nohighlight">\(1\)</span> aus <span class="math notranslate nohighlight">\(K_1 = \Eig(G; \lambda)\)</span>, also \textbf{Eigenvektoren}, und trage sie \textbf{rechts} neben die unterste Zeile des Schemas ein.
+\item Das resultierende Schema für den Aufbau von Jordanketten sollte die folgende Gestalt haben:\[.5cm]
+\begin{tabular}{c | c | c || c || c | c | c |}
+\vdots &amp; \vdots &amp; \vdots &amp; &amp; &amp; &amp;  \
+\hline
+<span class="math notranslate nohighlight">\( A^{d-2}v^{(d)}_1 \)</span> &amp; <span class="math notranslate nohighlight">\(\dots \)</span> &amp; <span class="math notranslate nohighlight">\( A^{d-2}v^{(d)}_{s_d}\)</span> &amp;
+<span class="math notranslate nohighlight">\( \dots \)</span> &amp; &amp; &amp; \
+\hline
+<span class="math notranslate nohighlight">\( A^{d-1}v^{(d)}_1 \)</span> &amp; <span class="math notranslate nohighlight">\( \dots \)</span> &amp; <span class="math notranslate nohighlight">\( A^{d-1}v^{(d)}_{s_d} \)</span> &amp;
+<span class="math notranslate nohighlight">\( \dots \)</span> &amp;
+<span class="math notranslate nohighlight">\( v^{(1)}_1 \)</span> &amp; <span class="math notranslate nohighlight">\( \dots \)</span> &amp; <span class="math notranslate nohighlight">\( v^{(1)}_{s_1} \)</span>\
+\hline
+\hline
+<span class="math notranslate nohighlight">\( \uparrow \)</span> &amp;  &amp; <span class="math notranslate nohighlight">\( \uparrow \)</span>&amp; &amp; &amp; &amp; \
+\text{ Jordankette } &amp; &amp; \text{ Jordankette } &amp; &amp; &amp; &amp;
+\end{tabular}.
+\end{enumerate}
+~\[0.3cm]
+\paragraph{Spaltenweises Eintragen des Schemas in <span class="math notranslate nohighlight">\(S^{-1}\)</span>:}~\[0.3cm]
+Lesen wir die schließlich das fertige Schema zuerst von \textbf{unten nach oben} und dann von \textbf{links nach rechts} (entlang der Jordanketten) zellenweise ab und notieren die so gefundenen Vektoren \textbf{spaltenweise} von links nach rechts in die Transformationsmatrix <span class="math notranslate nohighlight">\(S^{-1}\)</span>, so liegt <span class="math notranslate nohighlight">\( N = S A S^{-1} \)</span> in der Normalform nilpotenter Endomorphismen in Definition \ref{def:normalform_nilpotent} vor.
+\end{algorithm}</p>
+<p>Durch geschickte Kombination der Hauptraumzerlegung aus Satz \ref{satz:hauptraumzerlegung} und der Normalform niolpotenter Endormorphismen in Satz \ref{satz:normalform_nilpotent} lässt sich eine kanonische Normalform für Endomorphismen bestimmen, die schöne Eigenschaften hat.
+Diese \emph{Jordansche Normalform} wird im folgenden Satz näher beschrieben.
+\begin{satz}[Jordansche Normalform]\label{satz:normalform_jordan}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine Matrix, für die das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> in Linearfaktoren zerfällt, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_A(t) \ = \ \pm (t - \lambda_1)^{r_1} \cdot \ldots \cdot (t  - \lambda_k)^{r_k}.
+\end{equation*}\]</div>
+<p>Dann existiert eine invertierbare Matrix <span class="math notranslate nohighlight">\(S \in \GL(n; \mathbb{K})\)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e36d47d1-137c-4243-b404-e0b61e529880">
+<span class="eqno">(1.18)<a class="headerlink" href="#equation-e36d47d1-137c-4243-b404-e0b61e529880" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:jordannormalform}
+SAS^{-1} \ = \
+\tikz[baseline=(M.west)]{%
+    \node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&amp;,  minimum height=1.2cm] (M) {%
+\lambda_1 I_{r_1} + N_1 \&amp; \&amp; 0\\
+ \&amp; \ddots \&amp; \\
+ 0 \&amp; \&amp; \lambda_k I_{r_k} + N_k \\
+  };
+\node[draw,fit=(M-1-1), inner sep=-1pt, minimum height=1.6cm] {};
+\node[draw,fit=(M-3-3),inner sep=-1pt, minimum height=1.6cm] {};
+} \ =: \ J.
+\end{equation}\]</div>
+<p>Die nilpotenten Anteile <span class="math notranslate nohighlight">\(N_i\)</span> für <span class="math notranslate nohighlight">\(i=1,\ldots,k\)</span> liegen hierbei (blockweise) in der Normalform aus Definition \ref{def:normalform_nilpotent} vor.
+Die Blockmatrizen <span class="math notranslate nohighlight">\(\lambda_i I_{r_i} + N_i \in \mathbb{K}^{r_i \times r_i}\)</span> in <span class="math notranslate nohighlight">\(J\)</span> werden \emph{Jordanblöcke} genannt und sind von der Gestalt
+\setcounter{MaxMatrixCols}{12}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-82aca606-e987-4702-a01c-58133f931a8a">
+<span class="eqno">(1.19)<a class="headerlink" href="#equation-82aca606-e987-4702-a01c-58133f931a8a" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:jordanblock}
+\lambda_i I_{r_i} + N_i \ = \ 
+\begin{pmatrix}
+ \lambda_i &amp; 1 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp;\\
+&amp; \ddots &amp; \ddots &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp;\\
+&amp; &amp; \ddots &amp; 1 &amp; &amp; &amp; &amp; &amp; &amp; &amp;\\
+&amp; &amp; &amp; \lambda_i &amp; 0 &amp; &amp; &amp; &amp; &amp; &amp;\\
+&amp; &amp; &amp; &amp; \lambda_i &amp; 1 &amp; &amp; &amp; &amp; &amp;\\
+&amp; &amp; &amp; &amp; &amp; \ddots &amp; \ddots &amp; &amp; &amp; &amp;\\
+&amp; &amp; &amp; &amp; &amp; &amp; \ddots &amp; 1 &amp; &amp; &amp;\\
+&amp; &amp; &amp; &amp; &amp; &amp; &amp; \lambda_i &amp; 0 &amp; &amp;\\
+&amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; \ddots &amp; \ddots &amp;\\
+&amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; \ddots &amp; 0 \\
+&amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp;  &amp; \lambda_i \\
+\end{pmatrix}
+\end{equation}\]</div>
+<p>Die \textbf{Anzahl der Kästchen} in einem Jordanblock der Form \eqref{eq:jordanblock} ist gegeben durch die \textbf{geometrische Vielfachheit} , <span class="math notranslate nohighlight">\(\dim \Eig(F - \lambda_i I_n)\)</span> des Eigenwerts <span class="math notranslate nohighlight">\(\lambda_i \in \mathbb{K}\)</span> von <span class="math notranslate nohighlight">\(F\)</span>.
+Insbesondere lässt sich die Jordansche Normalform <span class="math notranslate nohighlight">\(J\)</span> von <span class="math notranslate nohighlight">\(A\)</span> zerlegen in <span class="math notranslate nohighlight">\(J= D + N\)</span>, wobei <span class="math notranslate nohighlight">\(D\)</span> Diagonalmatrix und <span class="math notranslate nohighlight">\(N\)</span> nilpotent ist.
+Schließlich gilt außerdem, dass <span class="math notranslate nohighlight">\(D\)</span> und <span class="math notranslate nohighlight">\(N\)</span> kommutieren, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D \cdot N \ = \ N \cdot D.
+\end{equation*}\]</div>
+<p>\end{satz}
+\begin{proof}
+Der Beweis der Jordanschen Normalform besteht im Prinzip nur aus Anwendung der Hauptraumzerlegung aus Satz \ref{satz:hauptraumzerlegung} und dem Satz \ref{satz:normalform_nilpotent} über die Normalform für nilpotente Endomorphismen.
+Wir bezeichnen für <span class="math notranslate nohighlight">\(i = 1, \ldots, k\)</span> die Haupträume von <span class="math notranslate nohighlight">\(F\)</span> bezüglich der Eigenwerte <span class="math notranslate nohighlight">\(\lambda_i\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+V_i \ \coloneqq \ \Hau(F; \lambda_i),
+\end{equation*}\]</div>
+<p>und wir betrachten die nilpotenten Endomorphismen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+G_i \ \coloneqq \ (F - \lambda_i \operatorname{Id}_V)|_{V_i}.
+\end{equation*}\]</div>
+<p>Durch Anwendung des Satzes \ref{satz:normalform_nilpotent} können wir Basen <span class="math notranslate nohighlight">\(B_i\)</span> der Haupträume <span class="math notranslate nohighlight">\(V_i\)</span> finden, so dass die darstellenden Matrizen <span class="math notranslate nohighlight">\(M_{B_i}(G_i)\)</span> der nilpotenten Endomorphismen in Normalform vorliegen.
+Diese Basen kann man dann wegen der Hauptraumzerlegung in Satz \ref{satz:hauptraumzerlegung} zu einer Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span> zusammenführen, so dass die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F)\)</span> in Jordanscher Normalform vorliegt.
+\end{proof}</p>
+<p>\begin{algorithm}[Berechnung der Jordannormalform]\label{alg:normalform_jordan}
+Sei <span class="math notranslate nohighlight">\(B\)</span> eine kanonische Basis des <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(A \coloneqq M_B(F)\)</span> darstellende Matrix eines Endomorphismus <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span>, dessen charakteristisches Polynom in Linearfaktoren zerfällt von der Gestalt ist</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_F(t) \ = \ \pm (t- \lambda_1)^{r_1} \cdot \ldots \cdot (t-\lambda_k)^r_k
+\end{equation*}\]</div>
+<p>für <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span> paarweise verschiedene Eigenwerte von <span class="math notranslate nohighlight">\(F\)</span>.</p>
+<p>Das Ziel ist es eine Transformationsmatrix <span class="math notranslate nohighlight">\(S \in \GL(\mathbb{K}; n)\)</span> zu konstruieren, so dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+J \ = \ S A S^{-1},
+\end{equation*}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(J\)</span> die Jordannormalform aus \eqref{eq:jordannormalform} ist.</p>
+<p>Hierfür müssen wir nur die nilpotenten Einschränkungen von <span class="math notranslate nohighlight">\(F\)</span> auf die Haupträume <span class="math notranslate nohighlight">\(V_i \coloneqq \Hau(F; \lambda_i)\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+G_i \ \coloneqq \ (F-\lambda_i I_{r_i})|_{V_i}, \quad 1\leq i\leq k
+\end{equation*}\]</div>
+<p>betrachten und die nötigen Basen <span class="math notranslate nohighlight">\(B_i\)</span> von <span class="math notranslate nohighlight">\(\Hau(F; \lambda_i)\)</span> mit dem Algorithmus \ref{alg:normalform_nilpotent} zur Normalisierung von nilpotenten Endomorphismen berechnen.
+Die Konkatenation der Basen <span class="math notranslate nohighlight">\(B_i, 1 \leq i \leq k\)</span> ergibt wegen dem Satz zur Hauptraumzerlegung \ref{satz:hauptraumzerlegung} eine Basis des Vektorraums <span class="math notranslate nohighlight">\(V\)</span>.
+Werden die Basisvektoren spaltenweise in die Transformationsmatrix <span class="math notranslate nohighlight">\(S^{-1}\)</span> eingetragen, so erhält man unter dieser Ähnlichkeitstransformation die gewünschte Jordansche Normalform <span class="math notranslate nohighlight">\(J\)</span> von <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>Diese Jordansche Normalform <span class="math notranslate nohighlight">\(J\)</span> ist eindeutig bis auf Permutation der Jordanblöcke.
+\end{algorithm}</p>
+<p>Wir wollen ein abschließendes Beispiel zur Jordanschen Normalform für eine <span class="math notranslate nohighlight">\((5 \times 5)\)</span>-Matrix durchrechnen.
+\begin{bsp}[Berechnung der Jordanschen Normalform mit Transformationsmatrix]
+Wir betrachten die Matrix</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	A\ \coloneqq \ \begin{pmatrix}
+        5 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        -1 &amp; 0 &amp; 3 &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{3}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 4
+    \end{pmatrix}
+\end{equation*}\]</div>
+<p>Um die Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine Jordansche Normalform zu überführen verwenden wir Algorithmus \ref{alg:normalform_nilpotent} und \ref{alg:normalform_jordan}.</p>
+<p>Wir berechnen zuerst alle Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span> mit Hilfe des charakteristischen Polynoms:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+	P_A(\lambda) \ &amp;= \
+	\det\begin{pmatrix}
+        5-\lambda &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2}-\lambda &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        -1 &amp; 0 &amp; 3-\lambda &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{3}{2}-\lambda &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 4-\lambda
+    \end{pmatrix}        
+    \\
+    \ &amp;= \ (-1)^{5+5}(4-\lambda)
+      	\det\begin{pmatrix}
+        5-\lambda &amp; 0 &amp; 1 &amp; 0 \\
+        0 &amp; \frac{1}{2}-\lambda &amp; 0 &amp; -\frac{1}{2} \\
+        -1 &amp; 0 &amp; 3-\lambda &amp; 0  \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{3}{2}-\lambda \\
+        \end{pmatrix}
+    \\
+    \ &amp;= \
+    (4-\lambda)\left[
+      	(-1)^{4+2}\frac{1}{2}\det\begin{pmatrix}
+            5-\lambda &amp; 1 &amp; 0 \\
+            0 &amp; 0 &amp; -\frac{1}{2}\\
+            -1 &amp; 3-\lambda &amp; 0
+        \end{pmatrix} \right.
+       \\
+        &amp;\qquad \qquad \left. + \ (-1)^{4+4}(\frac{3}{2}-\lambda)
+        \det
+        \begin{pmatrix}
+            5-\lambda &amp; 0 &amp; 1 \\
+            0 &amp; \frac{1}{2}-\lambda &amp; 0 \\
+            -1 &amp; 0 &amp; 3-\lambda
+        \end{pmatrix} \right]
+     \\
+    &amp;=
+    (4-\lambda) \left[
+    	\frac{1}{2}(-1)^{2+3}(-\frac{1}{2})\det
+        \begin{pmatrix}
+            5-\lambda &amp; 1 \\
+            -1 &amp; 3-\lambda
+        \end{pmatrix} \right.
+        \\
+        &amp; \qquad \qquad \left. +
+        (\frac{3}{2}-\lambda)(-1)^{2+2}(\frac{1}{2}-\lambda)
+        \det
+        \begin{pmatrix}
+            5-\lambda &amp; 1 \\
+            -1 &amp; 3-\lambda
+        \end{pmatrix}
+    \right]
+    \\
+    &amp;=
+(4-\lambda) \left[
+    	\frac{1}{4}\Bigl((5-\lambda)(3-\lambda)+1\Bigr)
+        +
+        (\frac{3}{2}-\lambda)(\frac{1}{2}-\lambda)\Bigl((5-\lambda)(3-\lambda)+1\Bigr)
+    \right]
+    \\
+    &amp;=
+    (4-\lambda)\Bigl((5-\lambda)(3-\lambda)+1\Bigr)
+    \left(\frac{1}{4}+(\frac{3}{2}-\lambda)(\frac{1}{2}-\lambda)\right)
+    \\
+    &amp;=
+    (4-\lambda)(16-8\lambda+\lambda^2)(1-2\lambda+\lambda^2)
+    \\
+    &amp;=
+    (4-\lambda)^3(1-\lambda)^2.
+\end{split}
+\end{equation*}\]</div>
+<p>Es liegen somit die Eigenwerte <span class="math notranslate nohighlight">\( \lambda_1 = 1 \)</span> und <span class="math notranslate nohighlight">\( \lambda_2 = 4 \)</span> von <span class="math notranslate nohighlight">\(A\)</span> mit den jeweiligen algebraischen Vielfachheiten <span class="math notranslate nohighlight">\( r_1 = 2 \)</span> und <span class="math notranslate nohighlight">\( r_2 = 3 \)</span> vor.</p>
+<p>Für den \textbf{ersten Jordanblock} zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span> von <span class="math notranslate nohighlight">\(A\)</span> betrachten wir zunächst den Endomorphismus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	G_1 \ \colonequals \
+    A - 1 \cdot I_5
+    \ = \
+    \begin{pmatrix}
+        4 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; -\frac{1}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        -1 &amp; 0 &amp; 2  &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 3
+    \end{pmatrix}
+\end{equation*}\]</div>
+<p>und wenden Algorithmus~\ref{alg:normalform_nilpotent} zur Bestimmung einer Normalform an.\[0.5cm]
+\textbf{Vorbereitung}
+~\[0.3cm]
+Wir bestimmen eine Basis <span class="math notranslate nohighlight">\(K_1\)</span> des Eigenraums <span class="math notranslate nohighlight">\( \Kern(G_1) \)</span> mittels Gaußschen Eliminiationsverfahren:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    &amp;\begin{pmatrix}
+        4 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; -\frac{1}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        -1 &amp; 0 &amp; 2  &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 3
+    \end{pmatrix}
+    \overset{I + 4 \cdot III}{\mapsto}
+    \begin{pmatrix}
+        0 &amp; 0 &amp; 9 &amp; 0 &amp; 0 \\
+        0 &amp; -\frac{1}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        -1 &amp; 0 &amp; 2  &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 3
+    \end{pmatrix}
+    \overset{I\leftrightarrow III}{\mapsto}\\
+    &amp;\begin{pmatrix}
+        -1 &amp; 0 &amp; 2  &amp; 0 &amp; 0 \\
+        0 &amp; -\frac{1}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 9 &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 3
+    \end{pmatrix}
+    \overset{IV + II}{\mapsto}
+    \begin{pmatrix}
+        -1 &amp; 0 &amp; 2  &amp; 0 &amp; 0 \\
+        0 &amp; -\frac{1}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 9 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 3
+    \end{pmatrix}    \overset{IV\leftrightarrow V}{\mapsto}\\
+    &amp;\begin{pmatrix}
+        -1 &amp; 0 &amp; 2  &amp; 0 &amp; 0 \\
+        0 &amp; -\frac{1}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 9 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 3\\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+    \end{pmatrix}.
+\end{align*}\]</div>
+<p>Wir erhalten also als mögliche Basis</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	K_1 \ \coloneqq \ \left\{
+      \begin{pmatrix}
+          0 \\ 1 \\ 0 \\ -1 \\ 0
+      \end{pmatrix}
+    \right\}.
+\end{equation*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(\dim K_1 = \dim \Eig(A; 1) = 1\)</span> gilt, wissen wir nach Satz \ref{satz:normalform_jordan}, dass es nur ein Jordankästchen innerhalb des Jordanblocks zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span> von <span class="math notranslate nohighlight">\(A\)</span> geben kann.
+Die Größe dieses Jordankästchens entspricht in diesem Fall der algebraischen Vielfachheit <span class="math notranslate nohighlight">\(r_1 = 2\)</span> von <span class="math notranslate nohighlight">\(\lambda_1\)</span>.</p>
+<p>Wir bestimmen nun eine Basis <span class="math notranslate nohighlight">\(K_2\)</span> des Eigenraums <span class="math notranslate nohighlight">\( \Kern(G_1^2) \)</span> mittels Gaußschen Eliminationsverfahren mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	G_1^2
+    \ = \
+    \begin{pmatrix}
+        15 &amp; 0 &amp; 6 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0&amp; 0 &amp; 0 \\
+        -6 &amp; 0 &amp; 3 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 9
+    \end{pmatrix}
+\end{equation*}\]</div>
+<p>und erhalten somit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    &amp;\begin{pmatrix}
+        15 &amp; 0 &amp; 6 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0&amp; 0 &amp; 0 \\
+        -6 &amp; 0 &amp; 3 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 9
+    \end{pmatrix}
+    \overset{II\leftrightarrow V \&amp; II \leftrightarrow III}{\mapsto}
+    \begin{pmatrix}
+        15 &amp; 0 &amp; 6 &amp; 0 &amp; 0 \\
+        -6 &amp; 0 &amp; 3 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 9\\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0&amp; 0 &amp; 0 \\
+    \end{pmatrix}
+    \overset{2 \cdot I \&amp; 5 \cdot II}{\mapsto}
+    \\
+    &amp;\begin{pmatrix}
+        30 &amp; 0 &amp; 12 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0&amp; 0 &amp; 0 \\
+        -30 &amp; 0 &amp; 15 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 9
+    \end{pmatrix}
+    \overset{II+I}{\mapsto}
+    \begin{pmatrix}
+        30 &amp; 0 &amp; 12 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0&amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 27 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 9
+    \end{pmatrix}.
+\end{align*}\]</div>
+<p>Wir erhalten somit als mögliche Basis von <span class="math notranslate nohighlight">\(\Kern(G_1^2)\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	K_2 
+    \ \coloneqq \ \left\{
+      \begin{pmatrix}
+          0 \\ 1\\ 0 \\ -1 \\ 0
+      \end{pmatrix},
+      \begin{pmatrix}
+          0 \\ -1\\ 0 \\ -1 \\ 0
+      \end{pmatrix}
+    \right\}.
+\end{equation*}\]</div>
+<p>Wir haben den Nilpotenzindex von <span class="math notranslate nohighlight">\(d = 2\)</span> von <span class="math notranslate nohighlight">\(G_1|_{\Hau(A; \lambda_1)}\)</span> erreicht.
+Das bedeutet, dass der Kern von <span class="math notranslate nohighlight">\(G_1\)</span> sich nicht mehr ändert für jede weitere Potenz von <span class="math notranslate nohighlight">\(G_1\)</span>, da gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+2 \ = \ \dim \Kern(G_1^2) \ = \ \dim \Hau(A; 1) \ = \ r_1.
+\end{equation*}\]</div>
+<p>Entsprechend brauchen wir keine weiteren Potenzen von <span class="math notranslate nohighlight">\( G_1 \)</span> mehr zu betrachten.</p>
+<p>Wir berechnen abschließend zur Vorbereitung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Delta_2 \, \coloneqq \, \dim K_2 - \dim K_1 \, = \, 2 - 1 \, = \, 1, \quad \Delta_1 \, \coloneqq \, \dim K_1 \, = \, 1.
+\end{equation*}\]</div>
+<p>~\[0.3cm]
+\paragraph{1. Schritt: Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(2\)</span>}~\[0.3cm]
+Wir wählen aus dem Kern <span class="math notranslate nohighlight">\( K_2 \)</span> einen (<span class="math notranslate nohighlight">\(\Delta_2 = 1 \)</span>) Hauptvektor der Stufe <span class="math notranslate nohighlight">\(2\)</span>, d.h., einen Vektor der linear unabhängig zu Vektoren aus <span class="math notranslate nohighlight">\( K_1 \)</span> ist, also beispielsweise <span class="math notranslate nohighlight">\(  (0,-1,0,-1,0)^T \)</span>.
+Wir notieren diesen Vektor in ein Schema wie folgt:\[.5cm]
+\begin{tabular}{c |}
+<span class="math notranslate nohighlight">\(\begin{pmatrix}0\\-1\\0\\-1\\0\end{pmatrix}\)</span>
+\
+\hline
+\end{tabular}
+~\[0.3cm]
+\paragraph{2. Schritt: Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(1\)</span>}~\[0.3cm]
+Wir berechnen zunächst <span class="math notranslate nohighlight">\( G_1 \cdot (0,-1,0,-1,0)^T = (0,1,0,-1,0)^T\)</span> und tragen diesen Vektor in einer neuen Zeile unten in das Schema ein.
+Wir berechnen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+s_1 \, = \, \Delta_1 - \Delta_2 \, = \, 1 - 1 \, = \, 0,
+\end{equation*}\]</div>
+<p>also brauchen wir keine weiteren Vektoren hinzufügen.
+Dies ist konsistent zu der Beobachtung, dass das Schema bereits <span class="math notranslate nohighlight">\(r_1 = 2\)</span> Vektoren enthält.</p>
+<p>Das finale Schema für den \textbf{ersten Jordanblock} sieht entsprechend so aus:\[.5cm]
+\begin{tabular}{c |}
+<span class="math notranslate nohighlight">\(\begin{pmatrix}0\\-1\\0\\-1\\0\end{pmatrix}\)</span>
+\
+\hline
+$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6265481a-b6a0-4ca6-80c7-d483985feba6">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-6265481a-b6a0-4ca6-80c7-d483985feba6" title="Permalink to this equation">¶</a></span>\[\begin{pmatrix}
+	0\\1\\0\\-1\\0
+\end{pmatrix}\]</div>
+<p><span class="math notranslate nohighlight">\(\\
+\hline
+\end{tabular}
+~\\[0.3cm]
+Die Basis \)</span> B_1 <span class="math notranslate nohighlight">\( für den Hauptraum \)</span>\Hau(A; 1)<span class="math notranslate nohighlight">\( von \)</span>A<span class="math notranslate nohighlight">\( zum Eigenwert \)</span>\lambda_1 = 1$ ergibt sich entsprechend durch Ablesen des Schemas \emph{\glqq von unten nach oben, von links nach rechts\grqq}:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	B_1 \ \coloneqq \ \begin{pmatrix}
+        	0 &amp; 0  \\ 1 &amp; -1  \\ 0 &amp; 0  \\ -1 &amp; -1 \\ 0 &amp; 0
+        \end{pmatrix}
+\end{equation*}\]</div>
+<p>Für den \textbf{zweiten Jordanblock} zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 = 4\)</span> von <span class="math notranslate nohighlight">\(A\)</span> betrachten wir zunächst den Endomorphismus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	G_2 \ \colonequals \ A - 4\cdot I_5 \ = \
+    \begin{pmatrix}
+        1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; -\frac{7}{2}&amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        -1 &amp; 0 &amp; -1 &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; -\frac{5}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+    \end{pmatrix}
+\end{equation*}\]</div>
+<p>und wenden Algorithmus~\ref{alg:normalform_nilpotent} zur Bestimmung einer Normalform an.\[0.5cm]
+\textbf{Vorbereitung}
+~\[0.3cm]
+Wir bestimmen eine Basis <span class="math notranslate nohighlight">\(K_1\)</span> des Eigenraums <span class="math notranslate nohighlight">\( \Kern(G_2) \)</span> mittels Gaußschen Eliminiationsverfahren:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    &amp;\begin{pmatrix}
+        1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; -\frac{7}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        -1 &amp; 0 &amp; -1 &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp;-\frac{5}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+    \end{pmatrix}
+    \overset{III+I}{\mapsto}
+    \begin{pmatrix}
+        1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; -\frac{7}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; -\frac{5}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+    \end{pmatrix}
+    \overset{III\leftrightarrow IV}\mapsto
+    \\
+    &amp;\begin{pmatrix}
+        1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp;  -\frac{7}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; -\frac{5}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+    \end{pmatrix}
+    \overset{II\leftrightarrow III}{\mapsto}
+    \begin{pmatrix}
+        1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp; -\frac{5}{2} &amp; 0 \\
+        0 &amp; -\frac{7}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+    \end{pmatrix}
+    \overset{III + 7\cdot II}{\mapsto}
+    \\
+    &amp;\begin{pmatrix}
+        1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; \frac{1}{2} &amp; 0 &amp;-\frac{5}{2} &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; -18 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+    \end{pmatrix}
+\end{align*}\]</div>
+<p>Wir erhalten also als mögliche Basis</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	K_1 \ \coloneqq \ \left\{
+      \begin{pmatrix}
+          1 \\ 0 \\ -1 \\ 0 \\ 0
+      \end{pmatrix},
+      \begin{pmatrix}
+          0 \\ 0 \\ 0 \\ 0 \\ 1
+      \end{pmatrix}
+   \right\}.
+\end{equation*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(\dim K_1 = \dim \Eig(A; 4) = 2\)</span> gilt, wissen wir nach Satz \ref{satz:normalform_jordan}, dass es zwei Jordankästchen innerhalb des Jordanblocks zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_2 = 4\)</span> von <span class="math notranslate nohighlight">\(A\)</span> gibt.
+Die Summe der Größen dieser Jordankästchen entspricht in diesem Fall der algebraischen Vielfachheit <span class="math notranslate nohighlight">\(r_2 = 3\)</span> von <span class="math notranslate nohighlight">\(\lambda_2\)</span>.</p>
+<p>Wir bestimmen nun eine Basis <span class="math notranslate nohighlight">\(K_2\)</span> des Eigenraums <span class="math notranslate nohighlight">\( \Kern(G_2^2) \)</span> mittels Gaußschen Eliminiationsverfahren mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	G_2^2 \ = \
+    \begin{pmatrix}
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 12 &amp; 0 &amp; 3 &amp; 0 \\
+        0 &amp; 0 &amp; 0&amp; 0 &amp; 0 \\
+        0 &amp; -3 &amp; 0 &amp; 6 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+    \end{pmatrix}
+\end{equation*}\]</div>
+<p>und erhalten somit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \begin{pmatrix}
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 12 &amp; 0 &amp; 3 &amp; 0 \\
+        0 &amp; 0 &amp; 0&amp; 0 &amp; 0 \\
+        0 &amp; -3 &amp; 0 &amp; 6 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+    \end{pmatrix}
+    \overset{I\leftrightarrow IV}{\mapsto}
+    \begin{pmatrix}
+        0 &amp; -3 &amp; 0 &amp; 6 &amp; 0 \\
+        0 &amp; 12 &amp; 0 &amp; 3 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0&amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+    \end{pmatrix}
+    \overset{II + 4\cdot I}{\mapsto}
+    \begin{pmatrix}
+        0 &amp; -3 &amp; 0 &amp; 6 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 27 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0&amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+    \end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir erhalten somit als mögliche Basis von <span class="math notranslate nohighlight">\(\Kern(G_1^2)\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	K_2 \ \coloneqq \ \left\{
+      \begin{pmatrix}
+          1 \\ 0 \\ 0 \\ 0 \\ 0
+      \end{pmatrix},
+      \begin{pmatrix}
+          0 \\ 0 \\ 1 \\ 0 \\ 0
+      \end{pmatrix},
+      \begin{pmatrix}
+          0 \\ 0 \\ 0 \\ 0 \\ 1
+      \end{pmatrix}
+    \right\}.
+\end{equation*}\]</div>
+<p>Wir haben den Nilpotenzindex von <span class="math notranslate nohighlight">\(d = 3\)</span> von <span class="math notranslate nohighlight">\(G_2|_{\Hau(A; \lambda_2)}\)</span> erreicht.
+Das bedeutet, dass der Kern von <span class="math notranslate nohighlight">\(G_2\)</span> sich nicht mehr ändert für jede weitere Potenz von <span class="math notranslate nohighlight">\(G_2\)</span>, da gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+3 \ = \ \dim \Kern(G_2^2) \ = \ \dim \Hau(A; 4) \ = \ r_2.
+\end{equation*}\]</div>
+<p>Entsprechend brauchen wir keine weiteren Potenzen von <span class="math notranslate nohighlight">\( G_2 \)</span> zu betrachten.</p>
+<p>Wir berechnen abschließend zur Vorbereitung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Delta_2 \, \coloneqq \, \dim K_2 - \dim K_1 \, = \, 3 - 2 \, = \, 1, \quad \Delta_1 \, \coloneqq \, \dim K_1 \, = \, 2.
+\end{equation*}\]</div>
+<p>~\[0.3cm]
+\paragraph{1. Schritt: Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(2\)</span>}~\[0.3cm]
+Wir wählen aus dem Kern <span class="math notranslate nohighlight">\( K_2 \)</span> einen (<span class="math notranslate nohighlight">\(\Delta_2 = 1 \)</span>) Hauptvektor der Stufe <span class="math notranslate nohighlight">\(2\)</span>, d.h., einen Vektor der linear unabhängig zu Vektoren aus <span class="math notranslate nohighlight">\( K_1 \)</span> ist, also beispielsweise <span class="math notranslate nohighlight">\(	( 1, 0 , 0 , 0 , 0)^T \)</span>.
+Wir notieren diesen Vektor in ein Schema wie folgt:\[.5cm]
+\begin{tabular}{c |}
+<span class="math notranslate nohighlight">\( \begin{pmatrix}
+      1 \\ 0 \\ 0 \\ 0 \\ 0
+  \end{pmatrix} \)</span>\
+\hline
+\end{tabular}
+~\[0.3cm]
+\paragraph{2. Schritt: Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(1\)</span>}~\[0.3cm]
+Wir berechnen zunächst <span class="math notranslate nohighlight">\( G_2 \cdot ( 1, 0 , 0 , 0 , 0)^T  = (1,0,-1,0,0)^T \)</span> und tragen diesen Vektor in einer neuen Zeile unten in das Schema ein.
+Wir berechnen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+s_1 \, = \, \Delta_1 - \Delta_2 \, = \, 2 - 1 \, = \, 1.
+\end{equation*}\]</div>
+<p>Dies bedeutet, dass wir noch einen weiteren Hauptvektor der Stufe <span class="math notranslate nohighlight">\(1\)</span> aus <span class="math notranslate nohighlight">\(K_1\)</span> zu unserem Schema hinzufügen müssen.
+Hierzu wählen wir den Vektor <span class="math notranslate nohighlight">\( (0,0,0,0,1)^T \)</span>.
+Dies ist konsistent zu der Beobachtung, dass das Schema nun <span class="math notranslate nohighlight">\(r_2 = 3\)</span> Vektoren enthält.</p>
+<p>Das finale Schema für den \textbf{zweiten Jordanblock} sieht entsprechend so aus:\[.5cm]
+\begin{tabular}{c | c |}
+<span class="math notranslate nohighlight">\( \begin{pmatrix}
+      1 \\ 0 \\ 0 \\ 0 \\ 0
+  \end{pmatrix} \)</span> &amp; \
+\hline
+<span class="math notranslate nohighlight">\( \begin{pmatrix} 1 \\ 0 \\ -1 \\ 0 \\ 0 \end{pmatrix} \)</span> &amp;
+<span class="math notranslate nohighlight">\(\begin{pmatrix} 0 \\ 0 \\ 0 \\ 0 \\ 1 \end{pmatrix}\)</span> \
+\hline
+\end{tabular}
+~\[0.3cm]</p>
+<p>Die Basis <span class="math notranslate nohighlight">\( B_2 \)</span> für den Hauptraum <span class="math notranslate nohighlight">\(\Hau(A; 4)\)</span> von <span class="math notranslate nohighlight">\(A\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_2 = 4\)</span> ergibt sich entsprechend durch Ablesen des Schemas \emph{\glqq von unten nach oben, von links nach rechts\grqq}:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	B_2 \ \coloneqq \ 
+    \begin{pmatrix}
+        1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1
+    \end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir fügen abschließend die beiden Basen <span class="math notranslate nohighlight">\(B_1\)</span> und <span class="math notranslate nohighlight">\(B_2\)</span> der zwei Haupträume zu einer Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span> zusammen und schreiben die Basisvektoren von <span class="math notranslate nohighlight">\(B\)</span> als Spalten der Transformationsmatrix</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+	S^{-1} \ \coloneqq \ 
+    \begin{pmatrix}
+        0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \\ 
+        1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 
+        0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 \\ 
+        -1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+    \end{pmatrix},
+    \quad
+    S \ \coloneqq \ 
+    \begin{pmatrix}
+        0 &amp; \frac{1}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\ 
+        0 &amp; -\frac{1}{2} &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\ 
+        0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 \\ 
+        1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+    \end{pmatrix}.
+\end{equation*}\]</div>
+<p>Entsprechend erhalten wir
+\begin{center}
+\begin{tikzpicture}
+\matrix[matrix of math nodes,left delimiter=(,right delimiter=)] (JNF)
+{
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \
+0 &amp; 0 &amp; 4 &amp; 1 &amp; 0 \
+0 &amp; 0 &amp; 0 &amp; 4 &amp; 0 \
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 4 \
+};
+\node[anchor=east,outer sep=.5cm] at (JNF.west) {<span class="math notranslate nohighlight">\(S\cdot A\cdot S^{-1}\ =\ \)</span>};
+\draw (JNF-1-1.north west) – (JNF-1-2.north east) – (JNF-2-2.south east) – (JNF-2-1.south west)
+– (JNF-1-1.north west);
+\draw (JNF-3-3.north west) – (JNF-3-4.north east) – (JNF-4-4.south east) – (JNF-4-3.south west)
+– (JNF-3-3.north west);
+\draw (JNF-5-5.north west) – (JNF-5-5.north east) – (JNF-5-5.south east) – (JNF-5-5.south west)
+– (JNF-5-5.north west);
+\end{tikzpicture}
+\end{center}</p>
+<p>Wir können uns während der Bestimmung einer Jordanschen Normalform auch mittels der Jordanketten die passende Jordannormalform schon überlegen.
+Zu <span class="math notranslate nohighlight">\(\Hau(A;1)\)</span> gehört nur ein Jordankästchen der Dimension <span class="math notranslate nohighlight">\( 2 \times 2 \)</span> (eine Jordankette der Länge <span class="math notranslate nohighlight">\(2\)</span>).
+Zu <span class="math notranslate nohighlight">\(\Hau(A;4)\)</span>  gehört ein Jordankästchen der Dimension <span class="math notranslate nohighlight">\( 2 \times 2 \)</span> (eine Jordankette der Länge <span class="math notranslate nohighlight">\(2\)</span>) und eine Jordankästchen der Dimension <span class="math notranslate nohighlight">\( 1 \times 1 \)</span> (eine Jordankette der Länge <span class="math notranslate nohighlight">\(1\)</span>).
+\end{bsp}
+Glücklicherweise  existieren Algorithmen, die die obigen Berechnungen automatisiert in einem Computer durchführen und dabei mögliche Rechenfehler vermeiden und uns somit viel Zeit sparen.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./eigenwerte"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="triag.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1.5. </span>Trigonalisierbarkeit</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../vektoraeume/vektoraeume.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">2. </span>Euklidische und unitäre Vektorräume</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

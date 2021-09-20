@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.3. Das charakteristische Polynom &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.4. Diagonalisierbarkeit" href="diag.html" />
+    <link rel="prev" title="1.2. Eigenwerte und Eigenvektoren" href="werte_vektoren.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   4. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     4.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     4.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     4.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     4.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     4.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   5. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/eigenwerte/char_pol.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="das-charakteristische-polynom">
+<h1><span class="section-number">1.3. </span>Das charakteristische Polynom<a class="headerlink" href="#das-charakteristische-polynom" title="Permalink to this headline">¶</a></h1>
+<p>Nachdem wir in Abschnitt \ref{s:eigenwerte} die grundlegende Begriffe eingeführt haben, wollen wir uns nun damit beschäftigen, wie sich die Eigenwerte eines Endomorphismus bzw. einer darstellenden, quadratischen Matrix berechnen lassen und was wir an ihnen ablesen können.</p>
+<p>\begin{definition}[Charakteristisches Polynom]\label{def:char_polynom}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix und <span class="math notranslate nohighlight">\(I_n \in \mathbb{K}^{n \times n}\)</span> die entsprechende Einheitsmatrix, so bezeichnen wir die Abbildung</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bc1108e2-93ee-4021-ac13-8e2d9418a4d0">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-bc1108e2-93ee-4021-ac13-8e2d9418a4d0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\begin{split}
+P_A \colon \mathbb{K} \ \rightarrow \ &amp; \mathbb{K} \\
+t  \ \mapsto \ &amp; \det(A - tI_n)
+\end{split}
+\end{align}\]</div>
+<p>als charakteristisches Polynom von <span class="math notranslate nohighlight">\(A\)</span>.
+\end{definition}</p>
+<p>Der folgende Satz erlaubt es uns Eigenwerte als Nullstellen des charakteristischen Polynoms zu beschreiben und gibt uns gleichzeitig eine praktische Rechenvorschrift.
+\begin{satz}[Satz zum charakteristischen Polynom]
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix.
+Dann gilt folgende Äquivalenz:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fe50bb9d-716e-4925-b592-3bd588033ab4">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-fe50bb9d-716e-4925-b592-3bd588033ab4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\lambda \in \mathbb{K} \text{ ist Eigenwert von } A \ \Leftrightarrow \ P_A(\lambda) = \det(A - \lambda I_n) \ = \ 0.
+\end{equation}\]</div>
+<p>\end{satz}
+\begin{proof}
+Für einen festen Eigenwert <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> von <span class="math notranslate nohighlight">\(A\)</span>, sei <span class="math notranslate nohighlight">\(v \in V, v \neq 0\)</span> der zugehörige Eigenvektor, so dass die Eigenwertgleichung \eqref{eq:eigenwertgleichung_matrix} erfüllt ist.
+Dann gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp; A v - \lambda v \ = \ 0 \\
+\Leftrightarrow \quad &amp; (A - \lambda I_n) v \ = \ 0 &amp; \quad \text{ wegen Linearität } \\
+\Leftrightarrow \quad &amp; \Kern(A - \lambda I_n) \ \neq \ \vec{0} &amp; \quad \text{ wegen Definition \ref{def:matrix_kern} } \\
+\Leftrightarrow \quad &amp; \Bild(A - \lambda I_n) \ \neq \ V &amp; \quad \text{ wegen Definition \ref{def:matrix_bild_rang} } \\
+\Leftrightarrow \quad &amp; \Rang(A - \lambda I_n) \ \neq \ \dim(V) &amp; \quad \text{ wegen Definition \ref{def:matrix_bild_rang} } \\
+\Leftrightarrow \quad &amp; \det(A - \lambda I_n) \ = \ 0 &amp; \quad \text{ wegen Lemma \ref{lem:rang_determinante} } 
+\end{align*}\]</div>
+<p>\end{proof}</p>
+<p>Die Dimension des <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span> gibt den Grad des charakteristischen Polynoms vor, d.h., für <span class="math notranslate nohighlight">\(\dim(V) = n\)</span> können wir erwarten, dass das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> einer Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> den Grad <span class="math notranslate nohighlight">\(n\)</span> hat. Insgesamt ist nun also das geometrische Problem der Bestimmung von Eigenwerten eines Endomorphismus zurückgeführt auf das algebraische Problem der Bestimmung von Nullstellen eines Polynoms.</p>
+<p>Wir können die Nullstellen des charakteristischen Polynoms noch näher charakterisieren durch folgende Definition.</p>
+<p>\begin{definition}[Algebraische Vielfachheiten]
+Wir definieren die Häufigkeit mit der ein Eigenwert <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> einer Matrix <span class="math notranslate nohighlight">\(\mathbb{K}^{n \times n}\)</span> als Nullstelle des charakteristischen Polynoms <span class="math notranslate nohighlight">\(P_A\)</span> auftritt als die \emph{algebraische Vielfachheit} des Eigenwerts <span class="math notranslate nohighlight">\(\lambda\)</span>.
+\end{definition}</p>
+<p>\begin{satz}[Vielfachheiten]\label{satz:vielfachheiten}
+Sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span> und sei <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> ein Eigenwert von <span class="math notranslate nohighlight">\(F\)</span> mit algebraischer Vielfachheit <span class="math notranslate nohighlight">\(r \in \mathbb{N}\)</span> und geometrischer Vielfachheit <span class="math notranslate nohighlight">\(s \in \mathbb{N}\)</span>.
+Dann ist die algebraische Vielfachheit von <span class="math notranslate nohighlight">\(\lambda\)</span> immer größer oder gleich seiner geometrischen Vielfachheit, d.h., es gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+n \geq r \geq s \geq 1.
+\end{equation*}\]</div>
+<p>\end{satz}
+\begin{proof}
+Sei <span class="math notranslate nohighlight">\(s \in \mathbb{N}\)</span> die geometrische Vielfachheit des Eigenwerts <span class="math notranslate nohighlight">\(\lambda\)</span> von <span class="math notranslate nohighlight">\(F\)</span>, so ist <span class="math notranslate nohighlight">\(\Eig(F; \lambda) = \lin(\lbrace{v_1,\ldots, v_s\rbrace}) \subset V\)</span> der zugehörige Eigenraum.
+Da <span class="math notranslate nohighlight">\(\Eig(F; \lambda)\)</span> ein Untervektorraum von <span class="math notranslate nohighlight">\(V\)</span> ist können wir <span class="math notranslate nohighlight">\(\lbrace{v_1,\ldots, v_s\rbrace}\)</span> als eine Basis des Eigenraums auffassen.
+Mit Hilfe des Basisergänzungssatzes \cite[Lemma 3.24]{burger_2020} können wir weitere Vektoren <span class="math notranslate nohighlight">\(v_{s+1}, \ldots, v_n \in V\)</span> bestimmen, so dass  <span class="math notranslate nohighlight">\(B \coloneqq \lbrace{v_1,\ldots, v_s, v_{s+1}, \ldots v_n\rbrace}\)</span> eine Basis von <span class="math notranslate nohighlight">\(V\)</span> ist.
+Für die Vektoren <span class="math notranslate nohighlight">\(v_j \in V\)</span> muss wegen der Eigenwertgleichung <span class="math notranslate nohighlight">\(F(v_j) = \lambda v_j\)</span> gelten für <span class="math notranslate nohighlight">\(1\leq j\leq s\)</span>.
+Gleichzeitig können wir den Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> durch die darstellende Matrix <span class="math notranslate nohighlight">\(A \coloneqq M_B(F)\)</span> bezüglich der gewählten Basis <span class="math notranslate nohighlight">\(B\)</span> ausdrücken.
+Die Einträge der Matrix <span class="math notranslate nohighlight">\(A\)</span> werden hierbei durch ihre Wirkung auf die Basisvektoren von <span class="math notranslate nohighlight">\(B\)</span> eindeutig festgelegt und wir wissen wegen der Eigenwertgleichung, dass gelten muss</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F(v_j) \ = \ A v_j \  \overset{!}{=} \ \lambda v_j, \quad 1\leq j \leq s.
+\end{equation*}\]</div>
+<p>Da die Basiselemente <span class="math notranslate nohighlight">\(v_j, 1\leq j\leq n\)</span> insbesondere linear unabhängig sind, muss zur Erfüllung der rechten Seite der Gleichung für <span class="math notranslate nohighlight">\(1\leq j \leq s\)</span> gelten</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+ A_{i,j} \ = \ \begin{cases} 0, \quad \text{ falls } i \neq j,\\ \lambda, \quad \text{ falls } i = j. \end{cases}
+\end{equation*}\]</div>
+<p>Damit ergibt sich, dass die darstellende Matrix <span class="math notranslate nohighlight">\(A\)</span> die folgende Gestalt haben muss</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \
+\begin{pmatrix}
+\lambda I_s &amp; *\\
+0 &amp; C\\
+\end{pmatrix},
+\end{equation*}\]</div>
+<p>wobei für den unteren, rechten Block <span class="math notranslate nohighlight">\(C \in \mathbb{K}^{(n-s)\times (n-s)}\)</span> gilt.
+Für das charakteristische Polynom können wir also auf Grund der Gestalt von <span class="math notranslate nohighlight">\(A\)</span> und der Determinanten-Produktregel für Blockmatrizen in Lemma \ref{lem:det_blockmatrix} folgern, dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_F(t) \ = \ P_{A}(t) \ = \ (\lambda - t)^s \cdot \det(C - tI_{n-s}). 
+\end{equation*}\]</div>
+<p>Das zeigt, dass der Eigenwert <span class="math notranslate nohighlight">\(\lambda\)</span> von <span class="math notranslate nohighlight">\(F\)</span> mindestens die algebraische Vielfachheit <span class="math notranslate nohighlight">\(r \geq s\)</span> besitzt.</p>
+<p>Abschließend lässt sich festhalten, dass <span class="math notranslate nohighlight">\(s \geq 1\)</span> gelten muss, da mindestens ein Eigenvektor zum Eigenwert <span class="math notranslate nohighlight">\(\lambda\)</span> von <span class="math notranslate nohighlight">\(F\)</span> existieren muss.
+Gleichzeitig ist <span class="math notranslate nohighlight">\(r \leq n\)</span>, da das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> vom Grad <span class="math notranslate nohighlight">\(n\)</span> ist.
+\end{proof}</p>
+<p>Um ein wenig mehr Intuition für den Begriff der Eigenwerte zu bekommen wollen wir zwei konkrete Beispiele durchrechnen.
+\begin{bsp}[Bestimmung von Eigenwerten]\label{bsp:eigenwerte}
+Wir wollen im Folgenden die Bestimmung von Eigenwerten für <span class="math notranslate nohighlight">\((2 \times 2)\)</span>-Matrizen veranschaulichen.
+\begin{enumerate}
+\item Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{2 \times 2}\)</span> eine Matrix deren Eigenwerte wir bestimmen wollen mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ \coloneqq \
+\begin{pmatrix}
+-9 &amp; -3 \\
+16 &amp; 5
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>Zur Berechnung der Eigenwerte stellen wir das charakteristische Polynom aus Definition \ref{def:char_polynom} auf und setzen es gleich Null.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_A(t) \ = \ \det(A - tI_2) \ = \
+\det
+\begin{pmatrix}
+-9 - t &amp; -3 \\
+16 &amp; 5 - t
+\end{pmatrix}
+\ \overset{!}{=} \ 0.
+\end{equation*}\]</div>
+<p>Für das einfache Beispiel einer <span class="math notranslate nohighlight">\((2 \times 2)\)</span>-Matrix können wir die Determinante der obigen Matrix in geschlossener Form angeben als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\det
+\begin{pmatrix}
+-9 - t &amp; -3 \\
+16 &amp; 5 - t
+\end{pmatrix}
+\ = \ (-9 - t) \cdot (5 -t) - (-3) \cdot 16 \ = \ t^2 + 4t + 3.
+\end{equation*}\]</div>
+<p>Da das charakteristische Polynom bereits in Normalform vorliegt, lassen sich die Nullstellen von <span class="math notranslate nohighlight">\(P_A\)</span>, die die Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span> darstellen, mittels der <span class="math notranslate nohighlight">\(p\)</span>-<span class="math notranslate nohighlight">\(q\)</span>-Formel für <span class="math notranslate nohighlight">\(p=4\)</span> und <span class="math notranslate nohighlight">\(q=3\)</span> angeben:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\lambda_{1/2} \ = \ - \frac{p}{2} \pm \sqrt{\left( \frac{p}{2} \right)^2 - q} \ = \ -2 \pm \sqrt{4 - 3} \ = \ -2 \pm 1.
+\end{equation*}\]</div>
+<p>Wir erhalten also die Eigenwerte <span class="math notranslate nohighlight">\(\lambda_1 = -3\)</span> und <span class="math notranslate nohighlight">\(\lambda_2 = -1\)</span> der Matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>\item Für den einfachen Fall von <span class="math notranslate nohighlight">\(2 \times 2\)</span>-Matrizen lässt sich das charakteristische Polynom in allgemeiner Form angeben.
+Sei <span class="math notranslate nohighlight">\(A = \begin{pmatrix}a &amp; b\\ c &amp; d\end{pmatrix} \in \mathbb{K}^{2\times 2}\)</span>, so lässt sich das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> von <span class="math notranslate nohighlight">\(A\)</span> schreiben als:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+P_A(t) \ &amp;= \ \det \begin{pmatrix}a-t &amp; b\\ c &amp; d-t\end{pmatrix} \ = \ (a - t) \cdot (d - t)  - b \cdot c \\
+\ &amp;= \ t^2 - (a + d) \cdot t + (ad - bc) \ = \ t^2 - \tr(A) \cdot t + \det(A).
+\end{split}
+\end{equation*}\]</div>
+<p>Durch Anwendung der <span class="math notranslate nohighlight">\(p\)</span>-<span class="math notranslate nohighlight">\(q\)</span>-Formel wie in Beispiel \ref{bsp:eigenwerte} lassen sich die Eigenwerte <span class="math notranslate nohighlight">\(\lambda_1, \lambda_2 \in \mathbb{K}\)</span> als Nullstellen von <span class="math notranslate nohighlight">\(P_A\)</span> auch in allgemeiner Form angeben als:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-246f3193-eff1-457b-a786-06189825285f">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-246f3193-eff1-457b-a786-06189825285f" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:eigenwerte_2x2_allgemein}
+\lambda_{1/2} \ = \ \frac{\tr(A)}{2} \pm \sqrt{\left( \frac{\tr(A)}{2} \right)^2 - \det(A)}.
+\end{equation}\]</div>
+<p>Aus Gleichung \eqref{eq:eigenwerte_2x2_allgemein} können wir die folgenden interessanten mathematischen Zusammenhänge ablesen:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e05f0829-68f1-49dc-8b30-d325aa261abb">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-e05f0829-68f1-49dc-8b30-d325aa261abb" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:summe_prod_ew}
+\begin{split}
+\lambda_1 + \lambda_2 \ &amp;= \  \frac{\tr(A)}{2} + \frac{\tr(A)}{2} \ = \ \tr(A), \\
+\lambda_1 \cdot \lambda_2 \ &amp;= \ \left(  \frac{\tr(A)}{2} \right)^2 -  \left( \frac{\tr(A)}{2} \right)^2 + \det(A) \ = \ \det(A).
+\end{split}
+\end{equation}\]</div>
+<p>\end{enumerate}
+\end{bsp}</p>
+<p>\begin{remark}
+Wir wollen folgende Beobachtungen  zur Berechnung  von Eigenwerten festhalten.
+\begin{enumerate}[i)]
+\item Wie man anhand der Berechnungsformel \eqref{eq:eigenwerte_2x2_allgemein} sieht, kann das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> komplexe Nullstellen besitzen, sogar wenn die Matrix nur reelle Einträge hat, d.h., <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{2 \times 2}\)</span>.
+Wir erinnern daran, dass wir eine Nullstelle des charakteristischen Polynoms nur dann Eigenwert nennen, wenn sie aus dem zu Grunde liegenden Körper <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> des Vektorraums <span class="math notranslate nohighlight">\(V\)</span> stammt.
+Bettet man jedoch beispielsweise <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> in seinen algebraischen Abschluss <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> ein, so dass <span class="math notranslate nohighlight">\(V\)</span> zu einem komplex-wertigen Vektorraum wird, dann lassen sich alle Nullstellen des charakteristischen Polynoms als Eigenwerte in <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> auffassen.
+\item Die Beobachtungen in Gleichung \eqref{eq:summe_prod_ew} lassen sich erstaunlicherweise auch auf beliebige Matrizen <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> verallgemeinern und man kann zeigen, dass gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\sum_{i=1}^n \lambda_i \ = \ \tr(A), \qquad \prod_{i=1}^n \lambda_i \ = \ \det(A).
+\end{equation*}\]</div>
+<p>\item Für beliebige quadratische Matrizen <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> gibt es für <span class="math notranslate nohighlight">\(n &gt; 3\)</span> im Allgemeinen keine einfache Form zur Berechnung der Determinante. Hier nutzt man typischerweise das Gaußsche Eliminationsverfahren aus \cite{burger_2020}[Kapitel 3.2] um die Matrix <span class="math notranslate nohighlight">\(A - \lambda I_n\)</span> in eine obere, rechte Dreiecksmatrix zu überführen,  deren Determinante man dann an der Hauptdiagonale ablesen kann.
+Es sei jedoch Vorsicht geboten: Die Determinante dieser oberen, rechten Dreiecksform ist im Allgemeinen verschieden von der ursprünglichen Determinante.
+Das folgende Beispiel erklärt welche Schritte man zusätzlich berücksichtigen muss, um das korrekte charakteristische Polynom zu erhalten.
+\end{enumerate}
+\end{remark}</p>
+<p>\begin{bsp}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{2 \times 2}\)</span> eine quadratische Matrix deren Determinante wir bestimmen wollen mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \ 
+\begin{pmatrix}
+6 &amp; 1 \\
+3 &amp; 2
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Obwohl man in diesem einfachen Fall direkt die Determinante bestimmen kann als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\det(A) \ = \ 6 \cdot 2 - 1 \cdot 3 \ = \ 9
+\end{equation*}\]</div>
+<p>verwenden wir zunächst das Gaußsche Eliminationsverfahren, um  die Matrix <span class="math notranslate nohighlight">\(A\)</span> in einer obere, rechte Dreiecksform zu bringen.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{pmatrix}
+6 &amp; 1 \\
+3 &amp; 2
+\end{pmatrix}
+\ \overset{2 \cdot \uproman{2}.}{\rightarrow} \
+\begin{pmatrix}
+6 &amp; 1 \\
+6 &amp; 4
+\end{pmatrix}
+\ \overset{\uproman{2}. - \uproman{1}.}{\rightarrow} \
+\begin{pmatrix}
+6 &amp; 1 \\
+0 &amp; 3
+\end{pmatrix}
+\ \eqqcolon \ \tilde{A}.
+\end{equation*}\]</div>
+<p>Man ist schnell versucht anzunehmen, dass die Determinante dieser oberen, rechten Dreiecksmatrix <span class="math notranslate nohighlight">\(\tilde{A}\)</span> der Determinante von <span class="math notranslate nohighlight">\(A\)</span> entspricht, jedoch zeigt sich, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\det(A) \ = \ 6 \cdot 3 \ = \ 18 \ \neq \ 9 \ = \det(A).
+\end{equation*}\]</div>
+<p>Um die korrekte Determinante von <span class="math notranslate nohighlight">\(A\)</span> aus der Form von <span class="math notranslate nohighlight">\(\tilde{A}\)</span> zu bestimmen, müssen wir die elementaren Zeilenoperationen des Gaußschen Eliminationsverfahrens mit Hilfe der entsprechenden Elementarmatrizen schreiben.
+Wir können schreiben:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\tilde{A} \ = \ 
+\begin{pmatrix}
+6 &amp; 1 \\
+0 &amp; 3
+\end{pmatrix}
+\ = \
+\begin{pmatrix}
+1 &amp; 0 \\
+-1 &amp; 1
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 2
+\end{pmatrix}
+\cdot
+\underbrace{
+\begin{pmatrix}
+6 &amp; 1 \\
+3 &amp; 2
+\end{pmatrix}
+}_{= A}
+\end{equation*}\]</div>
+<p>Mit der Produktregel für Determinanten aus \cite[Satz 3.1.3, D11]{fischer} können wir obige Gleichung schreiben als:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\underbrace{
+\det \begin{pmatrix}
+6 &amp; 1 \\
+0 &amp; 3
+\end{pmatrix}
+}_{= 18}
+\ = \
+\underbrace{
+\det \begin{pmatrix}
+1 &amp; 0 \\
+-1 &amp; 1
+\end{pmatrix}
+}_{= 1}
+\cdot
+\underbrace{
+\det \begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 2
+\end{pmatrix}
+}_{=2}
+\cdot
+\det (A).
+\end{equation*}\]</div>
+<p>Durch Umstellen erhalten wir dann die richtige Determinante mit <span class="math notranslate nohighlight">\(\det(A) = \frac{18}{1\cdot 2} = 9\)</span>.
+\end{bsp}</p>
+<p>\begin{remark}
+Bei einem genaueren Studium der Elementarmatrizen im Gaußschen Eliminationsverfahren fällt auf, dass
+\begin{enumerate}
+\item \textbf{skalare Multiplikation einer Zeile} mit Faktor <span class="math notranslate nohighlight">\(a \in \mathbb{K}\)</span> immer durch eine Elementarmatrix mit Determinante <span class="math notranslate nohighlight">\(a\)</span> ausgedrückt wird.
+\item \textbf{Subtraktion zweier Zeilen} immer durch eine Elementarmatrix mit Determinante <span class="math notranslate nohighlight">\(1\)</span> ausgedrückt wird.
+\item \textbf{Zeilenvertauschungen} immer durch eine Elementarmatrix mit Determinante <span class="math notranslate nohighlight">\(1\)</span> oder <span class="math notranslate nohighlight">\(-1\)</span> ausgedrückt wird, in Abhängigkeit der ensprechenden Zeilenindizes.
+\end{enumerate}
+\end{remark}</p>
+<p>Da wir nun wissen, dass wir die Eigenwerte einer Matrix als Nullstellen des charakteristischen Polynoms berechnen können, wollen wir uns mit der Bestimmung der zugehörigen Eigenvektoren beschäftigen.
+Wir werden im folgenden Beispiel sehen, dass sich der Eigenraum zu einem Eigenwert einer Matrix als Lösungsraum des homogenen linearen Gleichungssystems <span class="math notranslate nohighlight">\((A - \lambda I_n) v = 0\)</span> bestimmen lässt.
+\begin{bsp}[Eigenraumbestimmung]
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{3 \times 3}\)</span> eine reellwertige, quadratische Matrix mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \
+\begin{pmatrix}
+1 &amp; 2 &amp; 0\\
+-1 &amp; 0 &amp; 1\\
+1 &amp; 0 &amp; 0
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wie man mit der Determinantenregel von Sarrus aus Lemma \ref{lem:sarrus} nachrechnen kann, sind die Nullstellen des charakteristischen Polynoms <span class="math notranslate nohighlight">\(P_A(t)\)</span> gegeben durch <span class="math notranslate nohighlight">\(t_1 = 1\)</span>, <span class="math notranslate nohighlight">\(t_2 = i\sqrt{2}\)</span> und <span class="math notranslate nohighlight">\(t_3 = -i \sqrt{2}\)</span>.
+Somit hat die Matrix <span class="math notranslate nohighlight">\(A\)</span> als lineare Abbildung auf den <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> lediglich den reellen Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span>.</p>
+<p>Zur Bestimmung eines Eigenvektors <span class="math notranslate nohighlight">\(v \in \mathbb{R}^3\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span>, der die Eigenwertgleichung \eqref{eq:eigenwertgleichung} erfüllt, müssen wir das folgende lineare Gleichungssystem lösen:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+(A - \lambda_1\cdot I_3) v \ = \ 
+\begin{pmatrix}
+1 - 1 &amp; 2 &amp; 0\\
+-1 &amp; 0 - 1 &amp; 1\\
+1 &amp; 0 &amp; 0 - 1
+\end{pmatrix}
+\begin{pmatrix}
+v_1\\
+v_2\\
+v_3
+\end{pmatrix} \ = \ 
+\begin{pmatrix}
+0 &amp; 2 &amp; 0\\
+-1 &amp; - 1 &amp; 1\\
+1 &amp; 0 &amp; - 1
+\end{pmatrix}
+\begin{pmatrix}
+v_1\\
+v_2\\
+v_3
+\end{pmatrix}
+\ = \ 0.
+\end{equation*}\]</div>
+<p>Um den gesuchten Eigenvektor <span class="math notranslate nohighlight">\(v = (v_1, v_2, v_3)^T \in \mathbb{R}^3\)</span> zu bestimmen, verwenden wir das Gaußsche-Eliminationsverfahren zum Lösen linearer Gleichungssysteme \cite{burger_2020}[Kapitel 3.2].
+Hierzu betrachten wir die folgende Sequenz  von Zeilenoperationen:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+(A  - \lambda_1 I_3 \ | \ y ) \ &amp;= \
+\begin{bmatrix}[ccc|c]
+0 &amp; 2 &amp; 0 &amp; 0\\
+-1 &amp; - 1 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; - 1 &amp; 0
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}[ccc|c]
+-1 &amp; - 1 &amp; 1 &amp; 0\\
+0 &amp; 2 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; - 1 &amp; 0
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}[ccc|c]
+-1 &amp; - 1 &amp; 1 &amp; 0\\
+0 &amp; 2 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; 0
+\end{bmatrix}\\
+&amp; \rightarrow \,
+\begin{bmatrix}[ccc|c]
+-1 &amp; - 1 &amp; 1 &amp; 0\\
+0 &amp; 2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\end{split}
+\end{equation*}\]</div>
+<p>Durch Rückwärtseinsetzen erhalten wir, dass <span class="math notranslate nohighlight">\(v_2 = 0\)</span> gelten muss. Aus der ersten Zeile folgert man nun, dass <span class="math notranslate nohighlight">\(-v_1 + v_3 = 0\)</span> und somit <span class="math notranslate nohighlight">\(v_1 = v_3\)</span> gelten muss.</p>
+<p>Der zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span> von <span class="math notranslate nohighlight">\(A\)</span> zugehörige Eigenvektor <span class="math notranslate nohighlight">\(v \in \mathbb{R}^3\)</span> ist also ein Vektor der Form <span class="math notranslate nohighlight">\(v = \alpha (1, 0, 1)^T\)</span> für <span class="math notranslate nohighlight">\(\alpha \neq 0\)</span>.
+Der durch den Kern von <span class="math notranslate nohighlight">\(A - \lambda_1 I_3\)</span> beschriebene Unterraum von <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> ist somit gegeben durch die lineare Hülle bzw. den Spann <span class="math notranslate nohighlight">\(\Kern(A - \lambda_1 I_3) = \lin(\lbrace v\rbrace)\)</span>.
+\end{bsp}</p>
+<p>\begin{satz}\label{satz:eigenwert_komplex_konjugiert}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{n \times n}\)</span> eine reellwertige Matrix aufgefasst als Abbildung auf <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>. Wenn <span class="math notranslate nohighlight">\(\lambda \in \mathbb{C}\)</span> Eigenwert von <span class="math notranslate nohighlight">\(A\)</span> ist, so ist auch sein komplex konjugiertes Element <span class="math notranslate nohighlight">\(\overline{\lambda} \in \mathbb{C}\)</span> Eigenwert von <span class="math notranslate nohighlight">\(A\)</span>. Außerdem sind die zugehörigen Eigenvektoren komplex konjugiert zueinander.
+\end{satz}
+\begin{proof}
+Aus den Rechenregeln für komplexe Zahlen in \cite[Kapitel 2.2.7]{burger_2020} können wir für zwei komplexe Zahlen <span class="math notranslate nohighlight">\(v,w \in \mathbb{C}\)</span> mit <span class="math notranslate nohighlight">\(v \coloneqq a + b\cdot i\)</span> und <span class="math notranslate nohighlight">\(w \coloneqq c + d\cdot i\)</span> für <span class="math notranslate nohighlight">\(a,b,c,d \in \mathbb{R}\)</span> folgern, dass <span class="math notranslate nohighlight">\(\overline{v w} = \overline{v}\:\overline{w}\)</span> gilt, da</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+\overline{vw} \ &amp;= \ \overline{(a+b\cdot i)(c+d\cdot i)} \ = \ \overline{(ac-bd) + (ad+bc)\cdot i} \ = \ (ac-bd) - (ad+bc)\cdot i \\
+&amp;= \  (ac-bd) + (-ad-bc)\cdot i \ = \ (a-b\cdot i)(c-d\cdot i) \ = \ \overline{v}\:\overline{w}.
+\end{split}
+\end{equation*}\]</div>
+<p>Außerdem kann man leicht für endliche Summen komplexer Zahlen <span class="math notranslate nohighlight">\(v_1,\ldots,v_n \in \mathbb{C}\)</span> zeigen, dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\overline{\sum_{i=1}^n v_i} \ = \ \sum_{i=1}^n \overline{v_i}.
+\end{equation*}\]</div>
+<p>Mit den beiden hergeleiteten Eigenschaften kann man nun direkt folgern, dass ein ähnlicher Zusammenhang für die Matrix-Vektor Multiplikation gilt, nämlich <span class="math notranslate nohighlight">\(\overline{Av} = \overline{A}\overline{v}\)</span> für eine quadratische Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{C}^{n \times n}\)</span> und einen Vektor <span class="math notranslate nohighlight">\(v \in \mathbb{C}^n\)</span>.</p>
+<p>Sei nun <span class="math notranslate nohighlight">\(\lambda \in \mathbb{C}\)</span> ein Eigenwert der reellen Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{n \times n}\)</span> zum Eigenvektor <span class="math notranslate nohighlight">\(v \in \mathbb{C}^n\)</span>.
+Dann gilt offensichtlich die Eigenwertgleichung <span class="math notranslate nohighlight">\(Av = \lambda v\)</span>. Durch komplexe Konjugation beider Seiten der Gleichung wissen wir dann, dass folgende Gleichung erfüllt ist</p>
+<div class="amsmath math notranslate nohighlight" id="equation-682d1940-3636-45f5-98ee-f4dd12b9c2d5">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-682d1940-3636-45f5-98ee-f4dd12b9c2d5" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:eigenwertgleichung_komplex}
+\overline{Av} \ = \ \overline{\lambda v}.
+\end{equation}\]</div>
+<p>Damit können wir den Beweis nun direkt hinschreiben.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A\overline{v} \ \overset{A \text{ reell}}{=} \ \overline{A}\overline{v} \ = \ \overline{Av} \ \overset{\eqref{eq:eigenwertgleichung_komplex}}{=} \ \overline{\lambda v} \ = \ \overline{\lambda}\:\overline{v}.
+\end{equation*}\]</div>
+<p>Es gilt also <span class="math notranslate nohighlight">\(A\overline{v} = \overline{\lambda}\:\overline{v}\)</span> und wir haben damit gezeigt, dass <span class="math notranslate nohighlight">\(\overline{\lambda} \in \mathbb{C}\)</span> auch Eigenwert von <span class="math notranslate nohighlight">\(A\)</span> zum Eigenvektor <span class="math notranslate nohighlight">\(\overline{v} \in \mathbb{C}^n\)</span> ist.
+\end{proof}</p>
+<p>Der folgende Satz macht eine entscheidende Beobachung, die es uns in Kapitel \ref{s:diagonalisierbarkeit} erlauben wird, den Vektorraum <span class="math notranslate nohighlight">\(V\)</span> als direkte Summe der Eigenräume einer quadratischen Matrix <span class="math notranslate nohighlight">\(A\)</span> zu zerlegen, falls <span class="math notranslate nohighlight">\(A\)</span> gewisse Eigenschaften erfüllt.
+\begin{satz}\label{satz:eigenvektoren_lu}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine Matrix und seien <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_k \in \mathbb{K}, k \leq n\)</span>, Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span>.
+Außerdem seien <span class="math notranslate nohighlight">\(v_1, \ldots, v_k \in V\)</span> Eigenvektoren von <span class="math notranslate nohighlight">\(A\)</span> zu den Eigenwerten <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_k\)</span>.
+Sind die Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span> paarweise verschieden, d.h., <span class="math notranslate nohighlight">\(\lambda_i \neq \lambda_j\)</span> für alle <span class="math notranslate nohighlight">\(i\neq j\)</span>, so sind die Eigenvektoren linear unabhängig.
+\end{satz}
+\begin{proof}
+Wir führen den Beweis dieser Aussage durch vollständige Induktion über <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span>.</p>
+<p>\textbf{Induktionsanfang: <span class="math notranslate nohighlight">\(k=1\)</span>}\
+Die Aussage ist trivialerweise erfüllt, da für den Eigenvektor <span class="math notranslate nohighlight">\(v_1 \in V\)</span> gelten muss <span class="math notranslate nohighlight">\(v_1 \neq \vec{0}\)</span>.</p>
+<p>\textbf{Induktionsschritt: <span class="math notranslate nohighlight">\(k-1 \rightarrow k\)</span>}\
+Die Induktionsannahme ist, dass die Aussage bereits für den Fall <span class="math notranslate nohighlight">\(k-1\)</span> gezeigt wurde.
+Seien <span class="math notranslate nohighlight">\(\alpha_1, \ldots, \alpha_k \in \mathbb{K}\)</span> so gewählt, dass gilt</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bd64975c-d2eb-450e-9181-ebcb4eec2b50">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-bd64975c-d2eb-450e-9181-ebcb4eec2b50" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:induktion_lin_abh}
+\sum_{i=1}^k \alpha_i v_i \ = \ \vec{0}.
+\end{equation}\]</div>
+<p>Sei nun <span class="math notranslate nohighlight">\(\lambda_k \in \mathbb{C}\)</span> ein Eigenwert von <span class="math notranslate nohighlight">\(A\)</span>, der paarweise verschieden ist zu <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_{k-1} \in \mathbb{C}\)</span>.
+Wir multiplizieren die Gleichung \eqref{eq:induktion_lin_abh} mit dem Eigenwert <span class="math notranslate nohighlight">\(\lambda_k\)</span> und erhalten</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5e75b0ec-711e-442e-9d8b-04ba63415aa6">
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-5e75b0ec-711e-442e-9d8b-04ba63415aa6" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:induktion_mult_lambda}
+\sum_{i=1}^k \alpha_i \lambda_k v_i \ = \ \vec{0}.
+\end{equation}\]</div>
+<p>Außerdem erhalten wir aus Gleichung \eqref{eq:induktion_lin_abh} durch Multiplikation von links mit der Matrix <span class="math notranslate nohighlight">\(A\)</span> aus der Linearität folgenden Zusammenhang:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b541cea6-c7d8-4c07-afef-72eeae38ff64">
+<span class="eqno">(1.10)<a class="headerlink" href="#equation-b541cea6-c7d8-4c07-afef-72eeae38ff64" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:induktion_mult_A}
+A \cdot \sum_{i=1}^k  \alpha_i v_i \ = \ \sum_{i=1}^k  \alpha_i A v_i \ = \ \sum_{i=1}^k  \alpha_i \lambda_i v_i \ = \ \vec{0}.
+\end{equation}\]</div>
+<p>Wenn wir nun die rechte Seite von \eqref{eq:induktion_mult_A} von Gleichung \eqref{eq:induktion_mult_lambda} subtrahieren erhalten wir</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\sum_{i=1}^k \alpha_i (\lambda_k - \lambda_i) v_i \ = \ \sum_{i=1}^{k-1} \alpha_i (\lambda_k - \lambda_i) v_i \ = \ \vec{0}.
+\end{equation*}\]</div>
+<p>Da wir <span class="math notranslate nohighlight">\(\lambda_k\)</span> als paarweise verschieden zu <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_{k-1}\)</span> angenommen haben wissen wir, dass <span class="math notranslate nohighlight">\(\alpha_i = 0\)</span> für <span class="math notranslate nohighlight">\(i=1,\ldots,k-1\)</span> gelten muss, damit obige Gleichung gilt.
+Setzen wir dies in Gleichung \eqref{eq:induktion_lin_abh} ein, so folgt direkt, dass auch <span class="math notranslate nohighlight">\(\alpha_k = 0\)</span> gelten muss, da für den Eigenvektor <span class="math notranslate nohighlight">\(v_k \neq \vec{0}\)</span> gilt.
+Dies beweist also die lineare Unabhängigkeit der Eigenvektoren von <span class="math notranslate nohighlight">\(A\)</span> für paarweise verschiedene Eigenwerte.
+\end{proof}</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./eigenwerte"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="werte_vektoren.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1.2. </span>Eigenwerte und Eigenvektoren</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="diag.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1.4. </span>Diagonalisierbarkeit</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.1. Mathematische Grundlagen &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.2. Eigenwerte und Eigenvektoren" href="werte_vektoren.html" />
+    <link rel="prev" title="1. Eigenwerte" href="eigenwerte.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   4. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     4.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     4.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     4.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     4.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     4.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   5. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/eigenwerte/prelim.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="mathematische-grundlagen">
+<h1><span class="section-number">1.1. </span>Mathematische Grundlagen<a class="headerlink" href="#mathematische-grundlagen" title="Permalink to this headline">¶</a></h1>
+<p>Zur Entwicklung der Eigenwerttheorie betrachten wir in diesem Kapitel spezielle lineare Abbildungen <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span>, den sogenannten <em>Endomorphismen</em>, die von einem Vektorraum <span class="math notranslate nohighlight">\(V\)</span> wieder nach <span class="math notranslate nohighlight">\(V\)</span> abbilden. Hierbei beschränken wir uns auf den endlich-dimensionalen Fall und nehmen im Folgenden immer an, dass <span class="math notranslate nohighlight">\(V\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum über einem Körper <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> ist und eine endliche Dimension <span class="math notranslate nohighlight">\(\operatorname{dim}(V) = n, n \in \mathbb{N}\)</span>, besitzt.
+Ein kanonisches Beispiel wäre der Vektorraum <span class="math notranslate nohighlight">\(V = \mathbb{R}^n\)</span>.
+Es sei angemerkt, dass Eigenwerte auch für den Fall von unendlich-dimensionalen Vektorräumen untersucht werden können, zum Beispiel bei der Spektraltheorie in der Funktionanalysis.
+Wir wollen uns in dieser Vorlesung jedoch auf den einfacheren, endlich-dimensionalen Fall beschränken.</p>
+<p>Wir beginnen mit einer kurzen Auffrischung der Beziehung einer darstellenden Matrix und einer allgemeinen linearen Abbildung zwischen zwei <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorräumen.
+Wie wir wissen, besteht zwischen Matrizen aus <span class="math notranslate nohighlight">\(\mathbb{K}^{n\times m}\)</span> und linearen Abbildungen <span class="math notranslate nohighlight">\(F : V \rightarrow W\)</span> zwischen <span class="math notranslate nohighlight">\(n\)</span>– bzw. <span class="math notranslate nohighlight">\(m\)</span>–dimensionalen <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>–Vektorräumen <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(W\)</span> ein enger Zusammenhang.
+Ist <span class="math notranslate nohighlight">\(B = (b_1 , . . . , b_n)\)</span> eine Basis von <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(C = (c_1, . . . ,c_m)\)</span> eine Basis von <span class="math notranslate nohighlight">\(W\)</span> , dann ist die darstellende Matrix <span class="math notranslate nohighlight">\(M_C^B(F) \in \mathbb{K}^{n \times m}\)</span> diejenige Matrix, bezüglich derer der Vektor <span class="math notranslate nohighlight">\(\sum_{i=1}^n v_i b_i \in V\)</span> unter <span class="math notranslate nohighlight">\(F\)</span> auf den Vektor <span class="math notranslate nohighlight">\(\sum_{j=1}^m w_j c_j \in W\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+w_j \ = \ \sum_{i=1}^n (M_C^B(F))_{j,i} v_i
+\end{equation*}\]</div>
+<p>abgebildet wird.
+Die Matrix <span class="math notranslate nohighlight">\(M_C^B(F)\)</span> drückt also aus, wie sich die lineare Abbildung auf Vektoren von <span class="math notranslate nohighlight">\(V\)</span> bezüglich der gewählten Basen <span class="math notranslate nohighlight">\(B\)</span> und <span class="math notranslate nohighlight">\(C\)</span> verhält, so dass viele mathematische Sätze für lineare Abbildungen und Matrizen äquivalent formuliert werden können.</p>
+<p>Besonders wichtig für die Eigenwerttheorie ist der folgende grundlegende Basiswechselsatz.</p>
+<div class="proof theorem admonition" id="satz:basiswechselsatz">
+<p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Basiswechselsatz)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(V\)</span> ein <span class="math notranslate nohighlight">\(n\)</span>-dimensionaler <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum mit <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> und seien</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B \ \coloneqq \ (b_1, \ldots, b_n), \quad C \ \coloneqq \ (c_1, \ldots, c_n)
+\end{equation*}\]</div>
+<p>zwei Basen von <span class="math notranslate nohighlight">\(V\)</span>.
+Sei nun <span class="math notranslate nohighlight">\(v \in V\)</span> ein Vektor, der in den beiden Basen folgende Darstellungen hat</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+v \ = \ \sum_{i=1}^n x_i b_i \ = \ \sum_{i=1}^n y_i c_i.
+\end{equation*}\]</div>
+<p>Die Koordinaten <span class="math notranslate nohighlight">\((x_1, \ldots, x_n) \in \mathbb{K}^n\)</span> und <span class="math notranslate nohighlight">\((y_1, \ldots, y_n) \in \mathbb{K}^n\)</span> sind eindeutig bestimmt und es existiert eine reguläre Matrix <span class="math notranslate nohighlight">\(T_C^B \in \GL(n; \mathbb{K})\)</span>, genannt \emph{Transformationsmatrix}, die einen Basiswechsel von <span class="math notranslate nohighlight">\(B\)</span> nach <span class="math notranslate nohighlight">\(C\)</span> wie folgt realisiert:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{pmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{pmatrix}
+\ = \ 
+T_C^B
+\begin{pmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>Außerdem lassen sich die Koordinaten des Vektors <span class="math notranslate nohighlight">\(v\)</span> bezüglich der Basis <span class="math notranslate nohighlight">\(B\)</span> aus den Koordinaten bezüglich der Basis <span class="math notranslate nohighlight">\(C\)</span> unter zu Hilfenahme der inversen Transformationsmatrix <span class="math notranslate nohighlight">\(T_B^C = (T_C^B)^{-1}\)</span> berechnen und es gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{pmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{pmatrix}
+\ = \ 
+T_B^C
+\begin{pmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{pmatrix}
+\end{equation*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Siehe \cite[Bemerkung 2.6.2 und 2.6.3]{fischer}.</p>
+</div>
+<p>Bevor wir uns dem eigentlich Studium von Eigenwerten und Eigenvektoren widmen, wollen wir noch einige grundlegende Begriffe aus der Linearen Algebra wiederholen, die aus <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> bereits bekannt sein sollten.
+Hierbei handelt es sich um nützliche Begriffe und Eigenschaften von quadratische Matrizen als Repräsentanten von Endomorphismen, die ein Spezialfall von linearen Abbildungen zwischen <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorräumen darstellen.</p>
+<div class="proof definition admonition" id="def:matrix_spur">
+<p class="admonition-title"><span class="caption-number">Definition 1.1 </span> (Spur einer Matrix)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix. Dann ist die \emph{Spur} <span class="math notranslate nohighlight">\(\tr(A)\)</span> von <span class="math notranslate nohighlight">\(A\)</span> definiert als die Summe der Diagonaleinträge von <span class="math notranslate nohighlight">\(A\)</span>, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\tr(A) \ \coloneqq \ \sum_{i=1}^n A_{i,i}.
+\end{equation*}\]</div>
+</div>
+</div><div class="proof definition admonition" id="def:matrix_kern">
+<p class="admonition-title"><span class="caption-number">Definition 1.2 </span> (Kern einer Matrix)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix. Dann ist der <em>Kern</em> <span class="math notranslate nohighlight">\(\Kern(A)\)</span> von <span class="math notranslate nohighlight">\(A\)</span>, auch \emph{Nullraum} genannt, definiert als der Unterraum von <span class="math notranslate nohighlight">\(V\)</span>, dessen Vektoren von <span class="math notranslate nohighlight">\(A\)</span> auf den Nullvektor <span class="math notranslate nohighlight">\(\vec{0} \in V\)</span> abgebildet werden, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Kern(A) \ \coloneqq \ \lbrace{ v \in V \, | \, Av = 0 \rbrace}.
+\end{equation*}\]</div>
+<p>Der Kern von <span class="math notranslate nohighlight">\(A\)</span> ist also gerade der Lösungsraum des homogenen, linearen Gleichungssystems <span class="math notranslate nohighlight">\(Av = 0\)</span>.</p>
+</div>
+</div><p>\begin{definition}[Bild und Rang einer Matrix]\label{def:matrix_bild_rang}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix.
+\begin{enumerate}
+\item Dann ist das mit <span class="math notranslate nohighlight">\(\Bild(A)\)</span> bezeichnete \emph{Bild} von <span class="math notranslate nohighlight">\(A\)</span>, auch \emph{Bildraum} genannt, definiert als der Unterraum von <span class="math notranslate nohighlight">\(V\)</span>, auf den alle Vektoren <span class="math notranslate nohighlight">\(v \in V\)</span> von <span class="math notranslate nohighlight">\(A\)</span> abgebildet werden, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Bild(A) \ \coloneqq \ \lbrace{ w \in V \, | \, Av = w, v \in V \rbrace}.
+\end{equation*}\]</div>
+<p>\item Weiterhin können wir den mit <span class="math notranslate nohighlight">\(\Rang(A)\)</span> bezeichneten \emph{Rang} von <span class="math notranslate nohighlight">\(A\)</span> definieren als Dimension des Bildraums von <span class="math notranslate nohighlight">\(A\)</span>, d.h., <span class="math notranslate nohighlight">\(\Rang(A) \coloneqq \dim \Bild(A)\)</span>.
+\end{enumerate}
+\end{definition}</p>
+<p>Folgende Lemmata werden uns nützlich sein in Bezug auf die Determinante <span class="math notranslate nohighlight">\(\det(A)\)</span> einer quadratischen Matrix <span class="math notranslate nohighlight">\(A\)</span>.
+\begin{lemma}\label{lem:rang_determinante}
+Eine quadratische Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> hat genau dann vollen Rang, wenn ihre Determinante ungleich Null ist, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*} 
+\Rang(A) = \dim V \ \Leftrightarrow \ \det(A) \neq 0.
+\end{equation*}\]</div>
+<p>\end{lemma}
+\begin{proof}
+Sei <span class="math notranslate nohighlight">\(\Rang(A) = \dim \Bild(A) = \dim V\)</span>, dann wissen wir nach dem Satz über die Orthogonalität von Bild und Kern \cite[Satz 3.28]{burger_2020}, dass der Kern von <span class="math notranslate nohighlight">\(A^T\)</span> trivial sein muss, d.h., <span class="math notranslate nohighlight">\(\Kern(A^T) = \lbrace{\vec{0}\rbrace}\)</span>. Dies ist äquivalent dazu, dass die Matrix <span class="math notranslate nohighlight">\(A^T\)</span> regulär ist. Dann folgt schon mit der äquivalenten Bedingung aus \cite[Satz 3.41]{burger_2020}, dass die Determinante <span class="math notranslate nohighlight">\(\det(A^T) = \det(A) \neq 0\)</span> ist.
+\end{proof}</p>
+<p>\begin{lemma}[Determinanten-Regel von Sarrus]\label{lem:sarrus}
+Die Determinante <span class="math notranslate nohighlight">\(\det(A)\)</span> einer quadratischen <span class="math notranslate nohighlight">\((3\times 3)\)</span>-Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{3 \times 3}\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \ 
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33}
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>lässt sich mit der \emph{Regel von Sarrus} wie folgt berechnen.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*} 
+\det(A) \ = \ a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33}.
+\end{equation*}\]</div>
+<p>\end{lemma}
+\begin{proof}
+Siehe \cite[Theorem 3.2.5 (Leibnizformel)]{fischer}.
+\end{proof}</p>
+<p>Das folgende Lemma erlaubt es uns die Determinante für Blockmatrizen besonders leicht auszurechnen und das Problem in einfachere Unterprobleme zu zerlegen.
+\begin{lemma}[Determinanten-Regel für Blockmatrizen]\label{lem:det_blockmatrix}
+Sei <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> mit <span class="math notranslate nohighlight">\(n \geq 2\)</span> und sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Blockmatrix von der Gestalt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \
+\begin{pmatrix}
+A_1 &amp; C \\
+0 &amp; A_2
+\end{pmatrix},
+\end{equation*}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(A_1\)</span> und <span class="math notranslate nohighlight">\(A_2\)</span> quadratische Blöcke sind.
+Dann gilt für die Determinante der Blockmatrix <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\det(A) \ = \ \det(A_1) \cdot \det(A_2).
+\end{equation*}\]</div>
+<p>\end{lemma}
+\begin{proof}
+Siehe \cite[Satz 3.1.3, D9]{fischer}.
+\end{proof}</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./eigenwerte"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="eigenwerte.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>Eigenwerte</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="werte_vektoren.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1.2. </span>Eigenwerte und Eigenvektoren</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

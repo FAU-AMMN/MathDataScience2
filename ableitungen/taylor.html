@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.5. Taylor-Formel &#8212; Mathematik für Data Science 2</title>
+    <title>4.5. Taylor-Formel &#8212; Mathematik für Data Science 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": ["tr"], "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Bibliography" href="../references.html" />
-    <link rel="prev" title="1.4. Totale Differenzierbarkeit" href="tot_diff.html" />
+    <link rel="next" title="5. Bibliography" href="../references.html" />
+    <link rel="prev" title="4.4. Totale Differenzierbarkeit" href="tot_diff.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -97,47 +97,189 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../eigenwerte/eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="ableitungen.html">
-   1. Differentiation von Funktionen mehrerer Veränderlicher
+   4. Differentiation von Funktionen mehrerer Veränderlicher
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="part_diff.html">
-     1.1. Partielle Differenzierbarkeit
+     4.1. Partielle Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="first_order.html">
-     1.2. Differentialoperatoren erster Ordnung
+     4.2. Differentialoperatoren erster Ordnung
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="higher_order.html">
-     1.3. Differentialoperatoren höherer Ordnung
+     4.3. Differentialoperatoren höherer Ordnung
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tot_diff.html">
-     1.4. Totale Differenzierbarkeit
+     4.4. Totale Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.5. Taylor-Formel
+     4.5. Taylor-Formel
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
-   2. Bibliography
+   5. Bibliography
   </a>
  </li>
 </ul>
@@ -213,22 +355,22 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#satz-von-rolle">
-   1.5.1. Satz von Rolle
+   4.5.1. Satz von Rolle
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#eindimensionale-taylor-formel">
-   1.5.2. Eindimensionale Taylor-Formel
+   4.5.2. Eindimensionale Taylor-Formel
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#multiindizes">
-   1.5.3. Multiindizes
+   4.5.3. Multiindizes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mehrdimensionale-taylor-formel">
-   1.5.4. Mehrdimensionale Taylor-Formel
+   4.5.4. Mehrdimensionale Taylor-Formel
   </a>
  </li>
 </ul>
@@ -243,14 +385,14 @@
               <div>
                 
   <div class="section" id="taylor-formel">
-<h1><span class="section-number">1.5. </span>Taylor-Formel<a class="headerlink" href="#taylor-formel" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.5. </span>Taylor-Formel<a class="headerlink" href="#taylor-formel" title="Permalink to this headline">¶</a></h1>
 <p>Wie wir schon anhand der Definition des Fehlerfunktionals bei der totalen Differenzierbarkeit gesehen haben, liefert das Differential einer Funktion <span class="math notranslate nohighlight">\(f\)</span> an einem Punkt <span class="math notranslate nohighlight">\(x\)</span> eine affin-lineare Approximation der Funktion an dieser Stelle. Mithilfe der Taylor-Formel wollen wir nun eine bessere Annäherung an die Funktion erhalten, in dem wir höhere Ableitungen hinzunehmen.
 Diese Formel ist ein sehr nützliches Werkzeug bei der Approximation von Funktionen durch einfachere Polynome und erfährt beispielsweise in der Physik oder in der Numerik regelmäßig Anwendung. Dadurch können beispielsweise nichtlineare Funktionen in einer lokalen Umgebung linear angenähert werden, was viele Berechnungen und Abschätzungen vereinfacht.</p>
 <div class="section" id="satz-von-rolle">
-<h2><span class="section-number">1.5.1. </span>Satz von Rolle<a class="headerlink" href="#satz-von-rolle" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.1. </span>Satz von Rolle<a class="headerlink" href="#satz-von-rolle" title="Permalink to this headline">¶</a></h2>
 <p>Bevor wir die Taylor-Formel für Funktionen in einer Veränderlichen betrachten, benötigen wir das folgende Hilfslemma.</p>
 <div class="proof lemma admonition" id="satz:rolle">
-<p class="admonition-title"><span class="caption-number">Lemma 1.4 </span> (Satz von Rolle)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 4.4 </span> (Satz von Rolle)</p>
 <div class="lemma-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> ein Intervall mit <span class="math notranslate nohighlight">\(a &lt; b\)</span> und sei <span class="math notranslate nohighlight">\(f \colon [a,b] \rightarrow \R\)</span> eine stetige Funktion, die auf dem offenen Intervall <span class="math notranslate nohighlight">\((a,b)\)</span> differenzierbar ist.
 Es sei außerdem <span class="math notranslate nohighlight">\(f(a) = f(b)\)</span>.</p>
@@ -271,11 +413,11 @@ f'(x_0) \ = \ \lim_{h\searrow 0} \frac{f(x_0 + h) - f(x_0)}{h} \ \leq \ 0 \quad 
 </div>
 </div>
 <div class="section" id="eindimensionale-taylor-formel">
-<h2><span class="section-number">1.5.2. </span>Eindimensionale Taylor-Formel<a class="headerlink" href="#eindimensionale-taylor-formel" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.2. </span>Eindimensionale Taylor-Formel<a class="headerlink" href="#eindimensionale-taylor-formel" title="Permalink to this headline">¶</a></h2>
 <p>Mit Hilfe des obigen Lemmas können wir nun einen der wichtigsten Sätze zur Approximation von beliebigen Funktionen formulieren.
 Die Taylor-Formel erlaubt die Annäherung einer Funktion durch ein Polynom und erlaubt es den Fehler bei dieser Approximation abzuschätzen.</p>
 <div class="proof theorem admonition" id="satz:taylor_eindimensional">
-<p class="admonition-title"><span class="caption-number">Theorem 1.9 </span> (Eindimensionale Taylor-Formel)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 4.9 </span> (Eindimensionale Taylor-Formel)</p>
 <div class="theorem-content section" id="proof-content">
 <p>Es sei <span class="math notranslate nohighlight">\(I\subset\R\)</span> ein offenes Intervall und es sei <span class="math notranslate nohighlight">\(f:I\rightarrow\R\)</span> eine <span class="math notranslate nohighlight">\((k+1)\)</span>-mal stetig differenzierbare Funktion für <span class="math notranslate nohighlight">\(k \in \N\)</span>.
 Dann existiert für ein beliebiges kompaktes Intervall <span class="math notranslate nohighlight">\([t_0,t_1]\subset I\)</span> ein <span class="math notranslate nohighlight">\(\theta\in[t_0,t_1]\)</span>, so dass die folgende \emph{Taylor-Formel} gilt</p>
@@ -294,13 +436,13 @@ g(t) \ \coloneqq \ f(t_1) - f(t) - \sum_{i=1}^k \frac{d^i}{dt^i} f(t)\cdot\frac{
 \end{align*}\]</div>
 <p>Offensichtlich ist <span class="math notranslate nohighlight">\(t_1 \in I\)</span> eine Nullstelle von <span class="math notranslate nohighlight">\(g\)</span> mit <span class="math notranslate nohighlight">\(g(t_1) = 0\)</span>.
 Wenn wir nun <span class="math notranslate nohighlight">\(a \in R\)</span> wählen als</p>
-<div class="amsmath math notranslate nohighlight" id="equation-570d6d6e-2e1d-4622-bd2d-5a5f08dfc15e">
-<span class="eqno">(1.9)<a class="headerlink" href="#equation-570d6d6e-2e1d-4622-bd2d-5a5f08dfc15e" title="Permalink to this equation">¶</a></span>\[\begin{align}\label{eq:taylor_1d_a}
+<div class="amsmath math notranslate nohighlight" id="equation-4dbb7e51-fc28-4a39-96d5-3ed51da792fb">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-4dbb7e51-fc28-4a39-96d5-3ed51da792fb" title="Permalink to this equation">¶</a></span>\[\begin{align}\label{eq:taylor_1d_a}
 a \ \coloneqq \ \frac{(k+1)!}{(t_1-t_0)^{k+1}} \left(f(t_1) - f(t_0) -  \sum_{i=1}^k \frac{d^i}{dt^i} f(t_0)\cdot \frac{(t_1-t_0)^i}{i!} \right)
 \end{align}\]</div>
 <p>so erhalten wir auch <span class="math notranslate nohighlight">\(g(t_0)=0\)</span>.</p>
 <p>Nach Voraussetzung ist <span class="math notranslate nohighlight">\(g\)</span> stetig differenzierbar und somit insbesondere stetig.
-Damit folgt nach dem Satz <a class="reference internal" href="#satz:rolle">Lemma 1.4</a> von Rolle, dass ein <span class="math notranslate nohighlight">\(\theta\in[t_0,t_1]\)</span> existiert, so dass <span class="math notranslate nohighlight">\(g^\prime(\theta)=0\)</span> gilt.
+Damit folgt nach dem Satz <a class="reference internal" href="#satz:rolle">Lemma 4.4</a> von Rolle, dass ein <span class="math notranslate nohighlight">\(\theta\in[t_0,t_1]\)</span> existiert, so dass <span class="math notranslate nohighlight">\(g^\prime(\theta)=0\)</span> gilt.
 Diese Stelle <span class="math notranslate nohighlight">\(\theta\)</span> können wir nutzen um den Term <span class="math notranslate nohighlight">\(a\)</span> noch näher zu charakterisieren.
 Wir erhalten mit der Produktregel der Differentialrechnung, dass</p>
 <div class="amsmath math notranslate nohighlight">
@@ -322,9 +464,9 @@ g(t_0) \ = \ f(t_1) - f(t_0) - \sum_{i=1}^k \frac{d^i}{dt^i} f(t)\cdot\frac{(t_1
 </div>
 <p>Im Folgenden wollen wir einige Beobachtungen zur Taylor-Formel festhalten.</p>
 <div class="proof remark admonition" id="remark-2">
-<p class="admonition-title"><span class="caption-number">Remark 1.11 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 4.11 </span></p>
 <div class="remark-content section" id="proof-content">
-<p>Die zusätzlichen Bemerkungen helfen dabei die Taylor-Formel in Satz <a class="reference internal" href="#satz:taylor_eindimensional">Theorem 1.9</a> vernünftig zu interpretieren.</p>
+<p>Die zusätzlichen Bemerkungen helfen dabei die Taylor-Formel in Satz <a class="reference internal" href="#satz:taylor_eindimensional">Theorem 4.9</a> vernünftig zu interpretieren.</p>
 <ul class="simple">
 <li><p>Wir nennen</p></li>
 </ul>
@@ -344,7 +486,7 @@ Je näher der Entwicklungspunkt <span class="math notranslate nohighlight">\(t_0
 </div>
 </div><p>Das folgende Beispiel soll uns helfen zu verstehen, wie die Taylor-Entwicklung zur Approximation einer Funktion konkret eingesetzt werden kann.</p>
 <div class="proof example admonition" id="example-3">
-<p class="admonition-title"><span class="caption-number">Example 1.11 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 4.11 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Wir betrachten eine Funktion <span class="math notranslate nohighlight">\(f \colon \R \rightarrow \R\)</span> mit <span class="math notranslate nohighlight">\(f(x) \coloneqq e^x\)</span>.
 Wir möchten den Funktionswert von <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(t_1 = 1\)</span> approximieren durch eine Taylor-Entwicklung im Punkt <span class="math notranslate nohighlight">\(t_0 = 0\)</span>.</p>
@@ -380,11 +522,11 @@ Vergleichen wir diese Approximation mit dem echten Funktionswert, so erhalten wi
 </div>
 </div></div>
 <div class="section" id="multiindizes">
-<h2><span class="section-number">1.5.3. </span>Multiindizes<a class="headerlink" href="#multiindizes" title="Permalink to this headline">¶</a></h2>
-<p>Die Taylor-Formel aus Satz <a class="reference internal" href="#satz:taylor_eindimensional">Theorem 1.9</a> gilt auch für vektorwertige Funktionen in mehreren Veränderlichen.
+<h2><span class="section-number">4.5.3. </span>Multiindizes<a class="headerlink" href="#multiindizes" title="Permalink to this headline">¶</a></h2>
+<p>Die Taylor-Formel aus Satz <a class="reference internal" href="#satz:taylor_eindimensional">Theorem 4.9</a> gilt auch für vektorwertige Funktionen in mehreren Veränderlichen.
 Für diese Verallgemeinerung müssen wir jedoch zunächst die folgende Notation einführen.</p>
 <div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 1.8 </span> (Multiindex)</p>
+<p class="admonition-title"><span class="caption-number">Definition 4.8 </span> (Multiindex)</p>
 <div class="definition-content section" id="proof-content">
 <p>Für ein <span class="math notranslate nohighlight">\(n\)</span>-Tupel <span class="math notranslate nohighlight">\(\alpha=(\alpha_1,\ldots,\alpha_n)\in\N^n\)</span>, genannt <em>Multiindex</em>, definieren wir die folgenden Operationen</p>
 <div class="amsmath math notranslate nohighlight">
@@ -405,7 +547,7 @@ x^{\alpha} \ \coloneqq \ \prod_{i=1}^n x_i^{\alpha_i}.
 </div>
 </div><p>Ähnlich zu den Überlegung zum Mittelwertsatz betrachten wir nun zunächst eine Funktion <span class="math notranslate nohighlight">\(g(t):=f(x+t\xi)\)</span>, das heißt eine eindimensionale Funktion welche entlang einer Richtung <span class="math notranslate nohighlight">\(\xi\in \R^n\)</span> vom Punkt <span class="math notranslate nohighlight">\(x\)</span> aus betrachtet wird. Das  Konzept entlang von eindimensionalen Strahlen zu operieren ist elementar für die Taylor-Formel, weshalb wir zunächst folgendes Hilfsresultat zeigen.</p>
 <div class="proof lemma admonition" id="lem:Taylor">
-<p class="admonition-title"><span class="caption-number">Lemma 1.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Lemma 4.5 </span></p>
 <div class="lemma-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f:U\rightarrow\R^m\)</span> eine <span class="math notranslate nohighlight">\(k\)</span>-mal stetig partiell differenzierbare Abbildung.
 Für einen beliebigen Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> und einen Richtungsvektor<span class="math notranslate nohighlight">\(\xi\in\R^n\)</span> mit <span class="math notranslate nohighlight">\(x+t\xi\in U\)</span> für alle
@@ -425,7 +567,7 @@ Für einen beliebigen Punkt <span class="math notranslate nohighlight">\(x\in U\
 <p>mittels vollständiger Induktion über <span class="math notranslate nohighlight">\(k\in \N\)</span>.\[0.3cm]
 \textbf{Induktionsanfang <span class="math notranslate nohighlight">\(k=1\)</span>:}\
 In diesem Fall betrachten wir die Funktion <span class="math notranslate nohighlight">\(\phi(t):=x+t\xi\)</span> und erhalten so die Verkettung <span class="math notranslate nohighlight">\(g=f\circ\phi\)</span>.
-Somit können wir die Kettenregel aus Satz <a class="reference internal" href="tot_diff.html#satz:kettenregel">Theorem 1.4</a> benutzen und erhalten, dass</p>
+Somit können wir die Kettenregel aus Satz <a class="reference internal" href="tot_diff.html#satz:kettenregel">Theorem 4.4</a> benutzen und erhalten, dass</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \frac{d}{dt} g(t) \ = \ \nabla f(\phi(t)) \cdot D\phi(t) \ = \ \sum_{i=1}^n \partial_i f(x+t\xi)\cdot\xi_i.
@@ -511,10 +653,10 @@ die verbliebenen <span class="math notranslate nohighlight">\(k-\alpha_1\)</span
 </div>
 </div>
 <div class="section" id="mehrdimensionale-taylor-formel">
-<h2><span class="section-number">1.5.4. </span>Mehrdimensionale Taylor-Formel<a class="headerlink" href="#mehrdimensionale-taylor-formel" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.4. </span>Mehrdimensionale Taylor-Formel<a class="headerlink" href="#mehrdimensionale-taylor-formel" title="Permalink to this headline">¶</a></h2>
 <p>Diese Hilfsaussage erlaubt es uns nun den eigentlichen Hauptsatz dieses Abschnitts zu zeigen, die mehrdimensionale Taylor-Formel.</p>
 <div class="proof theorem admonition" id="satz:taylorformel_mehrdimensional">
-<p class="admonition-title"><span class="caption-number">Theorem 1.10 </span> (Mehrdimensionale Taylor-Formel)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 4.10 </span> (Mehrdimensionale Taylor-Formel)</p>
 <div class="theorem-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f:U\rightarrow\R^m\)</span> eine <span class="math notranslate nohighlight">\((k+1)\)</span>-mal stetig partiell differenzierbare Abbildung.
 Für einen beliebigen Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> und einen Richtungsvektor <span class="math notranslate nohighlight">\(\xi\in\R^n\)</span> mit <span class="math notranslate nohighlight">\(x+t\xi\in U\)</span> für alle <span class="math notranslate nohighlight">\(t\in[0,1]\)</span>, existiert ein <span class="math notranslate nohighlight">\(\theta\in[0,1]\)</span>, so dass</p>
@@ -536,15 +678,15 @@ g(t) \ \coloneqq \ f(x+t\xi)
 \[\begin{align*}
 g(1) \ = \ \sum_{i=0}^k \frac{d^i}{dt^i} g(0) \cdot\frac{1}{i!} + \frac{d^{k+1}}{dt^{k+1}} g(\theta) \cdot \frac{1}{(k+1)!}.
 \end{align*}\]</div>
-<p>In dieser Form können wir nun Lemma <a class="reference internal" href="#lem:Taylor">Lemma 1.5</a> auf jede der Ableitungen <span class="math notranslate nohighlight">\(\frac{d^i}{dt^i} g\)</span> anwenden, was die Aussage beweist.</p>
+<p>In dieser Form können wir nun Lemma <a class="reference internal" href="#lem:Taylor">Lemma 4.5</a> auf jede der Ableitungen <span class="math notranslate nohighlight">\(\frac{d^i}{dt^i} g\)</span> anwenden, was die Aussage beweist.</p>
 </div>
 </div><p>Die folgende Bemerkung hält einige Beobachtungen zur Taylor-Formel fest.</p>
 <div class="proof remark admonition" id="remark-7">
-<p class="admonition-title"><span class="caption-number">Remark 1.12 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 4.12 </span></p>
 <div class="remark-content section" id="proof-content">
-<p>Wir bemerken zur mehrdimensionalen Taylor-Formel in Satz <a class="reference internal" href="#satz:taylorformel_mehrdimensional">Theorem 1.10</a> die folgenden Aussagen.</p>
+<p>Wir bemerken zur mehrdimensionalen Taylor-Formel in Satz <a class="reference internal" href="#satz:taylorformel_mehrdimensional">Theorem 4.10</a> die folgenden Aussagen.</p>
 <ul class="simple">
-<li><p>Wir sehen ein, dass der Mittelwertsatz <a class="reference internal" href="tot_diff.html#satz:mittelwertsatz_reellwertig">Theorem 1.6</a> ein Spezialfall der Taylor-Formel für <span class="math notranslate nohighlight">\(k=0\)</span> ist, da er aussagt, dass</p></li>
+<li><p>Wir sehen ein, dass der Mittelwertsatz <a class="reference internal" href="tot_diff.html#satz:mittelwertsatz_reellwertig">Theorem 4.6</a> ein Spezialfall der Taylor-Formel für <span class="math notranslate nohighlight">\(k=0\)</span> ist, da er aussagt, dass</p></li>
 </ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -560,12 +702,12 @@ T_k(x;a) \ \coloneqq \ \sum_{\abs{\alpha}\leq k} \partial^\alpha f (a)\cdot \fra
 \end{align*}\]</div>
 <p><em>Taylorpolynom</em> der Ordnung <span class="math notranslate nohighlight">\(k\)</span> an der Entwicklungsstelle <span class="math notranslate nohighlight">\(a\)</span>.
 Hierbei ist zu beachten, dass <span class="math notranslate nohighlight">\(T_k(\cdot;a)\)</span> ein Polynom ist für jedes <em>fixierte</em> <span class="math notranslate nohighlight">\(a\in\R^n\)</span>.
-Wir bemerken auch, dass in dieser Schreibweise <span class="math notranslate nohighlight">\((x - a)\)</span> nun die Rolle von <span class="math notranslate nohighlight">\(\xi\)</span> in Satz <a class="reference internal" href="#satz:taylorformel_mehrdimensional">Theorem 1.10</a> inne hat, während die Rolle von <span class="math notranslate nohighlight">\(x\)</span> durch <span class="math notranslate nohighlight">\(a\)</span> übernommen wurde.</p>
+Wir bemerken auch, dass in dieser Schreibweise <span class="math notranslate nohighlight">\((x - a)\)</span> nun die Rolle von <span class="math notranslate nohighlight">\(\xi\)</span> in Satz <a class="reference internal" href="#satz:taylorformel_mehrdimensional">Theorem 4.10</a> inne hat, während die Rolle von <span class="math notranslate nohighlight">\(x\)</span> durch <span class="math notranslate nohighlight">\(a\)</span> übernommen wurde.</p>
 </div>
 </div><p>Im obigen Satz haben wir vorausgesetzt, dass die Funktion <span class="math notranslate nohighlight">\((k+1)\)</span>-mal stetig partiell differenzierbar ist.
 Ist sie jedoch nur <span class="math notranslate nohighlight">\(k\)</span>-mal stetig partiell differenzierbar, so erhalten wir keinen expliziten Ausdruck für das Restglied, aber zumindest eine Fehlerabschätzung.</p>
 <div class="proof corollary admonition" id="cor:taylor_approximation">
-<p class="admonition-title"><span class="caption-number">Corollary 1.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Corollary 4.2 </span></p>
 <div class="corollary-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f:U\rightarrow\R\)</span> eine <span class="math notranslate nohighlight">\(k\)</span>-mal stetig partiell differenzierbare Funktion.
 Dann gilt für jeden Punkt <span class="math notranslate nohighlight">\(x\in U\)</span>, dass die Funktion</p>
@@ -581,7 +723,7 @@ r(\xi) \ \coloneqq \ f(x+\xi) - \sum_{\abs{\alpha}\leq k} \partial^\alpha f(x)\c
 </div>
 </div><div class="proof admonition" id="proof">
 <p>Proof. Wir wählen <span class="math notranslate nohighlight">\(\delta&gt;0\)</span>, so dass <span class="math notranslate nohighlight">\(B_\delta(x)\subset U\)</span>.
-Wir wissen nach der Taylor-Formel in Satz <a class="reference internal" href="#satz:taylorformel_mehrdimensional">Theorem 1.10</a>, dass für <span class="math notranslate nohighlight">\(\xi\in B_\delta(x)\)</span> ein <span class="math notranslate nohighlight">\(\theta\in[0,1]\)</span> existiert, so dass</p>
+Wir wissen nach der Taylor-Formel in Satz <a class="reference internal" href="#satz:taylorformel_mehrdimensional">Theorem 4.10</a>, dass für <span class="math notranslate nohighlight">\(\xi\in B_\delta(x)\)</span> ein <span class="math notranslate nohighlight">\(\theta\in[0,1]\)</span> existiert, so dass</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 f(x+\xi) \ &amp;= \ \sum_{\abs{\alpha}\leq k-1} \partial^\alpha f(x) \cdot  \frac{1}{\alpha!} \cdot\xi^\alpha + 
@@ -624,9 +766,9 @@ Hierbei ist zu beachten, dass <span class="math notranslate nohighlight">\(\thet
 \end{align*}\]</div>
 </div>
 <div class="proof remark admonition" id="remark-9">
-<p class="admonition-title"><span class="caption-number">Remark 1.13 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 4.13 </span></p>
 <div class="remark-content section" id="proof-content">
-<p>Im Sinne des Korollars <a class="reference internal" href="#cor:taylor_approximation">Corollary 1.2</a> gilt für den Fehler des Taylorpolynoms an einer Stelle <span class="math notranslate nohighlight">\(x\)</span>, dass der Approximationsfehler</p>
+<p>Im Sinne des Korollars <a class="reference internal" href="#cor:taylor_approximation">Corollary 4.2</a> gilt für den Fehler des Taylorpolynoms an einer Stelle <span class="math notranslate nohighlight">\(x\)</span>, dass der Approximationsfehler</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 r(x) \ \coloneqq \ f(x) - T_k(x,a) 
@@ -658,7 +800,7 @@ Für den Fall <span class="math notranslate nohighlight">\(k=2\)</span> erhalten
 </div>
 </div><p>Da der Fall <span class="math notranslate nohighlight">\(k=2\)</span> in obiger Bemerkung relevant für die grundlegenden Aussagen der Optimierung im nächsten Kapitel sind, fassen wir die obigen Überlegungen in einem Korollar zusammen.</p>
 <div class="proof corollary admonition" id="corollary-10">
-<p class="admonition-title"><span class="caption-number">Corollary 1.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Corollary 4.3 </span></p>
 <div class="corollary-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f:U\rightarrow\R\)</span> eine zweimal stetig partiell differenzierbare Funktion. Für jeden Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> existiert dann ein <span class="math notranslate nohighlight">\(\delta&gt;0\)</span> und eine Funktion <span class="math notranslate nohighlight">\(r \colon B_\delta(x)\rightarrow \R\)</span>, so dass</p>
 <div class="amsmath math notranslate nohighlight">
@@ -709,7 +851,7 @@ Außerdem gilt</p>
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">1.4. </span>Totale Differenzierbarkeit</p>
+                <p class="prevnext-title"><span class="section-number">4.4. </span>Totale Differenzierbarkeit</p>
             </div>
         </a>
     </div>
@@ -717,7 +859,7 @@ Außerdem gilt</p>
         <a class="right-next" href="../references.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">2. </span>Bibliography</p>
+                <p class="prevnext-title"><span class="section-number">5. </span>Bibliography</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

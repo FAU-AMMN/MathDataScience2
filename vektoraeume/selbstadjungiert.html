@@ -1,0 +1,799 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.7. Selbstadjungierte Endomorphismen &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Normierte Vektorräume" href="../normierte_raeume/normierte_raeume.html" />
+    <link rel="prev" title="2.6. Orthogonale und unitäre Endomorphismen" href="orth_endo.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../eigenwerte/eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   4. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     4.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     4.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     4.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     4.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     4.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   5. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/vektoraeume/selbstadjungiert.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="selbstadjungierte-endomorphismen">
+<h1><span class="section-number">2.7. </span>Selbstadjungierte Endomorphismen<a class="headerlink" href="#selbstadjungierte-endomorphismen" title="Permalink to this headline">¶</a></h1>
+<p>Dieser Abschnitt widmet sich hauptsächlich den Eigenschaften und der Herleitung einer Normalform von symmetrischen bzw. hermetischen Matrizen.
+Wir werden insbesondere zeigen, dass diese Matrizen immer diagonalisierbar sind, was sie besonders attraktiv für numerische Verfahren macht.
+Da diese Familie von Matrizen auch in der Theorie sehr häufig auftaucht haben sie zahlreiche Anwendungen in Geometrie, Analysis und in der Physik.</p>
+<p>Wir beginnen mit der Definition von adjungierten und selbstadjungierten Endomorphismen, die eine zentrale Rolle in diesem Abschnitt spielen werden.
+\begin{definition}[(Selbst-)Adjungierter Endomorphismus]\label{def:adjungierte}
+Wir nennen eine Abbildung <span class="math notranslate nohighlight">\(F^* \colon V \to V\)</span> den \emph{adjungierten Endomorphismus} von <span class="math notranslate nohighlight">\(F\)</span>, falls die folgende Beziehung bezüglich des Standardskalarprodukts gilt:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-91d90f89-a9e6-4efe-b41d-9a448c0b52c5">
+<span class="eqno">(2.11)<a class="headerlink" href="#equation-91d90f89-a9e6-4efe-b41d-9a448c0b52c5" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:endoAdj}
+\langle F(v), w\rangle \ = \ \langle v, F^* (w)\rangle\qquad\text{ für alle } v,w\in V.
+\end{equation}\]</div>
+<p>Ein Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> eines Euklidischen bzw. unitären Vektorraums <span class="math notranslate nohighlight">\(V\)</span> heißt \emph{selbstadjungiert}, wenn <span class="math notranslate nohighlight">\(F=F^*\)</span>, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \langle F(v), w\rangle \ = \ \langle v, F(w)\rangle \qquad\text{ für alle } v,w\in V.
+      \end{equation*}\]</div>
+<p>\end{definition}</p>
+<p>Für orthogonale bzw. unitäre Matrizen haben wir bereits in Kapitel \ref{s:unitäre_endomorphismen} gesehen, dass <span class="math notranslate nohighlight">\(A^* = A^{-1}\)</span> gilt.
+Diese Beobachtung überträgt sich mit folgendem Lemma auch auf adjungierte Endomorphismen.
+\begin{lemma}
+Ist <span class="math notranslate nohighlight">\(F\)</span> orthogonal bzw. unitär, so gilt <span class="math notranslate nohighlight">\(F^* = F^{-1}\)</span>.
+\begin{proof}
+Seien <span class="math notranslate nohighlight">\(u,v\in V\)</span> mit <span class="math notranslate nohighlight">\(w=F(u)\)</span>, also <span class="math notranslate nohighlight">\(u=F^{-1}(w)\)</span>, so folgt
+\begin{equation*}
+\langle F(v), w\rangle \ = \ \langle F(v), F(u)\rangle \ = \ \langle v, u\rangle \ = \ \langle v, F^{-1}(w)\rangle,.
+\end{equation*}
+\end{proof}
+\end{lemma}</p>
+<p>Folgender Satz garantiert uns die Existenz eines adjungierten Endomorphismus und stellt eine Beziehung zur Adjungierten der darstellenden Matrix her.
+\begin{satz}\label{satz:adjEndo_existenz}
+Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Euklidischer bzw. unitärer <span class="math notranslate nohighlight">\(\K\)</span>-Vektorraum und <span class="math notranslate nohighlight">\(F\colon V\to V\)</span> ein Endomorphismus.
+Dann existiert genau ein adjungierter Endomorphismus <span class="math notranslate nohighlight">\(F^*\)</span> von <span class="math notranslate nohighlight">\(F\)</span>.
+Ist <span class="math notranslate nohighlight">\(B\)</span> eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(A:=M_{B}(F)\)</span> die darstellende Matrix von <span class="math notranslate nohighlight">\(F\)</span> bezüglich <span class="math notranslate nohighlight">\(B\)</span>, so gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  M_{B}(F^*) \ = \ A^*.
+  \end{equation*}\]</div>
+<p>\begin{proof}
+Da <span class="math notranslate nohighlight">\(B\)</span> orthonormal ist, gilt für <span class="math notranslate nohighlight">\(v=\Phi_{B}(x)\)</span> und <span class="math notranslate nohighlight">\(w=\Phi_{B}(y)\)</span> mit <span class="math notranslate nohighlight">\(x,y\in\K^n\)</span>,  so dass
+\begin{equation*}
+\langle v, w\rangle \ = \ x^T E_n \bar{y} \ = \ x^T\bar{y}.
+\end{equation*}
+Die Bedingung \eqref{eq:endoAdj} bedeutet also
+\begin{equation*}
+\langle F(v), w \rangle \ = \ (Ax)^T\bar{y} \ = \ x^TA^T\bar{y} \ \overset{!}{=} \ x^T \bar{C}\bar{y} \ = \ \langle v, F^<em>(w) \rangle \qquad\text{ für alle } x,y\in\K^n,.
+\end{equation</em>}
+Daraus folgt nun, dass <span class="math notranslate nohighlight">\(A^T = \bar{C}\)</span> gelten muss.
+Also ist <span class="math notranslate nohighlight">\(F^*\)</span> durch die darstellende Matrix <span class="math notranslate nohighlight">\(C \coloneqq \bar{A}^T\)</span> eindeutig definiert.
+\end{proof}
+\end{satz}</p>
+<p>Aus dem obigen Satz lässt sich folgende interessante Beziehung zwischen selbstadjungierten Endomorphismen und symmetrischen bzw. hermiteschen Matrizen direkt ableiten.
+\begin{cor}\label{cor:selbstadjungiert_hermitesch}
+Ist <span class="math notranslate nohighlight">\(F \colon V \to V\)</span> ein Endomorphismus und <span class="math notranslate nohighlight">\(B\)</span> eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span>, so gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    F \text{ selbstadjungiert } \ \Leftrightarrow \ A \coloneqq M_B(F) \text{ ist symmetrisch bzw. hermetisch, d.h. } A=A^*.
+  \end{equation*}\]</div>
+<p>\end{cor}
+\begin{proof}
+Mit den gleichen Argumenten wie im Beweis von Satz \ref{satz:adjEndo_existenz} können wir feststellen, dass <span class="math notranslate nohighlight">\(F\)</span> selbstadjungiert ist genau dann wenn gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\langle F(v), w \rangle \ = \ (Ax)^T\bar{y} \ = \ x^TA^T\bar{y} \ \overset{!}{=} \ x^T \bar{A}\bar{y} \ = \ \langle v, F(w) \rangle \qquad\text{ für alle } x,y\in\K^n\,.
+\end{equation*}\]</div>
+<p>Das ist offensichtlich genau dann der Fall, wenn <span class="math notranslate nohighlight">\(A^T = \bar{A}\)</span> gilt oder äquivalent, wenn gilt <span class="math notranslate nohighlight">\(A = \bar{A}^T = A^*\)</span>.
+\end{proof}</p>
+<p>Selbstadjungierte Endomorphismen haben die schöne Eigenschaft, dass sie nur reelle Eigenwerte besitzen, wie uns folgendes Lemma zeigt.
+\begin{lemma}\label{lem:selbstadjungiert_ew}
+Sei <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer bzw. unitärer <span class="math notranslate nohighlight">\(\K\)</span>-Vektorraum und <span class="math notranslate nohighlight">\(F\colon V\to V\)</span> selbstadjungiert.
+Dann hat das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> auch für <span class="math notranslate nohighlight">\(\K=\C\)</span> nur reelle Nullstellen und zerfällt in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
+Insbesondere sind alle Eigenwerte von <span class="math notranslate nohighlight">\(F\)</span> reell.
+\begin{proof}
+Sei <span class="math notranslate nohighlight">\(\lambda \in \K\)</span> ein Eigenwert von <span class="math notranslate nohighlight">\(F\)</span> mit zugehörigem Eigenvektor <span class="math notranslate nohighlight">\(v \in V\)</span>, dann gilt <span class="math notranslate nohighlight">\(F(v) = \lambda v\)</span>.
+Wegen der Selbstadjungiertheit von <span class="math notranslate nohighlight">\(F\)</span> können wir dann folgern:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \lambda\langle v,v\rangle \ = \ \langle\lambda v,v\rangle \ = \ \langle F(v), v\rangle \ = \ \langle v, F(v)\rangle \ = \ \langle v, \lambda v\rangle \ = \ \bar\lambda \langle v,v\rangle.
+  \end{equation*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(v \neq 0\)</span> ist als Eigenvektor folgt also schon, dass <span class="math notranslate nohighlight">\(\bar\lambda = \lambda\)</span> gilt und somit sind alle Eigenwerte von <span class="math notranslate nohighlight">\(F\)</span> reell.</p>
+<p>Da das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span> nach dem Fundamentalsatz der Algebra in Linearfaktoren über <span class="math notranslate nohighlight">\(\C\)</span> zerfällt und die Nullstellen die Eigenwerte von <span class="math notranslate nohighlight">\(F\)</span> darstellen, folgt die Aussage.
+\end{proof}
+\end{lemma}</p>
+<p>Wenn wir die Aussagen aus Korollar \ref{cor:selbstadjungiert_hermitesch} und Lemma \ref{lem:selbstadjungiert_ew} zusammen nehmen, können wir folgern, dass alle symmetrischen und hermiteschen Matrizen nur reelle Eigenwerte besitzen.
+Wir wollen diese Eigenschaft in folgendem Beispiel illustrieren.
+\begin{example}
+Wir untersuchen die Eigenwerte zweier hermitescher Matrizen <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{2 \times 2}\)</span> im Folgenden.
+\begin{enumerate}
+\item  Sei <span class="math notranslate nohighlight">\(A \in \mathbb{C}^{2 \times 2}\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    A \ \coloneqq \ \begin{pmatrix} 1&amp;i\\-i&amp;2\end{pmatrix}.
+  \end{equation*}\]</div>
+<p>Dann ist das charakteristische Polynom gegeben durch <span class="math notranslate nohighlight">\(P_A(t) = t^2-3t +1\)</span> dessen Nullstellen gegeben sind durch:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  \lambda_{1/2} \ = \ \frac12 (3\pm\sqrt{5})\in\R.
+  \end{equation*}\]</div>
+<p>\item Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{2 \times 2}\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    A \ \coloneqq \ \begin{pmatrix} a&amp;b\\b&amp;c\end{pmatrix}.
+  \end{equation*}\]</div>
+<p>Dann ist das charakteristische Polynom gegeben durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  P_A(t) \ = \ t^2-(a+c)t+(ac-b^2).
+  \end{equation*}\]</div>
+<p>Die Diskriminante von <span class="math notranslate nohighlight">\(P_A\)</span> ist in diesem Fall <span class="math notranslate nohighlight">\((a-c)^2+4b^2\geq 0\)</span>, also sind die Eigenwerte reell.
+\end{enumerate}
+\end{example}</p>
+<p>Die schönen mathematischen Eigenschaften von selbstadjungierten Endomorphismen führen dazu, dass ihre Normalform einer Diagonalmatrix entspricht wie uns folgender Satz erklärt.
+\begin{satz}[Diagonalisierungssatz]
+Ist <span class="math notranslate nohighlight">\(F\)</span> ein selbstadjungierter Endomorphismus auf einem Euklidischen bzw. unitären Vektorraum <span class="math notranslate nohighlight">\(V\)</span>, so gibt es eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span>, die aus Eigenvektoren zu reellen Eigenwerten von <span class="math notranslate nohighlight">\(F\)</span> besteht.
+\begin{proof}
+Wir führen den Beweis mittels vollständiger Induktion über <span class="math notranslate nohighlight">\(n=\dim V\)</span>.\[0.3cm]
+\textbf{Induktionsanfang: <span class="math notranslate nohighlight">\(n=1\)</span>}\<br />
+Da <span class="math notranslate nohighlight">\(F\)</span> selbstadjungiert ist, ist der einzige Eigenwert von <span class="math notranslate nohighlight">\(F\)</span> reell.
+Sei <span class="math notranslate nohighlight">\(\lambda_1 \in \mathbb{R}\)</span> der Eigenwert von <span class="math notranslate nohighlight">\(F\)</span> und <span class="math notranslate nohighlight">\(v_1 \in V\)</span> der zugehörige Eigenvektor mit <span class="math notranslate nohighlight">\(||v_1|| = 1\)</span> (durch Normalisierung).
+Dann bildet <span class="math notranslate nohighlight">\(B = (v_1)\)</span> eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span>.
+~\[0.3cm]
+\textbf{Induktionsschritt: <span class="math notranslate nohighlight">\(n-1 \rightarrow n\)</span>}\
+Die Induktionsannahme ist, dass die Aussage bereits für den Fall <span class="math notranslate nohighlight">\(n-1\)</span> gezeigt wurde.
+Nach Lemma \ref{lem:selbstadjungiert_ew} zerfällt das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span> in Linearfaktoren über <span class="math notranslate nohighlight">\(\R\)</span> mit:
+\begin{equation*}
+P_F = \pm (t-\lambda_1)\cdot\ldots\cdot(t-\lambda_n)\qquad\text{ mit }\qquad\lambda_1,\ldots,\lambda_n\in\R.
+\end{equation*}
+Wir wählen den Eigenwert <span class="math notranslate nohighlight">\(\lambda_1\)</span> von <span class="math notranslate nohighlight">\(F\)</span> und den zugehörigen Eigenvektor <span class="math notranslate nohighlight">\(v_1\)</span> mit <span class="math notranslate nohighlight">\(\Vert v_1\Vert = 1\)</span> (durch Normalisierung) und definieren das orthogonale Komplement zu <span class="math notranslate nohighlight">\(v\)</span> als
+\begin{equation*}
+W \ \coloneqq \ \left{w\in V~|~v_1 \perp w \right}.
+\end{equation*}
+Wir erkennen wieder, dass <span class="math notranslate nohighlight">\(W\)</span> invariant ist unter <span class="math notranslate nohighlight">\(F\)</span>, d.h. <span class="math notranslate nohighlight">\(F(W)\subset W\)</span>, da für <span class="math notranslate nohighlight">\(w\in W\)</span> wegen  der Selbstadjungiertheit gilt:
+\begin{equation*}
+\langle v_1, F(w)\rangle \ = \ \langle F(v_1), w\rangle \ = \ \langle \lambda_1v_1, w\rangle \ = \ \lambda_1 \langle v_1, w\rangle \ = \ 0,.
+\end{equation*}
+Außerdem ist <span class="math notranslate nohighlight">\(F\vert_W\colon W\to W\)</span> als Einschränkung von <span class="math notranslate nohighlight">\(F\)</span> wieder selbstadjungiert.
+Da
+\begin{equation*}
+P_{F|_W} \ = \ \pm (t-\lambda_2)\cdot\ldots\cdots(t-\lambda_n)
+\end{equation*}
+gilt können wir die Induktionsvorraussetzung anwenden, so dass eine Orthonormalbasis <span class="math notranslate nohighlight">\(B'\)</span> von <span class="math notranslate nohighlight">\(W\)</span> existiert aus Eigenvektoren von <span class="math notranslate nohighlight">\(F|_W\)</span>.
+Diese können wir nun zu der gewünschten Orthonormalbasis <span class="math notranslate nohighlight">\(B = (v_1, \ldots, v_n)\)</span> von <span class="math notranslate nohighlight">\(V\)</span> aus Eigenvektoren von <span class="math notranslate nohighlight">\(F\)</span> ergänzen.
+\end{proof}
+\end{satz}</p>
+<p>Wegen der Diagonalisierbarkeit eines selbstadjungierten Endomorphismus lassen sich direkt zwei Beobachtungen ableiten.
+\begin{cor}
+Ist <span class="math notranslate nohighlight">\(A\in \K^{n\times n}\)</span> eine symmetrische bzw. hermitesche Matrix, so gibt es eine orthogonale bzw. unitäre Matrix <span class="math notranslate nohighlight">\(S \in U(n)\)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+   S \cdot A \cdot S^* \ = \ \begin{pmatrix} \lambda_1&amp;&amp;0\\&amp;\ddots&amp;\\0&amp;&amp;\lambda_n\end{pmatrix} \qquad \text{ mit }\quad\lambda_1, \ldots, \lambda_n\in\R.
+  \end{equation*}\]</div>
+<p>\begin{proof}
+Als Spalten von <span class="math notranslate nohighlight">\(S^* = S^{-1}\)</span> verwendet man eine orthonormale Basis des <span class="math notranslate nohighlight">\(\C^n\)</span>, die aus Eigenvektoren von <span class="math notranslate nohighlight">\(A\)</span> besteht.
+\end{proof}
+\end{cor}</p>
+<p>Außerdem lässt sich aus dem Satz \ref{satz:hauptraumzerlegung} über die Hauptraumzerlegung folgende Zerlegung in orthogonale <span class="math notranslate nohighlight">\(F\)</span>-invariante Unterräume folgern.
+\begin{cor}
+Sind <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_k \in \R\)</span> die paarweise verschiedenen Eigenwerte eines selbstadjungierten oder unitären Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> von <span class="math notranslate nohighlight">\(V\)</span>, so ist</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    V \ = \ \Eig (F;\lambda_1) \, \obot \, \cdots \, \obot \, \Eig(F;\lambda_k),
+  \end{equation*}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(\obot\)</span> die orthogonale Summe bezeichnet.
+\end{cor}</p>
+<p>Für symmetrische bzw. hermitesche Matrizen können wir die positive Definitheit mittels des folgenden Satzes am Vorzeichen der Eigenwerte ablesen.
+\begin{satz}\label{satz:hermitesch_positivdefinit}
+Für eine symmetrische bzw. hermitesche Matrix <span class="math notranslate nohighlight">\(A\in \K^{n \times n}\)</span> sind die folgenden Bedingungen äquivalent:
+\begin{enumerate}[i)]
+\item <span class="math notranslate nohighlight">\(A\)</span> ist positiv definit.
+\item Alle Eigenwerte <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_n\in\R\)</span> von <span class="math notranslate nohighlight">\(A\)</span> sind positiv.
+\end{enumerate}</p>
+<p>\begin{proof}
+Für führen den Beweis für den allgemeineren Fall von unitären Vektorräumen, da er den Euklidischen Fall mit abdeckt.\[0.2cm]
+\underline{<span class="math notranslate nohighlight">\(i)\Rightarrow ii)\)</span>:} Sei <span class="math notranslate nohighlight">\(\lambda \in \R\)</span> ein beliebiger Eigenwert von <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(v\in\C^n\)</span> der zugehörige Eigenvektor, so ist wegen der Eigenwertgleichung
+\begin{equation*}
+Av \ = \ \lambda v \quad \Rightarrow \quad \bar{A}\bar{v} \ = \ \lambda\bar{v},.
+\end{equation*}
+Somit ist <span class="math notranslate nohighlight">\(\bar{v} \in \C^n\)</span> offensichtlich ein Eigenvektor von <span class="math notranslate nohighlight">\(\bar{A}\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda\)</span>.
+Mit <span class="math notranslate nohighlight">\(w:=\bar{v}\neq0\)</span> folgt wegen der Hermizität von <span class="math notranslate nohighlight">\(A\)</span>
+\begin{equation*}
+0 \ &lt; \ w^TA\bar{w} \ = \ (A^Tw)^T \bar{w} \ = \ (\bar{A} w)^T\bar{w} \ = \ (\lambda w)^T\bar{w} \ = \ \lambda \cdot w^T\bar{w},.
+\end{equation*}
+und aus der positiven Definitheit des Skalarprodukts, d.h., <span class="math notranslate nohighlight">\(w^T\bar{w} &gt; 0\)</span>, folgt <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\underline{$ii)\Rightarrow i)$}: Wir wählen eine Orthonormalbasis $(w_1, \ldots, w_n)$ bestehend aus Eigenvektoren von $\bar A$, so dass $\bar Aw_i = \lambda_iw_i$ für alle $1 \leq i \leq n$.
+Ähnlich wie im Beweis der ersten Folgerung erhält man
+\begin{equation*}
+ w_i^TA\bar w_j \ = \ \lambda_i\cdot w_i^T\bar w_j \ = \ \begin{cases}\lambda_i, &amp;\text{für}~i=j\,,\\0, &amp;\text{für}~i\neq j\,.\end{cases}
+\end{equation*}
+Jeder beliebige Vektor $v\in\C^n$ hat nun eine Darstellung aus Eigenvektoren mit $v=\sum\limits_{i=1}^n\mu_iw_i$, also ist
+\begin{equation*}
+ v^TAv \ = \ \sum\limits_{i=1}^n\lambda_i\mu_i\bar\mu_i \ &gt; \ 0\quad\text{für}~v\neq0\,.
+\end{equation*}
+</pre></div>
+</div>
+<p>\end{proof}
+\end{satz}</p>
+<p>Abschließend wollen wir die Behauptung aus Satz \ref{satz:hermitesch_positivdefinit} an einem konkreten Beispiel nachvollziehen.
+\begin{bsp}
+Für <span class="math notranslate nohighlight">\(a,b\in\R\)</span> und die hermetische Matrix</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    A = \left(\begin{array}{rr}a&amp;\i\\-\i&amp;b\end{array}\right)\in\C^{2 \times 2}
+  \end{equation*}\]</div>
+<p>ist</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    P_A(t) \ = \ t^2 - (a+b)t + (ab-1)\,.
+  \end{equation*}\]</div>
+<p>Also ist <span class="math notranslate nohighlight">\(A\)</span> genau dann positiv definit, wenn <span class="math notranslate nohighlight">\(a+b&gt;0\)</span> und <span class="math notranslate nohighlight">\(ab&gt;1\)</span> ist.
+In diesem Fall kann man die Eigenwerte einfach ausrechnen:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \lambda_{1,2} \ = \ \frac12 \left( a+b\pm\sqrt{(a-b)^2+4}\right)\,.
+  \end{equation*}\]</div>
+<p>Sie sind beide positiv, wenn <span class="math notranslate nohighlight">\(a+b&gt;0\)</span> und <span class="math notranslate nohighlight">\(ab&gt;1\)</span> ist, wie man leicht nachprüfen kann.
+\end{bsp}</p>
+<p>\section{Normale Endomorphismen}
+Zum Schluss betrachten wir noch eine weitere besondere Gruppe von Abbildungen.
+Die sogenannten \emph{normalen Endomorphismen} zeichnen sich insbesondere dadurch aus, dass sie mit Ihrem adjungierten Endomorphismus kommutieren.
+Hierzu betrachten wir die folgende Definition.
+\begin{definition}[Normaler Endomorphismus]\label{def:endomorphismus_normal}
+Ist <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer oder unitärer Vektorraum, so heißt ein Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> von <span class="math notranslate nohighlight">\(V\)</span> \emph{normal}, wenn er mit seiner Adjungierten kommutiert, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    F\circ F^* = F^* \circ F.
+  \end{equation*}\]</div>
+<p>Ist <span class="math notranslate nohighlight">\(A=\operatorname{M}_{B}(F)\)</span> eine darstellende Matrix von <span class="math notranslate nohighlight">\(F\)</span> bezüglich einer Orthonormalbasis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span>, so bedeutet das</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    A\cdot A^* \ = \ A^* \cdot A.
+  \end{equation*}\]</div>
+<p>\end{definition}</p>
+<p>\begin{example}
+Wir wollen im folgenden hinreichende Bedingungen für Normalität eines Endomorphismus angeben.
+\begin{enumerate}[i)]
+\item Jeder unitäre Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> ist normal, da wegen <span class="math notranslate nohighlight">\(F^* = F^{-1}\)</span> gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F \circ F^* \ = \ F \circ F^{-1} \ = \ \operatorname{Id}_V \ = \ F^{-1} \circ F \ = \ F^* \circ F.
+\end{equation*}\]</div>
+<p>\item Jeder selbstadjungierte Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> ist normal, da wegen <span class="math notranslate nohighlight">\(F^* = F\)</span> gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F \circ F^* \ = \ F \circ F \ = \ F^2 \ = \ F \circ F \ = \ F^* \circ F.
+\end{equation*}\]</div>
+<p>\end{enumerate}
+\end{example}</p>
+<p>Für normale Endomorphismen stellt sich heraus, dass sowohl ihr Kern (sowie ihr Bild) mit denen der adjungierten Abbildung übereinstimmen, wie folgender Satz aussagt.
+\begin{satz}\label{satz:kern_normal}
+Sei <span class="math notranslate nohighlight">\(V\)</span> ein unitärer Vektorraum und <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein normaler Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
+Dann gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Kern F^* \ = \ \Kern F \quad \text{ und } \quad \Bild F^* \ = \ \Bild F..
+\end{equation*}\]</div>
+<p>\end{satz}
+\begin{proof}
+Sei <span class="math notranslate nohighlight">\(v \in \Kern F\)</span>, so können wir wegen der Normalität von <span class="math notranslate nohighlight">\(F\)</span> folgern</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+0 \ = \ \langle F(v), F(v) \rangle \ &amp;= \ \langle v, F^* \circ F(v) \rangle \\
+\ &amp;= \ \langle v, F \circ F^*(v) \rangle \ = \ \overline{\langle F \circ F^*(v), v  \rangle} \ = \ \overline{\langle F^*(v), F^*(v) \rangle}.
+\end{split}
+\end{equation*}\]</div>
+<p>Da das komplexe Skalarprodukt positiv definit ist muss also schon gelten, dass <span class="math notranslate nohighlight">\(F^*(v) = 0\)</span> gilt und somit <span class="math notranslate nohighlight">\(v \in \Kern F^*\)</span> ist.
+Damit haben wir gezeigt, dass <span class="math notranslate nohighlight">\(\Kern F^* = \Kern F\)</span> gilt.
+Wegen der Dimensionsformel von Bild und Kern \cite[Satz 2.2.4]{fischer} folgt dann auch schon direkt, dass <span class="math notranslate nohighlight">\(\Bild F^* = \Bild F\)</span> ist.
+\end{proof}</p>
+<p>Um die Normalform von normalen Endomorphismen zu untersuchen, beweisen wir zunächst das folgende Lemma.
+\begin{lemma}\label{lem:normal_eigenschaften}
+Sei <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(F\colon V\to V\)</span> ein Endomorphismus.
+Dann gelten die folgenden Aussagen:
+\begin{enumerate}[i)]
+\item <span class="math notranslate nohighlight">\(F\)</span> ist genau dann normal, wenn
+\begin{equation}
+\langle F^<em>(v), F^</em>(w)\rangle \ = \ \langle F(v), F(w)\rangle\quad\text{für alle}~v,w\in V.
+\end{equation}
+\item Ist <span class="math notranslate nohighlight">\(F\)</span> normal, so folgt für alle <span class="math notranslate nohighlight">\(v\in V\)</span>
+\begin{equation*}
+\Vert F^<em>(v)\Vert \ = \ \Vert F(v)\Vert.
+\end{equation</em>}
+\item Ist <span class="math notranslate nohighlight">\(F\)</span> normal, so ist <span class="math notranslate nohighlight">\(G:=F-\lambda\operatorname{Id}_V\)</span> für alle <span class="math notranslate nohighlight">\(\lambda\in\K\)</span> normal.
+\item Ist <span class="math notranslate nohighlight">\(F\)</span> normal, so gilt für alle <span class="math notranslate nohighlight">\(v\in V\)</span> und <span class="math notranslate nohighlight">\(\lambda\in\K\)</span>
+\begin{equation*}
+F(v) = \lambda v\quad\Leftrightarrow\quad F^<em>(v) = \bar\lambda v.
+\end{equation</em>}
+\end{enumerate}
+\begin{proof}
+Die einzelnen Aussagen folgen direkt aus der Definition \ref{def:endomorphismus_normal} von normalen Endomorphismen.
+\begin{enumerate}[i)]
+\item Ist <span class="math notranslate nohighlight">\(F\)</span> normal, so können wir wegen <span class="math notranslate nohighlight">\((F^*)^* = F\)</span> und der Definition \ref{def:adjungierte} der Adjungierten folgern, dass gilt
+\begin{equation*}
+\langle F(v), F(w)\rangle  \ = \ \langle v, (F^<em>\circ F)(w)\rangle \ = \ \langle v, (F\circ F^</em>)(w)\rangle \ = \ \langle F^<em>(v), F^</em>(w)\rangle.
+\end{equation*}
+\item Folgt sofort aus i), da <span class="math notranslate nohighlight">\(||v|| = \sqrt{\langle v, v \rangle}\)</span> für alle <span class="math notranslate nohighlight">\(v\in V\)</span> gilt.
+\item Wir leiten uns zunächst den adjungierten Endomorphismus <span class="math notranslate nohighlight">\(G^*\)</span> von <span class="math notranslate nohighlight">\(G\)</span> her.
+Seien <span class="math notranslate nohighlight">\(v,w \in V\)</span> und <span class="math notranslate nohighlight">\(G \coloneqq F - \lambda \operatorname{Id}_V\)</span>, dann gilt:
+\begin{equation*}
+\begin{split}
+\langle G(v), w \rangle \ &amp;= \ \langle (F(v) - \lambda \operatorname{Id}_V) (v), w \rangle \ = \ \langle F(v), w \rangle - \lambda \langle \operatorname{Id}_V (v), w \rangle \
+\ &amp;= \ \langle v, F^<em>(w) \rangle - \lambda \langle v, \operatorname{Id}_V(w) \rangle \ = \ \langle v, (F^</em>(w) -\bar\lambda \operatorname{Id}_V) (w) \rangle \ = \ \langle v, G^<em>(w) \rangle.
+\end{split}
+\end{equation</em>}
+Es gilt also
+\begin{equation*}
+G^* \ = \ F^* - \bar\lambda\operatorname{Id}_V.
+\end{equation*}
+Durch Einsetzen erhalten wir die Normalität von <span class="math notranslate nohighlight">\(G\)</span> durch
+\begin{equation*}
+\begin{split}
+G\circ G^* \ &amp;= \ F\circ F^* - \lambda F^* - \bar\lambda F + \lambda\bar\lambda \
+\ &amp;= \ F^<em>\circ F - \bar\lambda F - \lambda F^</em> + \lambda\bar\lambda \ = \ G^<em>\circ G.
+\end{split}
+\end{equation</em>}
+\item Da <span class="math notranslate nohighlight">\(G = F - \lambda \operatorname{Id}_V\)</span> nach iii) normal ist, können wir Satz \ref{satz:kern_normal} anwenden und erhalten damit:
+\begin{equation*}
+\Eig(F; \lambda) \ = \ \Kern G \ = \ \Kern G^* \ = \ \Eig(F^<em>; \bar\lambda).
+\end{equation</em>}
+Dies zeigt insbesondere, dass <span class="math notranslate nohighlight">\(F\)</span> und <span class="math notranslate nohighlight">\(F^*\)</span> die gleichen Eigenvektoren besitzen.
+\end{enumerate}
+\end{proof}
+\end{lemma}</p>
+<p>Schließlich stellen wir mit dem folgenden Satz fest, dass die Normalform von normale Endomorphismen Diagonalgestalt besitzt.
+\begin{satz}[Diagonalisierungssatz]
+Für einen Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> eines unitären Vektorraums <span class="math notranslate nohighlight">\(V\)</span> sind die folgenden Eigenschaften äquivalent:
+\begin{enumerate}[i)]
+\item <span class="math notranslate nohighlight">\(F\)</span> ist normal.
+\item Es gibt eine Orthonormalbasis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span> bestehend aus Eigenvektoren von <span class="math notranslate nohighlight">\(F\)</span>.
+\end{enumerate}
+\begin{proof}\</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\underline{$i)\Rightarrow ii)$}: 
+   Wir führen den Beweis mittels vollständiger Induktion über $n=\dim V$.\\[0.3cm]
+</pre></div>
+</div>
+<p>\textbf{Induktionsanfang: <span class="math notranslate nohighlight">\(n=1\)</span>}\<br />
+Sei <span class="math notranslate nohighlight">\(\lambda_1 \in \mathbb{K}\)</span> der Eigenwert von <span class="math notranslate nohighlight">\(F\)</span> und <span class="math notranslate nohighlight">\(v_1 \in V\)</span> der zugehörige Eigenvektor mit <span class="math notranslate nohighlight">\(||v_1|| = 1\)</span> (durch Normalisierung).
+Dann bildet <span class="math notranslate nohighlight">\(B = (v_1)\)</span> eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span>.
+~\[0.3cm]
+\textbf{Induktionsschritt: <span class="math notranslate nohighlight">\(n-1 \rightarrow n\)</span>}\
+Die Induktionsannahme ist, dass die Aussage bereits für den Fall <span class="math notranslate nohighlight">\(n-1\)</span> gezeigt wurde.<br />
+Sei <span class="math notranslate nohighlight">\(\lambda_1\in\C\)</span> eine Nullstelle des charakteristischen Polynoms von <span class="math notranslate nohighlight">\(F\)</span> und <span class="math notranslate nohighlight">\(v_1\in V\)</span> ein zugehöriger Eigenvektor mit <span class="math notranslate nohighlight">\(\Vert v_1\Vert = 1\)</span> (durch Normalisierung).
+Wir definieren das orthogonale Komplement <span class="math notranslate nohighlight">\(W:=\lin(\lbrace v_1 \rbrace)^\perp\subset V\)</span> von <span class="math notranslate nohighlight">\(v_1\)</span>.
+Für jedes <span class="math notranslate nohighlight">\(w\in W\)</span> gilt dann nach Lemma \ref{lem:normal_eigenschaften}
+\begin{equation*}
+\langle F(w), v_1\rangle \ = \  \langle w, F^<em>(v_1)\rangle \ = \ \langle w, \bar\lambda_1v_1\rangle \ = \ \lambda_1\langle w, v_1\rangle \ = \ 0.
+\end{equation</em>}
+Daraus folgt <span class="math notranslate nohighlight">\(F(W)\subset W\)</span>.
+<span class="math notranslate nohighlight">\(F\vert_W\colon W\to W\)</span> ist als Einschränkung von <span class="math notranslate nohighlight">\(F\)</span> wieder normal und für die charakteristischen Polynome gilt
+\begin{equation*}
+P_F \ = \ (t-\lambda_1) \cdot P_{F\vert_{W}}.
+\end{equation*}
+Nach Induktionsvorraussetzung wissen wir also, dass es eine Orthonormalbasis <span class="math notranslate nohighlight">\(B' = (v_2, \ldots, v_n)\)</span> von <span class="math notranslate nohighlight">\(W\)</span> aus Eigenvektoren von <span class="math notranslate nohighlight">\(F|_W\)</span> gibt.
+Diese ergänzen wir um den Eigenvektor <span class="math notranslate nohighlight">\(v_1\)</span> von <span class="math notranslate nohighlight">\(F\)</span> zu einer Orthonormalbasis <span class="math notranslate nohighlight">\(B = (v_1, \ldots, v_n)\)</span> von <span class="math notranslate nohighlight">\(V\)</span> aus Eigenvektoren von <span class="math notranslate nohighlight">\(F\)</span>.
+~\[0.3cm]
+\underline{<span class="math notranslate nohighlight">\(ii)\Rightarrow i)\)</span>}: Die Matrix <span class="math notranslate nohighlight">\(D:=\operatorname{M}_{B}(F)\)</span> ist diagonal und es gilt
+\begin{equation*}
+\operatorname{M}_{\mathcal{B}}(F^<em>) \ = \ D^</em> \ = \ \bar D.
+\end{equation*}
+Da die folgende Gleichung gilt
+\begin{equation*}
+D\cdot D^* \ = \ D\cdot \bar D \ = \ \bar D\cdot D \ = \ D^* \cdot D
+\end{equation*}
+ist <span class="math notranslate nohighlight">\(F\)</span> normal.
+\end{proof}
+\end{satz}</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./vektoraeume"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="orth_endo.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">2.6. </span>Orthogonale und unitäre Endomorphismen</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../normierte_raeume/normierte_raeume.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">3. </span>Normierte Vektorräume</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

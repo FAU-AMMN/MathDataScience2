@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.1. Partielle Differenzierbarkeit &#8212; Mathematik für Data Science 2</title>
+    <title>3.4. Hilberträume &#8212; Mathematik für Data Science 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.2. Differentialoperatoren erster Ordnung" href="first_order.html" />
-    <link rel="prev" title="4. Differentiation von Funktionen mehrerer Veränderlicher" href="ableitungen.html" />
+    <link rel="next" title="4. Differentiation von Funktionen mehrerer Veränderlicher" href="../ableitungen/ableitungen.html" />
+    <link rel="prev" title="3.3. Kompaktheit" href="kompaktheit.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -208,70 +208,70 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="normierte_raeume.html">
    3. Normierte Vektorräume
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+    <a class="reference internal" href="konvergenz.html">
      3.1. Konvergenz von Folgen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+    <a class="reference internal" href="stetigkeit.html">
      3.2. Stetigkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+    <a class="reference internal" href="kompaktheit.html">
      3.3. Kompaktheit
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      3.4. Hilberträume
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="ableitungen.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
    4. Differentiation von Funktionen mehrerer Veränderlicher
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
      4.1. Partielle Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="first_order.html">
+    <a class="reference internal" href="../ableitungen/first_order.html">
      4.2. Differentialoperatoren erster Ordnung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="higher_order.html">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
      4.3. Differentialoperatoren höherer Ordnung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="tot_diff.html">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
      4.4. Totale Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="taylor.html">
+    <a class="reference internal" href="../ableitungen/taylor.html">
      4.5. Taylor-Formel
     </a>
    </li>
@@ -323,7 +323,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/ableitungen/part_diff.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/normierte_raeume/hilbert.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -356,114 +356,53 @@
         
               <div>
                 
-  <div class="section" id="partielle-differenzierbarkeit">
-<h1><span class="section-number">4.1. </span>Partielle Differenzierbarkeit<a class="headerlink" href="#partielle-differenzierbarkeit" title="Permalink to this headline">¶</a></h1>
-<p>Um den Begriff der Ableitung auf Funktionen mehrerer Variablen zu übertragen, betrachtet man zunächst deren Änderungsverhalten entlang einzelner Koordinatenrichtungen.
-Wir fixieren also einen Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> und betrachten die Funktion</p>
+  <div class="section" id="hilbertraume">
+<h1><span class="section-number">3.4. </span>Hilberträume<a class="headerlink" href="#hilbertraume" title="Permalink to this headline">¶</a></h1>
+<p>Im Folgenden führen wir den Begriff eines Hilbertraums als Spezialfall eines Banachraums ein.
+Hilberträume weisen besonders viel Struktur auf, da ihre Norm durch ein Skalarprodukt induziert wird.
+Daher ist es nicht verwunderlich, dass sie in vielen Theorien der Physik eine wichtige Rolle spielen, wie zum Beispiel in der Quantenmechanik.
+Auch im Bereich des maschinellen Lernens sind Hilberträume ein gängiges Werkzeug, wie zum Beispiel bei den sogenannten \emph{Kernel Methods} in der statistischen Lerntheorie.
+\begin{definition}[Hilbertraum]
+Wir nennen einen Banachraum <span class="math notranslate nohighlight">\((X, ||\cdot||_X)\)</span>, dessen Norm durch ein Skalarprodukt induziert ist einen \emph{Hilbertraum}.
+\end{definition}</p>
+<p>Das folgende Beispiel diskutiert verschiedene Banachräume und erklärt ob es sich jeweils um einen Hilbertraum handelt oder nicht.
+\begin{example}
+Im Folgenden untersuchen wir Beispiele für endlich- und unendlich-dimensionale Banachräume, d.h., vollständige normierte Vektorräume, und entscheiden ob diese einen Hilbertraum darstellen.
+\begin{enumerate}
+\item Der Euklidische Vektorraum <span class="math notranslate nohighlight">\(\R^n\)</span> mit <span class="math notranslate nohighlight">\(n\in\N\)</span> ist ausgestattet mit der Euklidischen Norm</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\tilde{f}(\xi) \ \coloneqq \ f(x_1,\ldots,x_{i-1},\xi,x_{i+1},\ldots,x_n).
+||x||_2 \ \coloneqq \ \sqrt{\sum_{i=1}^n |x_i|^2} \ = \ \sqrt{\langle x, x \rangle}, \quad \text{ für alle } x \in \R^n
 \end{equation*}\]</div>
-<p>Anschaulich gesprochen halten wir alle Variablen, bis auf die <span class="math notranslate nohighlight">\(i\)</span>-te fest und erhalten somit eine eindimensionale Funktion.
-Dies erlaubt es uns den Ableitungsbegriff auf die schon bekannte Definition für Funktionen in einer Veränderlichen herunterzubrechen, was zum Begriff der partiellen Differenzierbarkeit führt.</p>
-<div class="proof definition admonition" id="def:partielle_diffbarkeit">
-<p class="admonition-title"><span class="caption-number">Definition 4.1 </span> (Partielle Differnzierbarkeit)</p>
-<div class="definition-content section" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(U\subset \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> eine Funktion.</p>
-<p><em>i)</em> Wir nennen die Funktion <span class="math notranslate nohighlight">\(f\)</span> <em>(lokal) partiell differenzierbar</em> im Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> in die <span class="math notranslate nohighlight">\(i\)</span>-te Koordinatenrichtung falls folgender Grenzwert existiert,</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial f}{\partial x_i} (x) \ \coloneqq \ \partial_i f(x) \      \coloneqq \ \lim_{h\rightarrow 0} \frac{f(x + h\cdot e_i) - f(x)}{h}.\]</div>
-<p><em>ii)</em> Wir nennen die Funktion <span class="math notranslate nohighlight">\(f\)</span> <em>(global) partiell differenzierbar</em> falls sie für jedes <span class="math notranslate nohighlight">\(x\in U\)</span> und jede Koordinatenrichtung <span class="math notranslate nohighlight">\(i\in\{1,\ldots,n\}\)</span> partiell differenzierbar ist.</p>
-<p><em>iii)</em> Ist die Funktion <span class="math notranslate nohighlight">\(\partial_i f:U\rightarrow \R\)</span> partiell differenzierbar und zudem stetig für jedes <span class="math notranslate nohighlight">\(i\in\{1,\ldots,n\}\)</span>, so nennen wir <span class="math notranslate nohighlight">\(f\)</span> <em>stetig partiell differenzierbar</em>.</p>
+<p>ein endlich-dimensionaler Hilbertraum.
+\item Der Banachraum <span class="math notranslate nohighlight">\((\R^n, ||\cdot||_\infty)\)</span> ist kein Hilbertraum.
+\item Der Matrizenraum <span class="math notranslate nohighlight">\(\K^{m \times n}\)</span> der reellen oder komplexen Matrizen ausgestattet mit dem Frobenius-Skalarprodukt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\langle A, B \rangle \ \coloneqq \ \sum_{i=1}^m\sum_{j=1}^n \bar{a}_{ij}b_{ij}, \quad \text{ für alle Matrizen } A,B \in \K^{m\times n}
+\end{equation*}\]</div>
+<p>ist ein endlich-dimensionaler Hilbertraum.
+\item Der Banachraum <span class="math notranslate nohighlight">\((\ell^2(\R), ||\cdot||_{\ell^2})\)</span> der Folgen, deren Summe ihrer Quadrate endlich ist, zusammen mit der Norm</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+||(x_n)_{n\in\N}||_{\ell^2} \ \coloneqq \ \sqrt{\sum_{n=1}^\infty |x_n|^2}
+\end{equation*}\]</div>
+<p>ist ein unendlich-dimensionaler Hilbertraum.
+\item Der unendlich-dimensionale Banachraum <span class="math notranslate nohighlight">\((\ell^1(\R), ||\cdot||_{\ell^1})\)</span> der Folgen, deren Summe ihrer Beträge endlich ist, zusammen mit der Norm</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+||(x_n)_{n\in\N}||_{\ell^1} \ \coloneqq \ \sum_{n=1}^\infty |x_n|
+\end{equation*}\]</div>
+<p>ist kein Hilbertraum.
+\item Der Raum der skalarwertigen, quadrat-integrierbaren Funktionen <span class="math notranslate nohighlight">\(L^2\)</span> auf einem Gebiet <span class="math notranslate nohighlight">\(\Omega \subset \R^n\)</span> ausgestattet mit der Norm</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+||f||_{L^2} \ \coloneqq \ \left(\int_\Omega |f(x)|^2 \, \mathrm{d}x\right)^{\frac{1}{2}} \ = \ \left(\int_\Omega \overline{f(x)} f(x) \, \mathrm{d}x\right)^{\frac{1}{2}} \ = \ \sqrt{\langle f, f \rangle_{L^2} }
+\end{equation*}\]</div>
+<p>ist ein unendlich-dimensionaler Hilbertraum.
+\end{enumerate}
+\end{example}</p>
 </div>
-</div><p>In der obigen Definition bezeichnet</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-e_i \ \coloneqq \ (0,\ldots,0,\underbrace{1}_{i\text{-te Stelle}},0,\ldots,0)\in\R^n
-\end{equation*}\]</div>
-<p>den <span class="math notranslate nohighlight">\(i\)</span>-ten Einheitsvektor des <span class="math notranslate nohighlight">\(\R^n\)</span>.
-Im Grenzwert für <span class="math notranslate nohighlight">\(h\rightarrow 0\)</span> sind nur Nullfolgen <span class="math notranslate nohighlight">\((h_k)_{k\in\N}\)</span> erlaubt, welche die Bedingung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-(x+h_k\cdot e_i) \in U \quad \text{ mit } \quad h_k \neq 0, \ \forall k\in \N
-\end{equation*}\]</div>
-<p>erfüllen.
-Das Symbol <span class="math notranslate nohighlight">\(\partial\)</span> ist hierbei eine stilisierte Version des Buchstaben d (manchmal auch del ausgesprochen).</p>
-<p>Im folgenden Beispiel berechnen wir die partielle Ableitung der Euklidischen Norm im <span class="math notranslate nohighlight">\(\R^n\)</span>.</p>
-<div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 4.1 </span></p>
-<div class="example-content section" id="proof-content">
-<p>Wir betrachten die Abbildung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f :\R^n \ &amp;\rightarrow \ \R_0^+\\
-x \ &amp;\mapsto \ \norm{x}{}_2 \ \coloneqq \ \sqrt{\sum_{i=1}^n x_i^2},
-\end{align*}\]</div>
-<p>welche die Euklidische Norm im <span class="math notranslate nohighlight">\(\R^n\)</span> darstellt.
-Wir betrachten die <em>Niveaumengen</em> <span class="math notranslate nohighlight">\(N_f \subset \R^n\)</span> von <span class="math notranslate nohighlight">\(f\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-N_f(c) \ \coloneqq \ \{x\in \R^n:f(x) = c\} \ = \ \{f^{-1}(c)\}.
-\end{align*}\]</div>
-<p>In diesem Fall sind die Niveaumengen <span class="math notranslate nohighlight">\(N_{f}(c)\)</span> Sphären mit Radius <span class="math notranslate nohighlight">\(c\in \R^+_0\)</span>.
-Weiterhin sieht man leicht, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> auf der Menge <span class="math notranslate nohighlight">\(\R^n \setminus \{0\}\)</span> partiell differenzierbar
-ist, da wir für <span class="math notranslate nohighlight">\(x\neq 0\)</span> mittels Kettenregel die folgende partielle Ableitung erhalten</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\partial_i \norm{x}{}_2 \ &amp;= \ \partial_i \left( (\sum_{i=1}^n x_i)^{\frac{1}{2}} \right) \ = \ \partial_i \left(x_i^2 + \sum_{j\neq i} x_j^2\right)^{1/2}\\
-\ &amp;= \ \frac{1}{2}\left(x_i^2+\sum_{j\neq i} x_j^2\right)^{-1/2}\cdot 2x_i \ = \ \frac{x_i}{\norm{x}{}_2}.
-\end{align*}\]</div>
-</div>
-</div><p>Der Begriff der partiellen Differenzierbarkeit in Definition <a class="reference internal" href="#def:partielle_diffbarkeit">Definition 4.1</a> ist der schwächste Ableitungsbegriff für Funktionen in mehreren Veränderlichen.
-Anders als im eindimensionalen Fall gilt beispielsweise nicht, dass aus der partiellen Differenzierbarkeit einer Funktion schon folgt, dass diese stetig ist.
-Das soll uns das folgende Beispiel vor Augen führen.</p>
-<div class="proof example admonition" id="bsp:partiell_diffbar_nicht_stetig">
-<p class="admonition-title"><span class="caption-number">Example 4.2 </span></p>
-<div class="example-content section" id="proof-content">
-<p>Wir betrachten im Folgenden eine Funktion auf <span class="math notranslate nohighlight">\(\R^n\)</span> mit <span class="math notranslate nohighlight">\(n\geq 2\)</span> die zeigt, dass aus partieller Differenzierbarkeit keine Stetigkeit folgt.
-Dazu definieren wir</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f(x) \ \coloneqq \
-\begin{cases}
-\ \frac{x_1 \cdot x_2 \cdot \ldots \cdot x_n}{\norm{x}{}_2^n}, \quad &amp;\text{falls } x\neq 0,\\
-\ 0, \quad &amp;\text{falls } x=0.
-\end{cases}
-\end{align*}\]</div>
-<p>Man sieht sofort, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> auf <span class="math notranslate nohighlight">\(\R^n\setminus \{0\}\)</span> stetig und auch partiell differenzierbar ist.</p>
-<p>Wir überprüfen nun die partielle Differenzierbarkeit im Punkt <span class="math notranslate nohighlight">\(x=0\)</span>.
-Hierzu betrachten wir für <span class="math notranslate nohighlight">\(h\neq 0\)</span></p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f(0+h\cdot e_i) \, - \, f(0) \ = \ \frac{0 \cdot \ldots \cdot 0\cdot h\cdot 0\cdot \ldots \cdot 0}{\norm{h\cdot e_i}{}_2^n} \, - \, 0 \ = \ 0  
-\end{align*}\]</div>
-<p>und somit folgt direkt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\lim_{h\rightarrow 0} \frac{f(0+h\cdot e_i) - f(0)}{h} \ = \ 0
-\end{align*}\]</div>
-<p>für alle Richtungen <span class="math notranslate nohighlight">\(i\in\{1,\ldots,n\}\)</span>.
-Daher wissen wir also, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> auch im Punkt <span class="math notranslate nohighlight">\(x=0\)</span> partiell differenzierbar ist.</p>
-<p>Tatsächlich ist die Funktion aber nicht stetig in der Null.
-Dafür betrachten wir eine Folge <span class="math notranslate nohighlight">\((a_k)_{k\in \N}\subset\R^n\setminus \{0\}\)</span>, die diagonal in den Nullpunkt hineinläuft, d.h., konkret betrachten wir</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-a_k \ \coloneqq \ (\frac1k,\ldots,\frac1k)^T, \quad k\in\N.
-\end{equation*}\]</div>
-<p>Für jedes Folgeglied <span class="math notranslate nohighlight">\(a_k, k\in\N\)</span>, der Folge gilt dann <span class="math notranslate nohighlight">\(\norm{a_k}{}_2 = \frac{\sqrt{n}}{k}\)</span> und somit ist der Funktionswert von <span class="math notranslate nohighlight">\(f\)</span> für diese Folgeglieder gegeben durch</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}} \right)^n \ = \ n^{-\frac{n}{2}}, \quad k\in\N.
-\end{align*}\]</div>
-<p>Daraus folgt aber schon, dass</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\lim_{k\rightarrow\infty} f(a_k) \ \equiv \ n^{-\frac{n}{2}} \ \neq \ 0 \ = \ f(0) \ = \ f(\lim_{k\rightarrow\infty} a_k).
-\end{align*}\]</div>
-<p>Das bedeutet also, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> nicht stetig im Punkt <span class="math notranslate nohighlight">\(x=0\)</span> ist.</p>
-<p>Man bemerke, dass diese Konstruktion nur für höherdimensionale Räume <span class="math notranslate nohighlight">\(\R^n\)</span> mit <span class="math notranslate nohighlight">\(n\geq 2\)</span> möglich ist, da die analog  definierte Funktion im Eindimensionalen nicht differenzierbar ist.</p>
-</div>
-</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -478,7 +417,7 @@ f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}}
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./ableitungen"
+            path: "./normierte_raeume"
         },
         predefinedOutput: true
     }
@@ -495,19 +434,19 @@ f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}}
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="ableitungen.html" title="previous page">
+        <a class="left-prev" href="kompaktheit.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">4. </span>Differentiation von Funktionen mehrerer Veränderlicher</p>
+                <p class="prevnext-title"><span class="section-number">3.3. </span>Kompaktheit</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="first_order.html" title="next page">
+        <a class="right-next" href="../ableitungen/ableitungen.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">4.2. </span>Differentialoperatoren erster Ordnung</p>
+                <p class="prevnext-title"><span class="section-number">4. </span>Differentiation von Funktionen mehrerer Veränderlicher</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

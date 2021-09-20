@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.3. Kompaktheit &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.4. Hilberträume" href="hilbert.html" />
+    <link rel="prev" title="3.2. Stetigkeit" href="stetigkeit.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../eigenwerte/eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   4. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     4.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     4.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     4.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     4.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     4.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   5. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/normierte_raeume/kompaktheit.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="kompaktheit">
+<h1><span class="section-number">3.3. </span>Kompaktheit<a class="headerlink" href="#kompaktheit" title="Permalink to this headline">¶</a></h1>
+<p>Ein zentraler Begriff in der mathematischen Topologie ist Kompaktheit einer Menge, die für viele Existenzaussagen essentiell ist.
+Aus \cite[Kapitel 5.1]{burger_2020} kennen Sie bereits kompakte Mengen in metrischen Räumen, so dass die folgende Definition einer Wiederholung darstellt.
+\begin{definition}[Kompaktheit]
+Eine Teilmenge <span class="math notranslate nohighlight">\( M \subseteq X \)</span> eines normierten Raumes <span class="math notranslate nohighlight">\( X \)</span> ist kompakt genau dann,
+wenn jede Folge <span class="math notranslate nohighlight">\( (x_n)_{n\in\N} \subseteq M \)</span> eine konvergente Teilfolge enthält,
+deren Grenzwert in <span class="math notranslate nohighlight">\( M \)</span> liegt.
+\end{definition}</p>
+<p>In endlichen Dimensionen haben Sie bereits ein wichtiges Resultat für konvergente Teilfolgen kennengelernt.
+Der Satz von Bolzano-Weierstrass, dass abgeschlossene Kugeln in <span class="math notranslate nohighlight">\( \mathbb{K}^n\)</span> mit Körper <span class="math notranslate nohighlight">\(\K=\R\)</span> oder <span class="math notranslate nohighlight">\(\K=\C\)</span> kompakt sind.
+\begin{thm}[Bolzano-Weierstrass]\label{satz:bolzano}
+Sei <span class="math notranslate nohighlight">\(\K=\R\)</span> oder <span class="math notranslate nohighlight">\(\K=\C\)</span> ein Körper und <span class="math notranslate nohighlight">\((x_k)_{k\in\N} \subset \K^n\)</span> eine beschränkte Folge, d.h. es gibt eine Konstante <span class="math notranslate nohighlight">\(C \in \R^+\)</span>, so dass alle Folgenglieder <span class="math notranslate nohighlight">\(x_k, k\in\N,\)</span> in der abgeschlossenen Kugel <span class="math notranslate nohighlight">\(B_C(0) \subset \K^n\)</span> liegen, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Vert x_k \, \Vert \, \leq \, C.
+\end{equation*}\]</div>
+<p>Dann existiert eine konvergente Teilfolge <span class="math notranslate nohighlight">\((x_{k_j})_{j\in\N}\)</span> mit dem Grenzwert <span class="math notranslate nohighlight">\(\overline{x} \in X\)</span> und es gilt <span class="math notranslate nohighlight">\(\Vert \overline{x} \Vert \leq C\)</span>.
+\end{thm}
+\begin{proof}
+Siehe \cite[Satz 4.19]{burger_2020}
+\end{proof}</p>
+<p>\begin{comment}
+Wir können folgende Beobachtungen zum Satz von Bolzano-Weierstrass \ref{satz:bolzano} festhalten.
+\begin{enumerate}
+\item In endlich-dimensionalen Vektorräumen <span class="math notranslate nohighlight">\(X\)</span> lässt sich eine noch stärkere Aussage beweisen, die sich auf den Satz von Heine-Borel \cite[Satz 5.18]{burger_2020} zurückführen lässt.
+Anstatt nur einer hinreichenden Bedingung, kann man aussagen, dass eine Teilmenge <span class="math notranslate nohighlight">\(M \subset X\)</span> genau dann kompakt ist, wenn Sie beschränkt and abgeschlossen ist.
+\item Der Satz gilt nicht mehr, wenn der betrachtete normierte Raum unendlich-dimensional ist, beispielsweise in Funktionen- bzw. Folgenräumen wie <span class="math notranslate nohighlight">\(C([a,b]; \R) \)</span> oder</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\ell^2(\R) \ = \ \{ (x_n)_{n\in\N} : x_n \in \R, \; \sum_{n=1}^\infty |x_n|^2 &lt; \infty \}.
+\end{equation*}\]</div>
+<p>Betrachten wir beispielsweise die Folge <span class="math notranslate nohighlight">\((x_n)_{n\in\N} \subset \ell^2(R)\)</span> der unendlich-dimensionalen Einheitsvektoren <span class="math notranslate nohighlight">\(e_n \in \ell^2(\R)\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+x_n\ = \ e_n \ \coloneqq \ (0, \ldots, 0, 1, 0, \ldots), \quad n \in \N,
+\end{equation*}\]</div>
+<p>d.h., das Folgenglied <span class="math notranslate nohighlight">\(x_n\)</span> besitzt eine Eins an der <span class="math notranslate nohighlight">\(n\)</span>-ten Stelle und sonst nur Nullen.
+\end{enumerate}
+Es wird klar, dass jedes Folgenglied auf der Einheitskugel des Vektorraums <span class="math notranslate nohighlight">\(\ell^2(\R)\)</span> liegt, da offensichtlich gilt <span class="math notranslate nohighlight">\(||x_n|| = 1\)</span> für alle <span class="math notranslate nohighlight">\(n \in \N\)</span>.
+Das heißt, dass die Folge <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> beschränkt ist und in der abgeschlossenen Einheitskugel liegt.
+Dennoch besitzt die Folge keine konvergente Teilfolge, da</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+||x_m - x_n|| \ = \ ||e_m - e_n|| \ = \ \sqrt{2}, \quad \text{ für alle } m,n \in \N, m \neq n,
+\end{equation*}\]</div>
+<p>d.h., der Abstand eines beliebigen Folgeglieds zu allen anderen Folgegliedern ist konstant <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>.
+Somit kann keine konvergente Teilfolge von <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> existieren und damit ist die Einheitskugel in <span class="math notranslate nohighlight">\(\ell^2(\R)\)</span> nicht kompakt.
+\end{comment}</p>
+<p>Wir können über den Begriff der Kompaktheit sogar erkennen, ob ein Vektorraum endlich erzeugt ist.
+Als Vorbereitung dieser Beobachtung benötigen wir jedoch zuerst das folgende Hilfslemma.
+Die Motivation für dieses Lemma ist, dass wir den Begriff eines senkrechten Vektors auf einen Unterraum aus Kapitel \ref{s:orthonormalisierung} nicht in beliebigen normierten Vektorräumen anwenden können (da ggfs. kein Skalarprodukt existiert).
+Dennoch können wir nach dem folgenden Lemma Einheitsvektoren finden, die außerhalb dieses Unterraums liegen und einen positiven Abstand zu diesem besitzen.
+\begin{lemma}[Lemma von Riesz]
+\label{lem:lemma von Riesz}
+Es sei <span class="math notranslate nohighlight">\(X\)</span> ein normierter Vektorraum und <span class="math notranslate nohighlight">\( U \subsetneq X \)</span> ein abgeschlossener, echter Unterraum von <span class="math notranslate nohighlight">\(X\)</span>.
+Sei außerdem ein <span class="math notranslate nohighlight">\(\delta \in \R\)</span> mit <span class="math notranslate nohighlight">\(0 &lt; \delta &lt; 1\)</span> gegeben.
+Dann existiert ein Element <span class="math notranslate nohighlight">\(y \in X\)</span> der Einheitskugel mit <span class="math notranslate nohighlight">\( \norm[X]{y} = 1 \)</span>, so dass
+\begin{equation*}
+d(y, U) \ \coloneqq \ \inf_{u\in U}\norm[X]{y-u} \ \geq \ \delta.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+Es sei <span class="math notranslate nohighlight">\( \delta \in (0,1)\)</span> beliebig vorgegeben.
+Wir wählen ein beliebiges Element <span class="math notranslate nohighlight">\(z \in X \setminus U\)</span> aus dem Komplement von <span class="math notranslate nohighlight">\(U\)</span> und erkennen, dass der Abstand <span class="math notranslate nohighlight">\(d(z,U)\)</span> von <span class="math notranslate nohighlight">\(z\)</span> zu <span class="math notranslate nohighlight">\(U\)</span> positiv ist.
+Da wir den Unterraum <span class="math notranslate nohighlight">\(U \subsetneq X\)</span> als abgeschlossen angenommen haben, existiert ein Element <span class="math notranslate nohighlight">\(u_0 \in U \)</span> für das gilt
+\begin{equation*}
+d(z,U) \ \coloneqq \ \inf_{u\in U}\norm[X]{z-u} \ \leq \ \norm[X]{z-u_0} \ \leq \  \frac{d(z,U)}{\delta}.
+\end{equation*}
+Und damit können wir folgern, dass
+\begin{equation}\label{eq:riesz_lemma}
+\frac{\delta}{d(z,U)} \ \leq \ \frac{1}{\norm[X]{z-u_0}}.
+\end{equation}
+Wählen wir nun den Einheitsvektor
+\begin{equation*}
+y \ \coloneqq \ \frac{z-u_0\phantom{X}}{\norm[X]{z-u_0}},
+\end{equation*}
+so ist offensichtlich <span class="math notranslate nohighlight">\(||y||_X = 1\)</span>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Für ein beliebiges Element $v \in U $ können wir nun nachrechnen, dass gilt
+\begin{equation*}
+	\norm[X]{y - v} \ = \ \left\Vert
+      	\frac{z-u_0}{\norm[X]{z-u_0}}
+        -
+        v \cdot \frac{\norm[X]{z-u_0}}{\norm[X]{z-u_0}}
+    \right\Vert_X
+    \ = \ 
+    \frac{1}{\norm[X]{z-u_0}}
+    \left\Vert
+        z
+        -u_0
+        -v \cdot \norm[X]{z-u_0}
+    \right\Vert_X.
+\end{equation*}
+Da der Vektor $(u_0 - v\cdot \norm[X]{z-u_0}) \in U $ ist, können wir folgende Abschätzung treffen
+\begin{equation*}
+\begin{split}
+    \frac{1}{\norm[X]{z-u_0}}
+    \left\Vert
+        z
+        -u_0
+        -v \cdot \norm[X]{z-u_0}
+    \right\Vert_X
+	&amp;\ \geq \
+    \frac{1}{\norm[X]{z-u_0}}
+    \ \inf_{u\in U}\norm[X]{z-u}\\
+    \ &amp;\overset{\eqref{eq:riesz_lemma}}{\geq} \
+    \frac{\delta}{d(z,U)}d(z,U)
+    \ = \ \delta.
+    \end{split}
+\end{equation*}
+</pre></div>
+</div>
+<p>\end{proof}</p>
+<p>Mit Hilfe des obigen Lemmas können wir den folgenden interessanten Kompaktheitssatz beweisen, der es uns erlaubt einen endlich-dimensionalen Vektorraum an der Kompaktheit seiner Einheitskugel zu erkennen.
+\begin{thm}[Kompaktheitssatz von Riesz]\label{satz:kompaktheit_riesz}
+Ein normierter Vektorraum <span class="math notranslate nohighlight">\(X\)</span> ist genau dann endlich-dimensional, wenn seine entsprechende Einheitskugel
+\begin{equation*}
+B_1(0) \ \coloneqq \ { x \in X : ||x||<em>X \leq 1 }<br />
+\end{equation*}
+kompakt ist.
+\end{thm}
+\begin{proof}
+Wir zeigen die beiden Implikationen der Äquivalenzaussage im Folgenden getrennt voneinander.\[0.3cm]
+\glqq<span class="math notranslate nohighlight">\(\Rightarrow\)</span>\grqq: Aus der Linearen Algebra wissen wir, dass es für jeden endlich-dimensionalen <span class="math notranslate nohighlight">\( \mathbb{K}\)</span>-Vektorraum <span class="math notranslate nohighlight">\(X\)</span> ein
+Homöomorphismus <span class="math notranslate nohighlight">\( \Phi \colon X \rightarrow \mathbb{K}^n\)</span> existiert.
+Es sei nun <span class="math notranslate nohighlight">\( (x_k)_{k\in\N} \subseteq B^X_1(0) \)</span> eine Folge in der Einheitskugel von <span class="math notranslate nohighlight">\(X\)</span>, so dass
+\begin{equation*}
+(\Phi(x_k))</em>{k\in\N} : \subseteq : B_1^{\mathbb{K}^n}(0).
+\end{equation*}
+Da die Einheitskugel <span class="math notranslate nohighlight">\(B_1^{\mathbb{K}^n}(0)\)</span> nach dem Satz \ref{satz:bolzano} von Bolzano-Weierstraß kompakt ist, existiert eine konvergente Teilfolge
+\begin{equation*}
+(y_k)<em>{k\in\N} : \subseteq : (\Phi(x_k))</em>{k\in\N}.
+\end{equation*}
+Weil <span class="math notranslate nohighlight">\(\Phi\)</span> als Homöomorphismus insbesondere eine stetige Umkehrabbildung <span class="math notranslate nohighlight">\(\Phi^{-1}\)</span> besitzt, ist dann aber  auch
+\begin{equation*}
+(z_k)<em>{k\in\N} \ \coloneqq \ (\Phi^{-1}(y_k))</em>{k\in\N}
+\end{equation*}
+eine konvergente Teilfolge in <span class="math notranslate nohighlight">\(B^X_1(0)\)</span>.
+Da die Folge <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span> beliebig gewählt war, folgt die Kompaktheit der Einheitskugel <span class="math notranslate nohighlight">\(B_1^X(0) \subset X\)</span>.\[0.3cm]
+\glqq<span class="math notranslate nohighlight">\(\Leftarrow\)</span>\grqq: Um die Rückrichtung der Aussage zu beweisen, führen wir einen Beweis über die Kontraposition.
+Es sei <span class="math notranslate nohighlight">\(X\)</span> nicht endlich-dimensional, d.h, unendlich-dimensional.
+Dann existiert eine aufsteigende Folge von echten, abgeschlossenen Unterräumen <span class="math notranslate nohighlight">\((U_k)_{k\in\N} \subsetneq X\)</span> von <span class="math notranslate nohighlight">\(X\)</span> mit
+\begin{equation*}
+U_1 \subsetneq U_2 \subsetneq \ldots \subsetneq U_k \subsetneq \ldots \ , \quad \dim U_k &lt; \dim U_{k+1} \text{ für } k\in\N.
+\end{equation*}
+Für ein beliebiges <span class="math notranslate nohighlight">\( \delta \in (0,1) \)</span> wählen wir mit dem Lemma~\ref{lem:lemma von Riesz} von Riesz einen Einheitsvektor <span class="math notranslate nohighlight">\( y_k \in U_k\)</span>,  so dass
+\begin{equation*}
+\inf_{u\in U_{k-1}} \norm[X]{y-u} \ \geq \ \delta.
+\end{equation*}
+Für beliebige Wahl des ersten Einheitsvektors <span class="math notranslate nohighlight">\(y_1 \in X\)</span> mit <span class="math notranslate nohighlight">\(||y_1|| = 1\)</span> haben wir damit ein Folge <span class="math notranslate nohighlight">\((y_k)_{k\in\N}\)</span> auf der Einheitskugel <span class="math notranslate nohighlight">\(B_1^X(0)\)</span> konstruiert, welche beschränkt ist, jedoch keine Cauchy-Folge sein kann, da der Abstand zwischen den Folgegliedern immer mindestens <span class="math notranslate nohighlight">\(\delta\)</span> beträgt.
+Daraus folgt, dass die Einheitskugel in einem unendlich-dimensionalen Vektorraum <span class="math notranslate nohighlight">\(X\)</span> nicht kompakt sein kann.
+\end{proof}</p>
+<p>Der Kompaktheitssatz \ref{satz:kompaktheit_riesz} von Riesz besagt zwar, dass Kugeln in unendlich-dimensio-nalen Banachräumen nicht kompakt sind.
+Dennoch heißt das nicht, dass es in unendlich-dimensio-nalen Banachräumen keine kompakten Teilmengen gibt.
+Um dies zu verdeutlichen beschäftigen uns abschließend mit einem fundamentalen Satz, der Aussagen über die Kompaktheit bestimmter Teilmengen des Funktionenraumes <span class="math notranslate nohighlight">\((C([a,b],\R^n), \norm[\infty]{\cdot})\)</span> der stetigen Funktionen auf einem Intervall <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> zusammen mit der Supremumsnorm erlaubt.
+Dies ist nur ein Spezialfall des Satzes von Arzelà-Ascoli, der in der allgemeinen Formulierung abstraktere Räume untersucht.
+\begin{thm}[Arzelà-Ascoli]
+Sei <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> ein Intervall und es sei <span class="math notranslate nohighlight">\((f_n)_{n\in\N} \)</span> eine Folge von Funktionen aus <span class="math notranslate nohighlight">\( C([a,b], \R) \)</span>, welche punktweise beschränkt und gleichgradig stetig ist, d.,h.
+\begin{enumerate}[(i)]
+\item \label{it:arzela:pktw beschr}
+<span class="math notranslate nohighlight">\( \forall x \in [a,b]\: \exists K \in \R^+ \colon \sup_{n\in\N} |f_n(x)| \leq K\)</span>,
+\item \label{it:arzela:glgr stet}
+<span class="math notranslate nohighlight">\( \forall \varepsilon &gt; 0\, \exists \delta &gt; 0\, \forall n \in \N \
+        \forall x, y \in [a,b] \colon (|x-y| &lt; \delta \Rightarrow |f_n(x)-f_n(y)| &lt; \varepsilon) \)</span>.
+\end{enumerate}
+Dann besitzt die Folge <span class="math notranslate nohighlight">\((f_n)_{n\in\N}\)</span> eine gleichmäßig konvergente Teilfolge.
+\end{thm}
+\begin{proof}
+Der Beweis dieses Satzes beruht auf dem \emph{Cantorschen Diagonalverfahren}, das rekursiv Teilfolgen konstruiert die partiell konvergieren und dann anschließend aus all diesen Teilfolgen eine überall konvergente Teilfolge zu konstruieren.
+Wir betrachten hierfür zunächst die abzählbar unendliche Teilmenge <span class="math notranslate nohighlight">\(\Q \cap [a,b]\)</span> des Intervalls <span class="math notranslate nohighlight">\([a,b]\)</span> mit der Abzählung
+\begin{equation*}
+\Phi \colon \Q\cap[a,b] \rightarrow \N.
+\end{equation*}
+Für <span class="math notranslate nohighlight">\( x \in \Q\cap [a,b]\)</span> mit <span class="math notranslate nohighlight">\( \Phi(x) = i \)</span> schreiben wir <span class="math notranslate nohighlight">\(x_i\)</span>.
+Weil alle Folgeglieder <span class="math notranslate nohighlight">\((f_n(x_1))_{n\in\N} \)</span> beschränkt sind nach Voraussetzung, existiert eine konvergente Teilfolge <span class="math notranslate nohighlight">\((f^1_n(x_1))_{n\in\N}\)</span> von <span class="math notranslate nohighlight">\((f_n(x_1))_{n\in\N}\)</span> nach dem Satz \ref{satz:bolzano} von Bolzano-Weierstraß.
+Aus dieser konvergenten Teilfolge können wir wiederum eine Teilfolge <span class="math notranslate nohighlight">\((f^2_n(x_2))_{n\in\N} \)</span> mit der gleichen Argumentation bestimmen.
+Dies können wir sukzessive weiterführen für alle Punkte <span class="math notranslate nohighlight">\((x_n)_{n\in\N} \subset [a,b]\)</span>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Wir definieren nun eine spezielle Funktionenfolge $(g_n)_{n\in\N} \subset (f_n)_{n\in\N}$ mit
+\begin{equation*}
+\begin{split}
+g_n \colon [a,b] &amp;\rightarrow \R,\\
+ x &amp;\mapsto f^n_n(x)
+ \end{split}
+\end{equation*}
+und beweisen, dass diese Folge gleichmäßig konvergiert in $C([a,b]; \R)$.
+Hiebei reicht es zu zeigen, dass $(g_n)_{n\in\N}$ eine Cauchy-Folge ist, da wir aus Beispiel \ref{bsp:vollständigkeit} wissen, dass $C([a,b]; \R)$ vollständig bezüglich der Supemumsnorm ist.
+
+Sei nun $ \epsilon &gt; 0 $ beliebig gewählt. 
+Nach Voraussetzung existiert nun ein entsprechendes $ \delta &gt; 0 $ so dass für alle $x, y \in [a,b]$ folgt, dass $|f_n(x) - f_n(y)| &lt; \epsilon$ falls $|x - y| &lt; \delta$ gilt.
+Wir partitionieren das Intervall $[a,b]$ in kleine Teilintervalle $I_j, j=1,\ldots,m$ mit $\operatorname{diam}(I_j) &lt; \delta$, so dass
+\begin{equation*}
+[a,b] \ = \ \biguplus_{j=1}^m I_j.
+\end{equation*}
+</pre></div>
+</div>
+<p>Dann wählen wir Punkte aus jedem Teilintervall mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+ x_1 \in I_1\cap\Q, \quad x_2 \in I_2\cap\Q, \ \dots, \quad x_m \in I_m\cap\Q.
+ \end{equation*}\]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Für einen beliebigen Index $j \in \{1,\dots,m\} $ seien $ k(j) &gt; \ell(j) $ so groß, dass die Teilfolge $ (f^\ell_n(x_j))_{n\in\N}$ punktweise konvergiert. 
+Als Teilfolge jener Folge konvergiert auch $ (f^k_n(x_i))_{n\in\N} $ gegen den gleichen Grenzwert.
+Wir finden daher $ \ell(j)$ so groß, dass 
+\begin{equation}
+    \label{equ:arzela:erste abschaetzung}
+    |g_k(x_i) - g_\ell(x_i)| \  = \ |f^k_k(x_i)-f^\ell_\ell(x_i)| \ &lt; \ \frac{\varepsilon}{3}.
+\end{equation}
+Nehmen wir nun einen globalen Index über alle Teilintervalle mit $ \ell &gt; \max\{\ell(1),\dots,\ell(m)\} $, so gilt die obige Abschätzung für alle $ x_i $, $ i \in \{1,\dots,m\} $.
+
+Es sei nun $x \in [a,b]$ ein beliebiger Punkt. 
+Dann existiert ein Index $j \in \{1,\dots,m\}$, so dass der Punkt $x$ im Teilintervall $I_j$ liegt.
+Für ein $k &gt; \ell &gt; \max\{\ell(1),\dots,\ell(m)\}$ gilt nun mit Abschätzung \eqref{equ:arzela:erste abschaetzung} und wegen der geradlinigen Stetigkeit der Folge:
+\begin{align*}
+    |g_k(x) - g_\ell(x)|
+    \ \leq \ |g_k(x) - g_k(x_j)| + |g_k(x_j) - g_\ell(x_j)| + |g_\ell(x_j) - g_\ell(x)|
+    \ \leq \
+    \varepsilon
+\end{align*}
+Da dies für beliebige Punkte $x \in [a,b]$ gilt ist $(g_k)_{k\in\N}$ eine Cauchy-Folge bezüglich der Supremumsnorm und konvergiert somit gleichmäßig in $C([a,b]; \R)$.
+</pre></div>
+</div>
+<p>\end{proof}</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./normierte_raeume"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="stetigkeit.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">3.2. </span>Stetigkeit</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="hilbert.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">3.4. </span>Hilberträume</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.1. Partielle Differenzierbarkeit &#8212; Mathematik für Data Science 2</title>
+    <title>3. Normierte Vektorräume &#8212; Mathematik für Data Science 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.2. Differentialoperatoren erster Ordnung" href="first_order.html" />
-    <link rel="prev" title="4. Differentiation von Funktionen mehrerer Veränderlicher" href="ableitungen.html" />
+    <link rel="next" title="3.1. Konvergenz von Folgen" href="konvergenz.html" />
+    <link rel="prev" title="2.7. Selbstadjungierte Endomorphismen" href="../vektoraeume/selbstadjungiert.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -208,70 +208,70 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    3. Normierte Vektorräume
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+    <a class="reference internal" href="konvergenz.html">
      3.1. Konvergenz von Folgen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+    <a class="reference internal" href="stetigkeit.html">
      3.2. Stetigkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+    <a class="reference internal" href="kompaktheit.html">
      3.3. Kompaktheit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+    <a class="reference internal" href="hilbert.html">
      3.4. Hilberträume
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="ableitungen.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
    4. Differentiation von Funktionen mehrerer Veränderlicher
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
      4.1. Partielle Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="first_order.html">
+    <a class="reference internal" href="../ableitungen/first_order.html">
      4.2. Differentialoperatoren erster Ordnung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="higher_order.html">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
      4.3. Differentialoperatoren höherer Ordnung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="tot_diff.html">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
      4.4. Totale Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="taylor.html">
+    <a class="reference internal" href="../ableitungen/taylor.html">
      4.5. Taylor-Formel
     </a>
    </li>
@@ -323,7 +323,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/ableitungen/part_diff.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/normierte_raeume/normierte_raeume.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -356,114 +356,98 @@
         
               <div>
                 
-  <div class="section" id="partielle-differenzierbarkeit">
-<h1><span class="section-number">4.1. </span>Partielle Differenzierbarkeit<a class="headerlink" href="#partielle-differenzierbarkeit" title="Permalink to this headline">¶</a></h1>
-<p>Um den Begriff der Ableitung auf Funktionen mehrerer Variablen zu übertragen, betrachtet man zunächst deren Änderungsverhalten entlang einzelner Koordinatenrichtungen.
-Wir fixieren also einen Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> und betrachten die Funktion</p>
+  <div class="section" id="normierte-vektorraume">
+<h1><span class="section-number">3. </span>Normierte Vektorräume<a class="headerlink" href="#normierte-vektorraume" title="Permalink to this headline">¶</a></h1>
+<p>Sie haben in \cite[Kapitel 4 &amp; 5]{burger_2020} bereits die fundamentalen Konzepte von Folgen, Stetigkeit und Kompaktheit in \emph{metrischen Räumen} kennengelernt.
+Wir werden diese grundlegenden Begriffe im Folgenden durch Verwendung der Norm aus Kapitel \ref{s:skalarprodukt_r} wiederholen, weiter präzisieren und durch neue Erkenntnisse erweitern.</p>
+<p>Die zugrunde liegende Struktur für dieses Kapitel ist ein Vektorraum auf dem eine Norm definiert ist.
+\begin{definition}[Normierter Vektorraum]
+Sei <span class="math notranslate nohighlight">\(X\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und sei</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\tilde{f}(\xi) \ \coloneqq \ f(x_1,\ldots,x_{i-1},\xi,x_{i+1},\ldots,x_n).
+|| \cdot ||_X \colon V \ \rightarrow \ \R_0^+
 \end{equation*}\]</div>
-<p>Anschaulich gesprochen halten wir alle Variablen, bis auf die <span class="math notranslate nohighlight">\(i\)</span>-te fest und erhalten somit eine eindimensionale Funktion.
-Dies erlaubt es uns den Ableitungsbegriff auf die schon bekannte Definition für Funktionen in einer Veränderlichen herunterzubrechen, was zum Begriff der partiellen Differenzierbarkeit führt.</p>
-<div class="proof definition admonition" id="def:partielle_diffbarkeit">
-<p class="admonition-title"><span class="caption-number">Definition 4.1 </span> (Partielle Differnzierbarkeit)</p>
-<div class="definition-content section" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(U\subset \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> eine Funktion.</p>
-<p><em>i)</em> Wir nennen die Funktion <span class="math notranslate nohighlight">\(f\)</span> <em>(lokal) partiell differenzierbar</em> im Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> in die <span class="math notranslate nohighlight">\(i\)</span>-te Koordinatenrichtung falls folgender Grenzwert existiert,</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial f}{\partial x_i} (x) \ \coloneqq \ \partial_i f(x) \      \coloneqq \ \lim_{h\rightarrow 0} \frac{f(x + h\cdot e_i) - f(x)}{h}.\]</div>
-<p><em>ii)</em> Wir nennen die Funktion <span class="math notranslate nohighlight">\(f\)</span> <em>(global) partiell differenzierbar</em> falls sie für jedes <span class="math notranslate nohighlight">\(x\in U\)</span> und jede Koordinatenrichtung <span class="math notranslate nohighlight">\(i\in\{1,\ldots,n\}\)</span> partiell differenzierbar ist.</p>
-<p><em>iii)</em> Ist die Funktion <span class="math notranslate nohighlight">\(\partial_i f:U\rightarrow \R\)</span> partiell differenzierbar und zudem stetig für jedes <span class="math notranslate nohighlight">\(i\in\{1,\ldots,n\}\)</span>, so nennen wir <span class="math notranslate nohighlight">\(f\)</span> <em>stetig partiell differenzierbar</em>.</p>
+<p>eine Norm auf <span class="math notranslate nohighlight">\(X\)</span>.
+Dann nennen wir das Paar <span class="math notranslate nohighlight">\((X, || \cdot ||_X)\)</span> einen \emph{normierten Vektorraum}.
+Wenn der mathematische Kontext eindeutig ist schreiben wir häufig nur <span class="math notranslate nohighlight">\(||\cdot ||\)</span> anstatt <span class="math notranslate nohighlight">\(|| \cdot ||_X\)</span> und <span class="math notranslate nohighlight">\(X\)</span> anstatt dem Paar <span class="math notranslate nohighlight">\((X, ||\cdot||_X)\)</span>.
+In diesen Fällen nehmen wir immer die kanonische Norm des Vektorraums an, z.B., die Euklidische Norm für den <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.
+\end{definition}</p>
+<p>Zwischen Metriken und Normen gibt es einen direkten Zusammenhang, den wir kurz wiederholen wollen.
+\begin{remark}
+Es ist klar, dass jeder normierte Vektorraum auch ein metrischer Raum ist, da jede Norm <span class="math notranslate nohighlight">\(||\cdot||_X\)</span> eine Metrik <span class="math notranslate nohighlight">\(d\)</span> auf <span class="math notranslate nohighlight">\(X\)</span> induziert durch:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+d \colon X \times X \ &amp;\rightarrow \ \R_0^+,\\
+(x,y) \ &amp;\mapsto \ d(x,y) \, \coloneqq \, \Vert x - y \Vert_X ,\qquad \forall x,y \in X. 
+\end{split}
+\end{equation*}\]</div>
+<p>Metriken sind jedoch viel allgemeiner und nicht alle Metriken entstehen aus Normen.
+Beispielsweise ist die geodätische Distanz (der kürzeste Weg) auf der Erdoberfläche eine Metrik, die nicht durch eine Norm induziert wird.
+\end{remark}</p>
+<p>Sie haben bereits einige Normen in Ihrem Studium kennengelernt.
+Die wichtigsten Beispiele sind im Folgenden nochmal zusammengefasst.
+\begin{example}
+Wir können die folgenden Vektorräume mit einer Norm ausstatten.
+\begin{enumerate}
+\item Das Paar <span class="math notranslate nohighlight">\((\mathbb{R}^n, ||\cdot||_p)\)</span> mit der <span class="math notranslate nohighlight">\(p\)</span>-Norm</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Vert x \Vert_p \ \coloneqq \ \left( \sum_{i=1}^n |x_i|^p \right)^{1/p}
+\end{equation*}\]</div>
+<p>ist für <span class="math notranslate nohighlight">\(1 \leq p &lt; \infty\)</span> ein normierter Vektorraum.
+Ein wichtiger Spezialfall für <span class="math notranslate nohighlight">\(p=2\)</span> ist der Euklidische Vektorraum.</p>
+<p>\item Das Paar <span class="math notranslate nohighlight">\((\mathbb{R}^n, ||\cdot||_\infty)\)</span> mit der Maximumsnorm</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Vert x \Vert_\infty \ \coloneqq \ \max_{i=1,\ldots,n} |x_i|
+\end{equation*}\]</div>
+<p>ist ein normierter Vektorraum.</p>
+<p>\item Sei <span class="math notranslate nohighlight">\(\ell^\infty\)</span> der Raum der beschränkten Folgen.
+Für unendliche Folgen gilt dann beispielsweise <span class="math notranslate nohighlight">\((x_n)_{n\in\N} \coloneqq n \not\in \ell^\infty\)</span>, jedoch <span class="math notranslate nohighlight">\((x_n)_{n\in\N} \coloneqq 1 - \frac{1}{n} \in \ell^\infty\)</span>.</p>
+<p>Das Paar <span class="math notranslate nohighlight">\((\ell^\infty, ||\cdot||_\infty)\)</span> mit der Supremumsnorm</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Vert x \Vert_\infty \ \coloneqq \ \sup_{i \in \N} |x_i|
+\end{equation*}\]</div>
+<p>ist ein normierter (unendlich-dimensionaler) Vektorraum.
+\end{enumerate}
+\end{example}</p>
+<p>Jede Norm induziert eine Metrik, welche wiederum eine Topologie auf dem Vektorraum induziert.
+Hierdurch definieren sich insbesondere die fundamentalen Begriffe von offenen und abgeschlossenen Mengen in normierten Vektorräumen, wie wir im Folgenden sehen werden.
+\begin{definition}[Umgebung]
+Sei <span class="math notranslate nohighlight">\(X\)</span> ein normierter Raum und <span class="math notranslate nohighlight">\(\epsilon \in \R_+\)</span> ein positives Skalar.
+Sei außerdem <span class="math notranslate nohighlight">\(x \in X\)</span> ein beliebiger Punkt.
+Dann heisst für
+$<span class="math notranslate nohighlight">\( U_\epsilon(x) \ \coloneqq \ \{ y \in X : ||x - y|| &lt; \epsilon \} \)</span><span class="math notranslate nohighlight">\(
+die \emph{\)</span>\epsilon<span class="math notranslate nohighlight">\(-Umgebung} von \)</span>x$.
+\end{definition}</p>
+<p>\begin{definition}[Offene und abgeschlossene Mengen]
+Sei <span class="math notranslate nohighlight">\(X\)</span> ein normierter Raum.
+Dann definieren wir folgende Begriffe für Teilmengen von <span class="math notranslate nohighlight">\(X\)</span>:
+\begin{enumerate}
+\item Eine Teilmenge <span class="math notranslate nohighlight">\(M \subset X\)</span> heißt offen, wenn für alle Punkte <span class="math notranslate nohighlight">\(x \in M\)</span> eine <span class="math notranslate nohighlight">\(\epsilon\)</span>-Umgebung <span class="math notranslate nohighlight">\(U_\epsilon(x) \subset M\)</span> existiert.
+\item Eine Teilmenge <span class="math notranslate nohighlight">\(M \subset X\)</span> heißt abgeschlossen, wenn <span class="math notranslate nohighlight">\(X \setminus M\)</span> offen ist.
+\end{enumerate}
+\end{definition}</p>
+<p>\begin{example}
+Wir betrachten folgende typische Beispiele für offene und abgeschlossene Mengen in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
+\begin{enumerate}[i)]
+\item Sei <span class="math notranslate nohighlight">\(X=\R\)</span> und <span class="math notranslate nohighlight">\(a,b \in \R\)</span> mit <span class="math notranslate nohighlight">\(a &lt; b\)</span>.
+Dann ist das Intervall <span class="math notranslate nohighlight">\([a,b]\)</span> abgeschlossen und das Intervall <span class="math notranslate nohighlight">\((a,b)\)</span> offen.
+Die Intervalle <span class="math notranslate nohighlight">\([a,b)\)</span> bzw. <span class="math notranslate nohighlight">\((a,b]\)</span> sind weder abgeschlossen noch offen.
+\item Die leere Menge <span class="math notranslate nohighlight">\(\emptyset\)</span> sowie der gesamte normierte Raum <span class="math notranslate nohighlight">\(X\)</span> sind die einzigen Mengen, die sowohl abgeschlossen als auch offen sind.
+\item In allgemeinen normierten Vektorräumen <span class="math notranslate nohighlight">\(X\)</span> können wir für einen positiven Radius <span class="math notranslate nohighlight">\(r &gt; 0\)</span> abgeschlossene Kugeln  <span class="math notranslate nohighlight">\(B^X_r\)</span> um einen Punkt <span class="math notranslate nohighlight">\(x\in X\)</span> betrachten mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B^X_r(x) \ \coloneqq \ \{y \in X : \norm[X]{x-y} \leq r \}
+\end{equation*}\]</div>
+<p>Wenn der mathematische Kontext eindeutig ist, schreiben wir häufig auch nur <span class="math notranslate nohighlight">\(B_r(x)\)</span>.
+\end{enumerate}
+\end{example}</p>
+<div class="toctree-wrapper compound">
 </div>
-</div><p>In der obigen Definition bezeichnet</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-e_i \ \coloneqq \ (0,\ldots,0,\underbrace{1}_{i\text{-te Stelle}},0,\ldots,0)\in\R^n
-\end{equation*}\]</div>
-<p>den <span class="math notranslate nohighlight">\(i\)</span>-ten Einheitsvektor des <span class="math notranslate nohighlight">\(\R^n\)</span>.
-Im Grenzwert für <span class="math notranslate nohighlight">\(h\rightarrow 0\)</span> sind nur Nullfolgen <span class="math notranslate nohighlight">\((h_k)_{k\in\N}\)</span> erlaubt, welche die Bedingung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-(x+h_k\cdot e_i) \in U \quad \text{ mit } \quad h_k \neq 0, \ \forall k\in \N
-\end{equation*}\]</div>
-<p>erfüllen.
-Das Symbol <span class="math notranslate nohighlight">\(\partial\)</span> ist hierbei eine stilisierte Version des Buchstaben d (manchmal auch del ausgesprochen).</p>
-<p>Im folgenden Beispiel berechnen wir die partielle Ableitung der Euklidischen Norm im <span class="math notranslate nohighlight">\(\R^n\)</span>.</p>
-<div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 4.1 </span></p>
-<div class="example-content section" id="proof-content">
-<p>Wir betrachten die Abbildung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f :\R^n \ &amp;\rightarrow \ \R_0^+\\
-x \ &amp;\mapsto \ \norm{x}{}_2 \ \coloneqq \ \sqrt{\sum_{i=1}^n x_i^2},
-\end{align*}\]</div>
-<p>welche die Euklidische Norm im <span class="math notranslate nohighlight">\(\R^n\)</span> darstellt.
-Wir betrachten die <em>Niveaumengen</em> <span class="math notranslate nohighlight">\(N_f \subset \R^n\)</span> von <span class="math notranslate nohighlight">\(f\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-N_f(c) \ \coloneqq \ \{x\in \R^n:f(x) = c\} \ = \ \{f^{-1}(c)\}.
-\end{align*}\]</div>
-<p>In diesem Fall sind die Niveaumengen <span class="math notranslate nohighlight">\(N_{f}(c)\)</span> Sphären mit Radius <span class="math notranslate nohighlight">\(c\in \R^+_0\)</span>.
-Weiterhin sieht man leicht, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> auf der Menge <span class="math notranslate nohighlight">\(\R^n \setminus \{0\}\)</span> partiell differenzierbar
-ist, da wir für <span class="math notranslate nohighlight">\(x\neq 0\)</span> mittels Kettenregel die folgende partielle Ableitung erhalten</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\partial_i \norm{x}{}_2 \ &amp;= \ \partial_i \left( (\sum_{i=1}^n x_i)^{\frac{1}{2}} \right) \ = \ \partial_i \left(x_i^2 + \sum_{j\neq i} x_j^2\right)^{1/2}\\
-\ &amp;= \ \frac{1}{2}\left(x_i^2+\sum_{j\neq i} x_j^2\right)^{-1/2}\cdot 2x_i \ = \ \frac{x_i}{\norm{x}{}_2}.
-\end{align*}\]</div>
 </div>
-</div><p>Der Begriff der partiellen Differenzierbarkeit in Definition <a class="reference internal" href="#def:partielle_diffbarkeit">Definition 4.1</a> ist der schwächste Ableitungsbegriff für Funktionen in mehreren Veränderlichen.
-Anders als im eindimensionalen Fall gilt beispielsweise nicht, dass aus der partiellen Differenzierbarkeit einer Funktion schon folgt, dass diese stetig ist.
-Das soll uns das folgende Beispiel vor Augen führen.</p>
-<div class="proof example admonition" id="bsp:partiell_diffbar_nicht_stetig">
-<p class="admonition-title"><span class="caption-number">Example 4.2 </span></p>
-<div class="example-content section" id="proof-content">
-<p>Wir betrachten im Folgenden eine Funktion auf <span class="math notranslate nohighlight">\(\R^n\)</span> mit <span class="math notranslate nohighlight">\(n\geq 2\)</span> die zeigt, dass aus partieller Differenzierbarkeit keine Stetigkeit folgt.
-Dazu definieren wir</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f(x) \ \coloneqq \
-\begin{cases}
-\ \frac{x_1 \cdot x_2 \cdot \ldots \cdot x_n}{\norm{x}{}_2^n}, \quad &amp;\text{falls } x\neq 0,\\
-\ 0, \quad &amp;\text{falls } x=0.
-\end{cases}
-\end{align*}\]</div>
-<p>Man sieht sofort, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> auf <span class="math notranslate nohighlight">\(\R^n\setminus \{0\}\)</span> stetig und auch partiell differenzierbar ist.</p>
-<p>Wir überprüfen nun die partielle Differenzierbarkeit im Punkt <span class="math notranslate nohighlight">\(x=0\)</span>.
-Hierzu betrachten wir für <span class="math notranslate nohighlight">\(h\neq 0\)</span></p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f(0+h\cdot e_i) \, - \, f(0) \ = \ \frac{0 \cdot \ldots \cdot 0\cdot h\cdot 0\cdot \ldots \cdot 0}{\norm{h\cdot e_i}{}_2^n} \, - \, 0 \ = \ 0  
-\end{align*}\]</div>
-<p>und somit folgt direkt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\lim_{h\rightarrow 0} \frac{f(0+h\cdot e_i) - f(0)}{h} \ = \ 0
-\end{align*}\]</div>
-<p>für alle Richtungen <span class="math notranslate nohighlight">\(i\in\{1,\ldots,n\}\)</span>.
-Daher wissen wir also, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> auch im Punkt <span class="math notranslate nohighlight">\(x=0\)</span> partiell differenzierbar ist.</p>
-<p>Tatsächlich ist die Funktion aber nicht stetig in der Null.
-Dafür betrachten wir eine Folge <span class="math notranslate nohighlight">\((a_k)_{k\in \N}\subset\R^n\setminus \{0\}\)</span>, die diagonal in den Nullpunkt hineinläuft, d.h., konkret betrachten wir</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-a_k \ \coloneqq \ (\frac1k,\ldots,\frac1k)^T, \quad k\in\N.
-\end{equation*}\]</div>
-<p>Für jedes Folgeglied <span class="math notranslate nohighlight">\(a_k, k\in\N\)</span>, der Folge gilt dann <span class="math notranslate nohighlight">\(\norm{a_k}{}_2 = \frac{\sqrt{n}}{k}\)</span> und somit ist der Funktionswert von <span class="math notranslate nohighlight">\(f\)</span> für diese Folgeglieder gegeben durch</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}} \right)^n \ = \ n^{-\frac{n}{2}}, \quad k\in\N.
-\end{align*}\]</div>
-<p>Daraus folgt aber schon, dass</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\lim_{k\rightarrow\infty} f(a_k) \ \equiv \ n^{-\frac{n}{2}} \ \neq \ 0 \ = \ f(0) \ = \ f(\lim_{k\rightarrow\infty} a_k).
-\end{align*}\]</div>
-<p>Das bedeutet also, dass die Funktion <span class="math notranslate nohighlight">\(f\)</span> nicht stetig im Punkt <span class="math notranslate nohighlight">\(x=0\)</span> ist.</p>
-<p>Man bemerke, dass diese Konstruktion nur für höherdimensionale Räume <span class="math notranslate nohighlight">\(\R^n\)</span> mit <span class="math notranslate nohighlight">\(n\geq 2\)</span> möglich ist, da die analog  definierte Funktion im Eindimensionalen nicht differenzierbar ist.</p>
-</div>
-</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -478,7 +462,7 @@ f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}}
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./ableitungen"
+            path: "./normierte_raeume"
         },
         predefinedOutput: true
     }
@@ -495,19 +479,19 @@ f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}}
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="ableitungen.html" title="previous page">
+        <a class="left-prev" href="../vektoraeume/selbstadjungiert.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">4. </span>Differentiation von Funktionen mehrerer Veränderlicher</p>
+                <p class="prevnext-title"><span class="section-number">2.7. </span>Selbstadjungierte Endomorphismen</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="first_order.html" title="next page">
+        <a class="right-next" href="konvergenz.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">4.2. </span>Differentialoperatoren erster Ordnung</p>
+                <p class="prevnext-title"><span class="section-number">3.1. </span>Konvergenz von Folgen</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

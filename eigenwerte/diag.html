@@ -1,0 +1,966 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.4. Diagonalisierbarkeit &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.5. Trigonalisierbarkeit" href="triag.html" />
+    <link rel="prev" title="1.3. Das charakteristische Polynom" href="char_pol.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   4. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     4.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     4.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     4.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     4.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     4.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   5. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/eigenwerte/diag.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="diagonalisierbarkeit">
+<h1><span class="section-number">1.4. </span>Diagonalisierbarkeit<a class="headerlink" href="#diagonalisierbarkeit" title="Permalink to this headline">¶</a></h1>
+<p>Wichtige Eigenschaften eines Endomorphismus lassen sich bereits am Rang und am Spektrum einer darstellenden Matrix ablesen.
+Leider lassen sich diese Charakteristika im Allgemeinen (bis auf Spezialfälle) nicht direkt an den Einträgen der Matrix ablesen.
+Die grundlegende Frage in diesem Abschnitt wird sein, wie wir durch eine geeignete Wahl von Basen eine besonders einfache Gestalt der darstellenden Matrix erreichen können, die die Eigenschaften des zu Grunde liegenden Endomorphismus erhält.</p>
+<p>Aus dem Basiswechselsatz \ref{satz:basiswechselsatz} wissen wir, dass ein Basiswechsel für Abbildungsmatrizen einer Multiplikation mit zwei regulären Basiswechselmatrizen von links und rechts entspricht.
+Die hierdurch beschriebene Relation der Abbildungsmatrizen motiviert die folgende Definition.
+\begin{definition}[Äquivalenz und Ähnlichkeit von Matrizen] \label{def:matrix_aequiv_aehnlich}
+Wir definieren im folgenden zwei Begriffe, die eine spezielle Relation zweier Matrizen beschreibt.
+\begin{enumerate}[i)]
+\item Zwei Matrizen <span class="math notranslate nohighlight">\(A, B \in \mathbb{K}^{n \times m}\)</span> heißen \emph{äquivalent}, wenn es Matrizen <span class="math notranslate nohighlight">\(S \in \GL(n; \mathbb{K})\)</span> und <span class="math notranslate nohighlight">\(T \in \GL(m; \mathbb{K})\)</span> gibt mit</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1d4ac508-7216-4ca5-aca6-c48fb5938153">
+<span class="eqno">(1.11)<a class="headerlink" href="#equation-1d4ac508-7216-4ca5-aca6-c48fb5938153" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+B  \ = \ SAT^{-1}.
+\end{equation}\]</div>
+<p>\item Zwei Matrizen <span class="math notranslate nohighlight">\(A, B \in \mathbb{K}^{n \times n}\)</span> heißen \emph{ähnlich} oder \emph{konjugiert}, wenn es eine Matrix <span class="math notranslate nohighlight">\(S \in \GL(n, \mathbb{K})\)</span> gibt mit</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bc7abe4c-5bc7-4d92-88dd-e1f8e0902be8">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-bc7abe4c-5bc7-4d92-88dd-e1f8e0902be8" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:aehnlichkeit}
+B  \ = \ SAS^{-1}.
+\end{equation}\]</div>
+<p>\end{enumerate}
+\end{definition}</p>
+<p>Man sieht sofort, dass ähnliche Matrizen ein Spezialfall von äquivalenten Matrizen sind für <span class="math notranslate nohighlight">\(m = n\)</span> und <span class="math notranslate nohighlight">\(T^{-1} \coloneqq S^{-1}\)</span>.
+Während man für äquivalente Matrizen zeigen kann, dass der Rang der Matrizen unter den in Definition \ref{def:matrix_aequiv_aehnlich} beschriebenen Transformationen erhalten bleibt, so gilt für ähnliche Matrizen sogar die noch stärkere Invarianz des Spektrums, wie das folgende Lemma zeigt.</p>
+<p>\begin{lemma}\label{lem:aehnlich_polynom}
+Seien <span class="math notranslate nohighlight">\(A, B \in \mathbb{K}^{n\times n}\)</span> zwei quadratische Matrizen. Falls <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> ähnlich zueinander sind, so haben sie das gleiche charakteristische Polynom.
+\end{lemma}
+\begin{proof}
+Seien <span class="math notranslate nohighlight">\(A,B \in \mathbb{K}^{n \times n}\)</span> zwei ähnliche Matrizen, d.h., es existiert eine Matrix <span class="math notranslate nohighlight">\(S \in \GL(n; \mathbb{K})\)</span>, so dass <span class="math notranslate nohighlight">\(B = S A S^{-1}\)</span>. Ferner gilt wegen Linearität und der Kommutativität der Einheitsmatrix <span class="math notranslate nohighlight">\(I_n\)</span> für jedes Skalar <span class="math notranslate nohighlight">\(t \in \mathbb{K}\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+S \cdot t \cdot I_n \cdot S^{-1} = t \cdot I_n.
+\end{equation*}\]</div>
+<p>Wir können also schreiben:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B - t \cdot I_n \ = \ S A S^{-1} - t \cdot I_n \ = \ S A S^{-1} - S \cdot t \cdot I_n \cdot S^{-1} \ = \ S (A - t \cdot I_n) S^{-1}.
+\end{equation*}\]</div>
+<p>Wenden wir nun die Determinante an, so erhalten wir aus dem Produktsatz für Determinanten \cite{burger_2020}[Satz 3.40]</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\det(B - t \cdot I_n) \ = \ \det(S (A - t \cdot I_n) S^{-1}) \ = \ \det(S) \cdot \det(A - t \cdot I_n) \cdot \underbrace{\det(S^{-1})}_{= \det(S)^{-1}} \ = \ \det(A - t \cdot I_n).
+\end{equation*}\]</div>
+<p>Die Ausdrücke auf der linken und rechten Seite der obigen Gleichung sind gerade die Definitionen der charakteristischen Polynome von <span class="math notranslate nohighlight">\(A\)</span> bzw. <span class="math notranslate nohighlight">\(B\)</span>, was die Aussage dieses Lemmas beweist.
+\end{proof}</p>
+<p>Ein besonders interessanter Fall liegt vor, wenn eine Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n\times n}\)</span> ähnlich zu einer Diagonalmatrix <span class="math notranslate nohighlight">\(D \in \mathbb{K}^{n\times n}\)</span> ist.
+Dies wird in der folgenden Definition weiter präzisiert.
+\begin{definition}[Diagonalisierbarkeit]\label{def:diagonalisierbarkeit}
+Wir definieren den Begriff der \emph{Diagonalisierbarkeit} im folgenden sowohl für Endomorphismen als auch für Matrizen.
+\begin{enumerate}
+\item Ein Endormorphismus <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> eines <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span> heißt \emph{diagonalisierbar}, wenn <span class="math notranslate nohighlight">\(V\)</span> eine Basis aus Eigenvektoren von <span class="math notranslate nohighlight">\(F\)</span> besitzt.
+\item Eine Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> heißt \emph{diagonalisierbar}, wenn sie ähnlich zu einer Diagonalmatrix ist.
+\end{enumerate}
+\end{definition}</p>
+<p>Auf Grund von Lemma \ref{lem:aehnlich_polynom} wird klar, dass eine diagonalisierbare Matrix <span class="math notranslate nohighlight">\(A\)</span> ähnlich zu einer Diagonalmatrix <span class="math notranslate nohighlight">\(D\)</span> sein muss, die die Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span> auf der Diagonalen enthält.
+Im Folgenden wollen wir verstehen, wie wir entscheiden können, ob ein Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> bzw. eine darstellende Matrix von <span class="math notranslate nohighlight">\(F\)</span> diagonalisierbar ist.</p>
+<p>\begin{satz}[Diagonalisierbarkeit]\label{satz:diagonalisierbarkeit}
+Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlichdimensionaler <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
+Dann sind die folgenden Bedingungen äquivalent:
+\begin{enumerate}[i)]
+\item <span class="math notranslate nohighlight">\(F\)</span> ist diagonalisierbar
+\item Das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> zerfällt in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> und die algebraische Vielfachheit ist gleich der geometrischen Vielfachheit für alle Eigenwerte <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> von <span class="math notranslate nohighlight">\(F\)</span>.
+\item Sind <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_k \in \mathbb{K}\)</span> die paarweise verschiedenen Eigenwerte von <span class="math notranslate nohighlight">\(F\)</span>, so lässt sich <span class="math notranslate nohighlight">\(V\)</span> als direkte Summe der korrespondierenden Eigenräume schreiben, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+V \ = \ \Eig(F; \lambda_1) \oplus \ldots \oplus \Eig(F; \lambda_k).
+\end{equation*}\]</div>
+<p>\end{enumerate}
+\end{satz}
+\begin{proof}
+Wir zeigen die Äquivalenz der drei Aussagen mittels eines Ringschlusses.\[0.2cm]
+\textbf{i) <span class="math notranslate nohighlight">\(\rightarrow\)</span> ii):}\
+Nehmen wir an, dass <span class="math notranslate nohighlight">\(F\)</span> diagonalisierbar ist.
+Dann ist jede darstellende Matrix von <span class="math notranslate nohighlight">\(F\)</span> ähnlich zu einer Diagonalmatrix <span class="math notranslate nohighlight">\(D \in \mathbb{K}^{n \times n}\)</span> auf deren Hauptdiagonalen die Eigenwerte <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_k \in \mathbb{K}\)</span> von <span class="math notranslate nohighlight">\(F\)</span> mit algebraischen Vielfachheiten <span class="math notranslate nohighlight">\(r_1,\ldots, r_k \in \mathbb{N}\)</span> stehen.
+Das charakteristische Polynom <span class="math notranslate nohighlight">\(P_D\)</span> von <span class="math notranslate nohighlight">\(D\)</span> zerfällt offensichtlich in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> in der Form</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_D(t) \ = \ (\lambda_1 - t)^{r_1} \cdot \ldots \cdot (\lambda_k - t)^{r_k}
+\end{equation*}\]</div>
+<p>und die Summe der algebraischen Vielfachheiten entspricht dem Grad des Polynoms, d.h., <span class="math notranslate nohighlight">\(\sum_{i=1}^k r_i = n\)</span>.
+Aus Lemma \ref{lem:aehnlich_polynom} wissen wir aber schon, dass das charakteristische Polynom von <span class="math notranslate nohighlight">\(F\)</span> und <span class="math notranslate nohighlight">\(D\)</span> gleich sein müssen.</p>
+<p>Da <span class="math notranslate nohighlight">\(F\)</span> diagonalisierbar ist existiert eine Basis von <span class="math notranslate nohighlight">\(V\)</span> aus Eigenvektoren von <span class="math notranslate nohighlight">\(F\)</span>.
+Die Eigenvektoren dieser Basis können wir anhand ihrer zugehörigen Eigenwerte sortieren, so dass sich Basen der jeweiligen Eigenräume mit geometrischen Vielfachheiten <span class="math notranslate nohighlight">\(s_1, \ldots, s_k\)</span>  ergeben, d.h., wir betrachten die Eigenvektoren <span class="math notranslate nohighlight">\(v^i_1, \ldots, v^i_{s_i} \in V\)</span> von <span class="math notranslate nohighlight">\(F\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_i \in \mathbb{K}\)</span>  mit geometrischer Vielfachheit <span class="math notranslate nohighlight">\(s_i \in \mathbb{N}\)</span> als Basis des Eigenraums <span class="math notranslate nohighlight">\(\Eig(F; \lambda_i)\)</span> für <span class="math notranslate nohighlight">\(1\leq i \leq k\)</span>.
+Daraus ergibt sich, dass <span class="math notranslate nohighlight">\(\sum_{i=1}^k s_i = n\)</span> gelten muss, da wir von einer Basis von <span class="math notranslate nohighlight">\(V\)</span> ausgegangen sind.
+Gleichzeitig wissen wir aus dem Argument von oben, dass <span class="math notranslate nohighlight">\(\sum_{i=1}^k r_k = n\)</span> gelten muss und nach Satz \ref{satz:vielfachheiten} die algebraischen Vielfachheiten größer oder gleich den geometrischen Vielfachheiten sind, d.h., es gilt <span class="math notranslate nohighlight">\(r_i \geq s_i\)</span>.
+Diese drei Bedingungen können jedoch nur dann erfüllt werden, wenn schon gilt <span class="math notranslate nohighlight">\(r_i = s_i\)</span>.\[0.2cm]
+\textbf{ii) <span class="math notranslate nohighlight">\(\rightarrow\)</span> iii):}\
+Seien <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_k \in \mathbb{K}\)</span> die paarweise verschiedenen Eigenwerte von <span class="math notranslate nohighlight">\(F\)</span>, deren algebraische Vielfachheit gleich der geometrischen Vielfachheit ist, d.h., <span class="math notranslate nohighlight">\(r_i = s_i\)</span> für <span class="math notranslate nohighlight">\(1 \leq i \leq k\)</span>.
+Wir nehmen an, dass das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span> in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> zerfällt und von der Form ist</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_F(t) \ = \ (t - \lambda_1)^{r_1} \cdot \ldots \cdot (t - \lambda_k)^{r_s}.
+\end{equation*}\]</div>
+<p>Wir betrachten die lineare Hülle der Eigenräume <span class="math notranslate nohighlight">\(\Eig(F; \lambda_i), 1 \leq i \leq k\)</span>, von <span class="math notranslate nohighlight">\(F\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+W \ \coloneqq  \ \lin(\Eig(F; \lambda_1) \cup \ldots \cup \Eig(F; \lambda_k)) \subset V.
+\end{equation*}\]</div>
+<p>Da die geometrische Vielfachheit <span class="math notranslate nohighlight">\(s_i = r_i\)</span> für <span class="math notranslate nohighlight">\(i=1,\ldots, k\)</span> ist, wird <span class="math notranslate nohighlight">\(W\)</span> durch <span class="math notranslate nohighlight">\(n\)</span> Eigenvektoren aufgespannt.
+Aus Satz \ref{satz:eigenvektoren_lu} wissen wir, dass Vektoren aus verschiedenen Eigenräumen paarweise linear unabhängig sind.
+Damit folgt aber schon, dass <span class="math notranslate nohighlight">\(W\)</span> eine direkte Summe der Eigenräume sein muss mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+W \ = \ \Eig(F; \lambda_1) \oplus \ldots \oplus \Eig(F; \lambda_k) = V.
+\end{equation*}\]</div>
+<p>\vspace{0.2cm}
+\textbf{iii) <span class="math notranslate nohighlight">\(\rightarrow\)</span> i):}\
+Sei <span class="math notranslate nohighlight">\(B_i = (v_1^i, \ldots, v_{s_i}^i)\)</span> eine Basis aus Eigenvektoren zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_i \in \mathbb{K}\)</span> vom Eigenraum <span class="math notranslate nohighlight">\(\Eig(F; \lambda_i)\)</span> für <span class="math notranslate nohighlight">\(1 \leq i \leq k\)</span>.
+Da die Eigenräume als direkte Summe den ganzen Vektorraum <span class="math notranslate nohighlight">\(V\)</span> bilden, wissen wir, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B \ \coloneqq \ (v_1^1, \ldots, v_{s_1}^1, \ldots, v_1^k, \ldots, v_{s_k}^k)
+\end{equation*}\]</div>
+<p>eine Basis von <span class="math notranslate nohighlight">\(V\)</span> ist.
+Da diese Basis aus Eigenvektoren von <span class="math notranslate nohighlight">\(F\)</span> besteht ist <span class="math notranslate nohighlight">\(F\)</span> schon diagonalisierbar per Definition.
+\end{proof}</p>
+<p>\begin{cor}\label{cor:eigenwerte_verschieden}
+Aus Satz \ref{satz:diagonalisierbarkeit} wird direkt klar, dass der Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> diagonalisierbar ist, wenn er <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> paarweise verschiedene Eigenwerte besitzt. Dies ist eine hinreichende aber keineswegs notwendige Bedingung, wie etwa das Beispiel <span class="math notranslate nohighlight">\(F=\operatorname{Id}_V\)</span> zeigt.
+\end{cor}</p>
+<p>\begin{bsp}\label{bsp:diagonalisierung_gegenbeispiele}
+Im Folgenden wollen wir zwei Beispiele untersuchen in denen eine reellwerte Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{3 \times 3}\)</span> nicht diagonalisierbar ist und die Gründe hierfür genauer beleuchten.
+\begin{enumerate}
+\item Sei die Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{3 \times 3}\)</span> gegeben durch:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \
+\begin{pmatrix}
+1 &amp; -\sqrt{3} &amp; 0\\
+\sqrt{3} &amp; -1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir bestimmen das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> von <span class="math notranslate nohighlight">\(A\)</span> mit der Produktregel für Determinanten von Blockmatrizen in Lemma \ref{lem:det_blockmatrix} als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+P_A(t) \ &amp;= \ \det(A - tI_3) \ = \
+\begin{pmatrix}
+1 -t &amp; -\sqrt{3} &amp; 0\\
+\sqrt{3} &amp; -1 - t &amp; 0\\
+0 &amp; 0 &amp; 1 - t
+\end{pmatrix} \\
+\ &amp;= \ (1 - t) \bigl((1- t)(-1 -t) + \sqrt{3}\cdot\sqrt{3}\bigr)
+\ = \ (1 - t) (t^2 - 1 + 3)\\
+\ &amp;= \ (1 - t) (t^2 + 2).
+\end{split}
+\end{equation*}\]</div>
+<p>Da das quadratische Polynom <span class="math notranslate nohighlight">\((t^2 + 2)\)</span> keine Nullstellen in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> besitzt, lässt sich das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> nicht vollständig in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> zerlegen.
+Daraus folgt mit Satz \ref{satz:diagonalisierbarkeit}, dass die Matrix <span class="math notranslate nohighlight">\(A\)</span> nicht diagonalisierbar ist.
+\item Sei die Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{3 \times 3}\)</span> gegeben durch:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \
+\begin{pmatrix}
+3 &amp; 4 &amp; -3\\
+2 &amp; 7 &amp; -4\\
+3 &amp; 9 &amp; -5
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir bestimmen das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> von <span class="math notranslate nohighlight">\(A\)</span> durch die Regel von Sarrus in Lemma \ref{lem:sarrus} oder Umformung mittels Gaußschen Eliminationsverfahren und erhalten:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_A(t) \ = \ \det(A - tI_3) \ = \ -(t -2)^2 \cdot (t - 1).
+\end{equation*}\]</div>
+<p>Das charakteristische Polynom zerfällt also in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> und wir können die beiden Eigenwerte <span class="math notranslate nohighlight">\(\lambda_1 = 2\)</span> und <span class="math notranslate nohighlight">\(\lambda_2=1\)</span> ablesen.
+Hierbei bemerken wir, dass der Eigenwert <span class="math notranslate nohighlight">\(\lambda_1\)</span> die algebraische Vielfachheit <span class="math notranslate nohighlight">\(2\)</span> und der Eigenwert <span class="math notranslate nohighlight">\(\lambda_2\)</span> die algebraische Vielfachheit <span class="math notranslate nohighlight">\(1\)</span> besitzt.
+Außerdem kann man die zugehörigen Eigenräume wie folgt bestimmen:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Eig(A; \lambda_1) \ = \ \left\{ \alpha\cdot\!\!\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix} \ | \ \alpha \in \mathbb{R} \right\},
+\quad
+\Eig(A; \lambda_2) \ = \ \left\{ \alpha\cdot\!\!\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \ | \ \alpha \in \mathbb{R} \right\}.
+\end{equation*}\]</div>
+<p>Wir sehen also, dass die geometrischen Vielfachheiten der Eigenwerte <span class="math notranslate nohighlight">\(\lambda_1, \lambda_2 \in \mathbb{R}\)</span> jeweils 1 betragen und somit die algebraische Vielfachheit von <span class="math notranslate nohighlight">\(\lambda_1\)</span> nicht mit der geometrischen Vielfachheit übereinstimmt.
+Daraus folgt mit Satz \ref{satz:diagonalisierbarkeit}, dass die Matrix <span class="math notranslate nohighlight">\(A\)</span> nicht diagonalisierbar ist.
+\end{enumerate}
+\end{bsp}</p>
+<p>Das folgende Beispiel untersucht wann eine allgemeine  <span class="math notranslate nohighlight">\((2 \times 2)\)</span>-Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{2 \times 2}\)</span> nicht diagonalisierbar ist.
+\begin{example}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{2 \times 2}\)</span> eine quadratische Matrix mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ \coloneqq \
+\begin{pmatrix}
+a &amp; b\\
+c &amp; d
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>für <span class="math notranslate nohighlight">\(a,b,c,d \in \mathbb{R}\)</span>.
+Um zu untersuchen wann <span class="math notranslate nohighlight">\(A\)</span> nicht diagonalisierbar ist, betrachten wir das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> von <span class="math notranslate nohighlight">\(A\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+P_A(t) \ &amp;= \ \det(A - t I_2) \ = \ \det
+\begin{pmatrix}
+a-t &amp; b\\
+c &amp; d-t
+\end{pmatrix}
+\ = \ (a-t)(d-t) - bc \\ 
+&amp;= \ t^2 - (a+d)t + (ad - bc).
+\end{split}
+\end{equation*}\]</div>
+<p>Um die Nullstellen des charakteristischen Polynoms zu bestimmen verwenden wir in diesem einfachen Fall die <span class="math notranslate nohighlight">\(p\)</span>-<span class="math notranslate nohighlight">\(q\)</span>-Formel mit <span class="math notranslate nohighlight">\(p \coloneqq -(a+d)\)</span> und <span class="math notranslate nohighlight">\(q \coloneqq (ad - bc)\)</span>, so dass für die Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span> gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\lambda_{1/2} \ = \ - \frac{p}{2} \pm \sqrt{\frac{p^2}{4} - q} \ = \ \frac{(a+d)}{2} \pm \sqrt{\frac{(a+d)^2}{4} - (ad - bc)}.
+\end{equation*}\]</div>
+<p>Wir bemerken zuerst, dass der Radikand <span class="math notranslate nohighlight">\(R\)</span> unter der Wurzel von der folgenden Form ist</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+R \ = \ \frac{(a+d)^2}{4} - (ad - bc) \ = \ \frac{\tr(A)^2}{4} - \det(A).
+\end{equation*}\]</div>
+<p>Nun macht es Sinn eine Fallunterscheidung nach dem Vorzeichen von <span class="math notranslate nohighlight">\(R\)</span> zu machen.
+\begin{enumerate}
+\item Falls <span class="math notranslate nohighlight">\(R &gt; 0\)</span> gilt, so existieren zwei Lösungen der quadratischen Gleichung und somit zwei verschiedene Eigenwerte <span class="math notranslate nohighlight">\(\lambda_1 \neq \lambda_2\)</span> von <span class="math notranslate nohighlight">\(A\)</span>.
+Nach Korollar \ref{cor:eigenwerte_verschieden} wissen wir, dass <span class="math notranslate nohighlight">\(A\)</span> dann schon diagonalisierbar ist.
+\item Falls <span class="math notranslate nohighlight">\(R &lt; 0\)</span> gilt, so liegt die Wurzel nicht mehr im Körper <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> und somit gibt es keine reellen Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span>.
+Für diesen Fall ist <span class="math notranslate nohighlight">\(A\)</span> nicht diagonalisierbar.
+\item Der spannende Fall tritt ein für <span class="math notranslate nohighlight">\(R = 0\)</span>.
+Hier besitzt die Matrix <span class="math notranslate nohighlight">\(A\)</span> nur einen Eigenwert <span class="math notranslate nohighlight">\(\lambda \ = \ \frac{(a+d)}{2}\)</span> mit algebraischer Vielfachheit <span class="math notranslate nohighlight">\(2\)</span>.
+Nach Satz \ref{satz:diagonalisierbarkeit} ist <span class="math notranslate nohighlight">\(A\)</span> genau dann diagonalisierbar, wenn die geometrische Vielfachheit des zugehörigen Eigenraums <span class="math notranslate nohighlight">\(\Eig(A; \lambda)\)</span> auch <span class="math notranslate nohighlight">\(2\)</span> beträgt.
+Wir betrachten also den Eigenraum zum Eigenwert <span class="math notranslate nohighlight">\(\lambda\)</span> im Folgenden.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Eig(A; \lambda) \ = \ \Kern(A - \lambda I_2)  \ = \ \Kern(A - \frac{(a+d)}{2} I_2) \ = \ \Kern
+\begin{pmatrix}
+\frac{(a-d)}{2} &amp; b\\
+c &amp; \frac{(d-a)}{2}
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir versuchen also folgendes lineares Gleichungssystem für einen unbekannten Vektor <span class="math notranslate nohighlight">\(x = (x_1, x_2)^T \in \mathbb{R}^2\)</span> zu lösen:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{pmatrix}
+\frac{(a-d)}{2} &amp; b\\
+c &amp; \frac{(d-a)}{2}
+\end{pmatrix} 
+\begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix} \ = \ 
+\begin{pmatrix}
+0 \\
+0
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Mittels Gaußschen-Eliminationsverfahren bringen wir die Matrix in eine obere, rechte Dreiecksgestalt und erhalten so:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{pmatrix}
+c\frac{(a-d)}{2} &amp; bc\\
+0 &amp; \frac{-(a-d)^2}{4} - bc
+\end{pmatrix} 
+\begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix} \ = \ 
+\begin{pmatrix}
+0 \\
+0
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir erkennen, dass der Eintrag unten, rechts in der Matrix von folgender Gestalt ist:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+\frac{-(a-d)^2}{4} - bc \ &amp;= \ \frac{-a^2 + 2ad - d^2}{4} - bc \ = \ \frac{-a^2 - 2ad - d^2}{4} + (ad - bc) \\
+&amp;= \  \frac{-(a+d)^2}{4} + (ad - bc) \ = \ -\frac{\tr(A)^2}{4} + \det(A) \ = \ -R \ = \ 0.
+\end{split}
+\end{equation*}\]</div>
+<p>Das bedeutet, dass wir zur Bestimmung des Kern Lösungen des folgenden Gleichungssystems bestimmen müssen.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dd091dde-90c4-4d63-a32c-e2855c21782b">
+<span class="eqno">(1.13)<a class="headerlink" href="#equation-dd091dde-90c4-4d63-a32c-e2855c21782b" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:bsp_nicht_diagonalisierbar}
+\begin{pmatrix}
+c\frac{(a-d)}{2} &amp; bc\\
+0 &amp; 0
+\end{pmatrix} 
+\begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix} \ = \ 
+\begin{pmatrix}
+0 \\
+0
+\end{pmatrix}.
+\end{equation}\]</div>
+<p>Auch hier gibt es zwei Möglichkeiten.
+Falls die Matrix <span class="math notranslate nohighlight">\(A\)</span> bereits in Diagonalgestalt ist, so steht ihr Eigenwert <span class="math notranslate nohighlight">\(\lambda\)</span> auf der Hauptdiagonalen und es gilt <span class="math notranslate nohighlight">\(a = d = \lambda\)</span> und <span class="math notranslate nohighlight">\(b = c = 0\)</span>.
+Wie man leicht einsieht ist die Matrix in \eqref{eq:bsp_nicht_diagonalisierbar} dann die Nullmatrix und jeder Vektor <span class="math notranslate nohighlight">\(x \in \mathbb{R}^2\)</span> löst das lineare Gleichungssystem.
+Also ist der Kern bereits der gesamte Vektorraum <span class="math notranslate nohighlight">\(V = \mathbb{R}^2\)</span> und die geometrische Vielfachheit des Eigenwerts <span class="math notranslate nohighlight">\(\lambda\)</span> ist in der Tat <span class="math notranslate nohighlight">\(2\)</span>.
+Damit ist die Matrix trivialerweise diagonalisierbar.</p>
+<p>In allen anderen Fällen können wir den Eigenraum explizit angeben als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Eig(A; \lambda) \ = \ \lin( \lbrace{ \begin{pmatrix} bc \\ -c \frac{(a-d)}{2} \end{pmatrix} \rbrace} ).
+\end{equation*}\]</div>
+<p>Der Eigenraum <span class="math notranslate nohighlight">\(\Eig(A; \lambda)\)</span> hat also die Dimension <span class="math notranslate nohighlight">\(1\)</span> und somit stimmen geometrische Vielfachheit und algebraische Vielfachheit nicht überein.
+Nach Satz \ref{satz:diagonalisierbarkeit} ist die Matrix <span class="math notranslate nohighlight">\(A\)</span> also nicht diagonalisierbar.
+\end{enumerate}
+Um ein konkretes Beispiel für den dritten Fall der Fallunterscheidung oben anzugeben, müssen wir eine Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{2 \times 2}\)</span> konstruieren, so dass <span class="math notranslate nohighlight">\(R = 0\)</span> ist, bzw., so dass gilt <span class="math notranslate nohighlight">\(\tr(A)^2 = 4 \det(A)\)</span>.
+Hierzu betrachten wir die folgende Matrix</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ \coloneqq \
+\begin{pmatrix}
+3 &amp; -1\\
+1 &amp; 1
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir sehen sofort ein, dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\tr(A)^2 \ = \ (3 + 1)^2 \ = \ 16 \ = \ 4 \cdot (3\cdot1 - (-1)\cdot 1) \ = \ 4 \det(A).
+\end{equation*}\]</div>
+<p>Mit unseren allgemeinen Vorüberlegungen oben, können wir den Eigenwert <span class="math notranslate nohighlight">\(\lambda\)</span> von <span class="math notranslate nohighlight">\(A\)</span> angeben als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\lambda \ = \ -\frac{a + d}{2} \ = \ -\frac{3+1}{2} \ = \ -2.
+\end{equation*}\]</div>
+<p>Und der Eigenraum <span class="math notranslate nohighlight">\(\Eig(A; -2)\)</span> von <span class="math notranslate nohighlight">\(A\)</span> wird aufgespannt durch den Vektor</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{pmatrix}
+bc \\
+-c \frac{(a-d)}{2}
+\end{pmatrix}
+\ = \ 
+\begin{pmatrix}
+-1\cdot 1 \\
+-1 \cdot \frac{(3-1)}{2}
+\end{pmatrix}
+\ = \ \begin{pmatrix}
+-1 \\
+-1 
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Die Matrix <span class="math notranslate nohighlight">\(A\)</span> ist nach Satz \ref{satz:diagonalisierbarkeit} nicht diagonalisierbar, da geometrische und algebraische Vielfachheit des Eigenwerts <span class="math notranslate nohighlight">\(\lambda = -2\)</span> nicht übereinstimmen.
+\end{example}</p>
+<p>Sollte eine quadratische Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> diagonalisierbar sein, so hat die reguläre Matrix <span class="math notranslate nohighlight">\(S^{-1} \in \GL(n; \mathbb{K})\)</span> in \eqref{eq:aehnlichkeit} eine besondere Gestalt, wie das folgende Lemma zeigt.
+\begin{lemma}\label{lem:eigenvektoren_spalten}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine diagonalisierbare Matrix.
+In diesem Fall sind die Spaltenvektoren von <span class="math notranslate nohighlight">\(S^{-1}\)</span> gerade die Eigenvektoren der zugehörigen Eigenwerte auf der Diagonalen von <span class="math notranslate nohighlight">\(D\)</span>.
+\end{lemma}
+\begin{proof}
+Da <span class="math notranslate nohighlight">\(A\)</span> diagonalisierbar ist existiert eine Diagonalmatrix <span class="math notranslate nohighlight">\(D \in \mathbb{K}^{n\times n}\)</span> und eine reguläre Matrix <span class="math notranslate nohighlight">\(S \in \GL(n; \mathbb{K})\)</span>, so dass <span class="math notranslate nohighlight">\(SAS^{-1} = D\)</span> gilt.
+Aus Lemma \ref{lem:aehnlich_polynom} wissen wir, dass die Eigenwerte <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_n\)</span> von <span class="math notranslate nohighlight">\(A\)</span> durch die Einträge auf der Diagonalen von <span class="math notranslate nohighlight">\(D\)</span>,  gegeben sind.
+Durch Multiplikation mit der Matrix <span class="math notranslate nohighlight">\(S^{-1}\)</span> von links erhalten wir also:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\underbrace{S^{-1} S}_{= I_n} A S^{-1} \ = \ A S^{-1} \ = \ S^{-1} D. 
+\end{equation*}\]</div>
+<p>Wir sehen also, dass <span class="math notranslate nohighlight">\(A S^{-1} = S^{-1} D\)</span> gilt.
+Sei nun <span class="math notranslate nohighlight">\(v_k \in \mathbb{K}^{n}\)</span> die <span class="math notranslate nohighlight">\(k\)</span>-te Spalte von <span class="math notranslate nohighlight">\(S^{-1}\)</span> mit <span class="math notranslate nohighlight">\(1 \leq k \leq n\)</span>, dann sieht man ein, dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A v \ = \ \lambda_k v_k, \quad \text{ für alle } 1 \leq k \leq n.
+\end{equation*}\]</div>
+<p>Nach Definition \ref{def:eigenwert} ist der Vektor <span class="math notranslate nohighlight">\(v_k\)</span> also gerade der Eigenvektor zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_k\)</span> von <span class="math notranslate nohighlight">\(A\)</span>.
+\end{proof}</p>
+<p>Im folgenden Beispiel wollen wir diagonalisierbare <span class="math notranslate nohighlight">\((2\times 2)\)</span>-Matrizen untersuchen und die Beobachtung aus Lemma \ref{lem:eigenvektoren_spalten} verifizieren.
+\begin{bsp}
+Wir betrachten zwei Beispiele von <span class="math notranslate nohighlight">\((2 \times 2)\)</span>-Matrizen, für die wir eine ähnliche Diagonalmatrix <span class="math notranslate nohighlight">\(D\)</span> berechnen wollen, auf deren Hauptdiagonalen die zugehörigen Eigenwerte stehen.
+\begin{enumerate}
+\item Für eine Matrix der Form</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \
+\begin{pmatrix}
+-1 &amp; 6 \\
+-1 &amp; 4
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>bestimmen wir das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_A(t) \ = \ \det(A - tI_2) \ = \ (-1 - t)(4 - t) + 6 \ = \ t^2 - 3t + 2 \ = \ (t - 1)(t - 2).
+\end{equation*}\]</div>
+<p>Wir sehen also, dass das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> in Linearfaktoren zerfällt und die Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span> gegeben sind durch <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span> und <span class="math notranslate nohighlight">\(\lambda_2 = 2\)</span>.
+Es ist auf Grund von Satz \ref{satz:diagonalisierbarkeit} klar, dass <span class="math notranslate nohighlight">\(A\)</span> diagonalisierbar ist, d.h., dass es eine reguläre Matrix <span class="math notranslate nohighlight">\(S \in \GL(2; \mathbb{K})\)</span> gibt, so dass <span class="math notranslate nohighlight">\(S A S^{-1} = D\)</span> gilt.
+Die Diagonalmatrix <span class="math notranslate nohighlight">\(D\)</span> ist damit bis auf Permutation der Hauptdiagonale eindeutig bestimmt als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D \ = \
+\begin{pmatrix}
+1 &amp; 0\\
+0 &amp; 2
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Aus Lemma \ref{lem:eigenvektoren_spalten} wissen wir, dass die Spalten von <span class="math notranslate nohighlight">\(S^{-1}\)</span> gerade die Eigenvektoren von <span class="math notranslate nohighlight">\(A\)</span> sind.
+Für die Bestimmung der Eigenräume <span class="math notranslate nohighlight">\(\Eig(A; \lambda_1)\)</span> und <span class="math notranslate nohighlight">\(\Eig(A; \lambda_2)\)</span> lösen wir die beiden homogenen Gleichungssysteme</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\begin{pmatrix}
+-2 &amp; 6 \\
+-1 &amp; 3
+\end{pmatrix} 
+\begin{pmatrix}
+v_1 \\
+v_2
+\end{pmatrix} \ = \ (A - \lambda_1 I_2) \vec{v} = \vec{0}, \\
+\begin{pmatrix}
+-3 &amp; 6 \\
+-1 &amp; 2
+\end{pmatrix} 
+\begin{pmatrix}
+v_1 \\
+v_2
+\end{pmatrix} \ = \ (A - \lambda_2 I_2) \vec{v} = \vec{0}.
+\end{eqnarray*}\]</div>
+<p>Wir sehen direkt, dass die jeweiligen Zeilen der beiden Matrizen linear abhängig sind und man den Eigenvektor zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_1=1\)</span> angeben kann als <span class="math notranslate nohighlight">\(v = (3, 1)^T\)</span> bzw. den Eigenvektor zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_2=2\)</span> als <span class="math notranslate nohighlight">\(v = (2, 1)^T\)</span>.
+Schreiben wir die Eigenvektoren als Spalten der Matrix <span class="math notranslate nohighlight">\(S^{-1}\)</span>, so erhalten wir</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+S^{-1} \ = \
+\begin{pmatrix}
+3 &amp; 2\\
+1 &amp; 1
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>Der Vollständigkeit halber bestimmen wir nun noch die Inverse <span class="math notranslate nohighlight">\(S\)</span> zu <span class="math notranslate nohighlight">\(S^{-1}\)</span> durch die Determinanten-Regel:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+S \ = \ (S^{-1})^{-1} \ = \
+\begin{pmatrix}
+3 &amp; 2\\
+1 &amp; 1
+\end{pmatrix}^{-1}
+\ = \ \frac{1}{3\cdot 1 - 2\cdot 1}
+\begin{pmatrix}
+1 &amp; -2\\
+-1 &amp; 3
+\end{pmatrix} 
+\ = \
+\begin{pmatrix}
+1 &amp; -2\\
+-1 &amp; 3
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir überprüfen unsere Rechnung abschließend durch das Diagonalisieren von <span class="math notranslate nohighlight">\(A\)</span> als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+S A S^{-1} \ = \
+\begin{pmatrix}
+1 &amp; -2\\
+-1 &amp; 3
+\end{pmatrix}
+\begin{pmatrix}
+-1 &amp; 6 \\
+-1 &amp; 4
+\end{pmatrix}
+\begin{pmatrix}
+3 &amp; 2\\
+1 &amp; 1
+\end{pmatrix}
+\ = \
+\begin{pmatrix}
+1 &amp; 0\\
+0 &amp; 2
+\end{pmatrix}
+\ = \ D.
+\end{equation*}\]</div>
+<p>\item Für eine Spiegelmatrix der Form</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ = \
+\begin{pmatrix}
+\cos \alpha &amp; \sin \alpha \\
+\sin \alpha &amp; -\cos \alpha
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>berechnen wir das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+P_A(t) \ &amp;= \ \det(A - tI_2) \ = \ - (\cos \alpha - t)(\cos \alpha + t) - \sin^2 \alpha \ = \ t^2 - \cos^2 \alpha - \sin^2 \alpha \\
+&amp;= \ t^2 - \underbrace{(\sin^2 \alpha + \cos^2 \alpha)}_{=1} \ = \ t^2 - 1 \ = \ (t - 1)(t + 1).
+\end{split}
+\end{equation*}\]</div>
+<p>Wir sehen also, dass das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> in Linearfaktoren zerfällt und die Eigenwerte dieser allgemeinen Spiegelmatrix unabhängig sind von der Wahl des Winkels <span class="math notranslate nohighlight">\(\alpha \in [0, 2\pi)\)</span> immer <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span> und <span class="math notranslate nohighlight">\(\lambda_2 = -1\)</span>.
+Es ist auf Grund von Satz \ref{satz:diagonalisierbarkeit} klar, dass <span class="math notranslate nohighlight">\(A\)</span> diagonalisierbar ist, d.h., dass es eine reguläre Matrix <span class="math notranslate nohighlight">\(S \in \GL(2; \mathbb{K})\)</span> gibt, so dass <span class="math notranslate nohighlight">\(S A S^{-1} = D\)</span> gilt.
+Die Diagonalmatrix <span class="math notranslate nohighlight">\(D\)</span> ist damit bis auf Permutation der Hauptdiagonale eindeutig bestimmt als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D \ = \
+\begin{pmatrix}
+1 &amp; 0\\
+0 &amp; -1
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Aus Lemma \ref{lem:eigenvektoren_spalten} wissen wir, dass die Spalten von <span class="math notranslate nohighlight">\(S^{-1}\)</span> gerade die Eigenvektoren von <span class="math notranslate nohighlight">\(A\)</span> sind.
+Für die Bestimmung der Eigenräume <span class="math notranslate nohighlight">\(\Eig(A; \lambda_1)\)</span> und <span class="math notranslate nohighlight">\(\Eig(A; \lambda_2)\)</span> lösen wir die beiden homogenen Gleichungssysteme</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\begin{pmatrix}
+\cos \alpha - 1 &amp; \sin \alpha \\
+\sin \alpha &amp; -\cos \alpha - 1
+\end{pmatrix} 
+\begin{pmatrix}
+v_1 \\
+v_2
+\end{pmatrix} \ = \ (A - \lambda_1 I_2) \vec{v} = \vec{0}, \\
+\begin{pmatrix}
+\cos \alpha + 1 &amp; \sin \alpha \\
+\sin \alpha &amp; -\cos \alpha + 1
+\end{pmatrix} 
+\begin{pmatrix}
+v_1 \\
+v_2
+\end{pmatrix} \ = \ (A - \lambda_2 I_2) \vec{v} = \vec{0}.
+\end{eqnarray*}\]</div>
+<p>Durch Multiplikation der unteren Zeile mit dem ersten Eintrag der ersten Zeile sieht man, dass beide Zeilen linear abhängig sind und man kann die Eigenvektoren als Lösungen der obigen Gleichungen ablesen.
+Für den Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span> erhält man den zugehörigen Eigenvektor <span class="math notranslate nohighlight">\(\vec{v}_1 = (\sin^2 \alpha, \sin \alpha [1 - \cos \alpha])^T\)</span> und für den zweiten Eigenwert <span class="math notranslate nohighlight">\(\lambda_2 = -1\)</span> erhält man entsprechend den zugehörigen Eigenvektor <span class="math notranslate nohighlight">\(\vec{v}_2 = (\sin^2 \alpha, -\sin \alpha [1 + \cos \alpha])^T\)</span>.
+Damit ist die Transformationsmatrix <span class="math notranslate nohighlight">\(S^{-1}\)</span> gegeben durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+S^{-1} \ = \ 
+\begin{pmatrix}
+\sin^2 \alpha &amp; \sin^2 \alpha\\
+\sin \alpha(1-\cos \alpha) &amp; -\sin \alpha(1 +\cos \alpha)
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Das Bestimmen der Transformationsmatrix <span class="math notranslate nohighlight">\(S\)</span> und die Überprüfung der Diagonalisierung von <span class="math notranslate nohighlight">\(A\)</span> überlassen wir an dieser Stelle der geneigten Leserin und machen dafür folgende Beobachtung.
+Die Vektoren <span class="math notranslate nohighlight">\(\vec{v}_1, \vec{v}_2 \in \mathbb{R}^2\)</span> bilden eine Orthogonalbasis von <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, da gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+\langle \vec{v}_1, \vec{v}_2 \rangle \ &amp;= \ \langle (\sin^2 \alpha, \sin \alpha [1 - \cos \alpha])^T,  (\sin^2 \alpha, -\sin \alpha [1 + \cos \alpha])^T \rangle \\
+\ &amp;= \ \sin^4 \alpha - \sin \alpha (1 - \cos \alpha) \cdot \sin \alpha (1 + \cos \alpha)\\
+\ &amp; = \ \sin^4 \alpha - \sin^2 \alpha \underbrace{(1 - \cos^2 \alpha)}_{= \sin^2 \alpha} \ = \ \sin^4 \alpha - \sin^4 \alpha \ = \ 0.
+\end{split}
+\end{equation*}\]</div>
+<p>\end{enumerate}
+\end{bsp}</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./eigenwerte"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="char_pol.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1.3. </span>Das charakteristische Polynom</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="triag.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1.5. </span>Trigonalisierbarkeit</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

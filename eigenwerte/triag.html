@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.5. Trigonalisierbarkeit &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.6. Die Jordansche Normalform" href="jordan.html" />
+    <link rel="prev" title="1.4. Diagonalisierbarkeit" href="diag.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   4. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     4.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     4.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     4.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     4.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     4.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   5. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/eigenwerte/triag.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="trigonalisierbarkeit">
+<h1><span class="section-number">1.5. </span>Trigonalisierbarkeit<a class="headerlink" href="#trigonalisierbarkeit" title="Permalink to this headline">¶</a></h1>
+<p>Aus Kapitel \ref{s:diagonalisierbarkeit} wissen wir nun, dass ein Endomorphismus genau dann diagonalisierbar ist, wenn das zugehörige charakteristische Polynom in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> zerfällt und die algebraischen und geometrischen Vielfachheiten der Eigenwerte übereinstimmen.
+Das Beispiel \ref{bsp:diagonalisierung_gegenbeispiele} hat uns jedoch gezeigt, dass es sehr wohl Matrizen gibt deren charakteristisches Polynom zerfällt, jedoch nicht diagonalisierbar sind, da die Vielfachheiten der Eigenwerte nicht übereinstimmen.
+Glücklicherweise werden wir im Folgenden jedoch feststellen, dass Endomorphismen, deren charakteristisches Polynom in Linearfaktoren zerfällt, zumindest ähnlich zu einer oberen, rechten Dreiecksmatrix sind.</p>
+<p>\begin{definition}[Trigonalisierbarkeit]
+Wir definieren den Begriff der \emph{Trigonalisierbarkeit} im Folgenden sowohl für Endomorphismen als auch für Matrizen.
+\begin{enumerate}
+\item Ein Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> von <span class="math notranslate nohighlight">\(V\)</span> heißt \emph{trigonalisierbar}, wenn es eine Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span> gibt, so dass die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F)\)</span> von <span class="math notranslate nohighlight">\(F\)</span> bezüglich <span class="math notranslate nohighlight">\(B\)</span> eine obere, rechte Dreiecksmatrix ist.
+\item Eine Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n\times n}\)</span> heißt \emph{trigonalisierbar}, wenn sie ähnlich zu einer oberen, rechten Dreiecksmatrix ist.
+\end{enumerate}
+\end{definition}</p>
+<p>Es ist klar, dass wenn eine Matrix <span class="math notranslate nohighlight">\(A\)</span> trigonalisierbar ist, so stehen auf der oberen, rechten Dreiecksmatrix. zu der <span class="math notranslate nohighlight">\(A\)</span> ähnlich ist, die Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span>.
+Der folgende Satz gibt uns ein Kriterium mit dessen Hilfe wir direkt entscheiden können, ob ein Endomorphismus trigonalisierbar ist oder nicht.
+\begin{satz}[Trigonalisierungssatz]\label{satz:trigonalisierbarkeit}
+Für einen Endormorphismus <span class="math notranslate nohighlight">\(F\)</span> eines <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span> sind folgende Bedingungen äquivalent:
+\begin{enumerate}[i)]
+\item F ist trigonalisierbar
+\item Das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> zerfällt in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_F(t) \ = \ \pm (t - \lambda_1) \cdot \ldots \cdot (t - \lambda_n).
+\end{equation*}\]</div>
+<p>\end{enumerate}
+\end{satz}
+\begin{proof}
+Siehe \cite[Satz 4.4.3]{fischer}
+\end{proof}</p>
+<p>\begin{cor}
+Der Fundamentalsatz der Algebra \cite[Theorem 1.3.9]{fischer} besagt, dass jedes Polynom über <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> in Linearfaktoren zerfällt.
+Hieraus folgt schon, dass jeder Endomorphismus von einem endlich-dimensionalen <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>-Vektorraum trigonalisierbar ist.
+\end{cor}</p>
+<p>\begin{algorithm}[Trigonalisierung einer Matrix]\label{alg:trigonalisierung}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine Matrix deren charakteristisches Polynom in Linearfaktoren zerfällt, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_A(t) \ = \ (t - \lambda_1)\cdot \ldots \cdot (t - \lambda_n),
+\end{equation*}\]</div>
+<p>wobei die Eigenwerte <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_n \in \mathbb{K}\)</span> von <span class="math notranslate nohighlight">\(A\)</span> nicht paarweise verschieden sein müssen.
+Wir versuchen nun eine Matrix <span class="math notranslate nohighlight">\(S \in \GL(n; \mathbb{K})\)</span> zu bestimmen, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D \ = \ S A S^{-1},
+\end{equation*}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(D \in \mathbb{K}^{n \times n}\)</span> eine obere, rechte Dreiecksmatrix ist.
+Für diese Trigonalisierung gehen wir folgt vor:\[0.5cm]
+\newpage
+\noindent\textbf{1. Schritt:}\[0.3cm]
+Wir betrachten zunächst den Vektorraum <span class="math notranslate nohighlight">\(W_1 \coloneqq \mathbb{K}^n\)</span> mit der kanonischen Einheitsbasis <span class="math notranslate nohighlight">\(B_1\)</span> und den Endomorphismus <span class="math notranslate nohighlight">\(A_1 \coloneqq A\)</span>.
+Zunächst berechnen wir den zugehörigen Eigenvektor <span class="math notranslate nohighlight">\(v_1 \in \mathbb{K}^n\)</span> zum Eigenvektor <span class="math notranslate nohighlight">\(\lambda_1\)</span> von <span class="math notranslate nohighlight">\(A\)</span>.
+Nach dem Basisaustauschlemma \cite[Lemma 1.5.4]{fischer} können wir ein Element der kanonischen Einheitsbasis durch <span class="math notranslate nohighlight">\(v_1\)</span> austauschen, so dass wir immer noch eine Basis erhalten.
+Das heißt, wir bestimmen einen Index <span class="math notranslate nohighlight">\(1 \leq j_1 \leq n\)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B_2 \ \coloneqq \ (v_1, e_1, \ldots, \widehat{e_{j_1}}, \ldots, e_n)
+\end{equation*}\]</div>
+<p>wieder eine Basis von <span class="math notranslate nohighlight">\(\mathbb{K}^n\)</span> ist.
+Hierbei bedeutet die Notation <span class="math notranslate nohighlight">\(\widehat{e_{j_1}}\)</span>, dass dieses Basiselement ausgetauscht wurde.</p>
+<p>Wir schreiben nun die Basiselemente von <span class="math notranslate nohighlight">\(B_2\)</span> als Spalten der Transformationsmatrix</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+S_1^{-1} \ \coloneqq \ T_{B_1}^{B_2}.
+\end{equation*}\]</div>
+<p>Dann wird klar, dass wir die erste Spalte von <span class="math notranslate nohighlight">\(A_1\)</span> in obere rechte Dreiecksform bringen können durch:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A_2 \ \coloneqq \ S_1 \cdot A \cdot S_1^{-1} \ = \
+\begin{pmatrix}
+\lambda_1 &amp; * &amp; \dots &amp; *\\
+0 &amp; &amp; &amp; \\
+\vdots &amp; &amp; A_2' &amp; \\
+0 &amp; &amp; &amp;
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>~\[0.1cm]
+\textbf{2. Schritt:}\[0.3cm]
+Nun betrachten wir <span class="math notranslate nohighlight">\(W_2 \subset \mathbb{K}^n\)</span> mit der Basis</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B_2' \ \coloneqq \  (e_1, \ldots, \widehat{e_{j_1}}, \ldots, e_n)
+\end{equation*}\]</div>
+<p>und dem Endomorphismus <span class="math notranslate nohighlight">\(A_2' \colon W_2 \rightarrow W_2\)</span>.
+Das charakteristische Polynom von <span class="math notranslate nohighlight">\(A_2'\)</span> ist wegen der Determinantenregel für Blockmatrizen in Lemma \ref{lem:det_blockmatrix} gegeben durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_{A_2'}(t) \ = \ (t - \lambda_2) \cdot \ldots \cdot (t - \lambda_n).
+\end{equation*}\]</div>
+<p>Wir berechnen zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_2 \in \mathbb{K}\)</span> wieder einen Eigenvektor <span class="math notranslate nohighlight">\(v_2 \in W_2\)</span> und nutzen das Basisaustauschlemma, um einen Index <span class="math notranslate nohighlight">\(j_2 \neq j_1\)</span> zu finden, für den</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B_3' \ \coloneqq \  (v_2, e_1, \ldots, \widehat{e_{j_1}}, \ldots, \widehat{e_{j_2}},  \ldots, e_n)
+\end{equation*}\]</div>
+<p>wieder eine Basis von <span class="math notranslate nohighlight">\(W_2\)</span> ist.
+Damit ist auch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B_3 \ \coloneqq \  (v_1, v_2, e_1, \ldots, \widehat{e_{j_1}}, \ldots, \widehat{e_{j_2}},  \ldots, e_n)
+\end{equation*}\]</div>
+<p>eine Basis von <span class="math notranslate nohighlight">\(W_1 = \mathbb{K}^n\)</span>.
+Schreiben wir wiederum die Basis <span class="math notranslate nohighlight">\(B_3\)</span> als Spalten der Transformationsmatrix</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+S_2^{-1} \coloneqq \ T_{B_1}^{B_3},
+\end{equation*}\]</div>
+<p>so erhalten wir</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A_3 \ \coloneqq \ S_2 \cdot A \cdot S_2^{-1} \ = \
+\begin{pmatrix}
+\lambda_1 &amp; * &amp; \dots &amp; \dots &amp; *\\
+0 &amp; \lambda_2 &amp; * &amp; \dots &amp; * \\
+\vdots &amp; 0 &amp; &amp; &amp; \\
+\vdots &amp; \vdots &amp; &amp; A_3' &amp; \\
+0 &amp; 0 &amp; &amp; &amp; 
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Bei der Berechnung der Matrix <span class="math notranslate nohighlight">\(S_2\)</span> kann man ausnutzen, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+T_{B_1}^{B_3} \ = \ T_{B_1}^{B_2} \cdot T_{B_2}^{B_3}, \quad \text{ wobei } \ T_{B_2}^{B_3} \ \coloneqq \
+\begin{pmatrix}
+1 &amp; 0 &amp; \dots &amp;0 \\
+0 &amp; &amp; &amp;\\
+\vdots &amp; &amp; T_{B_2'}^{B_3'} &amp;\\
+0 &amp; &amp; &amp; 
+\end{pmatrix}
+\end{equation*}\]</div>
+<p>Spätestens nach <span class="math notranslate nohighlight">\((n-1)\)</span> Schritten erhält man eine obere, rechte Dreiecksmatrix, da <span class="math notranslate nohighlight">\(A_n'\)</span> eine <span class="math notranslate nohighlight">\((1 \times 1)\)</span>-Matrix ist.
+Insgesamt erhalten wir also eine zu <span class="math notranslate nohighlight">\(A\)</span> ähnliche obere, rechte Dreiecksmatrix <span class="math notranslate nohighlight">\(D\)</span> durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D \ \coloneqq \ A_n \ = \ S_{n-1} \cdot A \cdot S_{n-1}^{-1}.
+\end{equation*}\]</div>
+<p>\end{algorithm}</p>
+<p>Das folgende Beispiel zeigt, wie Algorithmus \ref{alg:trigonalisierung} angewendet werden kann, um eine Matrix, deren charakteristisches Polynom in Linearfaktoren zerfällt, zu trigonalisieren.
+\begin{bsp}\label{bsp:trigonalisierung}
+Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{3 \times 3}\)</span> eine quadratische Matrix, die wir trigonalisieren wollen, mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A \ \coloneqq \
+\begin{pmatrix}
+3 &amp; 4 &amp; 3\\
+-1 &amp; 0 &amp; -1\\
+1 &amp; 2 &amp; 3
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir bestimmen zuerst das charakteristische Polynom <span class="math notranslate nohighlight">\(P_A\)</span> von <span class="math notranslate nohighlight">\(A\)</span> als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_A(t) \ = \ -(t-2)^3,
+\end{equation*}\]</div>
+<p>also ist <span class="math notranslate nohighlight">\(\lambda = 2\)</span> der einzige Eigenwert von <span class="math notranslate nohighlight">\(A\)</span> mit algebraischer Vielfachheit <span class="math notranslate nohighlight">\(3\)</span>.
+Das charakteristische Polynom zerfällt offensichtlich in Linearfaktoren und nach Satz \ref{satz:trigonalisierbarkeit} wissen wir folglich, dass <span class="math notranslate nohighlight">\(A\)</span> trigonalisierbar ist.</p>
+<p>Wir betrachten den Eigenraum <span class="math notranslate nohighlight">\(\Eig(A; 2)\)</span> von <span class="math notranslate nohighlight">\(A\)</span> durch Bestimmung von <span class="math notranslate nohighlight">\(\Kern(A - 2\cdot I_3)\)</span> als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Eig(A; 2) \ = \ \Kern(A - 2 \cdot I_3) \ = \ \Kern
+\begin{pmatrix}
+3 - 2 &amp; 4 &amp; 3\\
+-1 &amp; 0 - 2 &amp; -1\\
+1 &amp; 2 &amp; 3 - 2
+\end{pmatrix}
+\ = \ \Kern
+\begin{pmatrix}
+1 &amp; 4 &amp; 3\\
+-1 &amp; -2 &amp; -1\\
+1 &amp; 2 &amp; 1
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir sehen direkt, dass die letzten beiden Zeilen der Matrix <span class="math notranslate nohighlight">\((A - 2 \cdot I_3)\)</span> linear abhängig sind und sie daher den Rang <span class="math notranslate nohighlight">\(2\)</span> hat.
+Daraus folgt mit der Dimensionsformel von Bild und Kern \cite[Satz 2.2.4]{fischer}, dass der Kern von <span class="math notranslate nohighlight">\(A-2 \cdot I_3\)</span> die Dimension <span class="math notranslate nohighlight">\(1\)</span> besitzt und daher der Eigenwert <span class="math notranslate nohighlight">\(\lambda = 2\)</span> die geometrische Vielfachheit <span class="math notranslate nohighlight">\(1\)</span> hat.
+Da geometrische und algebraische Vielfachheit des Eigenwerts nicht übereinstimmen wissen wir mit Satz \ref{satz:diagonalisierbarkeit}, dass die Matrix <span class="math notranslate nohighlight">\(A\)</span> nicht diagonalisierbar ist.
+Konkret können wir den Eigenvektor <span class="math notranslate nohighlight">\(v_1 \in \mathbb{R}^3\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda = 2\)</span> angeben als
+<span class="math notranslate nohighlight">\(v_1 = (1, -1, 1)^T\)</span>.</p>
+<p>Wir wenden nun den Algorithmus \ref{alg:trigonalisierung} an, um die Matrix <span class="math notranslate nohighlight">\(A\)</span> zu trigonalisieren.\[0.5cm]
+\textbf{1. Schritt:}\[0.3cm]
+Wir wählen den Index <span class="math notranslate nohighlight">\(j_1 = 1\)</span>, d.h., wir tauschen den Einheitsvektor <span class="math notranslate nohighlight">\(e_1\)</span> durch <span class="math notranslate nohighlight">\(v_1\)</span> aus und erhalten <span class="math notranslate nohighlight">\(B_2\)</span> als neue Basis von <span class="math notranslate nohighlight">\(W_1 = \mathbb{R}^3\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B_2 \ \coloneqq \ (v_1, e_2, e_3).
+\end{equation*}\]</div>
+<p>Daraus ergibt sich für die Transformationmatritzen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+S_1^{-1} \ \coloneqq \ T_{B_1}^{B_2} \ = \ 
+\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+-1 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 1
+\end{pmatrix},
+\qquad
+S_1 \ = \ 
+\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0\\
+-1 &amp; 0 &amp; 1
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Damit erhalten wir für</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A_2 \ \coloneqq S_1 \cdot A \cdot S_1^{-1} \ = \
+\begin{pmatrix}
+2 &amp; 4 &amp; 3\\
+0 &amp; 4 &amp; 2\\
+0 &amp; -2 &amp; 0
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>\[0.1cm]
+\textbf{2. Schritt:}\[0.3cm]
+Wir betrachten den verbleibenden Block <span class="math notranslate nohighlight">\(A_2'\)</span> von <span class="math notranslate nohighlight">\(A_2\)</span>, der noch nicht in oberer, rechter Dreiecksgestalt ist mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A_2' \ \coloneqq \ 
+\begin{pmatrix}
+4 &amp; 2\\
+-2 &amp; 0
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir bestimmen den Eigenvektor <span class="math notranslate nohighlight">\(v_2' \in \mathbb{R}^2\)</span> von <span class="math notranslate nohighlight">\(A_2'\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda_2 = 2\)</span> als <span class="math notranslate nohighlight">\(v_2' = (1, -1)^T\)</span>.
+Die Basis <span class="math notranslate nohighlight">\(B'_2\)</span> ist gegeben durch <span class="math notranslate nohighlight">\(B'_2 = (e_1, e_2)\)</span> und wir tauschen das erste Basiselement durch den Eigenvektor <span class="math notranslate nohighlight">\(v_2'\)</span> aus, so dass wir eine neue Basis <span class="math notranslate nohighlight">\(B_3' = (v_2', e_2)\)</span> erhalten.
+Die entsprechende Transformationsmatrix ist dann gegeben durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+T^{B_3'}_{B_2'} \ \coloneqq \
+\begin{pmatrix}
+1 &amp; 0\\
+-1 &amp; 1
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Bezogen auf die Basen <span class="math notranslate nohighlight">\(B_2 = (v_1, e_2, e_3)\)</span> von <span class="math notranslate nohighlight">\(W_1\)</span> können wir das zweite Basiselement <span class="math notranslate nohighlight">\(e_2\)</span> durch den um <span class="math notranslate nohighlight">\(0\)</span> erweiterten Eigenvektor <span class="math notranslate nohighlight">\(v_2'\)</span> ersetzen und erhalten <span class="math notranslate nohighlight">\(B_3\)</span> als neue Basis mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B_3 \ \coloneqq \ (v_1, v_2, e_3),
+\end{equation*}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(v_2 \coloneqq (0, 1, -1)^T\)</span> ist.
+Wir betten <span class="math notranslate nohighlight">\(T^{B_3'}_{B_2'}\)</span> als unteren, rechten Block in eine Transformationsmatrix von Basis <span class="math notranslate nohighlight">\(B_2\)</span> zur neuen Basis <span class="math notranslate nohighlight">\(B_3\)</span> ein und erhalten</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+T^{B_3}_{B_2} \ \coloneqq \ 
+\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0 &amp; -1 &amp; 1
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Damit können wir nun die globale Transformationsmatrix <span class="math notranslate nohighlight">\(S_2^{-1}\)</span> bestimmen durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+S_2^{-1} \ = \ S_1^{-1} \cdot T^{B_3}_{B_2} \ = \
+\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+-1 &amp; 1 &amp; 0\\
+1 &amp; -1 &amp; 1
+\end{pmatrix},
+\qquad
+S_2 \ = \ 
+\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0\\
+0&amp; 1 &amp; 1
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Damit erhalten wir schlussendlich eine zu <span class="math notranslate nohighlight">\(A\)</span> ähnliche Triagonalmatrix <span class="math notranslate nohighlight">\(D\)</span> für</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A_3 \ \coloneqq S_2 \cdot A \cdot S_2^{-1} \ = \
+\begin{pmatrix}
+2 &amp; 1 &amp; 3\\
+0 &amp; 2 &amp; 2\\
+0 &amp; 0 &amp; 2
+\end{pmatrix} \ = \ D.
+\end{equation*}\]</div>
+<p>\end{bsp}</p>
+<p>Wie wir in Beispiel \ref{bsp:trigonalisierung} gesehen haben, können wir eine trigonalisierbare Matrix zwar in eine obere, rechte Dreiecksform überführen, jedoch gibt es viele Möglichkeiten dies zu tun, abhängig von der Wahl der auszutauschenden Basiselemente in Algorithmus \ref{alg:trigonalisierung}.
+Da Mathematiker im Allgemeinen allergisch auf Wahlfreiheit reagieren, wollen wir uns im Folgenden mit der Bestimmung eines kanonischen Repräsentanten für eine ähnliche obere, rechte Dreiecksmatrix beschäftigen, die besonders schöne Eigenschaft hat.</p>
+<p>\section{Die Jordansche Normalform}</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./eigenwerte"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="diag.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1.4. </span>Diagonalisierbarkeit</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="jordan.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1.6. </span>Die Jordansche Normalform</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

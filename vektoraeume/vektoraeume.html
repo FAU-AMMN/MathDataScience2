@@ -5,55 +5,58 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mathematik für DataScience 2 &#8212; Mathematik für Data Science 2</title>
+    <title>2. Euklidische und unitäre Vektorräume &#8212; Mathematik für Data Science 2</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Eigenwerte" href="eigenwerte/eigenwerte.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.1. Das kanonische Skalarprodukt in \(\mathbb{R}^n\)" href="standard_skalar.html" />
+    <link rel="prev" title="1.6. Die Jordansche Normalform" href="../eigenwerte/jordan.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -70,26 +73,26 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
    Mathematik für DataScience 2
   </a>
  </li>
@@ -99,9 +102,9 @@
   Lineare Algebra
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="eigenwerte/eigenwerte.html">
+  <a class="reference internal" href="../eigenwerte/eigenwerte.html">
    1. Eigenwerte
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -111,49 +114,49 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="eigenwerte/prelim.html">
+    <a class="reference internal" href="../eigenwerte/prelim.html">
      1.1. Mathematische Grundlagen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="eigenwerte/werte_vektoren.html">
+    <a class="reference internal" href="../eigenwerte/werte_vektoren.html">
      1.2. Eigenwerte und Eigenvektoren
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="eigenwerte/char_pol.html">
+    <a class="reference internal" href="../eigenwerte/char_pol.html">
      1.3. Das charakteristische Polynom
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="eigenwerte/diag.html">
+    <a class="reference internal" href="../eigenwerte/diag.html">
      1.4. Diagonalisierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="eigenwerte/triag.html">
+    <a class="reference internal" href="../eigenwerte/triag.html">
      1.5. Trigonalisierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="eigenwerte/jordan.html">
+    <a class="reference internal" href="../eigenwerte/jordan.html">
      1.6. Die Jordansche Normalform
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="vektoraeume/vektoraeume.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    2. Euklidische und unitäre Vektorräume
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="vektoraeume/standard_skalar.html">
+    <a class="reference internal" href="standard_skalar.html">
      2.1. Das kanonische Skalarprodukt in
      <span class="math notranslate nohighlight">
       \(\mathbb{R}^n\)
@@ -161,7 +164,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="vektoraeume/vektor_produkt.html">
+    <a class="reference internal" href="vektor_produkt.html">
      2.2. Das Vektorprodukt in
      <span class="math notranslate nohighlight">
       \(\mathbb{R}^3\)
@@ -169,7 +172,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="vektoraeume/complex_skalar.html">
+    <a class="reference internal" href="complex_skalar.html">
      2.3. Das kanonische Skalarprodukt in
      <span class="math notranslate nohighlight">
       \(\mathbb{C}^n\)
@@ -177,22 +180,22 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="vektoraeume/sesqui.html">
+    <a class="reference internal" href="sesqui.html">
      2.4. Bilinear- und Sesquilinearformen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="vektoraeume/orth.html">
+    <a class="reference internal" href="orth.html">
      2.5. Orthogonalisierung und Orthonormalisierung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="vektoraeume/orth_endo.html">
+    <a class="reference internal" href="orth_endo.html">
      2.6. Orthogonale und unitäre Endomorphismen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="vektoraeume/selbstadjungiert.html">
+    <a class="reference internal" href="selbstadjungiert.html">
      2.7. Selbstadjungierte Endomorphismen
     </a>
    </li>
@@ -206,7 +209,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="normierte_raeume/normierte_raeume.html">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
    3. Normierte Vektorräume
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -216,29 +219,29 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="normierte_raeume/konvergenz.html">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
      3.1. Konvergenz von Folgen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="normierte_raeume/stetigkeit.html">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
      3.2. Stetigkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="normierte_raeume/kompaktheit.html">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
      3.3. Kompaktheit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="normierte_raeume/hilbert.html">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
      3.4. Hilberträume
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ableitungen/ableitungen.html">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
    4. Differentiation von Funktionen mehrerer Veränderlicher
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -248,34 +251,34 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="ableitungen/part_diff.html">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
      4.1. Partielle Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ableitungen/first_order.html">
+    <a class="reference internal" href="../ableitungen/first_order.html">
      4.2. Differentialoperatoren erster Ordnung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ableitungen/higher_order.html">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
      4.3. Differentialoperatoren höherer Ordnung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ableitungen/tot_diff.html">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
      4.4. Totale Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ableitungen/taylor.html">
+    <a class="reference internal" href="../ableitungen/taylor.html">
      4.5. Taylor-Formel
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="references.html">
+  <a class="reference internal" href="../references.html">
    5. Bibliography
   </a>
  </li>
@@ -320,7 +323,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/vektoraeume/vektoraeume.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -353,16 +356,11 @@
         
               <div>
                 
-  <div class="section" id="mathematik-fur-datascience-2">
-<h1>Mathematik für DataScience 2<a class="headerlink" href="#mathematik-fur-datascience-2" title="Permalink to this headline">¶</a></h1>
-<p>Das vorliegende Skript begleitet die Vorlesung <strong>Mathematik für Data Science 2 / Physikstudierende B</strong> und ist im Sommersemester 2021 an der FAU Erlangen-Nürnberg entstanden.
-Es soll den Studierenden zusätzlich zur virtuellen Vorlesung (in Form einer Videoreihe) als Nachschlagewerk dienen und ist ausführlicher und genauer gehalten als die Vorlesungsnotizen.</p>
-<p>Das Skript orientiert sich teilweise an dem Vorlesungsskript <em>“Mathematik für Physikstudierende 2”</em> <span id="id1">[<a class="reference internal" href="references.html#id5">Kna20</a>]</span> von Prof. Dr. Andreas Knauf (FAU) aus dem Sommersemester 2020. Der Inhalt der Vorlesung wird in diesem Skript in grob zwei Teile untergliedert, nämlich mathematischen Theorien der <em>Linearen Algebra</em> und der _<em>Analysis</em>.
-Für die Inhalte der Linearen Algebra wird häufig auf das Standardlehrbuch <em>“Lineare Algebra”</em> <span id="id2">[<a class="reference internal" href="references.html#id3">Fis05</a>]</span> von Prof.~Dr.~Gerd Fischer (TU München) verwiesen, das eine gute Balance zwischen Theorie und Anwendung bietet.
-Teile der Analysis sind dem Standardlehrbuch <em>“Analysis 2”</em> <span id="id3">[<a class="reference internal" href="references.html#id4">For17</a>]</span> von Prof.~Dr.~Otto Forster (LMU München) entnommen. Für die Optimierung wird zu großen Teilen der Notation von Jorge Nocedal und Stephen J. Wright <span id="id4">[<a class="reference internal" href="references.html#id6">uSJW06</a>]</span> gefolgt.</p>
-<p>Mein besonderer Dank gilt Lea Föcke, Tim Roith und Philipp Werner für ihre Unterstützung bei der Erstellung dieses Skripts, sowie Doris Schneider für ihre gute Organisation und die Durchführung der Tafelübung.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="section" id="euklidische-und-unitare-vektorraume">
+<h1><span class="section-number">2. </span>Euklidische und unitäre Vektorräume<a class="headerlink" href="#euklidische-und-unitare-vektorraume" title="Permalink to this headline">¶</a></h1>
+<p>Bisher haben wir immer einen endlich-dimensionalen <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum <span class="math notranslate nohighlight">\(V\)</span> mit einem beliebigen Körper <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> betrachtet.
+Wenn wir uns jedoch konkret auf die beiden Körper <span class="math notranslate nohighlight">\(\mathbb{K} = \mathbb{R}\)</span> und <span class="math notranslate nohighlight">\(\mathbb{K} = \mathbb{C}\)</span> festlegen, erhalten wir zusätzliche Struktur durch das Vorhandenseins eines <em>Skalarprodukts</em>, dass ein essentielles Hilfsmittel zur Messung von Längen und Winkeln darstellt.
+Stattet man einen reellen Vektorraum mit einem Skalarprodukt aus, so nennt man diesen <em>euklidisch</em>, wohingegen ein komplexer Vektorraum mit einem Skalarprodukt <em>unitär</em> genannt wird.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -380,7 +378,7 @@ Teile der Analysis sind dem Standardlehrbuch <em>“Analysis 2”</em> <span id=
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./vektoraeume"
         },
         predefinedOutput: true
     }
@@ -396,11 +394,20 @@ Teile der Analysis sind dem Standardlehrbuch <em>“Analysis 2”</em> <span id=
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="../eigenwerte/jordan.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1.6. </span>Die Jordansche Normalform</p>
+            </div>
+        </a>
+    </div>
      <div id="next">
-        <a class="right-next" href="eigenwerte/eigenwerte.html" title="next page">
+        <a class="right-next" href="standard_skalar.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">1. </span>Eigenwerte</p>
+                <p class="prevnext-title"><span class="section-number">2.1. </span>Das kanonische Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span></p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -426,7 +433,7 @@ Teile der Analysis sind dem Standardlehrbuch <em>“Analysis 2”</em> <span id=
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
   </body>
