@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.4. Totale Differenzierbarkeit &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": ["tr"], "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.5. Taylor-Formel" href="taylor.html" />
+    <link rel="prev" title="1.3. Differentialoperatoren höherer Ordnung" href="higher_order.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ableitungen.html">
+   1. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="part_diff.html">
+     1.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="first_order.html">
+     1.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="higher_order.html">
+     1.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="taylor.html">
+     1.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   2. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ableitungen/tot_diff.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stetigkeit-total-diffbarer-funktionen">
+   1.4.1. Stetigkeit total diffbarer Funktionen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-jacobi-matrix">
+   1.4.2. Die Jacobi-Matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-kettenregel">
+   1.4.3. Die Kettenregel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#richtungsableitung">
+   1.4.4. Richtungsableitung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#der-mittelwertsatz">
+   1.4.5. Der Mittelwertsatz
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="totale-differenzierbarkeit">
+<h1><span class="section-number">1.4. </span>Totale Differenzierbarkeit<a class="headerlink" href="#totale-differenzierbarkeit" title="Permalink to this headline">¶</a></h1>
+<p>Im letzten Abschnitt haben wir gesehen, dass der Begriff der partiellen Ableitung die nächstliegendste  Strategie ist um Ableitungen für Funktionen  mehrerer Veränderlicher zu definieren. Allerdings wurde aus den obigen Beispielen auch klar, dass Definition über Einschränkung auf einzelne Koordinatenachsen, einerseits willkürlich ist, aber insbesondere auch keine befriedigende Verallgemeinerung des Ableitungsbegriffs darstellt. So gilt z.B. die aus dem Eindimensionalen bekannte Implikation für Funktionen <span class="math notranslate nohighlight">\(f \colon \R \rightarrow \R\)</span>
+<strong>nicht</strong> für den Begriff der partiellen Differenzierbarkeit.</p>
+<div class="tip admonition">
+<p class="admonition-title">Eindimensionaler Fall</p>
+<p><span class="math notranslate nohighlight">\(f\)</span> ist differenzierbar <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <span class="math notranslate nohighlight">\(f\)</span> ist stetig</p>
+</div>
+<p>Aus diesem Grund, wollen wir nun einen weiteren Ableitungsbegriff kennenlernen, welcher eine tatsächliche Verallgemeinerung dieser Beobachtung darstellt. Insbesondere erlaubt es uns dieser neue Begriff auch Ableitung von vektorwertigen Funktionen <span class="math notranslate nohighlight">\(f:U\rightarrow\R^m\)</span> für eine offene Teilmenge <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> zu definieren.</p>
+<div class="proof definition admonition" id="def:totale_differenzierbarkeit">
+<p class="admonition-title"><span class="caption-number">Definition 1.6 </span> (Totale Differenzierbarkeit)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge.
+Dann heißt eine Funktion <span class="math notranslate nohighlight">\(f:U\rightarrow \R^m\)</span> <em>total differenzierbar</em> im Punkt <span class="math notranslate nohighlight">\(x\in U\)</span>, falls für einen beliebigen Vektor <span class="math notranslate nohighlight">\(\xi \in \R^n\)</span> eine lineare Abbildung <span class="math notranslate nohighlight">\(L:\R^n\rightarrow\R^m\)</span> existiert, so dass</p>
+<div class="math notranslate nohighlight" id="equation-eq-totale-differenzierbarkeit">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-eq-totale-differenzierbarkeit" title="Permalink to this equation">¶</a></span>\[\lim_{\xi\rightarrow 0} \frac{\norm{f(x+\xi) - f(x) - L\xi}} {\norm{\xi}} \ = \ 0.\]</div>
+</div>
+</div><p>Die folgende Bemerkung beschreibt die Intuition hinter der Definition von totaler Differenzierbarkeit.</p>
+<div class="proof remark admonition" id="bem:fehlerfunktional">
+<p class="admonition-title"><span class="caption-number">Remark 1.6 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Zur totalen Differenzierbarkeit können wir folgende Beobachtungen festhalten.</p>
+<ul class="simple">
+<li><p>In <a class="reference internal" href="#equation-eq-totale-differenzierbarkeit">(1.4)</a> betrachtet man das sogenannte <em>Fehlerfunktional</em></p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-eq-fehlerfunktional">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-eq-fehlerfunktional" title="Permalink to this equation">¶</a></span>\[r(\xi) \ \coloneqq \ f(x+\xi) - f(x) - L\xi\]</div>
+<p>welches die Abweichung zwischen der Linearisierung und der eigentlichen Differenz misst.
+Bei der Definition von totaler Differenzierbarkeit fordern wir also, dass diese Diskrepanz schnell genug gegen Null konvergiert.</p>
+<p>Zudem erkennen wir, dass Definition <a class="reference internal" href="#def:totale_differenzierbarkeit">Definition 1.6</a> konsistent mit dem herkömmlichen Begriff der Differenzierbarkeit einer Funktion <span class="math notranslate nohighlight">\(f\)</span> im Eindimensionalen (<span class="math notranslate nohighlight">\(n=m=1\)</span>) ist, da die Funktion <span class="math notranslate nohighlight">\(L\)</span> in diesem Fall als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+L(h) \ \coloneqq \ f^\prime(x) \cdot h
+\end{equation*}\]</div>
+<p>gewählt werden kann.
+\item%
+Die lineare Abbildung <span class="math notranslate nohighlight">\(L\)</span> wird typischerweise mit der darstellenden Matrix</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+L \ = \
+\begin{pmatrix}
+L_{11}&amp;\ldots &amp;L_{1n}\\
+\vdots&amp; &amp;\vdots\\
+L_{m1}&amp;\ldots &amp;L_{mn}
+\end{pmatrix}
+\in\R^{m,n}
+\end{align*}\]</div>
+<p>bezüglich der kanonischen Basen von <span class="math notranslate nohighlight">\(\R^n\)</span> und <span class="math notranslate nohighlight">\(\R^m\)</span> identifiziert.
+Das Fehlerfunktional, hat dann komponentenweise die Form</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+r_i(\xi) \ = \ f_i(x+\xi) - f_i(x) - \sum_{j=1}^n L_{ij}\xi_j.
+\end{align*}\]</div>
+<p>Somit sehen wir, dass <span class="math notranslate nohighlight">\(f\)</span> genau dann total differenzierbar ist, falls jede
+Komponente von <span class="math notranslate nohighlight">\(f\)</span> im Bildraum total differenzierbar ist.
+\end{enumerate}</p>
+</div>
+</div><div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 1.9 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(C\in\R^{n,n}\)</span> eine symmetrische Funktion und die Funktion
+<span class="math notranslate nohighlight">\(f:\R^n\rightarrow\R\)</span> als quadratische Form gegeben durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x) \ \coloneqq \ \langle x, C x\rangle.
+\end{align*}\]</div>
+<p>Wir berechnen nun für einen beliebigen Punkt <span class="math notranslate nohighlight">\(x\in\R^n\)</span> und einen Richtungsvektor <span class="math notranslate nohighlight">\(\xi \in \R^n\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x+\xi) \ &amp;= \ \langle x +\xi, C (x + \xi)\rangle \ = \
+\langle x , C x \rangle + 
+\underbrace{
+\langle x , C \xi\rangle + 
+\langle \xi , C x \rangle}_{= \, 2\langle C x, \xi\rangle \, \eqqcolon \, L\xi} \, + \, 
+\langle \xi , C \xi\rangle\\
+&amp;=
+f(x) + L\xi + \langle \xi , C \xi\rangle.
+\end{align*}\]</div>
+<p>Das Fehlerfunktional ist also gegeben durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+r(\xi) \ \coloneqq \ f(x+\xi) - f(x) - L\xi \ = \ f(x) + L\xi + \langle \xi , C \xi\rangle - f(x) - L\xi \ = \ \langle \xi , C \xi\rangle.
+\end{align*}\]</div>
+<p>Mit Hilfe der Cauchy-Schwarz Ungleichung aus Satz \ref{satz:cauchy-schwarz_r} sehen wir, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+|r(\xi)| \ = \ \langle \xi, C \xi \rangle| \ \leq \ \norm{\xi} \cdot \norm{C\xi} | \ \leq \  \norm{C} \cdot \norm{\xi}^2.
+\end{align*}\]</div>
+<p>Damit können wir schließlich folgern</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lim_{\xi\rightarrow 0} \frac{\norm{r(\xi)}}{\norm{\xi}} \ \leq \ \lim_{\xi\rightarrow 0} \norm{C}\cdot\norm{\xi} \ = \ 0.
+\end{align*}\]</div>
+<p>Wir sehen also, dass die Funktion <span class="math notranslate nohighlight">\(f(x) = \langle x, Cx \rangle\)</span> total differenzierbar in allen Punkten <span class="math notranslate nohighlight">\(x\in \R^n\)</span> ist.</p>
+</div>
+</div><div class="section" id="stetigkeit-total-diffbarer-funktionen">
+<h2><span class="section-number">1.4.1. </span>Stetigkeit total diffbarer Funktionen<a class="headerlink" href="#stetigkeit-total-diffbarer-funktionen" title="Permalink to this headline">¶</a></h2>
+<p>Der folgende Satz liefert uns nun die gewünschte Aussage, dass totale Differenzierbarkeit einer Funktion schon Stetigkeit impliziert. Zudem stellt er einen Bezug zum Begriff der partiellen Differenzierbarkeit her.</p>
+<div class="proof theorem admonition" id="thm:totdiff">
+<p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f:U\rightarrow \R^m\)</span> eine im Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> total differenzierbare Funktion, d.h., es existiert eine Matrix <span class="math notranslate nohighlight">\(L\in\R^{m\times n}\)</span>, so dass,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+r(\xi) \ = \ f(x+\xi)-f(x)-L\xi
+\end{equation*}\]</div>
+<p>die Gleichung <a class="reference internal" href="#equation-eq-totale-differenzierbarkeit">(1.4)</a> erfüllt.
+Dann gilt</p>
+<ul class="simple">
+<li><p>f ist stetig im Punkt <span class="math notranslate nohighlight">\(x\)</span>,</p></li>
+<li><p>jede Komponente von <span class="math notranslate nohighlight">\(f\)</span> im Bildraum ist partiell differenzierbar in <span class="math notranslate nohighlight">\(x\)</span> und die Einträge der Matrix <span class="math notranslate nohighlight">\(L\)</span> sind gerade die partiellen Ableitungen von <span class="math notranslate nohighlight">\(f\)</span>, d.h.,</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\partial_j f_i \ = \ L_{ij}.
+\end{align*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Die Stetigkeit ist eine direkte Folgerung aus der Definition, denn mittels Dreiecksungleichung können wir zeigen, dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\norm{f(x+\xi) - f(x)} \: = \: \norm{f(x+\xi) - f(x) - L\xi + L\xi} \: \leq \: \norm{f(x+\xi) - f(x) - L\xi} + \norm{L\xi}.
+\end{align*}\]</div>
+<p>Da auf Grund der Linearität von <span class="math notranslate nohighlight">\(L\)</span> offensichtlich <span class="math notranslate nohighlight">\(\lim_{\xi\rightarrow 0}\norm{L\xi} = 0\)</span> gilt und <span class="math notranslate nohighlight">\(f\)</span> total differenzierbar ist, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\lim_{\xi\rightarrow 0}\norm{f(x+\xi) - f(x) - L\xi} \ = \ 0
+\end{equation*}\]</div>
+<p>folgt somit schon</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lim_{\xi\rightarrow 0}\norm{f(x+\xi) - f(x)} \ \leq \ \lim_{\xi\rightarrow 0}\norm{f(x+\xi) - f(x) - L\xi} + \norm{L\xi} \ = \ 0.
+\end{align*}\]</div>
+<p>Da der obige Grenzwerte beliebige Nullfolgen betrachtet folgt die Stetigkeit von <span class="math notranslate nohighlight">\(f\)</span>.
+\par
+Für den Zusammenhang mit der partiellen Differenzierbarkeit in der zweiten Aussage des Satzes betrachten wir eine Komponente <span class="math notranslate nohighlight">\(f_i\)</span> von <span class="math notranslate nohighlight">\(f\)</span> für <span class="math notranslate nohighlight">\(i\in\{1,\ldots,m\}\)</span> und damit gilt nach Bemerkung \ref{bem:fehlerfunktional}</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+r_i(\xi) \ = \ f_i(x+\xi)-f_i(x)-\sum_{j=1}^n L_{ij}\xi_j.
+\end{align*}\]</div>
+<p>Treffen wir nun die spezielle Wahl <span class="math notranslate nohighlight">\(\xi=h \cdot e_j\)</span> für eine Koordinatenrichtung <span class="math notranslate nohighlight">\(e_j, 1 \leq j \leq n\)</span>, so sehen wir</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+r_i(h \cdot e_j) \ = \ f_i(x+h \cdot e_j)-f_i(x)- L_{ij} \cdot h.
+\end{align*}\]</div>
+<p>Setzen wir nun die Definition der totalen Differenzierbarkeit für die Komponente <span class="math notranslate nohighlight">\(r_i\)</span> ein folgt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+| \partial_j f_i(x) - L_{ij}| \ &amp;= \ 
+\lim_{h\rightarrow 0}
+\left|\frac{f_i(x+h\cdot e_j)-f_i(x)}{h} - L_{ij}\right|
+= \ \lim_{h\rightarrow 0}\frac{\abs{f_i(x+h\cdot e_j)-f_i(x)- L_{ij} \cdot h}}{h}\\
+%
+&amp;= \ \lim_{h\rightarrow 0}\frac{\norm{r_i(h\cdot e_j)}}{\norm{h \cdot e_j}} \ = \  \lim_{h\rightarrow 0}\frac{\norm{r_i(\xi)}}{\norm{\xi}} \ = \ 0.
+\end{align*}\]</div>
+<p>Damit haben wir gezeigt, dass die Einträge der Matrix <span class="math notranslate nohighlight">\(L\)</span> mit den partiellen Ableitungen der Funktion <span class="math notranslate nohighlight">\(f\)</span> übereinstimmen.</p>
+</div>
+</div>
+<div class="section" id="die-jacobi-matrix">
+<h2><span class="section-number">1.4.2. </span>Die Jacobi-Matrix<a class="headerlink" href="#die-jacobi-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Speziell die besondere Gestalt der Matrix <span class="math notranslate nohighlight">\(L\)</span> in der zweiten Aussage des Satzes \ref{thm:totdiff} motiviert die Definition der Jacobi-Matrix einer vektorwertigen, partiell differenzierbaren Funktion.</p>
+<div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (Jacobi-Matrix)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U\subset \R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f:U\rightarrow \R^m\)</span> eine partiell differenzierbare Funktion (d.h. jede Komponente <span class="math notranslate nohighlight">\(f_i\)</span> ist partiell differenzierbar), dann heißt die Matrix</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(Df)(x) \ \coloneqq \ J_f(x) \ \coloneqq \
+\begin{pmatrix}
+\partial_1 f_1(x)&amp;\ldots&amp;\partial_nf_1(x)\\
+\vdots&amp; &amp;\vdots\\
+\partial_1 f_m(x)&amp;\ldots&amp;\partial_n f_m(x)\\
+\end{pmatrix}
+\end{align*}\]</div>
+<p><em>Jacobi-Matrix</em> am Punkt <span class="math notranslate nohighlight">\(x\in U\)</span>.</p>
+</div>
+</div><p>Im Folgenden wollen wir wichtige Beobachtungen zur Bedeutung der Jacobi-Matrix festhalten.</p>
+<div class="proof remark admonition" id="rem:jacobi_matrix">
+<p class="admonition-title"><span class="caption-number">Remark 1.7 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f \colon U \rightarrow \R^m\)</span> eine partiell differenzierbare Funktion.
+Dann können wir folgendes feststellen.</p>
+<ul class="simple">
+<li><p>Falls <span class="math notranslate nohighlight">\(f\)</span> eine reellwertige Funktion ist, d.h., <span class="math notranslate nohighlight">\(m=1\)</span>, so stimmt die Jacobi-Matrix von <span class="math notranslate nohighlight">\(f\)</span> am Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> mit dem Gradienten von <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(x\)</span> überein, d.h.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+(Df)(x) \ = \ (\nabla f(x))^T.
+\end{equation*}\]</div>
+<ul class="simple">
+<li><p>Aus Satz <a class="reference internal" href="#thm:totdiff">Theorem 1.2</a>, folgt insbesondere, dass die lineare Abbildung <span class="math notranslate nohighlight">\(L\)</span> in der Definition der totalen Differenzierbarkeit eindeutig bestimmt ist durch die Jacobi-Matrix.
+Das Fehlerfunktional <a class="reference internal" href="#equation-eq-fehlerfunktional">(1.5)</a> ist also gegeben durch</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+r(\xi) = f(x+\xi)-f(x)- J_f(x)\xi.
+\end{align*}\]</div>
+</div>
+</div><p>Wir wissen nun, dass für Funktionen <span class="math notranslate nohighlight">\(f \colon U \rightarrow \R^m\)</span> die Implikation</p>
+<div class="tip admonition">
+<p class="admonition-title">Mehrdimensionaler Fall</p>
+<p><span class="math notranslate nohighlight">\(f\)</span> ist total differenzierbar <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <span class="math notranslate nohighlight">\(f\)</span> ist partiell differenzierbar</p>
+</div>
+<p>gilt.
+Die Umkehrung gilt offensichtlich nicht, wie wir in Beispiel <a class="reference internal" href="part_diff.html#bsp:partiell_diffbar_nicht_stetig">Example 1.2</a> gesehen haben. Nehmen wir jedoch eine zusätzliche zusätzliche Stetigkeitsannahme hinzu, erhalten wir wieder totale Differenzierbarkeit, wie folgender Satz zeigt.</p>
+<div class="proof theorem admonition" id="theorem-6">
+<p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f:U\rightarrow\R\)</span> eine in <span class="math notranslate nohighlight">\(U\)</span> partiell differenzierbare Funktion für die alle partiellen Ableitungen <span class="math notranslate nohighlight">\(\partial_i f\)</span> stetig sind im Punkt <span class="math notranslate nohighlight">\(x\in U\)</span>.</p>
+<p>Dann ist <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(x \in U\)</span> total differenzierbar.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir wählen <span class="math notranslate nohighlight">\(x\in U\)</span> und ein <span class="math notranslate nohighlight">\(\delta&gt;0\)</span>, so dass <span class="math notranslate nohighlight">\(B_\delta(x)\subset U\)</span>.
+Wir betrachten nun einen beliebigen Vektor <span class="math notranslate nohighlight">\(\xi\in B_\delta(0)\)</span> und definieren basierend auf <span class="math notranslate nohighlight">\(\xi\)</span> einen Familie von Vektoren <span class="math notranslate nohighlight">\(z_0, \ldots, z_n \in B_\delta(x)\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+z_k \ \coloneqq \ x + \sum_{i=1}^k \xi_k \ = \ (x_1 + \xi_1,\ldots, x_k + \xi_k, x_{k+1},\ldots, x_n)^T, \qquad \text{ für } \quad k=0,\ldots,n.
+\end{align*}\]</div>
+<p>Wir erkennen, dass <span class="math notranslate nohighlight">\(z_0=x\)</span> und <span class="math notranslate nohighlight">\(z_n = x + \xi\)</span> gilt und die Vektoren <span class="math notranslate nohighlight">\(z_k\)</span> dadurch entstehen, dass wir sukzessive weitere Komponenten von <span class="math notranslate nohighlight">\(\xi\)</span> hinzunehmen.
+Das bedeutet, dass ich zwei aufeinanderfolgende Vektoren <span class="math notranslate nohighlight">\(z_k\)</span> und <span class="math notranslate nohighlight">\(z_{k-1}\)</span> nur in der <span class="math notranslate nohighlight">\(k\)</span>-ten Koordinatenrichtung unterscheiden.</p>
+<p>Im Folgenden beschränken wir die Funktion <span class="math notranslate nohighlight">\(f\)</span> auf die <span class="math notranslate nohighlight">\(k\)</span>-te Komponente, d.h., wir betrachten</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\tilde f(\theta) \ \coloneqq \ f(z_{k-1} + \theta \cdot e_k) \ = \ f(x_1 + \xi_1,\ldots, x_{k-1} + \xi_{k-1}, 
+x_{k} + \theta, 
+x_{k+1},\ldots,x_n)
+\end{align*}\]</div>
+<p>Durch diese eindimensionale Beschränkung sehen wir, dass gilt</p>
+<div class="math notranslate nohighlight" id="equation-eq-total-diffbar-einschraenkung">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-eq-total-diffbar-einschraenkung" title="Permalink to this equation">¶</a></span>\[f(z_{k}) - f(z_{k-1}) \ = \ \tilde f(\xi_{k}) - \tilde f(0).\]</div>
+<p>Wenden wir nun den Mittelwertsatz für Funktionen in einer Veränderlichen \cite[Kapitel 6.2]{burger_2020} an, so sehen wir, dass ein <span class="math notranslate nohighlight">\(\theta_{k}\in(0,\xi_{k})\)</span> existiert, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\tilde f(\xi_{k}) - \tilde f(0) \ = \ \tilde{f}^\prime(\theta_{k}) \cdot \xi_{k}.
+\end{equation*}\]</div>
+<p>Wegen der Identität <a class="reference internal" href="#equation-eq-total-diffbar-einschraenkung">(1.6)</a> folgt damit schon, dass</p>
+<div class="math notranslate nohighlight" id="equation-eq-total-diffbar-partielle-ableitung">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-eq-total-diffbar-partielle-ableitung" title="Permalink to this equation">¶</a></span>\[f(z_{k}) - f(z_{k-1}) \ = \ \partial_k f(z_{k-1} + \theta_{k}e_{k}) \cdot \xi_k.\]</div>
+<p>Da <a class="reference internal" href="#equation-eq-total-diffbar-partielle-ableitung">(1.7)</a> für jedes <span class="math notranslate nohighlight">\(0 \leq k \leq n\)</span> gilt, können wir über diese Indizes summieren und erhalten damit die folgende Teleskopsumme:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x+\xi)-f(x) \ &amp;= \ f(z_n) - f(z_0) \ = \ \sum_{k=1}^{n}f(z_{k}) - f(z_{k-1}) \\
+&amp;= \ \sum_{k=1}^{n} \partial_k f(z_k + \theta_{k}e_{k}) \cdot \xi_k.
+\end{align*}\]</div>
+<p>Wir betrachten nun das folgende Fehlerfunktional für die spezielle Wahl der Linearform <span class="math notranslate nohighlight">\(L\)</span> in Definition \ref{def:totale_differenzierbarkeit} als Jacobi-Matrix <span class="math notranslate nohighlight">\(J_f\)</span>.
+In diesem Fall entspricht die Jacobi-Matrix dem transponierten Gradienten von <span class="math notranslate nohighlight">\(f\)</span> nach Bemerkung \ref{rem:jacobi_matrix}, d.h., <span class="math notranslate nohighlight">\(J_f(x) = (\nabla f(x))^T\)</span>.
+Man beachte, dass wir nur irgendeine Linearform finden müssen, die die Definition von totaler Differenzierbarkeit erfüllt.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+r(\xi) &amp;= f(x+\xi)-f(x)-J_f(x)\xi \ = \ \left(\sum_{k=1}^{n}\partial_k f(z_k + \theta_{k}e_{k})\xi_k\right) - \: \langle \nabla F(x), \xi\rangle \\
+&amp;=\ \sum_{k=1}^{n} \left(\partial_k f(z_k + \theta_{k}e_{k}) - \partial_k f(x)\right)\xi_k.
+\end{align*}\]</div>
+<p>Mittels der Cauchy-Schwarz Ungleichung in Satz \ref{satz:cauchy-schwarz_r} können wir damit sofort folgern , dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\norm{r(\xi)}}{\norm{\xi}} \ &amp;\leq \ \frac{\norm{\sum_{k=1}^{n} \partial_k f(z_k + \theta_{k}e_{k}) - \partial_k f(x)} \cdot \norm{\xi}} {\norm{\xi}} \\
+&amp;= \ \Vert \sum_{k=1}^{n} \partial_k f(z_k + \theta_{k}e_{k}) - \partial_k f(x) \Vert.
+\end{align*}\]</div>
+<p>Per Konstruktion gilt stets <span class="math notranslate nohighlight">\(\theta_k\leq\xi_k\)</span> für <span class="math notranslate nohighlight">\(0 \leq k \leq n\)</span> und somit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lim_{\xi\rightarrow 0} (z_k + \theta_k e_k) \ = \ \lim_{\xi\rightarrow 0}~(x_1 + \xi_1,\ldots, x_{k-1}\xi_{k-1}, x_k + \theta_k,x_{k+1},\ldots,x_n) \ = \ x.
+\end{align*}\]</div>
+<p>Benutzen wir nun die Stetigkeit der partiellen Ableitungen folgt damit schon die totale Differenzierbarkeit von <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(x\)</span> durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lim_{\xi\rightarrow 0}\frac{\norm{r(\xi)}}{\norm{\xi}} \ \leq \ \lim_{\xi\rightarrow 0} \norm{\sum_{k=1}^{n}  \partial_k f(z_k + \theta_{k}e_{k}) - \partial_k f(x)} \ = \ 0.
+\end{align*}\]</div>
+</div>
+<p>Insgesamt haben wir nun eine Abstufung der Stärke der verschiedenen Begriffe von Differenzierbarkeit von Funktionen in mehreren Veränderlichen, wie folgende Bemerkung zusammenfasst.</p>
+<div class="proof remark admonition" id="remark-7">
+<p class="admonition-title"><span class="caption-number">Remark 1.8 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f \colon U \rightarrow \R^m\)</span> eine Funktion.
+Zusammengefasst habe wir folgende Implikationskette:</p>
+<p><span class="math notranslate nohighlight">\(f\)</span> ist stetig partiell differenzierbar <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <span class="math notranslate nohighlight">\(f\)</span> ist total differenzierbar <span class="math notranslate nohighlight">\(\Rightarrow\)</span>  <span class="math notranslate nohighlight">\(f\)</span> ist partiell differenzierbar.</p>
+<p>Die Umkehrungen obiger Implikationen gelten im Allgemeinen  nicht, wie wir in verschiedenen Beispielen zeigen konnten.</p>
+</div>
+</div></div>
+<div class="section" id="die-kettenregel">
+<h2><span class="section-number">1.4.3. </span>Die Kettenregel<a class="headerlink" href="#die-kettenregel" title="Permalink to this headline">¶</a></h2>
+<p>In diesem Abschnitt beweisen wir eine Verallgemeinerung der Kettenregel für Funktionen mehrerer Veränderlicher, welche im nächsten Satz beschrieben ist.</p>
+<div class="proof theorem admonition" id="satz:kettenregel">
+<p class="admonition-title"><span class="caption-number">Theorem 1.4 </span> (Kettenregel)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(U\subset\R^n, V\subset\R^k\)</span> zwei offene Teilmengen.
+Außerdem sei <span class="math notranslate nohighlight">\(g:U\rightarrow V\)</span> eine im Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> und <span class="math notranslate nohighlight">\(f:V\rightarrow \R^m\)</span> eine im Punkt <span class="math notranslate nohighlight">\(g(x) \in V\)</span> total differenzierbare Funktion.
+Dann ist die Funktion</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f\circ g \colon \ U\rightarrow \R^m
+\end{align*}\]</div>
+<p>im Punkt <span class="math notranslate nohighlight">\(x \in U\)</span> total differenzierbar und für das Differential (d.h. für die Jacobi-Matrix) gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+D(f\circ g)(x) \ = \ Df(g(x))\cdot Dg(x).
+\end{align*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir wählen einen beliebigen Vektor <span class="math notranslate nohighlight">\(\xi\in\R^n\)</span>, so dass <span class="math notranslate nohighlight">\(x + \xi \in U\)</span> ist und betrachten zunächst das Fehlerfunktional <span class="math notranslate nohighlight">\(r_g\)</span> für <span class="math notranslate nohighlight">\(g\)</span> bezüglich <span class="math notranslate nohighlight">\(\xi\)</span> im Punkt <span class="math notranslate nohighlight">\(x \in U\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+r_g(\xi) \, = \, g(x + \xi) - g(x) - Dg(x)\cdot \xi \quad \Leftrightarrow \quad g(x+\xi) \, = \, g(x) + \underbrace{r_g(\xi) + Dg(x)\cdot \xi}_{:=\eta}.
+\end{align*}\]</div>
+<p>Damit gilt für die Konkatenation der Funktionen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(f\circ g)(x + \xi) \ = \ f(g(x + \xi)) \ = \ f(g(x) +\eta).
+\end{align*}\]</div>
+<p>Analog sehen wir für das Fehlerfunktional <span class="math notranslate nohighlight">\(r_f\)</span> für <span class="math notranslate nohighlight">\(f\)</span> bezüglich <span class="math notranslate nohighlight">\(\eta\)</span> im Punkt <span class="math notranslate nohighlight">\(g(x) \in V\)</span>,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+r_f(\eta) \ &amp;= \ f(g(x) + \eta) - f(g(x)) - Df(g(x))\cdot \eta\\ 
+\Leftrightarrow \quad f(g(x) + \eta) \ &amp;= \ f(g(x)) + r_f(\eta) + Df(g(x))\cdot \eta.
+\end{align*}\]</div>
+<p>Insgesamt erhalten wir also den folgenden Zusammenhang</p>
+<div class="math notranslate nohighlight" id="equation-eq-kettenregel-f-g">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-eq-kettenregel-f-g" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{split}
+(f\circ g)(x + \xi) \ &amp;= \ f(g(x) + \eta) \ = \ f(g(x)) + r_f(\eta) + Df(g(x))\cdot \eta\\
+\ &amp;= \ f(g(x)) + r_f(\eta) + Df(g(x))\cdot (r_g(\xi) + Dg(x)\cdot \xi).
+\end{split}\end{split}\]</div>
+<p>Durch Umstellen von <a class="reference internal" href="#equation-eq-kettenregel-f-g">(1.8)</a> erhalten wir folgende Identität:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+r_{f\circ g}(\xi) \ &amp;\coloneqq \ (f\circ g)(x + \xi) - (f \circ g)(x) - Df(g(x)) \cdot Dg(x) \cdot \xi \\
+ &amp;= \ r_f(\eta) + Df(g(x)) \cdot r_g(\xi).
+\end{split}
+\end{equation*}\]</div>
+<p>Es ist klar, dass der Term <span class="math notranslate nohighlight">\((Df(g(x)) \cdot Dg(x))\)</span> ein linearer Operator ist.
+Um zu zeigen, dass es sich auch wirklich um das Differential von <span class="math notranslate nohighlight">\((f \circ g)\)</span> im Punkt <span class="math notranslate nohighlight">\(x \in U\)</span> handelt müssen wir zeigen, dass das Fehlerfunktional <span class="math notranslate nohighlight">\(r_{f\circ g}(\xi)\)</span> gegen Null konvergiert, wenn <span class="math notranslate nohighlight">\(\xi\)</span> gegen Null geht und somit <span class="math notranslate nohighlight">\((f \circ g)\)</span> total differenzierbar in <span class="math notranslate nohighlight">\(x \in U\)</span> ist.</p>
+<p>Um zeigen, dass die Konkatenation <span class="math notranslate nohighlight">\(f\circ g\)</span> total differenzierbar in <span class="math notranslate nohighlight">\(x \in U\)</span> ist, wählen wir ein beliebiges <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>.
+Da <span class="math notranslate nohighlight">\(g\)</span> total differenzierbar in <span class="math notranslate nohighlight">\(x \in U\)</span> ist nach Voraussetzung, wissen wir, dass ein <span class="math notranslate nohighlight">\(\delta_1 &gt; 0\)</span> existiert, so dass für <span class="math notranslate nohighlight">\(\norm{\xi}\leq \delta_1\)</span> gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\norm{r_g(\xi)} \ \leq \ \norm{\xi} \ \leq \ \delta_1.
+\end{align*}\]</div>
+<p>Somit gilt insbesondere durch Anwendung der Dreiecksungleichung und der Cauchy-Schwarz-Ungleichung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\norm{\eta} \ &amp;= \ \norm{r_g(\xi) + Dg(x)\xi} \ \leq \ \norm{\xi} + \norm{Dg(x)}\cdot\norm{\xi} \ \leq \ \norm{\xi} \cdot (1 + \norm{Dg(x)}).
+\end{align*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(f\)</span> total differenzierbar im Punkt <span class="math notranslate nohighlight">\(g(x) \in V\)</span> nach Voraussetzung ist, wissen wir, dass ein <span class="math notranslate nohighlight">\(\delta_2\leq\delta_1\)</span>
+existiert, so dass für beliebiges <span class="math notranslate nohighlight">\(\tilde\eta\in\R^k\)</span>, mit <span class="math notranslate nohighlight">\(\norm{\tilde\eta} &lt; \delta_2\)</span> gilt, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\norm{r_f(\tilde\eta)} \ \leq \ \varepsilon \norm{\tilde\eta}.
+\end{align*}\]</div>
+<p>Wählen wir nun</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\delta \coloneqq \frac{\delta_2}{\norm{1 + Dg(x)}},
+\end{equation*}\]</div>
+<p>so folgt, dass <span class="math notranslate nohighlight">\(\norm{\eta}\leq \delta_2\)</span> und somit gilt schon für alle <span class="math notranslate nohighlight">\(\xi\)</span> mit <span class="math notranslate nohighlight">\(\norm{\xi}\leq \delta\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\norm{r_f(\eta)} \ \leq \ \varepsilon \norm{\eta} \ \leq \ \varepsilon \norm{\xi} \cdot (1 + \norm{Dg(x)}) \quad \Leftrightarrow \quad \frac{\norm{r^f(\eta)}}{\norm{\xi}} \  \leq \ \varepsilon (1 + \norm{Dg(x)}).
+\end{align*}\]</div>
+<p>Wir haben insgesamt also</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lim_{\xi\rightarrow 0} \frac{\norm{r^f(\eta)}}{\norm{\xi}} \ = \ 0
+\end{align*}\]</div>
+<p>gezeigt und somit gilt wegen der totalen Differenzierbarkeit von <span class="math notranslate nohighlight">\(g\)</span> in <span class="math notranslate nohighlight">\(x \in U\)</span> für die Konkatenation</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lim_{\xi\rightarrow 0} \frac{\norm{r_{f\circ g}(\xi)}}{\norm{\xi}} \ \leq \
+\lim_{\xi\rightarrow 0} 
+\frac{\norm{r_f(\eta)}}{\norm{\xi}} + 
+\norm{Df(g(x))} \cdot \frac{\norm{r_g(\xi)}}{\norm{\xi}} \ = \ 0.
+\end{align*}\]</div>
+</div>
+<p>Im Folgenden wollen wir die Anwendung der mehrdimensionalen Kettenregel an Hand eines einfachen Beispiels illustrieren</p>
+<div class="proof example admonition" id="example-9">
+<p class="admonition-title"><span class="caption-number">Example 1.10 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir betrachten zwei total differenzierbare Funktionen <span class="math notranslate nohighlight">\(f,g \colon \R^2 \rightarrow \R^2\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+f(x,y) \ \coloneqq \
+\begin{pmatrix}
+x - y \\ x y^2
+\end{pmatrix}, \qquad
+g(x,y) \ \coloneqq \
+\begin{pmatrix}
+\sin(x) \\ \cos(y)
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir betrachten die Konkatenation <span class="math notranslate nohighlight">\(h \coloneqq f \circ g \colon \R^2 \rightarrow \R^2\)</span> der beiden Funktionen mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+h(x,y) \ \coloneqq \ (f \circ g)(x,y) \ = \ f (g (x,y) ) \ = \
+\begin{pmatrix}
+\sin(x) - \cos(y) \\ \sin(x) \cdot \cos^2(y)
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Wir können die Jacobi-Matrix <span class="math notranslate nohighlight">\(J_h\)</span> direkt berechnen als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+J_h(x,y) \ = \
+\begin{pmatrix}
+\partial_x h_1(x,y) &amp; \partial_y h_1(x,y) \\
+\partial_x h_2(x,y) &amp; \partial_y h_2(x,y)
+\end{pmatrix}
+\ = \ 
+\begin{pmatrix}
+\cos(x) &amp; \sin(y) \\
+\cos(x) \cdot \cos^2(y) &amp; -2 \sin(x)\cdot \sin(y) \cdot \cos(y)
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Andererseits können wir über die mehrdimensionale Kettenregel in Satz <a class="reference internal" href="#satz:kettenregel">Theorem 1.4</a> das Differential berechnen als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+D(f \circ g) (x) \ = \ D(f(g(x)) \cdot Dg(x).
+\end{equation*}\]</div>
+<p>Wir berechnen also zunächst die Jacobi-Matrizen <span class="math notranslate nohighlight">\(Df = J_f\)</span> von <span class="math notranslate nohighlight">\(f\)</span> und <span class="math notranslate nohighlight">\(Dg = J_g\)</span> von <span class="math notranslate nohighlight">\(g\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+J_f(x,y) \ = \ 
+\begin{pmatrix}
+1 &amp; -1 \\
+y^2 &amp; 2xy
+\end{pmatrix}, \qquad
+J_g(x,y) \ = \ 
+\begin{pmatrix}
+\cos(x) &amp; 0 \\
+0 &amp; -\sin(y)
+\end{pmatrix}.
+\end{equation*}\]</div>
+<p>Durch Einsetzen erhalten wir also insgesamt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+D(f \circ g)(x) \ &amp;= \ J_f(g(x,y)) \cdot J_g(x,y) \ = \ 
+\begin{pmatrix}
+1 &amp; -1 \\
+\cos^2(y) &amp; 2\sin(x)\cos(y)
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\cos(x) &amp; 0 \\
+0 &amp; -\sin(y)
+\end{pmatrix}\\
+&amp;= \ 
+\begin{pmatrix}
+\cos(x) &amp; \sin(y) \\
+\cos(x) \cdot \cos^2(y) &amp; -2 \sin(x)\cdot \sin(y) \cdot \cos(y)
+\end{pmatrix} \ = \ J_h(x,y).
+\end{align*}\]</div>
+<p>Die mehrdimensionale Kettenregel liefert also das gleiche Ergebnis für das Differential der Konkatenation von <span class="math notranslate nohighlight">\(f\)</span> und <span class="math notranslate nohighlight">\(g\)</span>.</p>
+</div>
+</div></div>
+<div class="section" id="richtungsableitung">
+<h2><span class="section-number">1.4.4. </span>Richtungsableitung<a class="headerlink" href="#richtungsableitung" title="Permalink to this headline">¶</a></h2>
+<p>Wir führen nun zusätzlich noch das Konzept der Richtungsableitung ein, welches analog zur partiellen Ableitung in Kapitel \ref{s:partielle_ableitungen} Differenzen entlang eindimensionaler Linien betrachtet, mit dem wichtigen Unterschied, dass wir nun beliebige Richtungen im <span class="math notranslate nohighlight">\(\R^n\)</span> zulassen werden.</p>
+<p>Für stetig partiell differenzierbare Funktionen lassen sich Richtungsableitungen leicht über den Gradienten darstellen, wie der folgende Satz aussagt.</p>
+<div class="proof theorem admonition" id="thm:dirder">
+<p class="admonition-title"><span class="caption-number">Theorem 1.5 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f:U\rightarrow\R\)</span> eine stetig partiell differenzierbare Funktion.
+Dann gilt für jeden Richtungsvektor <span class="math notranslate nohighlight">\(v\in\R^n\)</span> mit <span class="math notranslate nohighlight">\(\norm{v}=1\)</span>, dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+D_vf(x) \ = \ \langle \nabla f(x), v  \rangle
+\end{align*}\]</div>
+<p>für alle <span class="math notranslate nohighlight">\(x\in U\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. In der Hausaufgabe zu zeigen.</p>
+</div>
+<p>Die folgende Bemerkung motiviert die Betrachtung der speziellen Richtung des stärksten Gradientenanstiegs bzw. -abstiegs in numerischen Methoden der Optimierung.</p>
+<div class="proof remark admonition" id="remark-11">
+<p class="admonition-title"><span class="caption-number">Remark 1.9 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Sofern <span class="math notranslate nohighlight">\(\nabla f(x) \neq 0\)</span> können wir den Winkel <span class="math notranslate nohighlight">\(\theta \coloneqq \sphericalangle(\nabla f(x), v)\)</span>  zwischen <span class="math notranslate nohighlight">\(\nabla f(x)\)</span> und <span class="math notranslate nohighlight">\(v\)</span> definieren.
+In diesem Fall gilt nach Definition \ref{def:winkelmessung} die Identität</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\langle \nabla f(x), v \rangle \ = \ \norm{v}\cdot\norm{\nabla f(x)}\cdot\cos(\theta) \ = \ \norm{\nabla f(x)}\cdot\cos(\theta).
+\end{align*}\]</div>
+<p>Dieser Ausdruck wird maximal bzw. minimal wenn für den Winkel <span class="math notranslate nohighlight">\(\theta\)</span> gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\cos(\theta) \, = \, 1 \quad &amp;\Leftrightarrow \quad \theta \, = \, 0 \quad \Leftrightarrow \quad v \, = \, \nabla f(x)\\
+\cos(\theta) \, = \, -1\quad &amp; \Leftrightarrow \quad \theta \, = \, \pi \quad \Leftrightarrow \quad v \, = \, -\nabla f(x).
+\end{align*}\]</div>
+<p>Anschaulich bedeutet diese Beobachtung, dass am Punkt <span class="math notranslate nohighlight">\(x\)</span> der steilste Aufstieg bzw. Abstieg in Richtung des (negativen) Gradienten erfolgt.
+Diese Überlegung bildet die Grundlagen vieler numerischer Optimierungsverfahren, da diese Richtung offensichtlich die Funktionswerte am stärksten verändert.</p>
+</div>
+</div></div>
+<div class="section" id="der-mittelwertsatz">
+<h2><span class="section-number">1.4.5. </span>Der Mittelwertsatz<a class="headerlink" href="#der-mittelwertsatz" title="Permalink to this headline">¶</a></h2>
+<p>Für Funktionen mehrerer Veränderlicher haben wir bisher häufig alle Koordinatenrichtungen bis auf eine fixiert haben, so dass wir effektiv den Mittelwertsatz für Funktionen in einer Veränderlichen benutzen konnten.
+Analog können wir reellwertige Funktionen in mehreren Veränderlichen auch entlang beliebiger Richtungen betrachten was zu folgender Aussage führt.</p>
+<div class="proof theorem admonition" id="satz:mittelwertsatz_reellwertig">
+<p class="admonition-title"><span class="caption-number">Theorem 1.6 </span> (Mittelwertsatz für reellwertige Funktionen)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f:U\rightarrow\R\)</span> eine stetig partiell differenzierbare Funktion.
+Für einen Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> und einem Richtungsvektor <span class="math notranslate nohighlight">\(\xi\in\R^n\)</span> mit <span class="math notranslate nohighlight">\((x+t\xi) \in U\)</span> für alle <span class="math notranslate nohighlight">\(t\in[0,1]\)</span> existiert ein <span class="math notranslate nohighlight">\(\theta\in[0,1]\)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x+\xi) - f(x) \ = \ \langle\nabla f(x + \theta\xi),\xi\rangle.
+\end{align*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir betrachten die eindimensionale Einschränkung <span class="math notranslate nohighlight">\(g(t):=f(x+t\xi)\)</span> von <span class="math notranslate nohighlight">\(f\)</span> und sehen mit Hilfe des Mittelwertsatzes für Funktionen in einer Veränderlichen (\citep{burger_2020}, Kapitel 6.2), dass ein <span class="math notranslate nohighlight">\(\theta\in[0,1]\)</span> existiert, so dass wir mit der Kettenregel aus Satz <a class="reference internal" href="#satz:kettenregel">Theorem 1.4</a> erhalten</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x+\xi) - f(x) \ &amp;= \ g(1)- g(0) \ = \ g^\prime(\theta) \cdot 1 \\ 
+&amp;= \ \nabla f(g(\theta)) \cdot g'(\theta) \ = \ \langle\nabla f(x+\theta\xi), \xi\rangle.
+\end{align*}\]</div>
+</div>
+<p>Die obige Darstellung des Mittelwertsatzes funktioniert leider nur für reellwertige Funktionen, wie die folgende Bemerkung feststellt.</p>
+<div class="proof remark admonition" id="bem:mittelwertsatz">
+<p class="admonition-title"><span class="caption-number">Remark 1.10 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Für vektorwertige Funktionen <span class="math notranslate nohighlight">\(f:U\rightarrow\R^m\)</span> scheitert die Überlegung aus Satz <a class="reference internal" href="#satz:mittelwertsatz_reellwertig">Theorem 1.6</a> leider, da wir hier verschiedene unabhängige Komponenten im Bildbereich haben.
+Wir müssten also den Mittelwertsatz für reellwertige Funktionen auf jede Komponente <span class="math notranslate nohighlight">\(f_i\)</span> von <span class="math notranslate nohighlight">\(f\)</span> einzeln anwenden und erhalten in obiger Notation <span class="math notranslate nohighlight">\(m\)</span> verschiedene Zwischenstellen <span class="math notranslate nohighlight">\(x + \theta_i\xi \in \R^n\)</span>.
+Da diese Zwischenstellen im Allgemeinen verschieden sind scheitert das Argument.</p>
+<p>Das Konzept lässt sich allerdings durch folgende Überlegungen verallgemeinern.
+Für eine stetig differenzierbare Funktion <span class="math notranslate nohighlight">\(f:I\rightarrow\R\)</span>, wobei <span class="math notranslate nohighlight">\(I\subset\R\)</span> eine offene Teilmenge sei, folgt aus dem Hauptsatz der Differential- und Integralrechnung \cite[Kapitel 7.2]{burger_2020}, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x+\xi)-f(x) \ = \ \left(\int_0^{1} f^\prime(x+t\xi)\, \mathrm{d}t\right)\cdot\xi.
+\end{align*}\]</div>
+<p>Diese Integralform lässt sich nun auch auf Funktionen mit mehreren Komponenten übertragen.
+Dazu bemerken wir kurz, dass das Integral einer matrixwertigen Funktion <span class="math notranslate nohighlight">\(A:\R\rightarrow\R^{n\times m}\)</span> durch das Integral der einzelnen Matrix-Einträge gegeben ist, das heißt es gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left(\int_{t_0}^{t_1} A(t)\, \mathrm{d}t\right)_{i,j} \ = \ \int_{t_0}^{t_1} A_{i,j}(t)\, \mathrm{d}t
+\end{align*}\]</div>
+<p>für <span class="math notranslate nohighlight">\(1\leq i \leq n,  1 \leq j \leq m\)</span>.</p>
+</div>
+</div><p>Basierend auf der Beobachtung in Bemerkung <a class="reference internal" href="#bem:mittelwertsatz">Remark 1.10</a> können wir im Folgenden den Mittelwertsatz für vektorwertige Funktionen in mehreren Veränderlichen formulieren.</p>
+<div class="proof theorem admonition" id="satz:mittelwertsatz_vektorwertig">
+<p class="admonition-title"><span class="caption-number">Theorem 1.7 </span> (Mittelwertsatz)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und  sei <span class="math notranslate nohighlight">\(f:U\rightarrow\R^m\)</span> eine stetig partiell differenzierbare, vektorwertige Funktion.
+Für einen beliebigen Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> und einen Richtungsvektor <span class="math notranslate nohighlight">\(\xi\in\R^n\)</span> mit <span class="math notranslate nohighlight">\(x+t\xi\in U\)</span> für alle <span class="math notranslate nohighlight">\(t\in[0,1]\)</span> gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x+\xi) - f(x) \ = \ \left(\int_0^1 Df (x+t\xi)\, \mathrm{d}t\right) \cdot \xi.
+\end{align*}\]</div>
+<p>\end{satz}
+\begin{proof}
+Für jede Komponente <span class="math notranslate nohighlight">\(f_i\)</span> im Bild von <span class="math notranslate nohighlight">\(f\)</span> betrachten wir eine eindimensionale Funktion <span class="math notranslate nohighlight">\(g_i:[0,1]\rightarrow\R\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+g_i(t)\ \coloneqq \ f_i(x+t \xi).
+\end{align*}\]</div>
+<p>Wenden wir auf diese Funktionen den Hauptsatz der Differential- und Integralrechnung \cite[Kapitel 7.2]{burger_2020} an und benutzen die Darstellung der Richtungsableitung aus Satz <a class="reference internal" href="#thm:dirder">Theorem 1.5</a>, so sehen wir, dass für jede Komponente <span class="math notranslate nohighlight">\(i \in \lbrace 1, \ldots, m \rbrace\)</span> gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f_i(x+\xi)-f_i(x) \ &amp;= \ g_i(1)-g_i(0) \ = \ \int_0^1 g_i^\prime(t) \, \mathrm{d}t \\
+&amp;= \ \int_0^1 \langle \nabla f_i(x + t\xi),\xi\rangle \, \mathrm{d}t \ = \ \langle \int_0^1\nabla f_i(x + t\xi)\, \mathrm{d}t, \xi\rangle.
+\end{align*}\]</div>
+</div>
+</div><p>Der allgemeine Mittelwertsatz <a class="reference internal" href="#satz:mittelwertsatz_vektorwertig">Theorem 1.7</a> erlaubt es uns zusätzlich eine sehr praktische Norm-Abschätzung herzuleiten.
+Dafür benötigen wir jedoch zunächst folgendes Hilfslemma.</p>
+<div class="proof lemma admonition" id="lem:norm_integral_abschaetzung">
+<p class="admonition-title"><span class="caption-number">Lemma 1.3 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(f:[t_0,t_1]\rightarrow\R^m\)</span> eine stetige Funktion, dann gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left\Vert\int_{t_0}^{t_1} f(t)\, \mathrm{d}t\right\Vert \ \leq \ \int_{t_0}^{t_1} \norm{f(t)}\, \mathrm{d}t.
+\end{align*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. In der Hausaufgabe zu zeigen.</p>
+</div>
+<p>Mit Hilfe des Lemmas <a class="reference internal" href="#lem:norm_integral_abschaetzung">Lemma 1.3</a> können wir nun ein nützliche Abschätzung für die Abstand zweier Funktionswerte in Abhängigkeit des Differentials zeigen.</p>
+<div class="proof theorem admonition" id="thm:meanest">
+<p class="admonition-title"><span class="caption-number">Theorem 1.8 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(U\subset\R^n\)</span> eine offene Teilmenge und  sei <span class="math notranslate nohighlight">\(f:U\rightarrow\R^m\)</span> eine stetig partiell differenzierbare, vektorwertige Funktion.
+Für einen Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> und einem Richtungsvektor <span class="math notranslate nohighlight">\(\xi\in\R^n\)</span> mit <span class="math notranslate nohighlight">\((x+t\xi) \in U\)</span> für alle <span class="math notranslate nohighlight">\(t\in[0,1]\)</span> sei außerdem</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+M \ \coloneqq \ \sup_{t\in[0,1]} \norm{Df(x+t\xi)}.
+\end{align*}\]</div>
+<p>Dann gilt die folgende Abschätzung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\norm{f(x+\xi) - f(x)} \ \leq \ M \cdot \norm{\xi}.
+\end{align*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. In der Hausaufgabe zu zeigen.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ableitungen"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="higher_order.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1.3. </span>Differentialoperatoren höherer Ordnung</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="taylor.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1.5. </span>Taylor-Formel</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

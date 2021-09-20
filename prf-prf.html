@@ -96,7 +96,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="ableitungen/ableitungen.html">
-   Differentiation von Funktionen mehrerer Veränderlicher
+   1. Differentiation von Funktionen mehrerer Veränderlicher
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -106,19 +106,34 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="ableitungen/part_diff.html">
-     Partielle Differenzierbarkeit
+     1.1. Partielle Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ableitungen/first_order.html">
-     Differentialoperatoren erster Ordnung
+     1.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ableitungen/higher_order.html">
+     1.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ableitungen/tot_diff.html">
+     1.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ableitungen/taylor.html">
+     1.5. Taylor-Formel
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   Bibliography
+   2. Bibliography
   </a>
  </li>
 </ul>
@@ -182,20 +197,67 @@
    <h1>Proof Index</h1>
 
    <div class="modindex-jumpbox">
+   <a href="#cap-bem:fehlerfunktional"><strong>bem:fehlerfunktional</strong></a> | 
+   <a href="#cap-bem:mittelwertsatz"><strong>bem:mittelwertsatz</strong></a> | 
    <a href="#cap-bsp:divergenz"><strong>bsp:divergenz</strong></a> | 
+   <a href="#cap-bsp:hesse_matrix"><strong>bsp:hesse_matrix</strong></a> | 
+   <a href="#cap-bsp:partiell_diffbar_nicht_stetig"><strong>bsp:partiell_diffbar_nicht_stetig</strong></a> | 
+   <a href="#cap-bsp:partielle_ableitungen_nicht_vertauschbar"><strong>bsp:partielle_ableitungen_nicht_vertauschbar</strong></a> | 
+   <a href="#cap-cor:taylor_approximation"><strong>cor:taylor_approximation</strong></a> | 
+   <a href="#cap-corollary-10"><strong>corollary-10</strong></a> | 
+   <a href="#cap-corollary-2"><strong>corollary-2</strong></a> | 
    <a href="#cap-def:partielle_diffbarkeit"><strong>def:partielle_diffbarkeit</strong></a> | 
+   <a href="#cap-def:totale_differenzierbarkeit"><strong>def:totale_differenzierbarkeit</strong></a> | 
    <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
+   <a href="#cap-definition-4"><strong>definition-4</strong></a> | 
    <a href="#cap-definition-7"><strong>definition-7</strong></a> | 
    <a href="#cap-example-1"><strong>example-1</strong></a> | 
    <a href="#cap-example-2"><strong>example-2</strong></a> | 
+   <a href="#cap-example-3"><strong>example-3</strong></a> | 
    <a href="#cap-example-8"><strong>example-8</strong></a> | 
+   <a href="#cap-example-9"><strong>example-9</strong></a> | 
+   <a href="#cap-lem:Taylor"><strong>lem:Taylor</strong></a> | 
+   <a href="#cap-lem:norm_integral_abschaetzung"><strong>lem:norm_integral_abschaetzung</strong></a> | 
    <a href="#cap-lemma-2"><strong>lemma-2</strong></a> | 
    <a href="#cap-lemma-6"><strong>lemma-6</strong></a> | 
+   <a href="#cap-rem:jacobi_matrix"><strong>rem:jacobi_matrix</strong></a> | 
+   <a href="#cap-remark-11"><strong>remark-11</strong></a> | 
+   <a href="#cap-remark-2"><strong>remark-2</strong></a> | 
    <a href="#cap-remark-3"><strong>remark-3</strong></a> | 
-   <a href="#cap-remark-4"><strong>remark-4</strong></a>
+   <a href="#cap-remark-4"><strong>remark-4</strong></a> | 
+   <a href="#cap-remark-5"><strong>remark-5</strong></a> | 
+   <a href="#cap-remark-7"><strong>remark-7</strong></a> | 
+   <a href="#cap-remark-9"><strong>remark-9</strong></a> | 
+   <a href="#cap-satz:kettenregel"><strong>satz:kettenregel</strong></a> | 
+   <a href="#cap-satz:mittelwertsatz_reellwertig"><strong>satz:mittelwertsatz_reellwertig</strong></a> | 
+   <a href="#cap-satz:mittelwertsatz_vektorwertig"><strong>satz:mittelwertsatz_vektorwertig</strong></a> | 
+   <a href="#cap-satz:rolle"><strong>satz:rolle</strong></a> | 
+   <a href="#cap-satz:schwarz"><strong>satz:schwarz</strong></a> | 
+   <a href="#cap-satz:taylor_eindimensional"><strong>satz:taylor_eindimensional</strong></a> | 
+   <a href="#cap-satz:taylorformel_mehrdimensional"><strong>satz:taylorformel_mehrdimensional</strong></a> | 
+   <a href="#cap-theorem-6"><strong>theorem-6</strong></a> | 
+   <a href="#cap-thm:dirder"><strong>thm:dirder</strong></a> | 
+   <a href="#cap-thm:meanest"><strong>thm:meanest</strong></a> | 
+   <a href="#cap-thm:totdiff"><strong>thm:totdiff</strong></a>
    </div>
 
    <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-bem:fehlerfunktional"><td></td><td>
+       <strong>bem:fehlerfunktional</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#bem:fehlerfunktional"><code class="xref">bem:fehlerfunktional</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-bem:mittelwertsatz"><td></td><td>
+       <strong>bem:mittelwertsatz</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#bem:mittelwertsatz"><code class="xref">bem:mittelwertsatz</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-bsp:divergenz"><td></td><td>
        <strong>bsp:divergenz</strong></td><td></td></tr>
@@ -205,12 +267,68 @@
        <a href="ableitungen/first_order.html#bsp:divergenz"><code class="xref">bsp:divergenz</code></a> <em>(ableitungen/first_order)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-bsp:hesse_matrix"><td></td><td>
+       <strong>bsp:hesse_matrix</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/higher_order.html#bsp:hesse_matrix"><code class="xref">bsp:hesse_matrix</code></a> <em>(ableitungen/higher_order)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-bsp:partiell_diffbar_nicht_stetig"><td></td><td>
+       <strong>bsp:partiell_diffbar_nicht_stetig</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/part_diff.html#bsp:partiell_diffbar_nicht_stetig"><code class="xref">bsp:partiell_diffbar_nicht_stetig</code></a> <em>(ableitungen/part_diff)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-bsp:partielle_ableitungen_nicht_vertauschbar"><td></td><td>
+       <strong>bsp:partielle_ableitungen_nicht_vertauschbar</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/higher_order.html#bsp:partielle_ableitungen_nicht_vertauschbar"><code class="xref">bsp:partielle_ableitungen_nicht_vertauschbar</code></a> <em>(ableitungen/higher_order)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-cor:taylor_approximation"><td></td><td>
+       <strong>cor:taylor_approximation</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/taylor.html#cor:taylor_approximation"><code class="xref">cor:taylor_approximation</code></a> <em>(ableitungen/taylor)</em></td><td>
+       <em>corollary</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-corollary-10"><td></td><td>
+       <strong>corollary-10</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/taylor.html#corollary-10"><code class="xref">corollary-10</code></a> <em>(ableitungen/taylor)</em></td><td>
+       <em>corollary</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-corollary-2"><td></td><td>
+       <strong>corollary-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/higher_order.html#corollary-2"><code class="xref">corollary-2</code></a> <em>(ableitungen/higher_order)</em></td><td>
+       <em>corollary</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def:partielle_diffbarkeit"><td></td><td>
        <strong>def:partielle_diffbarkeit</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="ableitungen/part_diff.html#def:partielle_diffbarkeit"><code class="xref">def:partielle_diffbarkeit</code></a> <em>(ableitungen/part_diff)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def:totale_differenzierbarkeit"><td></td><td>
+       <strong>def:totale_differenzierbarkeit</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#def:totale_differenzierbarkeit"><code class="xref">def:totale_differenzierbarkeit</code></a> <em>(ableitungen/tot_diff)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-0"><td></td><td>
@@ -221,12 +339,20 @@
        <a href="ableitungen/first_order.html#definition-0"><code class="xref">definition-0</code></a> <em>(ableitungen/first_order)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-4"><td></td><td>
+       <strong>definition-4</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#definition-4"><code class="xref">definition-4</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-7"><td></td><td>
        <strong>definition-7</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ableitungen/first_order.html#definition-7"><code class="xref">definition-7</code></a> <em>(ableitungen/first_order)</em></td><td>
+       <a href="ableitungen/higher_order.html#definition-7"><code class="xref">definition-7</code></a> <em>(ableitungen/higher_order)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-1"><td></td><td>
@@ -242,7 +368,15 @@
      <tr>
        <td></td>
        <td>
-       <a href="ableitungen/part_diff.html#example-2"><code class="xref">example-2</code></a> <em>(ableitungen/part_diff)</em></td><td>
+       <a href="ableitungen/tot_diff.html#example-2"><code class="xref">example-2</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-3"><td></td><td>
+       <strong>example-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/taylor.html#example-3"><code class="xref">example-3</code></a> <em>(ableitungen/taylor)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-8"><td></td><td>
@@ -250,8 +384,32 @@
      <tr>
        <td></td>
        <td>
-       <a href="ableitungen/first_order.html#example-8"><code class="xref">example-8</code></a> <em>(ableitungen/first_order)</em></td><td>
+       <a href="ableitungen/higher_order.html#example-8"><code class="xref">example-8</code></a> <em>(ableitungen/higher_order)</em></td><td>
        <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-9"><td></td><td>
+       <strong>example-9</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#example-9"><code class="xref">example-9</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-lem:Taylor"><td></td><td>
+       <strong>lem:Taylor</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/taylor.html#lem:Taylor"><code class="xref">lem:Taylor</code></a> <em>(ableitungen/taylor)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-lem:norm_integral_abschaetzung"><td></td><td>
+       <strong>lem:norm_integral_abschaetzung</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#lem:norm_integral_abschaetzung"><code class="xref">lem:norm_integral_abschaetzung</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-lemma-2"><td></td><td>
        <strong>lemma-2</strong></td><td></td></tr>
@@ -269,12 +427,36 @@
        <a href="ableitungen/first_order.html#lemma-6"><code class="xref">lemma-6</code></a> <em>(ableitungen/first_order)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-rem:jacobi_matrix"><td></td><td>
+       <strong>rem:jacobi_matrix</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#rem:jacobi_matrix"><code class="xref">rem:jacobi_matrix</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-11"><td></td><td>
+       <strong>remark-11</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#remark-11"><code class="xref">remark-11</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-2"><td></td><td>
+       <strong>remark-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/taylor.html#remark-2"><code class="xref">remark-2</code></a> <em>(ableitungen/taylor)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-3"><td></td><td>
        <strong>remark-3</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ableitungen/first_order.html#remark-3"><code class="xref">remark-3</code></a> <em>(ableitungen/first_order)</em></td><td>
+       <a href="ableitungen/higher_order.html#remark-3"><code class="xref">remark-3</code></a> <em>(ableitungen/higher_order)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-4"><td></td><td>
@@ -284,6 +466,118 @@
        <td>
        <a href="ableitungen/first_order.html#remark-4"><code class="xref">remark-4</code></a> <em>(ableitungen/first_order)</em></td><td>
        <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-5"><td></td><td>
+       <strong>remark-5</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/higher_order.html#remark-5"><code class="xref">remark-5</code></a> <em>(ableitungen/higher_order)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-7"><td></td><td>
+       <strong>remark-7</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#remark-7"><code class="xref">remark-7</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-9"><td></td><td>
+       <strong>remark-9</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/taylor.html#remark-9"><code class="xref">remark-9</code></a> <em>(ableitungen/taylor)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:kettenregel"><td></td><td>
+       <strong>satz:kettenregel</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#satz:kettenregel"><code class="xref">satz:kettenregel</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:mittelwertsatz_reellwertig"><td></td><td>
+       <strong>satz:mittelwertsatz_reellwertig</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#satz:mittelwertsatz_reellwertig"><code class="xref">satz:mittelwertsatz_reellwertig</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:mittelwertsatz_vektorwertig"><td></td><td>
+       <strong>satz:mittelwertsatz_vektorwertig</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#satz:mittelwertsatz_vektorwertig"><code class="xref">satz:mittelwertsatz_vektorwertig</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:rolle"><td></td><td>
+       <strong>satz:rolle</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/taylor.html#satz:rolle"><code class="xref">satz:rolle</code></a> <em>(ableitungen/taylor)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:schwarz"><td></td><td>
+       <strong>satz:schwarz</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/higher_order.html#satz:schwarz"><code class="xref">satz:schwarz</code></a> <em>(ableitungen/higher_order)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:taylor_eindimensional"><td></td><td>
+       <strong>satz:taylor_eindimensional</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/taylor.html#satz:taylor_eindimensional"><code class="xref">satz:taylor_eindimensional</code></a> <em>(ableitungen/taylor)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:taylorformel_mehrdimensional"><td></td><td>
+       <strong>satz:taylorformel_mehrdimensional</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/taylor.html#satz:taylorformel_mehrdimensional"><code class="xref">satz:taylorformel_mehrdimensional</code></a> <em>(ableitungen/taylor)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-6"><td></td><td>
+       <strong>theorem-6</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#theorem-6"><code class="xref">theorem-6</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm:dirder"><td></td><td>
+       <strong>thm:dirder</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#thm:dirder"><code class="xref">thm:dirder</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm:meanest"><td></td><td>
+       <strong>thm:meanest</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#thm:meanest"><code class="xref">thm:meanest</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm:totdiff"><td></td><td>
+       <strong>thm:totdiff</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ableitungen/tot_diff.html#thm:totdiff"><code class="xref">thm:totdiff</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>theorem</em></td></tr>
    </table>
 
 
