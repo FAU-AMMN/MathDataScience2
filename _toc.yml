@@ -1,13 +1,40 @@
 format: jb-book
 root: intro
-options:  # The options key will be applied to all chapters, but not sub-sections
-  numbered: True
-chapters:
-- file: ableitungen/ableitungen.md
-  sections:
-  - file: ableitungen/part_diff.md
-  - file: ableitungen/first_order.md
-  - file: ableitungen/higher_order.md
-  - file: ableitungen/tot_diff.md
-  - file: ableitungen/taylor.md
-- file: references.md
+parts:
+  - caption: Lineare Algebra
+    numbered: True
+    chapters:
+    - file: eigenwerte/eigenwerte.md
+      sections:
+      - file: eigenwerte/prelim.md
+      - file: eigenwerte/werte_vektoren.md
+      - file: eigenwerte/char_pol.md
+      - file: eigenwerte/diag.md
+      - file: eigenwerte/triag.md
+      - file: eigenwerte/jordan.md
+    - file: vektoraeume/vektoraeume.md
+      sections:
+      - file: vektoraeume/standard_skalar.md
+      - file: vektoraeume/vektor_produkt.md
+      - file: vektoraeume/complex_skalar.md
+      - file: vektoraeume/sesqui.md
+      - file: vektoraeume/orth.md
+      - file: vektoraeume/orth_endo.md
+      - file: vektoraeume/selbstadjungiert.md
+  - caption: Analysis
+    numbered: True
+    chapters:
+    - file: normierte_raeume/normierte_raeume.md
+      sections:
+      - file: normierte_raeume/konvergenz.md
+      - file: normierte_raeume/stetigkeit.md
+      - file: normierte_raeume/kompaktheit.md
+      - file: normierte_raeume/hilbert.md
+    - file: ableitungen/ableitungen.md
+      sections:
+      - file: ableitungen/part_diff.md
+      - file: ableitungen/first_order.md
+      - file: ableitungen/higher_order.md
+      - file: ableitungen/tot_diff.md
+      - file: ableitungen/taylor.md
+    - file: references.md
