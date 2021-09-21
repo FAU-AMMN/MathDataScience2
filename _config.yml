@@ -24,6 +24,7 @@ sphinx:
         Macros:
           "N"    : "\\mathbb{N}"
           "C"    : "\\mathbb{C}"
+          "Q"    : "\\mathbb{Q}"
           "K"    : "\\mathbb{K}"
           "floor": ["\\lfloor#1\\rfloor", 1]
           "bmat" : ["\\left[\\begin{array}"]
