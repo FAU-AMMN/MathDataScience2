@@ -1,9 +1,10 @@
+(s:skalarprodukt_r)=
 # Das kanonische Skalarprodukt in $\mathbb{R}^n$
 
 Sei im Folgenden der zu Grunde liegende Vektorraum gewählt als $V = \mathbb{R}^n$.
 Wir definieren zuerst das kanonische Skalarprodukt in $\mathbb{R}^n$.
 
-````{prf:defintion} Skalarprodukt in $\mathbb{R}^n$
+````{prf:definition} Skalarprodukt in $\mathbb{R}^n$
 :label: def:skalarprodukt_r
 
 Seien $x = (x_1,\ldots, x_n) \in \mathbb{R}^n$ und $y = (y_1,\ldots, y_n) \in \mathbb{R}^n$ zwei Vektoren.
@@ -49,10 +50,10 @@ iii) Positive Definitheit:
 
 Die dritte Eigenschaft von Lemma {prf:ref}`lem:skalarprodukt_r` nutzt bereits eine Eigenschaft des Körpers $\mathbb{R}$ aus, nämlich, dass die Summe von quadratischen Termen nie negativ werden kann.
 Das bedeutet, wir können aus dem Skalarprodukt eines Vektors mit sich selbst immer die Wurzel ziehen ohne den Körper $\mathbb{R}$ zu verlassen.
-Diese wichtige Beobachtung induziert den Begriff der \emph{Norm} in folgender Definition, welche wir zur Messung von Längen eines Vektor nutzen können.
+Diese wichtige Beobachtung induziert den Begriff der _Norm_ in folgender Definition, welche wir zur Messung von Längen eines Vektor nutzen können.
 
-````{prf:defintion} Norm in $\mathbb{R}^n$
-:label:def:norm_r
+````{prf:definition}
+:label: def:norm_r
 
 Sei $x \in \mathbb{R}^n$ ein Vektor.
 Dann definieren wir die Abbildung
@@ -60,40 +61,45 @@ Dann definieren wir die Abbildung
 ||\cdot|| \ \colon \ \mathbb{R}^n \ &\rightarrow \ \mathbb{R}_0^+, \\
 x \ &\to \ ||x|| \ \coloneqq \ \sqrt{\langle x, x \rangle} \ = \ \sqrt{x_1^2 + \ldots + x_n^2}
 \end{align*}
-als \emph{Euklidische Norm} von $x$ in $\mathbb{R}^n$.
-\end{definition}
+als _Euklidische Norm_ von $x$ in $\mathbb{R}^n$.
+````
 
 ````{prf:remark}
 Im eindimensionalen Fall $V = \mathbb{R}$ reduziert sich die Norm eines Vektors $x \in \mathbb{R}$ auf die Betragsfunktion, d.h., $||x|| = |x|$ für $\dim(V) \eqqcolon n = 1$.
-\end{remark}
+````
 
 Die oben definierte Norm $||x||$ gibt uns den Abstand des Punktes $x \in \mathbb{R}^n$ zum Nullpunkt $\vec{0} \in \mathbb{R}^n$, also gerade die Länge des Vektors $(x - \vec{0}) \in \mathbb{R}^n$.
 
-%Im Spezialfall $V = \mathbb{R}^2$ erhält man so auch den \emph{Satz von Pythagoras}, wie folgendes Beispiel zeigt.
-%\warn{
-%\begin{example}
-%Bildchen malen
-%\end{example}
-%}
-
 Folgender wichtiger Satz hilft uns dabei die Eigenschaften der Norm noch besser zu charakterisieren.
-\begin{satz}[Cauchy-Schwarz Ungleichung]:label:{satz:cauchy-schwarz_r}
+
+````{prf:theorem} Cauchy-Schwarz Ungleichung
+:label: satz:cauchy-schwarz_r
+
 Seien $x,y \in \mathbb{R}^n$.
 Dann gilt
-\begin{equation}:label:{eq:cauchy-schwarz_r}
+
+```{math}
+:label: eq:cauchy-schwarz_r
+
 | \langle x, y \rangle | \ \leq \ ||x|| \cdot ||y||.
-\end{equation}
+```
+
 Und es gilt außerdem
 \begin{equation*}
 | \langle x, y \rangle | \ = \ ||x|| \cdot ||y|| \quad \Leftrightarrow \quad x \text{ und } y \text{ sind linear abhängig}.
 \end{equation*}
-\end{satz}
+````
+
 ````{prf:proof}
 Da die Wurzelfunktion monoton ist, können wir beide Seiten quadrieren, ohne dass sich an der Aussage etwas ändert.
 Wir müssen also zeigen, dass gilt
-\begin{equation}:label:{eq:cauchy-schwarz_r_beweis}
+
+```{math}
+:label: eq:cauchy-schwarz_r_beweis
+
 ||x||^2 \cdot ||y||^2 - |\langle x, y \rangle|^2 \ = \ \langle x,x \rangle \cdot \langle y, y \rangle - \langle x, y \rangle^2 \ \geq \ 0.
-\end{equation}
+```
+
 Wir bedienen uns des folgenden Tricks.
 Wir betrachten eine Matrix $A \in \mathbb{R}^{2 \times n}$ mit
 \begin{equation*}
@@ -111,8 +117,8 @@ AA^T \ = \
 \langle y, x \rangle & \langle y, y \rangle
 \end{pmatrix}.
 \end{equation*}
-Wegen der Symmetrie des Skalarprodukts können wir die linke Seite der Gleichung \eqref{eq:cauchy-schwarz_r_beweis} ersetzen durch den Ausdruck $\det(AA^T)$ und müssen nur zeigen, dass $\det(AA^T) \geq 0$ gilt.
-Nach dem Determinanten-Multiplikationstheorem in \cite[Satz 3.3.7]{fischer} lässt sich die Determinante von $AA^T$ über die Produkte aller $(2 \times 2)$-Minoren ausrechnen und im vorliegenden Fall gilt
+Wegen der Symmetrie des Skalarprodukts können wir die linke Seite der Gleichung {eq}`eq:cauchy-schwarz_r_beweis` ersetzen durch den Ausdruck $\det(AA^T)$ und müssen nur zeigen, dass $\det(AA^T) \geq 0$ gilt.
+Nach dem Determinanten-Multiplikationstheorem in Satz 3.3.7 {cite:p}`fischer` lässt sich die Determinante von $AA^T$ über die Produkte aller $(2 \times 2)$-Minoren ausrechnen und im vorliegenden Fall gilt
 \begin{equation*}
 \det(AA^T) \ = \ \sum_{1 \leq k_1 \leq k_2 \leq n} \left(\det(A^{k_1,k_2})\right)^2 \ \geq \ 0.
 \end{equation*}
@@ -128,17 +134,22 @@ Es bleibt nur noch die Gleichheit zu überprüfen.
 \Leftrightarrow \ &x \text{ und } y \text{ sind linear abhängig }.
 \end{split}
 \end{equation*}
-\end{proof}
+````
 
 Mit Hilfe der Cauchy-Schwarz Ungleichung können wir die wichtigsten Eigenschaften der Norm zeigen.
-````{prf:lemma}[Eigenschaften der Norm]:label:{lem:norm_eigenschaften}
+
+````{prf:lemma} Eigenschaften der Norm
+:label: lem:norm_eigenschaften
+
 Seien $x, y \in \mathbb{R}^n$ Vektoren und $\lambda \in \mathbb{R}$ ein Skalar, dann gelten für die durch das kanonische Skalarprodukt induzierte Norm folgende Eigenschaften.
-\begin{enumerate}[i)]
-\item $||x|| \ = \ 0 \quad \Leftrightarrow \quad x \ = \ 0$,
-\item $||\lambda x|| \ = \ |\lambda| \cdot ||x||$,
-\item $||x + y|| \ \leq \ ||x|| + ||y||$.
-\end{enumerate}
-\end{lemma}
+
+i) $||x|| \ = \ 0 \quad \Leftrightarrow \quad x \ = \ 0$,
+
+ii) $||\lambda x|| \ = \ |\lambda| \cdot ||x||$,
+
+iii) $||x + y|| \ \leq \ ||x|| + ||y||$.
+````
+
 ````{prf:proof}
 Die ersten beiden Eigenschaften $i)$ und $ii)$ lassen sich direkt durch Nachrechnen verifizieren.
 Die dritte Eigenschaft der Dreiecksungleichung können wir mit Hilfe der Cauchy-Schwarz Ungleichung aus Satz {prf:ref}`satz:cauchy-schwarz_r` zeigen.
@@ -150,38 +161,39 @@ Es gilt
 \end{split}
 \end{equation*}
 Da die Wurzelfunktion monoton ist gilt obige Abschätzung auch ohne die Quadrate auf der linken und rechten Seite der Ungleichung.
-\end{proof}
-%TODO: Visualisierung der Dreiecksgleichung. Normales Dreieck und Dreieck ohne Winkel für Gleichheit
+````
 
 Dadurch, dass die Norm die Länge eines Vektors beschreibt, können wir sie nutzen um Abstände zu beschreiben.
 Um nun den Abstand zwischen zwei Punkten $x, y \in \mathbb{R}^n$ zu messen führt man den Begriff einer durch die Norm induzierten Metrik ein.
-````{prf:defintion}[Metrik]
+
+````{prf:definition} Metrik
 Seien $x,y \in \mathbb{R}^n$ zwei Punkte.
-Dann induziert die Norm $||\cdot||$ des Vektorraums eine \emph{Metrik} genannte Abbildung
+Dann induziert die Norm $||\cdot||$ des Vektorraums eine _Metrik_ genannte Abbildung
 \begin{align*}
 d \colon \mathbb{R}^n \times \mathbb{R}^n \ &\rightarrow \ \mathbb{R}^+_0, \\
 (x,y) \ &\mapsto \ d(x,y) \ \coloneqq \ ||x - y|| \ = \ \sqrt{\sum_{i=1}^n (x_i - y_i)^2},
 \end{align*}
 mit der man den Abstand (bezüglich der Norm) zwischen $x$ und $y$ messen kann.
-\end{definition}
+````
 
 ````{prf:remark}
 Wie man im Laufe des Studiums noch lernt, wird je nach Wahl der Norm in Definition {prf:ref}`def:norm_r` eine andere Metrik induziert, die den Abstandsbegriff maßgeblich beeinflusst.
-Letzten Endes bestimmt dies auch die sogenannte \emph{Topologie} eines Vektorraums.
+Letzten Endes bestimmt dies auch die sogenannte _Topologie_ eines Vektorraums.
 Dies wird durch folgende Relationen dargestellt:
-\begin{align*}
-&\text{\textbf{Skalarprodukt} (Euklidischer / Unitärer Vektorraum)}\\
-& \quad \downarrow {\small \text{induziert}}\\
-&\text{\textbf{Norm} (Normierter Vektorraum)}\\
-& \quad \downarrow {\small \text{induziert}}\\
-&\text{\textbf{Metrik} (Metrischer Vektorraum)}\\
-& \quad \downarrow {\small \text{induziert}}\\
-&\text{\textbf{Topologie} (Topologischer Vektorraum)}
-\end{align*}
-\end{remark}
+
+| **Skalarprodukt** (Euklidischer / Unitärer Vektorraum) |
+| :----------------------------------------------------- |
+| $\quad \downarrow $  induziert                         |
+| **Norm** (Normierter Vektorraum)                       |
+| $\quad \downarrow $ induziert                          |
+| **Metrik** (Metrischer Vektorraum)                     |
+| $\quad \downarrow $ induziert                          |
+| **Topologie** (Topologischer Vektorraum)               |
+````
 
 Wir können nun wesentliche Eigenschaften einer Metrik festhalten.
-````{prf:lemma}[Eigenschaften einer Metrik]
+
+````{prf:lemma} Eigenschaften einer Metrik
 Seien $x,y \in \mathbb{R}^n$, dann gelten für die Metrik $d(x,y) = ||x - y||$ folgende Eigenschaften.
 
 i) $d(x,y) \ = \ 0 \quad \Leftrightarrow \quad x \ = \ y$,
@@ -189,7 +201,7 @@ i) $d(x,y) \ = \ 0 \quad \Leftrightarrow \quad x \ = \ y$,
 ii) $d(x,y) \  = \ d(y,x)$,
 
 iii) $d(x,z) \ \leq \ d(x,y) + d(y,z)$.
-
+````
 
 ````{prf:proof}
 Die ersten beiden Eigenschaften $i)$ und $ii)$ sind klar und lassen sich direkt durch Nachrechnen verifizieren.
@@ -200,15 +212,15 @@ d(x,z) \ = \ ||x -z|| \ = \ ||x - y + y - z|| \ \leq \ ||x -y|| + ||y - z|| \ = 
 ````
 
 ````{prf:example} Manhattan Metrik
-Eine interessante Metrik, die nicht durch die Euklidische Norm induziert wird, ist die sogenannte \emph{Manhattan Metrik}, die für zwei Vektoren $x, y \in \mathbb{R}^n$ wie folgt definiert ist:
+Eine interessante Metrik, die nicht durch die Euklidische Norm induziert wird, ist die sogenannte _Manhattan Metrik_, die für zwei Vektoren $x, y \in \mathbb{R}^n$ wie folgt definiert ist:
 \begin{equation*}
 d(x,y) \ \coloneqq \ \sum_{i=1}^n|x_i - y_i| \ \eqqcolon \ ||x - y||_1.
 \end{equation*}
 Der Name lehnt sich an die orthogonalen Straßengitter Manhattans an, die dazu führen, dass man zum Erreichen eines Ziels nur durch Aneinanderreihung vertikaler und horizontaler Wegstücke zu überwinden. Hierbei weisen alle Wege, die einen näher zum Ziel bringen, immer die gleiche Entfernung auf.
 ````
 
-Die Cauchy-Schwarz Ungleichung in Satz {prf:ref}`satz:cauchy-schwarz_r` liefert uns nicht nur nützliche Aussagen bei der Längenmessung (wie die Dreiecksungleichung für die Norm), sondern liefert zudem eine Methode zur \emph{Winkelmessung} im $\mathbb{R}^n$.
-Betrachtet man nämlich den Quotienten der linken und rechten Seite in der Cauchy-Schwarz Ungleichung \eqref{eq:cauchy-schwarz_r}, so erhält man für zwei Vektoren $x,y \in \mathbb{R}^n$ mit $x,y \neq \vec{0}$ folgende Abschätzung
+Die Cauchy-Schwarz Ungleichung in Satz {prf:ref}`satz:cauchy-schwarz_r` liefert uns nicht nur nützliche Aussagen bei der Längenmessung (wie die Dreiecksungleichung für die Norm), sondern liefert zudem eine Methode zur _Winkelmessung_ im $\mathbb{R}^n$.
+Betrachtet man nämlich den Quotienten der linken und rechten Seite in der Cauchy-Schwarz Ungleichung {eq}`eq:cauchy-schwarz_r`, so erhält man für zwei Vektoren $x,y \in \mathbb{R}^n$ mit $x,y \neq \vec{0}$ folgende Abschätzung
 
 ```{math}
 :label: eq:angle_quotient
@@ -225,14 +237,18 @@ Je größer dieser Anteil ist, desto kleiner ist der Winkel $\alpha$ zwischen de
 
 Dies motiviert die folgende Definition zur Winkelmessung in $\mathbb{R}^n$.
 
-````{prf:defintion} Winkelmessung in $\mathbb{R}^n$
+````{prf:definition}
 :label: def:winkelmessung
 
 Seien $x,y \in \mathbb{R}^n$ zwei Vektoren mit $x,y \neq \vec{0}$.
-Dann definieren wir den Winkel $\measuredangle(x,y)$ zwischen $x$ und $y$ als den Arkuskosinus des Quotienten in \eqref{eq:angle_quotient}, d.h.
-\begin{equation}:label:{eq:winkelberechnung}
+Dann definieren wir den Winkel $\measuredangle(x,y)$ zwischen $x$ und $y$ als den Arkuskosinus des Quotienten in {eq}`eq:angle_quotient`, d.h.
+
+```{math}
+:label: eq:winkelberechnung
+
 \measuredangle(x,y) \ \coloneqq \ \arccos \frac{\langle x, y \rangle}{||x|| \cdot ||y||} .
-\end{equation}
+```
+
 ````
 
 ````{prf:remark}
@@ -261,7 +277,7 @@ y \ \coloneqq \
 4 \\ 5 \\ 6
 \end{pmatrix}.
 \end{equation*}
-Um den Winkel $\alpha \in [0, \pi]$ zwischen $x$ und $y$ mittels der Formel \eqref{eq:winkelberechnung} zu berechnen, sehen wir uns zunächst die einzelnen Terme an:
+Um den Winkel $\alpha \in [0, \pi]$ zwischen $x$ und $y$ mittels der Formel {eq}`eq:winkelberechnung` zu berechnen, sehen wir uns zunächst die einzelnen Terme an:
 \begin{equation*}
 \begin{split}
 \langle x, y \rangle \ &= \ \langle (1, 2, 3)^T, (4, 5, 6)^T \rangle \ = \ 4 + 10 + 18 \ = \ 32,\\
@@ -299,8 +315,8 @@ Insgesamt folgt also, dass
 Für zwei Vektoren $x,y \in \mathbb{R}^n$ mit $x,y \neq \vec{0}$ wird klar, dass der Winkel zwischen den beiden genau $\frac{\pi}{2}$ (oder $90^{\circ}$) entspricht, wenn das Skalarprodukt $\langle x, y\rangle = 0$ ist.
 Das motiviert die folgende Definition.
 
-````{prf:defintion} Orthogonalität von Vektoren
-Zwei Vektoren $x,y \in \mathbb{R}^n$ heißen \emph{senkrecht} oder \emph{orthogonal}, wenn für sie gilt
+````{prf:definition} Orthogonalität von Vektoren
+Zwei Vektoren $x,y \in \mathbb{R}^n$ heißen _senkrecht_ oder _orthogonal_, wenn für sie gilt
 \begin{equation*}
 \langle x, y \rangle \ = \ 0.
 \end{equation*}
