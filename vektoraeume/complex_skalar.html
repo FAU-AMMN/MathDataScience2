@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -197,6 +197,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="selbstadjungiert.html">
      2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="normal.html">
+     2.8. Normale Endomorphismen
     </a>
    </li>
   </ul>
@@ -442,16 +447,18 @@
   <div class="section" id="das-kanonische-skalarprodukt-in-mathbb-c-n">
 <h1><span class="section-number">2.3. </span>Das kanonische Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span><a class="headerlink" href="#das-kanonische-skalarprodukt-in-mathbb-c-n" title="Permalink to this headline">¶</a></h1>
 <p>Bevor wir allgemeine Bilinear- und Sesquilinearformen einführen, wollen wir noch einen wichtigen Spezialfall behandeln, nämlich das kanonische Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>.</p>
-<p>Wie bereits in \cite[Kapitel 2.2.7]{burger_2020} beschrieben, betrachten wir komplexe Zahlen <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span>, die für <span class="math notranslate nohighlight">\((a,b) \in \mathbb{R}^2\)</span> dargestellt werden können als <span class="math notranslate nohighlight">\(z = a +ib\)</span>.  Das Produkt <span class="math notranslate nohighlight">\(z_1 \cdot z_2\)</span> zweier komplexer Zahlen <span class="math notranslate nohighlight">\(z_1 = x_1 + i y_1\)</span> und <span class="math notranslate nohighlight">\(z_2 = x_2 + i y_2\)</span> ist definiert als</p>
+<p>Wie bereits in Kapitel 2.2.7 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> beschrieben, betrachten wir komplexe Zahlen <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span>, die für <span class="math notranslate nohighlight">\((a,b) \in \mathbb{R}^2\)</span> dargestellt werden können als <span class="math notranslate nohighlight">\(z = a +ib\)</span>.  Das Produkt <span class="math notranslate nohighlight">\(z_1 \cdot z_2\)</span> zweier komplexer Zahlen <span class="math notranslate nohighlight">\(z_1 = x_1 + i y_1\)</span> und <span class="math notranslate nohighlight">\(z_2 = x_2 + i y_2\)</span> ist definiert als</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 z_1 \cdot z_2 \ = \ (x_1x_2 - y_1y_2) + i (x_1y_2 + x_2y_1).
 \end{equation*}\]</div>
-<p>Auch bekannt ist, dass der \emph{Betrag} <span class="math notranslate nohighlight">\(|z|\)</span> von <span class="math notranslate nohighlight">\(z\)</span> definiert ist als <span class="math notranslate nohighlight">\(|z| \coloneqq \sqrt{a^2 + b^2}\)</span>, was mit der in Definition \ref{def:norm_r} eingeführten Norm in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> übereinstimmt.
+<p>Auch bekannt ist, dass der <em>Betrag</em> <span class="math notranslate nohighlight">\(|z|\)</span> von <span class="math notranslate nohighlight">\(z\)</span> definiert ist als <span class="math notranslate nohighlight">\(|z|\coloneqq\sqrt{a^2 + b^2}\)</span>, was mit der in Definition <a class="reference internal" href="standard_skalar.html#def:norm_r">Definition 2.2</a> eingeführten Norm in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> übereinstimmt.
 Außerdem ist die komplexe Konjugation <span class="math notranslate nohighlight">\(\overline{z}\)</span> von <span class="math notranslate nohighlight">\(z\)</span> definiert als <span class="math notranslate nohighlight">\(\overline{z} \coloneqq a - bi\)</span>, das heißt wir vertauschen das Vorzeichen von <span class="math notranslate nohighlight">\(b \in \mathbb{R}\)</span>.</p>
-<p>Mit diesen Eigenschaften können wir das kanonische Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span> einführen.
-\begin{definition}[Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>]\label{def:skalarprodukt_c}
-Seien <span class="math notranslate nohighlight">\(z = (z_1, \ldots, z_n) \in \mathbb{C}^n\)</span> und <span class="math notranslate nohighlight">\(w = (w_1, \ldots, w_n) \in \mathbb{C}^n\)</span> zwei Vektoren.
+<p>Mit diesen Eigenschaften können wir das kanonische Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span> einführen.</p>
+<div class="proof definition admonition" id="def:skalarprodukt_c">
+<p class="admonition-title"><span class="caption-number">Definition 2.7 </span> (Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>)</p>
+<div class="definition-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(z = (z_1, \ldots, z_n) \in \mathbb{C}^n\)</span> und <span class="math notranslate nohighlight">\(w = (w_1, \ldots, w_n) \in \mathbb{C}^n\)</span> zwei Vektoren.
 Wir bezeichnen die Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -460,16 +467,17 @@ Wir bezeichnen die Abbildung</p>
 (z,w) \ &amp; \mapsto \ \langle z, w \rangle_c \ \coloneqq \ z_1\overline{w_1} + \ldots + z_n\overline{w_n} \ = \ \sum_{i=1}^n z_i \overline{w_i} 
 \end{split}
 \end{equation*}\]</div>
-<p>als das \emph{kanonische Skalarprodukt} in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>.
-Häufig wird das kanonische Skalarprodukt auch \emph{komplexes Skalarprodukt} genannt.
-\end{definition}</p>
-<p>Der Index <span class="math notranslate nohighlight">\(c\)</span> in der Notation des komplexen Skalarprodukts kann auch weggelassen werden, wenn aus dem Kontext ersichtlich ist, dass man es mit komplexen Zahlen rechnet.
+<p>als das <em>kanonische Skalarprodukt</em> in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>.
+Häufig wird das kanonische Skalarprodukt auch \emph{komplexes Skalarprodukt} genannt.</p>
+</div>
+</div><p>Der Index <span class="math notranslate nohighlight">\(c\)</span> in der Notation des komplexen Skalarprodukts kann auch weggelassen werden, wenn aus dem Kontext ersichtlich ist, dass man es mit komplexen Zahlen rechnet.
 Wir werden daher auch im Folgenden die vereinfachte Notation ohne den Index <span class="math notranslate nohighlight">\(c\)</span> verwenden.</p>
-<p>Folgende Eigenschaften des komplexen Skalarprodukts lassen sich leicht nachrechnen.
-\begin{lemma}[Eigenschaften des Skalarprodukts]\label{lem:skalarprodukt_c}
-Das kanonische Skalarprodukt von <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span> in Definition \ref{def:skalarprodukt_c} besitzt folgende Eigenschaften für Vektoren <span class="math notranslate nohighlight">\(z,z',w,w' \in \mathbb{C}^n\)</span> und Skalare <span class="math notranslate nohighlight">\(\lambda \in \mathbb{C}\)</span>:
-\begin{enumerate}[i)]
-\item Sesquilinearität:</p>
+<p>Folgende Eigenschaften des komplexen Skalarprodukts lassen sich leicht nachrechnen.</p>
+<div class="proof lemma admonition" id="lem:skalarprodukt_c">
+<p class="admonition-title"><span class="caption-number">Lemma 2.6 </span> (Eigenschaften des Skalarprodukts)</p>
+<div class="lemma-content section" id="proof-content">
+<p>Das kanonische Skalarprodukt von <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span> in Definition <a class="reference internal" href="#def:skalarprodukt_c">Definition 2.7</a> besitzt folgende Eigenschaften für Vektoren <span class="math notranslate nohighlight">\(z,z',w,w' \in \mathbb{C}^n\)</span> und Skalare <span class="math notranslate nohighlight">\(\lambda \in \mathbb{C}\)</span>:</p>
+<p>i) Sesquilinearität:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -477,42 +485,42 @@ Das kanonische Skalarprodukt von <span class="math notranslate nohighlight">\(\m
 &amp; \langle \lambda z, w \rangle \ = \  \lambda \langle z, w \rangle, \quad \langle z, \lambda w \rangle \ = \  \overline{\lambda} \langle z, w \rangle.
 \end{split}
 \end{equation*}\]</div>
-<p>\item Hermitezität:</p>
+<p>ii) Hermitezität:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle z, w \rangle \ = \ \overline{\langle w, z \rangle}.
 \end{equation*}\]</div>
-<p>\item Positive Definitheit:</p>
+<p>iii) Positive Definitheit:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle z, z \rangle \ = \ |z_1|^2 + \ldots + |z_n|^2 \ \in \mathbb{R}^+_0, \quad \langle z, z \rangle \ = \ 0 \ \Leftrightarrow \ z = \vec{0}.
 \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{lemma}</p>
-<p>Die dritte Eigenschaft von Lemma \ref{lem:skalarprodukt_c} erlaubt es uns den Begriff der Norm eines komplexwertigen Vektors in der folgenden Definition einzuführen.
-\begin{definition}[Norm in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>]\label{def:norm_c}
-Sei <span class="math notranslate nohighlight">\(z \in \mathbb{C}^n\)</span> ein Vektor.
+</div>
+</div><p>Die dritte Eigenschaft von <a class="reference internal" href="#lem:skalarprodukt_c">Lemma 2.6</a> erlaubt es uns den Begriff der Norm eines komplexwertigen Vektors in der folgenden Definition einzuführen.</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 2.8 </span> (Norm in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>)</p>
+<div class="definition-content section" id="proof-content">
+<p>\labeldef:norm_c</p>
+<p>Sei <span class="math notranslate nohighlight">\(z \in \mathbb{C}^n\)</span> ein Vektor.
 Dann definieren wir die Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 ||\cdot|| \ \colon \ \mathbb{C}^n \ &amp;\rightarrow \ \mathbb{R}_0^+, \\
 z \ &amp;\to \ ||z|| \ \coloneqq \ \sqrt{\langle z, z \rangle} \ = \ \sqrt{|z_1|^2 + \ldots + |z_n|^2}
 \end{align*}\]</div>
-<p>als \emph{Norm} von <span class="math notranslate nohighlight">\(z\)</span> in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>.
-\end{definition}</p>
-<p>Besonders interessant ist die Beziehung zum kanonischen Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.
+<p>als <em>Norm</em> von <span class="math notranslate nohighlight">\(z\)</span> in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>.</p>
+</div>
+</div><p>Besonders interessant ist die Beziehung zum kanonischen Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.
 Bezüglich der natürlichen Inklusion <span class="math notranslate nohighlight">\(\mathbb{R} \subset \mathbb{C}\)</span> mit <span class="math notranslate nohighlight">\(x = x + i\cdot 0\)</span> gibt es kein Problem.
 Daher können wir <span class="math notranslate nohighlight">\(\mathbb{R}^n \subset \mathbb{C}^n\)</span> betrachten und es wird klar, dass <span class="math notranslate nohighlight">\(\langle \cdot, \cdot \rangle_c\)</span> eine natürliche Fortsetzung des kanonischen Skalarprodukts <span class="math notranslate nohighlight">\(\langle \cdot, \cdot \rangle\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> ist.</p>
 <p>Betrachten wir jedoch die Darstellung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e460d969-0357-4fbb-9d29-b1cec9962681">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-e460d969-0357-4fbb-9d29-b1cec9962681" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:komplexe_abbildung} 
-\begin{split}
+<div class="math notranslate nohighlight" id="equation-eq-komplexe-abbildung">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-eq-komplexe-abbildung" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{split}
 \mathbb{R}^{2n} \ &amp;\rightarrow \ \mathbb{C}^n, \\
 v \ = \ (x_1, y_1, \ldots, x_n, y_n) \ &amp; \mapsto \ (x_1 + i y_1, \ldots, x_n + i y_n) \ = \ z,
-\end{split}
-\end{equation}\]</div>
+\end{split}\end{split}\]</div>
 <p>so können wir das komplexe Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span> in Relation zum kanonischen Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^{2n}\)</span> wie folgt setzen.
-Seien <span class="math notranslate nohighlight">\(v, v' \in \mathbb{R}^{2n}\)</span> zwei Vektoren, denen die komplexen Vektoren <span class="math notranslate nohighlight">\(z, z' \in \mathbb{C}^n\)</span> mit Abbildung \eqref{eq:komplexe_abbildung} entsprechen.
+Seien <span class="math notranslate nohighlight">\(v, v' \in \mathbb{R}^{2n}\)</span> zwei Vektoren, denen die komplexen Vektoren <span class="math notranslate nohighlight">\(z, z' \in \mathbb{C}^n\)</span> mit Abbildung <a class="reference internal" href="#equation-eq-komplexe-abbildung">(2.6)</a> entsprechen.
 Dann können wir schreiben:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}

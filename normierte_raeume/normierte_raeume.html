@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3.1. Konvergenz von Folgen" href="konvergenz.html" />
-    <link rel="prev" title="2.7. Selbstadjungierte Endomorphismen" href="../vektoraeume/selbstadjungiert.html" />
+    <link rel="prev" title="2.8. Normale Endomorphismen" href="../vektoraeume/normal.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -197,6 +197,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
      2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/normal.html">
+     2.8. Normale Endomorphismen
     </a>
    </li>
   </ul>
@@ -441,10 +446,12 @@
                 
   <div class="section" id="normierte-vektorraume">
 <h1><span class="section-number">3. </span>Normierte Vektorräume<a class="headerlink" href="#normierte-vektorraume" title="Permalink to this headline">¶</a></h1>
-<p>Sie haben in Kapitel 4 &amp; 5<span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> bereits die fundamentalen Konzepte von Folgen, Stetigkeit und Kompaktheit in <em>metrischen Räumen</em> kennengelernt. Wir werden diese grundlegenden Begriffe im Folgenden durch Verwendung der Norm aus Kapitel \ref{s:skalarprodukt_r} wiederholen, weiter präzisieren und durch neue Erkenntnisse erweitern.</p>
-<p>Die zugrunde liegende Struktur für dieses Kapitel ist ein Vektorraum auf dem eine Norm definiert ist.
-\begin{definition}[Normierter Vektorraum]
-Sei <span class="math notranslate nohighlight">\(X\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und sei</p>
+<p>Sie haben in Kapitel 4 &amp; 5 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> bereits die fundamentalen Konzepte von Folgen, Stetigkeit und Kompaktheit in <em>metrischen Räumen</em> kennengelernt. Wir werden diese grundlegenden Begriffe im Folgenden durch Verwendung der Norm aus Kapitel <a class="reference internal" href="../vektoraeume/standard_skalar.html#s-skalarprodukt-r"><span class="std std-ref">Das kanonische Skalarprodukt in \mathbb{R}^n</span></a> wiederholen, weiter präzisieren und durch neue Erkenntnisse erweitern.</p>
+<p>Die zugrunde liegende Struktur für dieses Kapitel ist ein Vektorraum auf dem eine Norm definiert ist.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 3.1 </span> (Normierter Vektorraum)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(X\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und sei</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 || \cdot ||_X \colon V \ \rightarrow \ \R_0^+
@@ -452,11 +459,13 @@ Sei <span class="math notranslate nohighlight">\(X\)</span> ein <span class="mat
 <p>eine Norm auf <span class="math notranslate nohighlight">\(X\)</span>.
 Dann nennen wir das Paar <span class="math notranslate nohighlight">\((X, || \cdot ||_X)\)</span> einen \emph{normierten Vektorraum}.
 Wenn der mathematische Kontext eindeutig ist schreiben wir häufig nur <span class="math notranslate nohighlight">\(||\cdot ||\)</span> anstatt <span class="math notranslate nohighlight">\(|| \cdot ||_X\)</span> und <span class="math notranslate nohighlight">\(X\)</span> anstatt dem Paar <span class="math notranslate nohighlight">\((X, ||\cdot||_X)\)</span>.
-In diesen Fällen nehmen wir immer die kanonische Norm des Vektorraums an, z.B., die Euklidische Norm für den <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.
-\end{definition}</p>
-<p>Zwischen Metriken und Normen gibt es einen direkten Zusammenhang, den wir kurz wiederholen wollen.
-\begin{remark}
-Es ist klar, dass jeder normierte Vektorraum auch ein metrischer Raum ist, da jede Norm <span class="math notranslate nohighlight">\(||\cdot||_X\)</span> eine Metrik <span class="math notranslate nohighlight">\(d\)</span> auf <span class="math notranslate nohighlight">\(X\)</span> induziert durch:</p>
+In diesen Fällen nehmen wir immer die kanonische Norm des Vektorraums an, z.B., die Euklidische Norm für den <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p>
+</div>
+</div><p>Zwischen Metriken und Normen gibt es einen direkten Zusammenhang, den wir kurz wiederholen wollen.</p>
+<div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 3.1 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Es ist klar, dass jeder normierte Vektorraum auch ein metrischer Raum ist, da jede Norm <span class="math notranslate nohighlight">\(||\cdot||_X\)</span> eine Metrik <span class="math notranslate nohighlight">\(d\)</span> auf <span class="math notranslate nohighlight">\(X\)</span> induziert durch:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -465,69 +474,74 @@ d \colon X \times X \ &amp;\rightarrow \ \R_0^+,\\
 \end{split}
 \end{equation*}\]</div>
 <p>Metriken sind jedoch viel allgemeiner und nicht alle Metriken entstehen aus Normen.
-Beispielsweise ist die geodätische Distanz (der kürzeste Weg) auf der Erdoberfläche eine Metrik, die nicht durch eine Norm induziert wird.
-\end{remark}</p>
-<p>Sie haben bereits einige Normen in Ihrem Studium kennengelernt.
-Die wichtigsten Beispiele sind im Folgenden nochmal zusammengefasst.
-\begin{example}
-Wir können die folgenden Vektorräume mit einer Norm ausstatten.
-\begin{enumerate}
-\item Das Paar <span class="math notranslate nohighlight">\((\mathbb{R}^n, ||\cdot||_p)\)</span> mit der <span class="math notranslate nohighlight">\(p\)</span>-Norm</p>
+Beispielsweise ist die geodätische Distanz (der kürzeste Weg) auf der Erdoberfläche eine Metrik, die nicht durch eine Norm induziert wird.</p>
+</div>
+</div><p>Sie haben bereits einige Normen in Ihrem Studium kennengelernt.
+Die wichtigsten Beispiele sind im Folgenden nochmal zusammengefasst.</p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 3.1 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir können die folgenden Vektorräume mit einer Norm ausstatten.</p>
+<p><span class="math notranslate nohighlight">\(i)\)</span> Das Paar <span class="math notranslate nohighlight">\((\mathbb{R}^n, ||\cdot||_p)\)</span> mit der <span class="math notranslate nohighlight">\(p\)</span>-Norm</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Vert x \Vert_p \ \coloneqq \ \left( \sum_{i=1}^n |x_i|^p \right)^{1/p}
 \end{equation*}\]</div>
 <p>ist für <span class="math notranslate nohighlight">\(1 \leq p &lt; \infty\)</span> ein normierter Vektorraum.
 Ein wichtiger Spezialfall für <span class="math notranslate nohighlight">\(p=2\)</span> ist der Euklidische Vektorraum.</p>
-<p>\item Das Paar <span class="math notranslate nohighlight">\((\mathbb{R}^n, ||\cdot||_\infty)\)</span> mit der Maximumsnorm</p>
+<p><span class="math notranslate nohighlight">\(ii)\)</span> Das Paar <span class="math notranslate nohighlight">\((\mathbb{R}^n, ||\cdot||_\infty)\)</span> mit der Maximumsnorm</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Vert x \Vert_\infty \ \coloneqq \ \max_{i=1,\ldots,n} |x_i|
 \end{equation*}\]</div>
 <p>ist ein normierter Vektorraum.</p>
-<p>\item Sei <span class="math notranslate nohighlight">\(\ell^\infty\)</span> der Raum der beschränkten Folgen.
+<p><span class="math notranslate nohighlight">\(iii)\)</span> Sei <span class="math notranslate nohighlight">\(\ell^\infty\)</span> der Raum der beschränkten Folgen.
 Für unendliche Folgen gilt dann beispielsweise <span class="math notranslate nohighlight">\((x_n)_{n\in\N} \coloneqq n \not\in \ell^\infty\)</span>, jedoch <span class="math notranslate nohighlight">\((x_n)_{n\in\N} \coloneqq 1 - \frac{1}{n} \in \ell^\infty\)</span>.</p>
 <p>Das Paar <span class="math notranslate nohighlight">\((\ell^\infty, ||\cdot||_\infty)\)</span> mit der Supremumsnorm</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Vert x \Vert_\infty \ \coloneqq \ \sup_{i \in \N} |x_i|
 \end{equation*}\]</div>
-<p>ist ein normierter (unendlich-dimensionaler) Vektorraum.
-\end{enumerate}
-\end{example}</p>
-<p>Jede Norm induziert eine Metrik, welche wiederum eine Topologie auf dem Vektorraum induziert.
-Hierdurch definieren sich insbesondere die fundamentalen Begriffe von offenen und abgeschlossenen Mengen in normierten Vektorräumen, wie wir im Folgenden sehen werden.
-\begin{definition}[Umgebung]
-Sei <span class="math notranslate nohighlight">\(X\)</span> ein normierter Raum und <span class="math notranslate nohighlight">\(\epsilon \in \R_+\)</span> ein positives Skalar.
+<p>ist ein normierter (unendlich-dimensionaler) Vektorraum.</p>
+</div>
+</div><p>Jede Norm induziert eine Metrik, welche wiederum eine Topologie auf dem Vektorraum induziert.
+Hierdurch definieren sich insbesondere die fundamentalen Begriffe von offenen und abgeschlossenen Mengen in normierten Vektorräumen, wie wir im Folgenden sehen werden.</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 3.2 </span> (Umgebung)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(X\)</span> ein normierter Raum und <span class="math notranslate nohighlight">\(\epsilon \in \R_+\)</span> ein positives Skalar.
 Sei außerdem <span class="math notranslate nohighlight">\(x \in X\)</span> ein beliebiger Punkt.
-Dann heisst für
-$<span class="math notranslate nohighlight">\( U_\epsilon(x) \ \coloneqq \ \{ y \in X : ||x - y|| &lt; \epsilon \} \)</span><span class="math notranslate nohighlight">\(
-die \emph{\)</span>\epsilon<span class="math notranslate nohighlight">\(-Umgebung} von \)</span>x$.
-\end{definition}</p>
-<p>\begin{definition}[Offene und abgeschlossene Mengen]
-Sei <span class="math notranslate nohighlight">\(X\)</span> ein normierter Raum.
-Dann definieren wir folgende Begriffe für Teilmengen von <span class="math notranslate nohighlight">\(X\)</span>:
-\begin{enumerate}
-\item Eine Teilmenge <span class="math notranslate nohighlight">\(M \subset X\)</span> heißt offen, wenn für alle Punkte <span class="math notranslate nohighlight">\(x \in M\)</span> eine <span class="math notranslate nohighlight">\(\epsilon\)</span>-Umgebung <span class="math notranslate nohighlight">\(U_\epsilon(x) \subset M\)</span> existiert.
-\item Eine Teilmenge <span class="math notranslate nohighlight">\(M \subset X\)</span> heißt abgeschlossen, wenn <span class="math notranslate nohighlight">\(X \setminus M\)</span> offen ist.
-\end{enumerate}
-\end{definition}</p>
-<p>\begin{example}
-Wir betrachten folgende typische Beispiele für offene und abgeschlossene Mengen in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
-\begin{enumerate}[i)]
-\item Sei <span class="math notranslate nohighlight">\(X=\R\)</span> und <span class="math notranslate nohighlight">\(a,b \in \R\)</span> mit <span class="math notranslate nohighlight">\(a &lt; b\)</span>.
+Dann heißt</p>
+<div class="math notranslate nohighlight">
+\[ U_\epsilon(x) \ \coloneqq \ \{ y \in X : ||x - y|| &lt; \epsilon \} \]</div>
+<p>die <span class="math notranslate nohighlight">\(\epsilon\)</span>-Umgebung von <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</div>
+</div><div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 3.3 </span> (Offene und abgeschlossene Mengen)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(X\)</span> ein normierter Raum.
+Dann definieren wir folgende Begriffe für Teilmengen von <span class="math notranslate nohighlight">\(X\)</span>:</p>
+<ol class="simple">
+<li><p>Eine Teilmenge <span class="math notranslate nohighlight">\(M \subset X\)</span> heißt offen, wenn für alle Punkte <span class="math notranslate nohighlight">\(x \in M\)</span> eine <span class="math notranslate nohighlight">\(\epsilon\)</span>-Umgebung <span class="math notranslate nohighlight">\(U_\epsilon(x) \subset M\)</span> existiert.</p></li>
+<li><p>Eine Teilmenge <span class="math notranslate nohighlight">\(M \subset X\)</span> heißt abgeschlossen, wenn <span class="math notranslate nohighlight">\(X \setminus M\)</span> offen ist.</p></li>
+</ol>
+</div>
+</div><div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 3.2 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir betrachten folgende typische Beispiele für offene und abgeschlossene Mengen in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(i)\)</span> Sei <span class="math notranslate nohighlight">\(X=\R\)</span> und <span class="math notranslate nohighlight">\(a,b \in \R\)</span> mit <span class="math notranslate nohighlight">\(a &lt; b\)</span>.
 Dann ist das Intervall <span class="math notranslate nohighlight">\([a,b]\)</span> abgeschlossen und das Intervall <span class="math notranslate nohighlight">\((a,b)\)</span> offen.
-Die Intervalle <span class="math notranslate nohighlight">\([a,b)\)</span> bzw. <span class="math notranslate nohighlight">\((a,b]\)</span> sind weder abgeschlossen noch offen.
-\item Die leere Menge <span class="math notranslate nohighlight">\(\emptyset\)</span> sowie der gesamte normierte Raum <span class="math notranslate nohighlight">\(X\)</span> sind die einzigen Mengen, die sowohl abgeschlossen als auch offen sind.
-\item In allgemeinen normierten Vektorräumen <span class="math notranslate nohighlight">\(X\)</span> können wir für einen positiven Radius <span class="math notranslate nohighlight">\(r &gt; 0\)</span> abgeschlossene Kugeln  <span class="math notranslate nohighlight">\(B^X_r\)</span> um einen Punkt <span class="math notranslate nohighlight">\(x\in X\)</span> betrachten mit</p>
+Die Intervalle <span class="math notranslate nohighlight">\([a,b)\)</span> bzw. <span class="math notranslate nohighlight">\((a,b]\)</span> sind weder abgeschlossen noch offen.</p>
+<p><span class="math notranslate nohighlight">\(ii)\)</span> Die leere Menge <span class="math notranslate nohighlight">\(\emptyset\)</span> sowie der gesamte normierte Raum <span class="math notranslate nohighlight">\(X\)</span> sind die einzigen Mengen, die sowohl abgeschlossen als auch offen sind.</p>
+<p><span class="math notranslate nohighlight">\(iii)\)</span> In allgemeinen normierten Vektorräumen <span class="math notranslate nohighlight">\(X\)</span> können wir für einen positiven Radius <span class="math notranslate nohighlight">\(r &gt; 0\)</span> abgeschlossene Kugeln  <span class="math notranslate nohighlight">\(B^X_r\)</span> um einen Punkt <span class="math notranslate nohighlight">\(x\in X\)</span> betrachten mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-B^X_r(x) \ \coloneqq \ \{y \in X : \norm[X]{x-y} \leq r \}
+B^X_r(x) \ \coloneqq \ \{y \in X : \norm{x-y} \leq r \}
 \end{equation*}\]</div>
-<p>Wenn der mathematische Kontext eindeutig ist, schreiben wir häufig auch nur <span class="math notranslate nohighlight">\(B_r(x)\)</span>.
-\end{enumerate}
-\end{example}</p>
-<div class="toctree-wrapper compound">
+<p>Wenn der mathematische Kontext eindeutig ist, schreiben wir häufig auch nur <span class="math notranslate nohighlight">\(B_r(x)\)</span>.</p>
+</div>
+</div><div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -561,11 +575,11 @@ B^X_r(x) \ \coloneqq \ \{y \in X : \norm[X]{x-y} \leq r \}
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../vektoraeume/selbstadjungiert.html" title="previous page">
+        <a class="left-prev" href="../vektoraeume/normal.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">2.7. </span>Selbstadjungierte Endomorphismen</p>
+                <p class="prevnext-title"><span class="section-number">2.8. </span>Normale Endomorphismen</p>
             </div>
         </a>
     </div>

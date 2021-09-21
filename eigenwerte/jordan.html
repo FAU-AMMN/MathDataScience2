@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -197,6 +197,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
      2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/normal.html">
+     2.8. Normale Endomorphismen
     </a>
    </li>
   </ul>
@@ -843,8 +848,8 @@ G^k v \ = \ G^{k-1} \underbrace{G v}_{= 0} \ = \ 0.
 \end{equation*}\]</div>
 <p>Falls die Dimension eines Eigenraums <span class="math notranslate nohighlight">\(\Eig(F; \lambda_i)\)</span> jedoch zu klein ist, so lässt sie sich durch Potenzieren mit <span class="math notranslate nohighlight">\(r_i\)</span> passend vergrößern, denn nach <a class="reference internal" href="#lem:einbettung_kern">Lemma 1.7</a> gilt:</p>
 <div class="math notranslate nohighlight" id="equation-eq-eigenraum-potenz">
-<span class="eqno">(1.11)<a class="headerlink" href="#equation-eq-eigenraum-potenz" title="Permalink to this equation">¶</a></span>\[\Eig(F; \lambda_i) \ = \ \Kern(F - \lambda_i \operatorname{Id}_V) \ \subset \ \Kern([F - \lambda_i \operatorname{Id}_V]^{r_i}).\]</div>
-<p>Die Einbettung in <a class="reference internal" href="#equation-eq-eigenraum-potenz">(1.11)</a> motiviert folgende Definition des Hauptraums.</p>
+<span class="eqno">(1.13)<a class="headerlink" href="#equation-eq-eigenraum-potenz" title="Permalink to this equation">¶</a></span>\[\Eig(F; \lambda_i) \ = \ \Kern(F - \lambda_i \operatorname{Id}_V) \ \subset \ \Kern([F - \lambda_i \operatorname{Id}_V]^{r_i}).\]</div>
+<p>Die Einbettung in <a class="reference internal" href="#equation-eq-eigenraum-potenz">(1.13)</a> motiviert folgende Definition des Hauptraums.</p>
 <div class="proof definition admonition" id="definition-9">
 <p class="admonition-title"><span class="caption-number">Definition 1.14 </span> (Hauptraum und Hauptvektoren)</p>
 <div class="definition-content section" id="proof-content">
@@ -884,7 +889,7 @@ Jedoch sind die Mengen im Allgemeinen nicht disjunkt wie bei einer direkten Summ
 Sei außerdem <span class="math notranslate nohighlight">\(\lambda = 0\)</span> ein Eigenwert von <span class="math notranslate nohighlight">\(G\)</span> mit algebraischer Vielfachheit <span class="math notranslate nohighlight">\(r \in \mathbb{N}, r \geq 1\)</span>.
 Wir betrachten die kleinste Potenz <span class="math notranslate nohighlight">\(d \in \mathbb{N}\)</span> für die der Kern von <span class="math notranslate nohighlight">\(G\)</span> sich nicht mehr ändert, d.h.,</p>
 <div class="math notranslate nohighlight" id="equation-eq-fitting-index">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-eq-fitting-index" title="Permalink to this equation">¶</a></span>\[d \ \coloneqq \ \min\lbrace{l \in \mathbb{N} \: | \: \Kern(G^l) \, = \, \Kern(G^{l+1}) \rbrace},\]</div>
+<span class="eqno">(1.14)<a class="headerlink" href="#equation-eq-fitting-index" title="Permalink to this equation">¶</a></span>\[d \ \coloneqq \ \min\lbrace{l \in \mathbb{N} \: | \: \Kern(G^l) \, = \, \Kern(G^{l+1}) \rbrace},\]</div>
 <p>wobei <span class="math notranslate nohighlight">\(G^0 \coloneqq \operatorname{Id}_V\)</span> gilt.
 Dann gelten die folgenden Aussagen:</p>
 <ol class="simple">
@@ -1006,7 +1011,7 @@ V \ = \ \operatorname{Haupt}(F; \lambda_1) \: \oplus \: \Bild(G^{r_1}).%\Bild( [
 <p>Für <span class="math notranslate nohighlight">\(v \in \Hau(F; \lambda_1)\)</span> gilt, dass <span class="math notranslate nohighlight">\([F - \lambda_1 \operatorname{Id}_V]^{r_1} (v) = 0\)</span>.
 Außerdem sieht man durch die Kommutativität der Identität ein, dass</p>
 <div class="math notranslate nohighlight" id="equation-eq-kommutativ-identitat">
-<span class="eqno">(1.13)<a class="headerlink" href="#equation-eq-kommutativ-identitat" title="Permalink to this equation">¶</a></span>\[[F - \lambda_1 \operatorname{Id}_V] (F(v)) \ = \ (F^2 - \lambda_1 F)(v) \ = \ F \circ (F - \lambda_1 \operatorname{Id}_V)(v)\]</div>
+<span class="eqno">(1.15)<a class="headerlink" href="#equation-eq-kommutativ-identitat" title="Permalink to this equation">¶</a></span>\[[F - \lambda_1 \operatorname{Id}_V] (F(v)) \ = \ (F^2 - \lambda_1 F)(v) \ = \ F \circ (F - \lambda_1 \operatorname{Id}_V)(v)\]</div>
 <p>und somit durch sukzessive Anwendung von \eqref{eq:kommutativ_identität} auch</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -1125,7 +1130,7 @@ s_i \ = \ \Delta_i - \Delta_{i+1}, \quad 1 \leq i \leq d,
 <p>wobei <span class="math notranslate nohighlight">\(\Delta_i \coloneqq \dim \Kern(G_i) - \dim \Kern(G_{i-1})\)</span> gerade die Anzahl der Hauptvektoren der Stufe <span class="math notranslate nohighlight">\(i\)</span> sind.</p>
 <p>Außerdem gibt es eine Basis <span class="math notranslate nohighlight">\( B \)</span> von <span class="math notranslate nohighlight">\( V \)</span>, so dass die darstellende Matrix von <span class="math notranslate nohighlight">\(G\)</span> bezüglich <span class="math notranslate nohighlight">\(B\)</span> eine Blockdiagonalmatrix mit folgender Gestalt ist</p>
 <div class="math notranslate nohighlight" id="equation-equ-bjmf">
-<span class="eqno">(1.14)<a class="headerlink" href="#equation-equ-bjmf" title="Permalink to this equation">¶</a></span>\[M_B(G)=
+<span class="eqno">(1.16)<a class="headerlink" href="#equation-equ-bjmf" title="Permalink to this equation">¶</a></span>\[M_B(G)=
 \diag\left(
 \underset{s_d-\mathrm{mal}}{\underbrace{J_d,\dots,J_d}},
 \underset{s_{d-1}-\mathrm{mal}}{\underbrace{J_{d-1},\dots,J_{d-1}}},
@@ -1298,7 +1303,7 @@ N \ = \ S A S^{-1},
 </tbody>
 </table>
 <p><strong>Spaltenweises Eintragen des Schemas in <span class="math notranslate nohighlight">\(S^{-1}\)</span>:</strong></p>
-<p>Lesen wir die schließlich das fertige Schema zuerst von <strong>unten nach oben</strong> und dann von <strong>links nach rechts</strong> (entlang der Jordanketten) zellenweise ab und notieren die so gefundenen Vektoren <strong>spaltenweise</strong> von links nach rechts in die Transformationsmatrix <span class="math notranslate nohighlight">\(S^{-1}\)</span>, so liegt <span class="math notranslate nohighlight">\( N = S A S^{-1} \)</span> in der Normalform nilpotenter Endomorphismen in Definition <span class="xref std std-ref">def:normalform_nilpotent</span> vor.</p>
+<p>Lesen wir die schließlich das fertige Schema zuerst von <strong>unten nach oben</strong> und dann von <strong>links nach rechts</strong> (entlang der Jordanketten) zellenweise ab und notieren die so gefundenen Vektoren <strong>spaltenweise</strong> von links nach rechts in die Transformationsmatrix <span class="math notranslate nohighlight">\(S^{-1}\)</span>, so liegt <span class="math notranslate nohighlight">\( N = S A S^{-1} \)</span> in der Normalform nilpotenter Endomorphismen in Definition <a class="reference internal" href="#def:normalform_nilpotent">Definition 1.13</a> vor.</p>
 </div>
 </div></div>
 <div class="section" id="jordansche-normalform">
@@ -1315,7 +1320,7 @@ P_A(t) \ = \ \pm (t - \lambda_1)^{r_1} \cdot \ldots \cdot (t  - \lambda_k)^{r_k}
 \end{equation*}\]</div>
 <p>Dann existiert eine invertierbare Matrix <span class="math notranslate nohighlight">\(S \in \GL(n; \mathbb{K})\)</span>, so dass</p>
 <div class="math notranslate nohighlight" id="equation-eq-jordannormalform">
-<span class="eqno">(1.15)<a class="headerlink" href="#equation-eq-jordannormalform" title="Permalink to this equation">¶</a></span>\[\begin{split}SAS^{-1} \ = \
+<span class="eqno">(1.17)<a class="headerlink" href="#equation-eq-jordannormalform" title="Permalink to this equation">¶</a></span>\[\begin{split}SAS^{-1} \ = \
 \begin{pmatrix}
 \lambda_1 I_{r_1} + N_1 &amp; &amp; 0\\
  &amp; \ddots &amp; \\
@@ -1324,7 +1329,7 @@ P_A(t) \ = \ \pm (t - \lambda_1)^{r_1} \cdot \ldots \cdot (t  - \lambda_k)^{r_k}
 =: \ J.\end{split}\]</div>
 <p>Die nilpotenten Anteile <span class="math notranslate nohighlight">\(N_i\)</span> für <span class="math notranslate nohighlight">\(i=1,\ldots,k\)</span> liegen hierbei (blockweise) in der Normalform aus Definition <a class="reference internal" href="#def:normalform_nilpotent">Definition 1.13</a> vor. Die Blockmatrizen <span class="math notranslate nohighlight">\(\lambda_i I_{r_i} + N_i \in \mathbb{K}^{r_i \times r_i}\)</span> in <span class="math notranslate nohighlight">\(J\)</span> werden \emph{Jordanblöcke} genannt und sind von der Gestalt</p>
 <div class="math notranslate nohighlight" id="equation-eq-jordanblock">
-<span class="eqno">(1.16)<a class="headerlink" href="#equation-eq-jordanblock" title="Permalink to this equation">¶</a></span>\[\begin{split}\lambda_i I_{r_i} + N_i \ = \ 
+<span class="eqno">(1.18)<a class="headerlink" href="#equation-eq-jordanblock" title="Permalink to this equation">¶</a></span>\[\begin{split}\lambda_i I_{r_i} + N_i \ = \ 
 \begin{pmatrix}
  \lambda_i &amp; 1 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp;\\
 &amp; \ddots &amp; \ddots &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp;\\
@@ -1375,7 +1380,7 @@ P_F(t) \ = \ \pm (t- \lambda_1)^{r_1} \cdot \ldots \cdot (t-\lambda_k)^r_k
 \[\begin{equation*}
 J \ = \ S A S^{-1},
 \end{equation*}\]</div>
-<p>wobei <span class="math notranslate nohighlight">\(J\)</span> die Jordannormalform aus <a class="reference internal" href="#equation-eq-jordannormalform">(1.15)</a> ist.</p>
+<p>wobei <span class="math notranslate nohighlight">\(J\)</span> die Jordannormalform aus <a class="reference internal" href="#equation-eq-jordannormalform">(1.17)</a> ist.</p>
 <p>Hierfür müssen wir nur die nilpotenten Einschränkungen von <span class="math notranslate nohighlight">\(F\)</span> auf die Haupträume <span class="math notranslate nohighlight">\(V_i \coloneqq \Hau(F; \lambda_i)\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}

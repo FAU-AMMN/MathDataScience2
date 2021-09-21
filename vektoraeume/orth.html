@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -197,6 +197,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="selbstadjungiert.html">
      2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="normal.html">
+     2.8. Normale Endomorphismen
     </a>
    </li>
   </ul>
@@ -441,37 +446,38 @@
                 
   <div class="section" id="orthogonalisierung-und-orthonormalisierung">
 <h1><span class="section-number">2.5. </span>Orthogonalisierung und Orthonormalisierung<a class="headerlink" href="#orthogonalisierung-und-orthonormalisierung" title="Permalink to this headline">¶</a></h1>
-<p>In vielen Fällen ist es sinnvoll nicht eine beliebige Basis eines endlich-dimensionalen Vektorraums <span class="math notranslate nohighlight">\(V\)</span> zu betrachten, sondern eine Familie von Vektoren, die \emph{orthogonal} oder sogar \emph{orthonormal} sind.
+<p>In vielen Fällen ist es sinnvoll nicht eine beliebige Basis eines endlich-dimensionalen Vektorraums <span class="math notranslate nohighlight">\(V\)</span> zu betrachten, sondern eine Familie von Vektoren, die <em>orthogonal</em> oder sogar <em>orthonormal</em> sind.
 Dies hat viele Vorteile für die Mathematik, da sich so manche Berechnung durch eine Orthonormalbasis deutlich vereinfachen lässt.
 Auch lassen sich durch orthonormale Vektoren längen- und winkelerhaltende Transformationen durchführen.</p>
-<p>\begin{definition}[Orthogonalität und Orthonormalität]\label{def:orthonormalisierung}
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer bzw. unitärer Vektorraum.
-Dann können wir folgende Begriffe und Notation definieren:
-\begin{enumerate}[i)]
-\item Zwei Vektoren <span class="math notranslate nohighlight">\(u,v \in V\)</span> heißen \emph{orthogonal}, falls gilt:</p>
+<div class="proof definition admonition" id="def:orthonormalisierung">
+<p class="admonition-title"><span class="caption-number">Definition 2.15 </span> (Orthogonalität und Orthonormalität)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer bzw. unitärer Vektorraum.
+Dann können wir folgende Begriffe und Notation definieren:</p>
+<p>i) Zwei Vektoren <span class="math notranslate nohighlight">\(u,v \in V\)</span> heißen <em>orthogonal</em>, falls gilt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle v, w \rangle \ = \ 0.
 \end{equation*}\]</div>
-<p>Wir notieren in diesem Fall häufig auch <span class="math notranslate nohighlight">\(v \perp w\)</span>.
-\item Zwei Untervektorräume <span class="math notranslate nohighlight">\(U, W \subset V\)</span> heißen \emph{orthogonal}, falls gilt:</p>
+<p>Wir notieren in diesem Fall häufig auch <span class="math notranslate nohighlight">\(v \perp w\)</span>.</p>
+<p>ii) Zwei Untervektorräume <span class="math notranslate nohighlight">\(U, W \subset V\)</span> heißen <em>orthogonal</em>, falls gilt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 u \perp v \quad \text{ für alle } u \in U \text{ und } w \in W.
 \end{equation*}\]</div>
-<p>Wir notieren in diesem Fall häufig auch <span class="math notranslate nohighlight">\(U \perp W\)</span>.
-\item Ist <span class="math notranslate nohighlight">\(U \subset V\)</span> ein Untervektorraum, so definieren wir sein \emph{orthogonales Komplement} als</p>
+<p>Wir notieren in diesem Fall häufig auch <span class="math notranslate nohighlight">\(U \perp W\)</span>.</p>
+<p>iii) Ist <span class="math notranslate nohighlight">\(U \subset V\)</span> ein Untervektorraum, so definieren wir sein <em>orthogonales Komplement</em> als</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 U^\perp \ \coloneqq \ \lbrace{ v \in V \, | \, v \perp u \text{ für alle } u \in U \rbrace}.
 \end{equation*}\]</div>
-<p>Es ist klar, dass <span class="math notranslate nohighlight">\(U^\perp\)</span> wieder ein Untervektorraum ist.
-\item Eine Familie von Vektoren <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> in <span class="math notranslate nohighlight">\(V\)</span> heißt \emph{orthogonal}, wenn gilt</p>
+<p>Es ist klar, dass <span class="math notranslate nohighlight">\(U^\perp\)</span> wieder ein Untervektorraum ist.</p>
+<p>iv) Eine Familie von Vektoren <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> in <span class="math notranslate nohighlight">\(V\)</span> heißt <em>orthogonal</em>, wenn gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 v_i \perp v_j \quad \text{ für alle } i \neq j.
 \end{equation*}\]</div>
-<p>Sie heißt \emph{orthonormal}, falls zusätzlich gilt</p>
+<p>Sie heißt <em>orthonormal</em>, falls zusätzlich gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||v_i|| \ = \ 1 \quad \text{ für alle } 1 \leq i \leq n.
@@ -481,30 +487,30 @@ v_i \perp v_j \quad \text{ für alle } i \neq j.
 \[\begin{equation*}
 \langle v_i, v_j \rangle \ = \ \delta_{ij},
 \end{equation*}\]</div>
-<p>wobei <span class="math notranslate nohighlight">\(\delta_{ij}\)</span> das Kronecker-Delta bezeichnet (vgl. Definition \ref{def:normalform_nilpotent}).
-\item Wir nennen eine Familie von orthonormalen Vektoren <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> in <span class="math notranslate nohighlight">\(V\)</span> eine \emph{Orthonormalbasis}, falls die Vektoren eine Basis von <span class="math notranslate nohighlight">\(V\)</span> bilden.
-\item Ist <span class="math notranslate nohighlight">\(V = V_1 \oplus \ldots \oplus V_n\)</span>, so heißt die direkte Summe \emph{orthogonal}, falls gilt</p>
+<p>wobei <span class="math notranslate nohighlight">\(\delta_{ij}\)</span> das Kronecker-Delta bezeichnet (vgl. Definition <a class="reference internal" href="../eigenwerte/jordan.html#def:normalform_nilpotent">Definition 1.13</a>).</p>
+<p>v) Wir nennen eine Familie von orthonormalen Vektoren <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> in <span class="math notranslate nohighlight">\(V\)</span> eine <em>Orthonormalbasis</em>, falls die Vektoren eine Basis von <span class="math notranslate nohighlight">\(V\)</span> bilden.
+\item Ist <span class="math notranslate nohighlight">\(V = V_1 \oplus \ldots \oplus V_n\)</span>, so heißt die direkte Summe <em>orthogonal</em>, falls gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 V_i \perp V_j \quad \text{ für alle } i \neq j.
 \end{equation*}\]</div>
-<p>Wir notieren in diesem Fall häufig auch <span class="math notranslate nohighlight">\(V = V_1 \operp \ldots \operp V_n\)</span>.
-\end{enumerate}
-\end{definition}</p>
-<p>\begin{example}
-Betrachten wir <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> oder <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span> mit dem kanonischen bzw. komplexen Skalarprodukt, so ist die kanonische Basis <span class="math notranslate nohighlight">\(B = (e_1, \ldots, e_n)\)</span> eine Orthonormalbasis.
-\end{example}</p>
-<p>\begin{satz}
-Ist <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> eine orthogonale Familie von Vektoren in <span class="math notranslate nohighlight">\(V\)</span> mit <span class="math notranslate nohighlight">\(v_i \neq 0\)</span> für alle <span class="math notranslate nohighlight">\(1 \leq i \leq n\)</span>, so gelten die folgenden Aussagen.
-\begin{enumerate}
-\item Die Familie <span class="math notranslate nohighlight">\((\alpha_1 v_1, \ldots, \alpha_n v_n)\)</span> von Vektoren mit <span class="math notranslate nohighlight">\(\alpha_i \coloneqq ||v_i||^{-1}\)</span> ist orthonormal.
-\item Die Familie <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> von Vektoren ist linear unabhängig.
-\end{enumerate}
-\end{satz}
-\begin{proof}
-Wir zeigen die beiden Behauptungen für ein allgemeines Skalarprodukt.
-\begin{enumerate}
-\item Da <span class="math notranslate nohighlight">\(v_i \perp v_j\)</span> gilt für <span class="math notranslate nohighlight">\(i \neq j\)</span> folgt schon, dass gilt</p>
+<p>Wir notieren in diesem Fall häufig auch <span class="math notranslate nohighlight">\(V = V_1 \operp \ldots \operp V_n\)</span>.</p>
+</div>
+</div><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 2.9 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Betrachten wir <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> oder <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span> mit dem kanonischen bzw. komplexen Skalarprodukt, so ist die kanonische Basis <span class="math notranslate nohighlight">\(B = (e_1, \ldots, e_n)\)</span> eine Orthonormalbasis.</p>
+</div>
+</div><div class="proof theorem admonition" id="theorem-2">
+<p class="admonition-title"><span class="caption-number">Theorem 2.5 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Ist <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> eine orthogonale Familie von Vektoren in <span class="math notranslate nohighlight">\(V\)</span> mit <span class="math notranslate nohighlight">\(v_i \neq 0\)</span> für alle <span class="math notranslate nohighlight">\(1 \leq i \leq n\)</span>, so gelten die folgenden Aussagen</p>
+<p>i) Die Familie <span class="math notranslate nohighlight">\((\alpha_1 v_1, \ldots, \alpha_n v_n)\)</span> von Vektoren mit <span class="math notranslate nohighlight">\(\alpha_i \coloneqq ||v_i||^{-1}\)</span> ist orthonormal.
+ii) Die Familie <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> von Vektoren ist linear unabhängig.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir zeigen die beiden Behauptungen für ein allgemeines Skalarprodukt.</p>
+<p>i) Da <span class="math notranslate nohighlight">\(v_i \perp v_j\)</span> gilt für <span class="math notranslate nohighlight">\(i \neq j\)</span> folgt schon, dass gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle \alpha_i v_i, \alpha_j v_j \rangle \ = \ \alpha_i \overline{\alpha_j} \langle v_i , v_j \rangle \ = \ 0, \quad \text{ für } i \neq j.
@@ -515,32 +521,31 @@ Da <span class="math notranslate nohighlight">\(\alpha_i = ||v_i||^{-1} \in \mat
 \[\begin{equation*}
 \langle \alpha_i v_i, \alpha_i v_i \rangle \ = \ \alpha_i \overline{\alpha_i} \langle v_i , v_i \rangle \ = \ \frac{||v_i||^2}{||v_i||^2} \ = \ 1.
 \end{equation*}\]</div>
-<p>Die Familie von Vektoren ist also orthonormal.
-\item Wir müssen für die lineare Unabhängigkeit der Vektoren <span class="math notranslate nohighlight">\(v_1, \ldots, v_n \in V\)</span> zeigen, dass aus der Gleichung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-934659b3-60ab-4a4e-8916-d79e4b3eda21">
-<span class="eqno">(2.8)<a class="headerlink" href="#equation-934659b3-60ab-4a4e-8916-d79e4b3eda21" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:orthogonal_lu}
-0 \ = \ \lambda_1v_1 + \ldots + \lambda_n v_n
-\end{equation}\]</div>
+<p>Die Familie von Vektoren ist also orthonormal.</p>
+<p>ii) Wir müssen für die lineare Unabhängigkeit der Vektoren <span class="math notranslate nohighlight">\(v_1, \ldots, v_n \in V\)</span> zeigen, dass aus der Gleichung</p>
+<div class="math notranslate nohighlight" id="equation-eq-orthogonal-lu">
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-eq-orthogonal-lu" title="Permalink to this equation">¶</a></span>\[0 \ = \ \lambda_1v_1 + \ldots + \lambda_n v_n\]</div>
 <p>bereits folgt, dass <span class="math notranslate nohighlight">\(\lambda_i = 0\)</span> für <span class="math notranslate nohighlight">\(1 \leq i \leq n\)</span> gelten muss.
-Multiplizieren wir also die Gleichung \eqref{eq:orthogonal_lu} von rechts mit <span class="math notranslate nohighlight">\(v_i^T\)</span> so folgt:</p>
+Multiplizieren wir also die Gleichung <a class="reference internal" href="#equation-eq-orthogonal-lu">(2.8)</a> von rechts mit <span class="math notranslate nohighlight">\(v_i^T\)</span> so folgt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 0 \ = \ \langle 0, v_i\rangle \ = \ \langle \lambda_1v_1 + \ldots + \lambda_n v_n, v_i \rangle \ = \ \sum_{j=1}^n \lambda_j \langle v_j, v_i \rangle \ = \ \lambda_i \langle v_i, v_i \rangle.
 \end{equation*}\]</div>
 <p>Da das Skalarprodukt insbesondere positiv definit ist, muss also schon gelten, dass <span class="math notranslate nohighlight">\(\lambda_i = 0\)</span> ist.
-Da dies unabhängig von der Wahl des Vektors <span class="math notranslate nohighlight">\(v_i\)</span> gilt, müssen schon alle Koeffizienten <span class="math notranslate nohighlight">\(\lambda_i = 0\)</span> für <span class="math notranslate nohighlight">\(1\leq i \leq n\)</span> gelten.
-\end{enumerate}
-\end{proof}</p>
-<p>\begin{satz}
-Sei <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(v \in V\)</span> ein beliebiger Vektor.
+Da dies unabhängig von der Wahl des Vektors <span class="math notranslate nohighlight">\(v_i\)</span> gilt, müssen schon alle Koeffizienten <span class="math notranslate nohighlight">\(\lambda_i = 0\)</span> für <span class="math notranslate nohighlight">\(1\leq i \leq n\)</span> gelten.</p>
+</div>
+<div class="proof theorem admonition" id="theorem-3">
+<p class="admonition-title"><span class="caption-number">Theorem 2.6 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(v \in V\)</span> ein beliebiger Vektor.
 Setzen wir <span class="math notranslate nohighlight">\(\lambda_i \coloneqq \langle v_i, v \rangle\)</span>, so gilt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 v \ = \ \lambda_1 v_1 + \ldots + \lambda_n v_n.
 \end{equation*}\]</div>
-<p>\end{satz}
-\begin{proof}
-Da <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span> ist, existieren eindeutige Koeffizienten <span class="math notranslate nohighlight">\(\gamma_i, 1 \leq i \leq n\)</span>, so dass sich der beliebige Vektor <span class="math notranslate nohighlight">\(v \in V\)</span> schreiben lässt als</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Da <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span> ist, existieren eindeutige Koeffizienten <span class="math notranslate nohighlight">\(\gamma_i, 1 \leq i \leq n\)</span>, so dass sich der beliebige Vektor <span class="math notranslate nohighlight">\(v \in V\)</span> schreiben lässt als</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 v \ = \ \gamma_1 v_1 + \ldots + \gamma_n v_n.
@@ -555,59 +560,69 @@ v \ = \ \gamma_1 v_1 + \ldots + \gamma_n v_n.
 \[\begin{equation*}
 v \ = \ \lambda_1 v_1 + \ldots + \lambda_n v_n.
 \end{equation*}\]</div>
-<p>\end{proof}</p>
+</div>
 <p>In vielen Situationen ist es praktisch eine Orthonormalbasis zu betrachten, da sie viele Berechnungen vereinfacht.
 Lässt sich jedoch eine Orthonormalbasis für einen beliebigen Euklidischen bzw. unitären Vektorraum bestimmen?
-Darauf gibt glücklicherweise der folgende Satz eine zufriedenstellende Antwort.
-\begin{satz}[Orthonormalisierungssatz]\label{satz:orthonormalisierung}
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(W \subset V\)</span> ein Untervektorraum mit Orthonormalbasis <span class="math notranslate nohighlight">\((w_1, \ldots, w_m)\)</span>.
+Darauf gibt glücklicherweise der folgende Satz eine zufriedenstellende Antwort.</p>
+<div class="proof theorem admonition" id="satz:orthonormalisierung">
+<p class="admonition-title"><span class="caption-number">Theorem 2.7 </span> (Orthonormalisierungssatz)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(W \subset V\)</span> ein Untervektorraum mit Orthonormalbasis <span class="math notranslate nohighlight">\((w_1, \ldots, w_m)\)</span>.
 Dann existiert eine Ergänzung aus Vektoren <span class="math notranslate nohighlight">\(w_{m+1}, \ldots, w_n \in V\)</span>, so dass</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 (w_1, \ldots, w_m, w_{m+1}, \ldots, w_n)
 \end{equation*}\]</div>
-<p>eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span> ergibt.
-\end{satz}
-\begin{proof}
-Da der Beweis des Satzes in konstruktiver Form erfolgt, formulieren wir diesen im Folgenden als einen konkreten Algorithmus.
-\end{proof}</p>
-<p>Da als Unterraum <span class="math notranslate nohighlight">\(W = \lbrace{ 0 \rbrace}\)</span> in Satz \ref{satz:orthonormalisierung} erlaubt ist, erhalten wir direkt  das folgende Korollar.
-\begin{cor}
-Jeder endlichdimensionale Euklidische bzw. unitäre Vektorraum besitzt eine Orthonormalbasis.
-\end{cor}
-Außerdem können wir folgendes Korollar aus dem Orthogonalisierungssatz \ref{satz:orthonormalisierung} ableiten.
-\begin{cor}
-Ist <span class="math notranslate nohighlight">\(W \subset V\)</span> Untervektorraum eines Euklidischen bzw. unitären Vektorraums <span class="math notranslate nohighlight">\(V\)</span>, so gilt</p>
+<p>eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span> ergibt.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Da der Beweis des Satzes in konstruktiver Form erfolgt, formulieren wir diesen im Folgenden als einen konkreten Algorithmus.</p>
+</div>
+<p>Da als Unterraum <span class="math notranslate nohighlight">\(W = \lbrace{ 0 \rbrace}\)</span> in Satz <a class="reference internal" href="#satz:orthonormalisierung">Theorem 2.7</a> erlaubt ist, erhalten wir direkt  das folgende Korollar.</p>
+<div class="proof corollary admonition" id="corollary-5">
+<p class="admonition-title"><span class="caption-number">Corollary 2.1 </span></p>
+<div class="corollary-content section" id="proof-content">
+<p>Jeder endlichdimensionale Euklidische bzw. unitäre Vektorraum besitzt eine Orthonormalbasis.</p>
+</div>
+</div><p>Außerdem können wir folgendes Korollar aus dem Orthogonalisierungssatz <a class="reference internal" href="#satz:orthonormalisierung">Theorem 2.7</a> ableiten.</p>
+<div class="proof corollary admonition" id="corollary-6">
+<p class="admonition-title"><span class="caption-number">Corollary 2.2 </span></p>
+<div class="corollary-content section" id="proof-content">
+<p>Ist <span class="math notranslate nohighlight">\(W \subset V\)</span> Untervektorraum eines Euklidischen bzw. unitären Vektorraums <span class="math notranslate nohighlight">\(V\)</span>, so gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 V \ = \ W \operp W^{\perp}, \quad \text{ und } \quad \dim V \ = \ \dim W + \dim W^{\perp}.
 \end{equation*}\]</div>
-<p>\end{cor}</p>
-<p>Die Konstruktion einer Orthonormalbasis geht auf die beiden Mathematiker \textit{J. Gram} und \textit{E. Schmidt} zurück und wird daher weitläufig auch als \textbf{Gram-Schmidtsches Orthogonalisierungsverfahren} bezeichnet.
-Bevor wir uns dem Verfahren widmen, wollen wir eine nützliche Abbildung einführen.
-\begin{definition}{Orthogonale Projektion}
-Seien <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(v,w \in V\)</span> zwei linear unabhängige Vektoren.
+</div>
+</div><p>Die Konstruktion einer Orthonormalbasis geht auf die beiden Mathematiker <em>J. Gram</em> und <em>E. Schmidt</em> zurück und wird daher weitläufig auch als <strong>Gram-Schmidtsches Orthogonalisierungsverfahren</strong> bezeichnet.
+Bevor wir uns dem Verfahren widmen, wollen wir eine nützliche Abbildung einführen.</p>
+<div class="proof definition admonition" id="definition-7">
+<p class="admonition-title"><span class="caption-number">Definition 2.16 </span> (Orthogonale Projektion)</p>
+<div class="definition-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(v,w \in V\)</span> zwei linear unabhängige Vektoren.
 Dann bezeichnen wir die Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Pi_v(w) \ \coloneqq \ \frac{\langle w, v \rangle}{\langle v,v \rangle} \cdot v,
 \end{equation*}\]</div>
-<p>als \emph{orthogonale Projektion} von <span class="math notranslate nohighlight">\(w\)</span> auf <span class="math notranslate nohighlight">\(v\)</span>.
-Die orthogonale Projektion berechnet den Anteil, den der Vektor <span class="math notranslate nohighlight">\(v\)</span> an der Geometrie von <span class="math notranslate nohighlight">\(w\)</span> hat.
-\end{definition}</p>
-<p>Die Kernidee des Gram-Schmidtschen Orthogonalisierungsverfahren ist es die Vektoren paarweise zueinander orthogonal auszurichten.
-Dabei spielt eine Korrektur mit Hilfe der orthogonalen Projektion eine zentrale Rolle, wie das folgende Lemma zeigt.
-\begin{lemma}
-Seien <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(v,w \in V\)</span> zwei linear unabhängige Vektoren.
+<p>als <em>orthogonale Projektion</em> von <span class="math notranslate nohighlight">\(w\)</span> auf <span class="math notranslate nohighlight">\(v\)</span>.
+Die orthogonale Projektion berechnet den Anteil, den der Vektor <span class="math notranslate nohighlight">\(v\)</span> an der Geometrie von <span class="math notranslate nohighlight">\(w\)</span> hat.</p>
+</div>
+</div><p>Die Kernidee des Gram-Schmidtschen Orthogonalisierungsverfahren ist es die Vektoren paarweise zueinander orthogonal auszurichten.
+Dabei spielt eine Korrektur mit Hilfe der orthogonalen Projektion eine zentrale Rolle, wie das folgende Lemma zeigt.</p>
+<div class="proof lemma admonition" id="lemma-8">
+<p class="admonition-title"><span class="caption-number">Lemma 2.8 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(v,w \in V\)</span> zwei linear unabhängige Vektoren.
 Dann können wir einen Vektor <span class="math notranslate nohighlight">\(\hat{w} \in V\)</span> berechnen mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \hat{w} \ \coloneqq \ w - \Pi_v(w) \ = \ w - \frac{\langle w, v \rangle}{\langle v,v \rangle} \cdot v,
 \end{equation*}\]</div>
-<p>so dass <span class="math notranslate nohighlight">\(\hat{w} \perp v\)</span> gilt.
-\end{lemma}
-\begin{proof}
-Wir betrachten folgende Umformungen:</p>
+<p>so dass <span class="math notranslate nohighlight">\(\hat{w} \perp v\)</span> gilt.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir betrachten folgende Umformungen:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -617,13 +632,15 @@ Wir betrachten folgende Umformungen:</p>
 \end{equation*}\]</div>
 <p>Und somit gilt <span class="math notranslate nohighlight">\(\hat{w} \perp v\)</span>.
 Die obigen Umformungen wären einfacher zu zeigen gewesen, wenn man die Gleichung mit <span class="math notranslate nohighlight">\(\langle \hat{w}, v \rangle\)</span> begonnen hätte.
-So konnte man jedoch sehen, dass die Aussage auch mit dem komplexen Standardskalarprodukt verträglich ist.
-\end{proof}</p>
-<p>Der folgende Algorithmus erklärt das Gram-Schmidt-Orthogonalisierungsverfahren zur Konstruktion einer Orthonormalbasis eines endlich-dimensionalen Euklidischen oder unitären Vektorraums.
-\begin{algorithm}[Gram-Schmidtsches Orthogonalisierungsverfahren]\label{alg:gram-schmidt}
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Euklidischer bzw. unitärer Vektorraum mit <span class="math notranslate nohighlight">\(\dim V = n\)</span>, dann lässt sich eine Orthonormalbasis <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> aus einer Familie von linear unabhängig Vektoren <span class="math notranslate nohighlight">\((w_1, \ldots, w_n)\)</span> von <span class="math notranslate nohighlight">\(V\)</span> wie folgt konstruieren.\[0.5cm]
-\noindent\textbf{1. Schritt:}\[0.3cm]
-Wähle den ersten Vektor <span class="math notranslate nohighlight">\(w_1 \in V\)</span> und setze</p>
+So konnte man jedoch sehen, dass die Aussage auch mit dem komplexen Standardskalarprodukt verträglich ist.</p>
+</div>
+<p>Der folgende Algorithmus erklärt das Gram-Schmidt-Orthogonalisierungsverfahren zur Konstruktion einer Orthonormalbasis eines endlich-dimensionalen Euklidischen oder unitären Vektorraums.</p>
+<div class="proof algorithm admonition" id="alg:gram-schmidt">
+<p class="admonition-title"><span class="caption-number">Algorithm 2.1 </span> (Gram-Schmidtsches Orthogonalisierungsverfahren)</p>
+<div class="algorithm-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Euklidischer bzw. unitärer Vektorraum mit <span class="math notranslate nohighlight">\(\dim V = n\)</span>, dann lässt sich eine Orthonormalbasis <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> aus einer Familie von linear unabhängig Vektoren <span class="math notranslate nohighlight">\((w_1, \ldots, w_n)\)</span> von <span class="math notranslate nohighlight">\(V\)</span> wie folgt konstruieren.</p>
+<p><strong>1. Schritt:</strong></p>
+<p>Wähle den ersten Vektor <span class="math notranslate nohighlight">\(w_1 \in V\)</span> und setze</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \tilde{v_1} \ \coloneqq \ w_1.
@@ -633,9 +650,8 @@ Wähle den ersten Vektor <span class="math notranslate nohighlight">\(w_1 \in V\
 \[\begin{equation*}
 v_1 \ \coloneqq \ \frac{\tilde{v_1}}{|| \tilde{v_1}||}.
 \end{equation*}\]</div>
-<p>\[0.3cm]
-\noindent\textbf{2. Schritt:}\[0.3cm]
-Wähle den zweiten Vektor <span class="math notranslate nohighlight">\(w_2 \in V\)</span> und berechne die orthogonale Projektion von <span class="math notranslate nohighlight">\(w_2\)</span> auf den normierten Vektor <span class="math notranslate nohighlight">\(v_1\)</span> als</p>
+<p><strong>2. Schritt:</strong></p>
+<p>Wähle den zweiten Vektor <span class="math notranslate nohighlight">\(w_2 \in V\)</span> und berechne die orthogonale Projektion von <span class="math notranslate nohighlight">\(w_2\)</span> auf den normierten Vektor <span class="math notranslate nohighlight">\(v_1\)</span> als</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Pi_{v_1}(w_2) \ \coloneqq \ \langle w_2, v_1\rangle v_1.
@@ -650,9 +666,8 @@ Wähle den zweiten Vektor <span class="math notranslate nohighlight">\(w_2 \in V
 \[\begin{equation*}
 v_2 \ \coloneqq \ \frac{\tilde{v_2}}{|| \tilde{v_2}||}.
 \end{equation*}\]</div>
-<p>\[0.3cm]
-\noindent\textbf{i. Schritt:}\[0.3cm]
-Wähle den <span class="math notranslate nohighlight">\(i\)</span>-ten Vektor <span class="math notranslate nohighlight">\(w_i \in V\)</span> und berechne die orthogonale Projektion von <span class="math notranslate nohighlight">\(w_i\)</span> auf die normierten Vektoren <span class="math notranslate nohighlight">\(v_1, \ldots, v_{i-1}\)</span> und ziehe diese Projektionen vom ursprünglichen Vektor <span class="math notranslate nohighlight">\(w_i\)</span> ab durch</p>
+<p><strong>i. Schritt:</strong></p>
+<p>Wähle den <span class="math notranslate nohighlight">\(i\)</span>-ten Vektor <span class="math notranslate nohighlight">\(w_i \in V\)</span> und berechne die orthogonale Projektion von <span class="math notranslate nohighlight">\(w_i\)</span> auf die normierten Vektoren <span class="math notranslate nohighlight">\(v_1, \ldots, v_{i-1}\)</span> und ziehe diese Projektionen vom ursprünglichen Vektor <span class="math notranslate nohighlight">\(w_i\)</span> ab durch</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \tilde{v_i} \ \coloneqq \ w_i  - \sum_{j=1}^{i-1} \langle w_i, v_j \rangle v_j.
@@ -662,9 +677,8 @@ Wähle den <span class="math notranslate nohighlight">\(i\)</span>-ten Vektor <s
 \[\begin{equation*}
 v_i \ \coloneqq \ \frac{\tilde{v_i}}{|| \tilde{v_i}||}.
 \end{equation*}\]</div>
-<p>\[0.3cm]
-\noindent\textbf{n. Schritt:}\[0.3cm]
-Wähle den <span class="math notranslate nohighlight">\(n\)</span>-ten Vektor <span class="math notranslate nohighlight">\(w_n \in V\)</span> und berechne die orthogonale Projektion von <span class="math notranslate nohighlight">\(w_n\)</span> auf die normierten Vektoren <span class="math notranslate nohighlight">\(v_1, \ldots, v_{n-1}\)</span> und ziehe diese Projektionen vom ursprünglichen Vektor <span class="math notranslate nohighlight">\(w_n\)</span> ab durch</p>
+<p><strong>n. Schritt:</strong></p>
+<p>Wähle den <span class="math notranslate nohighlight">\(n\)</span>-ten Vektor <span class="math notranslate nohighlight">\(w_n \in V\)</span> und berechne die orthogonale Projektion von <span class="math notranslate nohighlight">\(w_n\)</span> auf die normierten Vektoren <span class="math notranslate nohighlight">\(v_1, \ldots, v_{n-1}\)</span> und ziehe diese Projektionen vom ursprünglichen Vektor <span class="math notranslate nohighlight">\(w_n\)</span> ab durch</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \tilde{v_n} \ \coloneqq \ w_n  - \sum_{j=1}^{n-1} \langle w_n, v_j \rangle v_j.
@@ -674,26 +688,26 @@ Wähle den <span class="math notranslate nohighlight">\(n\)</span>-ten Vektor <s
 \[\begin{equation*}
 v_n \ \coloneqq \ \frac{\tilde{v_n}}{|| \tilde{v_n}||}.
 \end{equation*}\]</div>
-<p>\[0.3cm]
-Die Familie <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> bilden nach Konstruktion nun eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span>.
-\end{algorithm}</p>
-<p>Wir wollen das Gram-Schmidtsche Orthogonalisierungsverfahren mit einem kurzen Rechenbeispiel veranschaulichen.
-\begin{example}
-Sei <span class="math notranslate nohighlight">\(V = \mathbb{R}^2\)</span> der Euklidische Vektorraum und wir betrachten zwei linear unabhängige Vektoren <span class="math notranslate nohighlight">\(w_1, w_2 \in V\)</span>, die wir orthonormalisieren wollen mit</p>
+<p>Die Familie <span class="math notranslate nohighlight">\((v_1, \ldots, v_n)\)</span> bilden nach Konstruktion nun eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span>.</p>
+</div>
+</div><p>Wir wollen das Gram-Schmidtsche Orthogonalisierungsverfahren mit einem kurzen Rechenbeispiel veranschaulichen.</p>
+<div class="proof example admonition" id="example-10">
+<p class="admonition-title"><span class="caption-number">Example 2.10 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V = \mathbb{R}^2\)</span> der Euklidische Vektorraum und wir betrachten zwei linear unabhängige Vektoren <span class="math notranslate nohighlight">\(w_1, w_2 \in V\)</span>, die wir orthonormalisieren wollen mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 w_1 \ \coloneqq \begin{pmatrix} 3 \\ 1 \end{pmatrix}, \quad w_2 \ \coloneqq \begin{pmatrix} 2 \\ 2 \end{pmatrix}.
 \end{equation*}\]</div>
-<p>Wir nutzen Algorithmus \ref{alg:gram-schmidt} zur Konstruktion einer Orthonormalbasis aus <span class="math notranslate nohighlight">\(w_1\)</span> und <span class="math notranslate nohighlight">\(w_2\)</span>.\[0.3cm]
-\noindent\textbf{1. Schritt:}\[0.3cm]
-Wir setzen <span class="math notranslate nohighlight">\(\tilde{v_1} = w_1\)</span> und normieren den Vektor wie folgt:</p>
+<p>Wir nutzen Algorithmus <a class="reference internal" href="#alg:gram-schmidt">Algorithm 2.1</a> zur Konstruktion einer Orthonormalbasis aus <span class="math notranslate nohighlight">\(w_1\)</span> und <span class="math notranslate nohighlight">\(w_2\)</span>.</p>
+<p><strong>1. Schritt:</strong></p>
+<p>Wir setzen <span class="math notranslate nohighlight">\(\tilde{v_1} = w_1\)</span> und normieren den Vektor wie folgt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 v_1 \ = \ \frac{\tilde{v_1}}{||\tilde{v_1}||} \ = \ \frac{1}{\sqrt{10}} \cdot \begin{pmatrix} 3 \\ 1 \end{pmatrix}.
 \end{equation*}\]</div>
-<p>\[0.3cm]
-\noindent\textbf{2. Schritt:}\[0.3cm]
-Wir berechnen die orthogonale Projektion von <span class="math notranslate nohighlight">\(w_2\)</span> auf <span class="math notranslate nohighlight">\(v_1\)</span> wie folgt:</p>
+<p><strong>2. Schritt:</strong></p>
+<p>Wir berechnen die orthogonale Projektion von <span class="math notranslate nohighlight">\(w_2\)</span> auf <span class="math notranslate nohighlight">\(v_1\)</span> wie folgt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Pi_{v_1}(w_2) \ = \ \langle w_2, v_1\rangle \cdot  v_1 \ = \ \frac{1}{\sqrt{10}} \cdot \langle (2,2)^T, (3,1)^T \rangle \cdot \frac{(3,1)^T}{\sqrt{10}} \ = \ \frac{8}{10} \cdot \begin{pmatrix} 3 \\ 1 \end{pmatrix}.
@@ -717,8 +731,8 @@ v_2 \ = \ \frac{\tilde{v_2}}{||\tilde{v_2}||} \ = \ \sqrt{\frac{25}{40}}\cdot \f
 \langle v_2, v_2 \rangle \ &amp;= \ \frac{1}{10} \cdot \langle (-1,3)^T, (-1,3)^T \rangle \ = \ 1.\\
 \end{split}
 \end{equation*}\]</div>
-<p>\end{example}</p>
 </div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {

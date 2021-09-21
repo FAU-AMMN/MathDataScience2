@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -197,6 +197,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
      2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/normal.html">
+     2.8. Normale Endomorphismen
     </a>
    </li>
   </ul>
@@ -469,8 +474,8 @@
 <p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (Charakteristisches Polynom)</p>
 <div class="definition-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix und <span class="math notranslate nohighlight">\(I_n \in \mathbb{K}^{n \times n}\)</span> die entsprechende Einheitsmatrix, so bezeichnen wir die Abbildung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1091830c-6eae-434d-b141-9bb67651f505">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-1091830c-6eae-434d-b141-9bb67651f505" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bef48f7d-bd20-4a65-827e-1658939f42df">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-bef48f7d-bd20-4a65-827e-1658939f42df" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \begin{split}
 P_A \colon \mathbb{K} \ \rightarrow \ &amp; \mathbb{K} \\
 t  \ \mapsto \ &amp; \det(A - tI_n)
@@ -874,18 +879,22 @@ Die Aussage ist trivialerweise erfüllt, da für den Eigenvektor <span class="ma
 <p>\textbf{Induktionsschritt: <span class="math notranslate nohighlight">\(k-1 \rightarrow k\)</span>}\
 Die Induktionsannahme ist, dass die Aussage bereits für den Fall <span class="math notranslate nohighlight">\(k-1\)</span> gezeigt wurde.
 Seien <span class="math notranslate nohighlight">\(\alpha_1, \ldots, \alpha_k \in \mathbb{K}\)</span> so gewählt, dass gilt</p>
+<div class="math notranslate nohighlight" id="equation-eq-induktion-lin-abh">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-eq-induktion-lin-abh" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^k \alpha_i v_i \ = \ \vec{0}.\]</div>
 <p>Sei nun <span class="math notranslate nohighlight">\(\lambda_k \in \mathbb{C}\)</span> ein Eigenwert von <span class="math notranslate nohighlight">\(A\)</span>, der paarweise verschieden ist zu <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_{k-1} \in \mathbb{C}\)</span>.
-Wir multiplizieren die Gleichung <code class="xref eq docutils literal notranslate"><span class="pre">eq:induktion_lin_abh</span></code> mit dem Eigenwert <span class="math notranslate nohighlight">\(\lambda_k\)</span> und erhalten</p>
-<p>Außerdem erhalten wir aus Gleichung <code class="xref eq docutils literal notranslate"><span class="pre">eq:induktion_lin_abh</span></code> durch Multiplikation von links mit der Matrix <span class="math notranslate nohighlight">\(A\)</span> aus der Linearität folgenden Zusammenhang:</p>
+Wir multiplizieren die Gleichung <a class="reference internal" href="#equation-eq-induktion-lin-abh">(1.7)</a> mit dem Eigenwert <span class="math notranslate nohighlight">\(\lambda_k\)</span> und erhalten</p>
+<div class="math notranslate nohighlight" id="equation-eq-induktion-mult-lambda">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-eq-induktion-mult-lambda" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^k \alpha_i \lambda_k v_i \ = \ \vec{0}.\]</div>
+<p>Außerdem erhalten wir aus Gleichung <a class="reference internal" href="#equation-eq-induktion-lin-abh">(1.7)</a> durch Multiplikation von links mit der Matrix <span class="math notranslate nohighlight">\(A\)</span> aus der Linearität folgenden Zusammenhang:</p>
 <div class="math notranslate nohighlight" id="equation-eq-induktion-mult-a">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-eq-induktion-mult-a" title="Permalink to this equation">¶</a></span>\[A \cdot \sum_{i=1}^k  \alpha_i v_i \ = \ \sum_{i=1}^k  \alpha_i A v_i \ = \ \sum_{i=1}^k  \alpha_i \lambda_i v_i \ = \ \vec{0}.\]</div>
-<p>Wenn wir nun die rechte Seite von <a class="reference internal" href="#equation-eq-induktion-mult-a">(1.7)</a> von Gleichung <code class="xref eq docutils literal notranslate"><span class="pre">eq:induktion_mult_lambda</span></code> subtrahieren erhalten wir</p>
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-eq-induktion-mult-a" title="Permalink to this equation">¶</a></span>\[A \cdot \sum_{i=1}^k  \alpha_i v_i \ = \ \sum_{i=1}^k  \alpha_i A v_i \ = \ \sum_{i=1}^k  \alpha_i \lambda_i v_i \ = \ \vec{0}.\]</div>
+<p>Wenn wir nun die rechte Seite von <a class="reference internal" href="#equation-eq-induktion-mult-a">(1.9)</a> von Gleichung <a class="reference internal" href="#equation-eq-induktion-mult-lambda">(1.8)</a> subtrahieren erhalten wir</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \sum_{i=1}^k \alpha_i (\lambda_k - \lambda_i) v_i \ = \ \sum_{i=1}^{k-1} \alpha_i (\lambda_k - \lambda_i) v_i \ = \ \vec{0}.
 \end{equation*}\]</div>
 <p>Da wir <span class="math notranslate nohighlight">\(\lambda_k\)</span> als paarweise verschieden zu <span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_{k-1}\)</span> angenommen haben wissen wir, dass <span class="math notranslate nohighlight">\(\alpha_i = 0\)</span> für <span class="math notranslate nohighlight">\(i=1,\ldots,k-1\)</span> gelten muss, damit obige Gleichung gilt.
-Setzen wir dies in Gleichung <code class="xref eq docutils literal notranslate"><span class="pre">eq:induktion_lin_abh</span></code> ein, so folgt direkt, dass auch <span class="math notranslate nohighlight">\(\alpha_k = 0\)</span> gelten muss, da für den Eigenvektor <span class="math notranslate nohighlight">\(v_k \neq \vec{0}\)</span> gilt.
+Setzen wir dies in Gleichung <a class="reference internal" href="#equation-eq-induktion-lin-abh">(1.7)</a> ein, so folgt direkt, dass auch <span class="math notranslate nohighlight">\(\alpha_k = 0\)</span> gelten muss, da für den Eigenvektor <span class="math notranslate nohighlight">\(v_k \neq \vec{0}\)</span> gilt.
 Dies beweist also die lineare Unabhängigkeit der Eigenvektoren von <span class="math notranslate nohighlight">\(A\)</span> für paarweise verschiedene Eigenwerte.</p>
 </div>
 </div>

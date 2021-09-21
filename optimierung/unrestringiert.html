@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -197,6 +197,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
      2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/normal.html">
+     2.8. Normale Endomorphismen
     </a>
    </li>
   </ul>
@@ -469,8 +474,8 @@ Für eine genaue Charakterisierung führen wir zunächst den Begriff eines lokal
 \begin{definition}[Lokales und globales Minimum]
 Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
 Wir nennen einen Punkt <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> ein \emph{lokales Minimum} der Funktion <span class="math notranslate nohighlight">\(F\)</span>, falls es eine lokale Umgebung <span class="math notranslate nohighlight">\(U \subset \Omega\)</span> von <span class="math notranslate nohighlight">\(x^* \in U\)</span> gibt, so dass für alle <span class="math notranslate nohighlight">\(x \in U\)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea133361-11eb-42dc-beae-161d294d00c1">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-ea133361-11eb-42dc-beae-161d294d00c1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6f2b643b-cdd1-4448-be4b-9b65a36a8f21">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-6f2b643b-cdd1-4448-be4b-9b65a36a8f21" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \label{eq:lokales_minimum}
 F(x^*) \, \leq \, F(x), \quad \text{ für alle } x \in U.
 \end{equation}\]</div>
@@ -705,8 +710,8 @@ Da die Hesse-Matrix auf ganz <span class="math notranslate nohighlight">\(\R^2\)
 \begin{definition}[Konvexität]
 Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
 Wir nennen <span class="math notranslate nohighlight">\(F\)</span> \emph{konvex} wenn für beliebige Vektoren <span class="math notranslate nohighlight">\(x,y \in \Omega\)</span> die folgende Ungleichung für alle <span class="math notranslate nohighlight">\(0 \leq \alpha \leq 1\)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1de19f2b-38ef-4273-a49f-f8a9f0a61d9c">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-1de19f2b-38ef-4273-a49f-f8a9f0a61d9c" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:konvex}
+<div class="amsmath math notranslate nohighlight" id="equation-5cf5faeb-3b02-44a8-ab76-86cc81470b04">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-5cf5faeb-3b02-44a8-ab76-86cc81470b04" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:konvex}
 F(\alpha x + (1-\alpha)y) \ \leq \ \alpha F(x) + (1-\alpha)F(y).
 \end{equation}\]</div>
 <p>Wir nennen die Funktion <span class="math notranslate nohighlight">\(F\)</span> \emph{strikt konvex}, falls \eqref{eq:konvex} eine echte Ungleichung ist.</p>

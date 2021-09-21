@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -197,6 +197,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="selbstadjungiert.html">
      2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="normal.html">
+     2.8. Normale Endomorphismen
     </a>
    </li>
   </ul>
@@ -431,6 +436,44 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenschaften-orthogonaler-und-unitarer-endomorphismen">
+   2.6.1. Eigenschaften orthogonaler und unitärer Endomorphismen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-eigenschaften">
+   2.6.2. Matrix Eigenschaften
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenhang-zwischen-endormorphisnen-und-matrizen">
+   2.6.3. Zusammenhang zwischen Endormorphisnen und Matrizen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagonalisierung">
+   2.6.4. Diagonalisierung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beispiele-und-veranschaulichung">
+   2.6.5. Beispiele und Veranschaulichung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalform-fur-unitare-und-orthogonale-endomorphismen">
+   2.6.6. Normalform für unitäre und orthogonale Endomorphismen
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -439,53 +482,61 @@
         
               <div>
                 
-  <div class="section" id="orthogonale-und-unitare-endomorphismen">
+  <p>(s:unitäre_endomorphismen)=</p>
+<div class="section" id="orthogonale-und-unitare-endomorphismen">
 <h1><span class="section-number">2.6. </span>Orthogonale und unitäre Endomorphismen<a class="headerlink" href="#orthogonale-und-unitare-endomorphismen" title="Permalink to this headline">¶</a></h1>
 <p>Mit Hilfe des in den vorangegangenen Kapiteln eingeführten Skalarprodukts ist es uns möglich eine besondere Gruppe von Endomorphismen zu untersuchen - die orthogonalen und unitären Endomorphismen.
 Wir werden hierbei sehen, dass diese Abbildungen schöne mathematische Eigenschaften haben und insbesondere Längen- und Winkel-erhaltend sind.
 Daher sind sie besonders geeignet bei der Lösung von linearen Gleichungssystemen und Eigenwertproblemen.</p>
-<p>Orthogonale bzw. unitäre Endomorphismen lassen sich durch ihr Verhalten bezüglich des Standardskalarprodukts charakterisieren, worauf die folgende Definition basiert.
-\begin{definition}[Orthogonale und unitäre Endomorphismen]\label{def:orthogonale_endomorphismen}
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
-Dann heißt <span class="math notranslate nohighlight">\(F\)</span> \emph{orthogonal} bzw. \emph{unitär}, wenn</p>
+<p>Orthogonale bzw. unitäre Endomorphismen lassen sich durch ihr Verhalten bezüglich des Standardskalarprodukts charakterisieren, worauf die folgende Definition basiert.</p>
+<div class="proof definition admonition" id="def:orthogonale_endomorphismen">
+<p class="admonition-title"><span class="caption-number">Definition 2.17 </span> (Orthogonale und unitäre Endomorphismen)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
+Dann heißt <span class="math notranslate nohighlight">\(F\)</span> <em>orthogonal</em> bzw. <em>unitär</em>, wenn</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle F(v), F(w)\rangle \ = \ \langle v, w\rangle\qquad\text{für alle }v,w\in V\,.
 \end{equation*}\]</div>
-<p>\end{definition}</p>
-<p>Wir können nur mit Hilfe von Definition \ref{def:orthogonale_endomorphismen} bereits viele interessante Eigenschaften für orthogonale bzw. unitäre Endomorphismen ableiten, wie der folgende Satz zeigt.
-\begin{satz}\label{satz:orthogonale_endomorphismen}
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein orthogonaler bzw. unitärer Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
+</div>
+</div><div class="section" id="eigenschaften-orthogonaler-und-unitarer-endomorphismen">
+<h2><span class="section-number">2.6.1. </span>Eigenschaften orthogonaler und unitärer Endomorphismen<a class="headerlink" href="#eigenschaften-orthogonaler-und-unitarer-endomorphismen" title="Permalink to this headline">¶</a></h2>
+<p>Wir können nur mit Hilfe von Definition <a class="reference internal" href="#def:orthogonale_endomorphismen">Definition 2.17</a> bereits viele interessante Eigenschaften für orthogonale bzw. unitäre Endomorphismen ableiten, wie der folgende Satz zeigt.</p>
+<div class="proof theorem admonition" id="satz:orthogonale_endomorphismen">
+<p class="admonition-title"><span class="caption-number">Theorem 2.8 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer bzw. unitärer Vektorraum und <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein orthogonaler bzw. unitärer Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
 Seien außerdem <span class="math notranslate nohighlight">\(v,w \in V\)</span> beliebige Vektoren.
-Dann besitzt <span class="math notranslate nohighlight">\(F\)</span> folgende Eigenschaften:
-\begin{enumerate}[i)]
-\item <span class="math notranslate nohighlight">\(\Vert F(v)\Vert \ = \ \Vert v\Vert\)</span>,
-\item <span class="math notranslate nohighlight">\(\measuredangle (F(v), F(w) ) \ = \ \measuredangle (v,w)\)</span>,
-\item <span class="math notranslate nohighlight">\(v\perp w \ \Leftrightarrow \ F(v) \perp F(w)\)</span>,
-\item <span class="math notranslate nohighlight">\(F\)</span> ist Isomorphismus und <span class="math notranslate nohighlight">\(F^{-1}\)</span> ist auch orthogonal bzw. unitär,
-\item Für alle Eigenwerte <span class="math notranslate nohighlight">\(\lambda\in\K\)</span> von <span class="math notranslate nohighlight">\(F\)</span> gilt <span class="math notranslate nohighlight">\(\vert\lambda\vert=1.\)</span>
-\end{enumerate}
-\end{satz}
-\begin{proof}
-Wir beweisen die verschiedenen Eigenschaften des Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> durch Ausnutzen der Definition von orthogonalen bzw. unitären Endomorphismen.
-\begin{enumerate}[i)]
-\item Sei <span class="math notranslate nohighlight">\(v \in V\)</span>, dann gilt</p>
+Dann besitzt <span class="math notranslate nohighlight">\(F\)</span> folgende Eigenschaften:</p>
+<p><span class="math notranslate nohighlight">\(i)\)</span> <span class="math notranslate nohighlight">\(\Vert F(v)\Vert \ = \ \Vert v\Vert\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(ii)\)</span> <span class="math notranslate nohighlight">\(\measuredangle (F(v), F(w) ) \ = \ \measuredangle (v,w)\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(iii)\)</span> <span class="math notranslate nohighlight">\(v\perp w \ \Leftrightarrow \ F(v) \perp F(w)\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(iv)\)</span> <span class="math notranslate nohighlight">\(F\)</span> ist Isomorphismus und <span class="math notranslate nohighlight">\(F^{-1}\)</span> ist auch orthogonal bzw. unitär,</p>
+<p><span class="math notranslate nohighlight">\(v)\)</span> Für alle Eigenwerte <span class="math notranslate nohighlight">\(\lambda\in\K\)</span> von <span class="math notranslate nohighlight">\(F\)</span> gilt <span class="math notranslate nohighlight">\(\vert\lambda\vert=1.\)</span></p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir beweisen die verschiedenen Eigenschaften des Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> durch Ausnutzen der Definition von orthogonalen bzw. unitären Endomorphismen.</p>
+<p><strong>Ad <span class="math notranslate nohighlight">\(i)\)</span></strong></p>
+<p>Sei <span class="math notranslate nohighlight">\(v \in V\)</span>, dann gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 || F(v) || \ = \ \sqrt{ \langle F(v), F(v) \rangle } \ = \ \sqrt{  \langle v, v \rangle } \ = \ ||v||.
 \end{equation*}\]</div>
-<p>\item Seien <span class="math notranslate nohighlight">\(v,w \in V\)</span>, dann können wir unter Ausnutzung von i) zeigen, dass gilt:</p>
+<p><strong>Ad <span class="math notranslate nohighlight">\(ii)\)</span></strong></p>
+<p>Seien <span class="math notranslate nohighlight">\(v,w \in V\)</span>, dann können wir unter Ausnutzung von i) zeigen, dass gilt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \measuredangle (F(v), F(w) )  \ = \ \arccos \frac{\langle F(v), F(w) \rangle }{||F(v)|| \cdot ||F(w)||} \ = \ \arccos \frac{\langle v, w \rangle }{||v|| \cdot ||w||} \ = \ \measuredangle (v, w ).
 \end{equation*}\]</div>
-<p>\item Seien <span class="math notranslate nohighlight">\(v,w \in V\)</span> mit <span class="math notranslate nohighlight">\(v \perp w\)</span>, dann ist die Aussage natürlich ein Spezialfall von ii).
+<p><strong>Ad <span class="math notranslate nohighlight">\(iii)\)</span></strong></p>
+<p>Seien <span class="math notranslate nohighlight">\(v,w \in V\)</span> mit <span class="math notranslate nohighlight">\(v \perp w\)</span>, dann ist die Aussage natürlich ein Spezialfall von ii).
 Wir können aber auch direkt nachrechnen, dass gilt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle F(v), F(w) \rangle \ = \ \langle v, w \rangle \ = \ 0.
 \end{equation*}\]</div>
-<p>\item Wir müssen für die Aussage zeigen, dass <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> injektiv ist und der Kern von <span class="math notranslate nohighlight">\(F\)</span> nur die Null enthält, denn dann gilt nach dem Dimensionssatz \cite[Satz 2.2.4]{fischer} schon, dass <span class="math notranslate nohighlight">\(\Bild(F) = V\)</span> gelten muss und es sich somit um einen Isomorphismus handelt.
+<p><strong>Ad <span class="math notranslate nohighlight">\(iv)\)</span></strong></p>
+<p>Wir müssen für die Aussage zeigen, dass <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> injektiv ist und der Kern von <span class="math notranslate nohighlight">\(F\)</span> nur die Null enthält, denn dann gilt nach dem Dimensionssatz Satz 2.2.4 <span id="id1">[<a class="reference internal" href="../references.html#id3">Fis05</a>]</span> schon, dass <span class="math notranslate nohighlight">\(\Bild(F) = V\)</span> gelten muss und es sich somit um einen Isomorphismus handelt.
 Sei also <span class="math notranslate nohighlight">\(v \in \Kern(F)\)</span>, dann gilt schon:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -497,40 +548,45 @@ Sei also <span class="math notranslate nohighlight">\(v \in \Kern(F)\)</span>, d
 \[\begin{equation*}
 \langle F^{-1}(v), F^{-1}(v) \rangle \ = \ \langle w, w \rangle \ = \ \langle F(w), F(w) \rangle \ = \ \langle F \circ F^{-1}(v), F \circ F^{-1}(v) \rangle \ = \ \langle v, v \rangle.
 \end{equation*}\]</div>
-<p>Daher ist <span class="math notranslate nohighlight">\(F^{-1}\)</span> also auch orthogonal bzw. unitär.
-\item Sei <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> ein Eigenwert von <span class="math notranslate nohighlight">\(F\)</span> mit zugehörigem Eigenvektor <span class="math notranslate nohighlight">\(v \in V\)</span>, so gilt wegen i):</p>
+<p>Daher ist <span class="math notranslate nohighlight">\(F^{-1}\)</span> also auch orthogonal bzw. unitär.</p>
+<p><strong><span class="math notranslate nohighlight">\(Ad v)\)</span></strong></p>
+<p>Sei <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> ein Eigenwert von <span class="math notranslate nohighlight">\(F\)</span> mit zugehörigem Eigenvektor <span class="math notranslate nohighlight">\(v \in V\)</span>, so gilt wegen <span class="math notranslate nohighlight">\(i)\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||v|| \ = \ ||F(v)|| \ = \ ||\lambda v|| \ = \ |\lambda| \cdot ||v||.
 \end{equation*}\]</div>
-<p>Diese Gleichung kann nur gelten, wenn <span class="math notranslate nohighlight">\(|\lambda| = 1\)</span> ist.
-\end{enumerate}
-\end{proof}</p>
+<p>Diese Gleichung kann nur gelten, wenn <span class="math notranslate nohighlight">\(|\lambda| = 1\)</span> ist.</p>
+</div>
 <p>Wir können einen Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> von <span class="math notranslate nohighlight">\(V\)</span> schon als orthogonal bzw. unitär erkennen, sobald er Längen-erhaltend ist, wie folgendes Lemma zeigt.
-Solche Abbildungen werden \emph{Isometrien} genannt.
-Damit gilt auch die Umkehrung von Aussage <span class="math notranslate nohighlight">\(i)\)</span> in Satz \ref{satz:orthogonale_endomorphismen}.
-\begin{lemma}
-Sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus mit</p>
+Solche Abbildungen werden <em>Isometrien</em> genannt.
+Damit gilt auch die Umkehrung von Aussage <span class="math notranslate nohighlight">\(i)\)</span> in Satz <a class="reference internal" href="#satz:orthogonale_endomorphismen">Theorem 2.8</a>.</p>
+<div class="proof lemma admonition" id="lemma-2">
+<p class="admonition-title"><span class="caption-number">Lemma 2.9 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Vert F(v)\Vert \, = \, \Vert v\Vert \quad \text{ für alle } v\in V.
 \end{equation*}\]</div>
-<p>Dann ist <span class="math notranslate nohighlight">\(F\)</span> orthogonal bzw. unitär.
-\end{lemma}
-\begin{proof}
-Aus der Invarianz der Norm <span class="math notranslate nohighlight">\(||F(v)|| = ||v||\)</span> eines Vektors <span class="math notranslate nohighlight">\(v \in V\)</span> folgt auch schon die Invarianz der quadratischen Norm <span class="math notranslate nohighlight">\(||v||^2\)</span> von <span class="math notranslate nohighlight">\(v\)</span>.
+<p>Dann ist <span class="math notranslate nohighlight">\(F\)</span> orthogonal bzw. unitär.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Aus der Invarianz der Norm <span class="math notranslate nohighlight">\(||F(v)|| = ||v||\)</span> eines Vektors <span class="math notranslate nohighlight">\(v \in V\)</span> folgt auch schon die Invarianz der quadratischen Norm <span class="math notranslate nohighlight">\(||v||^2\)</span> von <span class="math notranslate nohighlight">\(v\)</span>.
 Dies ist jedoch gerade die quadratische Form des kanonischen Skalarprodukts in <span class="math notranslate nohighlight">\(V\)</span>.
-Mit Hilfe der Polarisierungsformel in Satz \ref{satz:polarisierung} folgt aus der Invarianz der quadratischen Form schon die Invarianz des Skalarprodukts selbst.
-Dies bedeutet nach Definition \ref{def:orthogonale_endomorphismen}, dass <span class="math notranslate nohighlight">\(F\)</span> orthogonal bzw. unitär sein muss.
-\end{proof}</p>
+Mit Hilfe der Polarisierungsformel in Satz <a class="reference internal" href="sesqui.html#satz:polarisierung">Theorem 2.4</a> folgt aus der Invarianz der quadratischen Form schon die Invarianz des Skalarprodukts selbst.
+Dies bedeutet nach Definition <a class="reference internal" href="#def:orthogonale_endomorphismen">Definition 2.17</a>, dass <span class="math notranslate nohighlight">\(F\)</span> orthogonal bzw. unitär sein muss.</p>
+</div>
+</div>
+<div class="section" id="matrix-eigenschaften">
+<h2><span class="section-number">2.6.2. </span>Matrix Eigenschaften<a class="headerlink" href="#matrix-eigenschaften" title="Permalink to this headline">¶</a></h2>
 <p>Nutzt man in <span class="math notranslate nohighlight">\(\R^n\)</span> und <span class="math notranslate nohighlight">\(\C^n\)</span> mit dem kanonischen Skalarprodukt die darstellende Matrix <span class="math notranslate nohighlight">\(A\)</span> eines orthogonalen bzw. unitären Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> von <span class="math notranslate nohighlight">\(V\)</span>, so lässt sich beobachten, dass für alle <span class="math notranslate nohighlight">\(x,y \in \mathbb{K}^n\)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f7ec915-431b-4aba-9570-9f522d88aa13">
-<span class="eqno">(2.9)<a class="headerlink" href="#equation-2f7ec915-431b-4aba-9570-9f522d88aa13" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:unitäre_matrix}
-\langle x, y \rangle \ = \ \langle Ax, Ay \rangle \ = \ (Ax)^T\overline{Ay} \ = \ x^T(A^T\bar{A})\overline{y} \ = \ x^T(\bar{A}^T A)^T\overline{y}.
-\end{equation}\]</div>
-<p>Die Matrix <span class="math notranslate nohighlight">\(\bar{A}^T\)</span> in Gleichung \eqref{eq:unitäre_matrix} hat eine besondere Bedeutung wie die folgende Definition zeigt.
-\begin{definition}[Adjungierte Matrix]\label{def:adjungierte_matrix}
-Sei <span class="math notranslate nohighlight">\(A \in \mathbb{C}^{m \times n}\)</span> eine komplexe Matrix mit</p>
+<div class="math notranslate nohighlight" id="equation-eq-unitare-matrix">
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-eq-unitare-matrix" title="Permalink to this equation">¶</a></span>\[\langle x, y \rangle \ = \ \langle Ax, Ay \rangle \ = \ (Ax)^T\overline{Ay} \ = \ x^T(A^T\bar{A})\overline{y} \ = \ x^T(\bar{A}^T A)^T\overline{y}.\]</div>
+<p>Die Matrix <span class="math notranslate nohighlight">\(\bar{A}^T\)</span> in Gleichung <a class="reference internal" href="#equation-eq-unitare-matrix">(2.9)</a> hat eine besondere Bedeutung wie die folgende Definition zeigt.</p>
+<div class="proof definition admonition" id="def:adjungierte_matrix">
+<p class="admonition-title"><span class="caption-number">Definition 2.18 </span> (Adjungierte Matrix)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{C}^{m \times n}\)</span> eine komplexe Matrix mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 A \ = \
@@ -540,7 +596,7 @@ a_{11} &amp; \cdots &amp; a_{1n}\\
 a_{m1} &amp; \cdots &amp; a_{mn}
 \end{pmatrix},
 \end{equation*}\]</div>
-<p>dann definieren wir die \emph{adjungierte Matrix} <span class="math notranslate nohighlight">\(A^* \in \mathbb{C}^{n \times m}\)</span>, auch \emph{Adjungierte} genannt, als die komplexe Konjugation der transponierten Matrix von <span class="math notranslate nohighlight">\(A\)</span>, d.h.,</p>
+<p>dann definieren wir die <em>adjungierte Matrix</em> <span class="math notranslate nohighlight">\(A^* \in \mathbb{C}^{n \times m}\)</span>, auch <em>Adjungierte</em> genannt, als die komplexe Konjugation der transponierten Matrix von <span class="math notranslate nohighlight">\(A\)</span>, d.h.,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 A^* \ \coloneqq \ \bar{A}^T \ = \ \overline{A^T} \ = \ 
@@ -550,28 +606,32 @@ A^* \ \coloneqq \ \bar{A}^T \ = \ \overline{A^T} \ = \
 \bar{a}_{1n} &amp; \cdots &amp; \bar{a}_{mn}
 \end{pmatrix}.
 \end{equation*}\]</div>
-<p>Ist <span class="math notranslate nohighlight">\(A\)</span> eine reelle Matrix, so ist die Adjungierte lediglich die transponierte Matrix von <span class="math notranslate nohighlight">\(A\)</span>, d.h., <span class="math notranslate nohighlight">\(A^* = A^T\)</span>.
-\end{definition}</p>
-<p>Für die darstellende Matrix eines unitären Endomorphismus muss also nach Gleichung \eqref{eq:unitäre_matrix} gelten, dass <span class="math notranslate nohighlight">\(A^* \cdot A = E_n\)</span> gilt, was die folgende Definition motiviert.
-\begin{definition}[Orthogonale und unitäre Matrix]
-Eine Matrix <span class="math notranslate nohighlight">\(A\in\operatorname{GL}(n;\R)\)</span> heißt \emph{orthogonal}, falls gilt</p>
+<p>Ist <span class="math notranslate nohighlight">\(A\)</span> eine reelle Matrix, so ist die Adjungierte lediglich die transponierte Matrix von <span class="math notranslate nohighlight">\(A\)</span>, d.h., <span class="math notranslate nohighlight">\(A^* = A^T\)</span>.</p>
+</div>
+</div><p>Für die darstellende Matrix eines unitären Endomorphismus muss also nach Gleichung <a class="reference internal" href="#equation-eq-unitare-matrix">(2.9)</a> gelten, dass <span class="math notranslate nohighlight">\(A^* \cdot A = E_n\)</span> gilt, was die folgende Definition motiviert.</p>
+<div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 2.19 </span> (Orthogonale und unitäre Matrix)</p>
+<div class="definition-content section" id="proof-content">
+<p>Eine Matrix <span class="math notranslate nohighlight">\(A\in\operatorname{GL}(n;\R)\)</span> heißt <em>orthogonal</em>, falls gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 A^{-1} \ = \ A^T.
 \end{equation*}\]</div>
-<p>Eine Matrix <span class="math notranslate nohighlight">\(A\in\operatorname{GL}(n;\C)\)</span> heißt \emph{unitär}, falls gilt</p>
+<p>Eine Matrix <span class="math notranslate nohighlight">\(A\in\operatorname{GL}(n;\C)\)</span> heißt <em>unitär</em>, falls gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 A^{-1} \ = \ A^*.
 \end{equation*}\]</div>
-<p>\end{definition}</p>
-<p>Aus der Gleichung <span class="math notranslate nohighlight">\(A^* \cdot A = E_n\)</span> können wir folgende interessante Beobachtungen zur Gestalt und Determinante einer unitären Matrix machen.
-\begin{lemma}
-Sei <span class="math notranslate nohighlight">\(A\)</span> eine unitäre Matrix.
-Dann bilden sowohl die Spalten als auch die Zeilen von <span class="math notranslate nohighlight">\(A\)</span> eine Orthonormalbasis des <span class="math notranslate nohighlight">\(\mathbb{K}^n\)</span>.
-\end{lemma}
-\begin{proof}
-Da <span class="math notranslate nohighlight">\(A\)</span> unitär ist gilt per Definition, dass <span class="math notranslate nohighlight">\(A^{-1} = A^*\)</span> gilt. Daraus folgt einerseits</p>
+</div>
+</div><p>Aus der Gleichung <span class="math notranslate nohighlight">\(A^* \cdot A = E_n\)</span> können wir folgende interessante Beobachtungen zur Gestalt und Determinante einer unitären Matrix machen.</p>
+<div class="proof lemma admonition" id="lemma-5">
+<p class="admonition-title"><span class="caption-number">Lemma 2.10 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine unitäre Matrix.
+Dann bilden sowohl die Spalten als auch die Zeilen von <span class="math notranslate nohighlight">\(A\)</span> eine Orthonormalbasis des <span class="math notranslate nohighlight">\(\mathbb{K}^n\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Da <span class="math notranslate nohighlight">\(A\)</span> unitär ist gilt per Definition, dass <span class="math notranslate nohighlight">\(A^{-1} = A^*\)</span> gilt. Daraus folgt einerseits</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \delta_{i,j} \ = \ E_n \ = \ A\cdot A^{-1} \ = \ A\cdot A^*,
@@ -582,14 +642,16 @@ Gleichzeitig gilt aber auch</p>
 \[\begin{equation*}
 \delta_{i,j} \ = \ E_n \ = \ A^{-1}\cdot A \ = \ A^*\cdot A,
 \end{equation*}\]</div>
-<p>also müssen die Spalten von <span class="math notranslate nohighlight">\(A\)</span> eine Orthonormalbasis des <span class="math notranslate nohighlight">\(\mathbb{K}^n\)</span> bilden.
-\end{proof}</p>
-<p>\begin{lemma}
-Sei <span class="math notranslate nohighlight">\(A\)</span> eine unitäre Matrix.
-Dann gilt entweder <span class="math notranslate nohighlight">\(\det A = 1\)</span> oder <span class="math notranslate nohighlight">\(\det A = -1\)</span>.
-\end{lemma}
-\begin{proof}
-Für eine komplexe Zahl <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span> mit <span class="math notranslate nohighlight">\(z \coloneqq a + ib\)</span> und <span class="math notranslate nohighlight">\(a,b \in \mathbb{R}\)</span> gilt offensichtlich:</p>
+<p>also müssen die Spalten von <span class="math notranslate nohighlight">\(A\)</span> eine Orthonormalbasis des <span class="math notranslate nohighlight">\(\mathbb{K}^n\)</span> bilden.</p>
+</div>
+<div class="proof lemma admonition" id="lemma-6">
+<p class="admonition-title"><span class="caption-number">Lemma 2.11 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine unitäre Matrix.
+Dann gilt entweder <span class="math notranslate nohighlight">\(\det A = 1\)</span> oder <span class="math notranslate nohighlight">\(\det A = -1\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Für eine komplexe Zahl <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span> mit <span class="math notranslate nohighlight">\(z \coloneqq a + ib\)</span> und <span class="math notranslate nohighlight">\(a,b \in \mathbb{R}\)</span> gilt offensichtlich:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 z \cdot \bar{z} \ = \ (a + ib) \cdot (a - ib) \ = \ a^2 - aib + aib - i^2 b^2 \ = \ a^2 + b^2 \ = \ |z|^2.
@@ -599,26 +661,31 @@ z \cdot \bar{z} \ = \ (a + ib) \cdot (a - ib) \ = \ a^2 - aib + aib - i^2 b^2 \ 
 \[\begin{equation*}
 | \det A |^2 \ = \ \det A\cdot\overline{\det A} \ = \ \det A\cdot \det A^*\ = \ \det(A\cdot A^*) \ = \ \det(E_n) \ = \ 1.
 \end{equation*}\]</div>
-<p>Damit wissen wir, dass für unitäre Matrizen gilt <span class="math notranslate nohighlight">\(\det A = \pm1.\)</span>
-\end{proof}</p>
+<p>Damit wissen wir, dass für unitäre Matrizen gilt <span class="math notranslate nohighlight">\(\det A = \pm1.\)</span></p>
+</div>
 <p>Das Vorzeichen der Determinante hat eine wichtige geometrische Bedeutung, denn falls <span class="math notranslate nohighlight">\(\det A=+1\)</span> gilt, bleiben Orientierungen unter der Wirkung von <span class="math notranslate nohighlight">\(A\)</span> erhalten.
-Solch orthogonale Matrizen nennt man daher auch \emph{eigentlich orthogonal} und sie bilden eine abgeschlossene Gruppe, wie folgende Bemerkung feststellt.
-\begin{remark}
-Die Mengen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-50a3cea2-3ff7-40d5-bd76-36087d0fcd05">
-<span class="eqno">(2.10)<a class="headerlink" href="#equation-50a3cea2-3ff7-40d5-bd76-36087d0fcd05" title="Permalink to this equation">¶</a></span>\[\begin{align}
+Solch orthogonale Matrizen nennt man daher auch <em>eigentlich orthogonal</em> und sie bilden eine abgeschlossene Gruppe, wie folgende Bemerkung feststellt.</p>
+<div class="proof remark admonition" id="remark-7">
+<p class="admonition-title"><span class="caption-number">Remark 2.7 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Die Mengen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
 \operatorname{O}(n) \ &amp;:= \ \left\lbrace A\in\operatorname{GL}(n;\R) ~\vert~ A^{-1} = A^T\right\rbrace,\tag{orthogonale Gruppe}\\
 \operatorname{SO}(n)\ &amp;:= \ \left\lbrace A\in\operatorname{O}(n) ~\vert~ \det A=1\right\rbrace,\tag{spezielle orthogonale Gruppe}\\
 \operatorname{U}(n) \ &amp;:= \ \left\lbrace A\in\operatorname{GL}(n;\C) ~\vert~ A^{-1} = \bar{A}^T\right\rbrace,\tag{unitäre Gruppe}\\
 \operatorname{SU}(n) \ &amp;:= \ \left\lbrace A\in\operatorname{U}(n) ~\vert~ \det A=1\right\rbrace,\tag{spezielle unitäre Gruppe}
-\end{align}\]</div>
-<p>der \emph{orthogonalen}, \emph{speziellen orthogonalen}, \emph{unitären} und \emph{speziellen unitären} Matrizen sind Untergruppen von <span class="math notranslate nohighlight">\(\operatorname{GL}(n;\R)\)</span> bzw. <span class="math notranslate nohighlight">\(\operatorname{GL}(n;\C)\)</span>.
-\end{remark}</p>
-<p>Wir diskutieren im Folgenden zwei Beispiele von orthogonalen bzw. unitären Matrizen.
-\begin{example}
-Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{3\times3}\)</span>, dann betrachten wir zwei einfache Beispiele.
-\begin{enumerate}
-\item Die Einheitsmatrix <span class="math notranslate nohighlight">\(A = E_3 \in \mathbb{R}^{3\times 3}\)</span> mit</p>
+\end{align*}\]</div>
+<p>der <em>orthogonalen</em>, <em>speziellen orthogonalen</em>, <em>unitären</em> und <em>speziellen unitären</em> Matrizen sind Untergruppen von <span class="math notranslate nohighlight">\(\operatorname{GL}(n;\R)\)</span> bzw. <span class="math notranslate nohighlight">\(\operatorname{GL}(n;\C)\)</span>.</p>
+</div>
+</div><p>Wir diskutieren im Folgenden zwei Beispiele von orthogonalen bzw. unitären Matrizen.</p>
+<div class="proof example admonition" id="example-8">
+<p class="admonition-title"><span class="caption-number">Example 2.11 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{3\times3}\)</span>, dann betrachten wir zwei einfache Beispiele.</p>
+<ul class="simple">
+<li><p>Die Einheitsmatrix <span class="math notranslate nohighlight">\(A = E_3 \in \mathbb{R}^{3\times 3}\)</span> mit</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 A \ \coloneqq \ 
@@ -629,8 +696,10 @@ A \ \coloneqq \
 \end{pmatrix}
 \end{equation*}\]</div>
 <p>ist eine orthogonale Matrix, da offensichtlich gilt <span class="math notranslate nohighlight">\(A^T = A = A^{-1}\)</span>.
-Es gilt sogar <span class="math notranslate nohighlight">\(A \in \operatorname{SO}(3)\)</span>, da <span class="math notranslate nohighlight">\(\det A = +1\)</span> ist.
-\item Die Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{C}^{3\times 3}\)</span> mit</p>
+Es gilt sogar <span class="math notranslate nohighlight">\(A \in \operatorname{SO}(3)\)</span>, da <span class="math notranslate nohighlight">\(\det A = +1\)</span> ist.</p>
+<ul class="simple">
+<li><p>Die Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{C}^{3\times 3}\)</span> mit</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 A \ \coloneqq \
@@ -674,19 +743,23 @@ A \cdot A^* \ = \
 0 &amp; 0 &amp; 1
 \end{pmatrix}.
 \end{equation*}\]</div>
-<p>Es gilt sogar <span class="math notranslate nohighlight">\(A \in \operatorname{SU}(3)\)</span>, da <span class="math notranslate nohighlight">\(\det A = +1\)</span> ist.
-\end{enumerate}
-\end{example}</p>
-<p>Der folgende Satz stellt eine direkte Beziehung zwischen orthogonalen bzw. unitären Endomorphismen und den Eigenschaften ihrer darstellenden Matrizen bezüglich bestimmter Basen fest.
-\begin{satz}\label{satz:orthogonale_matrizen}
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer bzw. unitärer Vektorraum mit einer Orthonormalbasis <span class="math notranslate nohighlight">\(B\)</span> und <span class="math notranslate nohighlight">\(F\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>. Dann gilt:</p>
+<p>Es gilt sogar <span class="math notranslate nohighlight">\(A \in \operatorname{SU}(3)\)</span>, da <span class="math notranslate nohighlight">\(\det A = +1\)</span> ist.</p>
+</div>
+</div></div>
+<div class="section" id="zusammenhang-zwischen-endormorphisnen-und-matrizen">
+<h2><span class="section-number">2.6.3. </span>Zusammenhang zwischen Endormorphisnen und Matrizen<a class="headerlink" href="#zusammenhang-zwischen-endormorphisnen-und-matrizen" title="Permalink to this headline">¶</a></h2>
+<p>Der folgende Satz stellt eine direkte Beziehung zwischen orthogonalen bzw. unitären Endomorphismen und den Eigenschaften ihrer darstellenden Matrizen bezüglich bestimmter Basen fest.</p>
+<div class="proof theorem admonition" id="satz:orthogonale_matrizen">
+<p class="admonition-title"><span class="caption-number">Theorem 2.9 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein Euklidischer bzw. unitärer Vektorraum mit einer Orthonormalbasis <span class="math notranslate nohighlight">\(B\)</span> und <span class="math notranslate nohighlight">\(F\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>. Dann gilt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 F \text{ ist orthogonal (bzw. unitär)} \ \Leftrightarrow \ M_B(F) \text{ ist orthogonal (bzw. unitär)}\,.
 \end{equation*}\]</div>
-<p>\end{satz}
-\begin{proof}
-Wir zeigen die Aussage für den allgemeineren Fall eines unitären Vektorraums.
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir zeigen die Aussage für den allgemeineren Fall eines unitären Vektorraums.
 Sei <span class="math notranslate nohighlight">\(A:= M_B(F)\in \mathbb{K}^{n\times n}\)</span> die darstellende Matrix von <span class="math notranslate nohighlight">\(F\)</span> bezüglich der Orthonormalbasis <span class="math notranslate nohighlight">\(B\)</span> und für <span class="math notranslate nohighlight">\(v,w\in V\)</span> seien <span class="math notranslate nohighlight">\(x, y \in \mathbb{K}^n\)</span> die zugehörigen Koordinaten, d.h.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -702,19 +775,24 @@ Sei <span class="math notranslate nohighlight">\(A:= M_B(F)\in \mathbb{K}^{n\tim
 \[\begin{equation*}
  \langle F(v), F(w) \rangle \ = \ \langle Ax, Ay \rangle \ = \ x^TA^T\bar{A}\bar{y} \ = \ x^T \bar{y} \ = \ \langle x, y \rangle \ = \ \langle v, w \rangle.
  \end{equation*}\]</div>
-<p>Also genau dann wenn <span class="math notranslate nohighlight">\(A^T \cdot \bar{A} = I_n\)</span> gilt, was der Fall ist, wenn <span class="math notranslate nohighlight">\(A\)</span> unitär ist.
-\end{proof}</p>
+<p>Also genau dann wenn <span class="math notranslate nohighlight">\(A^T \cdot \bar{A} = I_n\)</span> gilt, was der Fall ist, wenn <span class="math notranslate nohighlight">\(A\)</span> unitär ist.</p>
+</div>
+</div>
+<div class="section" id="diagonalisierung">
+<h2><span class="section-number">2.6.4. </span>Diagonalisierung<a class="headerlink" href="#diagonalisierung" title="Permalink to this headline">¶</a></h2>
 <p>Wir wollen im folgenden untersuchen wie die Normalform eines orthogonalen bzw. unitären Endomorphismus aussieht.
-Hierbei werden wir die mathematischen Werkzeuge aus der Eigenwerttheorie in Kapitel \ref{ch:eigenwerttheorie} einsetzen können.
-Hierzu beginnen wir mit der (mathematisch schöneren) \textbf{Normalform von unitären Endomorphismen}, die im folgenden Satz beschrieben ist.
-\begin{satz}[Diagonalisierungssatz]\label{satz:endomorphismen_diagonalisierung}
-Jeder unitäre Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> eines unitären Vektorraums <span class="math notranslate nohighlight">\(V\)</span> besitzt eine Orthonormalbasis aus Eigenvektoren von <span class="math notranslate nohighlight">\(F\)</span>.
-Insbesondere ist er diagonalisierbar.
-\end{satz}
-\begin{proof}
-Wir führen den Beweis mittels vollständiger Induktion über <span class="math notranslate nohighlight">\(n=\dim V\)</span>.\[0.3cm]
-\textbf{Induktionsanfang: <span class="math notranslate nohighlight">\(n=1\)</span>}\<br />
-Da <span class="math notranslate nohighlight">\(F\)</span> unitär ist muss gelten</p>
+Hierbei werden wir die mathematischen Werkzeuge aus der Eigenwerttheorie in Kapitel <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">ch:eigenwerttheorie</span></code> einsetzen können.
+Hierzu beginnen wir mit der (mathematisch schöneren) <strong>Normalform von unitären Endomorphismen,</strong> die im folgenden Satz beschrieben ist.</p>
+<div class="proof theorem admonition" id="satz:endomorphismen_diagonalisierung">
+<p class="admonition-title"><span class="caption-number">Theorem 2.10 </span> (Diagonalisierungssatz)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Jeder unitäre Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> eines unitären Vektorraums <span class="math notranslate nohighlight">\(V\)</span> besitzt eine Orthonormalbasis aus Eigenvektoren von <span class="math notranslate nohighlight">\(F\)</span>.
+Insbesondere ist er diagonalisierbar.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof.   Wir führen den Beweis mittels vollständiger Induktion über <span class="math notranslate nohighlight">\(n=\dim V\)</span>.\[0.3cm]</p>
+<p><strong>Induktionsanfang: <span class="math notranslate nohighlight">\(n=1\)</span></strong></p>
+<p>Da <span class="math notranslate nohighlight">\(F\)</span> unitär ist muss gelten</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
  \langle F(v), F(w) \rangle = \langle v, w \rangle, \quad \text{ für alle } v,w \in V.
@@ -722,10 +800,9 @@ Da <span class="math notranslate nohighlight">\(F\)</span> unitär ist muss gelt
 <p>Im eindimensionalen Fall, kann dies nur gelten, falls <span class="math notranslate nohighlight">\(F(v) = v\)</span> oder <span class="math notranslate nohighlight">\(F(v) = -v\)</span> für alle <span class="math notranslate nohighlight">\(v \in V\)</span> gilt.
 Dies erfüllt aber schon die Eigenwertgleichung für den Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span> oder <span class="math notranslate nohighlight">\(\lambda_1 = -1\)</span>.
 Für beide Fälle ist <span class="math notranslate nohighlight">\(v_1 = 1\)</span> der zugehörige Eigenvektor und es ist klar, dass <span class="math notranslate nohighlight">\(v_1\)</span> eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span> bildet.
-Damit ist <span class="math notranslate nohighlight">\(F\)</span> nach Definition \ref{def:diagonalisierbarkeit} diagonalisierbar.
-~\[0.3cm]
-\textbf{Induktionsschritt: <span class="math notranslate nohighlight">\(n-1 \rightarrow n\)</span>}\
-Die Induktionsannahme ist, dass die Aussage bereits für den Fall <span class="math notranslate nohighlight">\(n-1\)</span> gezeigt wurde.
+Damit ist <span class="math notranslate nohighlight">\(F\)</span> nach Definition <a class="reference internal" href="../eigenwerte/diag.html#def:diagonalisierbarkeit">Definition 1.10</a> diagonalisierbar.</p>
+<p><strong>Induktionsschritt</strong>: <span class="math notranslate nohighlight">\(n-1 \rightarrow n\)</span>**</p>
+<p>Die Induktionsannahme ist, dass die Aussage bereits für den Fall <span class="math notranslate nohighlight">\(n-1\)</span> gezeigt wurde.
 Wir betrachten für <span class="math notranslate nohighlight">\(n \geq 1\)</span> das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span>, welches nach dem Fundamentalssatz der Algebra in Linearfaktoren über dem Körper <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> zerfällt in</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -739,7 +816,7 @@ Wir betrachten das orthogonale Komplement zum Unterraum <span class="math notran
     W:=\left\{w\in V \, | \,  v_1 \perp w \right\}\,.
   \end{equation*}\]</div>
 <p>Wir müssen nun <span class="math notranslate nohighlight">\(F(W) = W\)</span> zeigen, d.h., dass <span class="math notranslate nohighlight">\(W\)</span> ein <span class="math notranslate nohighlight">\(F\)</span>-invarianter Unterraum ist.
-Da <span class="math notranslate nohighlight">\(F\)</span> nach Satz \ref{satz:orthogonale_endomorphismen} ein Isomorphismus ist, genügt es <span class="math notranslate nohighlight">\(F(W)\subset W\)</span> zu beweisen.
+Da <span class="math notranslate nohighlight">\(F\)</span> nach Satz <a class="reference internal" href="#satz:orthogonale_endomorphismen">Theorem 2.8</a> ein Isomorphismus ist, genügt es <span class="math notranslate nohighlight">\(F(W)\subset W\)</span> zu beweisen.
 Für alle <span class="math notranslate nohighlight">\(w \in W\)</span> folgt aus der Gleichung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -751,24 +828,28 @@ Das zeigt jedoch schon, dass <span class="math notranslate nohighlight">\(F(W) \
 <p>Nun betrachten wir den Endomorphismus <span class="math notranslate nohighlight">\(G:=F|_W\)</span> von <span class="math notranslate nohighlight">\(W\)</span>.
 Als Einschränkung von <span class="math notranslate nohighlight">\(F\)</span> ist <span class="math notranslate nohighlight">\(G\)</span> weiterhin unitär und wegen <span class="math notranslate nohighlight">\(\dim W = n-1\)</span> können wir auf <span class="math notranslate nohighlight">\(G\)</span> die Induktionsannahme anwenden.
 Danach gibt es eine Orthonormalbasis <span class="math notranslate nohighlight">\((v_2, \ldots, v_n)\)</span> von <span class="math notranslate nohighlight">\(W\)</span> bestehend aus Eigenvektoren von <span class="math notranslate nohighlight">\(G\)</span> und somit auch von <span class="math notranslate nohighlight">\(F\)</span>.
-Die um den Eigenvektor <span class="math notranslate nohighlight">\(v_1 \in V\)</span> ergänzte Basis <span class="math notranslate nohighlight">\((v_1, v_2, \ldots, v_n)\)</span> ist orthonormal und besteht aus Eigenvektoren von <span class="math notranslate nohighlight">\(F\)</span>.
-\end{proof}</p>
-<p>Übertragen auf unitäre Matrizen liefert uns der Diagonalisierungssatz \ref{satz:endomorphismen_diagonalisierung} folgende Ähnlichkeitstransformation.
-\begin{cor}\label{cor:unitäre_matrix_diag}
-Zu <span class="math notranslate nohighlight">\(A\in\operatorname{U}(n)\)</span> gibt es ein <span class="math notranslate nohighlight">\(S\in\operatorname{U}(n)\)</span> mit</p>
+Die um den Eigenvektor <span class="math notranslate nohighlight">\(v_1 \in V\)</span> ergänzte Basis <span class="math notranslate nohighlight">\((v_1, v_2, \ldots, v_n)\)</span> ist orthonormal und besteht aus Eigenvektoren von <span class="math notranslate nohighlight">\(F\)</span>.</p>
+</div>
+<p>Übertragen auf unitäre Matrizen liefert uns der Diagonalisierungssatz <a class="reference internal" href="#satz:endomorphismen_diagonalisierung">Theorem 2.10</a> folgende Ähnlichkeitstransformation.</p>
+<div class="proof corollary admonition" id="cor:unitäre_matrix_diag">
+<p class="admonition-title"><span class="caption-number">Corollary 2.3 </span></p>
+<div class="corollary-content section" id="proof-content">
+<p>Zu <span class="math notranslate nohighlight">\(A\in\operatorname{U}(n)\)</span> gibt es ein <span class="math notranslate nohighlight">\(S\in\operatorname{U}(n)\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
    S \cdot A\cdot S^* \ = \ \left(\begin{array}{rrr}\lambda_1 &amp;&amp;0\\
     &amp;\ddots&amp;\\ 0&amp;&amp;\lambda_n\end{array}\right),
   \end{equation*}\]</div>
-<p>wobei <span class="math notranslate nohighlight">\(\lambda_i\in\C\)</span> mit <span class="math notranslate nohighlight">\(\vert\lambda_i\vert = 1\)</span> für <span class="math notranslate nohighlight">\(i=1,\ldots,n\,.\)</span>
-\begin{proof}
-Als Spalten von <span class="math notranslate nohighlight">\(S^* = S^{-1}\)</span> verwendet man eine orthonormale Basis des <span class="math notranslate nohighlight">\(\C^n\)</span>, die aus Eigenvektoren von <span class="math notranslate nohighlight">\(A\)</span> besteht.
-\end{proof}
-\end{cor}</p>
-<p>Im folgenden Beispiel wollen wir die Diagonalisierbarkeit einer unitären Matrix nach Korollar \ref{cor:unitäre_matrix_diag} prüfen.
-\begin{bsp}\label{bsp:drehung_unitär}
-Die Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{2\times 2}\)</span> mit</p>
+<p>wobei <span class="math notranslate nohighlight">\(\lambda_i\in\C\)</span> mit <span class="math notranslate nohighlight">\(\vert\lambda_i\vert = 1\)</span> für <span class="math notranslate nohighlight">\(i=1,\ldots,n\,.\)</span></p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Als Spalten von <span class="math notranslate nohighlight">\(S^* = S^{-1}\)</span> verwendet man eine orthonormale Basis des <span class="math notranslate nohighlight">\(\C^n\)</span>, die aus Eigenvektoren von <span class="math notranslate nohighlight">\(A\)</span> besteht.</p>
+</div>
+<p>Im folgenden Beispiel wollen wir die Diagonalisierbarkeit einer unitären Matrix nach Korollar <a class="reference internal" href="#cor:unitäre_matrix_diag">Corollary 2.3</a> prüfen.</p>
+<div class="proof example admonition" id="bsp:drehung_unitär">
+<p class="admonition-title"><span class="caption-number">Example 2.12 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Die Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{2\times 2}\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
     A:=\left(\begin{array}{rr}0&amp;-1\\1&amp;0\end{array}\right)
@@ -792,34 +873,37 @@ v_i\Vert = \sqrt{2}.
 \[\begin{equation*}
   SAS^* \ = \ \begin{pmatrix} i&amp;0\\0&amp;-i\end{pmatrix}.
   \end{equation*}\]</div>
-<p>\end{bsp}</p>
-<p>Um den komplizierteren Fall von \textbf{orthogonalen Endomorphismen} besser zu verstehen beginnen wir mit einer Falldiskussion für kleine Dimensionen <span class="math notranslate nohighlight">\(n = 1,2,3\)</span> des Vektorraums <span class="math notranslate nohighlight">\(V\)</span>.
+</div>
+</div></div>
+<div class="section" id="beispiele-und-veranschaulichung">
+<h2><span class="section-number">2.6.5. </span>Beispiele und Veranschaulichung<a class="headerlink" href="#beispiele-und-veranschaulichung" title="Permalink to this headline">¶</a></h2>
+<p>Um den komplizierteren Fall von <strong>orthogonalen Endomorphismen</strong> besser zu verstehen beginnen wir mit einer Falldiskussion für kleine Dimensionen <span class="math notranslate nohighlight">\(n = 1,2,3\)</span> des Vektorraums <span class="math notranslate nohighlight">\(V\)</span>.
 Sei also im Folgenden <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein orthogonaler Endomorphismus und <span class="math notranslate nohighlight">\(A \coloneqq M_B(F)\)</span> die darstellende Matrix von <span class="math notranslate nohighlight">\(F\)</span> bezüglich einer Basis <span class="math notranslate nohighlight">\(B\)</span>.
-Aus Satz \ref{satz:orthogonale_matrizen} wissen wir, dass <span class="math notranslate nohighlight">\(A\)</span> dann auch orthogonal ist und wir können unsere Diskussion auf diese Matrix beschränken.</p>
-<p>Im \emph{eindimensionalen Fall} kann wegen <span class="math notranslate nohighlight">\(A^{-1} = A^T\)</span> nur gelten <span class="math notranslate nohighlight">\(A = \pm 1\)</span>.</p>
-<p>Im \emph{zweidimensionalen Fall} erhalten wir im folgenden Lemma eine interessante geometrische Interpretation von orthogonalen Matrizen, die besagt, dass orthogonale <span class="math notranslate nohighlight">\((2 \times 2)\)</span>-Matrizen spezielle geometrische Transformationen realisieren.</p>
-<p>\begin{lemma}\label{lem:orthogonal_2d}
-Ist <span class="math notranslate nohighlight">\(A\in\operatorname{O}(2)\)</span>, so gibt es ein <span class="math notranslate nohighlight">\(\alpha\in\left[0, 2\pi\right[\)</span>, so dass</p>
+Aus Satz <a class="reference internal" href="#satz:orthogonale_matrizen">Theorem 2.9</a> wissen wir, dass <span class="math notranslate nohighlight">\(A\)</span> dann auch orthogonal ist und wir können unsere Diskussion auf diese Matrix beschränken.</p>
+<p>Im <em>eindimensionalen Fall</em> kann wegen <span class="math notranslate nohighlight">\(A^{-1} = A^T\)</span> nur gelten <span class="math notranslate nohighlight">\(A = \pm 1\)</span>.</p>
+<p>Im <em>zweidimensionalen Fall</em> erhalten wir im folgenden Lemma eine interessante geometrische Interpretation von orthogonalen Matrizen, die besagt, dass orthogonale <span class="math notranslate nohighlight">\((2 \times 2)\)</span>-Matrizen spezielle geometrische Transformationen realisieren.</p>
+<div class="proof lemma admonition" id="lem:orthogonal_2d">
+<p class="admonition-title"><span class="caption-number">Lemma 2.12 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Ist <span class="math notranslate nohighlight">\(A\in\operatorname{O}(2)\)</span>, so gibt es ein <span class="math notranslate nohighlight">\(\alpha\in\left[0, 2\pi\right[\)</span>, so dass</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
     A = \begin{pmatrix} \cos\alpha&amp;-\sin\alpha\\\sin\alpha&amp;\cos\alpha\end{pmatrix}
       \quad\text{oder}\quad
       A = \begin{pmatrix}\cos\alpha&amp;\sin\alpha\\\sin\alpha&amp;-\cos\alpha\end{pmatrix}.
   \end{align*}\]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\end{lemma}
-\begin{proof}
-In der Hausaufgabe zu zeigen.
-\end{proof}
-</pre></div>
 </div>
-<p>Im \emph{dreidimensionalen Fall} eines orthogonalen Endomorphismus <span class="math notranslate nohighlight">\(F\colon\R^3\to\R^3\)</span> betrachten wir das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span>.
+</div><div class="proof admonition" id="proof">
+<p>Proof. In der Hausaufgabe zu zeigen.</p>
+</div>
+<p>Im <em>dreidimensionalen Fall</em> eines orthogonalen Endomorphismus <span class="math notranslate nohighlight">\(F\colon\R^3\to\R^3\)</span> betrachten wir das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span>.
 Da <span class="math notranslate nohighlight">\(P_F\)</span> den Grad <span class="math notranslate nohighlight">\(3\)</span> besitzt, existiert nach dem Zwischenwertsatz der Analysis mindestens eine reelle Nullstelle von <span class="math notranslate nohighlight">\(P_F\)</span>.
-Also hat <span class="math notranslate nohighlight">\(F\)</span> mindestens einen Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 \in \mathbb{R}\)</span> und nach Satz \ref{satz:orthogonale_endomorphismen} wissen wir, dass <span class="math notranslate nohighlight">\(\lambda_1=\pm1\)</span> gilt.
+Also hat <span class="math notranslate nohighlight">\(F\)</span> mindestens einen Eigenwert <span class="math notranslate nohighlight">\(\lambda_1 \in \mathbb{R}\)</span> und nach Satz <a class="reference internal" href="#satz:orthogonale_endomorphismen">Theorem 2.8</a> wissen wir, dass <span class="math notranslate nohighlight">\(\lambda_1=\pm1\)</span> gilt.
 Sei <span class="math notranslate nohighlight">\(v_1\in\R^3\)</span> der zugehörige Eigenvektor, für den wir <span class="math notranslate nohighlight">\(\Vert v_1\Vert = 1\)</span> annehmen können (durch Normalisierung).
-Dann können diesen Eigenvektor von <span class="math notranslate nohighlight">\(F\)</span> nach Satz \ref{satz:orthonormalisierung}  zu einer Orthonormalbasis <span class="math notranslate nohighlight">\(B = (v_1,w_2,w_3)\)</span> von <span class="math notranslate nohighlight">\(V\)</span> ergänzen.</p>
+Dann können diesen Eigenvektor von <span class="math notranslate nohighlight">\(F\)</span> nach Satz <a class="reference internal" href="orth.html#satz:orthonormalisierung">Theorem 2.7</a>  zu einer Orthonormalbasis <span class="math notranslate nohighlight">\(B = (v_1,w_2,w_3)\)</span> von <span class="math notranslate nohighlight">\(V\)</span> ergänzen.</p>
 <p>Wir bezeichnen mit <span class="math notranslate nohighlight">\(W\subset V = \R^3\)</span> die von <span class="math notranslate nohighlight">\(w_2\)</span> und <span class="math notranslate nohighlight">\(w_3\)</span> aufgespannte zweidimensionale Ebene.
 Da <span class="math notranslate nohighlight">\(v_1\)</span> ein Eigenvektor von <span class="math notranslate nohighlight">\(F\)</span> ist, gilt natürlich <span class="math notranslate nohighlight">\(F(v_1) \subset \lin(\left\lbrace v_1 \right\rbrace)\)</span>.
-Da außerdem <span class="math notranslate nohighlight">\(v_1 \perp W\)</span> und <span class="math notranslate nohighlight">\(F\)</span> nach Satz \ref{satz:orthogonale_endomorphismen} ein Isomorphismus ist muss gelten, dass <span class="math notranslate nohighlight">\(F(W)=W\)</span> gilt.
+Da außerdem <span class="math notranslate nohighlight">\(v_1 \perp W\)</span> und <span class="math notranslate nohighlight">\(F\)</span> nach Satz <a class="reference internal" href="#satz:orthogonale_endomorphismen">Theorem 2.8</a> ein Isomorphismus ist muss gelten, dass <span class="math notranslate nohighlight">\(F(W)=W\)</span> gilt.
 Betrachten wir die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F)\)</span> von <span class="math notranslate nohighlight">\(F\)</span> bezüglich der Orthonormalbasis <span class="math notranslate nohighlight">\(B\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -831,12 +915,13 @@ Betrachten wir die darstellende Matrix <span class="math notranslate nohighlight
   \end{array}
 \right)  \ \eqqcolon \ A,
 \end{equation*}\]</div>
-<p>so folgt aus Satz \ref{satz:orthogonale_matrizen}, dass <span class="math notranslate nohighlight">\(A^\prime \in\operatorname{O}(2)\)</span> orthogonal ist.
-Weiter gilt wegen der Determinantenregel für Blockmatrizen in Lemma \ref{lem:det_blockmatrix}, dass gilt <span class="math notranslate nohighlight">\(\det A = \lambda_1 \cdot \det A^\prime\)</span>.
-Betrachten wir also die möglichen Fälle im Folgenden basierend auf unseren Erkenntnissen aus Lemma \ref{lem:orthogonal_2d}.</p>
-<p>\begin{enumerate}
-\item Sei <span class="math notranslate nohighlight">\(\det A = +1\)</span>. Ist <span class="math notranslate nohighlight">\(\lambda_1 = -1\)</span>, dann muss <span class="math notranslate nohighlight">\(\det A^\prime = -1\)</span> sein.
-Daher kann man <span class="math notranslate nohighlight">\(w_2\)</span> und <span class="math notranslate nohighlight">\(w_3\)</span> als Eigenvektoren zu den Eigenwerten <span class="math notranslate nohighlight">\(\lambda_2 = + 1\)</span> und <span class="math notranslate nohighlight">\(\lambda_3 = -1\)</span> wählen, also</p>
+<p>so folgt aus Satz <a class="reference internal" href="#satz:orthogonale_matrizen">Theorem 2.9</a>, dass <span class="math notranslate nohighlight">\(A^\prime \in\operatorname{O}(2)\)</span> orthogonal ist.
+Weiter gilt wegen der Determinantenregel für Blockmatrizen in Lemma <a class="reference internal" href="../eigenwerte/prelim.html#lem:det_blockmatrix">Lemma 1.3</a>, dass gilt <span class="math notranslate nohighlight">\(\det A = \lambda_1 \cdot \det A^\prime\)</span>.
+Betrachten wir also die möglichen Fälle im Folgenden basierend auf unseren Erkenntnissen aus Lemma <a class="reference internal" href="#lem:orthogonal_2d">Lemma 2.12</a>.</p>
+<ul class="simple">
+<li><p>Sei <span class="math notranslate nohighlight">\(\det A = +1\)</span>. Ist <span class="math notranslate nohighlight">\(\lambda_1 = -1\)</span>, dann muss <span class="math notranslate nohighlight">\(\det A^\prime = -1\)</span> sein.
+Daher kann man <span class="math notranslate nohighlight">\(w_2\)</span> und <span class="math notranslate nohighlight">\(w_3\)</span> als Eigenvektoren zu den Eigenwerten <span class="math notranslate nohighlight">\(\lambda_2 = + 1\)</span> und <span class="math notranslate nohighlight">\(\lambda_3 = -1\)</span> wählen, also</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
   A = \left(\begin{array}{rrr}-1 &amp; 0 &amp; 0\\ 0 &amp; \phantom{-}1 &amp; 0\\ 0 &amp; 0 &amp; -1\end{array}\right)\,.
@@ -847,7 +932,9 @@ Daher kann man <span class="math notranslate nohighlight">\(w_2\)</span> und <sp
   A = \left(\begin{array}{rrr}1 &amp; 0 &amp; 0\\ 0 &amp; \cos\alpha &amp; -\sin\alpha\\
   0 &amp; \sin\alpha &amp; \cos\alpha\end{array}\right)\,.
 \end{equation*}\]</div>
-<p>\item Ist <span class="math notranslate nohighlight">\(\det A = -1\)</span>, dann gibt es bei geeigneter Wahl von <span class="math notranslate nohighlight">\(w_2\)</span> und <span class="math notranslate nohighlight">\(w_3\)</span> die Möglichkeiten</p>
+<ul class="simple">
+<li><p>Ist <span class="math notranslate nohighlight">\(\det A = -1\)</span>, dann gibt es bei geeigneter Wahl von <span class="math notranslate nohighlight">\(w_2\)</span> und <span class="math notranslate nohighlight">\(w_3\)</span> die Möglichkeiten</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
  A \ = \ \begin{pmatrix}1 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0\\
@@ -855,19 +942,24 @@ Daher kann man <span class="math notranslate nohighlight">\(w_2\)</span> und <sp
       A \ = \ \begin{pmatrix}-1 &amp; 0 &amp; 0\\ 0 &amp;\cos\alpha &amp; -\sin\alpha\\
       0 &amp; \sin\alpha &amp; \cos\alpha\end{pmatrix}.
 \end{equation*}\]</div>
-<p>\end{enumerate}</p>
-<p>Wir nutzen unsere Erkenntnisse aus der gerade durchgeführten Diskussion für die Fälle <span class="math notranslate nohighlight">\(\dim V  \in \lbrace 1,2,3\rbrace\)</span> um eine \emph{Normalform für unitäre und orthogonale Endomorphismen} im allgemeinen Fall anzugeben.</p>
+</div>
+<div class="section" id="normalform-fur-unitare-und-orthogonale-endomorphismen">
+<h2><span class="section-number">2.6.6. </span>Normalform für unitäre und orthogonale Endomorphismen<a class="headerlink" href="#normalform-fur-unitare-und-orthogonale-endomorphismen" title="Permalink to this headline">¶</a></h2>
+<p>Wir nutzen unsere Erkenntnisse aus der gerade durchgeführten Diskussion für die Fälle <span class="math notranslate nohighlight">\(\dim V  \in \lbrace 1,2,3\rbrace\)</span> um eine <em>Normalform für unitäre und orthogonale Endomorphismen</em> im allgemeinen Fall anzugeben.</p>
 <p>Im Gegensatz zu der gerade im komplexen Fall bewiesenen Diagonalisierbarkeit unitärer Endomorphismen gibt es im Reellen orthogonale Endomorphismen ohne Eigenwerte in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
-Das einfachste Beispiel sind Drehungen in der Ebene <span class="math notranslate nohighlight">\(\R^2\)</span> wie in Beispiel \ref{bsp:drehung_unitär} beschrieben.</p>
-<p>Bevor wir uns der Normalform von orthogonalen Endomorphismen widmen benötigen wir das folgende hilfreiche Lemma.
-\begin{lemma}\label{lem:orthogonal_2d_unterraum}
-Zu einem orthogonalen Endomorphismus <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> eines Euklidischen Vektorraums <span class="math notranslate nohighlight">\(V\)</span> mit <span class="math notranslate nohighlight">\(\dim V \geq 1\)</span> gibt es stets einen Untervektorraum <span class="math notranslate nohighlight">\(W \subset V\)</span> mit
-\begin{equation*}
-F(W) \subset W\quad\text{und}\quad 1\leq\dim W\leq 2,.
-\end{equation*}
-\end{lemma}
-\begin{proof}
-Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{n \times n}\)</span> die darstellende Matrix des orthogonalen Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> auf <span class="math notranslate nohighlight">\(V\)</span>.
+Das einfachste Beispiel sind Drehungen in der Ebene <span class="math notranslate nohighlight">\(\R^2\)</span> wie in Beispiel <a class="reference internal" href="#bsp:drehung_unitär">Example 2.12</a> beschrieben.</p>
+<p>Bevor wir uns der Normalform von orthogonalen Endomorphismen widmen benötigen wir das folgende hilfreiche Lemma.</p>
+<div class="proof lemma admonition" id="lem:orthogonal_2d_unterraum">
+<p class="admonition-title"><span class="caption-number">Lemma 2.13 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Zu einem orthogonalen Endomorphismus <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> eines Euklidischen Vektorraums <span class="math notranslate nohighlight">\(V\)</span> mit <span class="math notranslate nohighlight">\(\dim V \geq 1\)</span> gibt es stets einen Untervektorraum <span class="math notranslate nohighlight">\(W \subset V\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    F(W) \subset W\quad\text{und}\quad 1\leq\dim W\leq 2\,.
+  \end{equation*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{n \times n}\)</span> die darstellende Matrix des orthogonalen Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> auf <span class="math notranslate nohighlight">\(V\)</span>.
 Wir führen den Beweis des Lemmas durch eine Symmetrisierung von <span class="math notranslate nohighlight">\(A\)</span>.
 Sei hierfür die Symmetrisierung <span class="math notranslate nohighlight">\(A^s\)</span> von <span class="math notranslate nohighlight">\(A\)</span> definiert als</p>
 <div class="amsmath math notranslate nohighlight">
@@ -892,10 +984,12 @@ Außerdem gilt, dass <span class="math notranslate nohighlight">\(A \cdot Av = A
 \[\begin{equation*}
 Av+A^{-1}v \, = \,  A^sv \, = \, \lambda v \quad \Rightarrow \quad A^2v \, = \, -v+\lambda Av\ \in W.
 \end{equation*}\]</div>
-<p>\end{proof}</p>
-<p>Wir zeigen nun, dass sich die Normalform eines orthogonalen Endomorphismus auf eine darstellende Matrix zurückführen lässt, die im Wesentlichen nur die Eigenwerte <span class="math notranslate nohighlight">\(\pm 1\)</span> auf der Hauptdiagonalen und eben jene <span class="math notranslate nohighlight">\((2 \times 2)\)</span>-Drehmatrizen besitzt.
-\begin{satz}
-Ist <span class="math notranslate nohighlight">\(F\)</span> ein orthogonaler Endomorphismus eines Euklidischen Vektorraums <span class="math notranslate nohighlight">\(V\)</span>, dann gibt es in <span class="math notranslate nohighlight">\(V\)</span> eine Orthonormalbasis <span class="math notranslate nohighlight">\(B\)</span> derart, dass die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F) \in \GL(n; \mathbb{R})\)</span> folgende Gestalt einer \emph{Normalform} hat</p>
+</div>
+<p>Wir zeigen nun, dass sich die Normalform eines orthogonalen Endomorphismus auf eine darstellende Matrix zurückführen lässt, die im Wesentlichen nur die Eigenwerte <span class="math notranslate nohighlight">\(\pm 1\)</span> auf der Hauptdiagonalen und eben jene <span class="math notranslate nohighlight">\((2 \times 2)\)</span>-Drehmatrizen besitzt.</p>
+<div class="proof theorem admonition" id="theorem-15">
+<p class="admonition-title"><span class="caption-number">Theorem 2.11 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Ist <span class="math notranslate nohighlight">\(F\)</span> ein orthogonaler Endomorphismus eines Euklidischen Vektorraums <span class="math notranslate nohighlight">\(V\)</span>, dann gibt es in <span class="math notranslate nohighlight">\(V\)</span> eine Orthonormalbasis <span class="math notranslate nohighlight">\(B\)</span> derart, dass die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F) \in \GL(n; \mathbb{R})\)</span> folgende Gestalt einer <em>Normalform</em> hat</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
     M_{B}(F) = \left(\begin{array}{rrrrrrrrr}
@@ -920,21 +1014,20 @@ Ist <span class="math notranslate nohighlight">\(F\)</span> ein orthogonaler End
 \[\begin{equation*}
   r+s+2k \ = \ \dim V.
   \end{equation*}\]</div>
-<p>\end{satz}
-\begin{proof}[Beweis]
-Sei <span class="math notranslate nohighlight">\(A\)</span> eine darstellende Matrix von <span class="math notranslate nohighlight">\(F\)</span>.
-Wir führen den Beweis durch vollständige Induktion über <span class="math notranslate nohighlight">\(n=\dim V\)</span>.\[0.3cm]
-\textbf{Induktionsanfang: <span class="math notranslate nohighlight">\(n=1\)</span> und <span class="math notranslate nohighlight">\(n=2\)</span>}\
-Der Induktionsanfang folgt direkt aus der Beobachtung, dass <span class="math notranslate nohighlight">\(A = \pm 1\)</span> für <span class="math notranslate nohighlight">\(n=1\)</span> gilt und der Aussage von Lemma \ref{lem:orthogonal_2d} für <span class="math notranslate nohighlight">\(n=2\)</span>.
-~\[0.3cm]
-\textbf{Induktionsschritt: <span class="math notranslate nohighlight">\(n-1 \rightarrow n\)</span> für <span class="math notranslate nohighlight">\(n \geq 3\)</span>}\
-Die Induktionsannahme ist, dass die Aussage bereits für den Fall <span class="math notranslate nohighlight">\(n-1\)</span> und <span class="math notranslate nohighlight">\(n-2\)</span> gezeigt wurde.</p>
-<p>Da <span class="math notranslate nohighlight">\(F\)</span> orthogonal ist existiert nach Lemma \ref{lem:orthogonal_2d_unterraum} ein Untervektorraum <span class="math notranslate nohighlight">\(W\subset V\)</span> mit</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof.  Sei <span class="math notranslate nohighlight">\(A\)</span> eine darstellende Matrix von <span class="math notranslate nohighlight">\(F\)</span>.
+Wir führen den Beweis durch vollständige Induktion über <span class="math notranslate nohighlight">\(n=\dim V\)</span>.</p>
+<p><strong>Induktionsanfang: <span class="math notranslate nohighlight">\(n=1\)</span> und <span class="math notranslate nohighlight">\(n=2\)</span></strong></p>
+<p>Der Induktionsanfang folgt direkt aus der Beobachtung, dass <span class="math notranslate nohighlight">\(A = \pm 1\)</span> für <span class="math notranslate nohighlight">\(n=1\)</span> gilt und der Aussage von Lemma <a class="reference internal" href="#lem:orthogonal_2d">Lemma 2.12</a> für <span class="math notranslate nohighlight">\(n=2\)</span>.</p>
+<p><strong>Induktionsschritt: <span class="math notranslate nohighlight">\(n-1 \rightarrow n\)</span> für <span class="math notranslate nohighlight">\(n \geq 3\)</span></strong></p>
+<p>Die Induktionsannahme ist, dass die Aussage bereits für den Fall <span class="math notranslate nohighlight">\(n-1\)</span> und <span class="math notranslate nohighlight">\(n-2\)</span> gezeigt wurde.</p>
+<p>Da <span class="math notranslate nohighlight">\(F\)</span> orthogonal ist existiert nach Lemma <a class="reference internal" href="#lem:orthogonal_2d_unterraum">Lemma 2.13</a> ein Untervektorraum <span class="math notranslate nohighlight">\(W\subset V\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
   1 \, \leq \, \dim W \, \leq \, 2\qquad\text{ und }\quad F(W) \, \subset \,W.
 \end{align*}\]</div>
-<p>Aus Satz \ref{satz:orthogonale_endomorphismen} wissen wir, dass <span class="math notranslate nohighlight">\(F\)</span> injektiv und somit gilt schon, dass <span class="math notranslate nohighlight">\(F(W) = W\)</span> sein muss.
+<p>Aus Satz <a class="reference internal" href="#satz:orthogonale_endomorphismen">Theorem 2.8</a> wissen wir, dass <span class="math notranslate nohighlight">\(F\)</span> injektiv und somit gilt schon, dass <span class="math notranslate nohighlight">\(F(W) = W\)</span> sein muss.
 Außerdem existiert existiert ein Endomorphismus <span class="math notranslate nohighlight">\(F^{-1}\)</span>, der auch orthogonal ist und für den gilt <span class="math notranslate nohighlight">\(F^{-1}(W) = W\)</span>.
 Daher können wir für die Vektoren <span class="math notranslate nohighlight">\(w\in W\)</span> und <span class="math notranslate nohighlight">\(v\in W^\perp\)</span> folgern, dass gilt</p>
 <div class="amsmath math notranslate nohighlight">
@@ -942,26 +1035,27 @@ Daher können wir für die Vektoren <span class="math notranslate nohighlight">\
 \langle F(v), w\rangle \ = \ \langle F^{-1} (F(v)), F^{-1} (w)\rangle \ = \ \langle v, F^{-1}(w)\rangle \ = \ 0.
 \end{align*}\]</div>
 <p>Daraus folgt schon, dass <span class="math notranslate nohighlight">\(F(W^\perp) \subset W^\perp\)</span> gilt.
-Da <span class="math notranslate nohighlight">\(F\)</span> nach Satz \ref{satz:orthogonale_endomorphismen} insbesondere ein Isomorphismus ist, muss schon gelten, dass <span class="math notranslate nohighlight">\(F(W^\perp) = W^\perp\)</span>.
+Da <span class="math notranslate nohighlight">\(F\)</span> nach Satz <a class="reference internal" href="#satz:orthogonale_endomorphismen">Theorem 2.8</a> insbesondere ein Isomorphismus ist, muss schon gelten, dass <span class="math notranslate nohighlight">\(F(W^\perp) = W^\perp\)</span>.
 Damit haben wir <span class="math notranslate nohighlight">\(F\)</span> zerlegt in zwei orthogonale Abbildungen</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 G \,:= \, F|_W\colon W\to W\qquad\text{ und }\quad H \, := \, F|_{W^\perp}\colon W^\perp\to W^\perp\,.
 \end{align*}\]</div>
 <p>Da <span class="math notranslate nohighlight">\(n-2 \leq \dim W^\perp &lt; n\)</span> ist können wir können wir auf <span class="math notranslate nohighlight">\(H\)</span> die Induktionvorrausetzung anwenden und erhalten eine Basis <span class="math notranslate nohighlight">\(B^\prime\)</span> von <span class="math notranslate nohighlight">\(W^\perp\)</span> der gewünschten Art.</p>
-<p>Für den orthogonalen Endomorphismus <span class="math notranslate nohighlight">\(G\)</span> müssen wir abschließend noch zwei Fälle in Abhängigkeit von <span class="math notranslate nohighlight">\(\dim W \in \lbrace 1,2 \rbrace\)</span> betrachten.
-\begin{enumerate}
-\item Ist <span class="math notranslate nohighlight">\(\dim W = 1\)</span>, so gibt es einen Eigenvektor <span class="math notranslate nohighlight">\(v\in W\)</span> mit <span class="math notranslate nohighlight">\(\Vert v\Vert = 1\)</span> zu einem Eigenwert <span class="math notranslate nohighlight">\(\pm1\)</span>.
-Ergänzt man <span class="math notranslate nohighlight">\(B^\prime\)</span> an passender Stelle durch <span class="math notranslate nohighlight">\(v\)</span> zu <span class="math notranslate nohighlight">\(B\)</span>, so hat diese Basis von <span class="math notranslate nohighlight">\(V\)</span> die gewünschten Eigenschaften.
-\item Im Fall <span class="math notranslate nohighlight">\(\dim W = 2\)</span> gibt es eine Orthonormalbasis <span class="math notranslate nohighlight">\((v_1, v_2)\)</span> von <span class="math notranslate nohighlight">\(W\)</span>, bezüglich der <span class="math notranslate nohighlight">\(G\)</span> nach Lemma \ref{lem:orthogonal_2d} beschrieben wird durch eine Matrix der Form</p>
+<p>Für den orthogonalen Endomorphismus <span class="math notranslate nohighlight">\(G\)</span> müssen wir abschließend noch zwei Fälle in Abhängigkeit von <span class="math notranslate nohighlight">\(\dim W \in \lbrace 1,2 \rbrace\)</span> betrachten.</p>
+<ul class="simple">
+<li><p>Ist <span class="math notranslate nohighlight">\(\dim W = 1\)</span>, so gibt es einen Eigenvektor <span class="math notranslate nohighlight">\(v\in W\)</span> mit <span class="math notranslate nohighlight">\(\Vert v\Vert = 1\)</span> zu einem Eigenwert <span class="math notranslate nohighlight">\(\pm1\)</span>.
+Ergänzt man <span class="math notranslate nohighlight">\(B^\prime\)</span> an passender Stelle durch <span class="math notranslate nohighlight">\(v\)</span> zu <span class="math notranslate nohighlight">\(B\)</span>, so hat diese Basis von <span class="math notranslate nohighlight">\(V\)</span> die gewünschten Eigenschaften.</p></li>
+<li><p>Im Fall <span class="math notranslate nohighlight">\(\dim W = 2\)</span> gibt es eine Orthonormalbasis <span class="math notranslate nohighlight">\((v_1, v_2)\)</span> von <span class="math notranslate nohighlight">\(W\)</span>, bezüglich der <span class="math notranslate nohighlight">\(G\)</span> nach Lemma <a class="reference internal" href="#lem:orthogonal_2d">Lemma 2.12</a> beschrieben wird durch eine Matrix der Form</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
   \left(\begin{array}{rr}\pm1&amp;0\\0&amp;\pm1\end{array}\right)\quad\text{oder}\quad\left(\begin{array}{rr}\cos\alpha_j&amp;-\sin\alpha_j\\\sin\alpha_j&amp;\cos\alpha_j\end{array}\right)\qquad\text{ mit }\quad\alpha_j\neq0, \alpha_j\neq\pi.
 \end{align*}\]</div>
-<p>Indem man <span class="math notranslate nohighlight">\(v_1\)</span> und <span class="math notranslate nohighlight">\(v_2\)</span> an den passenden Stellen in <span class="math notranslate nohighlight">\(B^\prime\)</span> einfügt, erhält man wieder einen gewünschte Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span>.
-\end{enumerate}
-Wie der Beweis zeigt lässt sich <span class="math notranslate nohighlight">\(V\)</span> rekursiv in eine orthogonale direkte Summe von invarianten Unterräume der Dimension <span class="math notranslate nohighlight">\(1\)</span> oder <span class="math notranslate nohighlight">\(2\)</span> zerlegen.
-\end{proof}</p>
+<p>Indem man <span class="math notranslate nohighlight">\(v_1\)</span> und <span class="math notranslate nohighlight">\(v_2\)</span> an den passenden Stellen in <span class="math notranslate nohighlight">\(B^\prime\)</span> einfügt, erhält man wieder einen gewünschte Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<p>Wie der Beweis zeigt lässt sich <span class="math notranslate nohighlight">\(V\)</span> rekursiv in eine orthogonale direkte Summe von invarianten Unterräume der Dimension <span class="math notranslate nohighlight">\(1\)</span> oder <span class="math notranslate nohighlight">\(2\)</span> zerlegen.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

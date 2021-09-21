@@ -764,7 +764,7 @@ wobei $N$ eine Jordanmatrix ist, müssen wir geschickt Basisvektoren aus den ver
 
 **Spaltenweises Eintragen des Schemas in $S^{-1}$:**
 
-Lesen wir die schließlich das fertige Schema zuerst von **unten nach oben** und dann von **links nach rechts** (entlang der Jordanketten) zellenweise ab und notieren die so gefundenen Vektoren **spaltenweise** von links nach rechts in die Transformationsmatrix $S^{-1}$, so liegt $ N = S A S^{-1} $ in der Normalform nilpotenter Endomorphismen in Definition {pf:ref}`def:normalform_nilpotent` vor.
+Lesen wir die schließlich das fertige Schema zuerst von **unten nach oben** und dann von **links nach rechts** (entlang der Jordanketten) zellenweise ab und notieren die so gefundenen Vektoren **spaltenweise** von links nach rechts in die Transformationsmatrix $S^{-1}$, so liegt $ N = S A S^{-1} $ in der Normalform nilpotenter Endomorphismen in Definition {prf:ref}`def:normalform_nilpotent` vor.
 ````
 
 ## Jordansche Normalform

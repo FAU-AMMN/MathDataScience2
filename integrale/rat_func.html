@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -197,6 +197,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
      2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/normal.html">
+     2.8. Normale Endomorphismen
     </a>
    </li>
   </ul>
@@ -463,8 +468,8 @@ Im Spezialfall von rationalen Funktionen, die als Quotient zweier Polynome darge
 Wir beginnen mit der Definition von Polynomfunktionen.
 \begin{definition}[Polynomfunktion]
 Für den Körper <span class="math notranslate nohighlight">\(\K=\R\)</span> oder <span class="math notranslate nohighlight">\(\K=\C\)</span> nennen wir jede Funktion <span class="math notranslate nohighlight">\(p\colon\K\to\K\)</span> der Form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e580bef-64b5-4834-85ae-ee886a80a7fc">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-9e580bef-64b5-4834-85ae-ee886a80a7fc" title="Permalink to this equation">¶</a></span>\[\begin{align}\label{def:poly}
+<div class="amsmath math notranslate nohighlight" id="equation-43c4f7e7-a43a-4205-9c7f-01f3e7cf2f35">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-43c4f7e7-a43a-4205-9c7f-01f3e7cf2f35" title="Permalink to this equation">¶</a></span>\[\begin{align}\label{def:poly}
     p(x) \ = \ \sum_{k=0}^n a_k x^k \ = \ a_0 + a_1x + a_2x^2 + \ldots + a_nx^n \quad\text{mit}\quad a_k\in\K
   \end{align}\]</div>
 <p>\emph{reelle} oder \emph{komplexe Polynomfunktion} oder (ungenauerweise) häufig auch kurz \emph{Polynom}.</p>
@@ -485,8 +490,8 @@ Allgemein soll gelten, dass die Summe zweier Polynome höchstens den maximalen G
 \end{equation*}\]</div>
 <p>Der Grad von <span class="math notranslate nohighlight">\((f+g) \in \K[x]\)</span> kann sich jedoch verringern, z.B., wenn für die Polynome <span class="math notranslate nohighlight">\(\deg(f) = \deg(g) = n\)</span>  gilt und die jeweils höchsten Koeffizienten <span class="math notranslate nohighlight">\(a_n, b_n \in \K\)</span> sich durch <span class="math notranslate nohighlight">\(a_n = - b_n\)</span> aufheben.</p>
 <p>Für die Multiplikation zweier Polynome stellen wir fest, dass sich der Grad des resultierenden Polynoms als Summe der Grade der einzelnen Polynome ergibt, d.h.,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f24aa49-fdec-4797-b81f-8eff09a808e3">
-<span class="eqno">(4.5)<a class="headerlink" href="#equation-2f24aa49-fdec-4797-b81f-8eff09a808e3" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:polynom_grad_multi}
+<div class="amsmath math notranslate nohighlight" id="equation-24375d6f-a35e-465b-936c-4ed90923b2d0">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-24375d6f-a35e-465b-936c-4ed90923b2d0" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:polynom_grad_multi}
   \deg{fg} \ = \ \deg(f) + \deg(f)\,,
 \end{equation}\]</div>
 <p>\item
@@ -506,8 +511,8 @@ Das konstante Polynom</p>
 <p>Lassen wir als Argumente in \eqref{def:poly} beliebige komplexe Zahlen zu, dann lässt sich ein reelles Polynom als komplexes Polynom auffassen mit der Einbettung <span class="math notranslate nohighlight">\(\R[x]\subset\C[x]\)</span>.
 Wir erinnern daran, dass reelle Polynome vom Grad <span class="math notranslate nohighlight">\(\deg(p) &gt; 0\)</span> keine Nullstellen besitzen müssen, im Gegensatz zu komplexen Polynomen.
 Der \emph{Fundamentalsatzes der Algebra} \cite[Theorem 1.3.9]{fischer} hat zur Folge, dass ein Polynom <span class="math notranslate nohighlight">\(p\in\C[x]\)</span> vom Grad <span class="math notranslate nohighlight">\(\deg(p) = n\)</span> sich in ein Produkt von Linearfaktoren, d.h., in Polynome von Grad Eins, zerlegen lässt, d.h.,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b52478f5-f4e6-45b3-b243-f07f15f523a3">
-<span class="eqno">(4.6)<a class="headerlink" href="#equation-b52478f5-f4e6-45b3-b243-f07f15f523a3" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:linearfaktorzerlegung}
+<div class="amsmath math notranslate nohighlight" id="equation-85a68e3b-a583-4dc7-8d85-3f38c4ac3a37">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-85a68e3b-a583-4dc7-8d85-3f38c4ac3a37" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:linearfaktorzerlegung}
  p(x) \ = \ \prod\limits_{i=1}^n(x-x_i).
 \end{equation}\]</div>
 <p>Die Nullstellen <span class="math notranslate nohighlight">\(x_i \in \C\)</span> in der Linearfaktorzerlegung \eqref{eq:linearfaktorzerlegung} müssen nicht zwingend paarweise verschieden sein.
@@ -749,8 +754,8 @@ Im Folgenden wollen wir für die spezielle Wahl des Körpers <span class="math n
   q(x) \ = \ \prod\limits_{i=1}^m(x-x_i)^{d_i},
 \end{equation*}\]</div>
 <p>und sind die Nullstellen <span class="math notranslate nohighlight">\(x_i \in \K, i=1,\ldots,m\)</span> der Vielfachheit <span class="math notranslate nohighlight">\(k_i\in\N\)</span> paarweise verschieden, dann führt mehrfache Anwendung der Partialbruchzerlegung in Satz \ref{satz:partialbruchzerlegung} zu folgender Formel:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0705f19c-182f-4c64-8d41-f9bf5c29702f">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-0705f19c-182f-4c64-8d41-f9bf5c29702f" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partialbruchzerlegung_vollständig}
+<div class="amsmath math notranslate nohighlight" id="equation-341a3828-5a8f-41c8-87bf-e4b37cde9130">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-341a3828-5a8f-41c8-87bf-e4b37cde9130" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partialbruchzerlegung_vollständig}
   \frac{p(x)}{q(x)} \ = \ \sum_{i=1}^{m} \sum_{j=1}^{k_i}\frac{A_j^{(i)}}{(x-x_i)^j}\,.
 \end{equation}\]</div>
 <p>Die Anzahl der zu bestimmenden Koeffizienten <span class="math notranslate nohighlight">\(A_j^{(i)}\)</span> ist in diesem Fall <span class="math notranslate nohighlight">\(\sum\limits_{i=1}^{m}k_i = \deg(q)\)</span>.</p>
@@ -768,8 +773,8 @@ Dann können wir das Polynom <span class="math notranslate nohighlight">\(q\in\R
 q(x) \ = \ \prod\limits_{i=1}^{l}(x^2 - 2a_ix+b_i)^{t_i} \: \cdot \: \prod\limits_{j=1}^k(x-c_j)^{s_j}.
 \end{equation*}\]</div>
 <p>Die mehrfache Anwendung der Partialbruchzerlegung in Satz \ref{satz:partialbruchzerlegung} führt dann für reelle echt gebrochenrationale Funktionen zu folgender Formel:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f769b13-085a-4cfe-9e79-2b70de4b9002">
-<span class="eqno">(4.8)<a class="headerlink" href="#equation-8f769b13-085a-4cfe-9e79-2b70de4b9002" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partialbruchzerlegung_vollständig_reell}
+<div class="amsmath math notranslate nohighlight" id="equation-caf344f5-18b1-4804-a518-4c68a8e1afb5">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-caf344f5-18b1-4804-a518-4c68a8e1afb5" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partialbruchzerlegung_vollständig_reell}
   \frac{p(x)}{q(x)} \ = \ \sum_{i=1}^{k} \sum_{j=1}^{s_i}\frac{A_j^{(i)}}{(x-x_i)^j} \: + \: \sum_{i=1}^{l} \sum_{j=1}^{t_i} \frac{B_j^{(i)}x+C^{(i)}_j}{(x^2 - 2ax + b)^j}.
 \end{equation}\]</div>
 <p>Die Anzahl der zu bestimmenden Koeffizienten <span class="math notranslate nohighlight">\(A_j^{(i)}\)</span> für die Linearfaktoren ist in diesem Fall <span class="math notranslate nohighlight">\(\sum\limits_{i=1}^{k}s_i = \hat{k}\)</span>.
@@ -831,8 +836,8 @@ q(x) \ = \ x^4-2x^2+1 \ = \ (x-1)\cdot (x+1) \cdot (x^2 - 1) \ = \ (x-1)^2\cdot 
 <p>~\[-0.1cm]
 \textbf{3. Schritt: Bestimmung der Partialbruchzerlegung}\[0.1cm]
 Da wir Glück haben und sich das Nennerpolynom in Linearfaktoren über <span class="math notranslate nohighlight">\(\R\)</span> faktorisieren lässt wie in \eqref{eq:linearfaktorzerlegung}, können wir die allgemeine Darstellung der Partialbruchzerlegung in \eqref{eq:partialbruchzerlegung_vollständig} anwenden:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e0a8e7d5-780b-453e-a507-af59e19228c6">
-<span class="eqno">(4.9)<a class="headerlink" href="#equation-e0a8e7d5-780b-453e-a507-af59e19228c6" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partialbruchzerlegung_beispiel}
+<div class="amsmath math notranslate nohighlight" id="equation-7a83c718-1521-4d31-9bd2-c9d4cd1372c3">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-7a83c718-1521-4d31-9bd2-c9d4cd1372c3" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partialbruchzerlegung_beispiel}
    \frac{2x^3 + 4x}{(x+1)^2(x-1)^2} \ = \ \sum_{i=1}^{2} \sum_{j=1}^{2}\frac{A_j^{(i)}}{(x-x_i)^j} \ = \ \frac{A_1^{(1)}}{x+1} \, + \, \frac{A_2^{(1)}}{(x+1)^2} \, + \, \frac{A_1^{(2)}}{x-1} \, + \, \frac{A_2^{(2)}}{(x-1)^2}.
 \end{equation}\]</div>
 <p>~\[-0.1cm]
@@ -902,8 +907,8 @@ s(x) \ = \  \frac{Bx+C}{(x^2 - 2ax + b)^j}, \quad j\in\N, \ A,B\in\K
 \end{equation*}\]</div>
 <p>und entsteht im Fall von reellen rationalen Funktionen durch das Ausklammern von quadratischen Polynomen aus dem Nennerpolynom <span class="math notranslate nohighlight">\(q \in \R[x]\)</span>, die je ein Paar von echt komplexe Nullstellen besitzen (da in diesem Fall <span class="math notranslate nohighlight">\(a^2&lt;b\)</span> gilt).
 Um eine Stammfunktion für <span class="math notranslate nohighlight">\(s\in\R(x)\)</span> zu bestimmen formen wir die Funktion zuerst geeignet um, so dass wir im Zähler ein Vielfaches des linearen Terms <span class="math notranslate nohighlight">\((x-a)\)</span> erhalten:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c8a5f974-79a1-4996-b768-b77f84bb5107">
-<span class="eqno">(4.10)<a class="headerlink" href="#equation-c8a5f974-79a1-4996-b768-b77f84bb5107" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:stammfunktion_umformung}
+<div class="amsmath math notranslate nohighlight" id="equation-8a568b67-a6cf-4bad-9751-05f4c63f3926">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-8a568b67-a6cf-4bad-9751-05f4c63f3926" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:stammfunktion_umformung}
 \frac{Bx+C}{(x^2 - 2ax + b)^j} \ = \ \frac{B\cdot(x-a)}{(x^2 - 2ax + b)^j} + \frac{C + B\cdot a}{(x^2 - 2ax + b)^j}, \quad j\in\N, \ B, C\in\K
 \end{equation}\]</div>
 <p>Für den linken Summanden in \eqref{eq:stammfunktion_umformung} können wir folgende Stammfunktion angeben:</p>

@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -197,6 +197,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="selbstadjungiert.html">
      2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="normal.html">
+     2.8. Normale Endomorphismen
     </a>
    </li>
   </ul>
@@ -444,15 +449,17 @@
 <p>Die im vorigen Kapitel besprochenen Werkzeuge zur Messung von Längen, Abständen und Winkeln leiteten sich aus dem Begriff des Skalarprodukts ab.
 Wir werden im Folgenden sehen, dass ein Skalarprodukt nur ein Spezialfall einer ganzen Familie von allgemeineren Abbildungen ist, den sogenannten Bilinear- und Sesquilinearformen.
 Zur Untersuchung dieser abstrakteren mathematischen Begriffe sei im Folgenden <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> wieder ein beliebiger Körper.</p>
-<p>\begin{definition}[Bilinearform]
-Seien <span class="math notranslate nohighlight">\(v,v',w,w' \in V\)</span> und ein Skalar <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> gegeben.
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 2.9 </span> (Bilinearform)</p>
+<div class="definition-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(v,v',w,w' \in V\)</span> und ein Skalar <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> gegeben.
 Wir nennen eine Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 s \ \colon \ V \times V \ &amp;\rightarrow \ \mathbb{K}, \\
 (v,w) \ &amp;\to \ s(v,w),
 \end{align*}\]</div>
-<p>\emph{Bilinearform} auf <span class="math notranslate nohighlight">\(V\)</span>, wenn sie \emph{bilinear} ist, d.h., linear in beiden Argumenten mit</p>
+<p>_Bilinearform} auf <span class="math notranslate nohighlight">\(V\)</span>, wenn sie <em>bilinear</em> ist, d.h., linear in beiden Argumenten mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -460,41 +467,47 @@ s(v+v', w) \ = \ s(v,&amp;w) +  s(v',w), \quad s(v, w+w') \ = \ s(v,w) + s(v,w')
 &amp;s(\lambda v, w) \ = \ \lambda s(v,w) \ = \ s(v,\lambda w).
 \end{split}
 \end{equation*}\]</div>
-<p>Die Abbildung <span class="math notranslate nohighlight">\(s\)</span> heißt \emph{symmetrisch}, falls gilt</p>
+<p>Die Abbildung <span class="math notranslate nohighlight">\(s\)</span> heißt <em>symmetrisch</em>, falls gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 s(v,w) \ = \ s(w,v)
 \end{equation*}\]</div>
-<p>und \emph{alternierend} oder \emph{schiefsymmetrisch}, falls gilt</p>
+<p>und <em>alternierend</em> oder <em>schiefsymmetrisch</em>, falls gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 s(v,w) \ = \ -s(w,v).
 \end{equation*}\]</div>
-<p>\end{definition}</p>
-<p>\begin{example}\label{bsp:bilinearform}
-Sei <span class="math notranslate nohighlight">\(\mathbb{K} = \mathbb{R}\)</span> und <span class="math notranslate nohighlight">\(I = [a,b] \subset \mathbb{R}\)</span> ein Intervall.
+</div>
+</div><div class="proof example admonition" id="bsp:bilinearform">
+<p class="admonition-title"><span class="caption-number">Example 2.4 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(\mathbb{K} = \mathbb{R}\)</span> und <span class="math notranslate nohighlight">\(I = [a,b] \subset \mathbb{R}\)</span> ein Intervall.
 Wir betrachten den Vektorrraum der auf dem Intervall <span class="math notranslate nohighlight">\(I\)</span> stetigen Funktionen <span class="math notranslate nohighlight">\(V = C(I; \mathbb{R})\)</span> und definieren eine Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 s  \colon  V \times V \ &amp;\rightarrow \ \mathbb{R}, \\
 (f,g) \ &amp;\mapsto \ s(f,g) \ \coloneqq \ \int_a^b f(x) g(x) \, \idx.
 \end{align*}\]</div>
-<p>Es folgt aus den Rechenregeln für Integrale, dass die Abbildung <span class="math notranslate nohighlight">\(s\)</span> eine symmetrische Bilinearform auf <span class="math notranslate nohighlight">\(V\)</span> darstellt.
-\end{example}</p>
-<p>Im obigen Beispiel war der Vektorraum <span class="math notranslate nohighlight">\(V\)</span> nicht endlich-dimensional.
-Schränken wir uns jedoch auf endlich-dimensionale Vektorräume ein, so lässt sich erkennen, dass sich Bilinearformen durch Matrizen beschreiben lassen.
-\begin{definition}[Darstellende Matrix einer Bilinearform]
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und sei <span class="math notranslate nohighlight">\(B \coloneqq (v_1, \ldots, v_n)\)</span> eine Basis von <span class="math notranslate nohighlight">\(V\)</span>.
+<p>Es folgt aus den Rechenregeln für Integrale, dass die Abbildung <span class="math notranslate nohighlight">\(s\)</span> eine symmetrische Bilinearform auf <span class="math notranslate nohighlight">\(V\)</span> darstellt.</p>
+</div>
+</div><p>Im obigen Beispiel war der Vektorraum <span class="math notranslate nohighlight">\(V\)</span> nicht endlich-dimensional.
+Schränken wir uns jedoch auf endlich-dimensionale Vektorräume ein, so lässt sich erkennen, dass sich Bilinearformen durch Matrizen beschreiben lassen.</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 2.10 </span> (Darstellende Matrix einer Bilinearform)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und sei <span class="math notranslate nohighlight">\(B \coloneqq (v_1, \ldots, v_n)\)</span> eine Basis von <span class="math notranslate nohighlight">\(V\)</span>.
 Außerdem sei <span class="math notranslate nohighlight">\(s\)</span> eine Bilinearform auf <span class="math notranslate nohighlight">\(V\)</span>.
 Dann nennen wir die Matrix <span class="math notranslate nohighlight">\(M_B(s) \in \mathbb{K}^{n\times n}\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 M_B(s) \ \coloneqq \ (s(v_i, v_j))_{1 \leq i,j \leq n}
 \end{equation*}\]</div>
-<p>die \emph{darstellende Matrix} von <span class="math notranslate nohighlight">\(s\)</span> bezüglich <span class="math notranslate nohighlight">\(B\)</span>.
-\end{definition}</p>
-<p>\begin{satz}
-Sei <span class="math notranslate nohighlight">\(s\)</span> eine Bilinearform auf <span class="math notranslate nohighlight">\(V\)</span> mit Basis <span class="math notranslate nohighlight">\(B = (v_1, \ldots, v_n)\)</span>.
+<p>die <em>darstellende Matrix</em> von <span class="math notranslate nohighlight">\(s\)</span> bezüglich <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</div>
+</div><div class="proof theorem admonition" id="theorem-3">
+<p class="admonition-title"><span class="caption-number">Theorem 2.2 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(s\)</span> eine Bilinearform auf <span class="math notranslate nohighlight">\(V\)</span> mit Basis <span class="math notranslate nohighlight">\(B = (v_1, \ldots, v_n)\)</span>.
 Sei außerdem <span class="math notranslate nohighlight">\(\Phi_B \colon \mathbb{K}^n \rightarrow V\)</span> das zugehörige Koordinatensystem zur Basis <span class="math notranslate nohighlight">\(B\)</span> und <span class="math notranslate nohighlight">\(A \coloneqq M_B(s)\)</span> die darstellende Matrix von <span class="math notranslate nohighlight">\(s\)</span> bezüglich <span class="math notranslate nohighlight">\(B\)</span>.
 Wenn wir zwei Vektoren <span class="math notranslate nohighlight">\(v,w \in V\)</span> betrachten mit den Koordinaten</p>
 <div class="amsmath math notranslate nohighlight">
@@ -516,40 +529,41 @@ y_1\\
 y_n
 \end{pmatrix} \ = \ x^T A y.
 \end{equation*}\]</div>
-<p>\end{satz}
-\begin{proof}
-Wir können schreiben</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir können schreiben</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 s(v,w) \ = \ s(x_1v_1 + \ldots + x_nv_n, y_1v_1 + \ldots + y_nv_n) \ = \ \sum_{i=1}^n \sum_{j=1}^n x_i s(v_i, v_j) y_j.
 \end{equation*}\]</div>
 <p>Wir sehen also, dass durch Ausnutzung der Bilinearität von <span class="math notranslate nohighlight">\(s\)</span> wir eine Summe aus <span class="math notranslate nohighlight">\(n^2\)</span> Summanden erhalten.
-Da <span class="math notranslate nohighlight">\(A\)</span> die darstellende Matrix von <span class="math notranslate nohighlight">\(s\)</span> bezüglich der Basis <span class="math notranslate nohighlight">\(B\)</span> ist gilt <span class="math notranslate nohighlight">\(s(v_i, v_j) = a_{ij}\)</span>, womit schon die Behauptung folgt.
-\end{proof}</p>
-<p>Wir wollen die Darstellung einer Bilinearform durch eine Matrix durch folgende zwei Beispiele besser verstehen.
-\begin{example}
-Sei <span class="math notranslate nohighlight">\(V = \mathbb{R}^2\)</span> ein Euklidischer Vektorraum mit dem kanonischen Skalarprodukt als symmetrischer Bilinearform <span class="math notranslate nohighlight">\(s(v,w) \coloneqq \langle v, w\rangle\)</span> auf <span class="math notranslate nohighlight">\(V\)</span>.
+Da <span class="math notranslate nohighlight">\(A\)</span> die darstellende Matrix von <span class="math notranslate nohighlight">\(s\)</span> bezüglich der Basis <span class="math notranslate nohighlight">\(B\)</span> ist gilt <span class="math notranslate nohighlight">\(s(v_i, v_j) = a_{ij}\)</span>, womit schon die Behauptung folgt.</p>
+</div>
+<p>Wir wollen die Darstellung einer Bilinearform durch eine Matrix durch folgende zwei Beispiele besser verstehen.</p>
+<div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 2.5 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V = \mathbb{R}^2\)</span> ein Euklidischer Vektorraum mit dem kanonischen Skalarprodukt als symmetrischer Bilinearform <span class="math notranslate nohighlight">\(s(v,w) \coloneqq \langle v, w\rangle\)</span> auf <span class="math notranslate nohighlight">\(V\)</span>.
 Seien außerdem <span class="math notranslate nohighlight">\(v,w \in \mathbb{R}^2\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-v \ \coloneqq \ 
+v \ \coloneqq \
 \begin{pmatrix}
 2 \\
 -1
 \end{pmatrix}, \qquad
-w \ \coloneqq \ 
+w \ \coloneqq \
 \begin{pmatrix}
 0 \\
 5
 \end{pmatrix}.
 \end{equation*}\]</div>
-<p>Wir betrachten die darstellenden Matrix des Skalarprodukts bezüglich zweier unterschiedlicher Basen von <span class="math notranslate nohighlight">\(V\)</span> im Folgenden.
-\begin{enumerate}[i)]
-\item Wir wählen im ersten Beispiel  die kanonische Standardbasis <span class="math notranslate nohighlight">\(B=(e_1, e_2)\)</span> des <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.
+<p>Wir betrachten die darstellenden Matrix des Skalarprodukts bezüglich zweier unterschiedlicher Basen von <span class="math notranslate nohighlight">\(V\)</span> im Folgenden.</p>
+<p>i) Wir wählen im ersten Beispiel  die kanonische Standardbasis <span class="math notranslate nohighlight">\(B=(e_1, e_2)\)</span> des <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.
 Wir berechnen die darstellende Matrix des Skalarprodukts bezüglich der Basis <span class="math notranslate nohighlight">\(B\)</span> als</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-A \ \coloneqq \ M_B(s) \ = \ 
+A \ \coloneqq \ M_B(s) \ = \
 \begin{pmatrix}
 \langle e_1, e_1 \rangle &amp; \langle e_1, e_2 \rangle\\
 \langle e_2, e_1 \rangle &amp; \langle e_2, e_2 \rangle
@@ -570,7 +584,7 @@ x \ = \ \Phi_B(v) \ = \ (2, -1)^T \ = \ v, \qquad y \ = \ \Phi_B(w) \ = \ (0, 5)
 \[\begin{equation*}
 -5 \ = \ \langle (2,-1)^T, (0,5)^T \rangle \ = \ \langle v, w \rangle \ = \ x^T A y \ = \ v^T I_2 w \ = \ \langle v, w \rangle \ = \ -5.
 \end{equation*}\]</div>
-<p>\item Wir wählen im zweiten Beispiel die Basis <span class="math notranslate nohighlight">\(B=(v_1, v_2)\)</span> des <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> mit</p>
+<p>ii) Wir wählen im zweiten Beispiel die Basis <span class="math notranslate nohighlight">\(B=(v_1, v_2)\)</span> des <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 v_1 \ \coloneqq \
@@ -587,7 +601,7 @@ v_2 \ \coloneqq \
 <p>Wir berechnen die darstellende Matrix des Skalarprodukts bezüglich der Basis <span class="math notranslate nohighlight">\(B\)</span> als</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-A \ \coloneqq \ M_B(s) \ = \ 
+A \ \coloneqq \ M_B(s) \ = \
 \begin{pmatrix}
 \langle v_1, v_1 \rangle &amp; \langle v_1, v_2 \rangle\\
 \langle v_2, v_1 \rangle &amp; \langle v_2, v_2 \rangle
@@ -607,7 +621,7 @@ x \ = \ \Phi_B(v) \ = \ (0,1)^T, \qquad y \ = \ \Phi_B(w) \ = \ (2,-1)^T.
 \[\begin{equation*}
 \begin{split}
 -5 \ &amp;= \ \langle (2,-1)^T, (0,5)^T \rangle \ = \ \langle v, w \rangle \ = \ x^T A y \\
- &amp;= \ 
+ &amp;= \
 (0,1)^T \cdot
 \begin{pmatrix}
 5 &amp; 0\\
@@ -625,47 +639,50 @@ x \ = \ \Phi_B(v) \ = \ (0,1)^T, \qquad y \ = \ \Phi_B(w) \ = \ (2,-1)^T.
 \end{pmatrix} \ = \ -5.
 \end{split}
 \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{example}</p>
-<p>Zwischen Matrizen und Bilinearformen existiert ein starker Zusammenhang, wie wir im Folgenden feststellen.
-\begin{remark}[Bijektivität und Symmetrie von Bilinearformen]
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und <span class="math notranslate nohighlight">\(B\)</span> eine zugehörige Basis von <span class="math notranslate nohighlight">\(V\)</span>.
+</div>
+</div><p>Zwischen Matrizen und Bilinearformen existiert ein starker Zusammenhang, wie wir im Folgenden feststellen.</p>
+<div class="proof remark admonition" id="remark-5">
+<p class="admonition-title"><span class="caption-number">Remark 2.4 </span> (Bijektivität und Symmetrie von Bilinearformen)</p>
+<div class="remark-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und <span class="math notranslate nohighlight">\(B\)</span> eine zugehörige Basis von <span class="math notranslate nohighlight">\(V\)</span>.
 Dann ist die Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 s \ \mapsto \ M_B(s)
 \end{equation*}\]</div>
-<p>von den Bilinearformen auf <span class="math notranslate nohighlight">\(V\)</span> nach <span class="math notranslate nohighlight">\(\mathbb{K}^{n \times n}\)</span> \emph{bijektiv}.
-Außerdem ist <span class="math notranslate nohighlight">\(s\)</span> genau dann \emph{symmetrisch}, wenn <span class="math notranslate nohighlight">\(M_B(s)\)</span> symmetrisch ist.
-\end{remark}</p>
-<p>\begin{lemma}\label{lem:transformationsformel}
-Seien <span class="math notranslate nohighlight">\(A,B \in \mathbb{K}^{n \times n}\)</span> gegeben mit</p>
+<p>von den Bilinearformen auf <span class="math notranslate nohighlight">\(V\)</span> nach <span class="math notranslate nohighlight">\(\mathbb{K}^{n \times n}\)</span> <em>bijektiv</em>.
+Außerdem ist <span class="math notranslate nohighlight">\(s\)</span> genau dann <em>symmetrisch</em>, wenn <span class="math notranslate nohighlight">\(M_B(s)\)</span> symmetrisch ist.</p>
+</div>
+</div><div class="proof lemma admonition" id="lem:transformationsformel">
+<p class="admonition-title"><span class="caption-number">Lemma 2.7 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(A,B \in \mathbb{K}^{n \times n}\)</span> gegeben mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 x^T A y \ = \ x^T B y,
 \end{equation*}\]</div>
 <p>für alle <span class="math notranslate nohighlight">\(x,y \in \mathbb{K}^n\)</span>.
-Dann gilt schon <span class="math notranslate nohighlight">\(A = B\)</span>.
-\end{lemma}
-\begin{proof}
-Da die Gleichung <span class="math notranslate nohighlight">\(x^TAy = x^TBy\)</span> für alle Vektoren in <span class="math notranslate nohighlight">\(\mathbb{K}^n\)</span> gilt, muss sie insbesondere auch für die Einheitsvektoren gelten und damit folgt für alle Indizes <span class="math notranslate nohighlight">\(1 \leq i,j \leq n\)</span>:</p>
+Dann gilt schon <span class="math notranslate nohighlight">\(A = B\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Da die Gleichung <span class="math notranslate nohighlight">\(x^TAy = x^TBy\)</span> für alle Vektoren in <span class="math notranslate nohighlight">\(\mathbb{K}^n\)</span> gilt, muss sie insbesondere auch für die Einheitsvektoren gelten und damit folgt für alle Indizes <span class="math notranslate nohighlight">\(1 \leq i,j \leq n\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 a_{i,j} \ = \ e_i^T A e_j \ = \ e_i^T B e_j \ = \ b_{i,j}.
 \end{equation*}\]</div>
-<p>Damit folgt also direkt, dass <span class="math notranslate nohighlight">\(A=B\)</span> ist.
-\end{proof}</p>
-<p>\begin{satz}[Transformationsformel]\label{satz:transformationsformel}
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Vektorraum mit zwei Basen <span class="math notranslate nohighlight">\(A,B\)</span>.
+<p>Damit folgt also direkt, dass <span class="math notranslate nohighlight">\(A=B\)</span> ist.</p>
+</div>
+<div class="proof theorem admonition" id="satz:transformationsformel">
+<p class="admonition-title"><span class="caption-number">Theorem 2.3 </span> (Transformationsformel)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein endlich-dimensionaler Vektorraum mit zwei Basen <span class="math notranslate nohighlight">\(A,B\)</span>.
 Sei außerdem <span class="math notranslate nohighlight">\(T^B_A\)</span> die entsprechende Transformationsmatrix von Basis <span class="math notranslate nohighlight">\(B\)</span> zu Basis <span class="math notranslate nohighlight">\(A\)</span>.
 Für jede Bilinearform <span class="math notranslate nohighlight">\(s\)</span> auf <span class="math notranslate nohighlight">\(V\)</span> gilt dann die folgende Transformationsformel:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d17ab6c8-39f4-4170-9090-d71e23361e72">
-<span class="eqno">(2.7)<a class="headerlink" href="#equation-d17ab6c8-39f4-4170-9090-d71e23361e72" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:transformationsformel}
-M_B(s) \ = \ (T^B_A)^T \cdot M_A(s) \cdot T^B_A.
-\end{equation}\]</div>
-<p>\end{satz}
-\begin{proof}
-Seien <span class="math notranslate nohighlight">\(\Phi_A, \Phi_B \colon \mathbb{K}^n \rightarrow V\)</span> Koordinatensysteme von <span class="math notranslate nohighlight">\(V\)</span> bezüglich der Basen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span>.
+<div class="math notranslate nohighlight" id="equation-eq-transformationsformel">
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-eq-transformationsformel" title="Permalink to this equation">¶</a></span>\[M_B(s) \ = \ (T^B_A)^T \cdot M_A(s) \cdot T^B_A.\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Seien <span class="math notranslate nohighlight">\(\Phi_A, \Phi_B \colon \mathbb{K}^n \rightarrow V\)</span> Koordinatensysteme von <span class="math notranslate nohighlight">\(V\)</span> bezüglich der Basen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span>.
 Seien außerdem <span class="math notranslate nohighlight">\(v, v' \in V\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -679,41 +696,47 @@ x \, = \, Ty, \qquad x' \, = \, Ty'.
 <p>Damit können wir folgern, dass gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-y^T M_B(s) y' \ = \ s(v,v') \ = \ x^T M_A(s) x' \ = \ (Ty)^T M_A(s) (Ty') \ = \ y^T (T^T M_A(s) T) y'.
+y^T M_B(s) y' \ = \ s(v,v') \ = \ x^T M_A(s) x' \ = \ (Ty)^T M_A(s) (Ty') \ = \ y^T (T^eqrefT M_A(s) T) y'.
 \end{equation*}\]</div>
-<p>Mit Lemma \ref{lem:transformationsformel} folgt dann schon, dass gelten muss:</p>
+<p>Mit Lemma <a class="reference internal" href="#lem:transformationsformel">Lemma 2.7</a> folgt dann schon, dass gelten muss:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 M_B(s) \ = \ (T^B_A)^T \cdot M_A(s) \cdot T^B_A.
 \end{equation*}\]</div>
-<p>\end{proof}</p>
-<p>\begin{remark}
-Das Transformationsverhalten bei Endomorphismen in Kapitel \ref{ch:eigenwerttheorie} unterscheidet sich von der Transformationsformel \eqref{eq:transformationsformel}, da für einen Endomorphismus <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> galt:</p>
+</div>
+<div class="proof remark admonition" id="remark-8">
+<p class="admonition-title"><span class="caption-number">Remark 2.5 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Das Transformationsverhalten bei Endomorphismen in Kapitel <a class="reference internal" href="../eigenwerte/eigenwerte.html#ch-eigenwerttheorie"><span class="std std-ref">Eigenwerte</span></a> unterscheidet sich von der Transformationsformel <a class="reference internal" href="#equation-eq-transformationsformel">(2.7)</a>, da für einen Endomorphismus <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> galt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 M_B(F) \ = \ \underbrace{(T^B_A)^{-1}}_{= T^A_B} \cdot M_A(F) \cdot T^B_A.
 \end{equation*}\]</div>
-<p>\end{remark}</p>
-<p>\begin{definition}[Quadratische Form]
-Sei <span class="math notranslate nohighlight">\(s\)</span> eine symmetrische Bilinearform auf <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(v \in V\)</span>.
+</div>
+</div><div class="proof definition admonition" id="definition-9">
+<p class="admonition-title"><span class="caption-number">Definition 2.11 </span> ([Quadratische Form])</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(s\)</span> eine symmetrische Bilinearform auf <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(v \in V\)</span>.
 Dann definieren wir die Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 q \colon V \ &amp;\rightarrow \ \mathbb{K},\\
 v \ &amp;\mapsto \ q(v) \ \coloneqq \ s(v,v),
 \end{align*}\]</div>
-<p>die zugehörige \emph{quadratische Form} von <span class="math notranslate nohighlight">\(s\)</span>.
+<p>die zugehörige <em>quadratische Form</em> von <span class="math notranslate nohighlight">\(s\)</span>.
 Aus der Bilinearität von <span class="math notranslate nohighlight">\(s\)</span> folgt für alle Skalare <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> direkt, dass gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 q(\lambda v) \ = \ \lambda^2 q(v).
 \end{equation*}\]</div>
-<p>\end{definition}</p>
-<p>Wir wollen die quadratische Form zu der wohl naheliegensten Bilinearform betrachten - dem kanonischen Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.
-\begin{example}
-Sei <span class="math notranslate nohighlight">\(V = \mathbb{R}^n\)</span> ein Euklidischer Vektorraum.
+</div>
+</div><p>Wir wollen die quadratische Form zu der wohl naheliegensten Bilinearform betrachten - dem kanonischen Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p>
+<div class="proof example admonition" id="example-10">
+<p class="admonition-title"><span class="caption-number">Example 2.6 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V = \mathbb{R}^n\)</span> ein Euklidischer Vektorraum.
 Sei außerdem <span class="math notranslate nohighlight">\(v \in V\)</span> und ein Skalar <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span> gegeben.
-Wir betrachten das kanonische Skalarprodukt aus Definition \ref{def:skalarprodukt_r} und bestimmen die zugehörige quadratische Form als</p>
+Wir betrachten das kanonische Skalarprodukt aus Definition <a class="reference internal" href="standard_skalar.html#def:skalarprodukt_r">Definition 2.1</a> und bestimmen die zugehörige quadratische Form als</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 q(v) \ = \ \langle v, v \rangle \ = \ v_1^2 + \ldots v_n^2 \ = \ ||v||^2.
@@ -723,16 +746,18 @@ q(v) \ = \ \langle v, v \rangle \ = \ v_1^2 + \ldots v_n^2 \ = \ ||v||^2.
 \[\begin{equation*}
 q(\lambda v) \ = \ ||\lambda v||^2 \ = \ \lambda^2 ||v||^2 \ = \ \lambda^2 q(v).
 \end{equation*}\]</div>
-<p>\end{example}</p>
-<p>\begin{definition}[Sesquilinearform]
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein komplexer Vektorraum und seien <span class="math notranslate nohighlight">\(v,v',w,w' \in V\)</span> und ein Skalar <span class="math notranslate nohighlight">\(\lambda \in \mathbb{C}\)</span> gegeben.
+</div>
+</div><div class="proof definition admonition" id="definition-11">
+<p class="admonition-title"><span class="caption-number">Definition 2.12 </span> (Sesquilinearform)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein komplexer Vektorraum und seien <span class="math notranslate nohighlight">\(v,v',w,w' \in V\)</span> und ein Skalar <span class="math notranslate nohighlight">\(\lambda \in \mathbb{C}\)</span> gegeben.
 Wir nennen eine Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 s \ \colon \ V \times V \ &amp;\rightarrow \ \mathbb{C}, \\
 (v,w) \ &amp;\to \ s(v,w),
 \end{align*}\]</div>
-<p>\emph{Sesquilinearform} auf <span class="math notranslate nohighlight">\(V\)</span>, wenn sie linear im ersten Argument und semilinear im zweiten Argument ist, d.h.</p>
+<p><em>Sesquilinearform</em> auf <span class="math notranslate nohighlight">\(V\)</span>, wenn sie linear im ersten Argument und semilinear im zweiten Argument ist, d.h.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -740,33 +765,36 @@ s(v+v', w) \ &amp;= \ s(v,w) +  s(v',w), \quad s(v, w+w') \ = \ s(v,w) + s(v,w')
 &amp;s(\lambda v, w) \ = \ \lambda s(v,w), \quad s(v, \lambda w)  \ = \ \overline{\lambda}s(v,w).
 \end{split}
 \end{equation*}\]</div>
-<p>Die Abbildung <span class="math notranslate nohighlight">\(s\)</span> heißt \emph{hermitesch}, falls zusätzlich gilt</p>
+<p>Die Abbildung <span class="math notranslate nohighlight">\(s\)</span> heißt <em>hermitesch</em>, falls zusätzlich gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 s(v,w) \ = \ \overline{s(w,v)}.
 \end{equation*}\]</div>
-<p>Zu einer Sesquilinearform <span class="math notranslate nohighlight">\(s\)</span> auf <span class="math notranslate nohighlight">\(V\)</span> definieren wir eine zugehörige \emph{quadratische Form}</p>
+<p>Zu einer Sesquilinearform <span class="math notranslate nohighlight">\(s\)</span> auf <span class="math notranslate nohighlight">\(V\)</span> definieren wir eine zugehörige <em>quadratische Form</em></p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 q \ \colon \ V  \ &amp;\rightarrow \ \mathbb{C}, \\
 v \ &amp;\to \ q(v) \ \coloneqq \ s(v,v).
 \end{align*}\]</div>
-<p>\end{definition}</p>
-<p>Neben dem komplexen Skalarprodukt <span class="math notranslate nohighlight">\(\langle \cdot, \cdot \rangle_c\)</span> aus Definition \ref{def:skalarprodukt_c} gibt es noch weitere Sesquilinearformen, wie das folgende Beispiel zeigt.
-\begin{example}
-Sei <span class="math notranslate nohighlight">\(\mathbb{K} = \mathbb{C}\)</span> und <span class="math notranslate nohighlight">\(I = [a,b] \subset \mathbb{R}\)</span> ein Intervall.
+</div>
+</div><p>Neben dem komplexen Skalarprodukt <span class="math notranslate nohighlight">\(\langle \cdot, \cdot \rangle_c\)</span> aus Definition <a class="reference internal" href="complex_skalar.html#def:skalarprodukt_c">Definition 2.7</a> gibt es noch weitere Sesquilinearformen, wie das folgende Beispiel zeigt.</p>
+<div class="proof example admonition" id="example-12">
+<p class="admonition-title"><span class="caption-number">Example 2.7 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(\mathbb{K} = \mathbb{C}\)</span> und <span class="math notranslate nohighlight">\(I = [a,b] \subset \mathbb{R}\)</span> ein Intervall.
 Wir betrachten den Vektorrraum der auf dem Intervall <span class="math notranslate nohighlight">\(I\)</span> stetigen, komplex-wertigen Funktionen <span class="math notranslate nohighlight">\(V = C(I; \mathbb{C})\)</span> und definieren eine Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 s  \colon  V \times V \ &amp;\rightarrow \ \mathbb{C}, \\
 (f,g) \ &amp;\mapsto \ s(f,g) \ \coloneqq \ \int_a^b f(x) \overline{g}(x) \, \idx.
 \end{align*}\]</div>
-<p>Es folgt aus den Rechenregeln für Integrale, dass die Abbildung <span class="math notranslate nohighlight">\(s\)</span> eine Sesquilinearform auf <span class="math notranslate nohighlight">\(V\)</span> darstellt.
-\end{example}</p>
-<p>\begin{remark}
-Ähnlich wie bei Bilinearformen können wir folgende Charakteristiken feststellen.
-\begin{enumerate}[i)]
-\item Eine Sesquilinearform kann auch durch eine Matrix beschrieben werden.
+<p>Es folgt aus den Rechenregeln für Integrale, dass die Abbildung <span class="math notranslate nohighlight">\(s\)</span> eine Sesquilinearform auf <span class="math notranslate nohighlight">\(V\)</span> darstellt.</p>
+</div>
+</div><div class="proof remark admonition" id="remark-13">
+<p class="admonition-title"><span class="caption-number">Remark 2.6 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Ähnlich wie bei Bilinearformen können wir folgende Charakteristiken feststellen.</p>
+<p>i) Eine Sesquilinearform kann auch durch eine Matrix beschrieben werden.
 Hierzu müssen wir allerdings die komplexe Konjugation berücksichtigen.
 Sei <span class="math notranslate nohighlight">\(B = (v_1, \ldots, v_n)\)</span> eine Basis eines komplexen Vektorraums <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(s\)</span> eine Sesquilinearform auf <span class="math notranslate nohighlight">\(V\)</span>.
 Die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(s)\)</span> von <span class="math notranslate nohighlight">\(s\)</span> bezüglich der Basis <span class="math notranslate nohighlight">\(B\)</span> ist gegeben durch:</p>
@@ -795,31 +823,32 @@ a_{n1} &amp; \cdots &amp; a_{nn}
 \overline{y_n}
 \end{pmatrix} \ = \ x^T A \overline{y}.
 \end{equation*}\]</div>
-<p>\item Sei <span class="math notranslate nohighlight">\(C\)</span> eine weitere Basis von <span class="math notranslate nohighlight">\(V\)</span> und sei <span class="math notranslate nohighlight">\(T \coloneqq T^C_B\)</span> die Transformationsmatrix von Basis <span class="math notranslate nohighlight">\(C\)</span> zu Basis <span class="math notranslate nohighlight">\(B\)</span>.
+<p>ii) Sei <span class="math notranslate nohighlight">\(C\)</span> eine weitere Basis von <span class="math notranslate nohighlight">\(V\)</span> und sei <span class="math notranslate nohighlight">\(T \coloneqq T^C_B\)</span> die Transformationsmatrix von Basis <span class="math notranslate nohighlight">\(C\)</span> zu Basis <span class="math notranslate nohighlight">\(B\)</span>.
 Dann erhalten wir folgendes Transformationsverhalten für die darstellende Matrix <span class="math notranslate nohighlight">\(M_C(s)\)</span> von <span class="math notranslate nohighlight">\(s\)</span> bezüglich <span class="math notranslate nohighlight">\(C\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 M_C(s) \ = \ T^T \cdot M_B(s) \cdot \overline{T}.
 \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{remark}</p>
-<p>Es ist in der Tat möglich symmetrische Bilinearformen und Sesquilinearformen nur an Hand ihrer quadratischen Formen zu rekonstruieren.
-Diesen mathematischen Zusammenhang nennt man Polarisierung und wird durch folgenden Satz beschrieben.
-\begin{satz}[Polarisierung]\label{satz:polarisierung}
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>-Vektorraum und <span class="math notranslate nohighlight">\(W\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>-Vektorraum.
+</div>
+</div><p>Es ist in der Tat möglich symmetrische Bilinearformen und Sesquilinearformen nur an Hand ihrer quadratischen Formen zu rekonstruieren.
+Diesen mathematischen Zusammenhang nennt man Polarisierung und wird durch folgenden Satz beschrieben.</p>
+<div class="proof theorem admonition" id="satz:polarisierung">
+<p class="admonition-title"><span class="caption-number">Theorem 2.4 </span> (Polarisierung)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>-Vektorraum und <span class="math notranslate nohighlight">\(W\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>-Vektorraum.
 Sei außerdem <span class="math notranslate nohighlight">\(b\)</span> eine symmetrische Bilinearform auf <span class="math notranslate nohighlight">\(V\)</span> mit zugehöriger quadratischer Form <span class="math notranslate nohighlight">\(q(v) = b(v,v)\)</span> und <span class="math notranslate nohighlight">\(s\)</span> eine Sesquilinearform auf <span class="math notranslate nohighlight">\(W\)</span> mit zugehöriger quadratischer Form <span class="math notranslate nohighlight">\(p(v) = s(v,v)\)</span>.
-Dann gelten die folgenden, \emph{Polarisierung} genannten, Zusammenhänge:
-\begin{enumerate}[i)]
-\item <span class="math notranslate nohighlight">\(b(v,w) \ = \ \frac{1}{4} [q(v+w) - q(v - w)]\)</span>, \quad für alle <span class="math notranslate nohighlight">\(v,w \in V\)</span>,
-\item <span class="math notranslate nohighlight">\(s(v,w) \ = \ \frac{1}{4} [p(v+w) - p(v - w) + i \cdot p(v + iw) - i \cdot p(v - iw)]\)</span>, \quad für alle <span class="math notranslate nohighlight">\(v,w \in W\)</span>.
-\end{enumerate}</p>
-<p>\end{satz}
-\begin{proof}
-In der Hausaufgabe zu zeigen.
-\end{proof}</p>
-<p>Im reellen Fall ist es entscheidend, dass man in Satz \ref{satz:polarisierung} eine symmetrische Bilinearform annimmt, da die Polarisierungsformel nicht für beliebige Bilinearformen gilt, wie das folgende Beispiel zeigt:
-\begin{example}
-Sei <span class="math notranslate nohighlight">\(V = \mathbb{R}^2\)</span> und wir betrachten die folgende Bilinearform</p>
+Dann gelten die folgenden, <em>Polarisierung</em> genannten, Zusammenhänge:</p>
+<p>i) <span class="math notranslate nohighlight">\(b(v,w) \ = \ \frac{1}{4} [q(v+w) - q(v - w)]\)</span>, \quad für alle <span class="math notranslate nohighlight">\(v,w \in V\)</span>,</p>
+<p>ii) <span class="math notranslate nohighlight">\(s(v,w) \ = \ \frac{1}{4} [p(v+w) - p(v - w) + i \cdot p(v + iw) - i \cdot p(v - iw)]\)</span>, \quad für alle <span class="math notranslate nohighlight">\(v,w \in W\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. In der Hausaufgabe zu zeigen.</p>
+</div>
+<p>Im reellen Fall ist es entscheidend, dass man in Satz <a class="reference internal" href="#satz:polarisierung">Theorem 2.4</a> eine symmetrische Bilinearform annimmt, da die Polarisierungsformel nicht für beliebige Bilinearformen gilt, wie das folgende Beispiel zeigt:</p>
+<div class="proof example admonition" id="example-15">
+<p class="admonition-title"><span class="caption-number">Example 2.8 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V = \mathbb{R}^2\)</span> und wir betrachten die folgende Bilinearform</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 s(x,y) \ \coloneqq \ x^T 
@@ -840,29 +869,31 @@ s(x,x) \ = \ -x_1x_2 + x_1x_2 \ = \ 0.
 \[\begin{equation*}
 1 \ = \ s((1,0)^T, (0,1)^T) \ \neq \ \frac{1}{4}[\underbrace{s((1,1)^T, (1,1)^T)}_{=0} - \underbrace{s((1,-1)^T, (1,-1)^T)}_{=0}] \ = \ 0.
 \end{equation*}\]</div>
-<p>\end{example}</p>
-<p>\begin{definition}[Positive Definitheit]
-Wir wollen im folgenden den Begriff der positiven Definitheit für Matrizen und symmetrische Bilinearformen bzw. hermitesche Sesquilinearformen einführen.
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum.
-\begin{enumerate}[i)]
-\item Eine symmetrische Bilinearform bzw. hermitesche Sesquilinearform <span class="math notranslate nohighlight">\(s \colon V \times V \rightarrow \mathbb{K}\)</span> heißt \emph{positiv definit} falls für alle <span class="math notranslate nohighlight">\(v \in V\)</span> mit <span class="math notranslate nohighlight">\(v \neq 0\)</span> gilt:</p>
+</div>
+</div><div class="proof definition admonition" id="definition-16">
+<p class="admonition-title"><span class="caption-number">Definition 2.13 </span> (Positive Definitheit)</p>
+<div class="definition-content section" id="proof-content">
+<p>Wir wollen im folgenden den Begriff der positiven Definitheit für Matrizen und symmetrische Bilinearformen bzw. hermitesche Sesquilinearformen einführen.
+Sei <span class="math notranslate nohighlight">\(V\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum.</p>
+<p>i) Eine symmetrische Bilinearform bzw. hermitesche Sesquilinearform <span class="math notranslate nohighlight">\(s \colon V \times V \rightarrow \mathbb{K}\)</span> heißt _positiv definit} falls für alle <span class="math notranslate nohighlight">\(v \in V\)</span> mit <span class="math notranslate nohighlight">\(v \neq 0\)</span> gilt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 s(v,v) \ &gt; \ 0.
 \end{equation*}\]</div>
-<p>\item Eine symmetrische bzw. hermitesche Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> heißt \emph{positiv definit} falls für alle <span class="math notranslate nohighlight">\(x \in \mathbb{K}^n\)</span> mit <span class="math notranslate nohighlight">\(x \neq 0\)</span> gilt:</p>
+<p>ii) Eine symmetrische bzw. hermitesche Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> heißt _positiv definit} falls für alle <span class="math notranslate nohighlight">\(x \in \mathbb{K}^n\)</span> mit <span class="math notranslate nohighlight">\(x \neq 0\)</span> gilt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 x^T A \overline{x} \ &gt; \ 0.
 \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{definition}</p>
-<p>Schlussendlich sind wir in der Lage den Begriff eines Euklidischen und unitären Vektorraums mit Hilfe von Bilinear- und Sesquilinearformen zu definieren.
-\begin{definition}[Euklidischer und unitärer Vektorraum]
-Wir nennen eine positiv definite symmetrische Bilinearform bzw. eine positiv definite hermitesche Sesquilinearform ein \emph{Skalarprodukt}.
-Einen reellen bzw. komplexen Vektorraum zusammen mit einem Skalarprodukt nennen wir \emph{Euklidischen} bzw. \emph{unitären Vektorraum}.
-\end{definition}</p>
 </div>
+</div><p>Schlussendlich sind wir in der Lage den Begriff eines Euklidischen und unitären Vektorraums mit Hilfe von Bilinear- und Sesquilinearformen zu definieren.</p>
+<div class="proof definition admonition" id="definition-17">
+<p class="admonition-title"><span class="caption-number">Definition 2.14 </span> (Euklidischer und unitärer Vektorraum)</p>
+<div class="definition-content section" id="proof-content">
+<p>Wir nennen eine positiv definite symmetrische Bilinearform bzw. eine positiv definite hermitesche Sesquilinearform ein _Skalarprodukt}.
+Einen reellen bzw. komplexen Vektorraum zusammen mit einem Skalarprodukt nennen wir _Euklidischen} bzw. _unitären Vektorraum}.</p>
+</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
