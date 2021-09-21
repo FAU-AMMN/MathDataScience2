@@ -30,6 +30,11 @@ parts:
       - file: normierte_raeume/stetigkeit.md
       - file: normierte_raeume/kompaktheit.md
       - file: normierte_raeume/hilbert.md
+    - file: integrale/integrale.md
+      sections:
+      - file: integrale/part_int.md
+      - file: integrale/substitution.md
+      - file: integrale/rat_func.md
     - file: ableitungen/ableitungen.md
       sections:
       - file: ableitungen/part_diff.md
@@ -37,4 +42,14 @@ parts:
       - file: ableitungen/higher_order.md
       - file: ableitungen/tot_diff.md
       - file: ableitungen/taylor.md
+    - file: optimierung/optimierung.md
+      sections:
+      - file: optimierung/unrestringiert.md
+      - file: optimierung/nebenbedingungen.md
+    - file: ode/ode.md
+      sections:
+      - file: ode/tdv.md
+      - file: ode/vdk.md
+  - caption: Anhang
+    chapters:
     - file: references.md

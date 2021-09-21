@@ -1,8 +1,7 @@
 Normierte Vektorräume
 ============================
 
-Sie haben in \cite[Kapitel 4 \& 5]{burger_2020} bereits die fundamentalen Konzepte von Folgen, Stetigkeit und Kompaktheit in \emph{metrischen Räumen} kennengelernt.
-Wir werden diese grundlegenden Begriffe im Folgenden durch Verwendung der Norm aus Kapitel \ref{s:skalarprodukt_r} wiederholen, weiter präzisieren und durch neue Erkenntnisse erweitern.
+Sie haben in Kapitel 4 & 5{cite:p}`burger_2020` bereits die fundamentalen Konzepte von Folgen, Stetigkeit und Kompaktheit in _metrischen Räumen_ kennengelernt. Wir werden diese grundlegenden Begriffe im Folgenden durch Verwendung der Norm aus Kapitel \ref{s:skalarprodukt_r} wiederholen, weiter präzisieren und durch neue Erkenntnisse erweitern.
 
 Die zugrunde liegende Struktur für dieses Kapitel ist ein Vektorraum auf dem eine Norm definiert ist. 
 \begin{definition}[Normierter Vektorraum]

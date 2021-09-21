@@ -22,7 +22,9 @@ sphinx:
     mathjax_config:
       TeX:
         Macros:
-          "N": "\\mathbb{N}"
+          "N"    : "\\mathbb{N}"
+          "C"    : "\\mathbb{C}"
+          "K"    : "\\mathbb{K}"
           "floor": ["\\lfloor#1\\rfloor", 1]
           "bmat" : ["\\left[\\begin{array}"]
           "emat" : ["\\end{array}\\right]"]
@@ -33,6 +35,7 @@ sphinx:
           "eqqcolon": ["{=:}"]
           "emph" : ["\\pmb#1",1]
           "tr"   : "\\operatorname{Spur}"
+          "lin"  : "\\operatorname{lin}"
           "dv"   : "\\mathrm{div}~"
           "rot"  : "\\mathrm{rot}~"
           "Dim"  : "\\operatorname{dim}"
@@ -44,6 +47,7 @@ sphinx:
           "Eig"  : "\\operatorname{Eig}"
           "End"  : "\\operatorname{End}"
           "Hau"  : "\\operatorname{Haupt}"
+          "mymathbb" : ["\\boldsymbol{#1}",1]
     # mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js
     tojupyter_target_html: true
     tojupyter_lang_synonyms: ["ipython", "ipython3", "python"]
