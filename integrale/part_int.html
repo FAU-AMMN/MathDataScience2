@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x", "d": "\\mathrm{d}}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -446,68 +446,70 @@
                 
   <div class="section" id="partielle-integration">
 <h1><span class="section-number">4.1. </span>Partielle Integration<a class="headerlink" href="#partielle-integration" title="Permalink to this headline">¶</a></h1>
-<p>Aus der Produktregel in Satz \ref{satz:produktregel} können wir eine Regel für die \emph{Partielle Integration} ableiten:
-\begin{satz}[Partielle Integration]\label{satz:partielle_integration}
-Seien <span class="math notranslate nohighlight">\(f,g\colon[a,b]\to\R\)</span> stetig differenzierbare Funktionen.
+<p>Aus der Produktregel in Satz <a class="reference internal" href="integrale.html#satz:produktregel">Theorem 4.2</a> können wir eine Regel für die <em>Partielle Integration</em> ableiten:</p>
+<div class="proof theorem admonition" id="satz:partielle_integration">
+<p class="admonition-title"><span class="caption-number">Theorem 4.3 </span> (Partielle Integration)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(f,g\colon[a,b]\to\R\)</span> stetig differenzierbare Funktionen.
 Dann gilt die folgende Rechenregel der partiellen Integration:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-508181d7-c9b7-45c2-b94c-f90e74ccf4b3">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-508181d7-c9b7-45c2-b94c-f90e74ccf4b3" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partielle_integration}
-    \int_a^b f(x)g'(x)\,\mathrm{d}x \ = \ (f\cdot g)\Big\vert_a^b \, - \, \int_a^b f'(x) g(x)\,\mathrm{d}x\,.
-  \end{equation}\]</div>
-<p>\end{satz}
-\begin{proof}
-Siehe \cite[Satz 7.13]{burger_2020}
-\end{proof}</p>
-<p>\begin{remark}
-Um die Stammfunktion <span class="math notranslate nohighlight">\(F\)</span> einer Funktion <span class="math notranslate nohighlight">\(f\)</span> mit <span class="math notranslate nohighlight">\(F'(x) = f(x)\)</span> zu bestimmen, betrachten wir ein unbestimmtes Integral ohne Grenzen</p>
+<div class="math notranslate nohighlight" id="equation-eq-partielle-integration">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-eq-partielle-integration" title="Permalink to this equation">¶</a></span>\[  \int_a^b f(x)g'(x)\,\mathrm{d}x \ = \ (f\cdot g)\Big\vert_a^b \, - \, \int_a^b f'(x) g(x)\,\mathrm{d}x\,.\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Siehe Satz 7.13 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span></p>
+</div>
+<div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 4.3 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Um die Stammfunktion <span class="math notranslate nohighlight">\(F\)</span> einer Funktion <span class="math notranslate nohighlight">\(f\)</span> mit <span class="math notranslate nohighlight">\(F'(x) = f(x)\)</span> zu bestimmen, betrachten wir ein unbestimmtes Integral ohne Grenzen</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 F(x) \ = \ \int f(x)\, \mathrm{d}x.
 \end{equation*}\]</div>
 <p>Wir können dann mittels der Produktregel der Differentiation in Satz \ref{satz:produktregel} eine Stammfunktion der Form <span class="math notranslate nohighlight">\(F(x) = (f \cdot g)(x)\)</span> bestimmen als</p>
-<div class="amsmath math notranslate nohighlight" id="equation-17e5a77c-288b-46a1-a506-63509320b3cc">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-17e5a77c-288b-46a1-a506-63509320b3cc" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partInt_unbestimmt}
-\begin{split}
+<div class="math notranslate nohighlight" id="equation-eq-partint-unbestimmt">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-eq-partint-unbestimmt" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{split}
 F(x) \ &amp;= \ (f \cdot g)(x)  \ = \ \int (f \cdot g' + f' \cdot g)(x)\,\mathrm{d}x\\
  \ &amp;= \ \int f(x) \cdot g'(x)\,\mathrm{d}x + \int f'(x) \cdot g(x)\,\mathrm{d}x.
- \end{split}
-\end{equation}\]</div>
-<p>\end{remark}</p>
-<p>Das folgende Beispiel wendet die Regel der partiellen Integration an.
-\begin{bsp}\label{bsp:partielle_integration}
-Wir wenden die partielle Integration im Folgenden für zwei verschiedene Fälle an.
-Zuerst wollen wir eine Stammfunktion herleiten und danach ein Integral berechnen.
-\begin{enumerate}[i)]
-\item
-Wir wollen eine Stammfunktion des natürlichen Logarithmus <span class="math notranslate nohighlight">\(\ln \colon \R^+ \rightarrow \R\)</span> herleiten.
-Wir können in diesem Fall zwei Funktionen <span class="math notranslate nohighlight">\(f\)</span> und <span class="math notranslate nohighlight">\(g\)</span> so definieren, dass wir die Rechenregel für partielle Integration in Satz \ref{satz:partielle_integration} anwenden können.
+ \end{split}\end{split}\]</div>
+</div>
+</div><p>Das folgende Beispiel wendet die Regel der partiellen Integration an.</p>
+<div class="proof example admonition" id="bsp:partielle_integration">
+<p class="admonition-title"><span class="caption-number">Example 4.2 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir wenden die partielle Integration im Folgenden für zwei verschiedene Fälle an.
+Zuerst wollen wir eine Stammfunktion herleiten und danach ein Integral berechnen.</p>
+<ul class="simple">
+<li><p>Wir wollen eine Stammfunktion des natürlichen Logarithmus <span class="math notranslate nohighlight">\(\ln \colon \R^+ \rightarrow \R\)</span> herleiten.
+Wir können in diesem Fall zwei Funktionen <span class="math notranslate nohighlight">\(f\)</span> und <span class="math notranslate nohighlight">\(g\)</span> so definieren, dass wir die Rechenregel für partielle Integration in Satz <a class="reference internal" href="#satz:partielle_integration">Theorem 4.3</a> anwenden können.
 Sei also <span class="math notranslate nohighlight">\(f(x) \coloneqq \ln(x)\)</span> und <span class="math notranslate nohighlight">\(g(x) \coloneqq x\)</span> gewählt, dann gilt offensichtlich, dass <span class="math notranslate nohighlight">\(g'(x) \equiv 1\)</span> konstant ist.
-Stellen wir die Formel \eqref{eq:partInt_unbestimmt} geeignet um und setzen diese Funktionen ein, so erhalten wir</p>
+Stellen wir die Formel <a class="reference internal" href="#equation-eq-partint-unbestimmt">(4.2)</a> geeignet um und setzen diese Funktionen ein, so erhalten wir</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-   \int\ln(x)\cdot 1\,\mathrm{d}x \ &amp;= \ \int f(x)g'(x)\, \mathrm{d}x \ = \ (f\cdot g)(x) - \int f^\prime(x)g(x)\,\mathrm{d}x \\
-    \ &amp;= \ \ln(x) \cdot x - \int \frac{1}{x} \cdot x\, \mathrm{d}x \ = \ \ln(x) \cdot x - x + C.
-  \end{align*}\]</div>
-<p>\item
-Wir wollen das Integral der Arkussinus Funktion</p>
+  \int\ln(x)\cdot 1\,\mathrm{d}x \ &amp;= \ \int f(x)g'(x)\, \mathrm{d}x \ = \ (f\cdot g)(x) - \int f^\prime(x)g(x)\,\mathrm{d}x \\
+  \ &amp;= \ \ln(x) \cdot x - \int \frac{1}{x} \cdot x\, \mathrm{d}x \ = \ \ln(x) \cdot x - x + C.
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>Wir wollen das Integral der Arkussinus Funktion</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  \arcsin \colon [-1, 1] \rightarrow [-\frac{\pi}{2}, \frac{\pi}{2}]
-  \end{equation*}\]</div>
+\arcsin \colon [-1, 1] \rightarrow [-\frac{\pi}{2}, \frac{\pi}{2}]
+\end{equation*}\]</div>
 <p>in einem Intervall <span class="math notranslate nohighlight">\([0, y]\)</span> mit <span class="math notranslate nohighlight">\(0 &lt; y \leq 1\)</span> berechnen.</p>
-<p>Wir können in diesem Fall zwei Funktionen <span class="math notranslate nohighlight">\(f\)</span> und <span class="math notranslate nohighlight">\(g\)</span> so definieren, dass wir die Rechenregel für partielle Integration in Satz \ref{satz:partielle_integration} anwenden können.
+<p>Wir können in diesem Fall zwei Funktionen <span class="math notranslate nohighlight">\(f\)</span> und <span class="math notranslate nohighlight">\(g\)</span> so definieren, dass wir die Rechenregel für partielle Integration in Satz <a class="reference internal" href="#satz:partielle_integration">Theorem 4.3</a> anwenden können.
 Sei also <span class="math notranslate nohighlight">\(f(x) \coloneqq \arcsin(x)\)</span> und <span class="math notranslate nohighlight">\(g(x) \coloneqq x\)</span> gewählt, dann gilt offensichtlich, dass <span class="math notranslate nohighlight">\(g'(x) \equiv 1\)</span> konstant ist.
-Setzen wir dies in \eqref{eq:partielle_integration} ein, erhalten wir</p>
+Setzen wir dies in <a class="reference internal" href="#equation-eq-partielle-integration">(4.1)</a> ein, erhalten wir</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-   \int_0^y\arcsin(x)\cdot 1\,\mathrm{d}x \ &amp;= \ \int_0^y f(x)g'(x)\, \mathrm{d}x \ = \ (f\cdot g)\Big\vert_0^y-\int_0^yf^\prime(x)g(x)\,\mathrm{d}x \\
-    \ &amp;= \ y \cdot \arcsin(y) - \int_0^y \frac{x}{\sqrt{1-x^2}}\, \mathrm{d}x.
-  \end{align*}\]</div>
+  \int_0^y\arcsin(x)\cdot 1\,\mathrm{d}x \ &amp;= \ \int_0^y f(x)g'(x)\, \mathrm{d}x \ = \ (f\cdot g)\Big\vert_0^y-\int_0^yf^\prime(x)g(x)\,\mathrm{d}x \\
+  \ &amp;= \ y \cdot \arcsin(y) - \int_0^y \frac{x}{\sqrt{1-x^2}}\, \mathrm{d}x.
+\end{align*}\]</div>
 <p>Das zweite Integral in dieser Gleichung, wollen wir zunächst so hinnehmen.
-Im folgenden Abschnitt werden wir eine praktische Integrationsregel, genannt \emph{Substitutionsregel}, einführen mit der sich dieses Integral einfach berechnen lässt.</p>
-<p>\end{enumerate}
-\end{bsp}</p>
+Im folgenden Abschnitt werden wir eine praktische Integrationsregel, genannt <em>Substitutionsregel</em>, einführen mit der sich dieses Integral einfach berechnen lässt.</p>
 </div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {

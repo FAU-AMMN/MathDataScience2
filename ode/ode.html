@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x", "d": "\\mathrm{d}}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -450,13 +450,14 @@
 Eine Differentialgleichung beschreibt häufig das Änderungsverhalten von Größen, wie zum Beispiel die Fallgeschwindigkeit eines Steins, den man fallen lässt, oder die Vermehrung von Bakterien in einer Nährlösung.
 Während insbesondere in der Analysis die Existenz und Eindeutigkeit von Lösungen von Differentialgleichungen untersucht wird, widmet sich die Numerische Mathematik der Herleitung von Lösungsverfahren, die approximative Lösungen für Differentialgleichungen liefern, für die keine analytische Lösung bekannt ist.</p>
 <p>Mathematisch gesehen ist eine Differentialgleichung eine Gleichung, in der eine unbekannte Funktion und ihre Ableitungen auftreten.
-Die größte vorkommende Ableitung bestimmt hierbei die \emph{Ordnung der Differentialgleichung}.
-Je nachdem ob die es sich um eine Funktion in einer oder mehreren Veränderlichen handelt sprechen wir von einer \emph{Gewöhn-lichen Differentialgleichung} oder einer \emph{Partiellen Differentialgleichung}.
+Die größte vorkommende Ableitung bestimmt hierbei die <em>Ordnung der Differentialgleichung</em>. Je nachdem ob die es sich um eine Funktion in einer oder mehreren Veränderlichen handelt sprechen wir von einer <em>Gewöhnlichen Differentialgleichung</em> oder einer <em>Partiellen Differentialgleichung</em>.
 Werden gleich mehrere solche Funktionen durch mehrere Gleichungen beschrieben, so spricht man von einem \emph{Differentialgleichungssystem}.
 Im Folgenden beschränken wir uns auf die Diskussion von gewöhnlichen Differentialgleichungen, d.h., wir untersuchen Gleichungen in denen eine unbekannte Funktion mit einer Variablen und deren Ableitungen vorkommen.</p>
-<p>Das folgende Beispiel soll ein grundlegendes Verständnis von gewöhnlichen Differentialgleichungen und den zugehörigen mathematischen Fragestellungen liefern.
-\begin{example}
-Das einfachste Beispiel einer gewöhnlichen Differentialgleichung ist gegeben durch</p>
+<p>Das folgende Beispiel soll ein grundlegendes Verständnis von gewöhnlichen Differentialgleichungen und den zugehörigen mathematischen Fragestellungen liefern.</p>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 7.1 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Das einfachste Beispiel einer gewöhnlichen Differentialgleichung ist gegeben durch</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 x(t) \ = \ x'(t), \qquad \text{ für alle } \ t\in \R.
@@ -467,27 +468,29 @@ In diesem Fall können wir die Lösung der Gleichung quasi erraten, denn für di
 \[\begin{equation*}
 x(t) \ \coloneqq \ e^t \ = \ (e^t)' \ = \ x'(t).
 \end{equation*}\]</div>
-<p>Jedoch ist dies nicht die einzige Lösung, denn die konstante Nullfunktion <span class="math notranslate nohighlight">\(x(t) \equiv 0\)</span> für alle <span class="math notranslate nohighlight">\(t\in \R\)</span> erfüllt ebenfalls die Differentialgleichung.
-\end{example}</p>
-<p>In diesem Kapitel wollen wir uns damit beschäftigen, wann Lösungen einer Differentialgleichungen existieren und in welchen Fällen diese eindeutig sind.
+<p>Jedoch ist dies nicht die einzige Lösung, denn die konstante Nullfunktion <span class="math notranslate nohighlight">\(x(t) \equiv 0\)</span> für alle <span class="math notranslate nohighlight">\(t\in \R\)</span> erfüllt ebenfalls die Differentialgleichung.</p>
+</div>
+</div><p>In diesem Kapitel wollen wir uns damit beschäftigen, wann Lösungen einer Differentialgleichungen existieren und in welchen Fällen diese eindeutig sind.
 Darüber hinaus lernen wir praktische Werkzeuge zur analytischen Lösung von Differentialgleichungen kennen.</p>
-<p>Wir beginnen mit der Definition einer grundlegenden Klasse von Differentialgleichungen.
-\begin{definition}[Lineare Differentialgleichung]\label{def:dgl_linear}
-Sei <span class="math notranslate nohighlight">\(n\in \N\)</span> und <span class="math notranslate nohighlight">\(I \subset \R\)</span> ein offenes Intervall.
+<p>Wir beginnen mit der Definition einer grundlegenden Klasse von Differentialgleichungen.</p>
+<div class="proof definition admonition" id="def:dgl_linear">
+<p class="admonition-title"><span class="caption-number">Definition 7.1 </span> (Lineare Differentialgleichung)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(n\in \N\)</span> und <span class="math notranslate nohighlight">\(I \subset \R\)</span> ein offenes Intervall.
 Seien außerdem <span class="math notranslate nohighlight">\(a_i \colon I \rightarrow \R\)</span> und <span class="math notranslate nohighlight">\(b \colon I \rightarrow \R\)</span> stetige Funktionen für <span class="math notranslate nohighlight">\(0 \leq i \leq n\)</span>.
-Dann nennen wir eine gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung mit einer unbekannten <span class="math notranslate nohighlight">\(n\)</span>-mal stetig differenzierbaren Funktion <span class="math notranslate nohighlight">\(x \colon I \rightarrow \R\)</span> \emph{linear}, wenn sie in folgender Form vorliegt</p>
-<div class="amsmath math notranslate nohighlight" id="equation-10a5c6a1-44bc-4534-ae2f-02922a334b72">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-10a5c6a1-44bc-4534-ae2f-02922a334b72" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_linear}
-\sum\limits_{i=0}^na_i(t)x^{(i)}(t) \ = \ a_0(t)\cdot x(t) + a_1(t) \cdot x'(t) + \ldots + a_n(t)\cdot x^{(n)}(t) \ = \  b(t).
-\end{equation}\]</div>
+Dann nennen wir eine gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung mit einer unbekannten <span class="math notranslate nohighlight">\(n\)</span>-mal stetig differenzierbaren Funktion <span class="math notranslate nohighlight">\(x \colon I \rightarrow \R\)</span> <em>linear</em>, wenn sie in folgender Form vorliegt</p>
+<div class="math notranslate nohighlight" id="equation-eq-dgl-linear">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-dgl-linear" title="Permalink to this equation">¶</a></span>\[\sum\limits_{i=0}^na_i(t)x^{(i)}(t) \ = \ a_0(t)\cdot x(t) + a_1(t) \cdot x'(t) + \ldots + a_n(t)\cdot x^{(n)}(t) \ = \  b(t).\]</div>
 <p>Hierbei bezeichnen wir mit <span class="math notranslate nohighlight">\(x^{(k)}(t)\)</span> die <span class="math notranslate nohighlight">\(k\)</span>-te Ableitung der Funktion <span class="math notranslate nohighlight">\(x\)</span> im Punkt <span class="math notranslate nohighlight">\(t \in I\)</span>.</p>
-<p>Ist eine Differentialgleichung nicht in der Form \eqref{eq:dgl_linear}, so bezeichnen wir sie als \emph{nichtlinear}.</p>
-<p>Eine lineare Differentialgleichung heißt \emph{homogen}, falls <span class="math notranslate nohighlight">\(b(t) \equiv 0\)</span> für alle <span class="math notranslate nohighlight">\(t\in\R\)</span>.
-Der Term <span class="math notranslate nohighlight">\(b\)</span> wird auch häufig \emph{Störfunktion} genannt.
-\end{definition}</p>
-<p>Im Folgenden wollen wir verschiedene gewöhnliche Differentialgleichungen diskutieren und gemäß der Definition \ref{def:dgl_linear} klassifizieren.
-\begin{bsp}[Radioaktiver Zerfall]\label{ode:radio}
-Sei <span class="math notranslate nohighlight">\(c&gt;0\)</span> eine Konstante.
+<p>Ist eine Differentialgleichung nicht in der Form \eqref{eq:dgl_linear}, so bezeichnen wir sie als <em>nichtlinear</em>.</p>
+<p>Eine lineare Differentialgleichung heißt <em>homogen</em>, falls <span class="math notranslate nohighlight">\(b(t) \equiv 0\)</span> für alle <span class="math notranslate nohighlight">\(t\in\R\)</span>.
+Der Term <span class="math notranslate nohighlight">\(b\)</span> wird auch häufig <em>Störfunktion</em> genannt.</p>
+</div>
+</div><p>Im Folgenden wollen wir verschiedene gewöhnliche Differentialgleichungen diskutieren und gemäß der Definition \ref{def:dgl_linear} klassifizieren.</p>
+<div class="proof example admonition" id="ode:radio">
+<p class="admonition-title"><span class="caption-number">Example 7.2 </span> (Radioaktiver Zerfall)</p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(c&gt;0\)</span> eine Konstante.
 Dann beschreibt die folgende gewöhnliche Differentialgleichung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -495,17 +498,19 @@ Dann beschreibt die folgende gewöhnliche Differentialgleichung</p>
 \end{equation*}\]</div>
 <p>den radioaktiven Zerfall eines strahlenden Materials mit Stoffmenge <span class="math notranslate nohighlight">\(x\)</span> zum Zeitpunkt <span class="math notranslate nohighlight">\(t\)</span>.
 In diesem Kontext beschreibt <span class="math notranslate nohighlight">\(c\)</span> die charakteristische Zerfallskonstante des Materials.
-Es handelt sich hierbei um eine \textbf{lineare, gewöhnliche Differentialgleichung erster Ordnung}, die \textbf{homogen} ist (da die Störfunktion <span class="math notranslate nohighlight">\(b(t) \equiv 0\)</span> ist).</p>
+Es handelt sich hierbei um eine <strong>lineare, gewöhnliche Differentialgleichung erster Ordnung</strong>, die <strong>homogen</strong> ist (da die Störfunktion <span class="math notranslate nohighlight">\(b(t) \equiv 0\)</span> ist).</p>
 <p>Ist die anfängliche Stoffmenge <span class="math notranslate nohighlight">\(x_0 \in \R^+\)</span> zum Zeitpunkt <span class="math notranslate nohighlight">\(t=0\)</span> mit <span class="math notranslate nohighlight">\(x(0) = x_0\)</span> bekannt, so ist</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 x(t) \ = \ x_0 \cdot e^{-ct}, \qquad \text{ für } \ t\in\R^+_0
 \end{equation*}\]</div>
 <p>die eindeutige Lösung der Differentialgleichung.
-Wir erhalten im allgemeinen Fall also eine einparametrige Schar von Lösungen, die linear vom Anfangswert <span class="math notranslate nohighlight">\(x_0\)</span> abhängen.
-\end{bsp}</p>
-<p>\begin{bsp}[Steinwurf]\label{ode:stein}
-In diesem Beispiel wollen wir die Bahn eines geworfenen Steins im konstanten Gravitationsfeld der Erde mit Erdbeschleunigung <span class="math notranslate nohighlight">\(g  \approx 9,81 \frac{m}{s^2}\)</span> berechnen.
+Wir erhalten im allgemeinen Fall also eine einparametrige Schar von Lösungen, die linear vom Anfangswert <span class="math notranslate nohighlight">\(x_0\)</span> abhängen.</p>
+</div>
+</div><div class="proof example admonition" id="ode:stein">
+<p class="admonition-title"><span class="caption-number">Example 7.3 </span> (Steinwurf)</p>
+<div class="example-content section" id="proof-content">
+<p>In diesem Beispiel wollen wir die Bahn eines geworfenen Steins im konstanten Gravitationsfeld der Erde mit Erdbeschleunigung <span class="math notranslate nohighlight">\(g  \approx 9,81 \frac{m}{s^2}\)</span> berechnen.
 Wir vernachlässigen die Krafteinflüsse der Luftreibung und betrachten das folgende \textbf{inhomogene System von gewöhnlichen Differentialgleichungen zweiter Ordnung}:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -527,18 +532,22 @@ x_1(t) \ = \ z_1 + w_1\cdot t, \qquad x_2(t) \ = \ z_2 + w_2 \cdot t - \frac12 \
 \[\begin{equation*}
 v_1(t) \ \coloneqq \ \frac{d}{dt}x_1(t) \ = \ x'_1(t) \ = \ w_1, \qquad v_2(t) \ \coloneqq \ \frac{d}{dt}x_2(t) \ = \ x'_2(t) \ = \ w_2 - g\cdot t.
 \end{equation*}\]</div>
-<p>\end{bsp}</p>
-<p>\begin{bsp}[Beschleunigung eines Raumschiffs durch Gravitation]\label{ode:raumschiff}
-Im letzten Beispiel wollen wir die Wirkung der Gravitation eines Himmelskörpers, wie zum Beispiel der Erde, auf ein wesentlich kleineres Objekt (wie ein Raumschiff) beschreiben.
+</div>
+</div><div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 7.4 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Beschleunigung eines Raumschiffs durch Gravitation
+:label: ode:raumschiff</p>
+<p>Im letzten Beispiel wollen wir die Wirkung der Gravitation eines Himmelskörpers, wie zum Beispiel der Erde, auf ein wesentlich kleineres Objekt (wie ein Raumschiff) beschreiben.
 Sei also <span class="math notranslate nohighlight">\(r \colon \R_0^+ \rightarrow \R_0^+\)</span> der Abstand des Raumschiffs zur Erde und <span class="math notranslate nohighlight">\(M \approx 5,972 \cdot 10^{24}~\text{kg}\)</span> die ungefähre Erdmasse.</p>
 <p>Dann lässt sich die Beschleunigung, die das Raumschiff auf Grund der Gravitation der Erde erfährt, durch folgende \textbf{gewöhnliche Differentialgleichung zweiter Ordnung}, welche \textbf{homogen und nichtlinear} ist, beschreiben:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \frac{d^2}{dt^2}r(t) \ = \ -\frac{M}{r^2(t)}.
 \end{equation*}\]</div>
-<p>Das bedeutet, dass die Beschleunigung des Raumschiffs durch die Gravitation quadratisch mit dem Abstand zum Erdmittelpunkt zunimmt.
-\end{bsp}</p>
-<div class="toctree-wrapper compound">
+<p>Das bedeutet, dass die Beschleunigung des Raumschiffs durch die Gravitation quadratisch mit dem Abstand zum Erdmittelpunkt zunimmt.</p>
+</div>
+</div><div class="toctree-wrapper compound">
 </div>
 </div>
 

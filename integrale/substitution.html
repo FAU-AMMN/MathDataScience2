@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x", "d": "\\mathrm{d}}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -446,126 +446,126 @@
                 
   <div class="section" id="substitutionsregel">
 <h1><span class="section-number">4.2. </span>Substitutionsregel<a class="headerlink" href="#substitutionsregel" title="Permalink to this headline">¶</a></h1>
-<p>Aus der Kettenregel in Satz \ref{satz:produktregel} können wir ein wichtiges Werkzeug für die Integralrechnung ableiten, die sogenannte \emph{Substitutionsregel}.
-Die Idee ist es eine neue Integrationsvariable so geschickt einzuführen, dass ein Teil des Integranden ersetzt wird um das Integral zu vereinfachen oder auf eine bekannte Form zurückzuführen.
-\begin{satz}[Substitutionsregel]\label{satz:substitutionsregel}
-Sei <span class="math notranslate nohighlight">\(I \subset \R\)</span> eine Teilmenge und <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> ein Intervall.
+<p>Aus der Kettenregel in Satz <a class="reference internal" href="integrale.html#satz:produktregel">Theorem 4.2</a> können wir ein wichtiges Werkzeug für die Integralrechnung ableiten, die sogenannte <em>Substitutionsregel</em>.
+Die Idee ist es eine neue Integrationsvariable so geschickt einzuführen, dass ein Teil des Integranden ersetzt wird um das Integral zu vereinfachen oder auf eine bekannte Form zurückzuführen.</p>
+<div class="proof theorem admonition" id="satz:substitutionsregel">
+<p class="admonition-title"><span class="caption-number">Theorem 4.4 </span> (Substitutionsregel)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(I \subset \R\)</span> eine Teilmenge und <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> ein Intervall.
 Sei außerdem <span class="math notranslate nohighlight">\(f\colon I\to \R\)</span> eine integrierbare Funktion und <span class="math notranslate nohighlight">\(g\colon [a,b] \to I\)</span> eine stetig differenzierbare Funktion.
 Dann gilt die folgende Substitutionsregel für die Integralrechnung:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c8419195-63d9-4da4-9e6a-6a38fc4e3e5f">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-c8419195-63d9-4da4-9e6a-6a38fc4e3e5f" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:substitutionsregel}
-    \int_a^b f(g(x))\cdot g'(x)\,\mathrm{d}x \ = \ \int_{g(a)}^{g(b)} f(y)\, \mathrm{d}y.
-  \end{equation}\]</div>
-<p>\begin{proof}
-Sei <span class="math notranslate nohighlight">\(F\)</span> eine Stammfunktion von <span class="math notranslate nohighlight">\(f\)</span>.
-Durch die Kettenregel für Differentiation in Satz \ref{satz:produktregel} wissen wir, dass
-\begin{equation*}
-(F\circ g)^\prime(x) \ = \ F’(g(x)) \cdot g’(x) \ = \ f(g(x))\cdot g’(x).
-\end{equation*}
-Damit können wir schreiben
-\begin{equation*}
-\int_a^b f(g(x)) \cdot g’(x),\mathrm{d}x \ = \ \int_a^b (F\circ g)’(x), \mathrm{d}x \ = \ (F\circ g),\Big\vert_a^b \ = \ F , \Big\vert_{g(a)}^{g(b)} \ = \ \int_{g(a)}^{g(b)} f(y), \mathrm{d}y.
-\end{equation*}
-\end{proof}
-\end{satz}</p>
-<p>\begin{remark}\label{bem:substitution_einfach}
-Die Substitutionsregel für die Integralrechnung in Satz \ref{satz:substitutionsregel} ist besonders dann einfach, wenn die Ableitung der inneren Funktion <span class="math notranslate nohighlight">\(g(x)\)</span> eine Konstante ist, d.h., <span class="math notranslate nohighlight">\(g'(x) \equiv c \neq 0\)</span>.
+<div class="math notranslate nohighlight" id="equation-eq-substitutionsregel">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-eq-substitutionsregel" title="Permalink to this equation">¶</a></span>\[\int_a^b f(g(x))\cdot g'(x)\,\mathrm{d}x \ = \ \int_{g(a)}^{g(b)} f(y)\, \mathrm{d}y.\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Sei <span class="math notranslate nohighlight">\(F\)</span> eine Stammfunktion von <span class="math notranslate nohighlight">\(f\)</span>.
+Durch die Kettenregel für Differentiation in Satz \ref{satz:produktregel} wissen wir, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+(F\circ g)^\prime(x) \ = \ F'(g(x)) \cdot g'(x) \ = \ f(g(x))\cdot g'(x).
+\end{equation*}\]</div>
+<p>Damit können wir schreiben</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  \int_a^b f(g(x)) \cdot g'(x)\,\mathrm{d}x \ = \ \int_a^b (F\circ g)'(x)\, \mathrm{d}x \ = \ (F\circ g)\,\Big\vert_a^b \ = \ F \, \Big\vert_{g(a)}^{g(b)} \ = \ \int_{g(a)}^{g(b)} f(y)\, \mathrm{d}y.
+\end{equation*}\]</div>
+</div>
+<div class="proof remark admonition" id="bem:substitution_einfach">
+<p class="admonition-title"><span class="caption-number">Remark 4.4 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Die Substitutionsregel für die Integralrechnung in Satz \ref{satz:substitutionsregel} ist besonders dann einfach, wenn die Ableitung der inneren Funktion <span class="math notranslate nohighlight">\(g(x)\)</span> eine Konstante ist, d.h., <span class="math notranslate nohighlight">\(g'(x) \equiv c \neq 0\)</span>.
 Wegen der Linearität des Integrals kann man diese dann Konstante herausziehen und vor die rechte Seite von \eqref{eq:substitutionsregel} schreiben und es ergibt sich damit folgender Zusammenhang:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
   \int_a^b f(g(x)) \,\mathrm{d}x \ = \ \frac{1}{c} \int_{g(a)}^{g(b)} f(y)\, \mathrm{d}y.
 \end{equation*}\]</div>
-<p>\end{remark}</p>
-<p>Das folgende Beispiel soll die Anwendung der Substitutionsregel für verschiedene Funktion mit unterschiedlichen Formen des Integrals illustrieren.
-\begin{bsp}
-Wir untersuchen drei Beispiele zur Anwendung der Substitutionsregel für die Integralrechnung mit aufsteigendem Schwierigkeitsgrad.
-\begin{enumerate}[i)]
-\item
-Sei <span class="math notranslate nohighlight">\(c\in\R, c\neq 0\)</span>, ein Skalierungsfaktor und <span class="math notranslate nohighlight">\(d\in\R\)</span> eine Translationskonstante.
+</div>
+</div><p>Das folgende Beispiel soll die Anwendung der Substitutionsregel für verschiedene Funktion mit unterschiedlichen Formen des Integrals illustrieren.</p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 4.3 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir untersuchen drei Beispiele zur Anwendung der Substitutionsregel für die Integralrechnung mit aufsteigendem Schwierigkeitsgrad.</p>
+<p><span class="math notranslate nohighlight">\(i)\)</span> Sei <span class="math notranslate nohighlight">\(c\in\R, c\neq 0\)</span>, ein Skalierungsfaktor und <span class="math notranslate nohighlight">\(d\in\R\)</span> eine Translationskonstante.
 Sei außerdem <span class="math notranslate nohighlight">\(f\)</span> eine beliebige integrierbare Funktion auf dem Intervall <span class="math notranslate nohighlight">\([ca+d, cb+d] \subset \R\)</span>.
 Wir wollen das folgende Integral vereinfachen:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-   \int_a^b f(cx+d)\,\mathrm{d}x.
-  \end{equation*}\]</div>
+\int_a^b f(cx+d)\,\mathrm{d}x.
+\end{equation*}\]</div>
 <p>Hierzu können wir eine einfache Substitution vornehmen:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  	y \ \coloneqq \ g(x) \ = \ cx + d \qquad \Rightarrow \qquad  g'(x) \ \equiv \ c.
-  \end{equation*}\]</div>
+y \ \coloneqq \ g(x) \ = \ cx + d \qquad \Rightarrow \qquad  g'(x) \ \equiv \ c.
+\end{equation*}\]</div>
 <p>Wir erkennen, dass die einfache Situation aus Bemerkung \ref{bem:substitution_einfach} vorliegt, bei der die innere Ableitung eine Konstante ergibt.</p>
 <p>Für die Substitution des Differentials <span class="math notranslate nohighlight">\(\mathrm{d}x\)</span> berechnen wir:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  		c \, = \, g'(x) \, = \, \frac{\mathrm{d}g}{\mathrm{d}x} \, = \, \frac{\mathrm{d}y}{\mathrm{d}x} \qquad \Rightarrow \qquad \d x \, = \, \frac{1}{g'(x)}\,\d y \, = \, \frac{1}{c}\,\d y.
-  \end{equation*}\]</div>
+c \, = \, g'(x) \, = \, \frac{\mathrm{d}g}{\mathrm{d}x} \, = \, \frac{\mathrm{d}y}{\mathrm{d}x} \qquad \Rightarrow \qquad \d x \, = \, \frac{1}{g'(x)}\,\d y \, = \, \frac{1}{c}\,\d y.
+\end{equation*}\]</div>
 <p>Damit ergibt sich für das Integral einer Funktion unter einer linearen Transformation die folgende Rechenvorschrift:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-    \int_a^b f(cx+d)\,\mathrm{d}x \ = \ \int_a^b f(g(x))\,\mathrm{d}x \ = \ \int_{g(a)}^{g(b)}f(y)\frac{1}{c}\,\d y \ =  \ \frac{1}{c} \int_{ca+d}^{cb+d}f(y)\, \d y.
-  \end{equation*}\]</div>
-<p>\item Wir nutzen die Substitutionsregel für die Berechnung des Integrals</p>
+\int_a^b f(cx+d)\,\mathrm{d}x \ = \ \int_a^b f(g(x))\,\mathrm{d}x \ = \ \int_{g(a)}^{g(b)}f(y)\frac{1}{c}\,\d y \ =  \ \frac{1}{c} \int_{ca+d}^{cb+d}f(y)\, \d y.
+\end{equation*}\]</div>
+<p><span class="math notranslate nohighlight">\(ii)\)</span> Wir nutzen die Substitutionsregel für die Berechnung des Integrals</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  \int_0^2 \cos(x^2 + 1)\cdot x\, \d x.
-  \end{equation*}\]</div>
+\int_0^2 \cos(x^2 + 1)\cdot x\, \d x.
+\end{equation*}\]</div>
 <p>Wir setzen <span class="math notranslate nohighlight">\(f(x) \coloneqq \cos(x)\)</span> und entscheiden uns für die folgende Substitution:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  	y \ \coloneqq \ g(x) \ = \ x^2 + 1 \qquad \Rightarrow \qquad  g'(x) \ = \ 2x.
-  \end{equation*}\]</div>
+y \ \coloneqq \ g(x) \ = \ x^2 + 1 \qquad \Rightarrow \qquad  g'(x) \ = \ 2x.
+\end{equation*}\]</div>
 <p>Die innere Ableitung <span class="math notranslate nohighlight">\(g'(x) = 2x\)</span> ist leider keine Konstante, daher können wir sie nicht aus dem Integral herausziehen.
-Dennoch haben wir Glück, dass ein Vielfaches der Ableitung im Integranden vorkommt, nämlich der Faktor <span class="math notranslate nohighlight">\(x\)</span>, und somit können wir die Substitutionsregel für die Integralrechnung aus Satz \ref{satz:substitutionsregel} anwenden.</p>
+Dennoch haben wir Glück, dass ein Vielfaches der Ableitung im Integranden vorkommt, nämlich der Faktor <span class="math notranslate nohighlight">\(x\)</span>, und somit können wir die Substitutionsregel für die Integralrechnung aus Satz <a class="reference internal" href="#satz:substitutionsregel">Theorem 4.4</a> anwenden.</p>
 <p>Für die Substitution des Differentials <span class="math notranslate nohighlight">\(\mathrm{d}x\)</span> berechnen wir:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  		2x \, = \, g'(x) \, = \, \frac{\mathrm{d}g}{\mathrm{d}x} \, = \, \frac{\mathrm{d}y}{\mathrm{d}x} \qquad \Rightarrow \qquad x\,\d x \, = \, \frac{1}{2}\,\d y.
-  \end{equation*}\]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Damit ergibt sich für das Integral die folgende Rechenvorschrift:
-</pre></div>
-</div>
+    2x \, = \, g'(x) \, = \, \frac{\mathrm{d}g}{\mathrm{d}x} \, = \, \frac{\mathrm{d}y}{\mathrm{d}x} \qquad \Rightarrow \qquad x\,\d x \, = \, \frac{1}{2}\,\d y.
+\end{equation*}\]</div>
+<p>Damit ergibt sich für das Integral die folgende Rechenvorschrift:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  \begin{split}
-    \int_0^2 \cos(x^2 + 1)\cdot x\, \d x \ &amp;= \ \int_0^2 f(g(x))\cdot x\, \d x \ = \ \int_{g(0)}^{g(2)} f(y) \cdot \frac{1}{2}\,\d y \ = \ \frac{1}{2} \int_1^5 \cos(y)\, \d y \\
-     &amp;= \ \frac{1}{2} \sin(y)\Big\vert_1^5 \ = \ \frac{1}{2} (\sin(5) - \sin(1)) \ \approx \ -0.900.
-    \end{split}
-  \end{equation*}\]</div>
-<p>\item
-Zuletzt wollen wir das verbliebene Integral aus Beispiel \ref{bsp:partielle_integration} mit Hilfe der Substitutionsregel berechnen.
+\begin{split}
+  \int_0^2 \cos(x^2 + 1)\cdot x\, \d x \ &amp;= \ \int_0^2 f(g(x))\cdot x\, \d x \ = \ \int_{g(0)}^{g(2)} f(y) \cdot \frac{1}{2}\,\d y \ = \ \frac{1}{2} \int_1^5 \cos(y)\, \d y \\
+    &amp;= \ \frac{1}{2} \sin(y)\Big\vert_1^5 \ = \ \frac{1}{2} (\sin(5) - \sin(1)) \ \approx \ -0.900.
+  \end{split}
+\end{equation*}\]</div>
+<p><span class="math notranslate nohighlight">\(iii)\)</span> Zuletzt wollen wir das verbliebene Integral aus Beispiel \ref{bsp:partielle_integration} mit Hilfe der Substitutionsregel berechnen.
 Wir hatten hierzu bereits hergeleitet, dass gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  \int_0^y\arcsin(x)\,\d x \ = \ y \cdot \arcsin(y) - \int_0^y \frac{x}{\sqrt{1-x^2}}\, \d x.
-  \end{equation*}\]</div>
+\int_0^y\arcsin(x)\,\d x \ = \ y \cdot \arcsin(y) - \int_0^y \frac{x}{\sqrt{1-x^2}}\, \d x.
+\end{equation*}\]</div>
 <p>Wir setzen <span class="math notranslate nohighlight">\(f(x) \coloneqq \frac{1}{\sqrt{1 - x}}\)</span> und entscheiden uns für die folgende Substitution:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  	z \ \coloneqq \ g(x) \ = \ x^2 \qquad \Rightarrow \qquad  g'(x) \ = \ 2x.
-  \end{equation*}\]</div>
+  z \ \coloneqq \ g(x) \ = \ x^2 \qquad \Rightarrow \qquad  g'(x) \ = \ 2x.
+\end{equation*}\]</div>
 <p>Die innere Ableitung <span class="math notranslate nohighlight">\(g'(x) = 2x\)</span> ist leider keine Konstante, daher können wir sie nicht aus dem Integral herausziehen.
 Dennoch haben wir Glück, dass ein Vielfaches der Ableitung im Integranden vorkommt, nämlich der Faktor <span class="math notranslate nohighlight">\(x\)</span>, und somit können wir die Substitutionsregel für die Integralrechnung aus Satz \ref{satz:substitutionsregel} anwenden.</p>
 <p>Für die Substitution des Differentials <span class="math notranslate nohighlight">\(\mathrm{d}x\)</span> berechnen wir:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  		2x \, = \, g'(x) \, = \, \frac{\mathrm{d}g}{\mathrm{d}x} \, = \, \frac{\mathrm{d}z}{\mathrm{d}x} \qquad \Rightarrow \qquad x\,\d x \, = \, \frac{1}{2}\,\d z.
-  \end{equation*}\]</div>
+    2x \, = \, g'(x) \, = \, \frac{\mathrm{d}g}{\mathrm{d}x} \, = \, \frac{\mathrm{d}z}{\mathrm{d}x} \qquad \Rightarrow \qquad x\,\d x \, = \, \frac{1}{2}\,\d z.
+\end{equation*}\]</div>
 <p>Damit ergibt sich für das verbliebene Integral die folgende Rechenvorschrift:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  \begin{split}
-    \int_0^y \frac{x}{\sqrt{1-x^2}}\, \d x \ &amp;= \ \int_0^y f(g(x)) \cdot x\,\d x \ = \ \int_{g(0)}^{g(y)} f(z) \cdot \frac{1}{2}\, \d z \ = \ \frac{1}{2} \int_{0}^{y^2} \frac{1}{\sqrt{1-z}}\, \d z \\
-    \ &amp;= \ \frac{1}{2} \cdot (-2\sqrt{1 - z} )\Big\vert^{y^2}_0 \ = \ -(\sqrt{1 - y^2} - \sqrt{1 - 0}) \ = \ 1 - \sqrt{1 - y^2}. 
-    \end{split}
-  \end{equation*}\]</div>
-<p>Insgesamt erhalten wir also für das Integral der Arkussinus Funktion in Beispiel \ref{bsp:partielle_integration}:</p>
+\begin{split}
+  \int_0^y \frac{x}{\sqrt{1-x^2}}\, \d x \ &amp;= \ \int_0^y f(g(x)) \cdot x\,\d x \ = \ \int_{g(0)}^{g(y)} f(z) \cdot \frac{1}{2}\, \d z \ = \ \frac{1}{2} \int_{0}^{y^2} \frac{1}{\sqrt{1-z}}\, \d z \\
+  \ &amp;= \ \frac{1}{2} \cdot (-2\sqrt{1 - z} )\Big\vert^{y^2}_0 \ = \ -(\sqrt{1 - y^2} - \sqrt{1 - 0}) \ = \ 1 - \sqrt{1 - y^2}. 
+  \end{split}
+\end{equation*}\]</div>
+<p>Insgesamt erhalten wir also für das Integral der Arkussinus Funktion in Beispiel <a class="reference internal" href="part_int.html#bsp:partielle_integration">Example 4.2</a>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  \int_0^y\arcsin(x)\,\d x \ = \ y \cdot \arcsin(y) - 1 + \sqrt{1 - y^2}.
-  \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{bsp}</p>
+\int_0^y\arcsin(x)\,\d x \ = \ y \cdot \arcsin(y) - 1 + \sqrt{1 - y^2}.
+\end{equation*}\]</div>
 </div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {

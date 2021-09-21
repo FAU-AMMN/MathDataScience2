@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x", "d": "\\mathrm{d}}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -446,31 +446,37 @@
                 
   <div class="section" id="integralrechnung">
 <h1><span class="section-number">4. </span>Integralrechnung<a class="headerlink" href="#integralrechnung" title="Permalink to this headline">¶</a></h1>
-<p>Im letzten Semester haben Sie bereits die wichtige Klasse der Riemann-integrierbaren Funktionen \cite[Kapitel 7.1]{burger_2020} kennengelernt.
+<p>Im letzten Semester haben Sie bereits die wichtige Klasse der Riemann-integrierbaren Funktionen Kapitel 7.1 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> kennengelernt.
 Wir wollen damit beginnen die wichtigsten Konzepte und Beobachtungen nochmal kurz zu wiederholen und dann nützliche Formeln für die Integralrechnung für Riemann-integrierbare Funktionen in einer Variablen herleiten.
 Insbesondere werden wir die Substitutionsregel und die Partialbruchzerlegung für die Integration rationaler Funktionen einführen.
 Die Berechnung von Integralen für Funktionen in mehreren Variablen werden später im Studium behandelt und in diesem Zuge wird das Riemann-Integral durch einen allgemeineren Integralbegriff (dem Lebesgue-Integral) ersetzt.</p>
-<p>Zunächst wollen wir wiederholen, was wir unter einem unbestimmten Integral und einer Stammfunktion verstehen.
-\begin{definition}[Unbestimmtes Integral und Stammfunktion]
-Sei <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> ein Intervall und <span class="math notranslate nohighlight">\(f:[a,b] \rightarrow \R\)</span> eine integrierbare Funktion, d.h., eine Funktion die auf jedem Teilintervall <span class="math notranslate nohighlight">\(I \subset [a,b]\)</span> integrierbar ist.
+<p>Zunächst wollen wir wiederholen, was wir unter einem unbestimmten Integral und einer Stammfunktion verstehen.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 4.1 </span> (Unbestimmtes Integral und Stammfunktion)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> ein Intervall und <span class="math notranslate nohighlight">\(f:[a,b] \rightarrow \R\)</span> eine integrierbare Funktion, d.h., eine Funktion die auf jedem Teilintervall <span class="math notranslate nohighlight">\(I \subset [a,b]\)</span> integrierbar ist.
 Wir nennen eine Funktion <span class="math notranslate nohighlight">\(F:[a,b] \rightarrow \R\)</span> \emph{unbestimmtes Integral} von <span class="math notranslate nohighlight">\(f\)</span>, wenn für alle <span class="math notranslate nohighlight">\(y,z \in [a,b]\)</span> gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 F\Big\vert_y^z \ \coloneqq \ F(z) - F(y) \ = \ \int_y^z f(x) \, \mathrm{d}x.
 \end{equation*}\]</div>
-<p>Weiterhin nennen wir <span class="math notranslate nohighlight">\(F:[a,b] \rightarrow \R\)</span> eine \emph{Stammfunktion} von <span class="math notranslate nohighlight">\(f\)</span>, wenn <span class="math notranslate nohighlight">\(F'(x)=f(x)\)</span> für alle <span class="math notranslate nohighlight">\(x \in [a,b]\)</span> gilt.
-\end{definition}</p>
-<p>\begin{remark}
-Wir beachten, dass wir aus Konsistenzgründen ein Integral mit vertauschten Integralgrenzen mit negativem Vorzeichen definieren, d.h.</p>
+<p>Weiterhin nennen wir <span class="math notranslate nohighlight">\(F:[a,b] \rightarrow \R\)</span> eine \emph{Stammfunktion} von <span class="math notranslate nohighlight">\(f\)</span>, wenn <span class="math notranslate nohighlight">\(F'(x)=f(x)\)</span> für alle <span class="math notranslate nohighlight">\(x \in [a,b]\)</span> gilt.</p>
+</div>
+</div><div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 4.1 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Wir beachten, dass wir aus Konsistenzgründen ein Integral mit vertauschten Integralgrenzen mit negativem Vorzeichen definieren, d.h.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \int_z^y f(x)~dx \ = \ - \int_y^z f(x) \, \mathrm{d}x.
 \end{equation*}\]</div>
-<p>\end{remark}</p>
-<p>Wegen seiner großen Bedeutung in der Analysis wiederholen wir im Folgenden den Hauptsatz der Differential- und Integralrechnung (auch Fundamentalsatz der Analysis genannt), der im Grunde aussagt, dass Integration und Differentiation die jeweilige Umkehrung voneinander sind.
-Außerdem erklärt er, dass die Begriffe Stammfunktion und unbestimmtes Integral übereinstimmen.
-\begin{satz}[Fundamentalsatz der Analysis]
-Sei <span class="math notranslate nohighlight">\(f \colon [a,b] \rightarrow \R\)</span> eine stetige Funktion. Dann ist</p>
+</div>
+</div><p>Wegen seiner großen Bedeutung in der Analysis wiederholen wir im Folgenden den Hauptsatz der Differential- und Integralrechnung (auch Fundamentalsatz der Analysis genannt), der im Grunde aussagt, dass Integration und Differentiation die jeweilige Umkehrung voneinander sind.
+Außerdem erklärt er, dass die Begriffe Stammfunktion und unbestimmtes Integral übereinstimmen.</p>
+<div class="proof theorem admonition" id="theorem-2">
+<p class="admonition-title"><span class="caption-number">Theorem 4.1 </span> (Fundamentalsatz der Analysis)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(f \colon [a,b] \rightarrow \R\)</span> eine stetige Funktion. Dann ist</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -479,23 +485,27 @@ x \ &amp; \mapsto \ F_a(x) \ \coloneqq \ \int_a^x f(y) \, \mathrm{d}y
 \end{split}
 \end{equation*}\]</div>
 <p>eine Stammfunktion von <span class="math notranslate nohighlight">\(f\)</span>.
-Eine Funktion <span class="math notranslate nohighlight">\(F \colon [a,b] \rightarrow \R\)</span> ist genau dann Stammfunktion von <span class="math notranslate nohighlight">\(f\)</span>, wenn <span class="math notranslate nohighlight">\(F\)</span> ein unbestimmtes Integral ist.
-\end{satz}
-\begin{proof}
-Siehe \cite[Satz 7.10]{burger_2020}
-\end{proof}</p>
-<p>\begin{remark}
-Da unbestimmte Integrale und Stammfunktionen übereinstimmen schreibt man häufig etwas unpräzise für eine Stammfunktion <span class="math notranslate nohighlight">\(F(x)\)</span> eines Integranden <span class="math notranslate nohighlight">\(f(x)\)</span> folgenden Zusammenhang</p>
+Eine Funktion <span class="math notranslate nohighlight">\(F \colon [a,b] \rightarrow \R\)</span> ist genau dann Stammfunktion von <span class="math notranslate nohighlight">\(f\)</span>, wenn <span class="math notranslate nohighlight">\(F\)</span> ein unbestimmtes Integral ist.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Siehe Satz 7.10 <span id="id2">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span>.</p>
+</div>
+<div class="proof remark admonition" id="remark-3">
+<p class="admonition-title"><span class="caption-number">Remark 4.2 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Da unbestimmte Integrale und Stammfunktionen übereinstimmen schreibt man häufig etwas unpräzise für eine Stammfunktion <span class="math notranslate nohighlight">\(F(x)\)</span> eines Integranden <span class="math notranslate nohighlight">\(f(x)\)</span> folgenden Zusammenhang</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \int f(x)\, \mathrm{d}x \ = \ F(x) + C,
 \end{equation*}\]</div>
-<p>wobei <span class="math notranslate nohighlight">\(C\)</span> eine beliebige Integrationskonstante ist.
-\end{remark}</p>
-<p>Interpretieren wir die Integration als die Umkehrung der Differentiation, dann müssen wir die uns bekannten Ableitungsregeln noch einmal betrachten, da diese mit der Integration harmonieren sollen.
-Die wohl wichtigsten Regeln der Differentiation einer Funktion in einer Variablen, sind im Folgenden zusammengefasst.
-\begin{satz}[Differentiationsregeln]\label{satz:produktregel}
-Sei <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> ein Intervall und <span class="math notranslate nohighlight">\(f,g \colon [a,b] \rightarrow \R\)</span> differenzierbare Funktionen und <span class="math notranslate nohighlight">\(c \in \R\)</span> ein Skalar.
+<p>wobei <span class="math notranslate nohighlight">\(C\)</span> eine beliebige Integrationskonstante ist.</p>
+</div>
+</div><p>Interpretieren wir die Integration als die Umkehrung der Differentiation, dann müssen wir die uns bekannten Ableitungsregeln noch einmal betrachten, da diese mit der Integration harmonieren sollen.
+Die wohl wichtigsten Regeln der Differentiation einer Funktion in einer Variablen, sind im Folgenden zusammengefasst.</p>
+<div class="proof theorem admonition" id="satz:produktregel">
+<p class="admonition-title"><span class="caption-number">Theorem 4.2 </span> (Differentiationsregeln)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> ein Intervall und <span class="math notranslate nohighlight">\(f,g \colon [a,b] \rightarrow \R\)</span> differenzierbare Funktionen und <span class="math notranslate nohighlight">\(c \in \R\)</span> ein Skalar.
 Dann gelten die folgenden Regeln der Differentiationsrechnung für alle <span class="math notranslate nohighlight">\(x \in [a,b]\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -505,20 +515,21 @@ Dann gelten die folgenden Regeln der Differentiationsrechnung für alle <span cl
    \left(\frac{f}{g}\right)'(x) \ &amp;= \ \frac{f'(x)\cdot g(x) - f(x)\cdot g'(x)}{(g(x))^2}, \tag{Quotientenregel}\\
      (f\circ g)'(x) \ &amp;= \ (f' \circ g)(x)\cdot g'(x). \tag{Kettenregel}
 \end{align*}\]</div>
-<p>\end{satz}
-\begin{proof}
-Siehe \cite[Satz 6.5]{burger_2020}
-\end{proof}</p>
-<p>Im folgenden Beispiel werden die Rechenregeln der Differentiation aus Satz \ref{satz:produktregel} angewendet.
-\begin{bsp}
-Es seien <span class="math notranslate nohighlight">\(f,g \colon \R^+ \rightarrow \R\)</span> stetig differenzierbare Funktionen mit</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Siehe Satz 6.5 <span id="id3">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span>.</p>
+</div>
+<p>Im folgenden Beispiel werden die Rechenregeln der Differentiation aus Satz \ref{satz:produktregel} angewendet.</p>
+<div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 4.1 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Es seien <span class="math notranslate nohighlight">\(f,g \colon \R^+ \rightarrow \R\)</span> stetig differenzierbare Funktionen mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 f(x) \, \coloneqq \, \ln(x), \quad g(x) \, \coloneqq \, x^2, \quad \text{ für alle } x &gt; 0.
 \end{equation*}\]</div>
-<p>Wir wollen nun die Ableitung der folgenden Kombinationen von Funktionen mit den Regeln der Differentiation berechnen.
-\begin{enumerate}[i)]
-\item Wir wenden zuerst die \emph{Produktregel} für die Differentiation an:</p>
+<p>Wir wollen nun die Ableitung der folgenden Kombinationen von Funktionen mit den Regeln der Differentiation berechnen.</p>
+<p><span class="math notranslate nohighlight">\(i)\)</span> Wir wenden zuerst die <em>Produktregel</em> für die Differentiation an:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -526,23 +537,22 @@ f(x) \, \coloneqq \, \ln(x), \quad g(x) \, \coloneqq \, x^2, \quad \text{ für a
 \ &amp;= \ x + 2x \cdot \ln(x) \ = \ x \cdot (1 + 2 \ln(x)).
 \end{split}
 \end{equation*}\]</div>
-<p>\item Es folgt die \emph{Quotientenregel} für die Differentiation:</p>
+<p><span class="math notranslate nohighlight">\(ii)\)</span> Es folgt die <em>Quotientenregel</em> für die Differentiation:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
 \left(\frac{f}{g}\right)'(x) \: &amp;= \: \left( \frac{\ln}{x^2} \right)'(x) \: = \: \frac{\ln'(x)\cdot x^2 - \ln(x) (x^2)'}{(x^2)^2} \: = \: \frac{ \frac{x^2}{x} - \ln(x) \cdot 2x}{x^4} \: = \: \frac{1 - 2\ln(x)}{x^3}.
 \end{split}
 \end{equation*}\]</div>
-<p>\item Zuletzt wenden wir die \emph{Kettenregel} für die Differentiation an:</p>
+<p>\item Zuletzt wenden wir die <em>Kettenregel</em> für die Differentiation an:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
 (f \circ g)'(x) \ &amp;= \ (\ln \circ~x^2)'(x) \ = \ \ln'(x^2) \cdot (x^2)' \ = \ \frac{1}{x^2} \cdot 2x \ = \ \frac{2}{x} \ = \ (2 \ln(x))'.
 \end{split}
 \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{bsp}</p>
-<div class="toctree-wrapper compound">
+</div>
+</div><div class="toctree-wrapper compound">
 </div>
 </div>
 

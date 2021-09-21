@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x", "d": "\\mathrm{d}}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -448,21 +448,24 @@
 <h1><span class="section-number">7.1. </span>Trennung der Variablen<a class="headerlink" href="#trennung-der-variablen" title="Permalink to this headline">¶</a></h1>
 <p>Nachdem wir im letzten Abschnitt einige motivierende Beispiele für gewöhnliche Differentialgleichungen aus der Physik diskutiert haben, wollen wir im Folgenden eine erste Technik zur Bestimmung von Lösungen für bestimmte Spezialfälle herleiten.
 Die Methode der Trennung der Variablen, auch Separationsmethode genannt, erlaubt es separierbare Differentialgleichungen erster Ordnung zu lösen.</p>
-<p>Hierzu führen wir zunächst den Begriff von separierbaren Differentialgleichungen ein.
-\begin{definition}[Separierbare Differentialgleichung]\label{def:ode:getrenntVar}
-Seien <span class="math notranslate nohighlight">\(I,J\subset \R\)</span> zwei offene Intervalle und es seien <span class="math notranslate nohighlight">\(f\colon I\to\R\)</span> und <span class="math notranslate nohighlight">\(g\colon J\to\R\)</span> zwei stetige Funktionen.
+<p>Hierzu führen wir zunächst den Begriff von separierbaren Differentialgleichungen ein.</p>
+<div class="proof definition admonition" id="def:ode:getrenntVar">
+<p class="admonition-title"><span class="caption-number">Definition 7.2 </span> (Separierbare Differentialgleichung)</p>
+<div class="definition-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(I,J\subset \R\)</span> zwei offene Intervalle und es seien <span class="math notranslate nohighlight">\(f\colon I\to\R\)</span> und <span class="math notranslate nohighlight">\(g\colon J\to\R\)</span> zwei stetige Funktionen.
 Wir setzen voraus, dass <span class="math notranslate nohighlight">\(g(y)\neq 0\)</span> für alle <span class="math notranslate nohighlight">\(y\in J\)</span>.
 Eine gewöhnliche Differentialgleichung erster Ordnung der Form</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 y^\prime(x) \ = \ f(x) \cdot g(y(x)) \ = \ f(x) \cdot g(y)
 \end{equation*}\]</div>
-<p>heißt \emph{separierbare Differentialgleichung} und wird häufig auch \emph{Differentialgleichung mit getrennten Variablen} genannt.
-\end{definition}</p>
-<p>Der folgende Satz sagt aus unter welchen Voraussetzungen eindeutige Lösungen für separierbare Differentialgleichungen existieren und welche Gestalt diese besitzen.
-\begin{satz}[Trennung der Variablen]\label{satz:ode_getrennteVariablen}
-Seien <span class="math notranslate nohighlight">\(I,J\subset \R\)</span> zwei offene Intervalle und <span class="math notranslate nohighlight">\((x_0, y_0) \in I \times J\)</span> ein beliebiger Punkt.
-Es seien nun <span class="math notranslate nohighlight">\(f\colon I\to\R\)</span> und <span class="math notranslate nohighlight">\(g\colon J\to\R\)</span> zwei stetige Funktionen, wobei <span class="math notranslate nohighlight">\(g(y)\neq 0\)</span> für alle <span class="math notranslate nohighlight">\(y\in J\)</span> gelte.
+<p>heißt <em>separierbare Differentialgleichung</em> und wird häufig auch <em>Differentialgleichung mit getrennten Variablen</em> genannt.</p>
+</div>
+</div><p>Der folgende Satz sagt aus unter welchen Voraussetzungen eindeutige Lösungen für separierbare Differentialgleichungen existieren und welche Gestalt diese besitzen.</p>
+<div class="proof theorem admonition" id="satz:ode_getrennteVariablen">
+<p class="admonition-title"><span class="caption-number">Theorem 7.1 </span> (Trennung der Variablen)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(I,J\subset \R\)</span> zwei offene Intervalle und <span class="math notranslate nohighlight">\((x_0, y_0) \in I \times J\)</span> ein beliebiger Punkt. Es seien nun <span class="math notranslate nohighlight">\(f\colon I\to\R\)</span> und <span class="math notranslate nohighlight">\(g\colon J\to\R\)</span> zwei stetige Funktionen, wobei <span class="math notranslate nohighlight">\(g(y)\neq 0\)</span> für alle <span class="math notranslate nohighlight">\(y\in J\)</span> gelte.
 Wir betrachten die separierbare Differentialgleichung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -480,9 +483,9 @@ Die Lösung genügt außerdem der folgenden Beziehung</p>
 \[\begin{equation*}
 G(\varphi(x)) \ = \ F(x) \qquad \text{ für alle } \ x\in I^\prime.
 \end{equation*}\]</div>
-<p>\end{satz}
-\begin{proof}
-Wir bemerken zunächst, dass wir für <span class="math notranslate nohighlight">\(g(y) \neq 0\)</span> für alle <span class="math notranslate nohighlight">\(y \in J\)</span> die separierbare Differentialgleichung umschreiben können in</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir bemerken zunächst, dass wir für <span class="math notranslate nohighlight">\(g(y) \neq 0\)</span> für alle <span class="math notranslate nohighlight">\(y \in J\)</span> die separierbare Differentialgleichung umschreiben können in</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \frac{y'(x)}{g(y)} \ = \ f(x).
@@ -527,10 +530,12 @@ Durch Anwendung der Ketten- und Umkehrregel der Differentialrechnung und dem Hau
 \[\begin{equation*}
 \varphi(x_0) \ = \ G^{-1}(F(x_0)) \ = \ G^{-1}\left( \int_{x_0}^{x_0} f(t)\, \mathrm{d}t \right) \ = \ G^{-1}(0) \ = \ y_0.
 \end{equation*}\]</div>
-<p>\end{proof}</p>
-<p>Das folgende Beispiel illustriert wie das Verfahren der Trennung der Variablen eingesetzt werden kann, um analytische Lösungen für separierbare Differentialgleichungen zu erhalten.
-\begin{bsp}[Trennung der Variablen]\label{bsp:ode_getrennteVariablen}
-Betrachten wie die folgende gewöhnliche Differentialgleichung erster Ordnung</p>
+</div>
+<p>Das folgende Beispiel illustriert wie das Verfahren der Trennung der Variablen eingesetzt werden kann, um analytische Lösungen für separierbare Differentialgleichungen zu erhalten.</p>
+<div class="proof example admonition" id="bsp:ode_getrennteVariablen">
+<p class="admonition-title"><span class="caption-number">Example 7.5 </span> (Trennung der Variablen)</p>
+<div class="example-content section" id="proof-content">
+<p>Betrachten wie die folgende gewöhnliche Differentialgleichung erster Ordnung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 y^\prime(x) \ = \ -\frac{y(x)}{x},
@@ -565,10 +570,12 @@ Offensichtlich gilt <span class="math notranslate nohighlight">\(\R^+ = F(I') \s
 \[\begin{equation*}
 \varphi'(x) \ = \ \left( \frac{c}{x} \right)' \ = \ - \frac{c}{x^2} \ = \ - \frac{c}{x} \cdot \frac{1}{x} \ = \ - \frac{\varphi(x)}{x}.
 \end{equation*}\]</div>
-<p>\end{bsp}</p>
-<p>Die Trennung der Variablen lässt sich von Beispiel \ref{bsp:ode_getrennteVariablen} auf allgemeine lineare, homogene Differentialgleichungen erster Ordnung mit beliebiger Koeffizientenfunktion verallgemeinern, wie der folgende Satz zeigt.
-\begin{satz}[Lineare und homogene gewöhnliche Differentialgleichung erster Ordnung]\label{satz:ode_lin_hom}
-Sei <span class="math notranslate nohighlight">\(I \subset \R\)</span> ein offenes Intervall.
+</div>
+</div><p>Die Trennung der Variablen lässt sich von Beispiel \ref{bsp:ode_getrennteVariablen} auf allgemeine lineare, homogene Differentialgleichungen erster Ordnung mit beliebiger Koeffizientenfunktion verallgemeinern, wie der folgende Satz zeigt.</p>
+<div class="proof theorem admonition" id="satz:ode_lin_hom">
+<p class="admonition-title"><span class="caption-number">Theorem 7.2 </span> (Lineare und homogene gewöhnliche Differentialgleichung erster Ordnung)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(I \subset \R\)</span> ein offenes Intervall.
 Betrachten wir eine lineare und homogene Differentialgleichung erster Ordnung, die im Allgemeinen von folgender Form ist:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -580,8 +587,9 @@ Diese ist für alle <span class="math notranslate nohighlight">\(x \in I\)</span
 \[\begin{equation*}
 \varphi(x) \ \coloneqq \ c \cdot \exp\left(\, \int\limits_{x_0}^xa(t)\,\mathrm{d}t\right).
 \end{equation*}\]</div>
-<p>\begin{proof}
-Jede homogene lineare Differentialgleichung erster Ordnung ist ein Spezialfall einer separierbaren Differentialgleichung in Satz \ref{satz:ode_getrennteVariablen} für <span class="math notranslate nohighlight">\(f(x) \coloneqq a(x)\)</span> und <span class="math notranslate nohighlight">\(g(y) \coloneqq y\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Jede homogene lineare Differentialgleichung erster Ordnung ist ein Spezialfall einer separierbaren Differentialgleichung in Satz <a class="reference internal" href="#satz:ode_getrennteVariablen">Theorem 7.1</a> für <span class="math notranslate nohighlight">\(f(x) \coloneqq a(x)\)</span> und <span class="math notranslate nohighlight">\(g(y) \coloneqq y\)</span>.</p>
 <p>Zuerst zeigen wir, dass <span class="math notranslate nohighlight">\(\varphi\)</span> eine Lösung der Differentialgleichung ist.
 Man rechnet leicht nach, dass die Anfangsbedingung erfüllt ist, da</p>
 <div class="amsmath math notranslate nohighlight">
@@ -616,9 +624,8 @@ Wir bilden nun das Produkt <span class="math notranslate nohighlight">\(\varthet
 \[\begin{equation*}
 \vartheta(x) \ = \ c \cdot \varphi_0(x)^{-1} \ = \ c\cdot \exp\left(\,\int\limits_{x_0}^xa(t)\, \mathrm{d}t\right).
 \end{equation*}\]</div>
-<p>Hierbei können wir die Umkehrfunktion <span class="math notranslate nohighlight">\(\varphi_0^{-1}\)</span> betrachten, da die Exponentialfunktion streng monoton und somit insbesondere injektiv ist.
-\end{proof}
-\end{satz}</p>
+<p>Hierbei können wir die Umkehrfunktion <span class="math notranslate nohighlight">\(\varphi_0^{-1}\)</span> betrachten, da die Exponentialfunktion streng monoton und somit insbesondere injektiv ist.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
