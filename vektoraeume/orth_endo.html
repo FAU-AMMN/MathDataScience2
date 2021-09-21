@@ -238,6 +238,11 @@
      3.4. Hilberträume
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/dual.html">
+     3.5. Dualräume
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -519,8 +524,8 @@ Mit Hilfe der Polarisierungsformel in Satz \ref{satz:polarisierung} folgt aus de
 Dies bedeutet nach Definition \ref{def:orthogonale_endomorphismen}, dass <span class="math notranslate nohighlight">\(F\)</span> orthogonal bzw. unitär sein muss.
 \end{proof}</p>
 <p>Nutzt man in <span class="math notranslate nohighlight">\(\R^n\)</span> und <span class="math notranslate nohighlight">\(\C^n\)</span> mit dem kanonischen Skalarprodukt die darstellende Matrix <span class="math notranslate nohighlight">\(A\)</span> eines orthogonalen bzw. unitären Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> von <span class="math notranslate nohighlight">\(V\)</span>, so lässt sich beobachten, dass für alle <span class="math notranslate nohighlight">\(x,y \in \mathbb{K}^n\)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-75b00c00-29de-4785-bb8b-57dade4239be">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-75b00c00-29de-4785-bb8b-57dade4239be" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:unitäre_matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-2f7ec915-431b-4aba-9570-9f522d88aa13">
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-2f7ec915-431b-4aba-9570-9f522d88aa13" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:unitäre_matrix}
 \langle x, y \rangle \ = \ \langle Ax, Ay \rangle \ = \ (Ax)^T\overline{Ay} \ = \ x^T(A^T\bar{A})\overline{y} \ = \ x^T(\bar{A}^T A)^T\overline{y}.
 \end{equation}\]</div>
 <p>Die Matrix <span class="math notranslate nohighlight">\(\bar{A}^T\)</span> in Gleichung \eqref{eq:unitäre_matrix} hat eine besondere Bedeutung wie die folgende Definition zeigt.
@@ -600,8 +605,8 @@ z \cdot \bar{z} \ = \ (a + ib) \cdot (a - ib) \ = \ a^2 - aib + aib - i^2 b^2 \ 
 Solch orthogonale Matrizen nennt man daher auch \emph{eigentlich orthogonal} und sie bilden eine abgeschlossene Gruppe, wie folgende Bemerkung feststellt.
 \begin{remark}
 Die Mengen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a79993a9-7e0f-40db-bd35-cffdd92cb4b1">
-<span class="eqno">(2.7)<a class="headerlink" href="#equation-a79993a9-7e0f-40db-bd35-cffdd92cb4b1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-50a3cea2-3ff7-40d5-bd76-36087d0fcd05">
+<span class="eqno">(2.10)<a class="headerlink" href="#equation-50a3cea2-3ff7-40d5-bd76-36087d0fcd05" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \operatorname{O}(n) \ &amp;:= \ \left\lbrace A\in\operatorname{GL}(n;\R) ~\vert~ A^{-1} = A^T\right\rbrace,\tag{orthogonale Gruppe}\\
 \operatorname{SO}(n)\ &amp;:= \ \left\lbrace A\in\operatorname{O}(n) ~\vert~ \det A=1\right\rbrace,\tag{spezielle orthogonale Gruppe}\\
 \operatorname{U}(n) \ &amp;:= \ \left\lbrace A\in\operatorname{GL}(n;\C) ~\vert~ A^{-1} = \bar{A}^T\right\rbrace,\tag{unitäre Gruppe}\\

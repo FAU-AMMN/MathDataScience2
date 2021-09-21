@@ -234,6 +234,11 @@
      3.4. Hilberträume
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="normierte_raeume/dual.html">
+     3.5. Dualräume
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -443,16 +448,23 @@
    <a href="#cap-def:matrix_bild_rang"><strong>def:matrix_bild_rang</strong></a> | 
    <a href="#cap-def:matrix_kern"><strong>def:matrix_kern</strong></a> | 
    <a href="#cap-def:matrix_spur"><strong>def:matrix_spur</strong></a> | 
+   <a href="#cap-def:norm_r"><strong>def:norm_r</strong></a> | 
    <a href="#cap-def:normalform_nilpotent"><strong>def:normalform_nilpotent</strong></a> | 
    <a href="#cap-def:partielle_diffbarkeit"><strong>def:partielle_diffbarkeit</strong></a> | 
+   <a href="#cap-def:skalarprodukt_r"><strong>def:skalarprodukt_r</strong></a> | 
    <a href="#cap-def:totale_differenzierbarkeit"><strong>def:totale_differenzierbarkeit</strong></a> | 
+   <a href="#cap-def:vektorprodukt"><strong>def:vektorprodukt</strong></a> | 
+   <a href="#cap-def:winkelmessung"><strong>def:winkelmessung</strong></a> | 
    <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
    <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
+   <a href="#cap-definition-13"><strong>definition-13</strong></a> | 
    <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
    <a href="#cap-definition-4"><strong>definition-4</strong></a> | 
+   <a href="#cap-definition-6"><strong>definition-6</strong></a> | 
    <a href="#cap-definition-7"><strong>definition-7</strong></a> | 
    <a href="#cap-definition-9"><strong>definition-9</strong></a> | 
    <a href="#cap-example-1"><strong>example-1</strong></a> | 
+   <a href="#cap-example-12"><strong>example-12</strong></a> | 
    <a href="#cap-example-18"><strong>example-18</strong></a> | 
    <a href="#cap-example-2"><strong>example-2</strong></a> | 
    <a href="#cap-example-3"><strong>example-3</strong></a> | 
@@ -467,12 +479,16 @@
    <a href="#cap-lem:eigenvektoren_spalten"><strong>lem:eigenvektoren_spalten</strong></a> | 
    <a href="#cap-lem:einbettung_kern"><strong>lem:einbettung_kern</strong></a> | 
    <a href="#cap-lem:fitting"><strong>lem:fitting</strong></a> | 
+   <a href="#cap-lem:norm_eigenschaften"><strong>lem:norm_eigenschaften</strong></a> | 
    <a href="#cap-lem:norm_integral_abschaetzung"><strong>lem:norm_integral_abschaetzung</strong></a> | 
    <a href="#cap-lem:rang_determinante"><strong>lem:rang_determinante</strong></a> | 
    <a href="#cap-lem:sarrus"><strong>lem:sarrus</strong></a> | 
    <a href="#cap-lem:skalarprodukt_r"><strong>lem:skalarprodukt_r</strong></a> | 
+   <a href="#cap-lem:vektorprodukt"><strong>lem:vektorprodukt</strong></a> | 
+   <a href="#cap-lem:vektorprodukt_skalarprodukt"><strong>lem:vektorprodukt_skalarprodukt</strong></a> | 
    <a href="#cap-lemma-2"><strong>lemma-2</strong></a> | 
    <a href="#cap-lemma-6"><strong>lemma-6</strong></a> | 
+   <a href="#cap-lemma-8"><strong>lemma-8</strong></a> | 
    <a href="#cap-rem:jacobi_matrix"><strong>rem:jacobi_matrix</strong></a> | 
    <a href="#cap-remark-11"><strong>remark-11</strong></a> | 
    <a href="#cap-remark-13"><strong>remark-13</strong></a> | 
@@ -483,6 +499,7 @@
    <a href="#cap-remark-7"><strong>remark-7</strong></a> | 
    <a href="#cap-remark-9"><strong>remark-9</strong></a> | 
    <a href="#cap-satz:basiswechselsatz"><strong>satz:basiswechselsatz</strong></a> | 
+   <a href="#cap-satz:cauchy-schwarz_r"><strong>satz:cauchy-schwarz_r</strong></a> | 
    <a href="#cap-satz:diagonalisierbarkeit"><strong>satz:diagonalisierbarkeit</strong></a> | 
    <a href="#cap-satz:eigenvektoren_lu"><strong>satz:eigenvektoren_lu</strong></a> | 
    <a href="#cap-satz:eigenwert_komplex_konjugiert"><strong>satz:eigenwert_komplex_konjugiert</strong></a> | 
@@ -718,6 +735,14 @@
        <a href="eigenwerte/prelim.html#def:matrix_spur"><code class="xref">def:matrix_spur</code></a> <em>(eigenwerte/prelim)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def:norm_r"><td></td><td>
+       <strong>def:norm_r</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/standard_skalar.html#def:norm_r"><code class="xref">def:norm_r</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def:normalform_nilpotent"><td></td><td>
        <strong>def:normalform_nilpotent</strong></td><td></td></tr>
      <tr>
@@ -734,12 +759,36 @@
        <a href="ableitungen/part_diff.html#def:partielle_diffbarkeit"><code class="xref">def:partielle_diffbarkeit</code></a> <em>(ableitungen/part_diff)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def:skalarprodukt_r"><td></td><td>
+       <strong>def:skalarprodukt_r</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/standard_skalar.html#def:skalarprodukt_r"><code class="xref">def:skalarprodukt_r</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def:totale_differenzierbarkeit"><td></td><td>
        <strong>def:totale_differenzierbarkeit</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="ableitungen/tot_diff.html#def:totale_differenzierbarkeit"><code class="xref">def:totale_differenzierbarkeit</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def:vektorprodukt"><td></td><td>
+       <strong>def:vektorprodukt</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/vektor_produkt.html#def:vektorprodukt"><code class="xref">def:vektorprodukt</code></a> <em>(vektoraeume/vektor_produkt)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def:winkelmessung"><td></td><td>
+       <strong>def:winkelmessung</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/standard_skalar.html#def:winkelmessung"><code class="xref">def:winkelmessung</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-0"><td></td><td>
@@ -758,6 +807,14 @@
        <a href="eigenwerte/werte_vektoren.html#definition-1"><code class="xref">definition-1</code></a> <em>(eigenwerte/werte_vektoren)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-13"><td></td><td>
+       <strong>definition-13</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/standard_skalar.html#definition-13"><code class="xref">definition-13</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-2"><td></td><td>
        <strong>definition-2</strong></td><td></td></tr>
      <tr>
@@ -772,6 +829,14 @@
        <td></td>
        <td>
        <a href="ableitungen/tot_diff.html#definition-4"><code class="xref">definition-4</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-6"><td></td><td>
+       <strong>definition-6</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/standard_skalar.html#definition-6"><code class="xref">definition-6</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-7"><td></td><td>
@@ -795,7 +860,15 @@
      <tr>
        <td></td>
        <td>
-       <a href="vektoraeume/standard_skalar.html#example-1"><code class="xref">example-1</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
+       <a href="ableitungen/part_diff.html#example-1"><code class="xref">example-1</code></a> <em>(ableitungen/part_diff)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-12"><td></td><td>
+       <strong>example-12</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/standard_skalar.html#example-12"><code class="xref">example-12</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-18"><td></td><td>
@@ -819,7 +892,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="vektoraeume/standard_skalar.html#example-3"><code class="xref">example-3</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
+       <a href="vektoraeume/vektor_produkt.html#example-3"><code class="xref">example-3</code></a> <em>(vektoraeume/vektor_produkt)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-6"><td></td><td>
@@ -851,7 +924,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="ableitungen/tot_diff.html#example-9"><code class="xref">example-9</code></a> <em>(ableitungen/tot_diff)</em></td><td>
+       <a href="vektoraeume/standard_skalar.html#example-9"><code class="xref">example-9</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-lem:Taylor"><td></td><td>
@@ -910,6 +983,14 @@
        <a href="eigenwerte/jordan.html#lem:fitting"><code class="xref">lem:fitting</code></a> <em>(eigenwerte/jordan)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-lem:norm_eigenschaften"><td></td><td>
+       <strong>lem:norm_eigenschaften</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/standard_skalar.html#lem:norm_eigenschaften"><code class="xref">lem:norm_eigenschaften</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-lem:norm_integral_abschaetzung"><td></td><td>
        <strong>lem:norm_integral_abschaetzung</strong></td><td></td></tr>
      <tr>
@@ -942,6 +1023,22 @@
        <a href="vektoraeume/standard_skalar.html#lem:skalarprodukt_r"><code class="xref">lem:skalarprodukt_r</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-lem:vektorprodukt"><td></td><td>
+       <strong>lem:vektorprodukt</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/vektor_produkt.html#lem:vektorprodukt"><code class="xref">lem:vektorprodukt</code></a> <em>(vektoraeume/vektor_produkt)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-lem:vektorprodukt_skalarprodukt"><td></td><td>
+       <strong>lem:vektorprodukt_skalarprodukt</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/vektor_produkt.html#lem:vektorprodukt_skalarprodukt"><code class="xref">lem:vektorprodukt_skalarprodukt</code></a> <em>(vektoraeume/vektor_produkt)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-lemma-2"><td></td><td>
        <strong>lemma-2</strong></td><td></td></tr>
      <tr>
@@ -956,6 +1053,14 @@
        <td></td>
        <td>
        <a href="ableitungen/first_order.html#lemma-6"><code class="xref">lemma-6</code></a> <em>(ableitungen/first_order)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-lemma-8"><td></td><td>
+       <strong>lemma-8</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/standard_skalar.html#lemma-8"><code class="xref">lemma-8</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-rem:jacobi_matrix"><td></td><td>
@@ -995,7 +1100,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="eigenwerte/werte_vektoren.html#remark-3"><code class="xref">remark-3</code></a> <em>(eigenwerte/werte_vektoren)</em></td><td>
+       <a href="vektoraeume/standard_skalar.html#remark-3"><code class="xref">remark-3</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-4"><td></td><td>
@@ -1019,7 +1124,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="eigenwerte/jordan.html#remark-7"><code class="xref">remark-7</code></a> <em>(eigenwerte/jordan)</em></td><td>
+       <a href="vektoraeume/standard_skalar.html#remark-7"><code class="xref">remark-7</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-9"><td></td><td>
@@ -1036,6 +1141,14 @@
        <td></td>
        <td>
        <a href="eigenwerte/prelim.html#satz:basiswechselsatz"><code class="xref">satz:basiswechselsatz</code></a> <em>(eigenwerte/prelim)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:cauchy-schwarz_r"><td></td><td>
+       <strong>satz:cauchy-schwarz_r</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vektoraeume/standard_skalar.html#satz:cauchy-schwarz_r"><code class="xref">satz:cauchy-schwarz_r</code></a> <em>(vektoraeume/standard_skalar)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-satz:diagonalisierbarkeit"><td></td><td>

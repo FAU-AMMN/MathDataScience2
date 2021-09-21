@@ -238,6 +238,11 @@
      3.4. Hilberträume
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/dual.html">
+     3.5. Dualräume
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -438,10 +443,12 @@
 <h1><span class="section-number">2.2. </span>Das Vektorprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span><a class="headerlink" href="#das-vektorprodukt-in-mathbb-r-3" title="Permalink to this headline">¶</a></h1>
 <p>Im Folgenden beschäftigen wir uns mit einer ganz speziellen Abbildung in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, die zum Einen aus Sicht der Geometrie sehr nützlich ist und zum Anderen in der Physik eine wichtige Rolle spielt.
 Diese Abbildung wird Vektorprodukt genannt und taucht beispielsweise bei der Berechnung der Lorentzkraft im Elektromagnetismus auf oder wird für die Berechnung des Drehmoments in der klassischen Mechanik verwendet.</p>
-<p>Das Vektorprodukt zweier Vektoren ist wie folgt definiert.
-\begin{definition}[Vektorprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>]\label{def:vektorprodukt}
-Seien <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^3\)</span> zwei Vektoren mit <span class="math notranslate nohighlight">\(x=(x_1, x_2, x_3)^T\)</span> und <span class="math notranslate nohighlight">\(y=(y_1, y_2, y_3)^T\)</span>.
-Dann wird das \emph{Vektorprodukt} von <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span>, auch häufig \emph{Kreuzprodukt} oder \emph{äußeres Produkt} genannt, als folgende Abbildung definiert</p>
+<p>Das Vektorprodukt zweier Vektoren ist wie folgt definiert.</p>
+<div class="proof definition admonition" id="def:vektorprodukt">
+<p class="admonition-title"><span class="caption-number">Definition 2.6 </span> (Vektorprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>)</p>
+<div class="definition-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^3\)</span> zwei Vektoren mit <span class="math notranslate nohighlight">\(x=(x_1, x_2, x_3)^T\)</span> und <span class="math notranslate nohighlight">\(y=(y_1, y_2, y_3)^T\)</span>.
+Dann wird das <em>Vektorprodukt</em> von <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span>, auch häufig <em>Kreuzprodukt</em> oder <em>äußeres Produkt</em> genannt, als folgende Abbildung definiert</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -449,13 +456,14 @@ Dann wird das \emph{Vektorprodukt} von <span class="math notranslate nohighlight
 (x,y) \ &amp;\mapsto \ x \times y \ \coloneqq \ \begin{pmatrix}x_2y_3 - x_3y_2\\ x_3y_1 - x_1y_3\\ x_1y_2 - x_2y_1 \end{pmatrix}.
 \end{split}
 \end{equation*}\]</div>
-<p>\end{definition}</p>
-<p>Wir wollen zuerst einige grundlegende Eigenschaften des Vektorprodukts in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> festhalten.
-\begin{lemma}[Eigenschaften des Vektorprodukts]\label{lem:vektorprodukt}
-Seien <span class="math notranslate nohighlight">\(x, x', y, y' \in \mathbb{R}^3\)</span> Vektoren und <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span> ein Skalar.
-Dann gelten folgende Eigenschaften für das Vektorprodukt:
-\begin{enumerate}[i)]
-\item Bilinearität:</p>
+</div>
+</div><p>Wir wollen zuerst einige grundlegende Eigenschaften des Vektorprodukts in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> festhalten.</p>
+<div class="proof lemma admonition" id="lem:vektorprodukt">
+<p class="admonition-title"><span class="caption-number">Lemma 2.4 </span> (Eigenschaften des Vektorprodukts)</p>
+<div class="lemma-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(x, x', y, y' \in \mathbb{R}^3\)</span> Vektoren und <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span> ein Skalar.
+Dann gelten folgende Eigenschaften für das Vektorprodukt:</p>
+<p>i) Bilinearität:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -463,46 +471,49 @@ Dann gelten folgende Eigenschaften für das Vektorprodukt:
 &amp;\lambda x \times y \ = \  \lambda (x \times y) \ = \  (x \times \lambda y).
 \end{split}
 \end{equation*}\]</div>
-<p>\item Antikommutativität:</p>
+<p>ii) Antikommutativität:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 x \times y \ = \ - y \times x.
 \end{equation*}\]</div>
-<p>\item Alternierende Abbildung:</p>
+<p>iii) Alternierende Abbildung:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 x \times y \ = \ \vec{0} \quad \Leftrightarrow \quad x \text{ und } y \text{ sind linear abhängig}.
 \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{lemma}
-\begin{proof}
-Man kann die Eigenschaften des Vektorprodukts durch Anwendung der Definition direkt nachrechnen.
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Man kann die Eigenschaften des Vektorprodukts durch Anwendung der Definition direkt nachrechnen.
 Daher verzichten wir an dieser Stelle auf einen Beweis.
-Es sei jedoch angemerkt, dass man sowohl aus Eigenschaft <span class="math notranslate nohighlight">\(ii)\)</span> als auch Eigenschaft <span class="math notranslate nohighlight">\(iii)\)</span> des Vektorprodukts folgern kann, dass <span class="math notranslate nohighlight">\(x \times x = \vec{0}\)</span> gilt.
-\end{proof}</p>
-<p>Es gibt außerdem einen engen Zusammenhang zwischen dem Vektorprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> und dem kanonischen Skalarprodukt aus Kapitel \ref{s:skalarprodukt_r}, wie die folgenden Rechenregeln zeigen.
-\begin{lemma}\label{lem:vektorprodukt_skalarprodukt}
-Seien <span class="math notranslate nohighlight">\(x,y,z \in \mathbb{R}^3\)</span> Vektoren, dann gelten die folgenden Rechenregeln für das Vektorprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>:
-\begin{enumerate}[i)]
-\item $\langle x \times y, z \rangle \ = \ \det</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0039a6a9-8fc8-46e8-ae73-e250ef638478">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-0039a6a9-8fc8-46e8-ae73-e250ef638478" title="Permalink to this equation">¶</a></span>\[\begin{pmatrix}
+Es sei jedoch angemerkt, dass man sowohl aus Eigenschaft <span class="math notranslate nohighlight">\(ii)\)</span> als auch Eigenschaft <span class="math notranslate nohighlight">\(iii)\)</span> des Vektorprodukts folgern kann, dass <span class="math notranslate nohighlight">\(x \times x = \vec{0}\)</span> gilt.</p>
+</div>
+<p>Es gibt außerdem einen engen Zusammenhang zwischen dem Vektorprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> und dem kanonischen Skalarprodukt aus Kapitel <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">s:skalarprodukt_r</span></code>, wie die folgenden Rechenregeln zeigen.</p>
+<div class="proof lemma admonition" id="lem:vektorprodukt_skalarprodukt">
+<p class="admonition-title"><span class="caption-number">Lemma 2.5 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(x,y,z \in \mathbb{R}^3\)</span> Vektoren, dann gelten die folgenden Rechenregeln für das Vektorprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>:</p>
+<p>i) $\langle x \times y, z \rangle \ = \ \det</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f24f034a-b048-41f4-8b98-66b97e0a6175">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-f24f034a-b048-41f4-8b98-66b97e0a6175" title="Permalink to this equation">¶</a></span>\[\begin{pmatrix}
 x_1 &amp; x_2 &amp; x_3 \\
 y_1 &amp; y_2 &amp; y_3 \\
 z_1 &amp; z_2 &amp; z_3 
 \end{pmatrix}\]</div>
-<p>\item <span class="math notranslate nohighlight">\(\langle x \times y, x \rangle \ = \ \langle x \times y, y \rangle \ = \ 0\)</span>,
-\item <span class="math notranslate nohighlight">\(||x \times y||^2 \ = \ ||x||^2\cdot ||y||^2 - \langle x, y \rangle^2\)</span>,
-\item <span class="math notranslate nohighlight">\(||x \times y||^2\ = \ ||x||^2\cdot ||y||^2 \cdot (\sin \measuredangle (x,y))^2\)</span>.
-\end{enumerate}
-\end{lemma}
-\begin{proof}
-In der Hausaufgabe zu zeigen.</p>
-<p>Abschließend wollen wir das Vektorprodukt für zwei Beispiele berechnen.
-\begin{bsp}
-Seien <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}^3\)</span> Vektoren für die wir im Folgenden das Kreuzprodukt berechnen wollen.
-\begin{enumerate}
-\item Seien die Vektoren <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> gegeben als</p>
+<p>ii) <span class="math notranslate nohighlight">\(\langle x \times y, x \rangle \ = \ \langle x \times y, y \rangle \ = \ 0\)</span>,</p>
+<p>iii) <span class="math notranslate nohighlight">\(||x \times y||^2 \ = \ ||x||^2\cdot ||y||^2 - \langle x, y \rangle^2\)</span>,</p>
+<p>iv) <span class="math notranslate nohighlight">\(||x \times y||^2\ = \ ||x||^2\cdot ||y||^2 \cdot (\sin \measuredangle (x,y))^2\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. In der Hausaufgabe zu zeigen.</p>
+</div>
+<p>Abschließend wollen wir das Vektorprodukt für zwei Beispiele berechnen.</p>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 2.3 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}^3\)</span> Vektoren für die wir im Folgenden das Kreuzprodukt berechnen wollen.</p>
+<ul class="simple">
+<li><p>Seien die Vektoren <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> gegeben als</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 x \ \coloneqq \ 
@@ -592,10 +603,9 @@ x_1y_2 - x_2y_1
 \end{pmatrix}
 \ \eqqcolon \ z.
 \end{equation*}\]</div>
-<p>Da die Vektoren <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> offensichtlich linear abhängig sind ist das Vektorprodukt <span class="math notranslate nohighlight">\(x \times y = \vec{0}\)</span>.
-\end{enumerate}
-\end{bsp}</p>
+<p>Da die Vektoren <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> offensichtlich linear abhängig sind ist das Vektorprodukt <span class="math notranslate nohighlight">\(x \times y = \vec{0}\)</span>.</p>
 </div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
