@@ -420,7 +420,7 @@ Die Induktionsannahme ist, dass die Aussage bereits für den Fall $k-1$ gezeigt 
 Seien $\alpha_1, \ldots, \alpha_k \in \mathbb{K}$ so gewählt, dass gilt
 
 ```{math}
-:label:{eq:induktion_lin_abh}
+:label: eq:induktion_lin_abh
 
 \sum_{i=1}^k \alpha_i v_i \ = \ \vec{0}.
 ```
@@ -429,7 +429,7 @@ Sei nun $\lambda_k \in \mathbb{C}$ ein Eigenwert von $A$, der paarweise verschie
 Wir multiplizieren die Gleichung {eq}`eq:induktion_lin_abh` mit dem Eigenwert $\lambda_k$ und erhalten
 
 ```{math}
-:label:{eq:induktion_mult_lambda}
+:label: eq:induktion_mult_lambda
 \sum_{i=1}^k \alpha_i \lambda_k v_i \ = \ \vec{0}.
 ```
 

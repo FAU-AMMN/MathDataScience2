@@ -21,6 +21,7 @@ parts:
       - file: vektoraeume/orth.md
       - file: vektoraeume/orth_endo.md
       - file: vektoraeume/selbstadjungiert.md
+      - file: vektoraeume/normal.md
   - caption: Analysis
     numbered: True
     chapters:
