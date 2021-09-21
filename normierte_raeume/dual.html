@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -448,21 +448,24 @@
 <h1><span class="section-number">3.5. </span>Dualräume<a class="headerlink" href="#dualraume" title="Permalink to this headline">¶</a></h1>
 <p>Zu einem normierten Vektorraum können wir seinen sogenannten topologischen Dualraum betrachten.
 Dieser Dualraum erlaubt es beispielsweise in der Differentialgeometrie eine Integration auf einer Mannigfaltigkeit zu definieren oder aber Optimierungsprobleme in eine (manchmal angenehmere) äquivalente, duale Form zu überführen.
-Wir definieren daher zunächst den Begriff des topologischen Dualraums im Folgenden.
-\begin{definition}[Topologischer Dualraum und Funktional]
-Der \emph{topologische Dualraum} <span class="math notranslate nohighlight">\(X'\)</span> zu einem normierten <span class="math notranslate nohighlight">\(\K\)</span>-Vektorraum <span class="math notranslate nohighlight">\(X\)</span> ist definiert als die Menge aller stetigen, linearen Funktionen von <span class="math notranslate nohighlight">\(X\)</span> in den Körper <span class="math notranslate nohighlight">\(\K\)</span> der reellen oder komplexen Zahlen.
+Wir definieren daher zunächst den Begriff des topologischen Dualraums im Folgenden.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 3.12 </span> (Topologischer Dualraum und Funktional)</p>
+<div class="definition-content section" id="proof-content">
+<p>Der <em>topologische Dualraum</em> <span class="math notranslate nohighlight">\(X'\)</span> zu einem normierten <span class="math notranslate nohighlight">\(\K\)</span>-Vektorraum <span class="math notranslate nohighlight">\(X\)</span> ist definiert als die Menge aller stetigen, linearen Funktionen von <span class="math notranslate nohighlight">\(X\)</span> in den Körper <span class="math notranslate nohighlight">\(\K\)</span> der reellen oder komplexen Zahlen.
 Oft spricht man nur von dem zugehörigen Dualraum, wenn der mathematische Kontext eindeutig ist.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Insbesondere wenn $X$ unendlich-dimensional ist, nennt man eine Funktion $F \in X&#39;$
-\begin{equation*}
+<p>Insbesondere wenn <span class="math notranslate nohighlight">\(X\)</span> unendlich-dimensional ist, nennt man eine Funktion <span class="math notranslate nohighlight">\(F \in X'\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 F \colon X \rightarrow \K
-\end{equation*} 
-häufig ein \emph{Funktional}.
-</pre></div>
+\end{equation*}\]</div>
+<p>häufig ein <em>Funktional</em>.</p>
 </div>
-<p>\end{definition}</p>
-<p>Folgendes Beispiel erinnert an Funktionale, die Sie bereits kennengelernt haben.
-\begin{bsp}
-Die Abbildung</p>
+</div><p>Folgendes Beispiel erinnert an Funktionale, die Sie bereits kennengelernt haben.</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 3.8 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Die Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -477,20 +480,25 @@ Hierbei berechnet man die verrichtete Arbeit durch das folgende Funktional</p>
 \[\begin{equation*}
 F(V) \ \coloneqq \ \int_0^1 V(\varphi(s)) \, \mathrm{d}s.
 \end{equation*}\]</div>
-<p>\end{bsp}</p>
-<p>\begin{remark}
-Folgende Anmerkungen zum Dualraum wollen wir festhalten.
-\begin{enumerate}
-\item Neben dem topologischen Dualraum <span class="math notranslate nohighlight">\(X'\)</span> existiert in der Literatur der \emph{algebraische Dualraum} <span class="math notranslate nohighlight">\(X^*\)</span>, aller linearen (aber nicht notwendigerweise stetigen) Funktionale von <span class="math notranslate nohighlight">\(X\)</span> nach <span class="math notranslate nohighlight">\(\K\)</span>.
-Für endlich-dimensionale Vektorräume <span class="math notranslate nohighlight">\(X\)</span> stimmen der algebraische und topologische Dualraum überein, da in diesem Fall alle linearen Operatoren auf <span class="math notranslate nohighlight">\(X\)</span> automatisch stetig sind.
-\item Da <span class="math notranslate nohighlight">\(X\)</span> ein normierter Vektorraum ist, ist sein zugehöriger topologischer Dualraum <span class="math notranslate nohighlight">\(X'\)</span> auch ein normierter Vektorraum ausgestattet mit der folgenden Operatornorm</p>
+</div>
+</div><div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Remark 3.5 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Folgende Anmerkungen zum Dualraum wollen wir festhalten.</p>
+<ul class="simple">
+<li><p>Neben dem topologischen Dualraum <span class="math notranslate nohighlight">\(X'\)</span> existiert in der Literatur der <em>algebraische Dualraum</em> <span class="math notranslate nohighlight">\(X^*\)</span>, aller linearen (aber nicht notwendigerweise stetigen) Funktionale von <span class="math notranslate nohighlight">\(X\)</span> nach <span class="math notranslate nohighlight">\(\K\)</span>.
+Für endlich-dimensionale Vektorräume <span class="math notranslate nohighlight">\(X\)</span> stimmen der algebraische und topologische Dualraum überein, da in diesem Fall alle linearen Operatoren auf <span class="math notranslate nohighlight">\(X\)</span> automatisch stetig sind.</p></li>
+<li><p>Da <span class="math notranslate nohighlight">\(X\)</span> ein normierter Vektorraum ist, ist sein zugehöriger topologischer Dualraum <span class="math notranslate nohighlight">\(X'\)</span> auch ein normierter Vektorraum ausgestattet mit der folgenden Operatornorm</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||F||_{X'} \ = \ \sup_{||x||_X \leq 1} |F(x)|.
 \end{equation*}\]</div>
-<p>Da die Funktionale <span class="math notranslate nohighlight">\(F\in X'\)</span> per Definition in den vollständigen Körper <span class="math notranslate nohighlight">\(\K\)</span> abbilden ist <span class="math notranslate nohighlight">\(X'\)</span> selbst ein Banachraum, unabhängig davon ob <span class="math notranslate nohighlight">\(X\)</span> ein Banachraum ist.
-\item Falls <span class="math notranslate nohighlight">\(X\)</span> sogar ein Hilbertraum ist, so ist sein zugehöriger topologischer Dualraum <span class="math notranslate nohighlight">\(X'\)</span> nach dem Darstellungssatz von Fréchet-Riesz \cite{} isometrisch isomorph zum Vektorraum <span class="math notranslate nohighlight">\(X\)</span> selbst.
-Das bedeutet, dass ein isometrischer Isomorphismus <span class="math notranslate nohighlight">\(\Phi\)</span> existiert, der jedem Element <span class="math notranslate nohighlight">\(x \in X\)</span> ein eindeutiges Funktional <span class="math notranslate nohighlight">\(F \in X'\)</span> zuordnet mit</p>
+<p>Da die Funktionale <span class="math notranslate nohighlight">\(F\in X'\)</span> per Definition in den vollständigen Körper <span class="math notranslate nohighlight">\(\K\)</span> abbilden ist <span class="math notranslate nohighlight">\(X'\)</span> selbst ein Banachraum, unabhängig davon ob <span class="math notranslate nohighlight">\(X\)</span> ein Banachraum ist.</p>
+<ul class="simple">
+<li><p>Falls <span class="math notranslate nohighlight">\(X\)</span> sogar ein Hilbertraum ist, so ist sein zugehöriger topologischer Dualraum <span class="math notranslate nohighlight">\(X'\)</span> nach dem Darstellungssatz von Fréchet-Riesz \cite{} isometrisch isomorph zum Vektorraum <span class="math notranslate nohighlight">\(X\)</span> selbst.
+Das bedeutet, dass ein isometrischer Isomorphismus <span class="math notranslate nohighlight">\(\Phi\)</span> existiert, der jedem Element <span class="math notranslate nohighlight">\(x \in X\)</span> ein eindeutiges Funktional <span class="math notranslate nohighlight">\(F \in X'\)</span> zuordnet mit</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -498,20 +506,21 @@ Das bedeutet, dass ein isometrischer Isomorphismus <span class="math notranslate
 x \ &amp;\mapsto \ \Phi(x) \ \coloneqq \ \langle x, \cdot \rangle_X \ \eqqcolon \ F(x).
 \end{split}
 \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{remark}</p>
-<p>Das folgende Beispiel illustriert noch einmal die Isomorphie eines Hilbertraums mit seinem Dualraum für den endlich-dimensionalen Fall.
-\begin{bsp}
-Wir betrachten den Hilbertraum <span class="math notranslate nohighlight">\((\R^n, ||\cdot||_2)\)</span> und versuchen zu verstehen, wie sein zugehöriger Dualraum <span class="math notranslate nohighlight">\(X'\)</span> aussieht.
+</div>
+</div><p>Das folgende Beispiel illustriert noch einmal die Isomorphie eines Hilbertraums mit seinem Dualraum für den endlich-dimensionalen Fall.</p>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 3.9 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir betrachten den Hilbertraum <span class="math notranslate nohighlight">\((\R^n, ||\cdot||_2)\)</span> und versuchen zu verstehen, wie sein zugehöriger Dualraum <span class="math notranslate nohighlight">\(X'\)</span> aussieht.
 Da alle Elemente <span class="math notranslate nohighlight">\(a \in X'\)</span> mit <span class="math notranslate nohighlight">\(a \colon \R^n \rightarrow \R\)</span> linear sein müssen,  wird klar, dass diese Abbildungen von der Form <span class="math notranslate nohighlight">\(\langle a, \cdot \rangle\)</span> sein müssen mit:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 a(x) \ \coloneqq \ \langle a, x \rangle \ = \ (a_1,\ldots, a_n)^T \cdot (x_1, \ldots, x_n) \ = \ \sum_{i=1}^n a_i x_i, \quad \text{ für alle } x\in \R^n.
 \end{equation*}\]</div>
-<p>Offensichtlich realisieren diese linearen Abbildungen Skalarprodukte mit <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen Vektoren, welche auch häufig \emph{kovariante Vektoren} oder \emph{Kovektoren} genannt werden.
-Ein Isomorphismus zwischen <span class="math notranslate nohighlight">\(X\)</span> und seinem Dualraum <span class="math notranslate nohighlight">\(X'\)</span> lässt sich mittels darstellender Matrizen bezüglich der Standardbasen der beiden Räume bestimmen.
-\end{bsp}</p>
+<p>Offensichtlich realisieren diese linearen Abbildungen Skalarprodukte mit <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen Vektoren, welche auch häufig <em>kovariante Vektoren</em> oder <em>Kovektoren</em> genannt werden.
+Ein Isomorphismus zwischen <span class="math notranslate nohighlight">\(X\)</span> und seinem Dualraum <span class="math notranslate nohighlight">\(X'\)</span> lässt sich mittels darstellender Matrizen bezüglich der Standardbasen der beiden Räume bestimmen.</p>
 </div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {

@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -495,13 +495,13 @@ Wir betrachten nun eine sogenannte Ansatzfunktion <span class="math notranslate 
 u(x) \ \coloneqq \ \varphi(x) \cdot \varphi_0^{-1}(x) \ = \ \varphi(x) \cdot \exp\left(\,-\int\limits_{x_0}^x a(t)\,\mathrm{d}t\right).
 \end{equation*}\]</div>
 <p>Durch Multiplikation mit <span class="math notranslate nohighlight">\(\varphi_0\)</span> lässt sich der Ausdruck dieser Funktion nun umstellen zur unbekannten Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de51f64a-bd43-4a26-9686-8463cd7cf8f4">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-de51f64a-bd43-4a26-9686-8463cd7cf8f4" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_varphi}
+<div class="amsmath math notranslate nohighlight" id="equation-5908d8f1-6a83-44e2-a19c-3ce0fbd0cd37">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-5908d8f1-6a83-44e2-a19c-3ce0fbd0cd37" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_varphi}
 \varphi(x) \ = \ \varphi_0(x) \cdot  u(x) \ = \ \exp\left(\,\int\limits_{x_0}^xa(t)\,\mathrm{d}t\right) \cdot u(x).
 \end{equation}\]</div>
 <p>Setzen wir diesen Ausdruck nun in die inhomogene Differentialgleichung ein, so erhalten wir für alle <span class="math notranslate nohighlight">\(x \in I\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-e19842c6-c262-4e2e-8c88-7643583f958d">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-e19842c6-c262-4e2e-8c88-7643583f958d" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_u}
+<div class="amsmath math notranslate nohighlight" id="equation-d3bf1fd9-4834-479d-a383-2f717bd9bd45">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-d3bf1fd9-4834-479d-a383-2f717bd9bd45" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_u}
 (u\cdot \varphi_0)'(x) \ = \ a(x) \cdot u(x) \cdot \varphi_0(x) + b(x).
 \end{equation}\]</div>
 <p>Durch Anwendung der Produkt- und Kettenregel der Differentiation und des Hauptsatzes der Differential- und Integralrechnung lässt sich die linke Seite der Gleichung noch vereinfachen zu</p>
@@ -547,8 +547,8 @@ Setzen wir dies nun in die Gleichung \eqref{eq:dgl_inhomogen_varphi} für die L�
 <p>Im folgenden Beispiel wollen wir das Verfahren der Variation der Konstanten nutzen, um die analytische Lösung einer inhomogenen Differentialgleichung herzuleiten.
 \begin{bsp}[Variation der Konstanten]
 Wir betrachten die folgende lineare, inhomogene Differentialgleichung erster Ordnung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-04e36216-a924-46b2-8c92-eb2359a6adc4">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-04e36216-a924-46b2-8c92-eb2359a6adc4" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen}
+<div class="amsmath math notranslate nohighlight" id="equation-c05ccdf5-763c-4cda-8825-23c3d128d9fc">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-c05ccdf5-763c-4cda-8825-23c3d128d9fc" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen}
 y^\prime(x) \ = \ 2x\cdot y(x) + x^3,
 \end{equation}\]</div>
 <p>für die die Anfangsbedingung <span class="math notranslate nohighlight">\(y(0) = c\)</span> mit <span class="math notranslate nohighlight">\(c \in \R\)</span> erfüllt sein soll.
@@ -647,15 +647,15 @@ Diese Beobachtung hat den großen Vorteil, dass man sich bei Lösungsmethoden vo
 \begin{remark}
 Sei <span class="math notranslate nohighlight">\(G \subset \R \times \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f\colon G\to\R\)</span>  eine stetige Funktion.
 Wir betrachten im Folgenden die explizite gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56bad0d0-a7f6-4013-915d-1f3d2e5ba293">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-56bad0d0-a7f6-4013-915d-1f3d2e5ba293" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode:redODEOri}
+<div class="amsmath math notranslate nohighlight" id="equation-33a92666-6c4e-4d99-8214-5128baa64812">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-33a92666-6c4e-4d99-8214-5128baa64812" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode:redODEOri}
 y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots,y^{(n-1)}(x)).
 \end{equation}\]</div>
 <p>\begin{enumerate}
 \item
 Wir können die Gleichung \eqref{eq:ode:redODEOri} zu einem Differentialgleichungssystem erster Ordnung umformulieren bestehend aus <span class="math notranslate nohighlight">\(n+1\)</span> Gleichungen mit</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a02e5d27-85ea-4041-b952-2be6e43cb9e6">
-<span class="eqno">(7.6)<a class="headerlink" href="#equation-a02e5d27-85ea-4041-b952-2be6e43cb9e6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-53200dc4-0f21-402c-8bdb-e326f566e6a4">
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-53200dc4-0f21-402c-8bdb-e326f566e6a4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \left\{\begin{array}{rl}
 y &amp;=~y_1,\\
 y_1^\prime&amp;=~y_2,\\
@@ -715,8 +715,8 @@ Die <span class="math notranslate nohighlight">\((n+1)\)</span>-te Gleichung von
 \end{remark}</p>
 <p>\begin{bsp}
 Die Gleichung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7edf3958-4020-4bd0-a68f-ab855e270467">
-<span class="eqno">(7.7)<a class="headerlink" href="#equation-7edf3958-4020-4bd0-a68f-ab855e270467" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e6321401-a55f-4b30-b193-63ac7bb3b563">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-e6321401-a55f-4b30-b193-63ac7bb3b563" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 y^{\prime\prime}(x) + y(x) \, = \, 0\label{eq:ode:2ordnSinCos}
 \end{equation}\]</div>
 <p>für <span class="math notranslate nohighlight">\(x\in \R\)</span> ist eine implizite gewöhnliche  Differentialgleichung zweiter Ordnung.
@@ -833,8 +833,8 @@ Sei nun <span class="math notranslate nohighlight">\(\varphi\colon I\to \R^n\)</
 y^\prime(x) \ = \ f(x,y(x))
 \end{equation*}\]</div>
 <p>unter der Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span>, wenn sie die folgende Integralgleichung erfüllt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-defc1e21-9afd-40c5-83b0-1d39b2933bfd">
-<span class="eqno">(7.8)<a class="headerlink" href="#equation-defc1e21-9afd-40c5-83b0-1d39b2933bfd" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode_integralgleichung}
+<div class="amsmath math notranslate nohighlight" id="equation-5da00440-c80d-4368-b4f0-c65cc294d92b">
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-5da00440-c80d-4368-b4f0-c65cc294d92b" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode_integralgleichung}
 \varphi(x) \ = \ c + \int\limits_{x_0}^x f(t,\varphi(t))\,\mathrm{d}t \qquad \text{für alle } \ x\in I.
 \end{equation}\]</div>
 <p>\end{satz}
@@ -900,8 +900,8 @@ so folgt schon</p>
 Wir beginnen zunächst damit die Eindeutigkeit von Lösungen in einer lokalen <span class="math notranslate nohighlight">\(\epsilon\)</span>-Umgebung zu zeigen.
 Sei <span class="math notranslate nohighlight">\(x_0 \in I\)</span> ein Punkt, so dass für die beiden Lösungen <span class="math notranslate nohighlight">\(\varphi, \vartheta \colon I \rightarrow \R^n\)</span> der gewöhnlichen Differentialgleichung gilt <span class="math notranslate nohighlight">\(\varphi(x_0) = \vartheta(x_0)\)</span>.
 Auf Grund der Integraldarstellung in Satz \ref{satz:ode_integralgleichung} folgt nun</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bee03b34-53b4-442f-990e-6bce8d896b68">
-<span class="eqno">(7.9)<a class="headerlink" href="#equation-bee03b34-53b4-442f-990e-6bce8d896b68" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode_eindeutigkeit_integralgleichung}
+<div class="amsmath math notranslate nohighlight" id="equation-60a8f5ea-52dc-41fa-8da0-7d99115a31a4">
+<span class="eqno">(7.9)<a class="headerlink" href="#equation-60a8f5ea-52dc-41fa-8da0-7d99115a31a4" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode_eindeutigkeit_integralgleichung}
 \varphi(x) - \vartheta(x) \ = \ \int_{x_0}^x f(t, \varphi(t)) - f(t, \vartheta(t)) \, \mathrm{d}t.
 \end{equation}\]</div>
 <p>Da <span class="math notranslate nohighlight">\(f\)</span> nach Voraussetzung lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist, existieren Konstanten <span class="math notranslate nohighlight">\(L \geq 0\)</span> und <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span>, so dass für alle <span class="math notranslate nohighlight">\(t \in I \cap B_\delta(x_0) \coloneqq \lbrace t \in I \colon |t - x_0| &lt; \delta \rbrace\)</span> gilt:</p>
@@ -942,8 +942,8 @@ Daher gilt also <span class="math notranslate nohighlight">\(\varphi(x) = \varth
 <p>Um zu verstehen, wann die Lösung einer gewöhnlichen Differentialgleichung nicht eindeutig ist, diskutieren wir im Folgenden ein Gegenbeispiel.
 \begin{bsp}
 Wir betrachten die folgende nichtlineare gewöhnliche Differentialgleichung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1818527-265f-421c-a423-960155232097">
-<span class="eqno">(7.10)<a class="headerlink" href="#equation-d1818527-265f-421c-a423-960155232097" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:bsp_dgl_nichteindeutig}
+<div class="amsmath math notranslate nohighlight" id="equation-84b83f5a-14d0-4e7b-b171-ad0b663b723a">
+<span class="eqno">(7.10)<a class="headerlink" href="#equation-84b83f5a-14d0-4e7b-b171-ad0b663b723a" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:bsp_dgl_nichteindeutig}
 y^\prime(x) \ = \ (y(x))^{\frac23}.
 \end{equation}\]</div>
 <p>Wie man sofort einsieht ist eine spezielle Lösung der Differentialgleichung gegeben durch</p>

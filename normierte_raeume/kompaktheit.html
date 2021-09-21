@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -447,31 +447,38 @@
   <div class="section" id="kompaktheit">
 <h1><span class="section-number">3.3. </span>Kompaktheit<a class="headerlink" href="#kompaktheit" title="Permalink to this headline">¶</a></h1>
 <p>Ein zentraler Begriff in der mathematischen Topologie ist Kompaktheit einer Menge, die für viele Existenzaussagen essentiell ist.
-Aus \cite[Kapitel 5.1]{burger_2020} kennen Sie bereits kompakte Mengen in metrischen Räumen, so dass die folgende Definition einer Wiederholung darstellt.
-\begin{definition}[Kompaktheit]
-Eine Teilmenge <span class="math notranslate nohighlight">\( M \subseteq X \)</span> eines normierten Raumes <span class="math notranslate nohighlight">\( X \)</span> ist kompakt genau dann,
+Aus Kapitel 5.1 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> kennen Sie bereits kompakte Mengen in metrischen Räumen, so dass die folgende Definition einer Wiederholung darstellt.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 3.10 </span> (Kompaktheit)</p>
+<div class="definition-content section" id="proof-content">
+<p>Eine Teilmenge <span class="math notranslate nohighlight">\( M \subseteq X \)</span> eines normierten Raumes <span class="math notranslate nohighlight">\( X \)</span> ist kompakt genau dann,
 wenn jede Folge <span class="math notranslate nohighlight">\( (x_n)_{n\in\N} \subseteq M \)</span> eine konvergente Teilfolge enthält,
-deren Grenzwert in <span class="math notranslate nohighlight">\( M \)</span> liegt.
-\end{definition}</p>
-<p>In endlichen Dimensionen haben Sie bereits ein wichtiges Resultat für konvergente Teilfolgen kennengelernt.
-Der Satz von Bolzano-Weierstrass, dass abgeschlossene Kugeln in <span class="math notranslate nohighlight">\( \mathbb{K}^n\)</span> mit Körper <span class="math notranslate nohighlight">\(\K=\R\)</span> oder <span class="math notranslate nohighlight">\(\K=\C\)</span> kompakt sind.
-\begin{thm}[Bolzano-Weierstrass]\label{satz:bolzano}
-Sei <span class="math notranslate nohighlight">\(\K=\R\)</span> oder <span class="math notranslate nohighlight">\(\K=\C\)</span> ein Körper und <span class="math notranslate nohighlight">\((x_k)_{k\in\N} \subset \K^n\)</span> eine beschränkte Folge, d.h. es gibt eine Konstante <span class="math notranslate nohighlight">\(C \in \R^+\)</span>, so dass alle Folgenglieder <span class="math notranslate nohighlight">\(x_k, k\in\N,\)</span> in der abgeschlossenen Kugel <span class="math notranslate nohighlight">\(B_C(0) \subset \K^n\)</span> liegen, d.h.</p>
+deren Grenzwert in <span class="math notranslate nohighlight">\( M \)</span> liegt.</p>
+</div>
+</div><p>In endlichen Dimensionen haben Sie bereits ein wichtiges Resultat für konvergente Teilfolgen kennengelernt.
+Der Satz von Bolzano-Weierstrass, dass abgeschlossene Kugeln in <span class="math notranslate nohighlight">\( \mathbb{K}^n\)</span> mit Körper <span class="math notranslate nohighlight">\(\K=\R\)</span> oder <span class="math notranslate nohighlight">\(\K=\C\)</span> kompakt sind.</p>
+<div class="proof theorem admonition" id="satz:bolzano">
+<p class="admonition-title"><span class="caption-number">Theorem 3.3 </span> (Bolzano-Weierstrass)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(\K=\R\)</span> oder <span class="math notranslate nohighlight">\(\K=\C\)</span> ein Körper und <span class="math notranslate nohighlight">\((x_k)_{k\in\N} \subset \K^n\)</span> eine beschränkte Folge, d.h. es gibt eine Konstante <span class="math notranslate nohighlight">\(C \in \R^+\)</span>, so dass alle Folgenglieder <span class="math notranslate nohighlight">\(x_k, k\in\N,\)</span> in der abgeschlossenen Kugel <span class="math notranslate nohighlight">\(B_C(0) \subset \K^n\)</span> liegen, d.h.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Vert x_k \, \Vert \, \leq \, C.
 \end{equation*}\]</div>
-<p>Dann existiert eine konvergente Teilfolge <span class="math notranslate nohighlight">\((x_{k_j})_{j\in\N}\)</span> mit dem Grenzwert <span class="math notranslate nohighlight">\(\overline{x} \in X\)</span> und es gilt <span class="math notranslate nohighlight">\(\Vert \overline{x} \Vert \leq C\)</span>.
-\end{thm}
-\begin{proof}
-Siehe \cite[Satz 4.19]{burger_2020}
-\end{proof}</p>
-<p>\begin{comment}
-Wir können folgende Beobachtungen zum Satz von Bolzano-Weierstrass \ref{satz:bolzano} festhalten.
-\begin{enumerate}
-\item In endlich-dimensionalen Vektorräumen <span class="math notranslate nohighlight">\(X\)</span> lässt sich eine noch stärkere Aussage beweisen, die sich auf den Satz von Heine-Borel \cite[Satz 5.18]{burger_2020} zurückführen lässt.
-Anstatt nur einer hinreichenden Bedingung, kann man aussagen, dass eine Teilmenge <span class="math notranslate nohighlight">\(M \subset X\)</span> genau dann kompakt ist, wenn Sie beschränkt and abgeschlossen ist.
-\item Der Satz gilt nicht mehr, wenn der betrachtete normierte Raum unendlich-dimensional ist, beispielsweise in Funktionen- bzw. Folgenräumen wie <span class="math notranslate nohighlight">\(C([a,b]; \R) \)</span> oder</p>
+<p>Dann existiert eine konvergente Teilfolge <span class="math notranslate nohighlight">\((x_{k_j})_{j\in\N}\)</span> mit dem Grenzwert <span class="math notranslate nohighlight">\(\overline{x} \in X\)</span> und es gilt <span class="math notranslate nohighlight">\(\Vert \overline{x} \Vert \leq C\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Siehe Satz 4.19 <span id="id2">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span>.</p>
+</div>
+<div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Remark 3.4 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Wir können folgende Beobachtungen zum Satz von Bolzano-Weierstrass <a class="reference internal" href="#satz:bolzano">Theorem 3.3</a> festhalten.</p>
+<ol class="simple">
+<li><p>In endlich-dimensionalen Vektorräumen <span class="math notranslate nohighlight">\(X\)</span> lässt sich eine noch stärkere Aussage beweisen, die sich auf den Satz von Heine-Borel Satz 5.18 <span id="id3">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> zurückführen lässt.
+Anstatt nur einer hinreichenden Bedingung, kann man aussagen, dass eine Teilmenge <span class="math notranslate nohighlight">\(M \subset X\)</span> genau dann kompakt ist, wenn Sie beschränkt and abgeschlossen ist.</p></li>
+<li><p>Der Satz gilt nicht mehr, wenn der betrachtete normierte Raum unendlich-dimensional ist, beispielsweise in Funktionen- bzw. Folgenräumen wie <span class="math notranslate nohighlight">\(C([a,b]; \R) \)</span> oder</p></li>
+</ol>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \ell^2(\R) \ = \ \{ (x_n)_{n\in\N} : x_n \in \R, \; \sum_{n=1}^\infty |x_n|^2 &lt; \infty \}.
@@ -481,9 +488,8 @@ Anstatt nur einer hinreichenden Bedingung, kann man aussagen, dass eine Teilmeng
 \[\begin{equation*}
 x_n\ = \ e_n \ \coloneqq \ (0, \ldots, 0, 1, 0, \ldots), \quad n \in \N,
 \end{equation*}\]</div>
-<p>d.h., das Folgenglied <span class="math notranslate nohighlight">\(x_n\)</span> besitzt eine Eins an der <span class="math notranslate nohighlight">\(n\)</span>-ten Stelle und sonst nur Nullen.
-\end{enumerate}
-Es wird klar, dass jedes Folgenglied auf der Einheitskugel des Vektorraums <span class="math notranslate nohighlight">\(\ell^2(\R)\)</span> liegt, da offensichtlich gilt <span class="math notranslate nohighlight">\(||x_n|| = 1\)</span> für alle <span class="math notranslate nohighlight">\(n \in \N\)</span>.
+<p>d.h., das Folgenglied <span class="math notranslate nohighlight">\(x_n\)</span> besitzt eine Eins an der <span class="math notranslate nohighlight">\(n\)</span>-ten Stelle und sonst nur Nullen.</p>
+<p>Es wird klar, dass jedes Folgenglied auf der Einheitskugel des Vektorraums <span class="math notranslate nohighlight">\(\ell^2(\R)\)</span> liegt, da offensichtlich gilt <span class="math notranslate nohighlight">\(||x_n|| = 1\)</span> für alle <span class="math notranslate nohighlight">\(n \in \N\)</span>.
 Das heißt, dass die Folge <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> beschränkt ist und in der abgeschlossenen Einheitskugel liegt.
 Dennoch besitzt die Folge keine konvergente Teilfolge, da</p>
 <div class="amsmath math notranslate nohighlight">
@@ -491,181 +497,191 @@ Dennoch besitzt die Folge keine konvergente Teilfolge, da</p>
 ||x_m - x_n|| \ = \ ||e_m - e_n|| \ = \ \sqrt{2}, \quad \text{ für alle } m,n \in \N, m \neq n,
 \end{equation*}\]</div>
 <p>d.h., der Abstand eines beliebigen Folgeglieds zu allen anderen Folgegliedern ist konstant <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>.
-Somit kann keine konvergente Teilfolge von <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> existieren und damit ist die Einheitskugel in <span class="math notranslate nohighlight">\(\ell^2(\R)\)</span> nicht kompakt.
-\end{comment}</p>
-<p>Wir können über den Begriff der Kompaktheit sogar erkennen, ob ein Vektorraum endlich erzeugt ist.
+Somit kann keine konvergente Teilfolge von <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> existieren und damit ist die Einheitskugel in <span class="math notranslate nohighlight">\(\ell^2(\R)\)</span> nicht kompakt.</p>
+</div>
+</div><p>Wir können über den Begriff der Kompaktheit sogar erkennen, ob ein Vektorraum endlich erzeugt ist.
 Als Vorbereitung dieser Beobachtung benötigen wir jedoch zuerst das folgende Hilfslemma.
-Die Motivation für dieses Lemma ist, dass wir den Begriff eines senkrechten Vektors auf einen Unterraum aus Kapitel \ref{s:orthonormalisierung} nicht in beliebigen normierten Vektorräumen anwenden können (da ggfs. kein Skalarprodukt existiert).
-Dennoch können wir nach dem folgenden Lemma Einheitsvektoren finden, die außerhalb dieses Unterraums liegen und einen positiven Abstand zu diesem besitzen.
-\begin{lemma}[Lemma von Riesz]
-\label{lem:lemma von Riesz}
-Es sei <span class="math notranslate nohighlight">\(X\)</span> ein normierter Vektorraum und <span class="math notranslate nohighlight">\( U \subsetneq X \)</span> ein abgeschlossener, echter Unterraum von <span class="math notranslate nohighlight">\(X\)</span>.
+Die Motivation für dieses Lemma ist, dass wir den Begriff eines senkrechten Vektors auf einen Unterraum aus Kapitel <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">s:orthonormalisierung</span></code> nicht in beliebigen normierten Vektorräumen anwenden können (da ggfs. kein Skalarprodukt existiert).
+Dennoch können wir nach dem folgenden Lemma Einheitsvektoren finden, die außerhalb dieses Unterraums liegen und einen positiven Abstand zu diesem besitzen.</p>
+<div class="proof lemma admonition" id="lem:lemma von Riesz">
+<p class="admonition-title"><span class="caption-number">Lemma 3.1 </span> (Lemma von Riesz)</p>
+<div class="lemma-content section" id="proof-content">
+<p>Es sei <span class="math notranslate nohighlight">\(X\)</span> ein normierter Vektorraum und <span class="math notranslate nohighlight">\( U \subsetneq X \)</span> ein abgeschlossener, echter Unterraum von <span class="math notranslate nohighlight">\(X\)</span>.
 Sei außerdem ein <span class="math notranslate nohighlight">\(\delta \in \R\)</span> mit <span class="math notranslate nohighlight">\(0 &lt; \delta &lt; 1\)</span> gegeben.
-Dann existiert ein Element <span class="math notranslate nohighlight">\(y \in X\)</span> der Einheitskugel mit <span class="math notranslate nohighlight">\( \norm[X]{y} = 1 \)</span>, so dass
-\begin{equation*}
+Dann existiert ein Element <span class="math notranslate nohighlight">\(y \in X\)</span> der Einheitskugel mit <span class="math notranslate nohighlight">\( \norm[X]{y} = 1 \)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 d(y, U) \ \coloneqq \ \inf_{u\in U}\norm[X]{y-u} \ \geq \ \delta.
-\end{equation*}
-\end{lemma}
-\begin{proof}
-Es sei <span class="math notranslate nohighlight">\( \delta \in (0,1)\)</span> beliebig vorgegeben.
+\end{equation*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Es sei <span class="math notranslate nohighlight">\( \delta \in (0,1)\)</span> beliebig vorgegeben.
 Wir wählen ein beliebiges Element <span class="math notranslate nohighlight">\(z \in X \setminus U\)</span> aus dem Komplement von <span class="math notranslate nohighlight">\(U\)</span> und erkennen, dass der Abstand <span class="math notranslate nohighlight">\(d(z,U)\)</span> von <span class="math notranslate nohighlight">\(z\)</span> zu <span class="math notranslate nohighlight">\(U\)</span> positiv ist.
-Da wir den Unterraum <span class="math notranslate nohighlight">\(U \subsetneq X\)</span> als abgeschlossen angenommen haben, existiert ein Element <span class="math notranslate nohighlight">\(u_0 \in U \)</span> für das gilt
-\begin{equation*}
-d(z,U) \ \coloneqq \ \inf_{u\in U}\norm[X]{z-u} \ \leq \ \norm[X]{z-u_0} \ \leq \  \frac{d(z,U)}{\delta}.
-\end{equation*}
-Und damit können wir folgern, dass
-\begin{equation}\label{eq:riesz_lemma}
-\frac{\delta}{d(z,U)} \ \leq \ \frac{1}{\norm[X]{z-u_0}}.
-\end{equation}
-Wählen wir nun den Einheitsvektor
-\begin{equation*}
-y \ \coloneqq \ \frac{z-u_0\phantom{X}}{\norm[X]{z-u_0}},
-\end{equation*}
-so ist offensichtlich <span class="math notranslate nohighlight">\(||y||_X = 1\)</span>.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Für ein beliebiges Element $v \in U $ können wir nun nachrechnen, dass gilt
-\begin{equation*}
-	\norm[X]{y - v} \ = \ \left\Vert
-      	\frac{z-u_0}{\norm[X]{z-u_0}}
+Da wir den Unterraum <span class="math notranslate nohighlight">\(U \subsetneq X\)</span> als abgeschlossen angenommen haben, existiert ein Element <span class="math notranslate nohighlight">\(u_0 \in U \)</span> für das gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+d(z,U) \ \coloneqq \ \inf_{u\in U}\norm{z-u}_X \ \leq \ \norm{z-u_0}_X \ \leq \  \frac{d(z,U)}{\delta}.
+\end{equation*}\]</div>
+<p>Und damit können wir folgern, dass</p>
+<div class="math notranslate nohighlight" id="equation-eq-riesz-lemma">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-eq-riesz-lemma" title="Permalink to this equation">¶</a></span>\[\frac{\delta}{d(z,U)} \ \leq \ \frac{1}{\norm{z-u_0}_X}.\]</div>
+<p>Wählen wir nun den Einheitsvektor</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+y \ \coloneqq \ \frac{z-u_0\phantom{X}}{\norm{z-u_0}_X},
+\end{equation*}\]</div>
+<p>so ist offensichtlich <span class="math notranslate nohighlight">\(||y||_X = 1\)</span>.</p>
+<p>Für ein beliebiges Element <span class="math notranslate nohighlight">\(v \in U \)</span> können wir nun nachrechnen, dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \norm{y - v}_X \ = \ \left\Vert
+        \frac{z-u_0}{\norm{z-u_0}}
         -
-        v \cdot \frac{\norm[X]{z-u_0}}{\norm[X]{z-u_0}}
+        v \cdot \frac{\norm{z-u_0}_X}{\norm{z-u_0}_X}
     \right\Vert_X
     \ = \ 
-    \frac{1}{\norm[X]{z-u_0}}
+    \frac{1}{\norm{z-u_0}_X}
     \left\Vert
         z
         -u_0
-        -v \cdot \norm[X]{z-u_0}
+        -v \cdot \norm{z-u_0}_X
     \right\Vert_X.
-\end{equation*}
-Da der Vektor $(u_0 - v\cdot \norm[X]{z-u_0}) \in U $ ist, können wir folgende Abschätzung treffen
-\begin{equation*}
+\end{equation*}\]</div>
+<p>Da der Vektor <span class="math notranslate nohighlight">\((u_0 - v\cdot \norm{z-u_0}_X) \in U \)</span> ist, können wir folgende Abschätzung treffen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \begin{split}
-    \frac{1}{\norm[X]{z-u_0}}
+    \frac{1}{\norm{z-u_0}_X}
     \left\Vert
         z
         -u_0
-        -v \cdot \norm[X]{z-u_0}
+        -v \cdot \norm{z-u_0}_X
     \right\Vert_X
-	&amp;\ \geq \
+    &amp;\ \geq \
     \frac{1}{\norm[X]{z-u_0}}
     \ \inf_{u\in U}\norm[X]{z-u}\\
-    \ &amp;\overset{\eqref{eq:riesz_lemma}}{\geq} \
+    \ &amp;\overset{(*)}{\geq} \
     \frac{\delta}{d(z,U)}d(z,U)
-    \ = \ \delta.
+    \ = \ \delta,
     \end{split}
-\end{equation*}
-</pre></div>
+\end{equation*}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\((*)\)</span> wegen <a class="reference internal" href="#equation-eq-riesz-lemma">(3.1)</a> gilt.</p>
 </div>
-<p>\end{proof}</p>
-<p>Mit Hilfe des obigen Lemmas können wir den folgenden interessanten Kompaktheitssatz beweisen, der es uns erlaubt einen endlich-dimensionalen Vektorraum an der Kompaktheit seiner Einheitskugel zu erkennen.
-\begin{thm}[Kompaktheitssatz von Riesz]\label{satz:kompaktheit_riesz}
-Ein normierter Vektorraum <span class="math notranslate nohighlight">\(X\)</span> ist genau dann endlich-dimensional, wenn seine entsprechende Einheitskugel
-\begin{equation*}
-B_1(0) \ \coloneqq \ { x \in X : ||x||<em>X \leq 1 }<br />
-\end{equation*}
-kompakt ist.
-\end{thm}
-\begin{proof}
-Wir zeigen die beiden Implikationen der Äquivalenzaussage im Folgenden getrennt voneinander.\[0.3cm]
-\glqq<span class="math notranslate nohighlight">\(\Rightarrow\)</span>\grqq: Aus der Linearen Algebra wissen wir, dass es für jeden endlich-dimensionalen <span class="math notranslate nohighlight">\( \mathbb{K}\)</span>-Vektorraum <span class="math notranslate nohighlight">\(X\)</span> ein
+<p>Mit Hilfe des obigen Lemmas können wir den folgenden interessanten Kompaktheitssatz beweisen, der es uns erlaubt einen endlich-dimensionalen Vektorraum an der Kompaktheit seiner Einheitskugel zu erkennen.</p>
+<div class="proof theorem admonition" id="satz:kompaktheit_riesz}">
+<p class="admonition-title"><span class="caption-number">Theorem 3.4 </span> (Kompaktheitssatz von Riesz)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Ein normierter Vektorraum <span class="math notranslate nohighlight">\(X\)</span> ist genau dann endlich-dimensional, wenn seine entsprechende Einheitskugel</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B_1(0) \ \coloneqq \ \{ x \in X : ||x||_X \leq 1 \}    
+\end{equation*}\]</div>
+<p>kompakt ist.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir zeigen die beiden Implikationen der Äquivalenzaussage im Folgenden getrennt voneinander.\[0.3cm]</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span>:</p>
+<p>Aus der Linearen Algebra wissen wir, dass es für jeden endlich-dimensionalen <span class="math notranslate nohighlight">\( \mathbb{K}\)</span>-Vektorraum <span class="math notranslate nohighlight">\(X\)</span> ein
 Homöomorphismus <span class="math notranslate nohighlight">\( \Phi \colon X \rightarrow \mathbb{K}^n\)</span> existiert.
-Es sei nun <span class="math notranslate nohighlight">\( (x_k)_{k\in\N} \subseteq B^X_1(0) \)</span> eine Folge in der Einheitskugel von <span class="math notranslate nohighlight">\(X\)</span>, so dass
-\begin{equation*}
-(\Phi(x_k))</em>{k\in\N} : \subseteq : B_1^{\mathbb{K}^n}(0).
-\end{equation*}
-Da die Einheitskugel <span class="math notranslate nohighlight">\(B_1^{\mathbb{K}^n}(0)\)</span> nach dem Satz \ref{satz:bolzano} von Bolzano-Weierstraß kompakt ist, existiert eine konvergente Teilfolge
-\begin{equation*}
-(y_k)<em>{k\in\N} : \subseteq : (\Phi(x_k))</em>{k\in\N}.
-\end{equation*}
-Weil <span class="math notranslate nohighlight">\(\Phi\)</span> als Homöomorphismus insbesondere eine stetige Umkehrabbildung <span class="math notranslate nohighlight">\(\Phi^{-1}\)</span> besitzt, ist dann aber  auch
-\begin{equation*}
-(z_k)<em>{k\in\N} \ \coloneqq \ (\Phi^{-1}(y_k))</em>{k\in\N}
-\end{equation*}
-eine konvergente Teilfolge in <span class="math notranslate nohighlight">\(B^X_1(0)\)</span>.
-Da die Folge <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span> beliebig gewählt war, folgt die Kompaktheit der Einheitskugel <span class="math notranslate nohighlight">\(B_1^X(0) \subset X\)</span>.\[0.3cm]
-\glqq<span class="math notranslate nohighlight">\(\Leftarrow\)</span>\grqq: Um die Rückrichtung der Aussage zu beweisen, führen wir einen Beweis über die Kontraposition.
+Es sei nun <span class="math notranslate nohighlight">\( (x_k)_{k\in\N} \subseteq B^X_1(0) \)</span> eine Folge in der Einheitskugel von <span class="math notranslate nohighlight">\(X\)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+(\Phi(x_k))_{k\in\N} \: \subseteq \: B_1^{\mathbb{K}^n}(0).
+\end{equation*}\]</div>
+<p>Da die Einheitskugel <span class="math notranslate nohighlight">\(B_1^{\mathbb{K}^n}(0)\)</span> nach dem Satz <a class="reference internal" href="#satz:bolzano">Theorem 3.3</a> von Bolzano-Weierstraß kompakt ist, existiert eine konvergente Teilfolge</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+(y_k)_{k\in\N} \: \subseteq \: (\Phi(x_k))_{k\in\N}.
+\end{equation*}\]</div>
+<p>Weil <span class="math notranslate nohighlight">\(\Phi\)</span> als Homöomorphismus insbesondere eine stetige Umkehrabbildung <span class="math notranslate nohighlight">\(\Phi^{-1}\)</span> besitzt, ist dann aber  auch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+(z_k)_{k\in\N} \ \coloneqq \ (\Phi^{-1}(y_k))_{k\in\N}
+\end{equation*}\]</div>
+<p>eine konvergente Teilfolge in <span class="math notranslate nohighlight">\(B^X_1(0)\)</span>.
+Da die Folge <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span> beliebig gewählt war, folgt die Kompaktheit der Einheitskugel <span class="math notranslate nohighlight">\(B_1^X(0) \subset X\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Leftarrow\)</span>:</p>
+<p>Um die Rückrichtung der Aussage zu beweisen, führen wir einen Beweis über die Kontraposition.
 Es sei <span class="math notranslate nohighlight">\(X\)</span> nicht endlich-dimensional, d.h, unendlich-dimensional.
-Dann existiert eine aufsteigende Folge von echten, abgeschlossenen Unterräumen <span class="math notranslate nohighlight">\((U_k)_{k\in\N} \subsetneq X\)</span> von <span class="math notranslate nohighlight">\(X\)</span> mit
-\begin{equation*}
-U_1 \subsetneq U_2 \subsetneq \ldots \subsetneq U_k \subsetneq \ldots \ , \quad \dim U_k &lt; \dim U_{k+1} \text{ für } k\in\N.
-\end{equation*}
-Für ein beliebiges <span class="math notranslate nohighlight">\( \delta \in (0,1) \)</span> wählen wir mit dem Lemma~\ref{lem:lemma von Riesz} von Riesz einen Einheitsvektor <span class="math notranslate nohighlight">\( y_k \in U_k\)</span>,  so dass
-\begin{equation*}
-\inf_{u\in U_{k-1}} \norm[X]{y-u} \ \geq \ \delta.
-\end{equation*}
-Für beliebige Wahl des ersten Einheitsvektors <span class="math notranslate nohighlight">\(y_1 \in X\)</span> mit <span class="math notranslate nohighlight">\(||y_1|| = 1\)</span> haben wir damit ein Folge <span class="math notranslate nohighlight">\((y_k)_{k\in\N}\)</span> auf der Einheitskugel <span class="math notranslate nohighlight">\(B_1^X(0)\)</span> konstruiert, welche beschränkt ist, jedoch keine Cauchy-Folge sein kann, da der Abstand zwischen den Folgegliedern immer mindestens <span class="math notranslate nohighlight">\(\delta\)</span> beträgt.
-Daraus folgt, dass die Einheitskugel in einem unendlich-dimensionalen Vektorraum <span class="math notranslate nohighlight">\(X\)</span> nicht kompakt sein kann.
-\end{proof}</p>
-<p>Der Kompaktheitssatz \ref{satz:kompaktheit_riesz} von Riesz besagt zwar, dass Kugeln in unendlich-dimensio-nalen Banachräumen nicht kompakt sind.
+Dann existiert eine aufsteigende Folge von echten, abgeschlossenen Unterräumen <span class="math notranslate nohighlight">\((U_k)_{k\in\N} \subsetneq X\)</span> von <span class="math notranslate nohighlight">\(X\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    U_1 \subsetneq U_2 \subsetneq \ldots \subsetneq U_k \subsetneq \ldots \ , \quad \dim U_k &lt; \dim U_{k+1} \text{ für } k\in\N.
+\end{equation*}\]</div>
+<p>Für ein beliebiges <span class="math notranslate nohighlight">\( \delta \in (0,1) \)</span> wählen wir mit <a class="reference internal" href="#lem:lemma von Riesz">Lemma 3.1</a> von Riesz einen Einheitsvektor <span class="math notranslate nohighlight">\( y_k \in U_k\)</span>,  so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*} 
+\inf_{u\in U_{k-1}} \norm[X]{y-u} \ \geq \ \delta. 
+\end{equation*}\]</div>
+<p>Für beliebige Wahl des ersten Einheitsvektors <span class="math notranslate nohighlight">\(y_1 \in X\)</span> mit <span class="math notranslate nohighlight">\(||y_1|| = 1\)</span> haben wir damit ein Folge <span class="math notranslate nohighlight">\((y_k)_{k\in\N}\)</span> auf der Einheitskugel <span class="math notranslate nohighlight">\(B_1^X(0)\)</span> konstruiert, welche beschränkt ist, jedoch keine Cauchy-Folge sein kann, da der Abstand zwischen den Folgegliedern immer mindestens <span class="math notranslate nohighlight">\(\delta\)</span> beträgt.
+Daraus folgt, dass die Einheitskugel in einem unendlich-dimensionalen Vektorraum <span class="math notranslate nohighlight">\(X\)</span> nicht kompakt sein kann.</p>
+</div>
+<p>Der Kompaktheitssatz <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">satz:kompaktheit_riesz</span></code> von Riesz besagt zwar, dass Kugeln in unendlich-dimensio-nalen Banachräumen nicht kompakt sind.
 Dennoch heißt das nicht, dass es in unendlich-dimensio-nalen Banachräumen keine kompakten Teilmengen gibt.
-Um dies zu verdeutlichen beschäftigen uns abschließend mit einem fundamentalen Satz, der Aussagen über die Kompaktheit bestimmter Teilmengen des Funktionenraumes <span class="math notranslate nohighlight">\((C([a,b],\R^n), \norm[\infty]{\cdot})\)</span> der stetigen Funktionen auf einem Intervall <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> zusammen mit der Supremumsnorm erlaubt.
-Dies ist nur ein Spezialfall des Satzes von Arzelà-Ascoli, der in der allgemeinen Formulierung abstraktere Räume untersucht.
-\begin{thm}[Arzelà-Ascoli]
-Sei <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> ein Intervall und es sei <span class="math notranslate nohighlight">\((f_n)_{n\in\N} \)</span> eine Folge von Funktionen aus <span class="math notranslate nohighlight">\( C([a,b], \R) \)</span>, welche punktweise beschränkt und gleichgradig stetig ist, d.,h.
-\begin{enumerate}[(i)]
-\item \label{it:arzela:pktw beschr}
-<span class="math notranslate nohighlight">\( \forall x \in [a,b]\: \exists K \in \R^+ \colon \sup_{n\in\N} |f_n(x)| \leq K\)</span>,
-\item \label{it:arzela:glgr stet}
-<span class="math notranslate nohighlight">\( \forall \varepsilon &gt; 0\, \exists \delta &gt; 0\, \forall n \in \N \
-        \forall x, y \in [a,b] \colon (|x-y| &lt; \delta \Rightarrow |f_n(x)-f_n(y)| &lt; \varepsilon) \)</span>.
-\end{enumerate}
-Dann besitzt die Folge <span class="math notranslate nohighlight">\((f_n)_{n\in\N}\)</span> eine gleichmäßig konvergente Teilfolge.
-\end{thm}
-\begin{proof}
-Der Beweis dieses Satzes beruht auf dem \emph{Cantorschen Diagonalverfahren}, das rekursiv Teilfolgen konstruiert die partiell konvergieren und dann anschließend aus all diesen Teilfolgen eine überall konvergente Teilfolge zu konstruieren.
-Wir betrachten hierfür zunächst die abzählbar unendliche Teilmenge <span class="math notranslate nohighlight">\(\Q \cap [a,b]\)</span> des Intervalls <span class="math notranslate nohighlight">\([a,b]\)</span> mit der Abzählung
-\begin{equation*}
-\Phi \colon \Q\cap[a,b] \rightarrow \N.
-\end{equation*}
-Für <span class="math notranslate nohighlight">\( x \in \Q\cap [a,b]\)</span> mit <span class="math notranslate nohighlight">\( \Phi(x) = i \)</span> schreiben wir <span class="math notranslate nohighlight">\(x_i\)</span>.
-Weil alle Folgeglieder <span class="math notranslate nohighlight">\((f_n(x_1))_{n\in\N} \)</span> beschränkt sind nach Voraussetzung, existiert eine konvergente Teilfolge <span class="math notranslate nohighlight">\((f^1_n(x_1))_{n\in\N}\)</span> von <span class="math notranslate nohighlight">\((f_n(x_1))_{n\in\N}\)</span> nach dem Satz \ref{satz:bolzano} von Bolzano-Weierstraß.
+Um dies zu verdeutlichen beschäftigen uns abschließend mit einem fundamentalen Satz, der Aussagen über die Kompaktheit bestimmter Teilmengen des Funktionenraumes <span class="math notranslate nohighlight">\((C([a,b],\R^n), \norm{\cdot}_\infty)\)</span> der stetigen Funktionen auf einem Intervall <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> zusammen mit der Supremumsnorm erlaubt.
+Dies ist nur ein Spezialfall des Satzes von Arzelà-Ascoli, der in der allgemeinen Formulierung abstraktere Räume untersucht.</p>
+<div class="proof theorem admonition" id="theorem-5">
+<p class="admonition-title"><span class="caption-number">Theorem 3.5 </span> (Arzelà-Ascoli)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> ein Intervall und es sei <span class="math notranslate nohighlight">\((f_n)_{n\in\N} \)</span> eine Folge von Funktionen aus <span class="math notranslate nohighlight">\( C([a,b], \R) \)</span>, welche punktweise beschränkt und gleichgradig stetig ist, d.,h.</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\( \forall x \in [a,b]\: \exists K \in \R^+ \colon \sup_{n\in\N} |f_n(x)| \leq K\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\( \forall \varepsilon &gt; 0\, \exists \delta &gt; 0\, \forall n \in \N \
+ \forall x, y \in [a,b] \colon (|x-y| &lt; \delta \Rightarrow |f_n(x)-f_n(y)| &lt; \varepsilon) \)</span>.</p></li>
+</ol>
+<p>Dann besitzt die Folge <span class="math notranslate nohighlight">\((f_n)_{n\in\N}\)</span> eine gleichmäßig konvergente Teilfolge.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Der Beweis dieses Satzes beruht auf dem \emph{Cantorschen Diagonalverfahren}, das rekursiv Teilfolgen konstruiert die partiell konvergieren und dann anschließend aus all diesen Teilfolgen eine überall konvergente Teilfolge zu konstruieren.
+Wir betrachten hierfür zunächst die abzählbar unendliche Teilmenge <span class="math notranslate nohighlight">\(\Q \cap [a,b]\)</span> des Intervalls <span class="math notranslate nohighlight">\([a,b]\)</span> mit der Abzählung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Phi \colon \Q\cap[a,b] \rightarrow \N. 
+\end{equation*}\]</div>
+<p>Für <span class="math notranslate nohighlight">\( x \in \Q\cap [a,b]\)</span> mit <span class="math notranslate nohighlight">\( \Phi(x) = i \)</span> schreiben wir <span class="math notranslate nohighlight">\(x_i\)</span>.
+Weil alle Folgeglieder <span class="math notranslate nohighlight">\((f_n(x_1))_{n\in\N} \)</span> beschränkt sind nach Voraussetzung, existiert eine konvergente Teilfolge <span class="math notranslate nohighlight">\((f^1_n(x_1))_{n\in\N}\)</span> von <span class="math notranslate nohighlight">\((f_n(x_1))_{n\in\N}\)</span> nach dem Satz <a class="reference internal" href="#satz:bolzano">Theorem 3.3</a> von Bolzano-Weierstraß.
 Aus dieser konvergenten Teilfolge können wir wiederum eine Teilfolge <span class="math notranslate nohighlight">\((f^2_n(x_2))_{n\in\N} \)</span> mit der gleichen Argumentation bestimmen.
 Dies können wir sukzessive weiterführen für alle Punkte <span class="math notranslate nohighlight">\((x_n)_{n\in\N} \subset [a,b]\)</span>.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Wir definieren nun eine spezielle Funktionenfolge $(g_n)_{n\in\N} \subset (f_n)_{n\in\N}$ mit
-\begin{equation*}
+<p>Wir definieren nun eine spezielle Funktionenfolge <span class="math notranslate nohighlight">\((g_n)_{n\in\N} \subset (f_n)_{n\in\N}\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \begin{split}
 g_n \colon [a,b] &amp;\rightarrow \R,\\
- x &amp;\mapsto f^n_n(x)
- \end{split}
-\end{equation*}
-und beweisen, dass diese Folge gleichmäßig konvergiert in $C([a,b]; \R)$.
-Hiebei reicht es zu zeigen, dass $(g_n)_{n\in\N}$ eine Cauchy-Folge ist, da wir aus Beispiel \ref{bsp:vollständigkeit} wissen, dass $C([a,b]; \R)$ vollständig bezüglich der Supemumsnorm ist.
-
-Sei nun $ \epsilon &gt; 0 $ beliebig gewählt. 
-Nach Voraussetzung existiert nun ein entsprechendes $ \delta &gt; 0 $ so dass für alle $x, y \in [a,b]$ folgt, dass $|f_n(x) - f_n(y)| &lt; \epsilon$ falls $|x - y| &lt; \delta$ gilt.
-Wir partitionieren das Intervall $[a,b]$ in kleine Teilintervalle $I_j, j=1,\ldots,m$ mit $\operatorname{diam}(I_j) &lt; \delta$, so dass
-\begin{equation*}
+    x &amp;\mapsto f^n_n(x)
+    \end{split}
+\end{equation*}\]</div>
+<p>und beweisen, dass diese Folge gleichmäßig konvergiert in <span class="math notranslate nohighlight">\(C([a,b]; \R)\)</span>.
+Hiebei reicht es zu zeigen, dass <span class="math notranslate nohighlight">\((g_n)_{n\in\N}\)</span> eine Cauchy-Folge ist, da wir aus Beispiel <a class="reference internal" href="konvergenz.html#bsp:vollständigkeit">Example 3.3</a> wissen, dass <span class="math notranslate nohighlight">\(C([a,b]; \R)\)</span> vollständig bezüglich der Supemumsnorm ist.</p>
+<p>Sei nun <span class="math notranslate nohighlight">\( \epsilon &gt; 0 \)</span> beliebig gewählt.
+Nach Voraussetzung existiert nun ein entsprechendes <span class="math notranslate nohighlight">\( \delta &gt; 0 \)</span> so dass für alle <span class="math notranslate nohighlight">\(x, y \in [a,b]\)</span> folgt, dass <span class="math notranslate nohighlight">\(|f_n(x) - f_n(y)| &lt; \epsilon\)</span> falls <span class="math notranslate nohighlight">\(|x - y| &lt; \delta\)</span> gilt.
+Wir partitionieren das Intervall <span class="math notranslate nohighlight">\([a,b]\)</span> in kleine Teilintervalle <span class="math notranslate nohighlight">\(I_j, j=1,\ldots,m\)</span> mit <span class="math notranslate nohighlight">\(\operatorname{diam}(I_j) &lt; \delta\)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 [a,b] \ = \ \biguplus_{j=1}^m I_j.
-\end{equation*}
-</pre></div>
-</div>
+\end{equation*}\]</div>
 <p>Dann wählen wir Punkte aus jedem Teilintervall mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
- x_1 \in I_1\cap\Q, \quad x_2 \in I_2\cap\Q, \ \dots, \quad x_m \in I_m\cap\Q.
- \end{equation*}\]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Für einen beliebigen Index $j \in \{1,\dots,m\} $ seien $ k(j) &gt; \ell(j) $ so groß, dass die Teilfolge $ (f^\ell_n(x_j))_{n\in\N}$ punktweise konvergiert. 
-Als Teilfolge jener Folge konvergiert auch $ (f^k_n(x_i))_{n\in\N} $ gegen den gleichen Grenzwert.
-Wir finden daher $ \ell(j)$ so groß, dass 
-\begin{equation}
-    \label{equ:arzela:erste abschaetzung}
-    |g_k(x_i) - g_\ell(x_i)| \  = \ |f^k_k(x_i)-f^\ell_\ell(x_i)| \ &lt; \ \frac{\varepsilon}{3}.
-\end{equation}
-Nehmen wir nun einen globalen Index über alle Teilintervalle mit $ \ell &gt; \max\{\ell(1),\dots,\ell(m)\} $, so gilt die obige Abschätzung für alle $ x_i $, $ i \in \{1,\dots,m\} $.
-
-Es sei nun $x \in [a,b]$ ein beliebiger Punkt. 
-Dann existiert ein Index $j \in \{1,\dots,m\}$, so dass der Punkt $x$ im Teilintervall $I_j$ liegt.
-Für ein $k &gt; \ell &gt; \max\{\ell(1),\dots,\ell(m)\}$ gilt nun mit Abschätzung \eqref{equ:arzela:erste abschaetzung} und wegen der geradlinigen Stetigkeit der Folge:
-\begin{align*}
+x_1 \in I_1\cap\Q, \quad x_2 \in I_2\cap\Q, \ \dots, \quad x_m \in I_m\cap\Q.
+\end{equation*}\]</div>
+<p>Für einen beliebigen Index <span class="math notranslate nohighlight">\(j \in \{1,\dots,m\} \)</span> seien <span class="math notranslate nohighlight">\( k(j) &gt; \ell(j) \)</span> so groß, dass die Teilfolge <span class="math notranslate nohighlight">\( (f^\ell_n(x_j))_{n\in\N}\)</span> punktweise konvergiert.
+Als Teilfolge jener Folge konvergiert auch <span class="math notranslate nohighlight">\( (f^k_n(x_i))_{n\in\N} \)</span> gegen den gleichen Grenzwert.
+Wir finden daher <span class="math notranslate nohighlight">\( \ell(j)\)</span> so groß, dass</p>
+<div class="math notranslate nohighlight" id="equation-equ-arzela-erste-abschaetzung">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-equ-arzela-erste-abschaetzung" title="Permalink to this equation">¶</a></span>\[    |g_k(x_i) - g_\ell(x_i)| \  = \ |f^k_k(x_i)-f^\ell_\ell(x_i)| \ &lt; \ \frac{\varepsilon}{3}.\]</div>
+<p>Nehmen wir nun einen globalen Index über alle Teilintervalle mit <span class="math notranslate nohighlight">\( \ell &gt; \max\{\ell(1),\dots,\ell(m)\} \)</span>, so gilt die obige Abschätzung für alle <span class="math notranslate nohighlight">\( x_i \)</span>, <span class="math notranslate nohighlight">\( i \in \{1,\dots,m\} \)</span>.</p>
+<p>Es sei nun <span class="math notranslate nohighlight">\(x \in [a,b]\)</span> ein beliebiger Punkt.
+Dann existiert ein Index <span class="math notranslate nohighlight">\(j \in \{1,\dots,m\}\)</span>, so dass der Punkt <span class="math notranslate nohighlight">\(x\)</span> im Teilintervall <span class="math notranslate nohighlight">\(I_j\)</span> liegt.
+Für ein <span class="math notranslate nohighlight">\(k &gt; \ell &gt; \max\{\ell(1),\dots,\ell(m)\}\)</span> gilt nun mit Abschätzung \eqref{equ:arzela:erste abschaetzung} und wegen der geradlinigen Stetigkeit der Folge:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
     |g_k(x) - g_\ell(x)|
     \ \leq \ |g_k(x) - g_k(x_j)| + |g_k(x_j) - g_\ell(x_j)| + |g_\ell(x_j) - g_\ell(x)|
     \ \leq \
     \varepsilon
-\end{align*}
-Da dies für beliebige Punkte $x \in [a,b]$ gilt ist $(g_k)_{k\in\N}$ eine Cauchy-Folge bezüglich der Supremumsnorm und konvergiert somit gleichmäßig in $C([a,b]; \R)$.
-</pre></div>
+\end{align*}\]</div>
+<p>Da dies für beliebige Punkte <span class="math notranslate nohighlight">\(x \in [a,b]\)</span> gilt ist <span class="math notranslate nohighlight">\((g_k)_{k\in\N}\)</span> eine Cauchy-Folge bezüglich der Supremumsnorm und konvergiert somit gleichmäßig in <span class="math notranslate nohighlight">\(C([a,b]; \R)\)</span>.</p>
 </div>
-<p>\end{proof}</p>
 </div>
 
     <script type="text/x-thebe-config">

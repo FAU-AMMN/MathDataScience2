@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -436,6 +436,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homoomorphismen">
+   3.2.1. Homöomorphismen
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -446,13 +459,13 @@
                 
   <div class="section" id="stetigkeit">
 <h1><span class="section-number">3.2. </span>Stetigkeit<a class="headerlink" href="#stetigkeit" title="Permalink to this headline">¶</a></h1>
-<p>Aus \cite[Kapitel 5]{burger_2020} sind Sie bereits mit den verschiedenen Stetigkeitsbegriffen auf metrischen Räumen vertraut.
-Im Fall von normierten Vektorräumen lassen sich diese Konzepte durch Verwendung der Norm für den Abstandsbegriff analog definieren.
-\begin{definition}[Stetigkeit]
-Wir wollen im Folgenden die wichtigsten Definitionen für Stetigkeit wiederholen.
-Hierbei betrachten wir eine Funktion <span class="math notranslate nohighlight">\( f\colon X \rightarrow Y \)</span> zwischen zwei normierten Vektorräumen <span class="math notranslate nohighlight">\((X, ||\cdot||_X)\)</span> und <span class="math notranslate nohighlight">\((Y, ||\cdot||_Y)\)</span>.
-\begin{enumerate}
-\item Die Funktion <span class="math notranslate nohighlight">\(f\)</span>  ist genau dann \emph{stetig} in einem Punkt <span class="math notranslate nohighlight">\(x_0 \in X\)</span>, wenn es für alle <span class="math notranslate nohighlight">\( \varepsilon &gt; 0 \)</span> ein <span class="math notranslate nohighlight">\( \delta &gt; 0 \)</span> gibt, so dass  für alle Punkte <span class="math notranslate nohighlight">\(x \in X\)</span> mit</p>
+<p>Aus Kapitel 5 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> sind Sie bereits mit den verschiedenen Stetigkeitsbegriffen auf metrischen Räumen vertraut.
+Im Fall von normierten Vektorräumen lassen sich diese Konzepte durch Verwendung der Norm für den Abstandsbegriff analog definieren.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 3.8 </span> (Stetigkeit)</p>
+<div class="definition-content section" id="proof-content">
+<p>Wir betrachten eine Funktion <span class="math notranslate nohighlight">\( f\colon X \rightarrow Y \)</span> zwischen zwei normierten Vektorräumen <span class="math notranslate nohighlight">\((X, ||\cdot||_X)\)</span> und <span class="math notranslate nohighlight">\((Y, ||\cdot||_Y)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(i)\)</span> Die Funktion <span class="math notranslate nohighlight">\(f\)</span>  ist genau dann <em>stetig</em> in einem Punkt <span class="math notranslate nohighlight">\(x_0 \in X\)</span>, wenn es für alle <span class="math notranslate nohighlight">\( \varepsilon &gt; 0 \)</span> ein <span class="math notranslate nohighlight">\( \delta &gt; 0 \)</span> gibt, so dass  für alle Punkte <span class="math notranslate nohighlight">\(x \in X\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||x - x_0||_X \: &lt; \: \delta
@@ -462,72 +475,83 @@ Hierbei betrachten wir eine Funktion <span class="math notranslate nohighlight">
 \[\begin{equation*}
 ||f(x) - f(x_0)||_Y \: &lt; \: \epsilon.
 \end{equation*}\]</div>
-<p>\item Die Funktion <span class="math notranslate nohighlight">\(f\)</span> ist genau dann \emph{gleichmäßig stetig}, wenn es für alle <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span> ein
+<p><span class="math notranslate nohighlight">\(ii)\)</span> Die Funktion <span class="math notranslate nohighlight">\(f\)</span> ist genau dann \emph{gleichmäßig stetig}, wenn es für alle <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span> ein
 <span class="math notranslate nohighlight">\( \delta &gt; 0 \)</span> so gibt, dass für alle Punkte <span class="math notranslate nohighlight">\(x, y \in X\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\norm[X]{x-y} \: &lt; \: \delta
+\norm{x-y}_X \: &lt; \: \delta
 \end{equation*}\]</div>
 <p>für den Abstand der Funktionswerte gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\norm[Y]{f(x)-f(y)} \: &lt; \: \varepsilon.
+\norm{f(x)-f(y)}_Y \: &lt; \: \varepsilon.
 \end{equation*}\]</div>
-<p>\item Die Funktion <span class="math notranslate nohighlight">\(f\)</span> ist genau dann \emph{Hölder-stetig} mit Exponent <span class="math notranslate nohighlight">\( 0 &lt; \alpha \leq 1 \)</span>, wenn
+<p><span class="math notranslate nohighlight">\(iii)\)</span> Die Funktion <span class="math notranslate nohighlight">\(f\)</span> ist genau dann \emph{Hölder-stetig} mit Exponent <span class="math notranslate nohighlight">\( 0 &lt; \alpha \leq 1 \)</span>, wenn
 für alle <span class="math notranslate nohighlight">\( x, y \in X \)</span> gilt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\norm[Y]{f(x) - f(y)} \: \leq \: L \cdot \norm[X]{x-y}^\alpha
+\norm{f(x) - f(y)}_Y \: \leq \: L \cdot \norm[X]{x-y}^\alpha
 \end{equation*}\]</div>
 <p>für eine nicht-negative Konstante <span class="math notranslate nohighlight">\(L \in \R^+_0\)</span>.</p>
 <p>Im Spezialfall <span class="math notranslate nohighlight">\(\alpha = 1\)</span> nennen wir <span class="math notranslate nohighlight">\(f\)</span> auch \emph{Lipschitz-stetig}.
-Gilt sogar <span class="math notranslate nohighlight">\(0 \leq L &lt; 1\)</span>, so nennen wir die Funktion <span class="math notranslate nohighlight">\(f\)</span> eine Kontraktion.
-\end{enumerate}
-\end{definition}</p>
-<p>Natürlich sind diese Stetigkeitsbegriffe unterschiedlich stark, wie folgende Bemerkung feststellt.
-\begin{comment}
-Für eine Funktion <span class="math notranslate nohighlight">\(f \colon X \rightarrow Y\)</span> zwischen normierten Vektorräumen <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> gelten folgende Implikationen:</p>
+Gilt sogar <span class="math notranslate nohighlight">\(0 \leq L &lt; 1\)</span>, so nennen wir die Funktion <span class="math notranslate nohighlight">\(f\)</span> eine Kontraktion.</p>
+</div>
+</div><p>Natürlich sind diese Stetigkeitsbegriffe unterschiedlich stark, wie folgende Bemerkung feststellt.</p>
+<div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 3.2 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Für eine Funktion <span class="math notranslate nohighlight">\(f \colon X \rightarrow Y\)</span> zwischen normierten Vektorräumen <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> gelten folgende Implikationen:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 f \text{ ist Hölder-stetig } \ \Rightarrow \ f \text{ ist gleichmäßig stetig } \ \Rightarrow \ f \text{ ist stetig }.
 \end{equation*}\]</div>
-<p>\end{comment}</p>
-<p>Folgende Beispiele zeigen den Unterschied zwischen den Stetigkeitsbegriffen.
-\begin{bsp}
-Die Wurzel-Funktion</p>
+</div>
+</div><p>Folgende Beispiele zeigen den Unterschied zwischen den Stetigkeitsbegriffen.</p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 3.5 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Die Wurzel-Funktion</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \sqrt{\cdot} \: \colon \R_0^+ \ \rightarrow \ \R_0^+
 \end{equation*}\]</div>
 <p>ist stetig.
-Sie ist jedoch nicht Lipschitz-stetig in <span class="math notranslate nohighlight">\(x=0\)</span>.
-\end{bsp}
-\begin{proof}
-In der Hausaufgabe zu zeigen.
-\end{proof}</p>
-<p>\begin{bsp}
-Die Betragsfunktion</p>
+Sie ist jedoch nicht Lipschitz-stetig in <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. In der Hausaufgabe zu zeigen.</p>
+</div>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 3.6 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Die Betragsfunktion</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 |\cdot| \: \colon \R \ \rightarrow \ \R_0^+
 \end{equation*}\]</div>
-<p>Lipschitz-stetig mit Lipschitz Konstante <span class="math notranslate nohighlight">\(L = 1\)</span>.
-\end{bsp}</p>
-<p>Eine besonders interessante Klasse von stetigen Funktionen sind sogenannte \emph{Homöomorphismen}.
+<p>Lipschitz-stetig mit Lipschitz Konstante <span class="math notranslate nohighlight">\(L = 1\)</span>.</p>
+</div>
+</div><div class="section" id="homoomorphismen">
+<h2><span class="section-number">3.2.1. </span>Homöomorphismen<a class="headerlink" href="#homoomorphismen" title="Permalink to this headline">¶</a></h2>
+<p>Eine besonders interessante Klasse von stetigen Funktionen sind sogenannte <em>Homöomorphismen</em>.
 Diese Funktionen erlauben es zu untersuchen wann Teilmengen (topologischer) Vektorräume ineinander überführt werden können, z.B. durch Dehnen, Stauchen, Drehen oder Verzerren der Mengen.
-Die folgende Definition charakterisiert Homöomorphismen genauer
-\begin{definition}[Homöomorphismus]
-Seien <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> zwei normierte Vektorräume.
-Wir nennen eine Funktion <span class="math notranslate nohighlight">\(f \colon X \rightarrow Y\)</span> einen \emph{Homöomorphismus}, falls folgende Bedingungen erfüllt sind:
-\begin{itemize}
-\item <span class="math notranslate nohighlight">\(f\)</span> ist stetig,
-\item <span class="math notranslate nohighlight">\(f\)</span> ist bijektiv,
-\item die Umkehrfunktion <span class="math notranslate nohighlight">\(f^{-1}\)</span> ist ebenfalls stetig.
-\end{itemize}
-\end{definition}</p>
-<p>Der folgende berühmte Satz ist ein wichtiges Hilfsmittel zur Untersuchung von Fixpunktgleichungen, z.B. in der Numerik, und wird uns später bei der Behandlung von gewöhnlichen Differentialgleichungen noch hilfreich sein.
-\begin{thm}[Fixpunktsatz von Banach]
-Es sei <span class="math notranslate nohighlight">\(X\)</span> ein Banachraum und <span class="math notranslate nohighlight">\( F\colon X\rightarrow X \)</span> eine Lipschitz-stetige Funktion mit Lipschitz-Konstante <span class="math notranslate nohighlight">\( L &lt; 1 \)</span>, d.h. es gilt</p>
+Die folgende Definition charakterisiert Homöomorphismen genauer</p>
+<div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 3.9 </span> (Homöomorphismus)</p>
+<div class="definition-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> zwei normierte Vektorräume.
+Wir nennen eine Funktion <span class="math notranslate nohighlight">\(f \colon X \rightarrow Y\)</span> einen \emph{Homöomorphismus}, falls folgende Bedingungen erfüllt sind:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> ist stetig,</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> ist bijektiv,</p></li>
+<li><p>die Umkehrfunktion <span class="math notranslate nohighlight">\(f^{-1}\)</span> ist ebenfalls stetig.</p></li>
+</ol>
+</div>
+</div><p>Der folgende berühmte Satz ist ein wichtiges Hilfsmittel zur Untersuchung von Fixpunktgleichungen, z.B. in der Numerik, und wird uns später bei der Behandlung von gewöhnlichen Differentialgleichungen noch hilfreich sein.</p>
+<div class="proof theorem admonition" id="theorem-5">
+<p class="admonition-title"><span class="caption-number">Theorem 3.2 </span> (Fixpunktsatz von Banach)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Es sei <span class="math notranslate nohighlight">\(X\)</span> ein Banachraum und <span class="math notranslate nohighlight">\( F\colon X\rightarrow X \)</span> eine Lipschitz-stetige Funktion mit Lipschitz-Konstante <span class="math notranslate nohighlight">\( L &lt; 1 \)</span>, d.h. es gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
   	 ||F(x) - F(y)|| \ \leq \ L \cdot ||x - y|| \quad \text{ für alle } x, y \in X.
@@ -537,9 +561,9 @@ Es sei <span class="math notranslate nohighlight">\(X\)</span> ein Banachraum un
 \[\begin{equation*}
 F(\bar{x}) \ = \ \bar{x}.
 \end{equation*}\]</div>
-<p>\end{thm}
-\begin{proof}
-Es sei <span class="math notranslate nohighlight">\(x_0 \in X\)</span> beliebiger Startwert der Folge <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span>, die durch wiederholte Anwendung der Funktion <span class="math notranslate nohighlight">\(F\)</span> definiert ist, d.h,</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Es sei <span class="math notranslate nohighlight">\(x_0 \in X\)</span> beliebiger Startwert der Folge <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span>, die durch wiederholte Anwendung der Funktion <span class="math notranslate nohighlight">\(F\)</span> definiert ist, d.h,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 x_k \ \coloneqq \ F(x_{k-1}), \quad k \geq 1.
@@ -581,11 +605,14 @@ Das heißt wir haben gezeigt, dass die Funktion einen Fixpunkt <span class="math
 ||\bar{x} - \hat{x}|| \ = \ ||F(\bar{x}) - F(\hat{x})|| \ \leq \ L \cdot ||\bar{x} - \hat{x}||.
 \end{equation*}\]</div>
 <p>Da <span class="math notranslate nohighlight">\(L &lt; 1\)</span> ist kann diese Ungleichung nur gelten wenn <span class="math notranslate nohighlight">\(||\bar{x} - \hat{x}||  = 0\)</span> ist.
-Aus der positiven Definitheit der Norm folgt dann schon, dass <span class="math notranslate nohighlight">\(\bar{x} = \hat{x}\)</span> sein muss, d.h., der Fixpunkt ist eindeutig.
-\end{proof}</p>
-<p>\begin{remark}
-Der Banach’sche Fixpunktsatz kann noch allgemeiner für abgeschlossene Untermengen vollständiger metrischer Vektorräume formuliert werden, da man nur einen Abstandsbegriff (also eine Metrik) und die Existenz des Grenzwertes benötigt.
-\end{remark}</p>
+Aus der positiven Definitheit der Norm folgt dann schon, dass <span class="math notranslate nohighlight">\(\bar{x} = \hat{x}\)</span> sein muss, d.h., der Fixpunkt ist eindeutig.</p>
+</div>
+<div class="proof remark admonition" id="remark-6">
+<p class="admonition-title"><span class="caption-number">Remark 3.3 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Der Banach’sche Fixpunktsatz kann noch allgemeiner für abgeschlossene Untermengen vollständiger metrischer Vektorräume formuliert werden, da man nur einen Abstandsbegriff (also eine Metrik) und die Existenz des Grenzwertes benötigt.</p>
+</div>
+</div></div>
 </div>
 
     <script type="text/x-thebe-config">

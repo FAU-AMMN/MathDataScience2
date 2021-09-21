@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -449,48 +449,60 @@
 <p>Im Folgenden führen wir den Begriff eines Hilbertraums als Spezialfall eines Banachraums ein.
 Hilberträume weisen besonders viel Struktur auf, da ihre Norm durch ein Skalarprodukt induziert wird.
 Daher ist es nicht verwunderlich, dass sie in vielen Theorien der Physik eine wichtige Rolle spielen, wie zum Beispiel in der Quantenmechanik.
-Auch im Bereich des maschinellen Lernens sind Hilberträume ein gängiges Werkzeug, wie zum Beispiel bei den sogenannten \emph{Kernel Methods} in der statistischen Lerntheorie.
-\begin{definition}[Hilbertraum]
-Wir nennen einen Banachraum <span class="math notranslate nohighlight">\((X, ||\cdot||_X)\)</span>, dessen Norm durch ein Skalarprodukt induziert ist einen \emph{Hilbertraum}.
-\end{definition}</p>
-<p>Das folgende Beispiel diskutiert verschiedene Banachräume und erklärt ob es sich jeweils um einen Hilbertraum handelt oder nicht.
-\begin{example}
-Im Folgenden untersuchen wir Beispiele für endlich- und unendlich-dimensionale Banachräume, d.h., vollständige normierte Vektorräume, und entscheiden ob diese einen Hilbertraum darstellen.
-\begin{enumerate}
-\item Der Euklidische Vektorraum <span class="math notranslate nohighlight">\(\R^n\)</span> mit <span class="math notranslate nohighlight">\(n\in\N\)</span> ist ausgestattet mit der Euklidischen Norm</p>
+Auch im Bereich des maschinellen Lernens sind Hilberträume ein gängiges Werkzeug, wie zum Beispiel bei den sogenannten <em>Kernel Methods</em> in der statistischen Lerntheorie.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 3.11 </span> (Hilbertraum)</p>
+<div class="definition-content section" id="proof-content">
+<p>Wir nennen einen Banachraum <span class="math notranslate nohighlight">\((X, ||\cdot||_X)\)</span>, dessen Norm durch ein Skalarprodukt induziert ist einen <em>Hilbertraum</em>.</p>
+</div>
+</div><p>Das folgende Beispiel diskutiert verschiedene Banachräume und erklärt ob es sich jeweils um einen Hilbertraum handelt oder nicht.</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 3.7 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Im Folgenden untersuchen wir Beispiele für endlich- und unendlich-dimensionale Banachräume, d.h., vollständige normierte Vektorräume, und entscheiden ob diese einen Hilbertraum darstellen.</p>
+<ul class="simple">
+<li><p>Der Euklidische Vektorraum <span class="math notranslate nohighlight">\(\R^n\)</span> mit <span class="math notranslate nohighlight">\(n\in\N\)</span> ist ausgestattet mit der Euklidischen Norm</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||x||_2 \ \coloneqq \ \sqrt{\sum_{i=1}^n |x_i|^2} \ = \ \sqrt{\langle x, x \rangle}, \quad \text{ für alle } x \in \R^n
 \end{equation*}\]</div>
-<p>ein endlich-dimensionaler Hilbertraum.
-\item Der Banachraum <span class="math notranslate nohighlight">\((\R^n, ||\cdot||_\infty)\)</span> ist kein Hilbertraum.
-\item Der Matrizenraum <span class="math notranslate nohighlight">\(\K^{m \times n}\)</span> der reellen oder komplexen Matrizen ausgestattet mit dem Frobenius-Skalarprodukt</p>
+<p>ein endlich-dimensionaler Hilbertraum.</p>
+<ul class="simple">
+<li><p>Der Banachraum <span class="math notranslate nohighlight">\((\R^n, ||\cdot||_\infty)\)</span> ist kein Hilbertraum.</p></li>
+<li><p>Der Matrizenraum <span class="math notranslate nohighlight">\(\K^{m \times n}\)</span> der reellen oder komplexen Matrizen ausgestattet mit dem Frobenius-Skalarprodukt</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle A, B \rangle \ \coloneqq \ \sum_{i=1}^m\sum_{j=1}^n \bar{a}_{ij}b_{ij}, \quad \text{ für alle Matrizen } A,B \in \K^{m\times n}
 \end{equation*}\]</div>
-<p>ist ein endlich-dimensionaler Hilbertraum.
-\item Der Banachraum <span class="math notranslate nohighlight">\((\ell^2(\R), ||\cdot||_{\ell^2})\)</span> der Folgen, deren Summe ihrer Quadrate endlich ist, zusammen mit der Norm</p>
+<p>ist ein endlich-dimensionaler Hilbertraum.</p>
+<ul class="simple">
+<li><p>Der Banachraum <span class="math notranslate nohighlight">\((\ell^2(\R), ||\cdot||_{\ell^2})\)</span> der Folgen, deren Summe ihrer Quadrate endlich ist, zusammen mit der Norm</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||(x_n)_{n\in\N}||_{\ell^2} \ \coloneqq \ \sqrt{\sum_{n=1}^\infty |x_n|^2}
 \end{equation*}\]</div>
-<p>ist ein unendlich-dimensionaler Hilbertraum.
-\item Der unendlich-dimensionale Banachraum <span class="math notranslate nohighlight">\((\ell^1(\R), ||\cdot||_{\ell^1})\)</span> der Folgen, deren Summe ihrer Beträge endlich ist, zusammen mit der Norm</p>
+<p>ist ein unendlich-dimensionaler Hilbertraum.</p>
+<ul class="simple">
+<li><p>Der unendlich-dimensionale Banachraum <span class="math notranslate nohighlight">\((\ell^1(\R), ||\cdot||_{\ell^1})\)</span> der Folgen, deren Summe ihrer Beträge endlich ist, zusammen mit der Norm</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||(x_n)_{n\in\N}||_{\ell^1} \ \coloneqq \ \sum_{n=1}^\infty |x_n|
 \end{equation*}\]</div>
-<p>ist kein Hilbertraum.
-\item Der Raum der skalarwertigen, quadrat-integrierbaren Funktionen <span class="math notranslate nohighlight">\(L^2\)</span> auf einem Gebiet <span class="math notranslate nohighlight">\(\Omega \subset \R^n\)</span> ausgestattet mit der Norm</p>
+<p>ist kein Hilbertraum.</p>
+<ul class="simple">
+<li><p>Der Raum der skalarwertigen, quadrat-integrierbaren Funktionen <span class="math notranslate nohighlight">\(L^2\)</span> auf einem Gebiet <span class="math notranslate nohighlight">\(\Omega \subset \R^n\)</span> ausgestattet mit der Norm</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||f||_{L^2} \ \coloneqq \ \left(\int_\Omega |f(x)|^2 \, \mathrm{d}x\right)^{\frac{1}{2}} \ = \ \left(\int_\Omega \overline{f(x)} f(x) \, \mathrm{d}x\right)^{\frac{1}{2}} \ = \ \sqrt{\langle f, f \rangle_{L^2} }
 \end{equation*}\]</div>
-<p>ist ein unendlich-dimensionaler Hilbertraum.
-\end{enumerate}
-\end{example}</p>
+<p>ist ein unendlich-dimensionaler Hilbertraum.</p>
 </div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {

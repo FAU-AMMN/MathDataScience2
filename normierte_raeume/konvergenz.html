@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -450,31 +450,32 @@
 Konvergente Folgen und Cauchy-Folgen können also in normierten Räumen analog wie in metrischen Räumen definiert werden.
 Sie zeichnen sich dadurch aus, dass der Abstand der Punkte gemessen in der Norm eine Nullfolge ist.
 Anders ausgedrückt, nennen wir eine Folge konvergent, wenn alle Folgeglieder ab einem bestimmten Index in einer <span class="math notranslate nohighlight">\(\epsilon\)</span>-Umgebung um den Grenzwert liegen.</p>
-<div class="highlight-{prf:definition}[Konvergente notranslate"><div class="highlight"><pre><span></span>Sei $X$ ein normierter Raum und $(x_n)_{n\in\N}$ eine Folge in $X$. 
-\begin{enumerate}
-\item Die Folge $(x_n)_{n\in\N}$ heißt \emph{konvergent} mit Grenzwert $\overline{x} \in X$, falls folgende Bedingung erfüllt ist
-\begin{equation*}
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 3.4 </span> (Konvergente Folgen und Cauchy-Folgen)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(X\)</span> ein normierter Raum und <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> eine Folge in <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(i)\)</span> Die Folge <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> heißt \emph{konvergent} mit Grenzwert <span class="math notranslate nohighlight">\(\overline{x} \in X\)</span>, falls folgende Bedingung erfüllt ist</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \forall \epsilon  &gt; 0 \ \exists n_0 \in \N ~\forall n \geq n_0: ||x_n - \overline{x}|| &lt; \epsilon.
-\end{equation*}
-\item Die Folge $(x_n)_{n\in\N}$ heißt \emph{Cauchy-Folge} mit Grenzwert $\overline{x} \in X$, falls folgende Bedingung erfüllt ist
-\begin{equation*}
+\end{equation*}\]</div>
+<p><span class="math notranslate nohighlight">\(ii)\)</span> Die Folge <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> heißt \emph{Cauchy-Folge} mit Grenzwert <span class="math notranslate nohighlight">\(\overline{x} \in X\)</span>, falls folgende Bedingung erfüllt ist</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \forall \epsilon  &gt;0 ~\exists n_0 \in \N ~\forall\, m,n \geq n_0: ||x_n - x_m|| &lt; \epsilon.
-\end{equation*}
-\end{enumerate}
-\end{definition}
-
-
-Genau wie im Fall von metrischen Räumen können wir auch leicht folgendes Resultat beweisen: 
-
-````{prf:theorem}
-Jede konvergente Folge in einem normierten Vektorraum ist eine Cauchy-Folge. 
-</pre></div>
+\end{equation*}\]</div>
 </div>
-<div class="proof admonition" id="proof">
-<p>Proof. \cite[Satz 2.30 &amp; Satz 4.11]{burger_2020}</p>
+</div><p>Genau wie im Fall von metrischen Räumen können wir auch leicht folgendes Resultat beweisen:</p>
+<div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span class="caption-number">Theorem 3.1 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Jede konvergente Folge in einem normierten Vektorraum ist eine Cauchy-Folge.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Siehe Satz 2.30 &amp; Satz 4.11 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span></p>
 </div>
 <div class="proof definition admonition" id="def:banachraum">
-<p class="admonition-title"><span class="caption-number">Definition 3.4 </span> (Vollständigkeit und Banachraum)</p>
+<p class="admonition-title"><span class="caption-number">Definition 3.5 </span> (Vollständigkeit und Banachraum)</p>
 <div class="definition-content section" id="proof-content">
 <p>Ein normierter Vektorraum <span class="math notranslate nohighlight">\(X\)</span> heißt \emph{vollständig}, wenn jede Cauchy-Folge in <span class="math notranslate nohighlight">\(X\)</span> konvergiert.
 Ein vollständiger, normierter Vektorraum <span class="math notranslate nohighlight">\(X\)</span> wird \emph{Banachraum} genannt.</p>
@@ -483,12 +484,12 @@ Ein vollständiger, normierter Vektorraum <span class="math notranslate nohighli
 <p class="admonition-title"><span class="caption-number">Example 3.3 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Wir untersuchen die folgenden Beispiele mit Blick auf Vollständigkeit.</p>
-<p><span class="math notranslate nohighlight">\(i)\)</span> Der normierte Vektorraum <span class="math notranslate nohighlight">\((\mathbb{R}^n, ||\cdot||_2)\)</span> mit der Euklidischen Norm ist vollständig wie bereits in \cite[Satz 4.13]{burger_2020} bewiesen wurde.</p>
+<p><span class="math notranslate nohighlight">\(i)\)</span> Der normierte Vektorraum <span class="math notranslate nohighlight">\((\mathbb{R}^n, ||\cdot||_2)\)</span> mit der Euklidischen Norm ist vollständig wie bereits in Satz 4.13 <span id="id2">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> bewiesen wurde.</p>
 <p><span class="math notranslate nohighlight">\(ii)\)</span>
 Die Menge <span class="math notranslate nohighlight">\(C(\Omega; \R^n)\)</span> der stetigen Funktionen auf einer kompakten Menge <span class="math notranslate nohighlight">\( \Omega \subset \R^n \)</span>
 mit Werten in <span class="math notranslate nohighlight">\( \R^n \)</span> zusammen mit der Supremumsnorm
 $<span class="math notranslate nohighlight">\(
-    \norm[\infty]{f} \colonequals \sup_{x\in\Omega}\norm[2]{f(x)}
+    \norm{f}_{\infty} \coloneqq \sup_{x\in\Omega}\norm{f(x)}_2
 \)</span>$
 ist ein Banachraum.</p>
 <p><span class="math notranslate nohighlight">\(iii)\)</span> Die Menge der reellwertigen, stetigen Funktionen <span class="math notranslate nohighlight">\(C([a,b]; \mathbb{R})\)</span> auf dem abgeschlossenen Intervall <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span>
@@ -504,7 +505,7 @@ zusammen mit der <span class="math notranslate nohighlight">\(L^1\)</span>-Norm<
 x_{n+1} \ \coloneqq \ \frac{1}{2} \left( x_n + \frac{2}{x_n} \right).
 \end{equation*}\]</div>
 <p>Man kann zeigen, dass die Folge <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> eine Cauchy-Folge ist bei der alle Folgenglieder offensichtlich rational sind.
-Anderseits konvergiert die Folge gegen den Grenzwert <span class="math notranslate nohighlight">\(\sqrt{2} \not\in \Q\)</span> (siehe \cite[Satz 2.27]{burger_2020}) und ist somit nicht konvergent in <span class="math notranslate nohighlight">\((\Q, |\cdot|)\)</span>.</p>
+Anderseits konvergiert die Folge gegen den Grenzwert <span class="math notranslate nohighlight">\(\sqrt{2} \not\in \Q\)</span> (siehe Satz 2.27 <span id="id3">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span>) und ist somit nicht konvergent in <span class="math notranslate nohighlight">\((\Q, |\cdot|)\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(v)\)</span> Die Menge der reellwertigen, stetig-differenzierbaren Funktionen <span class="math notranslate nohighlight">\(C^1(I; \mathbb{R}) \)</span> auf einem offenen Intervall
 <span class="math notranslate nohighlight">\( I \subseteq \R \)</span> bildet zusammen mit der Supremumsnorm <span class="math notranslate nohighlight">\(||\cdot||_\infty\)</span> als auch mit der sogenannten <em>Sobolev-Norm</em></p>
 <div class="amsmath math notranslate nohighlight">
@@ -515,33 +516,37 @@ Anderseits konvergiert die Folge gegen den Grenzwert <span class="math notransla
 <p>Intuitiv kann man sich klar machen, dass hier lediglich die Sobolev-Norm auch die Ableitung der Funktionen <span class="math notranslate nohighlight">\(u \in C^1(I; \R)\)</span> berücksichtigt und damit für konvergente Folgen sicherstellt, dass auch die erste Ableitung gleichmäßig konvergiert. Die Supremumsnorm hingegen \glqq beachtet\grqq\ diese gar nicht.</p>
 </div>
 </div><p>Wir wollen im Folgenden auch den Begriff einer konvergenten Teilfolge nochmals für normierte Vektorräume definieren und charakterisieren.</p>
-<div class="highlight-{prf:definition}[Teilfolge] notranslate"><div class="highlight"><pre><span></span>Sei $(x_n)_{n\in\N}$ eine Folge in einem normierten Vektorraum $(X, ||\cdot||_X)$ und sei $K: \N \rightarrow \N$ eine streng monoton wachsende Abbildung, d.h. $K(i) &gt; K(j)$ für $i &gt; j$. 
-Dann heißt $(x_{K(n)})_{n \in \N}$ Teilfolge von $(x_n)_{n\in\N}$.
-Wir werden im Folgenden für Teilfolgen auch kurz $(x_{k_n})_{n \in \N}$ schreiben.
-\end{definition} 
-
-Um die Konvergenz von Teilfolgen festzustellen, führt man den Begriff eines Häufungs\-punktes einer Folge ein.
-````{prf:definition}[Häufungspunkt]
-Sei $(X,||\cdot||_X)$ ein normierter Raum. 
-Dann nennen wir einen Punkt $y \in X$ \emph{Häufungspunkt} der Folge $(x_n)_{n\in\N} \subset X$, wenn eine Teilfolge $(x_{n_k})_{k\in\N} \subset (x_n)_{n\in\N}$ existiert, die gegen $y$ konvergiert, d.h.
-\begin{equation*}
+<div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 3.6 </span> (Teilfolge)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> eine Folge in einem normierten Vektorraum <span class="math notranslate nohighlight">\((X, ||\cdot||_X)\)</span> und sei <span class="math notranslate nohighlight">\(K: \N \rightarrow \N\)</span> eine streng monoton wachsende Abbildung, d.h. <span class="math notranslate nohighlight">\(K(i) &gt; K(j)\)</span> für <span class="math notranslate nohighlight">\(i &gt; j\)</span>.
+Dann heißt <span class="math notranslate nohighlight">\((x_{K(n)})_{n \in \N}\)</span> Teilfolge von <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span>.
+Wir werden im Folgenden für Teilfolgen auch kurz <span class="math notranslate nohighlight">\((x_{k_n})_{n \in \N}\)</span> schreiben.</p>
+</div>
+</div><p>Um die Konvergenz von Teilfolgen festzustellen, führt man den Begriff eines Häufungs-punktes einer Folge ein.</p>
+<div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 3.7 </span> (Häufungspunkt)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\((X,||\cdot||_X)\)</span> ein normierter Raum.
+Dann nennen wir einen Punkt <span class="math notranslate nohighlight">\(y \in X\)</span> \emph{Häufungspunkt} der Folge <span class="math notranslate nohighlight">\((x_n)_{n\in\N} \subset X\)</span>, wenn eine Teilfolge <span class="math notranslate nohighlight">\((x_{n_k})_{k\in\N} \subset (x_n)_{n\in\N}\)</span> existiert, die gegen <span class="math notranslate nohighlight">\(y\)</span> konvergiert, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \forall \epsilon  &gt; 0 \ \exists n_0 \in \N ~\forall k \geq n_0: ||x_{n_k} - \overline{x}|| &lt; \epsilon.
-\end{equation*}
-\end{definition}
-
-Das folgende Beispiel veranschaulicht die Beziehung zwischen Häufungspunkten und konvergenten Teilfolgen.
-\begin{example}
-Die reelle Folge $(x_n)_{n\in\N} \subset \R$ mit
-\begin{equation*}
+\end{equation*}\]</div>
+</div>
+</div><p>Das folgende Beispiel veranschaulicht die Beziehung zwischen Häufungspunkten und konvergenten Teilfolgen.</p>
+<div class="proof example admonition" id="example-6">
+<p class="admonition-title"><span class="caption-number">Example 3.4 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Die reelle Folge <span class="math notranslate nohighlight">\((x_n)_{n\in\N} \subset \R\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 x_n \ \coloneqq \ (-1)^n + \frac{1}{n+1}
-\end{equation*}
-besitzt zwei Häufungspunkte $\bar{x}_1 = +1$ und $\bar{x}_2 = -1$.
-Das bedeutet, dass die Folge $(x_n)_{n\in\N}$ selbst nicht konvergent ist, jedoch zwei konvergente Teilfolgen besitzt, die sich gerade aus den geraden und ungeraden Folgegliedern bilden.
-\end{example} 
-
-</pre></div>
+\end{equation*}\]</div>
+<p>besitzt zwei Häufungspunkte <span class="math notranslate nohighlight">\(\bar{x}_1 = +1\)</span> und <span class="math notranslate nohighlight">\(\bar{x}_2 = -1\)</span>.
+Das bedeutet, dass die Folge <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> selbst nicht konvergent ist, jedoch zwei konvergente Teilfolgen besitzt, die sich gerade aus den geraden und ungeraden Folgegliedern bilden.</p>
 </div>
-</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
