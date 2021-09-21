@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -241,8 +241,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ableitungen/ableitungen.html">
-   4. Differentiation von Funktionen mehrerer Veränderlicher
+  <a class="reference internal" href="../integrale/integrale.html">
+   4. Integralrechnung
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -251,35 +251,113 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/part_diff.html">
-     4.1. Partielle Differenzierbarkeit
+    <a class="reference internal" href="../integrale/part_int.html">
+     4.1. Partielle Integration
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/first_order.html">
-     4.2. Differentialoperatoren erster Ordnung
+    <a class="reference internal" href="../integrale/substitution.html">
+     4.2. Substitutionsregel
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/higher_order.html">
-     4.3. Differentialoperatoren höherer Ordnung
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/tot_diff.html">
-     4.4. Totale Differenzierbarkeit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/taylor.html">
-     4.5. Taylor-Formel
+    <a class="reference internal" href="../integrale/rat_func.html">
+     4.3. Integration rationaler Funktionen
     </a>
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   5. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     5.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     5.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     5.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     5.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     5.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../optimierung/optimierung.html">
+   6. Optimierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/unrestringiert.html">
+     6.1. Unrestringierte Optimierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/nebenbedingungen.html">
+     6.2. Optimierung unter Nebenbedingungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ode/ode.html">
+   7. Gewöhnliche Differentialgleichungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/tdv.html">
+     7.1. Trennung der Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/vdk.html">
+     7.2. Variation der Konstanten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
-   5. Bibliography
+   Bibliography
   </a>
  </li>
 </ul>
@@ -360,27 +438,18 @@
 <h1><span class="section-number">2.1. </span>Das kanonische Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span><a class="headerlink" href="#das-kanonische-skalarprodukt-in-mathbb-r-n" title="Permalink to this headline">¶</a></h1>
 <p>Sei im Folgenden der zu Grunde liegende Vektorraum gewählt als <span class="math notranslate nohighlight">\(V = \mathbb{R}^n\)</span>.
 Wir definieren zuerst das kanonische Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p>
-<p>\begin{definition}[Skalarprodukt in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>]\label{def:skalarprodukt_r}
-Seien <span class="math notranslate nohighlight">\(x = (x_1,\ldots, x_n) \in \mathbb{R}^n\)</span> und <span class="math notranslate nohighlight">\(y = (y_1,\ldots, y_n) \in \mathbb{R}^n\)</span> zwei Vektoren.
-Wir bezeichnen die Abbildung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\langle \cdot, \cdot \rangle \ \colon \ \mathbb{R}^n \times \mathbb{R}^n \ &amp;\rightarrow \ \mathbb{R}, \\
-(x, y) \ &amp;\to \ \langle x, y \rangle \ \coloneqq \ x_1y_1 + \ldots + x_ny_n \ = \ \sum_{i=1}^n x_iy_i
-\end{align*}\]</div>
-<p>als \emph{kanonisches Skalarprodukt} von <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.
-\end{definition}</p>
 <p>Schreibt man <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}^n\)</span> als Spaltenvektoren, so lässt sich das kanonische Skalarprodukt auch schreiben als</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle x, y \rangle \ = \ x^T \cdot y \ = \ (x_1, \ldots, x_n) \cdot \begin{pmatrix} y_1\\ \vdots \\ v_n \end{pmatrix}.
 \end{equation*}\]</div>
 <p>Eine ebenfalls in der Literatur gängige Schreibweise ist ein Skalarprodukt mit runden Klammern, d.h., <span class="math notranslate nohighlight">\((x, y) \coloneqq \langle x,y \rangle\)</span>.</p>
-<p>Folgende Eigenschaften des Skalarprodukts lassen sich leicht nachrechnen.
-\begin{lemma}[Eigenschaften des Skalarprodukts]\label{lem:skalarprodukt_r}
-Das kanonische Skalarprodukt von <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> in Definition \ref{def:skalarprodukt_r} besitzt folgende Eigenschaften für Vektoren <span class="math notranslate nohighlight">\(x,x',y,y' \in \mathbb{R}^n\)</span> und Skalare <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span>:
-\begin{enumerate}[i)]
-\item Bilinearität:</p>
+<p>Folgende Eigenschaften des Skalarprodukts lassen sich leicht nachrechnen.</p>
+<div class="proof lemma admonition" id="lem:skalarprodukt_r">
+<p class="admonition-title"><span class="caption-number">Lemma 2.1 </span> (Eigenschaften des Skalarprodukts)</p>
+<div class="lemma-content section" id="proof-content">
+<p>Das kanonische Skalarprodukt von <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> in Definition <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">def:skalarprodukt_r</span></code> besitzt folgende Eigenschaften für Vektoren <span class="math notranslate nohighlight">\(x,x',y,y' \in \mathbb{R}^n\)</span> und Skalare <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span>:</p>
+<p>i) Bilinearität:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
@@ -388,174 +457,34 @@ Das kanonische Skalarprodukt von <span class="math notranslate nohighlight">\(\m
 &amp;\lambda \langle x, y \rangle \ = \  \langle \lambda x, y \rangle \ = \  \langle x, \lambda y \rangle.
 \end{split}
 \end{equation*}\]</div>
-<p>\item Symmetrie:</p>
+<p>ii) Symmetrie:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle x, y \rangle \ = \ \langle y, x \rangle.
 \end{equation*}\]</div>
-<p>\item Positive Definitheit:</p>
+<p>iii) Positive Definitheit:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle x, x \rangle \ = \ x_1^2 + \ldots + x_n^2 \ \geq \ 0, \quad \langle x, x \rangle \ = \ 0 \ \Leftrightarrow \ x = \vec{0}.
 \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{lemma}</p>
-<p>Die dritte Eigenschaft von Lemma \ref{lem:skalarprodukt_r} nutzt bereits eine Eigenschaft des Körpers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> aus, nämlich, dass die Summe von quadratischen Termen nie negativ werden kann.
+</div>
+</div><p>Die dritte Eigenschaft von Lemma <a class="reference internal" href="#lem:skalarprodukt_r">Lemma 2.1</a> nutzt bereits eine Eigenschaft des Körpers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> aus, nämlich, dass die Summe von quadratischen Termen nie negativ werden kann.
 Das bedeutet, wir können aus dem Skalarprodukt eines Vektors mit sich selbst immer die Wurzel ziehen ohne den Körper <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> zu verlassen.
-Diese wichtige Beobachtung induziert den Begriff der \emph{Norm} in folgender Definition, welche wir zur Messung von Längen eines Vektor nutzen können.
-\begin{definition}[Norm in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>]\label{def:norm_r}
-Sei <span class="math notranslate nohighlight">\(x \in \mathbb{R}^n\)</span> ein Vektor.
-Dann definieren wir die Abbildung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-||\cdot|| \ \colon \ \mathbb{R}^n \ &amp;\rightarrow \ \mathbb{R}_0^+, \\
-x \ &amp;\to \ ||x|| \ \coloneqq \ \sqrt{\langle x, x \rangle} \ = \ \sqrt{x_1^2 + \ldots + x_n^2}
-\end{align*}\]</div>
-<p>als \emph{Euklidische Norm} von <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.
-\end{definition}</p>
-<p>\begin{remark}
-Im eindimensionalen Fall <span class="math notranslate nohighlight">\(V = \mathbb{R}\)</span> reduziert sich die Norm eines Vektors <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> auf die Betragsfunktion, d.h., <span class="math notranslate nohighlight">\(||x|| = |x|\)</span> für <span class="math notranslate nohighlight">\(\dim(V) \eqqcolon n = 1\)</span>.
-\end{remark}</p>
-<p>Die oben definierte Norm <span class="math notranslate nohighlight">\(||x||\)</span> gibt uns den Abstand des Punktes <span class="math notranslate nohighlight">\(x \in \mathbb{R}^n\)</span> zum Nullpunkt <span class="math notranslate nohighlight">\(\vec{0} \in \mathbb{R}^n\)</span>, also gerade die Länge des Vektors <span class="math notranslate nohighlight">\((x - \vec{0}) \in \mathbb{R}^n\)</span>.</p>
-<p>Folgender wichtiger Satz hilft uns dabei die Eigenschaften der Norm noch besser zu charakterisieren.
-\begin{satz}[Cauchy-Schwarz Ungleichung]\label{satz:cauchy-schwarz_r}
-Seien <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^n\)</span>.
-Dann gilt</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0f7ab5c9-e9d0-436e-a633-b6f291c573f1">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-0f7ab5c9-e9d0-436e-a633-b6f291c573f1" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:cauchy-schwarz_r}
-| \langle x, y \rangle | \ \leq \ ||x|| \cdot ||y||.
-\end{equation}\]</div>
-<p>Und es gilt außerdem</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-| \langle x, y \rangle | \ = \ ||x|| \cdot ||y|| \quad \Leftrightarrow \quad x \text{ und } y \text{ sind linear abhängig}.
-\end{equation*}\]</div>
-<p>\end{satz}
-\begin{proof}
-Da die Wurzelfunktion monoton ist, können wir beide Seiten quadrieren, ohne dass sich an der Aussage etwas ändert.
-Wir müssen also zeigen, dass gilt</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d599bf6c-5055-4113-b400-0cbf2db59330">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-d599bf6c-5055-4113-b400-0cbf2db59330" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:cauchy-schwarz_r_beweis}
-||x||^2 \cdot ||y||^2 - |\langle x, y \rangle|^2 \ = \ \langle x,x \rangle \cdot \langle y, y \rangle - \langle x, y \rangle^2 \ \geq \ 0.
-\end{equation}\]</div>
-<p>Wir bedienen uns des folgenden Tricks.
-Wir betrachten eine Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{2 \times n}\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-A \ \coloneqq \
-\begin{pmatrix}
-x_1 &amp; \ldots &amp; x_n\\
-y_1 &amp; \ldots &amp; y_n
-\end{pmatrix}.
-\end{equation*}\]</div>
-<p>Multiplizieren wir nun <span class="math notranslate nohighlight">\(A\)</span> von rechts mit <span class="math notranslate nohighlight">\(A^T \in \mathbb{R}^{n \times 2}\)</span>, so erhalten wir</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-AA^T \ = \
-\begin{pmatrix}
-\langle x, x \rangle &amp; \langle x, y \rangle\\
-\langle y, x \rangle &amp; \langle y, y \rangle
-\end{pmatrix}.
-\end{equation*}\]</div>
-<p>Wegen der Symmetrie des Skalarprodukts können wir die linke Seite der Gleichung \eqref{eq:cauchy-schwarz_r_beweis} ersetzen durch den Ausdruck <span class="math notranslate nohighlight">\(\det(AA^T)\)</span> und müssen nur zeigen, dass <span class="math notranslate nohighlight">\(\det(AA^T) \geq 0\)</span> gilt.
-Nach dem Determinanten-Multiplikationstheorem in \cite[Satz 3.3.7]{fischer} lässt sich die Determinante von <span class="math notranslate nohighlight">\(AA^T\)</span> über die Produkte aller <span class="math notranslate nohighlight">\((2 \times 2)\)</span>-Minoren ausrechnen und im vorliegenden Fall gilt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\det(AA^T) \ = \ \sum_{1 \leq k_1 \leq k_2 \leq n} \left(\det(A^{k_1,k_2})\right)^2 \ \geq \ 0.
-\end{equation*}\]</div>
-<p>Die Nichtnegativität der Determinante nutzt hier wieder eine Eigenschaft des Körpers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, da die Summe von quadratischen Termen nie negativ werden kann.</p>
-<p>Es bleibt nur noch die Gleichheit zu überprüfen.</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
-&amp; | \langle x, y \rangle | \ = \ ||x|| \cdot ||y|| \\
-\Leftrightarrow \ &amp;\det(AA^T) \ = \ \sum_{1 \leq k_1 \leq k_2 \leq n} \left(\det(A^{k_1,k_2})\right)^2 \ = \ 0 \\
-\Leftrightarrow \ &amp;\det(A^{k_1,k_2}) \ = \ 0, \quad \text{ für alle } 1 \leq k_1 \leq k_2 \leq n \\
-\Leftrightarrow \ &amp;\Rang(A) &lt; 2\\
-\Leftrightarrow \ &amp;x \text{ und } y \text{ sind linear abhängig }.
-\end{split}
-\end{equation*}\]</div>
-<p>\end{proof}</p>
-<p>Mit Hilfe der Cauchy-Schwarz Ungleichung können wir die wichtigsten Eigenschaften der Norm zeigen.
-\begin{lemma}[Eigenschaften der Norm]\label{lem:norm_eigenschaften}
-Seien <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}^n\)</span> Vektoren und <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span> ein Skalar, dann gelten für die durch das kanonische Skalarprodukt induzierte Norm folgende Eigenschaften.
-\begin{enumerate}[i)]
-\item <span class="math notranslate nohighlight">\(||x|| \ = \ 0 \quad \Leftrightarrow \quad x \ = \ 0\)</span>,
-\item <span class="math notranslate nohighlight">\(||\lambda x|| \ = \ |\lambda| \cdot ||x||\)</span>,
-\item <span class="math notranslate nohighlight">\(||x + y|| \ \leq \ ||x|| + ||y||\)</span>.
-\end{enumerate}
-\end{lemma}
-\begin{proof}
-Die ersten beiden Eigenschaften <span class="math notranslate nohighlight">\(i)\)</span> und <span class="math notranslate nohighlight">\(ii)\)</span> lassen sich direkt durch Nachrechnen verifizieren.
-Die dritte Eigenschaft der Dreiecksungleichung können wir mit Hilfe der Cauchy-Schwarz Ungleichung aus Satz \ref{satz:cauchy-schwarz_r} zeigen.
-Es gilt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
-||x + y||^2 \ = \ \langle x+y, x+y \rangle \ &amp;= \ \langle x, x \rangle + 2 \langle x, y \rangle + \langle y, y \rangle \\
-&amp;\leq \ \langle x, x \rangle + 2 ||x|| \cdot ||y|| + \langle y, y \rangle \ \leq \ (||x|| + ||y||)^2.
-\end{split}
-\end{equation*}\]</div>
-<p>Da die Wurzelfunktion monoton ist gilt obige Abschätzung auch ohne die Quadrate auf der linken und rechten Seite der Ungleichung.
-\end{proof}</p>
-<p>Dadurch, dass die Norm die Länge eines Vektors beschreibt, können wir sie nutzen um Abstände zu beschreiben.
-Um nun den Abstand zwischen zwei Punkten <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}^n\)</span> zu messen führt man den Begriff einer durch die Norm induzierten Metrik ein.
-\begin{definition}[Metrik]
-Seien <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^n\)</span> zwei Punkte.
-Dann induziert die Norm <span class="math notranslate nohighlight">\(||\cdot||\)</span> des Vektorraums eine \emph{Metrik} genannte Abbildung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-d \colon \mathbb{R}^n \times \mathbb{R}^n \ &amp;\rightarrow \ \mathbb{R}^+_0, \\
-(x,y) \ &amp;\mapsto \ d(x,y) \ \coloneqq \ ||x - y|| \ = \ \sqrt{\sum_{i=1}^n (x_i - y_i)^2},
-\end{align*}\]</div>
-<p>mit der man den Abstand (bezüglich der Norm) zwischen <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> messen kann.
-\end{definition}</p>
-<p>\begin{remark}
-Wie man im Laufe des Studiums noch lernt, wird je nach Wahl der Norm in Definition \ref{def:norm_r} eine andere Metrik induziert, die den Abstandsbegriff maßgeblich beeinflusst.
-Letzten Endes bestimmt dies auch die sogenannte \emph{Topologie} eines Vektorraums.
-Dies wird durch folgende Relationen dargestellt:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-&amp;\text{\textbf{Skalarprodukt} (Euklidischer / Unitärer Vektorraum)}\\
-&amp; \quad \downarrow {\small \text{induziert}}\\
-&amp;\text{\textbf{Norm} (Normierter Vektorraum)}\\
-&amp; \quad \downarrow {\small \text{induziert}}\\
-&amp;\text{\textbf{Metrik} (Metrischer Vektorraum)}\\
-&amp; \quad \downarrow {\small \text{induziert}}\\
-&amp;\text{\textbf{Topologie} (Topologischer Vektorraum)}
-\end{align*}\]</div>
-<p>\end{remark}</p>
-<p>Wir können nun wesentliche Eigenschaften einer Metrik festhalten.
-\begin{lemma}[Eigenschaften einer Metrik]
-Seien <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^n\)</span>, dann gelten für die Metrik <span class="math notranslate nohighlight">\(d(x,y) = ||x - y||\)</span> folgende Eigenschaften.
-\begin{enumerate}[i)]
-\item <span class="math notranslate nohighlight">\(d(x,y) \ = \ 0 \quad \Leftrightarrow \quad x \ = \ y\)</span>,
-\item <span class="math notranslate nohighlight">\(d(x,y) \  = \ d(y,x)\)</span>,
-\item <span class="math notranslate nohighlight">\(d(x,z) \ \leq \ d(x,y) + d(y,z)\)</span>.
-\end{enumerate}
-\end{lemma}
-\begin{proof}
-Die ersten beiden Eigenschaften <span class="math notranslate nohighlight">\(i)\)</span> und <span class="math notranslate nohighlight">\(ii)\)</span> sind klar und lassen sich direkt durch Nachrechnen verifizieren.
-Die dritte Eigenschaft <span class="math notranslate nohighlight">\(iii)\)</span> folgt direkt aus der Dreiecksungleichung der Norm in Lemma \ref{lem:norm_eigenschaften}, da</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-d(x,z) \ = \ ||x -z|| \ = \ ||x - y + y - z|| \ \leq \ ||x -y|| + ||y - z|| \ = \ d(x,y) + d(y,z).
-\end{equation*}\]</div>
-<p>\end{proof}</p>
-<p>\begin{example}[Manhattan Metrik]
-Eine interessante Metrik, die nicht durch die Euklidische Norm induziert wird, ist die sogenannte \emph{Manhattan Metrik}, die für zwei Vektoren <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}^n\)</span> wie folgt definiert ist:</p>
+Diese wichtige Beobachtung induziert den Begriff der \emph{Norm} in folgender Definition, welche wir zur Messung von Längen eines Vektor nutzen können.</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 2.1 </span> (Manhattan Metrik)</p>
+<div class="example-content section" id="proof-content">
+<p>Eine interessante Metrik, die nicht durch die Euklidische Norm induziert wird, ist die sogenannte \emph{Manhattan Metrik}, die für zwei Vektoren <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}^n\)</span> wie folgt definiert ist:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 d(x,y) \ \coloneqq \ \sum_{i=1}^n|x_i - y_i| \ \eqqcolon \ ||x - y||_1.
 \end{equation*}\]</div>
 <p>Der Name lehnt sich an die orthogonalen Straßengitter Manhattans an, die dazu führen, dass man zum Erreichen eines Ziels nur durch Aneinanderreihung vertikaler und horizontaler Wegstücke zu überwinden. Hierbei weisen alle Wege, die einen näher zum Ziel bringen, immer die gleiche Entfernung auf.</p>
-<p>\end{example}</p>
-<p>Die Cauchy-Schwarz Ungleichung in Satz \ref{satz:cauchy-schwarz_r} liefert uns nicht nur nützliche Aussagen bei der Längenmessung (wie die Dreiecksungleichung für die Norm), sondern liefert zudem eine Methode zur \emph{Winkelmessung} im <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.
+</div>
+</div><p>Die Cauchy-Schwarz Ungleichung in Satz <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">satz:cauchy-schwarz_r</span></code> liefert uns nicht nur nützliche Aussagen bei der Längenmessung (wie die Dreiecksungleichung für die Norm), sondern liefert zudem eine Methode zur \emph{Winkelmessung} im <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.
 Betrachtet man nämlich den Quotienten der linken und rechten Seite in der Cauchy-Schwarz Ungleichung \eqref{eq:cauchy-schwarz_r}, so erhält man für zwei Vektoren <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^n\)</span> mit <span class="math notranslate nohighlight">\(x,y \neq \vec{0}\)</span> folgende Abschätzung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c59d0200-133c-4130-bec4-dff52f2124d0">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-c59d0200-133c-4130-bec4-dff52f2124d0" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:angle_quotient}
--1 \ \leq \frac{\langle x, y \rangle}{||x|| \cdot ||y||} \ \leq 1.
-\end{equation}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-angle-quotient">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-eq-angle-quotient" title="Permalink to this equation">¶</a></span>\[-1 \ \leq \frac{\langle x, y \rangle}{||x|| \cdot ||y||} \ \leq 1.\]</div>
 <p>Der Quotient ist also ähnlich beschränkt wie die Kosinusfunktion <span class="math notranslate nohighlight">\(\cos \colon [0, \pi] \rightarrow [-1, 1]\)</span> und es wird klar, dass es für fixe Vektoren <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> genau ein Winkel <span class="math notranslate nohighlight">\(\alpha \in [0, \pi]\)</span>  existiert, so dass</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -563,27 +492,22 @@ Betrachtet man nämlich den Quotienten der linken und rechten Seite in der Cauch
 \end{equation*}\]</div>
 <p>Dies macht auch geometrisch Sinn, da das Skalarprodukt <span class="math notranslate nohighlight">\(\langle x, y \rangle\)</span> von <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> als Maß für den Anteil des einen Vektors, der in Richtung des anderen Vektors zeigt interpretiert werden kann.
 Je größer dieser Anteil ist, desto kleiner ist der Winkel <span class="math notranslate nohighlight">\(\alpha\)</span> zwischen den beiden Vektoren <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<p>Dies motiviert die folgende Definition zur Winkelmessung in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.
-\begin{definition}[Winkelmessung in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>]\label{def:winkelmessung}
-Seien <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^n\)</span> zwei Vektoren mit <span class="math notranslate nohighlight">\(x,y \neq \vec{0}\)</span>.
-Dann definieren wir den Winkel <span class="math notranslate nohighlight">\(\measuredangle(x,y)\)</span> zwischen <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> als den Arkuskosinus des Quotienten in \eqref{eq:angle_quotient}, d.h.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3356354a-185e-49a7-b768-1fe94a014e7e">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-3356354a-185e-49a7-b768-1fe94a014e7e" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:winkelberechnung}
-\measuredangle(x,y) \ \coloneqq \ \arccos \frac{\langle x, y \rangle}{||x|| \cdot ||y||} .
-\end{equation}\]</div>
-<p>\end{definition}</p>
-<p>\begin{remark}\label{bem:winkelmessung}
-Aus den Eigenschaften des Skalarprodukts in Lemma \ref{lem:skalarprodukt_r} folgen direkt folgende sinnvolle Beobachtungen für Vektoren <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^n\)</span> mit <span class="math notranslate nohighlight">\(x,y \neq \vec{0}\)</span> und positive Skalare <span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span>:
-\begin{enumerate}[i)]
-\item <span class="math notranslate nohighlight">\(\measuredangle(x,y) \ = \ \measuredangle(y,x)\)</span>,
-\item <span class="math notranslate nohighlight">\(\measuredangle(\lambda x,y) \ = \ \measuredangle(x,\lambda y) \ = \  \measuredangle(x, y)\)</span>.
-\end{enumerate}
-\end{remark}</p>
-<p>Zur Veranschaulichung dieser wichtigen geometrischen Erkenntnisse soll das folgende Beispiel dienen.
-\begin{bsp}
-Um zu verstehen, dass die Definition \ref{def:winkelmessung} für die Winkelmessung sich mit unserer Vorstellung eines unorientierten Winkels deckt, betrachten wir zwei Beispiele:
-\begin{enumerate}
-\item Es seien zwei Vektoren <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^3\)</span> gegeben mit:</p>
+<p>Dies motiviert die folgende Definition zur Winkelmessung in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p>
+<div class="proof remark admonition" id="bem:winkelmessung">
+<p class="admonition-title"><span class="caption-number">Remark 2.1 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Aus den Eigenschaften des Skalarprodukts in Lemma <a class="reference internal" href="#lem:skalarprodukt_r">Lemma 2.1</a> folgen direkt folgende sinnvolle Beobachtungen für Vektoren <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^n\)</span> mit <span class="math notranslate nohighlight">\(x,y \neq \vec{0}\)</span> und positive Skalare <span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span>:</p>
+<p>i) <span class="math notranslate nohighlight">\(\measuredangle(x,y) \ = \ \measuredangle(y,x)\)</span>,</p>
+<p>ii) <span class="math notranslate nohighlight">\(\measuredangle(\lambda x,y) \ = \ \measuredangle(x,\lambda y) \ = \  \measuredangle(x, y)\)</span>.</p>
+</div>
+</div><p>Zur Veranschaulichung dieser wichtigen geometrischen Erkenntnisse soll das folgende Beispiel dienen.</p>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 2.2 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Um zu verstehen, dass die Definition <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">def:winkelmessung</span></code> für die Winkelmessung sich mit unserer Vorstellung eines unorientierten Winkels deckt, betrachten wir zwei Beispiele:</p>
+<ul class="simple">
+<li><p>Es seien zwei Vektoren <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^3\)</span> gegeben mit:</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 x \ \coloneqq \ 
@@ -608,12 +532,14 @@ y \ \coloneqq \
 \[\begin{equation*}
 \alpha \ \coloneqq \ \measuredangle(x,y) \ = \ \arccos \frac{\langle x, y \rangle}{||x|| \cdot ||y||}  \ = \ \arccos \frac{32}{\sqrt{14\cdot77}} \ \approx \ 13^\circ.
 \end{equation*}\]</div>
-<p>\item Für zwei allgemeine Vektoren <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^2\)</span> führen wir normierte Varianten <span class="math notranslate nohighlight">\(x',y' \in \mathbb{R}^n\)</span> mit</p>
+<ul class="simple">
+<li><p>Für zwei allgemeine Vektoren <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^2\)</span> führen wir normierte Varianten <span class="math notranslate nohighlight">\(x',y' \in \mathbb{R}^n\)</span> mit</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 x' \ \coloneqq \ \frac{x}{||x||}, \quad y' \ \coloneqq \ \frac{y}{||y||}.
 \end{equation*}\]</div>
-<p>Aus der Normierung wird klar, dass <span class="math notranslate nohighlight">\(||x|| = ||y|| = 1\)</span> gilt und auf Grund von Bemerkung \ref{bem:winkelmessung} sehen wir ein, dass <span class="math notranslate nohighlight">\(\measuredangle(x,y) = \measuredangle(x',y')\)</span>.</p>
+<p>Aus der Normierung wird klar, dass <span class="math notranslate nohighlight">\(||x|| = ||y|| = 1\)</span> gilt und auf Grund von Bemerkung <a class="reference internal" href="#bem:winkelmessung">Remark 2.1</a> sehen wir ein, dass <span class="math notranslate nohighlight">\(\measuredangle(x,y) = \measuredangle(x',y')\)</span>.</p>
 <p>Da <span class="math notranslate nohighlight">\(x'\)</span> und <span class="math notranslate nohighlight">\(y'\)</span> auf dem Einheitskreis <span class="math notranslate nohighlight">\(\mathbb{S}^1\)</span> liegen, wissen wir aus der Analysis, dass eine Parametrisierung mit Winkeln <span class="math notranslate nohighlight">\(\alpha, \beta \in [0, 2\pi [\)</span> gibt, so dass</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -630,19 +556,9 @@ x' \ = \ (\cos \alpha, \sin \alpha), \quad y' \ = \ (\cos \beta, \sin \beta).
 \[\begin{equation*}
 \measuredangle(x,y) \ = \ \beta - \alpha .%,
 \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{bsp}</p>
-<p>Für zwei Vektoren <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^n\)</span> mit <span class="math notranslate nohighlight">\(x,y \neq \vec{0}\)</span> wird klar, dass der Winkel zwischen den beiden genau <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> (oder <span class="math notranslate nohighlight">\(90^{\circ}\)</span>) entspricht, wenn das Skalarprodukt <span class="math notranslate nohighlight">\(\langle x, y\rangle = 0\)</span> ist.
-Das motiviert die folgende Definition.
-\begin{definition}[Orthogonalität von Vektoren]
-Zwei Vektoren <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^n\)</span> heißen \emph{senkrecht} oder \emph{orthogonal}, wenn für sie gilt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\langle x, y \rangle \ = \ 0.
-\end{equation*}\]</div>
-<p>Diese Definition gilt auch, wenn einer der beiden Vektoren der Nullvektor ist.
-Sind die Vektoren <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> orthogonal, so schreiben wir auch häufig <span class="math notranslate nohighlight">\(x \perp y\)</span>.
-\end{definition}</p>
+</div>
+</div><p>Für zwei Vektoren <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^n\)</span> mit <span class="math notranslate nohighlight">\(x,y \neq \vec{0}\)</span> wird klar, dass der Winkel zwischen den beiden genau <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> (oder <span class="math notranslate nohighlight">\(90^{\circ}\)</span>) entspricht, wenn das Skalarprodukt <span class="math notranslate nohighlight">\(\langle x, y\rangle = 0\)</span> ist.
+Das motiviert die folgende Definition.</p>
 </div>
 
     <script type="text/x-thebe-config">

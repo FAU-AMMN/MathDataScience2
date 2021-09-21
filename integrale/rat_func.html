@@ -1,0 +1,1013 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.3. Integration rationaler Funktionen &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Differentiation von Funktionen mehrerer Veränderlicher" href="../ableitungen/ableitungen.html" />
+    <link rel="prev" title="4.2. Substitutionsregel" href="substitution.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../eigenwerte/eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="integrale.html">
+   4. Integralrechnung
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="part_int.html">
+     4.1. Partielle Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="substitution.html">
+     4.2. Substitutionsregel
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.3. Integration rationaler Funktionen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   5. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     5.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     5.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     5.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     5.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     5.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../optimierung/optimierung.html">
+   6. Optimierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/unrestringiert.html">
+     6.1. Unrestringierte Optimierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/nebenbedingungen.html">
+     6.2. Optimierung unter Nebenbedingungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ode/ode.html">
+   7. Gewöhnliche Differentialgleichungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/tdv.html">
+     7.1. Trennung der Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/vdk.html">
+     7.2. Variation der Konstanten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/integrale/rat_func.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#polynomfunktionen">
+   4.3.1. Polynomfunktionen
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="integration-rationaler-funktionen">
+<h1><span class="section-number">4.3. </span>Integration rationaler Funktionen<a class="headerlink" href="#integration-rationaler-funktionen" title="Permalink to this headline">¶</a></h1>
+<p>Im Gegensatz zur Differentiation gibt es keine Aussage darüber, dass das Integral einer elementaren Funktion wieder eine elementare Funktion ergibt.
+Insbesondere gibt es keinen allgemein gültigen Algorithmus zur Bestimmung des Integrals, was die analytische Integration sehr schwierig macht.
+Im Spezialfall von rationalen Funktionen, die als Quotient zweier Polynome dargestellt werden können, kann man eine solche Rechenvorschrift erarbeiten.</p>
+<div class="section" id="polynomfunktionen">
+<h2><span class="section-number">4.3.1. </span>Polynomfunktionen<a class="headerlink" href="#polynomfunktionen" title="Permalink to this headline">¶</a></h2>
+<p>Bevor wir uns mit der Integration rationaler Funktionen beschäftigen können, wollen wir im Folgenden die wichtigsten Begriffe und Erkenntnisse zu Polynomen wiederholen.
+Wir beginnen mit der Definition von Polynomfunktionen.
+\begin{definition}[Polynomfunktion]
+Für den Körper <span class="math notranslate nohighlight">\(\K=\R\)</span> oder <span class="math notranslate nohighlight">\(\K=\C\)</span> nennen wir jede Funktion <span class="math notranslate nohighlight">\(p\colon\K\to\K\)</span> der Form</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9016196f-b2a6-4b27-ae4e-7577611936c8">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-9016196f-b2a6-4b27-ae4e-7577611936c8" title="Permalink to this equation">¶</a></span>\[\begin{align}\label{def:poly}
+    p(x) \ = \ \sum_{k=0}^n a_k x^k \ = \ a_0 + a_1x + a_2x^2 + \ldots + a_nx^n \quad\text{mit}\quad a_k\in\K
+  \end{align}\]</div>
+<p>\emph{reelle} oder \emph{komplexe Polynomfunktion} oder (ungenauerweise) häufig auch kurz \emph{Polynom}.</p>
+<p>Wir nennen den Koeffizienten <span class="math notranslate nohighlight">\(a_n \in \K\)</span> mit dem höchsten Index den \emph{Leitkoeffizienten} des Polynoms.
+Wenn der Leitkoeffizient ungleich Null ist, d.h., <span class="math notranslate nohighlight">\(a_n\neq 0\)</span>, dann sagen wir, dass <span class="math notranslate nohighlight">\(p\)</span> ein Polynom vom \emph{Grad} <span class="math notranslate nohighlight">\(\deg(p) = n\)</span> ist.
+Ist der Leitkoeffizient gleich Eins, d.h, <span class="math notranslate nohighlight">\(a_n = 1\)</span>, so nennen wir das Polynom <span class="math notranslate nohighlight">\(p\)</span> \emph{normiert}.</p>
+<p>Der \emph{Ring der Polynome} <span class="math notranslate nohighlight">\(p\)</span> mit Koeffizienten aus dem Körper <span class="math notranslate nohighlight">\(\K\)</span> wird häufig mit <span class="math notranslate nohighlight">\(\K[x]\)</span> bezeichnet.
+\end{definition}</p>
+<p>\begin{comment}\label{rem:polynome}
+Für Polynomfunktionen können wir folgende Beobachtungen festhalten:
+\begin{enumerate}[i)]
+\item Da die Monome der Form <span class="math notranslate nohighlight">\(1, x, x^2, \ldots\)</span> eine Basis des Polynomrings <span class="math notranslate nohighlight">\(\K[x]\)</span> (betrachtet als Vektorraum) bilden, sind Koeffizienten <span class="math notranslate nohighlight">\(a_k \in \K\)</span> in \eqref{def:poly} für jedes Polynom <span class="math notranslate nohighlight">\(p\in\K[x]\)</span> eindeutig bestimmt.
+\item
+Allgemein soll gelten, dass die Summe zweier Polynome höchstens den maximalen Grad der beiden einzelnen Polynome hat, d.h., für zwei Polynome <span class="math notranslate nohighlight">\(f,g \in \K[x]\)</span> gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  \deg(f+g) \ \leq \ \max(\deg(f), \deg(g)).
+\end{equation*}\]</div>
+<p>Der Grad von <span class="math notranslate nohighlight">\((f+g) \in \K[x]\)</span> kann sich jedoch verringern, z.B., wenn für die Polynome <span class="math notranslate nohighlight">\(\deg(f) = \deg(g) = n\)</span>  gilt und die jeweils höchsten Koeffizienten <span class="math notranslate nohighlight">\(a_n, b_n \in \K\)</span> sich durch <span class="math notranslate nohighlight">\(a_n = - b_n\)</span> aufheben.</p>
+<p>Für die Multiplikation zweier Polynome stellen wir fest, dass sich der Grad des resultierenden Polynoms als Summe der Grade der einzelnen Polynome ergibt, d.h.,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1353fb4e-e195-4524-ab61-2619b527d826">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-1353fb4e-e195-4524-ab61-2619b527d826" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:polynom_grad_multi}
+  \deg{fg} \ = \ \deg(f) + \deg(f)\,,
+\end{equation}\]</div>
+<p>\item
+Das konstante Polynom</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+ \pmb{0} \colon \K\to\K
+ \end{equation*}\]</div>
+<p>mit <span class="math notranslate nohighlight">\(\pmb{0}(x) = 0\)</span> für alle <span class="math notranslate nohighlight">\(x\in\K\)</span> heißt \emph{Nullpolynom} und hat per Definition den Grad</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+ \deg(\pmb{0}) \, \coloneqq \, -\infty.
+ \end{equation*}\]</div>
+<p>Die Festlegung des Grades des Nullpolynoms erscheint willkürlich, kann aber durch die Rechenregeln für den Grad von Polynomen in \eqref{eq:polynom_grad_multi} gerechtfertigt werden, wenn man für beliebiges <span class="math notranslate nohighlight">\(k\in\N\)</span> annimmt, dass <span class="math notranslate nohighlight">\(k+(-\infty) = -\infty\)</span> gilt.
+\end{enumerate}
+\end{comment}</p>
+<p>Lassen wir als Argumente in \eqref{def:poly} beliebige komplexe Zahlen zu, dann lässt sich ein reelles Polynom als komplexes Polynom auffassen mit der Einbettung <span class="math notranslate nohighlight">\(\R[x]\subset\C[x]\)</span>.
+Wir erinnern daran, dass reelle Polynome vom Grad <span class="math notranslate nohighlight">\(\deg(p) &gt; 0\)</span> keine Nullstellen besitzen müssen, im Gegensatz zu komplexen Polynomen.
+Der \emph{Fundamentalsatzes der Algebra} \cite[Theorem 1.3.9]{fischer} hat zur Folge, dass ein Polynom <span class="math notranslate nohighlight">\(p\in\C[x]\)</span> vom Grad <span class="math notranslate nohighlight">\(\deg(p) = n\)</span> sich in ein Produkt von Linearfaktoren, d.h., in Polynome von Grad Eins, zerlegen lässt, d.h.,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f0c9ae4a-21ab-4072-9c85-b9b132f755e5">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-f0c9ae4a-21ab-4072-9c85-b9b132f755e5" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:linearfaktorzerlegung}
+ p(x) \ = \ \prod\limits_{i=1}^n(x-x_i).
+\end{equation}\]</div>
+<p>Die Nullstellen <span class="math notranslate nohighlight">\(x_i \in \C\)</span> in der Linearfaktorzerlegung \eqref{eq:linearfaktorzerlegung} müssen nicht zwingend paarweise verschieden sein.
+Tritt ein Linearfaktor <span class="math notranslate nohighlight">\(k\)</span>-mal auf so spricht man von einer <span class="math notranslate nohighlight">\(k\)</span>-fachen Nullstelle.
+\begin{example}
+Ein Beispiel für die Bedeutung der Einbettung zur Interpretation von Nullstellen ist das Polynom</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+p(x) \ = \ x^2 + 1.
+\end{equation*}\]</div>
+<p>Wird das Polynom <span class="math notranslate nohighlight">\(p\)</span> über den reellen Zahlen aufgefasst, also <span class="math notranslate nohighlight">\(p \in \R[x]\)</span>, so besitzt <span class="math notranslate nohighlight">\(p\)</span> keine Nullstellen.
+Interpretieren wir <span class="math notranslate nohighlight">\(p \in \C[x]\)</span> jedoch als Polynom über den komplexen Zahlen so hat es die Nullstellen <span class="math notranslate nohighlight">\(x_1 = -i\)</span> und <span class="math notranslate nohighlight">\(x_2 = +i\)</span> und es gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+p(x) \ = \ x^2 + 1 \ = \ (x + i)\cdot (x-i).
+\end{equation*}\]</div>
+<p>\end{example}</p>
+<p>Das folgende Lemma charakterisiert die Nullstellen eines reellen Polynoms noch genauer und besagt, dass die komplexe Konjugation einer Nullstelle selbst eine Nullstelle sein muss.
+Dies deckt sich mit der Aussage aus Satz \ref{satz:eigenwert_komplex_konjugiert}, der besagt, dass zu jedem Eigenwert einer reellwertigen Matrix auch dessen komplexe Konjugation ein Eigenwert der Matrix sein muss.
+\begin{lemma}\label{lem:nullstelle_komplex_kojugiert}
+Sei <span class="math notranslate nohighlight">\(p \in \R[x]\)</span> ein reelles Polynom und sei <span class="math notranslate nohighlight">\(k \in \N\)</span> mit <span class="math notranslate nohighlight">\(k \leq \deg(p)\)</span>.
+Ist <span class="math notranslate nohighlight">\(x_1\in\C\)</span> eine Nullstelle von <span class="math notranslate nohighlight">\(p\)</span>, dann ist auch <span class="math notranslate nohighlight">\(\overline x_1\in \C\)</span> eine Nullstelle von <span class="math notranslate nohighlight">\(p\)</span>.
+\end{lemma}
+\begin{proof}
+Sei das Polynom <span class="math notranslate nohighlight">\(p\in\R[x] \subset C[x]\)</span> aufgefasst über den komplexen Zahlen von der Form
+\begin{equation*}
+p(x) \ = \ \sum_{k=0}^n a_kx^k.
+\end{equation*}
+Sei <span class="math notranslate nohighlight">\(x_1\in\C\)</span> nun eine Nullstelle von <span class="math notranslate nohighlight">\(p\)</span>, dann gilt
+\begin{equation*}
+p(x_1) \ = \ \sum_{k=0}^n a_kx_1^k \ = \ 0.
+\end{equation*}
+Da die komplexe Konjugation verträglich mit der Addition und Multiplikation in <span class="math notranslate nohighlight">\(\C\)</span> ist, können wir daraus folgern
+\begin{equation*}
+\bar{0} \ = \ \overline{p(x_1)} \ = \ \overline{\sum_{k=0}^n a_kx_1^k} \ = \ \sum_{k=0}^n \overline{a_kx_1^k} \ = \ \sum_{k=0}^n \bar{a}_k\bar{x}_1^k
+\end{equation*}
+Da wir aber <span class="math notranslate nohighlight">\(p\in\R[x]\)</span> als reelles Polynom angenommen haben gilt <span class="math notranslate nohighlight">\(\bar{a}_k = a_k\)</span> für alle Koeffizienten.
+Damit folgt schon, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+   0 \ = \  \bar{0} \ = \ \overline{p(x_1)} \ = \ \sum_{k=0}^n \bar{a}_k\bar{x}_1^k \ = \ \sum_{k=0}^n a_k\bar{x}_1^k \ = \ p(\bar{x}_1).
+   \end{equation*}\]</div>
+<p>Also haben wir gezeigt, dass <span class="math notranslate nohighlight">\(\bar{x}_1 \in \C\)</span> auch eine Nullstelle von <span class="math notranslate nohighlight">\(p\)</span> ist.
+\end{proof}</p>
+<p>Eine Zerlegung in Linearfaktoren wie in \eqref{eq:linearfaktorzerlegung} können wir für reelle Polynome im Allgemeinen nicht erwarten.
+Dennoch lässt sich der folgende Satz für die Zerlegung reeller Polynom in eindeutige reelle Linearfaktoren und quadratische Polynome formulieren.
+\begin{satz}[Faktorisierungssatz für reelle Polynome]\label{satz:polynom_faktorisierung}
+Sei <span class="math notranslate nohighlight">\(p \in \R[x]\)</span> ein reelles, normiertes Polynom mit Grad <span class="math notranslate nohighlight">\(\deg(p) = n\)</span>.
+Dann existieren Koeffizienten <span class="math notranslate nohighlight">\(a_1, \ldots, a_l, b_1, \ldots, b_l, c_1, \ldots, c_m\in\R\)</span> mit
+\begin{equation*}<br />
+2l+m , = , n, \qquad a_i^2-b_i , &lt; , 0,
+\end{equation*}
+so dass sich das Polynom <span class="math notranslate nohighlight">\(p\)</span> faktorisieren lässt in die folgende Form
+\begin{equation}\label{eq:polynom_faktorisierung}
+p(x) \ = \ \prod\limits_{i=1}^l(x^2 - 2a_ix+b_i) : \cdot : \prod\limits_{j=1}^m(x-c_j),.
+\end{equation}
+\begin{proof}
+Nach dem Fundamentalsatz der Algebra können wir <span class="math notranslate nohighlight">\(p\)</span> in Linearfaktoren zerlegen mit
+\begin{equation*}
+p(x) \ = \ \prod\limits_{i=1}^n(x-x_i) \ = \ \prod\limits_{i=1}^m(x-x_i) , \cdot , \prod\limits_{i=m+1}^n(x-x_i),
+\end{equation*}
+wobei <span class="math notranslate nohighlight">\(x_1, \ldots, x_m\in\R\)</span> die reellen Nullstellen und <span class="math notranslate nohighlight">\(x_{m+1}, \ldots, x_n\in\C\setminus\R\)</span> die echt komplexen Nullstellen von <span class="math notranslate nohighlight">\(p\)</span> sind.
+Wir setzen einen neuen Index
+\begin{equation*}
+l ,\coloneq , \frac{n-m}2\in\N_0
+\end{equation*}
+und wissen nach Lemma \ref{lem:nullstelle_komplex_kojugiert}, dass für jede komplexe Nullstelle <span class="math notranslate nohighlight">\(x_i\in\C, i=m+1,\ldots, n\)</span>, von <span class="math notranslate nohighlight">\(p\)</span> eine komplex-konjugierte Nullstelle <span class="math notranslate nohighlight">\(\bar{x_i}\in\C\)</span> von <span class="math notranslate nohighlight">\(p\)</span> existiert.
+Durch eine geeignete Umnummerierung der Indizes können wir also schreiben:
+\begin{equation*}
+\prod\limits_{i=m+1}^n(x-x_i) \ = \ \prod\limits_{i=m+1}^{m+l}(x-x_i)\cdot(x-\bar{x}<em>i),.
+\end{equation*}
+Um die Form in \eqref{eq:polynom_faktorisierung} zu erhalten setzen wir für die Linearfaktoren
+\begin{equation*}
+c_i , \coloneq , x_i, \qquad i=1, \ldots, m.
+\end{equation*}
+Für die quadratischen Polynome setzen wir schließlich
+\begin{equation*}
+a_i \coloneq \operatorname{Re}(x</em>{i+m}) \quad \text{ und } \quad b_i , \coloneq , x_{i+m}\cdot\bar{x}<em>{i+m} , = , |x</em>{i+m}|^2, \qquad i=1\ldots, l.
+\end{equation*}
+Es ist klar, dass <span class="math notranslate nohighlight">\(a_i^2 - b_i &lt; 0\)</span> für die quadratischen Polynome mit komplexen Nullstellen gelten muss, da dieser Term gerade den Radikand in der Formel zur Berechnung von Nullstellen <span class="math notranslate nohighlight">\(x_{1/2} \in \C\)</span> normierter, quadratischer Polynome der Form <span class="math notranslate nohighlight">\(q(x) = x^2 - 2ax + b\)</span> darstellt mit
+\begin{equation*}
+x_{1/2} \ = \ a \pm \sqrt{a^2 - b}.
+\end{equation*}
+Falls <span class="math notranslate nohighlight">\(a_i^2 -b_i \geq 0\)</span> wäre, so ließe sich das Polynom <span class="math notranslate nohighlight">\(q\)</span> in zwei Linearfaktoren mit reellen Nullen faktorisieren.
+\end{proof}
+\end{satz}</p>
+<p>Wir wollen die Aussage aus Satz \ref{satz:polynom_faktorisierung} im folgenden Beispiel mit konkreten Faktorisierungen reeller Polynome illustrieren.
+\begin{example}
+Wir interessieren uns für eine Faktorisierung verschiedener reeller Polynome <span class="math notranslate nohighlight">\(p \in \R[x]\)</span> in lineare und quadratische Polynome.
+\begin{enumerate}
+\item Sei <span class="math notranslate nohighlight">\(p(x) = x^4 - 1\)</span>. Wir bezeichnen mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\zeta_k \, \coloneqq \, \exp\left(\frac{2\pi i k}{4}\right), \quad k=0,\ldots,3
+\end{equation*}\]</div>
+<p>die 4. Einheitswurzeln. Dann lässt sich das Polynom <span class="math notranslate nohighlight">\(p\)</span> wie folgt faktorisieren:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+p(x) \ = \ x^4 - 1 \ = \ \prod_{k=0}^4 (x - \zeta_k) \ = \ (x - 1) \cdot (x + 1) \cdot (x - i) \cdot (x + i) \ = \ (x - 1) \cdot (x + 1) \cdot (x^2 + 1)
+\end{equation*}\]</div>
+<p>\item Sei <span class="math notranslate nohighlight">\(p(x) = x^5 - 1\)</span>. Wir bezeichnen mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\zeta_k \, \coloneqq \, \exp\left(\frac{2\pi i k}{5}\right), \quad k=0,\ldots,4
+\end{equation*}\]</div>
+<p>die 5. Einheitswurzeln. Dann lässt sich das Polynom <span class="math notranslate nohighlight">\(p\)</span> wie folgt faktorisieren:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+p(x) \ = \ x^5 - 1 \ = \ \prod_{k=1}^4 (x - \zeta_k) \ = \ (x - 1) \cdot (x^2 - 2\operatorname{Re}(\zeta_1) + 1) \cdot (x^2 - 2\operatorname{Re}(\zeta_2) + 1)
+\end{equation*}\]</div>
+<p>\item Sei <span class="math notranslate nohighlight">\(p(x) = x^4 - 6x^2 + 7x - 6\)</span> und sei <span class="math notranslate nohighlight">\(c = \sqrt{-\frac{3}{4}} \in \C\)</span>.
+Dann lässt sich das Polynom <span class="math notranslate nohighlight">\(p\)</span> wie folgt faktorisieren:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+p(x) \ &amp;= \ x^4 - 6x^2 + 7x - 6 \ = \  (x - 2) \cdot (x + 3) \cdot (x +\frac{1}{2} + c)  \cdot (x + \frac{1}{2} - c) \\
+ &amp;= \ (x - 2) \cdot (x + 3) \cdot (x^2 - x + 1).
+\end{split}
+\end{equation*}\]</div>
+<p>\end{enumerate}
+\end{example}</p>
+<p>\subsection{Rationale Funktionen}
+Nachdem wir die wichtigsten Erkenntnisse und Begriffe für Polynomfunktionen wiederholt haben können wir uns im Folgenden mit den rationalen Funktionen beschäftigen, die als Quotient von Polynomen definiert sind.
+\begin{definition}[Rationale Funktion]
+Seien <span class="math notranslate nohighlight">\(p,q \in \K[x]\)</span> zwei Polynome mit <span class="math notranslate nohighlight">\(\deg(p) = n\)</span> und <span class="math notranslate nohighlight">\(\deg(q) = m\)</span> für <span class="math notranslate nohighlight">\(n,m \in \N\)</span>.
+Dann bezeichnen wir den Quotienten der beiden Polynome</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+r(x) \ \coloneqq \ \frac{p(x)}{q(x)} \ = \ \frac{\sum_{k=0}^n a_kx^k}{\sum_{k=0}^m b_kx^k}
+\end{equation*}\]</div>
+<p>als \emph{rationale Funktion}.
+Hierbei ist es wichtig, dass wir den Definitionsbereich von <span class="math notranslate nohighlight">\(r \in \K[x]\)</span> einschränken auf die <span class="math notranslate nohighlight">\(x \in \K\)</span> für die <span class="math notranslate nohighlight">\(q(x) \neq 0\)</span>.</p>
+<p>Enthält der Zähler von <span class="math notranslate nohighlight">\(r\)</span> ein Polynom, dass einen echt kleineren Grad als der Nenner besitzt, d.h., <span class="math notranslate nohighlight">\(n &lt; m\)</span>, so sprechen wir von einer \emph{echt gebrochenrationalen} Funktion.
+Ist das Gegenteil der Fall, d.h., <span class="math notranslate nohighlight">\(n \geq m\)</span>, so sprechen wir von einer \emph{unecht gebrochenrationalen} Funktion.
+Ist <span class="math notranslate nohighlight">\(r\)</span> ein Polynom, d.h. es gilt <span class="math notranslate nohighlight">\(m = 0\)</span>, so sprechen wir von einer \emph{ganzrationalen} Funktion.
+\end{definition}</p>
+<p>\begin{remark}
+Wir wollen folgende Bemerkungen zu rationalen Funktionen festhalten.
+\begin{enumerate}
+\item Rationale Funktionen können als Elemente eines Funktionskörpers <span class="math notranslate nohighlight">\(\K(x)\)</span> aufgefasst werden, der über einem Körper <span class="math notranslate nohighlight">\(\K\)</span> definiert ist, da jedes Element <span class="math notranslate nohighlight">\(r = \frac{p}{q}\)</span> nun auch ein multipli-kativ-inverses Element <span class="math notranslate nohighlight">\(r^{-1} = \frac{q}{p}\)</span> besitzt im Gegensatz zu Elementen des Polynomrings <span class="math notranslate nohighlight">\(\K[x]\)</span>.
+Dafür muss jedoch der Definitionsbereich in <span class="math notranslate nohighlight">\(D \subset \K\)</span> so eingeschränkt werden, dass <span class="math notranslate nohighlight">\(q(x) \neq 0\)</span> für alle <span class="math notranslate nohighlight">\(x \in D\)</span>.
+Insbesondere gilt <span class="math notranslate nohighlight">\(\K[x] \subset \K(x)\)</span>.
+\item Rationale Funktionen sind nicht eindeutig, da sowohl Zähler als auch Nenner mit einem beliebigen Polynom <span class="math notranslate nohighlight">\(s \in \K[x], s \neq \pmb{0}\)</span>, erweitert werden können.
+Jedoch lässt sich jede rationale Funktion <span class="math notranslate nohighlight">\(r \in \K(x)\)</span> mittels \emph{Polynomdivision} \cite{burger_2020}[Kapitel 1.4] in eine eindeutige Summe aus einer ganzrationalen Funktion <span class="math notranslate nohighlight">\(g \in \K[x]\)</span> (also einem Polynom) und einer echt gebrochenrationalen Funktion <span class="math notranslate nohighlight">\(\tilde{r}\)</span> schreiben, d.h.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+r \ = \ \frac{p}{q} \ = \ g + \frac{\tilde{p}}{q} \ = \ g + \tilde{r} \qquad \text{ mit } \qquad \deg(\tilde{p}) \, &lt; \, \deg(q).
+\end{equation*}\]</div>
+<p>\end{enumerate}
+\end{remark}</p>
+<p>Wir wollen die letzte Bemerkung zusätzlich an Hand eines Beispiels mittels Polynomdivision nachvollziehen.
+\begin{bsp}[Polynomdivision]
+Sei <span class="math notranslate nohighlight">\(r\in \K(x)\)</span> eine rationale Funktion mit
+\begin{equation*}
+r(x) \ = \ \frac{p(x)}{q(x)} \ = \ \frac{x^4}{x^3+2x^2-1}.
+\end{equation*}<br />
+Dann können wir <span class="math notranslate nohighlight">\(r\)</span> schreiben als eine Summe eines Polynoms und einer echt gebrochenrationalen Funktion und es gilt:
+\begin{equation*}
+\frac{x^4}{x^3+2x^2-1} = x-2 + \frac{4x^2 + x-2}{x^3+2x^2-1},,
+\end{equation*}
+Hierzu führen wir eine Polynomdivision mit dem Euklidischen Algorithmus durch:\
+\begin{equation*}<br />
+\polyset{style=C, div=:,vars=x}
+\polylongdiv{x^4}{x^3+2x^2-1}
+\end{equation*}
+\end{bsp}</p>
+<p>\subsection{Partialbruchzerlegung rationaler Funktionen}
+Wir wissen also nun, dass wir jede rationale Funktion <span class="math notranslate nohighlight">\(r\in \K(x)\)</span> darstellen können als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+r \ = \ g + \frac{\tilde{p}}{q} \qquad \text{ mit } \qquad \deg(\tilde{p}) \, &lt; \, \deg(q).
+\end{equation*}\]</div>
+<p>Die Polynome <span class="math notranslate nohighlight">\(g\in\R[x]\)</span> können wir offensichtlich sehr einfach integrieren jedoch müssen wir uns noch um die Bestimmung des unbestimmten Integrals für echt gebrochenrationale Funktionen <span class="math notranslate nohighlight">\(\frac{\tilde{p}}{q} \in \K(x)\)</span> kümmern.
+Ein sehr hilfreiches Werkzeug hierbei stellt die sogenannte \emph{Partialbruchzerlegung} dar, die es ermöglicht rationale Funktionen in eine Summe rationaler Funktionen von einfacher Gestalt zu zerlegen.
+Wird die Ausgangsfunktion als komplexe rationale Funktion aus <span class="math notranslate nohighlight">\(\C(x)\)</span> betrachtet, so besteht die Zerlegung sogar aus Summanden deren Nennerpolynom maximal eine Nullstelle besitzt.</p>
+<p>Wir wollen zunächst den folgenden Satz für die Partialbruchzerlegung für den allgemeinen Fall <span class="math notranslate nohighlight">\(\K=\R\)</span> oder <span class="math notranslate nohighlight">\(\K=\C\)</span> formulieren.
+In dieser Formulierung sagt der Satz aus, dass wir Nullstellen des Nennerpolynoms von echt gebrochenrationalen Funktionen aus dem Bruch herausziehen können, um somit den Grad des Nennerpolynoms zu verringern und dadurch einfachere Terme zu generieren.
+\begin{satz}[Partialbruchzerlegung]\label{satz:partialbruchzerlegung}
+Seien <span class="math notranslate nohighlight">\(p,q\in\K[x]\)</span> beliebige Polynome mit <span class="math notranslate nohighlight">\(q \nequiv \pmb{0}\)</span>.<br />
+Sei außerdem <span class="math notranslate nohighlight">\(x_1\in\K\)</span> eine <span class="math notranslate nohighlight">\(k\)</span>-fache Nullstelle von <span class="math notranslate nohighlight">\(q\)</span> mit <span class="math notranslate nohighlight">\(k\in\N\)</span>.
+Falls die rationale Funktion <span class="math notranslate nohighlight">\(r\in \K(x)\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  	r(x) \ \coloneqq \ \frac{p(x)}{q(x)} \ = \ \frac{p(x)}{\tilde{q}(x)\cdot(x-x_1)^k}
+  \end{equation*}\]</div>
+<p>echt gebrochenrational ist, d.h., <span class="math notranslate nohighlight">\(\deg(p) &lt; \deg(q)\)</span>, dann existiert ein eindeutig bestimmtes Polynom <span class="math notranslate nohighlight">\(\tilde{p} \in\K[x]\)</span> und Skalare <span class="math notranslate nohighlight">\(A_1,\ldots, A_k\in\K\)</span>, so dass die folgende Partialbruchzerlegung gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    r(x) \ = \ \frac{p(x)}{\tilde{q}(x)(x-x_1)^k} \ = \ \frac{\tilde p(x)}{\tilde{q}(x)} \, + \, \sum\limits_{j=1}^k \frac{A_j}{(x-x_1)^j} \qquad \text{ mit } \qquad \deg(\tilde p) &lt; \deg(\tilde{q}).
+  \end{equation*}\]</div>
+<p>\begin{proof}
+Da <span class="math notranslate nohighlight">\(x_1 \in \K\)</span> eine <span class="math notranslate nohighlight">\(k\)</span>-fache Nullstelle des Nennerpolynoms ist, kann man rekursiv die Vielfachheit dieser Nullstelle reduzieren, was wir im Folgenden für den ersten Schritt zeigen werden.
+Dazu müssen wir zeigen, dass<br />
+\begin{equation}\label{eq:partialbruchzerlegung}
+r(x) \ = \ \frac{p(x)}{q(x)} \ = \ \frac{p(x)}{\tilde{q}(x)(x-x_1)^k} \ \overset{!}{=} \ \frac{p_k(x)}{\tilde{q}(x)(x-x_1)^{k-1}} + \frac{A_k}{(x-x_1)^k},
+\end{equation}
+wobei <span class="math notranslate nohighlight">\(p_k\in\K[x]\)</span> ein eindeutig bestimmtes Polynom vom Grad <span class="math notranslate nohighlight">\(\deg(p_k) &lt; \deg(\tilde{q}) + k -1\)</span> ist und <span class="math notranslate nohighlight">\(A_k\in\K\)</span> ein eindeutig bestimmtes Skalar.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Durch Multiplikation beider Seiten der Gleichung \eqref{eq:partialbruchzerlegung} mit $(x-x_1)^k$ erhalten wir
+\begin{equation}\label{eq:partialbruchzerlegung_mult}
+\frac{p(x)}{\tilde{q}(x)} \ \overset{!}{=} \ \frac{p_k(x) (x-x_1)}{\tilde{q}(x)} + A_k.
+\end{equation}    
+Setzen wir nun $x=x_1$ in diese Gleichung ein, so ergibt sich für das unbekannte Skalar
+\begin{equation*}
+  A_k \ = \ \frac{p(x_1)}{\tilde{q}(x_1)}\in\K.
+\end{equation*}
+Stellen wir jedoch \eqref{eq:partialbruchzerlegung_mult} nach der unbekannten Funktion $p_k\in \K(x)$ um, so erhalten wir
+\begin{equation*}
+  p_k(x) \ = \ \frac{p(x)-A_k\tilde{q}(x)}{x-x_1} \ = \ \frac{p(x) \, - \, \frac{p(x_1)}{\tilde{q}(x_1)} \cdot \tilde{q}(x)}{x-x_1}.
+\end{equation*}
+Es wird klar, dass $p_k \in \K[x]$ ein Polynom ist, da das Zählerpolynom $(p(x) - A_k \tilde{q}(x)) \in \K[x]$ offensichtlich eine Nullstelle in $x = x_1$ besitzt und sich somit ein Linearfaktor $(x-x_1)$ abspalten lässt.
+
+Abschließend lässt sich noch Folgendes feststellen.
+Da nach Voraussetzung 
+\begin{equation*}
+\deg(p) \: &lt; \: \deg(q) \: = \: \deg(\tilde{q}) + k
+\end{equation*}
+galt, ist wegen Bemerkung \ref{rem:polynome} auch 
+\begin{equation*}
+\deg(p-A_k\tilde{q}) \: &lt; \: \deg(\tilde{q})+k.
+\end{equation*}
+Aus der Gestalt des Polynoms $p_k$ wissen wir daher, dass 
+\begin{equation*}
+\deg(p_k)&lt; \deg(q)+k-1
+\end{equation*}
+gilt.
+Wir haben also ein eindeutiges Skalar $A_k \in \K$ und ein eindeutiges Polynom $p_k \in \K[x]$ gefunden, so dass die Zerlegung in \eqref{eq:partialbruchzerlegung} gilt.
+Auf die übrigbleibende echt gebrochenrationale Funktion  können wir also rekursiv den obigen Ansatz anwenden.
+</pre></div>
+</div>
+<p>\end{proof}
+\end{satz}</p>
+<p>Wenn der zu Grunde liegende Körper <span class="math notranslate nohighlight">\(\K\)</span> explizit gewählt wird, so lässt sich die Aussage aus Satz \ref{satz:partialbruchzerlegung} noch weiter präzisieren, wie folgende Bemerkung festhält.
+\begin{remark}
+Im Folgenden wollen wir für die spezielle Wahl des Körpers <span class="math notranslate nohighlight">\(\K\)</span> erklären, wie sich eine echt gebrochenrationale Funktion in möglichst einfache Summanden durch mehrfache Anwendung der Partialbruchzerlegung zerlegen lässt.
+\begin{enumerate}
+\item Lässt sich das Nennerpolynom <span class="math notranslate nohighlight">\(q\)</span> der echt gebrochenrationalen Funktion <span class="math notranslate nohighlight">\(r\in\K(x)\)</span> in Satz \ref{satz:partialbruchzerlegung} in Linearfaktoren zerlegen (was für alle Polynome <span class="math notranslate nohighlight">\(q \in \C[x]\)</span> der Fall ist nach dem Fundamentalsatz der Algebra), d.h., es besitzt die Form</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  q(x) \ = \ \prod\limits_{i=1}^m(x-x_i)^{d_i},
+\end{equation*}\]</div>
+<p>und sind die Nullstellen <span class="math notranslate nohighlight">\(x_i \in \K, i=1,\ldots,m\)</span> der Vielfachheit <span class="math notranslate nohighlight">\(k_i\in\N\)</span> paarweise verschieden, dann führt mehrfache Anwendung der Partialbruchzerlegung in Satz \ref{satz:partialbruchzerlegung} zu folgender Formel:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d4fb3f5c-cc69-4a48-824a-5cdba3e370fe">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-d4fb3f5c-cc69-4a48-824a-5cdba3e370fe" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partialbruchzerlegung_vollständig}
+  \frac{p(x)}{q(x)} \ = \ \sum_{i=1}^{m} \sum_{j=1}^{k_i}\frac{A_j^{(i)}}{(x-x_i)^j}\,.
+\end{equation}\]</div>
+<p>Die Anzahl der zu bestimmenden Koeffizienten <span class="math notranslate nohighlight">\(A_j^{(i)}\)</span> ist in diesem Fall <span class="math notranslate nohighlight">\(\sum\limits_{i=1}^{m}k_i = \deg(q)\)</span>.</p>
+<p>\item  Betrachtet man lediglich reelle Polynome <span class="math notranslate nohighlight">\(p,q\in\R[x]\)</span>, so wissen wir aus dem Faktorisierungssatz \ref{satz:polynom_faktorisierung} für reelle Polynome, dass sich das Nennerpolynom in ein Produkt aus <span class="math notranslate nohighlight">\(\hat{k}\in\N\)</span> Linearfaktoren und <span class="math notranslate nohighlight">\(\hat{l}\in\N\)</span> quadratischen Polynomen mit je zwei echt komplexen Nullstellen faktorisieren lässt, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+q(x) \ = \ \prod\limits_{i=1}^{\hat{l}}(x^2 - 2a_ix+b_i) \: \cdot \: \prod\limits_{j=1}^{\hat{k}}(x-c_j).
+\end{equation*}\]</div>
+<p>Das bedeutet, dass <span class="math notranslate nohighlight">\(q \in \R[x]\)</span> insgesamt <span class="math notranslate nohighlight">\(m = \hat{k} + 2\hat{l}\)</span> Nullstellen besitzt.
+Wir nehmen an, dass <span class="math notranslate nohighlight">\(k\in\N, k \leq \hat{k}\)</span> reelle Nullstellen paarweise verschieden sind und außerdem noch <span class="math notranslate nohighlight">\(l\in\N, l \leq \hat{l}\)</span> Paare von paarweise verschiedenen, echt komplexen Nullstellen von <span class="math notranslate nohighlight">\(q\)</span> existieren.
+Seien nun <span class="math notranslate nohighlight">\(s_1, \ldots, s_k \in \N\)</span> die Vielfachheiten der reellen Nullstellen und <span class="math notranslate nohighlight">\(t_1,\ldots, t_l \in \N\)</span> die Vielfachheiten der komplexen Nullstellen.
+Dann können wir das Polynom <span class="math notranslate nohighlight">\(q\in\R[x]\)</span> schreiben als die folgende Faktorisierung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+q(x) \ = \ \prod\limits_{i=1}^{l}(x^2 - 2a_ix+b_i)^{t_i} \: \cdot \: \prod\limits_{j=1}^k(x-c_j)^{s_j}.
+\end{equation*}\]</div>
+<p>Die mehrfache Anwendung der Partialbruchzerlegung in Satz \ref{satz:partialbruchzerlegung} führt dann für reelle echt gebrochenrationale Funktionen zu folgender Formel:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bd37efa6-0f34-46b5-bdfd-54bd5d0cad82">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-bd37efa6-0f34-46b5-bdfd-54bd5d0cad82" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partialbruchzerlegung_vollständig_reell}
+  \frac{p(x)}{q(x)} \ = \ \sum_{i=1}^{k} \sum_{j=1}^{s_i}\frac{A_j^{(i)}}{(x-x_i)^j} \: + \: \sum_{i=1}^{l} \sum_{j=1}^{t_i} \frac{B_j^{(i)}x+C^{(i)}_j}{(x^2 - 2ax + b)^j}.
+\end{equation}\]</div>
+<p>Die Anzahl der zu bestimmenden Koeffizienten <span class="math notranslate nohighlight">\(A_j^{(i)}\)</span> für die Linearfaktoren ist in diesem Fall <span class="math notranslate nohighlight">\(\sum\limits_{i=1}^{k}s_i = \hat{k}\)</span>.
+Die Anzahl der zu bestimmenden Koeffizienten <span class="math notranslate nohighlight">\(B_j^{(i)}\)</span> und <span class="math notranslate nohighlight">\(C_j^{(i)}\)</span>  für die quadratischen Polynome ist in diesem Fall jeweils <span class="math notranslate nohighlight">\(\sum\limits_{i=1}^{l}t_i = \hat{l}\)</span>.
+Insgesamt müssen also <span class="math notranslate nohighlight">\(\hat{k} + 2\hat{l} = m = \deg(q)\)</span> unbekannte Koeffizienten bestimmt werden.</p>
+<p>\item Nach Multiplikation beider Seiten von \eqref{eq:partialbruchzerlegung_vollständig} und \eqref{eq:partialbruchzerlegung_vollständig_reell} mit dem Nennerpolynom <span class="math notranslate nohighlight">\(q\)</span> lassen sich die unbekannten Koeffizienten durch Koeffizientenvergleich der Polynome auf beiden Seiten berechnen.
+Dies lässt sich am einfachsten durch die Lösung eines linearen Gleichungssystems realisieren.
+\end{enumerate}
+\end{remark}</p>
+<p>Basierend auf den Beobachtungen oben können wir nun informell einen Algorithmus für die Partialbruchzerlegung einer rationalen Funktion angeben.
+\begin{algorithm}[Partialbruchzerlegung]\label{alg:partialbruchzerlegung}
+Sei zu Anfang eine rationale Funktion <span class="math notranslate nohighlight">\(r\in\K(x)\)</span> gegeben mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+r(x) \ \coloneqq \ \frac{p(x)}{q(x)}
+\end{equation*}\]</div>
+<p>mit zwei Polynomen <span class="math notranslate nohighlight">\(p,q \in \K[x]\)</span>.\[0.3cm]
+\textbf{1. Schritt: Überführung von <span class="math notranslate nohighlight">\(r\)</span> in eindeutige Darstellung}\[0.1cm]
+Ist die rationale Funktion <span class="math notranslate nohighlight">\(r\)</span> bereits echt gebrochenrational, d.h. <span class="math notranslate nohighlight">\(\deg(q) &gt; \deg(p)\)</span> so ist in diesem Schritt nichts zu tun.
+Andernfalls führen wir eine Polynomdivision durch um <span class="math notranslate nohighlight">\(r\)</span> in die eindeutige Darstellung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+r \ = \ g + \frac{\tilde{p}}{q}
+\end{equation*}\]</div>
+<p>zu überführen, wobei <span class="math notranslate nohighlight">\(g \in \K[x]\)</span> ein Polynom ist und <span class="math notranslate nohighlight">\(\deg(q) &gt; \deg(\tilde{p})\)</span> gilt.\[0.3cm]
+\textbf{2. Schritt: Bestimmung der Nullstellen des Nennerpolynoms}\[0.1cm]
+Wir bestimmen nun die Nullstellen des Nennerpolynoms <span class="math notranslate nohighlight">\(q\in\K[x]\)</span> analytisch, d.h., wir versuchen das Polynom in die in \eqref{eq:linearfaktorzerlegung} oder \eqref{eq:polynom_faktorisierung} beschriebene Form zu faktorisieren (in Abhängigkeit des Körpers <span class="math notranslate nohighlight">\(\K\)</span>).
+Ist eine analytische Bestimmung der Nullstellen von <span class="math notranslate nohighlight">\(q\)</span> nicht möglich, können numerische Methoden angewendet werden zur Approximation der Nullstellen.\[0.3cm]
+\textbf{3. Schritt: Bestimmung der Partialbruchzerlegung}\[0.1cm]
+Basierend auf den im 2. Schritt bestimmten Nullstellen von <span class="math notranslate nohighlight">\(q\)</span> kann eine Partialbruchzerlegung der Form \eqref{eq:partialbruchzerlegung_vollständig} oder \eqref{eq:partialbruchzerlegung_vollständig_reell} durchgeführt werden (in Abhängigkeit des Körpers <span class="math notranslate nohighlight">\(\K\)</span>).\[0.3cm]
+\textbf{4. Schritt: Aufstellung des linearen Gleichungssystems}\[0.1cm]
+Durch Multiplikation beider Seiten von \eqref{eq:partialbruchzerlegung_vollständig} oder \eqref{eq:partialbruchzerlegung_vollständig_reell} mit dem Nennerpolynom <span class="math notranslate nohighlight">\(q\in\K[x]\)</span> kann ein Koeffizientenvergleich durchgeführt werden, der zu einem linearen Gleichungssystem mit einer Koeffizientenmatrix vom Rang <span class="math notranslate nohighlight">\(\deg(q)\)</span> führt.\[0.3cm]
+\textbf{5. Schritt: Lösung des linearen Gleichungssystems}\[0.1cm]
+Die Lösung des entstehenden linearen Gleichungssystems kann entweder algebraisch oder numerisch erfolgen (basierend auf der Gestalt und Größe der Koeffizientenmatrix) und liefert die eindeutig bestimmten Koeffizienten <span class="math notranslate nohighlight">\(A^{(i)}_j, B^{(i)}_j, C^{(i)}_j \in \K\)</span> der Partialbruchzerlegung.</p>
+<p>Damit haben wir die rationale Funktion <span class="math notranslate nohighlight">\(r\in\K(x)\)</span> in eine Summe einfacherer Terme durch Partialbruchzerlegung überführt.
+\end{algorithm}</p>
+<p>Wir wollen den Algorithmus \ref{alg:partialbruchzerlegung} für die Partialbruchzerlegung an einem konkreten Beispiel anwenden und somit besser verdeutlichen.
+\begin{bsp}[Partialbruchzerlegung]
+Wir wollen eine Partialbruchzerlegung für die rationale Funktion <span class="math notranslate nohighlight">\(r\in\R(x)\)</span> durchführen mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+r(x) \ \coloneqq \ \frac{2x^3 + 4x}{x^4-2x^2+1}.
+\end{equation*}\]</div>
+<p>Hierzu wenden wir Algorithmus \ref{alg:partialbruchzerlegung} schrittweise an.\[0.3cm]
+\textbf{1. Schritt: Überführung von <span class="math notranslate nohighlight">\(r\)</span> in eindeutige Darstellung}\[0.1cm]
+Wir bemerken, dass die rationale Funktion <span class="math notranslate nohighlight">\(r \in \R(x)\)</span> bereits echt gebrochenrational ist und wir deshalb keine Polynomdivision durchführen müssen.\[0.3cm]
+\textbf{2. Schritt: Bestimmung der Nullstellen des Nennerpolynoms}\[0.1cm]
+Durch Ausprobieren stellen wir fest, dass das Nennerpolynom <span class="math notranslate nohighlight">\(q \in \R[x]\)</span> Nullstellen in <span class="math notranslate nohighlight">\(x_1 = 1\)</span> und <span class="math notranslate nohighlight">\(x_2 = -1\)</span> besitzt.
+Faktorisieren wir diese Nullstellen heraus erhalten wir den Ausdruck</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+q(x) \ = \ x^4-2x^2+1 \ = \ (x-1)\cdot (x+1) \cdot (x^2 - 1).
+\end{equation*}\]</div>
+<p>Die Nullstellen des übrig gebliebenen quadratischen Polynoms bestimmen wir durch Ausklammern (oder mittels <span class="math notranslate nohighlight">\(p\)</span>-<span class="math notranslate nohighlight">\(q\)</span>-Formel) und erhalten die folgende Faktorisierung von <span class="math notranslate nohighlight">\(q\)</span> in zwei Linearfaktoren der Vielfachheit zwei:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+q(x) \ = \ x^4-2x^2+1 \ = \ (x-1)\cdot (x+1) \cdot (x^2 - 1) \ = \ (x-1)^2\cdot (x+1)^2.
+\end{equation*}\]</div>
+<p>~\[-0.1cm]
+\textbf{3. Schritt: Bestimmung der Partialbruchzerlegung}\[0.1cm]
+Da wir Glück haben und sich das Nennerpolynom in Linearfaktoren über <span class="math notranslate nohighlight">\(\R\)</span> faktorisieren lässt wie in \eqref{eq:linearfaktorzerlegung}, können wir die allgemeine Darstellung der Partialbruchzerlegung in \eqref{eq:partialbruchzerlegung_vollständig} anwenden:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-20c6773f-e769-4442-ace8-707c48512d0e">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-20c6773f-e769-4442-ace8-707c48512d0e" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:partialbruchzerlegung_beispiel}
+   \frac{2x^3 + 4x}{(x+1)^2(x-1)^2} \ = \ \sum_{i=1}^{2} \sum_{j=1}^{2}\frac{A_j^{(i)}}{(x-x_i)^j} \ = \ \frac{A_1^{(1)}}{x+1} \, + \, \frac{A_2^{(1)}}{(x+1)^2} \, + \, \frac{A_1^{(2)}}{x-1} \, + \, \frac{A_2^{(2)}}{(x-1)^2}.
+\end{equation}\]</div>
+<p>~\[-0.1cm]
+\textbf{4. Schritt: Aufstellung des linearen Gleichungssystems}\[0.1cm]
+Durch Multiplikation beider Seiten der Partialbruchzerlegung in \eqref{eq:partialbruchzerlegung_beispiel} mit dem Nennerpolynom <span class="math notranslate nohighlight">\(q(x) = (x-1)^2(x+1)^2\)</span> ergibt dann:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    2x^3 + 4x \ &amp;= \ A_1^{(1)} (x+1)(x-1)^2 + A_2^{(1)} (x-1)^2 + A_1^{(2)} (x+1)^2(x-1) + A_2^{(2)}(x+1)^2\\
+              \ &amp;= \ \left(A_1^{(1)} + A_1^{(2)}\right) x^3 + \left(-A_1^{(1)}+A_2^{(1)}+A_1^{(2)}+A_2^{(2)}\right)x^2\\
+              &amp; \quad + \left(-A_1^{(1)}-2A_2^{(1)}-A_1^{(2)}+2A_2^{(2)}\right)x + A_1^{(1)} + A_2^{(1)} + A_1^{(2)} + A_2^{(2)}\,.
+  \end{align*}\]</div>
+<p>Durch Koeffizientenvergleich erhalten wir das folgende lineare Gleichungssystem</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \left(\begin{array}{rrrr}%
+        1&amp;0&amp;1&amp;0\\
+        -1&amp;1&amp;1&amp;1\\
+        -1&amp;-2&amp;-1&amp;2\\
+        1&amp;1&amp;-1&amp;1
+        \end{array}\right)\left(\begin{array}{r}%
+      A_1^{(1)}\\
+      A_2^{(1)}\\
+      A_1^{(2)}\\
+      A_2^{(2)}
+        \end{array}\right) = \left(\begin{array}{r}%
+        2\\0\\4\\0
+    \end{array}\right).
+  \end{equation*}\]</div>
+<p>~\[-0.1cm]
+\textbf{5. Schritt: Lösung des linearen Gleichungssystems}\[0.1cm]
+Mittels Gauß’schem Eliminationsverfahren können wir die eindeutige Lösung für die Koeffizienten bestimmen als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  A_1^{(1)}=1, \quad A_2^{(1)}=-\frac32, \quad A_1^{(2)}=1, \quad A_2^{(2)}=\frac32.
+  \end{equation*}\]</div>
+<p>~\[0.3cm]
+Insgesamt erhalten wir also die folgende Partialbruchzerlegung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  \frac{2x^3 + 4x}{(x+1)^2(x-1)^2} \ = \ \frac{1}{x+1} \, + \, \frac{-\frac32}{(x+1)^2} \, + \, \frac{1}{x-1} \, + \, \frac{\frac32}{(x-1)^2}.
+  \end{equation*}\]</div>
+<p>\end{bsp}</p>
+<p>\subsection{Stammfunktionen rationaler Funktionen}
+Mit Hilfe des Algorithmus \ref{alg:partialbruchzerlegung} für die Partialbruchzerlegung können wir also beliebige rationale Funktionen in eine Summe aus wesentlich einfacheren Termen zerlegen.
+Nun müssen wir nur noch festhalten, wie die Stammfunktionen dieser einfachen Summanden aussehen, damit wir rationale Funktionen integrieren können.
+Hierzu hält die folgende Bemerkung die relevanten Ergebnisse fest.
+\begin{remark}\label{bem:stammfunktion}
+Wir erwarten als Resultat der Partialbruchzerlegung im Allgemeinen zwei verschiedene Arten von Summanden.
+Für diese zwei Arten werden wir im Folgenden Stammfunktionen angeben, so dass sich die Stammfunktion von beliebigen rationalen Funktionen bestimmen lässt.
+Auf eine explizite Herleitung der Stammfunktionen wird verzichtet, da sich die Resultate durch die Rechenregeln der Differentiation direkt verifizieren lassen.</p>
+<p>\begin{enumerate}
+\item Die erste Art von Summanden der Partialbruchzerlegung ist von der Gestalt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+s(x) \ = \ \frac{A}{(x-a)^j}, \quad j\in\N, A\in\K
+\end{equation*}\]</div>
+<p>und entsteht durch das Ausklammern von Linearfaktoren aus dem Nennerpolynom <span class="math notranslate nohighlight">\(q \in \K[x]\)</span> für eine Nullstelle <span class="math notranslate nohighlight">\(a \in \K\)</span>.
+Da das Skalar <span class="math notranslate nohighlight">\(A\in\K\)</span> nicht von der Variable <span class="math notranslate nohighlight">\(x\)</span> abhängt, lässt es sich linear aus dem Integral herausziehen und somit können wir die Stammfunktion direkt angeben als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \int s(x) \, \mathrm{d}x \ = \ A\int\frac1{(x-a)^j}\, \mathrm{d}x  \ = \ \begin{cases}\ A \cdot \ln\vert x-a\vert \quad &amp;\text{für}\ j=1\,,\\ \ \frac{-A}{(j-1)(x-a)^{j-1}}\quad &amp;\text{für}\ j&gt;1\,.\end{cases}
+  \end{equation*}\]</div>
+<p>\item Die zweite Art von Summanden der Partialbruchzerlegung ist von der Gestalt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+s(x) \ = \  \frac{Bx+C}{(x^2 - 2ax + b)^j}, \quad j\in\N, \ A,B\in\K
+\end{equation*}\]</div>
+<p>und entsteht im Fall von reellen rationalen Funktionen durch das Ausklammern von quadratischen Polynomen aus dem Nennerpolynom <span class="math notranslate nohighlight">\(q \in \R[x]\)</span>, die je ein Paar von echt komplexe Nullstellen besitzen (da in diesem Fall <span class="math notranslate nohighlight">\(a^2&lt;b\)</span> gilt).
+Um eine Stammfunktion für <span class="math notranslate nohighlight">\(s\in\R(x)\)</span> zu bestimmen formen wir die Funktion zuerst geeignet um, so dass wir im Zähler ein Vielfaches des linearen Terms <span class="math notranslate nohighlight">\((x-a)\)</span> erhalten:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0b6b91fe-6927-4898-884b-9c28cea221be">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-0b6b91fe-6927-4898-884b-9c28cea221be" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:stammfunktion_umformung}
+\frac{Bx+C}{(x^2 - 2ax + b)^j} \ = \ \frac{B\cdot(x-a)}{(x^2 - 2ax + b)^j} + \frac{C + B\cdot a}{(x^2 - 2ax + b)^j}, \quad j\in\N, \ B, C\in\K
+\end{equation}\]</div>
+<p>Für den linken Summanden in \eqref{eq:stammfunktion_umformung} können wir folgende Stammfunktion angeben:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+   B \int \frac{x-a}{(x^2-2ax+b)^j} \, \mathrm{d}x \ = \ \begin{cases}\ \frac B 2\ln(x^2 -2ax + b)\,,\quad &amp;\text{für}\ j=1\\
+      \ -\frac{B}{2(j-1)(x^2-2ax+b)^{j-1}}\,,\quad &amp;\text{für} \ j&gt;1\,.\end{cases}
+\end{equation*}\]</div>
+<p>Für den rechten Summanden in \eqref{eq:stammfunktion_umformung} können wir folgende Stammfunktion rekursiv angeben:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+    I_j \ &amp;\coloneq \ \underbrace{(C+B\cdot a)}_{\eqqcolon D} \int \frac1{(x^2-2ax+b)^j} \, \mathrm{d}x \\
+    &amp;= \ \begin{cases} \ \frac{D}{\sqrt{b-a^2}} \cdot \arctan\left(\frac{x-a}{\sqrt{b-a^2}}\right)\,,&amp; \quad \text{für} \ j=1,\\
+    \ D\cdot \left(\frac{x-a}{2(b-a^2)(j-1)(x^2-2ax + b)^{j-1}} + \frac{2j-3}{2(b-a^2)(j-1)} I_{j-1}\right)\,,&amp; \quad \text{für} \ j&gt;1.\end{cases}
+ \end{split}
+  \end{equation*}\]</div>
+<p>\end{enumerate}
+\end{remark}</p>
+<p>Glücklicherweise sind moderne Computerprogramme in der Lage die oben beschriebenen Stammfunktionen analytisch zu bestimmen.
+Abschließend wollen wir im folgenden Beispiel die Stammfunktion einer einfachen rationalen Funktion mit Hilfe der Aussagen aus Bemerkung \ref{bem:stammfunktion} ausrechnen.
+\begin{bsp}[Integration einer rationalen Funktion]
+Sei <span class="math notranslate nohighlight">\(s\in\R(x)\)</span> eine rationale Funktion, deren Nennerpolynom quadratisch ist mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+s(x) \ \coloneqq \ \frac{x+2}{x^2-4x+7}.
+\end{equation*}\]</div>
+<p>Zur Bestimmung einer Stammfunktion von <span class="math notranslate nohighlight">\(s\)</span> sehen wir ein, dass die Koeffizienten <span class="math notranslate nohighlight">\(a=2\)</span> und <span class="math notranslate nohighlight">\(b=7\)</span> im Nennerpolynom sind.
+Außerdem ist <span class="math notranslate nohighlight">\(B=1, C=2\)</span> und <span class="math notranslate nohighlight">\(j=1\)</span>.
+Mit diesen Informationen formen wir den Zähler wie in \eqref{eq:stammfunktion_umformung} um und erhalten als Stammfunktion</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \int\frac{x+2}{x^2-4x+7}\, \mathrm{d}x \ &amp;= \ \int\frac{x-2}{x^2-4x+7}\, \mathrm{d}x \, + \, 4\int \frac1{x^2-4x+7}\, \mathrm{d}x\\
+                                &amp;= \frac12\ln(x^2-4x+7) \, + \, \frac4{\sqrt3}\arctan\left(\frac{x-2}{\sqrt3}\right)\,.
+  \end{align*}\]</div>
+<p>\end{bsp}</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./integrale"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="substitution.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">4.2. </span>Substitutionsregel</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../ableitungen/ableitungen.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">5. </span>Differentiation von Funktionen mehrerer Veränderlicher</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

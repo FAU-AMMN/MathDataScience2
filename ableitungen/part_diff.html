@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.1. Partielle Differenzierbarkeit &#8212; Mathematik für Data Science 2</title>
+    <title>5.1. Partielle Differenzierbarkeit &#8212; Mathematik für Data Science 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.2. Differentialoperatoren erster Ordnung" href="first_order.html" />
-    <link rel="prev" title="4. Differentiation von Funktionen mehrerer Veränderlicher" href="ableitungen.html" />
+    <link rel="next" title="5.2. Differentialoperatoren erster Ordnung" href="first_order.html" />
+    <link rel="prev" title="5. Differentiation von Funktionen mehrerer Veränderlicher" href="ableitungen.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -240,46 +240,124 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../integrale/integrale.html">
+   4. Integralrechnung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/part_int.html">
+     4.1. Partielle Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/substitution.html">
+     4.2. Substitutionsregel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/rat_func.html">
+     4.3. Integration rationaler Funktionen
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="ableitungen.html">
-   4. Differentiation von Funktionen mehrerer Veränderlicher
+   5. Differentiation von Funktionen mehrerer Veränderlicher
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.1. Partielle Differenzierbarkeit
+     5.1. Partielle Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="first_order.html">
-     4.2. Differentialoperatoren erster Ordnung
+     5.2. Differentialoperatoren erster Ordnung
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="higher_order.html">
-     4.3. Differentialoperatoren höherer Ordnung
+     5.3. Differentialoperatoren höherer Ordnung
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tot_diff.html">
-     4.4. Totale Differenzierbarkeit
+     5.4. Totale Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="taylor.html">
-     4.5. Taylor-Formel
+     5.5. Taylor-Formel
     </a>
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../optimierung/optimierung.html">
+   6. Optimierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/unrestringiert.html">
+     6.1. Unrestringierte Optimierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/nebenbedingungen.html">
+     6.2. Optimierung unter Nebenbedingungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ode/ode.html">
+   7. Gewöhnliche Differentialgleichungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/tdv.html">
+     7.1. Trennung der Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/vdk.html">
+     7.2. Variation der Konstanten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
-   5. Bibliography
+   Bibliography
   </a>
  </li>
 </ul>
@@ -357,7 +435,7 @@
               <div>
                 
   <div class="section" id="partielle-differenzierbarkeit">
-<h1><span class="section-number">4.1. </span>Partielle Differenzierbarkeit<a class="headerlink" href="#partielle-differenzierbarkeit" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.1. </span>Partielle Differenzierbarkeit<a class="headerlink" href="#partielle-differenzierbarkeit" title="Permalink to this headline">¶</a></h1>
 <p>Um den Begriff der Ableitung auf Funktionen mehrerer Variablen zu übertragen, betrachtet man zunächst deren Änderungsverhalten entlang einzelner Koordinatenrichtungen.
 Wir fixieren also einen Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> und betrachten die Funktion</p>
 <div class="amsmath math notranslate nohighlight">
@@ -367,7 +445,7 @@ Wir fixieren also einen Punkt <span class="math notranslate nohighlight">\(x\in 
 <p>Anschaulich gesprochen halten wir alle Variablen, bis auf die <span class="math notranslate nohighlight">\(i\)</span>-te fest und erhalten somit eine eindimensionale Funktion.
 Dies erlaubt es uns den Ableitungsbegriff auf die schon bekannte Definition für Funktionen in einer Veränderlichen herunterzubrechen, was zum Begriff der partiellen Differenzierbarkeit führt.</p>
 <div class="proof definition admonition" id="def:partielle_diffbarkeit">
-<p class="admonition-title"><span class="caption-number">Definition 4.1 </span> (Partielle Differnzierbarkeit)</p>
+<p class="admonition-title"><span class="caption-number">Definition 5.1 </span> (Partielle Differnzierbarkeit)</p>
 <div class="definition-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U\subset \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> eine Funktion.</p>
 <p><em>i)</em> Wir nennen die Funktion <span class="math notranslate nohighlight">\(f\)</span> <em>(lokal) partiell differenzierbar</em> im Punkt <span class="math notranslate nohighlight">\(x\in U\)</span> in die <span class="math notranslate nohighlight">\(i\)</span>-te Koordinatenrichtung falls folgender Grenzwert existiert,</p>
@@ -391,7 +469,7 @@ Im Grenzwert für <span class="math notranslate nohighlight">\(h\rightarrow 0\)<
 Das Symbol <span class="math notranslate nohighlight">\(\partial\)</span> ist hierbei eine stilisierte Version des Buchstaben d (manchmal auch del ausgesprochen).</p>
 <p>Im folgenden Beispiel berechnen wir die partielle Ableitung der Euklidischen Norm im <span class="math notranslate nohighlight">\(\R^n\)</span>.</p>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 4.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 5.1 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Wir betrachten die Abbildung</p>
 <div class="amsmath math notranslate nohighlight">
@@ -414,11 +492,11 @@ ist, da wir für <span class="math notranslate nohighlight">\(x\neq 0\)</span> m
 \ &amp;= \ \frac{1}{2}\left(x_i^2+\sum_{j\neq i} x_j^2\right)^{-1/2}\cdot 2x_i \ = \ \frac{x_i}{\norm{x}{}_2}.
 \end{align*}\]</div>
 </div>
-</div><p>Der Begriff der partiellen Differenzierbarkeit in Definition <a class="reference internal" href="#def:partielle_diffbarkeit">Definition 4.1</a> ist der schwächste Ableitungsbegriff für Funktionen in mehreren Veränderlichen.
+</div><p>Der Begriff der partiellen Differenzierbarkeit in Definition <a class="reference internal" href="#def:partielle_diffbarkeit">Definition 5.1</a> ist der schwächste Ableitungsbegriff für Funktionen in mehreren Veränderlichen.
 Anders als im eindimensionalen Fall gilt beispielsweise nicht, dass aus der partiellen Differenzierbarkeit einer Funktion schon folgt, dass diese stetig ist.
 Das soll uns das folgende Beispiel vor Augen führen.</p>
 <div class="proof example admonition" id="bsp:partiell_diffbar_nicht_stetig">
-<p class="admonition-title"><span class="caption-number">Example 4.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 5.2 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Wir betrachten im Folgenden eine Funktion auf <span class="math notranslate nohighlight">\(\R^n\)</span> mit <span class="math notranslate nohighlight">\(n\geq 2\)</span> die zeigt, dass aus partieller Differenzierbarkeit keine Stetigkeit folgt.
 Dazu definieren wir</p>
@@ -499,7 +577,7 @@ f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}}
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">4. </span>Differentiation von Funktionen mehrerer Veränderlicher</p>
+                <p class="prevnext-title"><span class="section-number">5. </span>Differentiation von Funktionen mehrerer Veränderlicher</p>
             </div>
         </a>
     </div>
@@ -507,7 +585,7 @@ f(a_k) \ = \ \frac{(1/k)^n}{(\sqrt{n}/k)^n} \ \equiv \ \left( \frac{1}{\sqrt{n}}
         <a class="right-next" href="first_order.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">4.2. </span>Differentialoperatoren erster Ordnung</p>
+                <p class="prevnext-title"><span class="section-number">5.2. </span>Differentialoperatoren erster Ordnung</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

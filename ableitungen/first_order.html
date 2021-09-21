@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.2. Differentialoperatoren erster Ordnung &#8212; Mathematik für Data Science 2</title>
+    <title>5.2. Differentialoperatoren erster Ordnung &#8212; Mathematik für Data Science 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.3. Differentialoperatoren höherer Ordnung" href="higher_order.html" />
-    <link rel="prev" title="4.1. Partielle Differenzierbarkeit" href="part_diff.html" />
+    <link rel="next" title="5.3. Differentialoperatoren höherer Ordnung" href="higher_order.html" />
+    <link rel="prev" title="5.1. Partielle Differenzierbarkeit" href="part_diff.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -240,46 +240,124 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../integrale/integrale.html">
+   4. Integralrechnung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/part_int.html">
+     4.1. Partielle Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/substitution.html">
+     4.2. Substitutionsregel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/rat_func.html">
+     4.3. Integration rationaler Funktionen
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="ableitungen.html">
-   4. Differentiation von Funktionen mehrerer Veränderlicher
+   5. Differentiation von Funktionen mehrerer Veränderlicher
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="part_diff.html">
-     4.1. Partielle Differenzierbarkeit
+     5.1. Partielle Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.2. Differentialoperatoren erster Ordnung
+     5.2. Differentialoperatoren erster Ordnung
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="higher_order.html">
-     4.3. Differentialoperatoren höherer Ordnung
+     5.3. Differentialoperatoren höherer Ordnung
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tot_diff.html">
-     4.4. Totale Differenzierbarkeit
+     5.4. Totale Differenzierbarkeit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="taylor.html">
-     4.5. Taylor-Formel
+     5.5. Taylor-Formel
     </a>
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../optimierung/optimierung.html">
+   6. Optimierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/unrestringiert.html">
+     6.1. Unrestringierte Optimierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/nebenbedingungen.html">
+     6.2. Optimierung unter Nebenbedingungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ode/ode.html">
+   7. Gewöhnliche Differentialgleichungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/tdv.html">
+     7.1. Trennung der Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/vdk.html">
+     7.2. Variation der Konstanten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
-   5. Bibliography
+   Bibliography
   </a>
  </li>
 </ul>
@@ -357,12 +435,12 @@
               <div>
                 
   <div class="section" id="differentialoperatoren-erster-ordnung">
-<h1><span class="section-number">4.2. </span>Differentialoperatoren erster Ordnung<a class="headerlink" href="#differentialoperatoren-erster-ordnung" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.2. </span>Differentialoperatoren erster Ordnung<a class="headerlink" href="#differentialoperatoren-erster-ordnung" title="Permalink to this headline">¶</a></h1>
 <p>In diesem Abschnitt wollen wir einige wichtige Operatoren einführen, welche direkt auf dem Konzept der partiellen Differenzierbarkeit von Funktionen basieren.
 Insbesondere werden wir den Gradienten, die Divergenz und die Rotation als Differentialoperatoren erster Ordnung kennenlernen, für deren Definition man nur erste partielle Ableitungen verwendet, und die eine zentrale Rolle in der Mathematik und Physik spielen.</p>
 <p>Der erste Operator, den wir diskutieren wollen, ist der sogenannte <em>Gradient</em>, der alle partiellen Ableitungen einer Funktionen in einem Vektor sammelt.</p>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 4.2 </span> (Gradient)</p>
+<p class="admonition-title"><span class="caption-number">Definition 5.2 </span> (Gradient)</p>
 <div class="definition-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine Teilmenge.
 Für eine partiell differenzierbare Funktion <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> heißt der Spaltenvektor</p>
@@ -375,7 +453,7 @@ Für eine partiell differenzierbare Funktion <span class="math notranslate nohig
 </div>
 </div><p>Wir wollen den Gradienten einer Funktion für ein bereits bekanntes Beispiel im Folgenden berechnen.</p>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 4.3 </span> (Gradient der Euklidischen Norm)</p>
+<p class="admonition-title"><span class="caption-number">Example 5.3 </span> (Gradient der Euklidischen Norm)</p>
 <div class="example-content section" id="proof-content">
 <p>Für die Euklidische Norm aus Beispiel \ref{bsp:norm} hat der Gradient für alle <span class="math notranslate nohighlight">\(x\neq 0\)</span> die Form</p>
 <div class="amsmath math notranslate nohighlight">
@@ -387,7 +465,7 @@ Für eine partiell differenzierbare Funktion <span class="math notranslate nohig
 </div><p>Viele Rechenregeln der Differentiation für Funktionen mit nur einer Veränderlichen lassen sich problemlos auf Funktionen mit mehreren Veränderlichen generalisieren.
 Mit den bisherigen Definitionen können wir bereits die Produktregel für die Ableitung auf den Gradienten einer Funktionen verallgemeinern.</p>
 <div class="proof lemma admonition" id="lemma-2">
-<p class="admonition-title"><span class="caption-number">Lemma 4.1 </span> (Produktregel für den Gradienten)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 5.1 </span> (Produktregel für den Gradienten)</p>
 <div class="lemma-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge und seien <span class="math notranslate nohighlight">\(f,g:U\rightarrow\R\)</span> zwei partiell differenzierbare Funktion.
 Dann gilt die folgende Produktregel für den Gradienten des Produkts der Funktionen</p>
@@ -417,7 +495,7 @@ Wir schreiben den Gradienten des Produkts der beiden Funktionen zunächst mittel
 \end{equation*}\]</div>
 </div>
 <div class="proof remark admonition" id="remark-3">
-<p class="admonition-title"><span class="caption-number">Remark 4.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 5.1 </span></p>
 <div class="remark-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge.
 Folgende Interpretationen des Gradienten-Operators sind ebenfalls geläufig.</p>
@@ -451,7 +529,7 @@ Für ein partiell differenzierbares Vektorfeld <span class="math notranslate noh
 \end{equation*}\]</div>
 <p>\end{definition}</p>
 <div class="proof remark admonition" id="remark-4">
-<p class="admonition-title"><span class="caption-number">Remark 4.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 5.2 </span></p>
 <div class="remark-content section" id="proof-content">
 <p>Die Divergenz eines Vektorfeldes <span class="math notranslate nohighlight">\(v \colon U \rightarrow \R^n\)</span> besitzt eine einfache physikalische Interpretation.
 Es misst anschaulich den Fluss des Vektorfeldes im Punkt <span class="math notranslate nohighlight">\(x\)</span>.
@@ -467,7 +545,7 @@ Die Menge an Fluss, die in den umschließenden <span class="math notranslate noh
 </div>
 </div><p>Im Folgenden wollen wir die Divergenz für ein dreidimensionales Vektorfeld konkret ausrechnen und bezüglich ihres Vorzeichens das Vektorfeld charakterisieren.</p>
 <div class="proof example admonition" id="bsp:divergenz">
-<p class="admonition-title"><span class="caption-number">Example 4.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 5.4 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(v \colon \R^3 \rightarrow \R^3\)</span> ein Vektorfeld mit</p>
 <div class="amsmath math notranslate nohighlight">
@@ -493,7 +571,7 @@ Für <span class="math notranslate nohighlight">\(x &gt; -3\)</span> ist jeder P
 </div>
 </div><p>Auch für die Divergenz lässt sich eine Produktregel für das Produkt einer reellwertigen Funktion und eines Vektorfeldes herleiten.</p>
 <div class="proof lemma admonition" id="lemma-6">
-<p class="admonition-title"><span class="caption-number">Lemma 4.2 </span> (Produktregel für die Divergenz)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 5.2 </span> (Produktregel für die Divergenz)</p>
 <div class="lemma-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U \subset \R^n\)</span> eine offene Teilmenge und es sei <span class="math notranslate nohighlight">\(v:U\rightarrow \R^n\)</span> ein partiell differenzierbares Vektorfeld (d.h. jede Komponente <span class="math notranslate nohighlight">\(v_i\)</span> von <span class="math notranslate nohighlight">\(v\)</span> ist partiell differenzierbar) und <span class="math notranslate nohighlight">\(f:U\rightarrow \R\)</span> eine partiell differenzierbare Funktion.
 Dann gilt die folgende Produktregel für die Divergenz:</p>
@@ -508,7 +586,7 @@ Dann gilt die folgende Produktregel für die Divergenz:</p>
 <p>Der letzte Differentialoperator erster Ordnung, den wir einführen wollen, ist a priori nur im Fall <span class="math notranslate nohighlight">\(U\subset\R^3\)</span> definiert ist und spielt insbesondere in physikalischen Anwendungen eine wichtige Rolle.
 Der sogenannte Rotations-Operator hat seinen Namen dadurch erhalten, dass er bei Anwendung auf ein Strömungsfeld für jeden Ort das Doppelte der Winkelgeschwindigkeit angibt, mit der sich ein mitschwimmender Körper dreht.</p>
 <div class="proof definition admonition" id="definition-7">
-<p class="admonition-title"><span class="caption-number">Definition 4.3 </span> (Rotation)</p>
+<p class="admonition-title"><span class="caption-number">Definition 5.3 </span> (Rotation)</p>
 <div class="definition-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(U\subset\R^3\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(v:U\rightarrow\R^3\)</span> ein partiell differenzierbares Vektorfeld (d.h. jede Komponente <span class="math notranslate nohighlight">\(v_i\)</span> von <span class="math notranslate nohighlight">\(v\)</span> ist partiell differenzierbar).
 Dann heißt  der folgende Operator</p>
@@ -527,9 +605,9 @@ Er bildet also ein Vektorfeld wieder auf ein Vektorfeld ab.</p>
 \rot v \ = \ \nabla \times v.
 \end{align*}\]</div>
 </div>
-</div><p>Wir wollen die Rotation für das Vektorfeld aus Beispiel <a class="reference internal" href="#bsp:divergenz">Example 4.4</a> nachrechnen.</p>
+</div><p>Wir wollen die Rotation für das Vektorfeld aus Beispiel <a class="reference internal" href="#bsp:divergenz">Example 5.4</a> nachrechnen.</p>
 <div class="proof example admonition" id="example-8">
-<p class="admonition-title"><span class="caption-number">Example 4.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 5.5 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(v \colon \R^3 \rightarrow \R^3\)</span> ein Vektorfeld mit</p>
 <div class="amsmath math notranslate nohighlight">
@@ -593,7 +671,7 @@ x^2\\
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">4.1. </span>Partielle Differenzierbarkeit</p>
+                <p class="prevnext-title"><span class="section-number">5.1. </span>Partielle Differenzierbarkeit</p>
             </div>
         </a>
     </div>
@@ -601,7 +679,7 @@ x^2\\
         <a class="right-next" href="higher_order.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">4.3. </span>Differentialoperatoren höherer Ordnung</p>
+                <p class="prevnext-title"><span class="section-number">5.3. </span>Differentialoperatoren höherer Ordnung</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

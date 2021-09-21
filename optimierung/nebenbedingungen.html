@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6.2. Optimierung unter Nebenbedingungen &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Gewöhnliche Differentialgleichungen" href="../ode/ode.html" />
+    <link rel="prev" title="6.1. Unrestringierte Optimierung" href="unrestringiert.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../eigenwerte/eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../integrale/integrale.html">
+   4. Integralrechnung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/part_int.html">
+     4.1. Partielle Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/substitution.html">
+     4.2. Substitutionsregel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/rat_func.html">
+     4.3. Integration rationaler Funktionen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   5. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     5.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     5.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     5.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     5.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     5.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="optimierung.html">
+   6. Optimierung
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="unrestringiert.html">
+     6.1. Unrestringierte Optimierung
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.2. Optimierung unter Nebenbedingungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ode/ode.html">
+   7. Gewöhnliche Differentialgleichungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/tdv.html">
+     7.1. Trennung der Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/vdk.html">
+     7.2. Variation der Konstanten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/optimierung/nebenbedingungen.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="optimierung-unter-nebenbedingungen">
+<h1><span class="section-number">6.2. </span>Optimierung unter Nebenbedingungen<a class="headerlink" href="#optimierung-unter-nebenbedingungen" title="Permalink to this headline">¶</a></h1>
+<p>Bisher haben wir uns nur mit unrestringierten Optimierungsproblemen beschäftigt und für diese Optimalitätsbedingungen hergeleitet.
+Viele reale Aufgabenstellungen erfordern jedoch die Optimierung einer Zielfunktion unter Nebenbedingungen.
+Daher wollen wir uns im Folgenden mit solchen Problemen beschäftigen und eine Möglichkeit aufzeigen stationäre Punkte unter Nebenbedingungen zu identifizieren.</p>
+<p>Wir beschränken uns hierbei auf Optimierungsprobleme, bei denen die Nebenbedingung eine Gleichheit erfüllen müssen, lassen jedoch keine Ungleichungen zu, d.h., für die Indexmenge <span class="math notranslate nohighlight">\(\mathcal{I}\)</span> der Ungleichungen im allgemeinen Optimierungsproblem \eqref{eq:optimierungsproblem_allgemein} gilt <span class="math notranslate nohighlight">\(\mathcal{I} = \emptyset\)</span>.
+Der Grund für diese Einschränkung ist, dass die zugehörige Theorie der sogenannten \emph{Karush-Kuhn-Tucker (KKT)} Bedingungen für Optimierungsprobleme mit Ungleichungsnebenbedingungen den Rahmen dieser Vorlesung sprengen würde.
+Interessierte Leser*innen seien auf \cite[Kapitel 12.3]{nocedal_2006} verwiesen.</p>
+<p>Wir beginnen direkt mit der wichtigen geometrischen Beobachtung, dass die Gradienten einer Zielfunktion und der zugehörigen Nebenbedingung in einem Minimierer parallel ausgerichtet sein müssen.
+\begin{satz}[Lagrange-Multiplikatoren]\label{satz:lagrange_multiplikator}
+Seien <span class="math notranslate nohighlight">\(F,c \colon \Omega \rightarrow \R\)</span> zwei stetig partiell differenzierbare Funktionen und sei</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+M \, \coloneqq \, \lbrace x \in \Omega\colon c(x) = 0 \rbrace \subset \Omega
+\end{equation*}\]</div>
+<p>eine Untermannigfaltigkeit (z.B. eine Kurve in <span class="math notranslate nohighlight">\(\Omega\)</span>), die alle Nullstellen von <span class="math notranslate nohighlight">\(c\)</span> enthält.</p>
+<p>Zu jeder Lösung <span class="math notranslate nohighlight">\(x^*\in M\)</span> des Minimierungsproblems</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\min_{x\in \Omega} \, F(x) \qquad \text{ mit } \qquad c(x) \ = \ 0
+\end{equation*}\]</div>
+<p>und <span class="math notranslate nohighlight">\(\nabla c(x^*) \neq 0\)</span> existiert ein \emph{Lagrange-Multiplikator} <span class="math notranslate nohighlight">\(\lambda^* \in \R\)</span>, so dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\nabla F (x^*) + \lambda^* \nabla c(x^*) \ = \ 0.
+\end{equation*}\]</div>
+<p>Das heißt die beiden Gradienten <span class="math notranslate nohighlight">\(\nabla F\)</span> und <span class="math notranslate nohighlight">\(\nabla c\)</span> sind parallel in <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span>.
+\end{satz}
+\begin{proof}
+Sei <span class="math notranslate nohighlight">\(x^* \in M\)</span> eine Lösung des Minimierungsproblems mit Nebenbedingung.
+Wir sehen zunächst ein, dass der Gradient <span class="math notranslate nohighlight">\(\nabla c(x^*)\)</span> senkrecht zu allen Tangentialvektoren der Untermannigfaltigkeit <span class="math notranslate nohighlight">\(M\)</span> steht, da sich <span class="math notranslate nohighlight">\(c\)</span> entlang aller Tangentialrichtungen von <span class="math notranslate nohighlight">\(M\)</span> nicht ändert.
+Wir schreiben nun den Gradienten der Zielfunktion <span class="math notranslate nohighlight">\(\nabla F\)</span> mittels orthogonaler Projektion (vgl. Kapitel \ref{s:orthonormalisierung}) als eindeutige Summe zweier Vektoren <span class="math notranslate nohighlight">\(v_\perp \in \R^n\)</span> und <span class="math notranslate nohighlight">\(v_\parallel \in \R^n\)</span>, die jeweils orthogonal und parallel zu <span class="math notranslate nohighlight">\(\nabla c\)</span> sind mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\nabla F(x^*) \ = \ v_\perp + v_\parallel.
+\end{equation*}\]</div>
+<p>Wir führen nun den Beweis über einen Widerspruch.
+Nehmen wir an, dass <span class="math notranslate nohighlight">\(\nabla F\)</span> und <span class="math notranslate nohighlight">\(\nabla c\)</span> nicht parallel sind, dann folgt, dass <span class="math notranslate nohighlight">\(v_\perp \neq 0\)</span> ist.
+Betrachten wir nun die Richtungsableitung von <span class="math notranslate nohighlight">\(F(x^*)\)</span> in Richtung des Vektors <span class="math notranslate nohighlight">\(-v_\perp \in \R^n\)</span>, dann gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+D_{-v_\perp} F(x^*) \ &amp;= \ \langle \nabla F(x^*), -v_\perp \rangle \ = \ -\langle v_\perp + v_\parallel, v_\perp \rangle \\
+&amp;= \ -\langle v_\perp,  v_\perp \rangle - \underbrace{\langle v_\parallel, v_\perp \rangle}_{=0} \ = \ -\langle v_\perp,  v_\perp \rangle \ &lt; \ 0.
+\end{split}
+\end{equation*}\]</div>
+<p>Das bedeutet, dass wir den Funktionswert der Zielfunktion <span class="math notranslate nohighlight">\(F\)</span> noch weiter verkleinern können, indem wir entlang der Untermannigfaltigkeit <span class="math notranslate nohighlight">\(M\)</span> in Richtung <span class="math notranslate nohighlight">\(-v_\perp \in \R^n\)</span> gehen.
+Dies ist jedoch ein Widerspruch zur Optimalität des Punkts <span class="math notranslate nohighlight">\(x^* \in M\)</span>.
+Also müssen <span class="math notranslate nohighlight">\(\nabla F\)</span> und <span class="math notranslate nohighlight">\(\nabla c\)</span> parallel sein und es gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\nabla F(x^*) \ = \ -\lambda \cdot \nabla c(x^*).
+\end{equation*}\]</div>
+<p>Der Lagrange-Multiplikator <span class="math notranslate nohighlight">\(\lambda \in \R\)</span> taucht in der Formel auf, da die Gradienten parallel aber nicht gleich lang sein müssen.
+\end{proof}</p>
+<p>Die folgenden Bemerkungen erklären wie aus Satz \ref{satz:lagrange_multiplikator} das sogenannte \emph{Verfahren der Lagrange-Multiplikatoren} gewonnen werden kann, welches beispielsweise in der Physik bei Anwendungen der klassischen Mechanik eine Schlüsselrolle spielt.
+\begin{remark}
+Wir wollen folgende Beobachtungen festhalten.
+\begin{enumerate}
+\item Die notwendige Bedingung, dass die Gradienten der Zielfunktion <span class="math notranslate nohighlight">\(F\)</span> und der Nebenbedingung <span class="math notranslate nohighlight">\(c\)</span> in einem Minimierer <span class="math notranslate nohighlight">\(x^* \in M\)</span> parallel ausgerichtet sein müssen, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\nabla F (x^*) + \lambda^* \nabla c(x^*) \ = \ 0
+\end{equation*}\]</div>
+<p>lässt sich für das Verfahren der Lagrange-Multiplikatoren ausnutzen.
+Hierzu definieren wir zunächst eine neue Funktion <span class="math notranslate nohighlight">\(\Lambda \colon \Omega \times \R \rightarrow \R\)</span>, genannt \emph{Lagrange-Funktion}, die eine zusätzliche Variable <span class="math notranslate nohighlight">\(\lambda \in \R\)</span> für die Nebenbedingung besitzt, als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Lambda(x, \lambda) \ \coloneqq \ F(x) + \lambda \cdot c(x).
+\end{equation*}\]</div>
+<p>Betrachtet man nämlich nun stationäre Punkte <span class="math notranslate nohighlight">\((x^*, \lambda^*) \in \Omega \times \R\)</span> von <span class="math notranslate nohighlight">\(\Lambda\)</span>, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\nabla_x \Lambda(x^*, \lambda^*) \, = \, \nabla F (x^*) + \lambda^* \nabla c(x^*) \, \overset{!}{=} \, 0, \qquad \nabla_\lambda \Lambda(x^*, \lambda*) \, = \, c(x^*) \, \overset{!}{=} \, 0,
+\end{equation*}\]</div>
+<p>so erfüllen diese Punkte automatisch die notwendigen Kriterien für einen Minimierer des ursprünglichen Optimierungsproblems unter Nebenbedingungen.
+\item Das oben beschriebene Verfahren der Lagrange-Multiplikatoren lässt sich auch auf Optimierungsprobleme mit mehreren Nebenbedingungen <span class="math notranslate nohighlight">\(c_i \colon \Omega \rightarrow \R\)</span> für <span class="math notranslate nohighlight">\(1 \leq i \leq m\)</span> verallgemeinern.
+Hierzu wird die Lagrange-Funktion als eine Linearkombination der Zielfunktion und den <span class="math notranslate nohighlight">\(m\in\N\)</span> Nebenbedingungen geschrieben als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Lambda(x, \lambda) \ = \ F(x) + \sum_{i=1}^m \lambda_i c_i(x).
+\end{equation*}\]</div>
+<p>Zur Bestimmung stationärer Punkte geht man nun analog zum Fall mit nur einer Nebenbedingung vor.
+\end{enumerate}
+\end{remark}</p>
+<p>\begin{bsp}
+Wir wollen im Folgenden eine Zielfunktion <span class="math notranslate nohighlight">\(F \colon \R^2 \rightarrow \R\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F(x,y) \ \coloneqq \ x + y
+\end{equation*}\]</div>
+<p>minimieren unter der Nebenbedingung, dass der Lösungsvektor <span class="math notranslate nohighlight">\(x^* = (x,y)^T \in \R^2\)</span> normiert sein soll, d.h., <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>.
+Dies führt also zu einem Optimierungsproblem mit Nebenbedingung der folgenden Gestalt:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fa2bd944-1937-4a92-9bcb-b352be1e03d5">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-fa2bd944-1937-4a92-9bcb-b352be1e03d5" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:lagrange_bsp}
+\min_{(x,y)\in \R^2} \, F(x,y) \, = \,  x+y \qquad \text{ mit } \qquad c(x,y) \, = \, x^2+y^2 - 1 \, = \, 0.
+\end{equation}\]</div>
+<p>Wir identifizieren zunächst Punkte in denen der Gradient von <span class="math notranslate nohighlight">\(c(x,y)\)</span> verschwindet, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\nabla c(x,y) \ = \ (2x,2y)^T \ \overset{!}{=} \ 0.
+\end{equation*}\]</div>
+<p>Dies kann nur im Ursprung <span class="math notranslate nohighlight">\((0,0)^T\)</span> passieren.
+Da dieser Punkt nicht die Nebenbedingung erfüllt, müssen wir ihn also bei den folgenden Berechnungen nicht explizit beachten.</p>
+<p>Um das Verfahren der Lagrange-Multiplikatoren anwenden zu können, stellen wir zunächst die Lagrange-Funktion auf:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Lambda(x,y,\lambda) \ \coloneqq \ F(x,y) + \lambda \cdot c(x,y) \ = \ x+y + \lambda \cdot (x^2+y^2 - 1).
+\end{equation*}\]</div>
+<p>Nach dem Satz \ref{satz:lagrange_multiplikator} müssen wir für potentielle Lösungen des Optimierungsproblems \eqref{eq:lagrange_bsp} nur Extremstellen der Lagrange-Funktion berechnen, d.h., wir betrachten stationäre Punkte von <span class="math notranslate nohighlight">\(\Lambda\)</span> durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\nabla \Lambda(x,y,\lambda) \ = \ 
+\begin{pmatrix}
+\partial_x F(x,y) + \lambda \partial_x c(x,y)\\
+\partial_y F(x,y) + \lambda \partial_y c(x,y)\\
+c(x,y)
+\end{pmatrix} 
+\ = \
+\begin{pmatrix}
+1 + \lambda \cdot 2x\\
+1 + \lambda \cdot 2y\\
+x^2 + y^2 - 1
+\end{pmatrix} 
+\ \overset{!}{=} \ 
+\begin{pmatrix}
+0 \\
+0 \\
+0
+\end{pmatrix}
+\in \R^3.
+\end{equation*}\]</div>
+<p>Obwohl es sich nicht um lineares Gleichungssystem handelt können wir dennoch eine Lösung für die drei Gleichungen herleiten.
+Wenn wir annehmen, dass <span class="math notranslate nohighlight">\(\lambda \neq 0\)</span> gilt, so können wir die ersten beiden Gleichungen jeweils nach <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> umstellen und erhalten so, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+x \ = \ - \frac{1}{2\lambda} \ = \ y.
+\end{equation*}\]</div>
+<p>Setzen wir diese Identitäten in die dritte Gleichung können wir für den Lagrange-Multiplikator folgende Bedingung herleiten</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+x^2 + y^2 - 1 \ = \ \frac{1}{4\lambda^2} + \frac{1}{4\lambda^2} - 1 \ = \ \frac{1}{2\lambda^2} - 1 \ = \ 0 \quad \Leftrightarrow \quad 2 \lambda^2 \ = \ 1.
+\end{equation*}\]</div>
+<p>Wir erhalten für <span class="math notranslate nohighlight">\(\lambda\)</span> also die beiden möglichen Lösungen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\lambda_1 \ = \ \frac{1}{\sqrt{2}}, \quad \lambda_2 \ = \ -\frac{1}{\sqrt{2}}.
+\end{equation*}\]</div>
+<p>Setzen wir diese beiden Lagrange-Multiplikatoren wieder in die beiden ersten Optimalitätsbedingungen ein erhalten wir als stationäre Punkte der Lagrange-Funktion:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+x^*_1 \ = \ (\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2})^T, \quad x^*_2 \ = \ (-\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2})^T.
+\end{equation*}\]</div>
+<p>Durch Einsetzen der Punkte in die Zielfunktion <span class="math notranslate nohighlight">\(F\)</span> sehen wir, dass es sich bei <span class="math notranslate nohighlight">\(x_1^*\)</span> um ein Maximum des Optimierungsproblems handelt und bei <span class="math notranslate nohighlight">\(x_2^*\)</span> um ein Minimum, da</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F(x_1^*) \ = \ \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} \ = \ \sqrt{2}, \qquad F(x_2^*) \ = \ -\frac{\sqrt{2}}{2} -\frac{\sqrt{2}}{2} \ = \ -\sqrt{2}.
+\end{equation*}\]</div>
+<p>\end{bsp}</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./optimierung"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="unrestringiert.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">6.1. </span>Unrestringierte Optimierung</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../ode/ode.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">7. </span>Gewöhnliche Differentialgleichungen</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

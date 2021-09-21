@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -241,8 +241,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ableitungen/ableitungen.html">
-   4. Differentiation von Funktionen mehrerer Veränderlicher
+  <a class="reference internal" href="../integrale/integrale.html">
+   4. Integralrechnung
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -251,35 +251,113 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/part_diff.html">
-     4.1. Partielle Differenzierbarkeit
+    <a class="reference internal" href="../integrale/part_int.html">
+     4.1. Partielle Integration
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/first_order.html">
-     4.2. Differentialoperatoren erster Ordnung
+    <a class="reference internal" href="../integrale/substitution.html">
+     4.2. Substitutionsregel
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/higher_order.html">
-     4.3. Differentialoperatoren höherer Ordnung
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/tot_diff.html">
-     4.4. Totale Differenzierbarkeit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/taylor.html">
-     4.5. Taylor-Formel
+    <a class="reference internal" href="../integrale/rat_func.html">
+     4.3. Integration rationaler Funktionen
     </a>
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   5. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     5.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     5.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     5.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     5.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     5.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../optimierung/optimierung.html">
+   6. Optimierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/unrestringiert.html">
+     6.1. Unrestringierte Optimierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/nebenbedingungen.html">
+     6.2. Optimierung unter Nebenbedingungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ode/ode.html">
+   7. Gewöhnliche Differentialgleichungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/tdv.html">
+     7.1. Trennung der Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/vdk.html">
+     7.2. Variation der Konstanten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
-   5. Bibliography
+   Bibliography
   </a>
  </li>
 </ul>
@@ -358,38 +436,44 @@
                 
   <div class="section" id="trigonalisierbarkeit">
 <h1><span class="section-number">1.5. </span>Trigonalisierbarkeit<a class="headerlink" href="#trigonalisierbarkeit" title="Permalink to this headline">¶</a></h1>
-<p>Aus Kapitel \ref{s:diagonalisierbarkeit} wissen wir nun, dass ein Endomorphismus genau dann diagonalisierbar ist, wenn das zugehörige charakteristische Polynom in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> zerfällt und die algebraischen und geometrischen Vielfachheiten der Eigenwerte übereinstimmen.
-Das Beispiel \ref{bsp:diagonalisierung_gegenbeispiele} hat uns jedoch gezeigt, dass es sehr wohl Matrizen gibt deren charakteristisches Polynom zerfällt, jedoch nicht diagonalisierbar sind, da die Vielfachheiten der Eigenwerte nicht übereinstimmen.
+<p>Aus Kapitel <a class="reference internal" href="diag.html#s-diagonalisierbarkeit"><span class="std std-ref">Diagonalisierbarkeit</span></a> wissen wir nun, dass ein Endomorphismus genau dann diagonalisierbar ist, wenn das zugehörige charakteristische Polynom in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> zerfällt und die algebraischen und geometrischen Vielfachheiten der Eigenwerte übereinstimmen.
+Das Beispiel <a class="reference internal" href="diag.html#bsp:diagonalisierung_gegenbeispiele">Example 1.4</a> hat uns jedoch gezeigt, dass es sehr wohl Matrizen gibt deren charakteristisches Polynom zerfällt, jedoch nicht diagonalisierbar sind, da die Vielfachheiten der Eigenwerte nicht übereinstimmen.
 Glücklicherweise werden wir im Folgenden jedoch feststellen, dass Endomorphismen, deren charakteristisches Polynom in Linearfaktoren zerfällt, zumindest ähnlich zu einer oberen, rechten Dreiecksmatrix sind.</p>
-<p>\begin{definition}[Trigonalisierbarkeit]
-Wir definieren den Begriff der \emph{Trigonalisierbarkeit} im Folgenden sowohl für Endomorphismen als auch für Matrizen.
-\begin{enumerate}
-\item Ein Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> von <span class="math notranslate nohighlight">\(V\)</span> heißt \emph{trigonalisierbar}, wenn es eine Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span> gibt, so dass die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F)\)</span> von <span class="math notranslate nohighlight">\(F\)</span> bezüglich <span class="math notranslate nohighlight">\(B\)</span> eine obere, rechte Dreiecksmatrix ist.
-\item Eine Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n\times n}\)</span> heißt \emph{trigonalisierbar}, wenn sie ähnlich zu einer oberen, rechten Dreiecksmatrix ist.
-\end{enumerate}
-\end{definition}</p>
-<p>Es ist klar, dass wenn eine Matrix <span class="math notranslate nohighlight">\(A\)</span> trigonalisierbar ist, so stehen auf der oberen, rechten Dreiecksmatrix. zu der <span class="math notranslate nohighlight">\(A\)</span> ähnlich ist, die Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span>.
-Der folgende Satz gibt uns ein Kriterium mit dessen Hilfe wir direkt entscheiden können, ob ein Endomorphismus trigonalisierbar ist oder nicht.
-\begin{satz}[Trigonalisierungssatz]\label{satz:trigonalisierbarkeit}
-Für einen Endormorphismus <span class="math notranslate nohighlight">\(F\)</span> eines <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span> sind folgende Bedingungen äquivalent:
-\begin{enumerate}[i)]
-\item F ist trigonalisierbar
-\item Das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> zerfällt in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>, d.h.,</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 1.11 </span> (Trigonalisierbarkeit)</p>
+<div class="definition-content section" id="proof-content">
+<p>Wir definieren den Begriff der <em>Trigonalisierbarkeit</em> im Folgenden sowohl für Endomorphismen als auch für Matrizen.</p>
+<ol class="simple">
+<li><p>Ein Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> von <span class="math notranslate nohighlight">\(V\)</span> heißt <em>trigonalisierbar</em>, wenn es eine Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span> gibt, so dass die darstellende Matrix <span class="math notranslate nohighlight">\(M_B(F)\)</span> von <span class="math notranslate nohighlight">\(F\)</span> bezüglich <span class="math notranslate nohighlight">\(B\)</span> eine obere, rechte Dreiecksmatrix ist.</p></li>
+<li><p>Eine Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n\times n}\)</span> heißt <em>trigonalisierbar</em>, wenn sie ähnlich zu einer oberen, rechten Dreiecksmatrix ist.</p></li>
+</ol>
+</div>
+</div><p>Es ist klar, dass wenn eine Matrix <span class="math notranslate nohighlight">\(A\)</span> trigonalisierbar ist, so stehen auf der oberen, rechten Dreiecksmatrix. zu der <span class="math notranslate nohighlight">\(A\)</span> ähnlich ist, die Eigenwerte von <span class="math notranslate nohighlight">\(A\)</span>.
+Der folgende Satz gibt uns ein Kriterium mit dessen Hilfe wir direkt entscheiden können, ob ein Endomorphismus trigonalisierbar ist oder nicht.</p>
+<div class="proof theorem admonition" id="satz:trigonalisierbarkeit">
+<p class="admonition-title"><span class="caption-number">Theorem 1.7 </span> (Trigonalisierungssatz)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Für einen Endormorphismus <span class="math notranslate nohighlight">\(F\)</span> eines <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraums <span class="math notranslate nohighlight">\(V\)</span> sind folgende Bedingungen äquivalent:</p>
+<p>i) F ist trigonalisierbar
+ii) Das charakteristische Polynom <span class="math notranslate nohighlight">\(P_F\)</span> zerfällt in Linearfaktoren über <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>, d.h.,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 P_F(t) \ = \ \pm (t - \lambda_1) \cdot \ldots \cdot (t - \lambda_n).
 \end{equation*}\]</div>
-<p>\end{enumerate}
-\end{satz}
-\begin{proof}
-Siehe \cite[Satz 4.4.3]{fischer}
-\end{proof}</p>
-<p>\begin{cor}
-Der Fundamentalsatz der Algebra \cite[Theorem 1.3.9]{fischer} besagt, dass jedes Polynom über <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> in Linearfaktoren zerfällt.
-Hieraus folgt schon, dass jeder Endomorphismus von einem endlich-dimensionalen <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>-Vektorraum trigonalisierbar ist.
-\end{cor}</p>
-<p>\begin{algorithm}[Trigonalisierung einer Matrix]\label{alg:trigonalisierung}
-Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine Matrix deren charakteristisches Polynom in Linearfaktoren zerfällt, d.h.,</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Siehe Satz 4.4.3 <span id="id1">[<a class="reference internal" href="../references.html#id3">Fis05</a>]</span>.</p>
+</div>
+<div class="proof corollary admonition" id="corollary-2">
+<p class="admonition-title"><span class="caption-number">Corollary 1.2 </span></p>
+<div class="corollary-content section" id="proof-content">
+<p>Der Fundamentalsatz der Algebra Theorem 1.3.9 <span id="id2">[<a class="reference internal" href="../references.html#id3">Fis05</a>]</span> besagt, dass jedes Polynom über <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> in Linearfaktoren zerfällt.
+Hieraus folgt schon, dass jeder Endomorphismus von einem endlich-dimensionalen <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>-Vektorraum trigonalisierbar ist.</p>
+</div>
+</div><div class="proof algorithm admonition" id="alg:trigonalisierung">
+<p class="admonition-title"><span class="caption-number">Algorithm 1.1 </span> (Trigonalisierung einer Matrix)</p>
+<div class="algorithm-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine Matrix deren charakteristisches Polynom in Linearfaktoren zerfällt, d.h.,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 P_A(t) \ = \ (t - \lambda_1)\cdot \ldots \cdot (t - \lambda_n),
@@ -401,10 +485,9 @@ Wir versuchen nun eine Matrix <span class="math notranslate nohighlight">\(S \in
 D \ = \ S A S^{-1},
 \end{equation*}\]</div>
 <p>wobei <span class="math notranslate nohighlight">\(D \in \mathbb{K}^{n \times n}\)</span> eine obere, rechte Dreiecksmatrix ist.
-Für diese Trigonalisierung gehen wir folgt vor:\[0.5cm]
-\newpage
-\noindent\textbf{1. Schritt:}\[0.3cm]
-Wir betrachten zunächst den Vektorraum <span class="math notranslate nohighlight">\(W_1 \coloneqq \mathbb{K}^n\)</span> mit der kanonischen Einheitsbasis <span class="math notranslate nohighlight">\(B_1\)</span> und den Endomorphismus <span class="math notranslate nohighlight">\(A_1 \coloneqq A\)</span>.
+Für diese Trigonalisierung gehen wir folgt vor:</p>
+<p><strong>1. Schritt:</strong></p>
+<p>Wir betrachten zunächst den Vektorraum <span class="math notranslate nohighlight">\(W_1 \coloneqq \mathbb{K}^n\)</span> mit der kanonischen Einheitsbasis <span class="math notranslate nohighlight">\(B_1\)</span> und den Endomorphismus <span class="math notranslate nohighlight">\(A_1 \coloneqq A\)</span>.
 Zunächst berechnen wir den zugehörigen Eigenvektor <span class="math notranslate nohighlight">\(v_1 \in \mathbb{K}^n\)</span> zum Eigenvektor <span class="math notranslate nohighlight">\(\lambda_1\)</span> von <span class="math notranslate nohighlight">\(A\)</span>.
 Nach dem Basisaustauschlemma \cite[Lemma 1.5.4]{fischer} können wir ein Element der kanonischen Einheitsbasis durch <span class="math notranslate nohighlight">\(v_1\)</span> austauschen, so dass wir immer noch eine Basis erhalten.
 Das heißt, wir bestimmen einen Index <span class="math notranslate nohighlight">\(1 \leq j_1 \leq n\)</span>, so dass</p>
@@ -430,15 +513,14 @@ A_2 \ \coloneqq \ S_1 \cdot A \cdot S_1^{-1} \ = \
 0 &amp; &amp; &amp;
 \end{pmatrix}.
 \end{equation*}\]</div>
-<p>~\[0.1cm]
-\textbf{2. Schritt:}\[0.3cm]
-Nun betrachten wir <span class="math notranslate nohighlight">\(W_2 \subset \mathbb{K}^n\)</span> mit der Basis</p>
+<p><strong>2. Schritt:</strong></p>
+<p>Nun betrachten wir <span class="math notranslate nohighlight">\(W_2 \subset \mathbb{K}^n\)</span> mit der Basis</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 B_2' \ \coloneqq \  (e_1, \ldots, \widehat{e_{j_1}}, \ldots, e_n)
 \end{equation*}\]</div>
 <p>und dem Endomorphismus <span class="math notranslate nohighlight">\(A_2' \colon W_2 \rightarrow W_2\)</span>.
-Das charakteristische Polynom von <span class="math notranslate nohighlight">\(A_2'\)</span> ist wegen der Determinantenregel für Blockmatrizen in Lemma \ref{lem:det_blockmatrix} gegeben durch</p>
+Das charakteristische Polynom von <span class="math notranslate nohighlight">\(A_2'\)</span> ist wegen der Determinantenregel für Blockmatrizen in Lemma <a class="reference internal" href="prelim.html#lem:det_blockmatrix">Lemma 1.3</a> gegeben durch</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 P_{A_2'}(t) \ = \ (t - \lambda_2) \cdot \ldots \cdot (t - \lambda_n).
@@ -489,10 +571,12 @@ Insgesamt erhalten wir also eine zu <span class="math notranslate nohighlight">\
 \[\begin{equation*}
 D \ \coloneqq \ A_n \ = \ S_{n-1} \cdot A \cdot S_{n-1}^{-1}.
 \end{equation*}\]</div>
-<p>\end{algorithm}</p>
-<p>Das folgende Beispiel zeigt, wie Algorithmus \ref{alg:trigonalisierung} angewendet werden kann, um eine Matrix, deren charakteristisches Polynom in Linearfaktoren zerfällt, zu trigonalisieren.
-\begin{bsp}\label{bsp:trigonalisierung}
-Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{3 \times 3}\)</span> eine quadratische Matrix, die wir trigonalisieren wollen, mit</p>
+</div>
+</div><p>Das folgende Beispiel zeigt, wie Algorithmus <a class="reference internal" href="#alg:trigonalisierung">Algorithm 1.1</a> angewendet werden kann, um eine Matrix, deren charakteristisches Polynom in Linearfaktoren zerfällt, zu trigonalisieren.</p>
+<div class="proof example admonition" id="bsp:trigonalisierung">
+<p class="admonition-title"><span class="caption-number">Example 1.6 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{3 \times 3}\)</span> eine quadratische Matrix, die wir trigonalisieren wollen, mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 A \ \coloneqq \
@@ -508,7 +592,7 @@ A \ \coloneqq \
 P_A(t) \ = \ -(t-2)^3,
 \end{equation*}\]</div>
 <p>also ist <span class="math notranslate nohighlight">\(\lambda = 2\)</span> der einzige Eigenwert von <span class="math notranslate nohighlight">\(A\)</span> mit algebraischer Vielfachheit <span class="math notranslate nohighlight">\(3\)</span>.
-Das charakteristische Polynom zerfällt offensichtlich in Linearfaktoren und nach Satz \ref{satz:trigonalisierbarkeit} wissen wir folglich, dass <span class="math notranslate nohighlight">\(A\)</span> trigonalisierbar ist.</p>
+Das charakteristische Polynom zerfällt offensichtlich in Linearfaktoren und nach Satz <a class="reference internal" href="#satz:trigonalisierbarkeit">Theorem 1.7</a> wissen wir folglich, dass <span class="math notranslate nohighlight">\(A\)</span> trigonalisierbar ist.</p>
 <p>Wir betrachten den Eigenraum <span class="math notranslate nohighlight">\(\Eig(A; 2)\)</span> von <span class="math notranslate nohighlight">\(A\)</span> durch Bestimmung von <span class="math notranslate nohighlight">\(\Kern(A - 2\cdot I_3)\)</span> als</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -527,12 +611,12 @@ Das charakteristische Polynom zerfällt offensichtlich in Linearfaktoren und nac
 \end{equation*}\]</div>
 <p>Wir sehen direkt, dass die letzten beiden Zeilen der Matrix <span class="math notranslate nohighlight">\((A - 2 \cdot I_3)\)</span> linear abhängig sind und sie daher den Rang <span class="math notranslate nohighlight">\(2\)</span> hat.
 Daraus folgt mit der Dimensionsformel von Bild und Kern \cite[Satz 2.2.4]{fischer}, dass der Kern von <span class="math notranslate nohighlight">\(A-2 \cdot I_3\)</span> die Dimension <span class="math notranslate nohighlight">\(1\)</span> besitzt und daher der Eigenwert <span class="math notranslate nohighlight">\(\lambda = 2\)</span> die geometrische Vielfachheit <span class="math notranslate nohighlight">\(1\)</span> hat.
-Da geometrische und algebraische Vielfachheit des Eigenwerts nicht übereinstimmen wissen wir mit Satz \ref{satz:diagonalisierbarkeit}, dass die Matrix <span class="math notranslate nohighlight">\(A\)</span> nicht diagonalisierbar ist.
+Da geometrische und algebraische Vielfachheit des Eigenwerts nicht übereinstimmen wissen wir mit Satz <a class="reference internal" href="diag.html#satz:diagonalisierbarkeit">Theorem 1.6</a>, dass die Matrix <span class="math notranslate nohighlight">\(A\)</span> nicht diagonalisierbar ist.
 Konkret können wir den Eigenvektor <span class="math notranslate nohighlight">\(v_1 \in \mathbb{R}^3\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda = 2\)</span> angeben als
 <span class="math notranslate nohighlight">\(v_1 = (1, -1, 1)^T\)</span>.</p>
-<p>Wir wenden nun den Algorithmus \ref{alg:trigonalisierung} an, um die Matrix <span class="math notranslate nohighlight">\(A\)</span> zu trigonalisieren.\[0.5cm]
-\textbf{1. Schritt:}\[0.3cm]
-Wir wählen den Index <span class="math notranslate nohighlight">\(j_1 = 1\)</span>, d.h., wir tauschen den Einheitsvektor <span class="math notranslate nohighlight">\(e_1\)</span> durch <span class="math notranslate nohighlight">\(v_1\)</span> aus und erhalten <span class="math notranslate nohighlight">\(B_2\)</span> als neue Basis von <span class="math notranslate nohighlight">\(W_1 = \mathbb{R}^3\)</span> mit</p>
+<p>Wir wenden nun den Algorithmus <a class="reference internal" href="#alg:trigonalisierung">Algorithm 1.1</a> an, um die Matrix <span class="math notranslate nohighlight">\(A\)</span> zu trigonalisieren.</p>
+<p><strong>1. Schritt:</strong></p>
+<p>Wir wählen den Index <span class="math notranslate nohighlight">\(j_1 = 1\)</span>, d.h., wir tauschen den Einheitsvektor <span class="math notranslate nohighlight">\(e_1\)</span> durch <span class="math notranslate nohighlight">\(v_1\)</span> aus und erhalten <span class="math notranslate nohighlight">\(B_2\)</span> als neue Basis von <span class="math notranslate nohighlight">\(W_1 = \mathbb{R}^3\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 B_2 \ \coloneqq \ (v_1, e_2, e_3).
@@ -564,9 +648,8 @@ A_2 \ \coloneqq S_1 \cdot A \cdot S_1^{-1} \ = \
 0 &amp; -2 &amp; 0
 \end{pmatrix}.
 \end{equation*}\]</div>
-<p>\[0.1cm]
-\textbf{2. Schritt:}\[0.3cm]
-Wir betrachten den verbleibenden Block <span class="math notranslate nohighlight">\(A_2'\)</span> von <span class="math notranslate nohighlight">\(A_2\)</span>, der noch nicht in oberer, rechter Dreiecksgestalt ist mit</p>
+<p><strong>2. Schritt:</strong></p>
+<p>Wir betrachten den verbleibenden Block <span class="math notranslate nohighlight">\(A_2'\)</span> von <span class="math notranslate nohighlight">\(A_2\)</span>, der noch nicht in oberer, rechter Dreiecksgestalt ist mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 A_2' \ \coloneqq \ 
@@ -629,10 +712,9 @@ A_3 \ \coloneqq S_2 \cdot A \cdot S_2^{-1} \ = \
 0 &amp; 0 &amp; 2
 \end{pmatrix} \ = \ D.
 \end{equation*}\]</div>
-<p>\end{bsp}</p>
-<p>Wie wir in Beispiel \ref{bsp:trigonalisierung} gesehen haben, können wir eine trigonalisierbare Matrix zwar in eine obere, rechte Dreiecksform überführen, jedoch gibt es viele Möglichkeiten dies zu tun, abhängig von der Wahl der auszutauschenden Basiselemente in Algorithmus \ref{alg:trigonalisierung}.
+</div>
+</div><p>Wie wir in <a class="reference internal" href="#bsp:trigonalisierung">Example 1.6</a> gesehen haben, können wir eine trigonalisierbare Matrix zwar in eine obere, rechte Dreiecksform überführen, jedoch gibt es viele Möglichkeiten dies zu tun, abhängig von der Wahl der auszutauschenden Basiselemente in Algorithmus <a class="reference internal" href="#alg:trigonalisierung">Algorithm 1.1</a>.
 Da Mathematiker im Allgemeinen allergisch auf Wahlfreiheit reagieren, wollen wir uns im Folgenden mit der Bestimmung eines kanonischen Repräsentanten für eine ähnliche obere, rechte Dreiecksmatrix beschäftigen, die besonders schöne Eigenschaft hat.</p>
-<p>\section{Die Jordansche Normalform}</p>
 </div>
 
     <script type="text/x-thebe-config">

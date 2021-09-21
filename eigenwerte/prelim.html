@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -241,8 +241,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ableitungen/ableitungen.html">
-   4. Differentiation von Funktionen mehrerer Veränderlicher
+  <a class="reference internal" href="../integrale/integrale.html">
+   4. Integralrechnung
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -251,35 +251,113 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/part_diff.html">
-     4.1. Partielle Differenzierbarkeit
+    <a class="reference internal" href="../integrale/part_int.html">
+     4.1. Partielle Integration
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/first_order.html">
-     4.2. Differentialoperatoren erster Ordnung
+    <a class="reference internal" href="../integrale/substitution.html">
+     4.2. Substitutionsregel
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/higher_order.html">
-     4.3. Differentialoperatoren höherer Ordnung
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/tot_diff.html">
-     4.4. Totale Differenzierbarkeit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/taylor.html">
-     4.5. Taylor-Formel
+    <a class="reference internal" href="../integrale/rat_func.html">
+     4.3. Integration rationaler Funktionen
     </a>
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   5. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     5.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     5.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     5.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     5.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     5.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../optimierung/optimierung.html">
+   6. Optimierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/unrestringiert.html">
+     6.1. Unrestringierte Optimierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/nebenbedingungen.html">
+     6.2. Optimierung unter Nebenbedingungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ode/ode.html">
+   7. Gewöhnliche Differentialgleichungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/tdv.html">
+     7.1. Trennung der Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/vdk.html">
+     7.2. Variation der Konstanten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
-   5. Bibliography
+   Bibliography
   </a>
  </li>
 </ul>
@@ -386,7 +464,7 @@ Sei nun <span class="math notranslate nohighlight">\(v \in V\)</span> ein Vektor
 \[\begin{equation*}
 v \ = \ \sum_{i=1}^n x_i b_i \ = \ \sum_{i=1}^n y_i c_i.
 \end{equation*}\]</div>
-<p>Die Koordinaten <span class="math notranslate nohighlight">\((x_1, \ldots, x_n) \in \mathbb{K}^n\)</span> und <span class="math notranslate nohighlight">\((y_1, \ldots, y_n) \in \mathbb{K}^n\)</span> sind eindeutig bestimmt und es existiert eine reguläre Matrix <span class="math notranslate nohighlight">\(T_C^B \in \GL(n; \mathbb{K})\)</span>, genannt \emph{Transformationsmatrix}, die einen Basiswechsel von <span class="math notranslate nohighlight">\(B\)</span> nach <span class="math notranslate nohighlight">\(C\)</span> wie folgt realisiert:</p>
+<p>Die Koordinaten <span class="math notranslate nohighlight">\((x_1, \ldots, x_n) \in \mathbb{K}^n\)</span> und <span class="math notranslate nohighlight">\((y_1, \ldots, y_n) \in \mathbb{K}^n\)</span> sind eindeutig bestimmt und es existiert eine reguläre Matrix <span class="math notranslate nohighlight">\(T_C^B \in \GL(n; \mathbb{K})\)</span>, genannt <em>Transformationsmatrix</em>, die einen Basiswechsel von <span class="math notranslate nohighlight">\(B\)</span> nach <span class="math notranslate nohighlight">\(C\)</span> wie folgt realisiert:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{pmatrix}
@@ -420,14 +498,14 @@ y_n
 \end{equation*}\]</div>
 </div>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Siehe \cite[Bemerkung 2.6.2 und 2.6.3]{fischer}.</p>
+<p>Proof. Siehe Bemerkung 2.6.2 und 2.6.3 in <span id="id1">[<a class="reference internal" href="../references.html#id3">Fis05</a>]</span>.</p>
 </div>
-<p>Bevor wir uns dem eigentlich Studium von Eigenwerten und Eigenvektoren widmen, wollen wir noch einige grundlegende Begriffe aus der Linearen Algebra wiederholen, die aus <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> bereits bekannt sein sollten.
+<p>Bevor wir uns dem eigentlich Studium von Eigenwerten und Eigenvektoren widmen, wollen wir noch einige grundlegende Begriffe aus der Linearen Algebra wiederholen, die aus <span id="id2">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> bereits bekannt sein sollten.
 Hierbei handelt es sich um nützliche Begriffe und Eigenschaften von quadratische Matrizen als Repräsentanten von Endomorphismen, die ein Spezialfall von linearen Abbildungen zwischen <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorräumen darstellen.</p>
 <div class="proof definition admonition" id="def:matrix_spur">
 <p class="admonition-title"><span class="caption-number">Definition 1.1 </span> (Spur einer Matrix)</p>
 <div class="definition-content section" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix. Dann ist die \emph{Spur} <span class="math notranslate nohighlight">\(\tr(A)\)</span> von <span class="math notranslate nohighlight">\(A\)</span> definiert als die Summe der Diagonaleinträge von <span class="math notranslate nohighlight">\(A\)</span>, d.h.,</p>
+<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix. Dann ist die <em>Spur</em> <span class="math notranslate nohighlight">\(\tr(A)\)</span> von <span class="math notranslate nohighlight">\(A\)</span> definiert als die Summe der Diagonaleinträge von <span class="math notranslate nohighlight">\(A\)</span>, d.h.,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \tr(A) \ \coloneqq \ \sum_{i=1}^n A_{i,i}.
@@ -436,37 +514,45 @@ Hierbei handelt es sich um nützliche Begriffe und Eigenschaften von quadratisch
 </div><div class="proof definition admonition" id="def:matrix_kern">
 <p class="admonition-title"><span class="caption-number">Definition 1.2 </span> (Kern einer Matrix)</p>
 <div class="definition-content section" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix. Dann ist der <em>Kern</em> <span class="math notranslate nohighlight">\(\Kern(A)\)</span> von <span class="math notranslate nohighlight">\(A\)</span>, auch \emph{Nullraum} genannt, definiert als der Unterraum von <span class="math notranslate nohighlight">\(V\)</span>, dessen Vektoren von <span class="math notranslate nohighlight">\(A\)</span> auf den Nullvektor <span class="math notranslate nohighlight">\(\vec{0} \in V\)</span> abgebildet werden, d.h.,</p>
+<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix. Dann ist der <em>Kern</em> <span class="math notranslate nohighlight">\(\Kern(A)\)</span> von <span class="math notranslate nohighlight">\(A\)</span>, auch <em>Nullraum</em> genannt, definiert als der Unterraum von <span class="math notranslate nohighlight">\(V\)</span>, dessen Vektoren von <span class="math notranslate nohighlight">\(A\)</span> auf den Nullvektor <span class="math notranslate nohighlight">\(\vec{0} \in V\)</span> abgebildet werden, d.h.,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Kern(A) \ \coloneqq \ \lbrace{ v \in V \, | \, Av = 0 \rbrace}.
 \end{equation*}\]</div>
 <p>Der Kern von <span class="math notranslate nohighlight">\(A\)</span> ist also gerade der Lösungsraum des homogenen, linearen Gleichungssystems <span class="math notranslate nohighlight">\(Av = 0\)</span>.</p>
 </div>
-</div><p>\begin{definition}[Bild und Rang einer Matrix]\label{def:matrix_bild_rang}
-Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix.
-\begin{enumerate}
-\item Dann ist das mit <span class="math notranslate nohighlight">\(\Bild(A)\)</span> bezeichnete \emph{Bild} von <span class="math notranslate nohighlight">\(A\)</span>, auch \emph{Bildraum} genannt, definiert als der Unterraum von <span class="math notranslate nohighlight">\(V\)</span>, auf den alle Vektoren <span class="math notranslate nohighlight">\(v \in V\)</span> von <span class="math notranslate nohighlight">\(A\)</span> abgebildet werden, d.h.,</p>
+</div><div class="proof definition admonition" id="def:matrix_bild_rang">
+<p class="admonition-title"><span class="caption-number">Definition 1.3 </span> (Bild und Rang einer Matrix)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Matrix.</p>
+<ul class="simple">
+<li><p>Dann ist das mit <span class="math notranslate nohighlight">\(\Bild(A)\)</span> bezeichnete <em>Bild</em> von <span class="math notranslate nohighlight">\(A\)</span>, auch <em>Bildraum</em> genannt, definiert als der Unterraum von <span class="math notranslate nohighlight">\(V\)</span>, auf den alle Vektoren <span class="math notranslate nohighlight">\(v \in V\)</span> von <span class="math notranslate nohighlight">\(A\)</span> abgebildet werden, d.h.,</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Bild(A) \ \coloneqq \ \lbrace{ w \in V \, | \, Av = w, v \in V \rbrace}.
 \end{equation*}\]</div>
-<p>\item Weiterhin können wir den mit <span class="math notranslate nohighlight">\(\Rang(A)\)</span> bezeichneten \emph{Rang} von <span class="math notranslate nohighlight">\(A\)</span> definieren als Dimension des Bildraums von <span class="math notranslate nohighlight">\(A\)</span>, d.h., <span class="math notranslate nohighlight">\(\Rang(A) \coloneqq \dim \Bild(A)\)</span>.
-\end{enumerate}
-\end{definition}</p>
-<p>Folgende Lemmata werden uns nützlich sein in Bezug auf die Determinante <span class="math notranslate nohighlight">\(\det(A)\)</span> einer quadratischen Matrix <span class="math notranslate nohighlight">\(A\)</span>.
-\begin{lemma}\label{lem:rang_determinante}
-Eine quadratische Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> hat genau dann vollen Rang, wenn ihre Determinante ungleich Null ist, d.h.</p>
+<ul class="simple">
+<li><p>Weiterhin können wir den mit <span class="math notranslate nohighlight">\(\Rang(A)\)</span> bezeichneten <em>Rang</em> von <span class="math notranslate nohighlight">\(A\)</span> definieren als Dimension des Bildraums von <span class="math notranslate nohighlight">\(A\)</span>, d.h., <span class="math notranslate nohighlight">\(\Rang(A) \coloneqq \dim \Bild(A)\)</span>.</p></li>
+</ul>
+</div>
+</div><p>Folgende Lemmata werden uns nützlich sein in Bezug auf die Determinante <span class="math notranslate nohighlight">\(\det(A)\)</span> einer quadratischen Matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<div class="proof lemma admonition" id="lem:rang_determinante">
+<p class="admonition-title"><span class="caption-number">Lemma 1.1 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Eine quadratische Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> hat genau dann vollen Rang, wenn ihre Determinante ungleich Null ist, d.h.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*} 
 \Rang(A) = \dim V \ \Leftrightarrow \ \det(A) \neq 0.
 \end{equation*}\]</div>
-<p>\end{lemma}
-\begin{proof}
-Sei <span class="math notranslate nohighlight">\(\Rang(A) = \dim \Bild(A) = \dim V\)</span>, dann wissen wir nach dem Satz über die Orthogonalität von Bild und Kern \cite[Satz 3.28]{burger_2020}, dass der Kern von <span class="math notranslate nohighlight">\(A^T\)</span> trivial sein muss, d.h., <span class="math notranslate nohighlight">\(\Kern(A^T) = \lbrace{\vec{0}\rbrace}\)</span>. Dies ist äquivalent dazu, dass die Matrix <span class="math notranslate nohighlight">\(A^T\)</span> regulär ist. Dann folgt schon mit der äquivalenten Bedingung aus \cite[Satz 3.41]{burger_2020}, dass die Determinante <span class="math notranslate nohighlight">\(\det(A^T) = \det(A) \neq 0\)</span> ist.
-\end{proof}</p>
-<p>\begin{lemma}[Determinanten-Regel von Sarrus]\label{lem:sarrus}
-Die Determinante <span class="math notranslate nohighlight">\(\det(A)\)</span> einer quadratischen <span class="math notranslate nohighlight">\((3\times 3)\)</span>-Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{3 \times 3}\)</span> mit</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Sei <span class="math notranslate nohighlight">\(\Rang(A) = \dim \Bild(A) = \dim V\)</span>, dann wissen wir nach dem Satz über die Orthogonalität von Bild und Kern (siehe Satz 3.28 <span id="id3">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span>), dass der Kern von <span class="math notranslate nohighlight">\(A^T\)</span> trivial sein muss, d.h., <span class="math notranslate nohighlight">\(\Kern(A^T) = \lbrace{\vec{0}\rbrace}\)</span>. Dies ist äquivalent dazu, dass die Matrix <span class="math notranslate nohighlight">\(A^T\)</span> regulär ist. Dann folgt schon mit der äquivalenten Bedingung aus <span id="id4">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> Satz 3.41], dass die Determinante <span class="math notranslate nohighlight">\(\det(A^T) = \det(A) \neq 0\)</span> ist.</p>
+</div>
+<div class="proof lemma admonition" id="lem:sarrus">
+<p class="admonition-title"><span class="caption-number">Lemma 1.2 </span> (Determinanten-Regel von Sarrus)</p>
+<div class="lemma-content section" id="proof-content">
+<p>Die Determinante <span class="math notranslate nohighlight">\(\det(A)\)</span> einer quadratischen <span class="math notranslate nohighlight">\((3\times 3)\)</span>-Matrix <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{3 \times 3}\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 A \ = \ 
@@ -476,18 +562,20 @@ a_{21} &amp; a_{22} &amp; a_{23} \\
 a_{31} &amp; a_{32} &amp; a_{33}
 \end{pmatrix}
 \end{equation*}\]</div>
-<p>lässt sich mit der \emph{Regel von Sarrus} wie folgt berechnen.</p>
+<p>lässt sich mit der <em>Regel von Sarrus</em> wie folgt berechnen.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*} 
 \det(A) \ = \ a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33}.
 \end{equation*}\]</div>
-<p>\end{lemma}
-\begin{proof}
-Siehe \cite[Theorem 3.2.5 (Leibnizformel)]{fischer}.
-\end{proof}</p>
-<p>Das folgende Lemma erlaubt es uns die Determinante für Blockmatrizen besonders leicht auszurechnen und das Problem in einfachere Unterprobleme zu zerlegen.
-\begin{lemma}[Determinanten-Regel für Blockmatrizen]\label{lem:det_blockmatrix}
-Sei <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> mit <span class="math notranslate nohighlight">\(n \geq 2\)</span> und sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Blockmatrix von der Gestalt</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Siehe Theorem 3.2.5 (Leibnizformel) in <span id="id5">[<a class="reference internal" href="../references.html#id3">Fis05</a>]</span>.</p>
+</div>
+<p>Das folgende Lemma erlaubt es uns die Determinante für Blockmatrizen besonders leicht auszurechnen und das Problem in einfachere Unterprobleme zu zerlegen.</p>
+<div class="proof lemma admonition" id="lem:det_blockmatrix">
+<p class="admonition-title"><span class="caption-number">Lemma 1.3 </span> (Determinanten-Regel für Blockmatrizen)</p>
+<div class="lemma-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> mit <span class="math notranslate nohighlight">\(n \geq 2\)</span> und sei <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n \times n}\)</span> eine quadratische Blockmatrix von der Gestalt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 A \ = \
@@ -502,10 +590,10 @@ Dann gilt für die Determinante der Blockmatrix <span class="math notranslate no
 \[\begin{equation*}
 \det(A) \ = \ \det(A_1) \cdot \det(A_2).
 \end{equation*}\]</div>
-<p>\end{lemma}
-\begin{proof}
-Siehe \cite[Satz 3.1.3, D9]{fischer}.
-\end{proof}</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Siehe Satz 3.1.3, D9 <span id="id6">[<a class="reference internal" href="../references.html#id3">Fis05</a>]</span>.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

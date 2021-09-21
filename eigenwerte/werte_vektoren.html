@@ -44,7 +44,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -241,8 +241,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ableitungen/ableitungen.html">
-   4. Differentiation von Funktionen mehrerer Veränderlicher
+  <a class="reference internal" href="../integrale/integrale.html">
+   4. Integralrechnung
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -251,35 +251,113 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/part_diff.html">
-     4.1. Partielle Differenzierbarkeit
+    <a class="reference internal" href="../integrale/part_int.html">
+     4.1. Partielle Integration
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/first_order.html">
-     4.2. Differentialoperatoren erster Ordnung
+    <a class="reference internal" href="../integrale/substitution.html">
+     4.2. Substitutionsregel
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/higher_order.html">
-     4.3. Differentialoperatoren höherer Ordnung
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/tot_diff.html">
-     4.4. Totale Differenzierbarkeit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ableitungen/taylor.html">
-     4.5. Taylor-Formel
+    <a class="reference internal" href="../integrale/rat_func.html">
+     4.3. Integration rationaler Funktionen
     </a>
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   5. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     5.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     5.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     5.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     5.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     5.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../optimierung/optimierung.html">
+   6. Optimierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/unrestringiert.html">
+     6.1. Unrestringierte Optimierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/nebenbedingungen.html">
+     6.2. Optimierung unter Nebenbedingungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ode/ode.html">
+   7. Gewöhnliche Differentialgleichungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/tdv.html">
+     7.1. Trennung der Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/vdk.html">
+     7.2. Variation der Konstanten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
-   5. Bibliography
+   Bibliography
   </a>
  </li>
 </ul>
@@ -357,25 +435,25 @@
               <div>
                 
   <div class="section" id="eigenwerte-und-eigenvektoren">
-<h1><span class="section-number">1.2. </span>Eigenwerte und Eigenvektoren<a class="headerlink" href="#eigenwerte-und-eigenvektoren" title="Permalink to this headline">¶</a></h1>
+<span id="s-eigenwerte"></span><h1><span class="section-number">1.2. </span>Eigenwerte und Eigenvektoren<a class="headerlink" href="#eigenwerte-und-eigenvektoren" title="Permalink to this headline">¶</a></h1>
 <p>In diesem Abschnitt definieren wir den Begriff der Eigenwerte und Eigenvektoren für Endomorphismen <span class="math notranslate nohighlight">\(F\)</span> und deren darstellende Matrizen <span class="math notranslate nohighlight">\(A \coloneqq M_B(F)\)</span> bezüglich einer Basis <span class="math notranslate nohighlight">\(B\)</span> von <span class="math notranslate nohighlight">\(V\)</span>.</p>
-<p>\begin{definition}[Eigenwert, Eigenvektor und Spektrum]\label{def:eigenwert}
-Sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
-Ein Skalar <span class="math notranslate nohighlight">\(\lambda \in K\)</span> heißt \emph{Eigenwert} von <span class="math notranslate nohighlight">\(F\)</span>, wenn ein sogenannter \emph{Eigenvektor} <span class="math notranslate nohighlight">\(v \in V, v \neq 0\)</span> existiert, so dass</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8f79c0c-fbed-4379-b936-83b926b881fd">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-a8f79c0c-fbed-4379-b936-83b926b881fd" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:eigenwertgleichung}
-F(v) \, v \ = \ \lambda \, v.
-\end{equation}\]</div>
-<p>Die Menge aller Eigenwerte des Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> nennt man das \emph{Spektrum} von <span class="math notranslate nohighlight">\(F\)</span>.
-\end{definition}</p>
-<p>Die in \eqref{eq:eigenwertgleichung} gegebene \emph{Eigenwertgleichung} lässt sich ebenso für darstellende Matrizen <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n\times n}\)</span>  schreiben.
+<div class="proof definition admonition" id="def:eigenwert">
+<p class="admonition-title"><span class="caption-number">Definition 1.4 </span> (Eigenwert, Eigenvektor und Spektrum)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
+Ein Skalar <span class="math notranslate nohighlight">\(\lambda \in K\)</span> heißt <em>Eigenwert</em> von <span class="math notranslate nohighlight">\(F\)</span>, wenn ein sogenannter <em>Eigenvektor</em> <span class="math notranslate nohighlight">\(v \in V, v \neq 0\)</span> existiert, so dass</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigenwertgleichung">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-eq-eigenwertgleichung" title="Permalink to this equation">¶</a></span>\[F(v) \, v \ = \ \lambda \, v.\]</div>
+<p>Die Menge aller Eigenwerte des Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> nennt man das <em>Spektrum</em> von <span class="math notranslate nohighlight">\(F\)</span>.</p>
+</div>
+</div><p>Die in <a class="reference internal" href="#equation-eq-eigenwertgleichung">(1.1)</a> gegebene <em>Eigenwertgleichung</em> lässt sich ebenso für darstellende Matrizen <span class="math notranslate nohighlight">\(A \in \mathbb{K}^{n\times n}\)</span>  schreiben.
 In diesem Fall interessieren wir uns für Eigenwerte und Eigenvektoren, die folgende lineare Gleichung erfüllen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc58bf24-6aec-4fa0-b2f1-b58471f417aa">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-fc58bf24-6aec-4fa0-b2f1-b58471f417aa" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:eigenwertgleichung_matrix}
-A \, v \ = \ \lambda \, v.
-\end{equation}\]</div>
-<p>\begin{definition}[Eigenraum]
-Sei <span class="math notranslate nohighlight">\(V\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
+<div class="math notranslate nohighlight" id="equation-eq-eigenwertgleichung-matrix">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-eq-eigenwertgleichung-matrix" title="Permalink to this equation">¶</a></span>\[A \, v \ = \ \lambda \, v.\]</div>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 1.5 </span> (Eigenraum)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>-Vektorraum und sei <span class="math notranslate nohighlight">\(F \colon V \rightarrow V\)</span> ein Endomorphismus von <span class="math notranslate nohighlight">\(V\)</span>.
 Dann definieren wir den Eigenraum <span class="math notranslate nohighlight">\(\Eig(F; \lambda)\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> von <span class="math notranslate nohighlight">\(F\)</span> als lineare Hülle der Eigenvektoren zum Eigenwert <span class="math notranslate nohighlight">\(\lambda\)</span>, d.h.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -386,14 +464,18 @@ Dann definieren wir den Eigenraum <span class="math notranslate nohighlight">\(\
 \[\begin{equation*}
 \Eig(A; \lambda) \ = \ \Kern(A - \lambda I_n ) \ = \ \lbrace v \in V \: | \: Av = \lambda v, v \neq \vec{0} \rbrace \cup \lbrace{\vec{0}\rbrace} \subset V,
 \end{equation*}\]</div>
-<p>wobei <span class="math notranslate nohighlight">\(I_n \in \mathbb{K}^{n \times n}\)</span> die Einheitsmatrix bezeichnet.
-\end{definition}</p>
-<p>Wir können einen Eigenwert mittels der Dimension seines zugehörigen Eigenraums noch näher charakterisieren.</p>
-<p>\begin{definition}[Geometrische Vielfachheit]
-Wir bezeichnen mit der \emph{geometrischen Vielfachheit} eines Eigenwerts <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> die Dimension des zugehörigen Eigenraums <span class="math notranslate nohighlight">\(\dim \Eig(F; \lambda)\)</span> bzw.~<span class="math notranslate nohighlight">\(\dim \Eig(A; \lambda)\)</span>.
-\end{definition}</p>
-<p>\begin{remark}
-Wir bemerken, dass der Eigenraum <span class="math notranslate nohighlight">\(\Eig(F; \lambda) \subset V\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> von <span class="math notranslate nohighlight">\(F\)</span> ein <span class="math notranslate nohighlight">\(F\)</span>-invarianter Untervektorraum von <span class="math notranslate nohighlight">\(V\)</span> ist, da ja wegen der Eigenwertgleichung \eqref{eq:eigenwertgleichung} gelten muss</p>
+<p>wobei <span class="math notranslate nohighlight">\(I_n \in \mathbb{K}^{n \times n}\)</span> die Einheitsmatrix bezeichnet.</p>
+</div>
+</div><p>Wir können einen Eigenwert mittels der Dimension seines zugehörigen Eigenraums noch näher charakterisieren.</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 1.6 </span> (Geometrische Vielfachheit)</p>
+<div class="definition-content section" id="proof-content">
+<p>Wir bezeichnen mit der <em>geometrischen Vielfachheit</em> eines Eigenwerts <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> die Dimension des zugehörigen Eigenraums <span class="math notranslate nohighlight">\(\dim \Eig(F; \lambda)\)</span> bzw.~<span class="math notranslate nohighlight">\(\dim \Eig(A; \lambda)\)</span>.</p>
+</div>
+</div><div class="proof remark admonition" id="remark-3">
+<p class="admonition-title"><span class="caption-number">Remark 1.1 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Wir bemerken, dass der Eigenraum <span class="math notranslate nohighlight">\(\Eig(F; \lambda) \subset V\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda \in \mathbb{K}\)</span> von <span class="math notranslate nohighlight">\(F\)</span> ein <span class="math notranslate nohighlight">\(F\)</span>-invarianter Untervektorraum von <span class="math notranslate nohighlight">\(V\)</span> ist, da ja wegen der Eigenwertgleichung <a class="reference internal" href="#equation-eq-eigenwertgleichung">(1.1)</a> gelten muss</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 F(v) = \lambda v \in \Eig(F; \lambda), \quad \text{ für alle } v \in \Eig(F; \lambda).
@@ -403,8 +485,8 @@ F(v) = \lambda v \in \Eig(F; \lambda), \quad \text{ für alle } v \in \Eig(F; \l
 \[\begin{equation*}
 F|_{\Eig(F; \lambda)} \colon \Eig(F; \lambda)  \rightarrow \Eig(F; \lambda).
 \end{equation*}\]</div>
-<p>\end{remark}</p>
 </div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
