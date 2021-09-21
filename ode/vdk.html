@@ -55,7 +55,7 @@
     <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="../references.html" />
+    <link rel="next" title="7.3. Differentialgleichungen höherer Ordnung" href="higher_order.html" />
     <link rel="prev" title="7.1. Trennung der Variablen" href="tdv.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -356,6 +356,16 @@
      7.2. Variation der Konstanten
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="higher_order.html">
+     7.3. Differentialgleichungen höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="existence.html">
+     7.4. Existenz und Eindeutigkeit von Lösungen
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -455,9 +465,8 @@ y^\prime(x) = a(x)\cdot y(x) + b(x),
 \end{equation*}\]</div>
 <p>betrachten, wobei <span class="math notranslate nohighlight">\(a,b\colon I\to\R\)</span> stetige Funktionen auf dem offenen Intervall <span class="math notranslate nohighlight">\(I\subset\R\)</span> sind.
 Für einen beliebigen Punkt <span class="math notranslate nohighlight">\(x_0\in I\)</span> und einen Anfangswert <span class="math notranslate nohighlight">\(c\in\R\)</span> suchen wir eine Lösung <span class="math notranslate nohighlight">\(\varphi\colon I\to\R\)</span> der Differentialgleichung die der Anfangsbedingung <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span> genügt.</p>
-<p>Da eine Trennung der Variablen aus Kapitel \ref{s:trennung_variablen} in diesem Fall nicht zum Ziel führt, wollen wir eine andere wichtige Technik zur analytischen Lösung von gewöhnlichen Differentialgleichungen untersuchen.
-Die sogenannte \emph{Variation der Konstanten} ist ein Verfahren zur Bestimmung einer speziellen Lösung einer inhomogenen linearen Differentialgleichung erster Ordnung.
-Die einzige Zutat, die diese Technik voraussetzt, ist das Vorliegen einer Lösung der zugehörigen homogenen Differentialgleichung</p>
+<p>Da eine Trennung der Variablen aus Kapitel <a class="reference internal" href="tdv.html#s-trennung-variablen"><span class="std std-ref">Trennung der Variablen</span></a> in diesem Fall nicht zum Ziel führt, wollen wir eine andere wichtige Technik zur analytischen Lösung von gewöhnlichen Differentialgleichungen untersuchen.
+Die sogenannte <em>Variation der Konstanten</em> ist ein Verfahren zur Bestimmung einer speziellen Lösung einer inhomogenen linearen Differentialgleichung erster Ordnung. Die einzige Zutat, die diese Technik voraussetzt, ist das Vorliegen einer Lösung der zugehörigen homogenen Differentialgleichung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 y^\prime(x) = a(x)\cdot y(x).
@@ -467,9 +476,11 @@ y^\prime(x) = a(x)\cdot y(x).
 \[\begin{equation*}
 \varphi_0(x) \ \coloneqq \ c\cdot \exp\left(\int\limits_{x_0}^xa(t)\, \mathrm{d}t\right)\,.
 \end{equation*}\]</div>
-<p>Der folgende Satz beschreibt analytische Lösungen der inhomogenen Differentialgleichung basierend auf der Lösung <span class="math notranslate nohighlight">\(\varphi_0\)</span> der zugehörigen homogenen Differentialgleichung.
-\begin{satz}[Variation der Konstanten]\label{satz:ode:varDerKonstanten}
-Sei <span class="math notranslate nohighlight">\(I\subset\R\)</span> ein offenes Intervall und seien <span class="math notranslate nohighlight">\(a,b\colon I\to\R\)</span> zwei stetige Funktionen.
+<p>Der folgende Satz beschreibt analytische Lösungen der inhomogenen Differentialgleichung basierend auf der Lösung <span class="math notranslate nohighlight">\(\varphi_0\)</span> der zugehörigen homogenen Differentialgleichung.</p>
+<div class="proof theorem admonition" id="satz:ode:varDerKonstanten">
+<p class="admonition-title"><span class="caption-number">Theorem 7.3 </span> (Variation der Konstanten)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(I\subset\R\)</span> ein offenes Intervall und seien <span class="math notranslate nohighlight">\(a,b\colon I\to\R\)</span> zwei stetige Funktionen.
 Dann gibt es zu einem beliebigen Punkt <span class="math notranslate nohighlight">\(x_0\in\ I\)</span> und einem Anfangswert <span class="math notranslate nohighlight">\(c\in\R\)</span> eine eindeutige Lösung <span class="math notranslate nohighlight">\(\varphi\colon I\to\R\)</span> der linearen, inhomogenen Differentialgleichung erster Ordnung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -486,22 +497,22 @@ Die Lösung hat die Form</p>
 \[\begin{equation*}
 \varphi_0(x) \ \coloneqq \ \exp\left(\,\int\limits_{x_0}^xa(t)\,\mathrm{d}t\right).
 \end{equation*}\]</div>
-<p>\end{satz}
-\begin{proof}
-Sei <span class="math notranslate nohighlight">\(\varphi_0\)</span> eine Lösung der zugehörigen homogenen Differentialgleichung und <span class="math notranslate nohighlight">\(\varphi\)</span> die zu bestimmende Lösung der inhomogenen Differentialgleichung.
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Sei <span class="math notranslate nohighlight">\(\varphi_0\)</span> eine Lösung der zugehörigen homogenen Differentialgleichung und <span class="math notranslate nohighlight">\(\varphi\)</span> die zu bestimmende Lösung der inhomogenen Differentialgleichung.
 Wir betrachten nun eine sogenannte Ansatzfunktion <span class="math notranslate nohighlight">\(u\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 u(x) \ \coloneqq \ \varphi(x) \cdot \varphi_0^{-1}(x) \ = \ \varphi(x) \cdot \exp\left(\,-\int\limits_{x_0}^x a(t)\,\mathrm{d}t\right).
 \end{equation*}\]</div>
 <p>Durch Multiplikation mit <span class="math notranslate nohighlight">\(\varphi_0\)</span> lässt sich der Ausdruck dieser Funktion nun umstellen zur unbekannten Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0be5bbe2-ba56-4a5d-a35b-642527c57ebd">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-0be5bbe2-ba56-4a5d-a35b-642527c57ebd" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_varphi}
+<div class="amsmath math notranslate nohighlight" id="equation-7b77e325-e331-414c-801a-2467975f830e">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-7b77e325-e331-414c-801a-2467975f830e" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_varphi}
 \varphi(x) \ = \ \varphi_0(x) \cdot  u(x) \ = \ \exp\left(\,\int\limits_{x_0}^xa(t)\,\mathrm{d}t\right) \cdot u(x).
 \end{equation}\]</div>
 <p>Setzen wir diesen Ausdruck nun in die inhomogene Differentialgleichung ein, so erhalten wir für alle <span class="math notranslate nohighlight">\(x \in I\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-58586c35-f8d3-4692-a035-5528823bbcc5">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-58586c35-f8d3-4692-a035-5528823bbcc5" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_u}
+<div class="amsmath math notranslate nohighlight" id="equation-9101b110-91d1-4a89-82e1-b3d7d9a903e9">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-9101b110-91d1-4a89-82e1-b3d7d9a903e9" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_u}
 (u\cdot \varphi_0)'(x) \ = \ a(x) \cdot u(x) \cdot \varphi_0(x) + b(x).
 \end{equation}\]</div>
 <p>Durch Anwendung der Produkt- und Kettenregel der Differentiation und des Hauptsatzes der Differential- und Integralrechnung lässt sich die linke Seite der Gleichung noch vereinfachen zu</p>
@@ -542,13 +553,15 @@ Setzen wir dies nun in die Gleichung \eqref{eq:dgl_inhomogen_varphi} für die L�
 \[\begin{equation*}
 \varphi(x_0) \ = \ \underbrace{\varphi_0(x_0)}_{=1} \cdot \Bigl( \underbrace{\int_{x_0}^{x_0} \varphi_0^{-1}(t) \cdot b(t) \, \mathrm{d}t}_{=0} +\: C \Bigr) \ = \ C \ \overset{!}{=} \ c.
 \end{equation*}\]</div>
-<p>Damit ist nun die Aussage des Satzes vollständig bewiesen.
-\end{proof}</p>
-<p>Im folgenden Beispiel wollen wir das Verfahren der Variation der Konstanten nutzen, um die analytische Lösung einer inhomogenen Differentialgleichung herzuleiten.
-\begin{bsp}[Variation der Konstanten]
-Wir betrachten die folgende lineare, inhomogene Differentialgleichung erster Ordnung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1d32476-4887-41ad-80d8-6c81dab1f10b">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-d1d32476-4887-41ad-80d8-6c81dab1f10b" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen}
+<p>Damit ist nun die Aussage des Satzes vollständig bewiesen.</p>
+</div>
+<p>Im folgenden Beispiel wollen wir das Verfahren der Variation der Konstanten nutzen, um die analytische Lösung einer inhomogenen Differentialgleichung herzuleiten.</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 7.6 </span> (Variation der Konstanten)</p>
+<div class="example-content section" id="proof-content">
+<p>Wir betrachten die folgende lineare, inhomogene Differentialgleichung erster Ordnung</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e9e52d1f-c68d-48db-a3bf-1b8d86c4e448">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-e9e52d1f-c68d-48db-a3bf-1b8d86c4e448" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen}
 y^\prime(x) \ = \ 2x\cdot y(x) + x^3,
 \end{equation}\]</div>
 <p>für die die Anfangsbedingung <span class="math notranslate nohighlight">\(y(0) = c\)</span> mit <span class="math notranslate nohighlight">\(c \in \R\)</span> erfüllt sein soll.
@@ -576,455 +589,8 @@ Damit erhält man</p>
  &amp;= \ \left(c+\frac12\right)e^{x^2} - \frac12\left(x^2+1\right).
  \end{split}
 \end{equation*}\]</div>
-<p>\end{bsp}</p>
-<p>\section{Differentialgleichungen höherer Ordnung}\label{s:dgl_hoehere_ordnung}
-Obwohl wir gewöhnliche Differentialgleichungen höherer Ordnung bereits im vorigen Abschnitt erwähnt haben, haben wir diese noch nicht näher diskutiert.
-Wir wollen im Folgenden ein zusätzliches Kriterium zur Klassifikation von gewöhnlichen Differentialgleichungen einführen und beschreiben, wie sich eine gewöhnliche Differentialgleichung höherer Ordnung in ein System von gewöhnlichen Differentialgleichungen erster Ordnung umformulieren lässt.</p>
-<p>Beginnen wir zunächst mit der Definition einer gewöhnlichen Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung.
-Eine Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung schreibt eine Bedingung für die <span class="math notranslate nohighlight">\(n\)</span>-te Ableitung der gesuchten Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> vor.
-Diese <span class="math notranslate nohighlight">\(n\)</span>-te Ableitung hängt sowohl von <span class="math notranslate nohighlight">\(x\)</span> als auch von der Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> und ihren Ableitungen bis zur <span class="math notranslate nohighlight">\((n-1)\)</span>-ten Ordnung im Punkt <span class="math notranslate nohighlight">\(x\)</span> ab.
-\begin{definition}[Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung]
-Sei <span class="math notranslate nohighlight">\(G\subset\R\times\R^n\)</span> eine offene Teilmenge und</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f\colon G&amp;\to\R
-\end{align*}\]</div>
-<p>eine stetige Funktion.</p>
-<p>\begin{enumerate}
-\item
-Wir nennen eine Gleichung der Form</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots, y^{(n-1)}(x))
-\end{equation*}\]</div>
-<p>eine \emph{explizite} gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung.
-Ist die gewöhnliche Differentialgleichung nicht nach der höchsten vorkommenden Ableitung aufgelöst, d.h. wenn sie von der folgenden Form ist</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-f(x,y(x),y^\prime(x), \ldots, y^{(n-1)}(x), y^{(n)}(x)) \, = \, 0,
-\end{equation*}\]</div>
-<p>so nennen wir sie eine \emph{implizite} gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung.</p>
-<p>\item
-Wir nennen eine <span class="math notranslate nohighlight">\(n\)</span>-mal differenzierbare Funktion <span class="math notranslate nohighlight">\(\varphi\colon I\to\R\)</span> auf dem offenen Intervall <span class="math notranslate nohighlight">\(I \subset \R\)</span> eine \emph{Lösung der Differentialgleichung}, wenn sie die folgenden Eigenschaften besitzt:
-\begin{enumerate}[i)]
-\item Der von der unbekannten Lösung <span class="math notranslate nohighlight">\(\varphi\)</span>  abhängende Menge</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\Gamma_\varphi \ \coloneqq \ \left\{(x,y_1, y_2, \ldots, y_{n})\in I\times \R^n~\Big\vert~y_k = \varphi^{(k-1)}(x), \ 1\leq k\leq n\right\}
-\end{equation*}\]</div>
-<p>ist eine Teilmenge von <span class="math notranslate nohighlight">\(G\)</span>,
-\item Für alle Punkte <span class="math notranslate nohighlight">\(x\in I\)</span> gilt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi^{(n)}(x) \ = \ f(x,\varphi (x), \varphi^\prime(x), \ldots, \varphi^{(n-1)}(x))\,.
-\end{equation*}\]</div>
-<p>\end{enumerate}
-\end{enumerate}
-\end{definition}</p>
-<p>Das folgende Beispiel illustriert den Begriff einer gewöhnlichen Differentialgleichung in expliziter und impliziter Form.
-\begin{example}
-Sei <span class="math notranslate nohighlight">\(I \subset \R\)</span> ein offenes Intervall.
-Die Gleichung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y'(x)\cdot y(x) + x \, = \, 0
-\end{equation*}\]</div>
-<p>ist eine nichtlineare, implizite gewöhnliche Differentialgleichung erster Ordnung.
-Diese Differentialgleichung lässt sich in die folgende explizite Form umschreiben</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y'(x) \, = \, -\frac{x}{y(x)}
-\end{equation*}\]</div>
-<p>wenn wir annehmen, dass <span class="math notranslate nohighlight">\(y(x) \neq 0\)</span> für alle Punkte <span class="math notranslate nohighlight">\(x \in I\)</span> gilt.
-Aus der Kreisgleichung <span class="math notranslate nohighlight">\(x^2 + y^2 = c &gt; 0\)</span> lässt sich eine explizite Lösung dieser gewöhnlichen Differentialgleichung angeben mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi(x) \ = \ \pm \sqrt{c - x^2}, \qquad \text{für} \ |x| &lt; \sqrt{c}.
-\end{equation*}\]</div>
-<p>\end{example}</p>
-<p>Man kann eine gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung in ein System von gewöhnlichen Differentialgleichungen erster Ordnung überführen wie folgende Bemerkung zeigt.
-Diese Beobachtung hat den großen Vorteil, dass man sich bei Lösungsmethoden von gewöhnlichen Differentialgleichungen, egal ob analytisch oder numerisch, nur auf das Lösen von Differentialgleichungssystemen erster Ordnung konzentrieren muss.
-\begin{remark}
-Sei <span class="math notranslate nohighlight">\(G \subset \R \times \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f\colon G\to\R\)</span>  eine stetige Funktion.
-Wir betrachten im Folgenden die explizite gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3aca0e2d-8993-4a92-9358-ab4d9d5a93f3">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-3aca0e2d-8993-4a92-9358-ab4d9d5a93f3" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode:redODEOri}
-y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots,y^{(n-1)}(x)).
-\end{equation}\]</div>
-<p>\begin{enumerate}
-\item
-Wir können die Gleichung \eqref{eq:ode:redODEOri} zu einem Differentialgleichungssystem erster Ordnung umformulieren bestehend aus <span class="math notranslate nohighlight">\(n+1\)</span> Gleichungen mit</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3347622d-480a-4540-82a8-d594f29c8aa6">
-<span class="eqno">(7.6)<a class="headerlink" href="#equation-3347622d-480a-4540-82a8-d594f29c8aa6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\left\{\begin{array}{rl}
-y &amp;=~y_1,\\
-y_1^\prime&amp;=~y_2,\\
-&amp;\vdots\\
-y_{n-1}^\prime&amp;=~y_{n},\\
-y_{n}^\prime&amp;=~f(x,y_1, \ldots,y_{n}).
-\end{array}\right.\label{eq:ode:redODE}
-\end{equation}\]</div>
-<p>Definieren wir nun zwei <span class="math notranslate nohighlight">\(n\)</span>-dimensionale Vektoren <span class="math notranslate nohighlight">\(Y,F \in \R^n\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-Y(x) \, \coloneqq \, \left(\begin{array}{c}y_1(x)\\\vdots\\y_{n-1}(x)\\y_{n}(x)\end{array}\right)
-\qquad \text{und} \qquad 
-F(x,Y) \, \coloneqq \, \left(\begin{array}{c}y_2(x)\\\vdots\\y_{n}(x)\\f(x,Y(x))\end{array}\right)
-\end{equation*}\]</div>
-<p>dann können wir  das Differentialgleichungssystem \eqref{eq:ode:redODE} umschreiben zu</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-Y^\prime(x) \, = \, F(x,Y(x)).
-\end{equation*}\]</div>
-<p>Die Ableitung <span class="math notranslate nohighlight">\(Y'\)</span> ist hierbei komponentenweise zu interpretieren.</p>
-<p>\item
-Sei nun <span class="math notranslate nohighlight">\(\varphi\colon I\to\R\)</span> eine Lösung der expliziten gewöhnlichen Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung in \eqref{eq:ode:redODEOri}, d.h.,</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi^{(n)}(x) \ = \ f(x,\varphi(x), \varphi^\prime(x), \ldots, \varphi^{(n-1)}(x)).
-\end{equation*}\]</div>
-<p>Basierend auf <span class="math notranslate nohighlight">\(\varphi\)</span> können wir uns nun eine vektorwertige Funktion <span class="math notranslate nohighlight">\(\Phi \colon I \rightarrow \R^n\)</span> definieren mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\Phi(x) \ \coloneqq \ \left(\begin{array}{c}\varphi_1(x)\\\varphi_2(x)\\\vdots\\\varphi_{n}(x)\end{array}\right) \ = \ \left(\begin{array}{c} \varphi(x) \\ \varphi'(x) \\ \vdots \\ \varphi^{(n-1)}(x) \end{array}\right) .
-\end{equation*}\]</div>
-<p>Dann wird aus der obigen Definition klar, dass <span class="math notranslate nohighlight">\(\Phi\)</span> eine Lösung des Differentialgleichungssystems \eqref{eq:ode:redODE} ist.</p>
-<p>Ist nun umgekehrt vorausgesetzt, dass <span class="math notranslate nohighlight">\(\Phi \colon I \to \R^n\)</span> eine Lösung des Differentialgleichungssystems erster Ordnung in \eqref{eq:ode:redODE} ist, dann ist</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi \, \coloneqq\, \varphi_1 \colon I\to\R
-\end{equation*}\]</div>
-<p>eine Lösung der Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung \eqref{eq:ode:redODEOri}.
-Dieser Zusammenhang gilt, da aus den ersten <span class="math notranslate nohighlight">\(n\)</span> Gleichungen des Systems \eqref{eq:ode:redODE} folgt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\varphi_1(x) \, &amp;= \, \varphi(x)\\
-\varphi_2(x) \, &amp;= \, \varphi_1^\prime(x) \, = \, \varphi^{\prime}(x),\\
-\varphi_3(x) \, &amp;= \, \varphi_2^\prime(x) \, = \, \varphi_1^{\prime\prime}(x) \, = \, \varphi^{\prime\prime}(x),\\
-&amp;\vdots\\
-\varphi_{n}(x) \, &amp;= \, \varphi_{n-1}^\prime(x) \, = \, \ldots \, = \, \varphi^{(n-1)}(x).
-\end{align*}\]</div>
-<p>Da <span class="math notranslate nohighlight">\(\varphi_{n}\)</span> einmal differenzierbar ist, folgt daraus, dass <span class="math notranslate nohighlight">\(\varphi\)</span> <span class="math notranslate nohighlight">\(n\)</span>-mal differenzierbar sein muss.
-Die <span class="math notranslate nohighlight">\((n+1)\)</span>-te Gleichung von \eqref{eq:ode:redODE} liefert dann</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi_n^\prime(x) \ = \ \varphi^{(n)}(x) \ = \ f(x,\varphi(x),\varphi^\prime(x), \ldots, \varphi^{(n-1)}(x)).
-\end{equation*}\]</div>
-<p>Wir sehen also, dass die Lösungen von \eqref{eq:ode:redODEOri} und \eqref{eq:ode:redODE} in einer eindeutigen Beziehung zueinander stehen.
-\end{enumerate}
-\end{remark}</p>
-<p>\begin{bsp}
-Die Gleichung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4368b613-8451-447b-b7ed-8eddf6e7324c">
-<span class="eqno">(7.7)<a class="headerlink" href="#equation-4368b613-8451-447b-b7ed-8eddf6e7324c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-y^{\prime\prime}(x) + y(x) \, = \, 0\label{eq:ode:2ordnSinCos}
-\end{equation}\]</div>
-<p>für <span class="math notranslate nohighlight">\(x\in \R\)</span> ist eine implizite gewöhnliche  Differentialgleichung zweiter Ordnung.
-Um diese Differentialgleichung in ein Differentialgleichungssystem erster Ordnung zu transformieren führen wir zwei neue Variablen wie folgt ein:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y_1 \, \coloneqq \, y, \qquad y_2 \, \coloneqq \, y_1'.
-\end{equation*}\]</div>
-<p>Mit diesen Variablen können wir die Differentialgleichung \eqref{eq:ode:2ordnSinCos} umschreiben in die Gleichung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y_2' + y_1 \, = \, 0.
-\end{equation*}\]</div>
-<p>Zusammen mit der Bedingung <span class="math notranslate nohighlight">\(y_1' = y_2\)</span> ergibt sich damit das folgende lineare, homogene Differentialgleichungssystem erster Ordnung:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-Y' \ \coloneqq \
-\begin{pmatrix}
-y_1'\\ 
-y_2'
-\end{pmatrix} \ = \ 
-\begin{pmatrix}
-0 &amp; 1\\
--1 &amp; 0
-\end{pmatrix}
-\cdot
-\begin{pmatrix}
-y_1\\
-y_2
-\end{pmatrix}.
-\end{equation*}\]</div>
-<p>Die gewöhnliche Differentialgleichung \eqref{eq:ode:2ordnSinCos} besitzt offensichtlich die auf ganz <span class="math notranslate nohighlight">\(\R\)</span> definierten Lösungen</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi(x) \ \coloneqq \ \cos x, \qquad\text{und}\qquad \varphi(x) \ \coloneqq \ \sin x.
-\end{equation*}\]</div>
-<p>Aufgrund der Linearität der Ableitung sind in diesem Fall auch sämtliche Linearkombinationen von Lösungen wiederum Lösungen.
-Das heißt wir können eine allgemeine Lösung der gewöhnlichen Differentialgleichung angeben für beliebige Konstanten <span class="math notranslate nohighlight">\(c_0,c_1\in\R\)</span>:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi_{c_0,c_1}(x) \ \coloneqq \ c_0\cdot \cos x + c_1\cdot \sin x.
-\end{equation*}\]</div>
-<p>Betrachten wir die beiden Anfangswertgleichungen</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
-\varphi_{c_0,c_1}(0) \ &amp;= \ c_0 \cdot \cos(0) + c_1 \cdot \sin (0) \ = \ c_0\\
-\varphi^\prime_{c_0,c_1}(0) \ &amp;= \ - c_0 \cdot \sin (0) + c_1 \cdot \cos (0) \ = \ c_1\,,
-\end{split}
-\end{equation*}\]</div>
-<p>so stellen wir fest, dass <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1} \colon \R \rightarrow \R\)</span> die eindeutig bestimmte Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> der Differentialgleichung \eqref{eq:ode:2ordnSinCos} mit den Anfangswertbedingungen <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1}(0)=c_0\)</span> und <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1}^\prime(0)=c_1\)</span> ist.
-\end{bsp}</p>
-<p>\section{Existenz und Eindeutigkeit von Lösungen}
-Bisher haben wir uns vornehmlich um analytische Lösungsverfahren für lineare gewöhnliche Differentialgleichungen erster Ordnung beschäftigt.
-Dabei haben wir theoretische Überle-gun-gen zur Existenz und Eindeutigkeit von Lösungen allgemeiner gewöhnlicher Differentialgleichungen vernachlässigt.
-Daher wollen wir uns in diesem Abschnitt den notwendigen und hinreichenden Bedingungen widmen, die uns sagen wann eine Differentialgleichung lösbar ist und wann ihre Lösung sogar eindeutig ist.</p>
-<p>Da wir in Kapitel \ref{s:dgl_hoehere_ordnung} gesehen haben, dass sich beliebige gewöhnliche Differentialgleichungen höherer Ordnung in ein Differentialgleichungssystem erster Ordnung transformieren lassen, beschränken wir uns auf diese Differentialgleichungssysteme.
-Dies motiviert die folgende Definition.
-\begin{definition}[Differentialgleichungssystem erster Ordnung]\label{def:dglsystem_erster_ordnung}
-Sei <span class="math notranslate nohighlight">\(G\subset\R\times\R^n\)</span> eine offene Teilmenge und</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f\colon G \ &amp;\to \ \R^n, \\
-(x,y) \ &amp;\mapsto \ f(x,y)
-\end{align*}\]</div>
-<p>eine vektorwertige stetige Funktion.</p>
-<p>Dann nennt man die folgende Gleichung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y^\prime(x)  \ = \ f(x,y(x))
-\end{equation*}\]</div>
-<p>ein \emph{System von <span class="math notranslate nohighlight">\(n\)</span> Differentialgleichungen erster Ordnung}.
-Eine Lösung dieser Gleichung ist eine auf dem offenen Intervall <span class="math notranslate nohighlight">\(I\subset \R\)</span> total differenzierbare Funktion <span class="math notranslate nohighlight">\(\varphi\colon I\to\R^n\)</span>, für die die folgenden Eigenschaften gelten:
-\begin{enumerate}
-\item Der Graph <span class="math notranslate nohighlight">\(\Gamma_\varphi\)</span> von <span class="math notranslate nohighlight">\(\varphi\)</span> liegt in der Teilmenge <span class="math notranslate nohighlight">\(G\)</span>, d.h,</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\Gamma_\varphi \ \coloneqq  \ \lbrace (x,y)\in I\times \R^n~\vert~ y=\varphi(x)\rbrace \, \subset \, G.
-\end{equation*}\]</div>
-<p>\item Die Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> erfüllt die Gleichung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi^\prime(x) \: = \: f(x, \varphi(x))\qquad \text{für alle} \ x\in I.
-\end{equation*}\]</div>
-<p>\end{enumerate}
-\end{definition}</p>
-<p>\begin{remark}
-Im Gegensatz zu vorigen Abschnitten handelt es sich in Definition \ref{def:dglsystem_erster_ordnung} nicht um eine Differentialgleichung einer skalarwertigen Funktion sondern um ein Differentialgleichungssystem einer vektorwertigen Funktion.
-Wir können die vektorwertigen Funktionen <span class="math notranslate nohighlight">\(y\)</span> und <span class="math notranslate nohighlight">\(f\)</span> also komponentenweise notieren als</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y (x) \ = \ \left(\begin{array}{c}y_1(x)\\\vdots\\y_n(x)\end{array}\right) \qquad\text{und}\qquad f(x,y) \ = \ \left(\begin{array}{c}
-f_1(x,y) \\\vdots\\f_n(x,y) \end{array}\right),
-\end{equation*}\]</div>
-<p>was zu folgendem Differentialgleichungssystem erster Ordnung führt:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\left\{\begin{array}{c}
-y_1^\prime(x) \, = \, f_1 (x, y_1(x), \ldots, y_n(x)),\\
-y_2^\prime(x) \, = \, f_2 (x, y_1(x), \ldots, y_n(x)),\\
-\ldots\\
-y_n^\prime(x) \, = \, f_n (x, y_1(x), \ldots, y_n(x)).
-\end{array}\right.
-\end{equation*}\]</div>
-<p>\end{remark}</p>
-<p>Der folgende Satz charakterisiert die Lösung eines Differentialgleichungssystems mit Anfangswertbedingungen als Lösung einer zugehörigen Integralgleichung.
-\begin{satz}[Integralgleichung]\label{satz:ode_integralgleichung}
-Sei <span class="math notranslate nohighlight">\(G\subset \R\times \R^n\)</span> eine offene Teilmenge, <span class="math notranslate nohighlight">\(I \subset R\)</span> ein offenes Intervall und sei <span class="math notranslate nohighlight">\(f\colon G\to\R^n\)</span> eine stetige Abbildung.
-Weiter seien die Anfangwerte <span class="math notranslate nohighlight">\((x_0,c)\in G\)</span> mit <span class="math notranslate nohighlight">\(x_0 \in I\)</span> gegeben.
-Sei nun <span class="math notranslate nohighlight">\(\varphi\colon I\to \R^n\)</span> eine total differenzierbare Funktion, deren Graph in <span class="math notranslate nohighlight">\(G\)</span> enthalten ist</p>
-<p>Die Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> ist genau dann eine Lösung der Differentialgleichung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y^\prime(x) \ = \ f(x,y(x))
-\end{equation*}\]</div>
-<p>unter der Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span>, wenn sie die folgende Integralgleichung erfüllt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1754ee2c-7068-4776-b161-0f96ffbbb8fd">
-<span class="eqno">(7.8)<a class="headerlink" href="#equation-1754ee2c-7068-4776-b161-0f96ffbbb8fd" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode_integralgleichung}
-\varphi(x) \ = \ c + \int\limits_{x_0}^x f(t,\varphi(t))\,\mathrm{d}t \qquad \text{für alle } \ x\in I.
-\end{equation}\]</div>
-<p>\end{satz}
-\begin{proof}
-Wir zeigen zunächst die Rückrichtung des Satzes.
-Sei also die Integralgleichung \eqref{eq:ode_integralgleichung} erfüllt.
-Für die Anfangswertbedingung setzen wir <span class="math notranslate nohighlight">\(x = x_0\)</span> und sehen somit, dass <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span> gilt.
-Da die Funktion <span class="math notranslate nohighlight">\(f\)</span> nach Voraussetzung stetig ist, folgt aus dem Hauptsatz der Integral- und Differentialrechnung \cite[Kapitel 7.2]{burger_2020}, dass</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\frac{\mathrm{d}}{\mathrm{d}x} \int_{x_0}^x f(t, \varphi(t)) \, \mathrm{d}t \ = \ f(x, \varphi(x)).
-\end{equation*}\]</div>
-<p>Damit folgt aus der Definition der Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> in \eqref{eq:ode_integralgleichung}, dass <span class="math notranslate nohighlight">\(\varphi\)</span> total differenzierbar ist und die gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(\varphi'(x) = f(x, \varphi(x))\)</span> erfüllt.</p>
-<p>Für die Hinrichtung des Beweises nehmen wir an, dass die Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> eine Lösung der gewöhnlichen Differentialgleichung <span class="math notranslate nohighlight">\(\varphi'(x) = f(x, \varphi(x))\)</span> ist, total differenzierbar sei und die Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span> erfülle.
-Dann können wir das folgende Integral betrachten und erhalten aus dem Hauptsatz der Integral- und Differentialrechnung:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\int_{x_0}^x f(t, \varphi(t)) \, \mathrm{d}t \ = \ \int_{x_0}^x \varphi'(t) \, \mathrm{d}t \ = \ \varphi(x) - \varphi(x_0) \ = \ \varphi(x) - c.
-\end{equation*}\]</div>
-<p>Durch Umstellen von <span class="math notranslate nohighlight">\(c\)</span> auf die linke Seite erhält man die Identität der Integralgleichung in \eqref{eq:ode_integralgleichung}.
-\end{proof}</p>
-<p>Das folgende Lemma liefert uns ein hinreichendes Kriterium für die Lipschitz-Stetigkeit einer Funktion.
-Diese Eigenschaft wird für die Existenz und Eindeutigkeit von Lösungen gewöhnlicher Differentialgleichungen entscheidend sein.
-\begin{lemma}\label{lem:ode_lokalLipschitz}
-Sei <span class="math notranslate nohighlight">\(G\subset \R\times\R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f\colon G\to\R^n\)</span> eine bezüglich der Variablen <span class="math notranslate nohighlight">\(y=(y_1,\ldots,y_n)\)</span> stetig partiell differenzierbare Funktion.</p>
-<p>Dann ist die Funktion <span class="math notranslate nohighlight">\(f\)</span> lokal Lipschitz-stetig in <span class="math notranslate nohighlight">\(G\)</span> bezüglich des <span class="math notranslate nohighlight">\(y\)</span>-Variable.
-\end{lemma}
-\begin{proof}
-Sei <span class="math notranslate nohighlight">\((a,b) \in G\)</span> ein beliebiger Punkt.
-Dann existiert ein <span class="math notranslate nohighlight">\(r &gt; 0\)</span>, so dass die kompakte Menge</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-B_r(a,b) \ \coloneqq \ \lbrace (x,y) \in \R \times \R^n \: \colon \: |x - a| \leq r, \ ||y - b|| \leq r \rbrace
-\end{equation*}\]</div>
-<p>ganz in <span class="math notranslate nohighlight">\(G\)</span> liegt.
-Da nach Voraussetzung alle Komponenten der Jacobi-Matrix <span class="math notranslate nohighlight">\(J \coloneqq (\frac{\partial f_i}{\partial y_j})_{1 \leq i,j \leq n}\)</span> stetige Funktionen sind, können wir eine Konstante <span class="math notranslate nohighlight">\(L \in R_0^+\)</span> finden mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-L \ \coloneqq \ \sup_{(x,y) \in B_r(a,b)} \left\Vert J(x,y) \right\Vert \ &lt; \ +\infty.
-\end{equation*}\]</div>
-<p>Aus einer Folgerung des Mittelwertsatzes in \ref{thm:meanest} folgt für alle <span class="math notranslate nohighlight">\((x,y), (x,\tilde{y}) \in B_r(a,b)\)</span>, dass gilt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-||f(x,y) - f(x,\tilde{y})|| \ \leq \ L \cdot ||y - \tilde{y}||.
-\end{equation*}\]</div>
-<p>\end{proof}</p>
-<p>Nun sind wir in der Lage die hinreichenden Bedingungen für die Eindeutigkeit von Lösungen gewöhnlicher Differentialgleichungen zu formulieren.
-\begin{satz}[Eindeutigkeitssatz]\label{satz:ode_eindeutigkeitssatz}
-Sei <span class="math notranslate nohighlight">\(G\subset \R\times\R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f\colon G\to\R^n\)</span> eine stetige Funktion, die lokal Lipschitz-stetig in <span class="math notranslate nohighlight">\(G\)</span> bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist.
-Seien nun <span class="math notranslate nohighlight">\(\varphi,\vartheta\colon I\to \R^n\)</span> zwei Lösungen der Differentialgleichung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y^\prime(x) \, = \, f(x,y(x)) \qquad \text{ für alle } x\in I.
-\end{equation*}\]</div>
-<p>Stimmen die beiden Lösungen der Differentialgleichung in einem Punkt <span class="math notranslate nohighlight">\(x_0 \in I\)</span> überein, d.h., es gilt <span class="math notranslate nohighlight">\(\varphi(x_0) \, = \, \vartheta(x_0)\)</span>,
-so folgt schon</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi(x) \, = \, \vartheta(x)\qquad \text{ für alle } x\in I.
-\end{equation*}\]</div>
-<p>\end{satz}
-\begin{proof}
-Wir beginnen zunächst damit die Eindeutigkeit von Lösungen in einer lokalen <span class="math notranslate nohighlight">\(\epsilon\)</span>-Umgebung zu zeigen.
-Sei <span class="math notranslate nohighlight">\(x_0 \in I\)</span> ein Punkt, so dass für die beiden Lösungen <span class="math notranslate nohighlight">\(\varphi, \vartheta \colon I \rightarrow \R^n\)</span> der gewöhnlichen Differentialgleichung gilt <span class="math notranslate nohighlight">\(\varphi(x_0) = \vartheta(x_0)\)</span>.
-Auf Grund der Integraldarstellung in Satz \ref{satz:ode_integralgleichung} folgt nun</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f5b0ab5f-50f8-4fd4-a67a-1c9d660c57db">
-<span class="eqno">(7.9)<a class="headerlink" href="#equation-f5b0ab5f-50f8-4fd4-a67a-1c9d660c57db" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode_eindeutigkeit_integralgleichung}
-\varphi(x) - \vartheta(x) \ = \ \int_{x_0}^x f(t, \varphi(t)) - f(t, \vartheta(t)) \, \mathrm{d}t.
-\end{equation}\]</div>
-<p>Da <span class="math notranslate nohighlight">\(f\)</span> nach Voraussetzung lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist, existieren Konstanten <span class="math notranslate nohighlight">\(L \geq 0\)</span> und <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span>, so dass für alle <span class="math notranslate nohighlight">\(t \in I \cap B_\delta(x_0) \coloneqq \lbrace t \in I \colon |t - x_0| &lt; \delta \rbrace\)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}\label{eq:ode_eindeutigkeit_lipschitz}
-||f(t, \varphi(t)) - f(t, \vartheta(t))|| \ \leq \ L \cdot ||\varphi(t) - \vartheta(t)||.
-\end{equation*}\]</div>
-<p>Wir definieren nun die zwei Variablen</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\epsilon \, \coloneqq \, \min( \delta, \frac{1}{2L} ) \quad \text{ und } \quad M \, \coloneqq \, \sup\{ ||\varphi(x) - \vartheta(x)|| \, \colon \, x \in I \cap B_\epsilon(x_0) \}.
-\end{equation*}\]</div>
-<p>Aus Gleichung \eqref{eq:ode_eindeutigkeit_integralgleichung} und \eqref{eq:ode_eindeutigkeit_lipschitz} können wir nun für alle <span class="math notranslate nohighlight">\(x \in I \cap B_\epsilon(x_0)\)</span> folgern</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-||\varphi(x) - \vartheta(x)|| \ \leq \ L \cdot \left| \int_{x_0}^x ||\varphi(t) - \vartheta(t)||\, \mathrm{d}t \, \right| \ \leq \ L \cdot |x - x_0| \cdot M \ \leq \ \frac{M}{2}.
-\end{equation*}\]</div>
-<p>Da diese Abschätzung auch für den Punkt <span class="math notranslate nohighlight">\(x \in I \cap B_\epsilon(x_0)\)</span> gilt, für den das Supremum <span class="math notranslate nohighlight">\(M\)</span> angenommen wird, folgt also <span class="math notranslate nohighlight">\(M \leq \frac{M}{2}\)</span>.
-Dies ist jedoch nur möglich, wenn <span class="math notranslate nohighlight">\(M=0\)</span> gilt, d.h., wenn die Funktionen <span class="math notranslate nohighlight">\(\varphi\)</span> und <span class="math notranslate nohighlight">\(\vartheta\)</span> in <span class="math notranslate nohighlight">\(I \cap B_\epsilon(x_0)\)</span> übereinstimmen.</p>
-<p>Basierend auf obigem Resultat zeigen wir nun, dass <span class="math notranslate nohighlight">\(\varphi(x) = \vartheta(x)\)</span> für alle <span class="math notranslate nohighlight">\(x \in I\)</span> mit <span class="math notranslate nohighlight">\(x \geq x_0\)</span> gilt.
-Der Beweis für den Fall <span class="math notranslate nohighlight">\(x \leq x_0\)</span> funktioniert analog und wird daher nicht näher diskutiert.
-Wir definieren zunächst den am weitest rechts liegenden Punkt <span class="math notranslate nohighlight">\(\xi \in I\)</span>, so dass die Funktionen <span class="math notranslate nohighlight">\(\varphi\)</span> und <span class="math notranslate nohighlight">\(\vartheta\)</span> noch übereinstimmen durch</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-x_1 \ \coloneqq \ \sup\, \{ \xi \in I \: \colon \: \varphi|_{[x_0, \xi]} \equiv \vartheta|_{[x_0, \xi]} \}.
-\end{equation*}\]</div>
-<p>Falls <span class="math notranslate nohighlight">\(x_1 = \infty\)</span> oder gleich dem rechten Rand des Intervalls <span class="math notranslate nohighlight">\(I\)</span> gilt, so ist die Aussage bereits bewiesen.
-Nehmen wir also an, dass ein Punkt <span class="math notranslate nohighlight">\(x_1 \in I\)</span> existiert bis zu dem die Funktionen <span class="math notranslate nohighlight">\(\varphi\)</span> und <span class="math notranslate nohighlight">\(\vartheta\)</span> übereinstimmen und darüber hinaus ein <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> existiert, so dass <span class="math notranslate nohighlight">\([x_1, x_1 + \delta] \subset I\)</span> gilt.
-Nach Voraussetzung wissen wir nun, dass <span class="math notranslate nohighlight">\(\varphi(x_1) = \vartheta(x_1)\)</span> gilt und die Funktionen stetig sind.
-Nun wissen wir aus dem ersten Teil des Beweises, dass ein <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> existiert, so dass gilt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi(x) \ = \ \vartheta(x) \qquad \text{ für alle } x \in I \cap B_\epsilon(x_1).
-\end{equation*}\]</div>
-<p>Das widerspricht jedoch offensichtlich der Definition von <span class="math notranslate nohighlight">\(x_1 \in I\)</span>.
-Daher gilt also <span class="math notranslate nohighlight">\(\varphi(x) = \vartheta(x)\)</span> für alle <span class="math notranslate nohighlight">\(x\in I\)</span> mit <span class="math notranslate nohighlight">\(x \geq x_0\)</span>.
-\end{proof}</p>
-<p>Um zu verstehen, wann die Lösung einer gewöhnlichen Differentialgleichung nicht eindeutig ist, diskutieren wir im Folgenden ein Gegenbeispiel.
-\begin{bsp}
-Wir betrachten die folgende nichtlineare gewöhnliche Differentialgleichung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bb348aae-b9c2-43b6-9d4b-76e2733d11d5">
-<span class="eqno">(7.10)<a class="headerlink" href="#equation-bb348aae-b9c2-43b6-9d4b-76e2733d11d5" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:bsp_dgl_nichteindeutig}
-y^\prime(x) \ = \ (y(x))^{\frac23}.
-\end{equation}\]</div>
-<p>Wie man sofort einsieht ist eine spezielle Lösung der Differentialgleichung gegeben durch</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi_0(x) \ \equiv \ 0, \qquad \text{ für alle } x\in\R.
-\end{equation*}\]</div>
-<p>Da die Differentialgleichung separierbar ist, lassen sich die Lösungen unter der Annahme <span class="math notranslate nohighlight">\(y\neq 0\)</span> mit Hilfe von Satz \ref{satz:ode_getrennteVariablen} bestimmen.</p>
-<p>Man sieht aber auch leicht, dass für beliebiges <span class="math notranslate nohighlight">\(a\in\R\)</span> die Funktion <span class="math notranslate nohighlight">\(\vartheta_a\colon\R\to\R\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\vartheta_a(x) \ \coloneqq \ \frac1{27}(x-a)^3
-\end{equation*}\]</div>
-<p>die gewöhnliche Differentialgleichung \eqref{eq:bsp_dgl_nichteindeutig} erfüllt, denn es gilt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\vartheta'_a(x) \ = \ \frac19(x-a)^2 \ = \ \left(\frac1{27}(x-a)^3\right)^{\frac{2}{3}} \ = \ \vartheta_a(x)^{\frac23}.
-\end{equation*}\]</div>
-<p>Obwohl die Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> und <span class="math notranslate nohighlight">\(\vartheta_0\)</span> im Punkt <span class="math notranslate nohighlight">\(x_0 = a\)</span> übereinstimmen mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi_0(a) \, = \, \vartheta_a(a) \, = \, 0,
-\end{equation*}\]</div>
-<p>sieht man ein, dass der der Eindeutigkeitssatz \ref{satz:ode_eindeutigkeitssatz} nicht gilt.
-Der Grund hierfür ist eine Verletzung der Voraussetzungen des Satzes, denn die Funktion <span class="math notranslate nohighlight">\(f(x,y) \coloneqq y^{\frac23}\)</span> ist nicht für alle Punkte <span class="math notranslate nohighlight">\(y\in \R\)</span> bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variable Lipschitz-stetig.
-Zwar ist <span class="math notranslate nohighlight">\(f\)</span> für <span class="math notranslate nohighlight">\(y\neq 0\)</span> stetig partiell differenzierbar bezüglich der Variablen <span class="math notranslate nohighlight">\(y\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\frac{\partial f}{\partial y}(x,y) \ = \ \frac23 y^{-\frac13}.
-\end{equation*}\]</div>
-<p>Nach Lemma \ref{lem:ode_lokalLipschitz} ist <span class="math notranslate nohighlight">\(f\)</span> somit lokal Lipschitz-stetig in ganz <span class="math notranslate nohighlight">\(\R\times \R\setminus \{0\}\)</span> in Bezug auf die <span class="math notranslate nohighlight">\(y\)</span>-Variable.
-Jedoch ist <span class="math notranslate nohighlight">\(f\)</span> in keiner Umgebung eines Punktes <span class="math notranslate nohighlight">\((a,0)\)</span> Lipschitz-stetig bezüglich de <span class="math notranslate nohighlight">\(y\)</span>-Variablen, da dieser Punkt eine Singularität mit unendlicher Steigung darstellt.
-\end{bsp}</p>
-<p>Der folgende wichtige Satz formuliert die hinreichenden Bedingungen für die Existenz von Lösungen einer gewöhnlichen Differentialgleichung.
-\begin{satz}[Existenzsatz von Picard-Lindelöf]\label{satz:ode:picardlindeloef}
-Sei <span class="math notranslate nohighlight">\(G\subset \R\times\R^n\)</span>  eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f\colon G\to\R^n\)</span> eine stetige Funktion, die lokal Lipschitz-stetig auf <span class="math notranslate nohighlight">\(G\)</span> bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist.
-Dann existiert zu jedem Anfangswert <span class="math notranslate nohighlight">\((x_0,c) \in G\)</span> ein <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, sowie eine Lösung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\varphi \colon \left[x_0-\varepsilon, x_0+\varepsilon\right] \to \R^n
-\end{equation*}\]</div>
-<p>der gewöhnlichen Differentialgleichung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y^\prime(x) \ = \ f(x,y(x))
-\end{equation*}\]</div>
-<p>unter der Anfangsbedingung <span class="math notranslate nohighlight">\(\varphi(x_0)=c\)</span>.
-\end{satz}
-\begin{proof}
-Siehe \cite[§12, Satz 4]{forster}.
-\end{proof}</p>
-<p>Selbst wenn die Funktion <span class="math notranslate nohighlight">\(f\)</span> der Differentialgleichung <span class="math notranslate nohighlight">\(y^\prime(x) = f(x,y(x))\)</span> auf ganz <span class="math notranslate nohighlight">\(\R\times\R^n\)</span> definiert ist und überall lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist, so kann eine Lösung, die die Anfangsbedingung <span class="math notranslate nohighlight">\(\varphi(x_0)=c\)</span> erfüllt unter Umständen nur in einer sehr kleinen Umgebung von <span class="math notranslate nohighlight">\(x_0 \in \R\)</span> definiert sein.
-Dies wird durch das folgende Beispiel klar.
-\begin{bsp}
-Wir betrachten die folgende nichtlineare gewöhnliche Differentialgleichung erster Ordnung</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-y^\prime(x) = 2x\cdot (y(x))^2\,.
-\end{equation*}\]</div>
-<p>Die Funktion <span class="math notranslate nohighlight">\(f(x,y) = 2xy^2\)</span> ist offensichtlich auf ganz <span class="math notranslate nohighlight">\(\R\times\R\)</span> definiert und stetig partiell differenzierbar bezüglich der Variable <span class="math notranslate nohighlight">\(y\)</span> und somit nach Lemma  \ref{lem:ode_lokalLipschitz} lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen.</p>
-<p>Wir suchen eine Lösung <span class="math notranslate nohighlight">\(\phi \colon \R \rightarrow \R\)</span> der Differentialgleichung, die die Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(0) = c\)</span> erfüllt.
-Für den Fall <span class="math notranslate nohighlight">\(c=0\)</span> ist dies offensichtlich die konstante Funktion <span class="math notranslate nohighlight">\(\varphi(x) \equiv 0\)</span> für alle <span class="math notranslate nohighlight">\(x\in\R\)</span>.
-Für <span class="math notranslate nohighlight">\(c\neq0\)</span> können wir die Lösung durch Trennung der Variablen (siehe Kapitel \ref{s:trennung_variablen}) wie folgt unter der Annahme <span class="math notranslate nohighlight">\(y(x) \neq 0\)</span> berechnen:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-y' \ = \ \frac{\mathrm{d}y}{\mathrm{d}x} \ &amp;= \ 2xy^2 \\
-\Rightarrow \quad \frac{1}{y^2}\, \mathrm{d}y \ &amp;= \ 2x\, \mathrm{d}x\,,\\
-\Rightarrow \quad \int\limits_c^y\frac{1}{\eta^2}\, \mathrm{d}\eta \ &amp;= \ \int\limits_0^x 2\xi\,\mathrm{d}\xi,\\
-\Rightarrow \quad -\frac1y+\frac1c \ &amp;= \ x^2\,,\\
-\Rightarrow \quad \varphi(x) \ \coloneqq \ y \ &amp;= \ \frac1{\gamma - x^2},\qquad \text{ mit } \ \gamma \, \coloneqq \, \frac{1}{c}.
-\end{align*}\]</div>
-<p>Dies ist die Lösung der gewöhnlichen Differentialgleichung unter der Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(0)=c\)</span>, was man direkt durch Einsetzen verifizieren kann.</p>
-<p>Falls <span class="math notranslate nohighlight">\(c&gt;0\)</span> gilt, so ist der maximale Definitionsbereich dieser Lösung gegeben durch</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-I_c \ \coloneqq \ \left\{x\in\R~\colon~\vert x\vert &lt; \sqrt{\gamma}=c^{-\frac12}\right\}\,.
-\end{equation*}\]</div>
-<p>Nähert sich <span class="math notranslate nohighlight">\(x\)</span> von innen dem Rand des Intervalls <span class="math notranslate nohighlight">\(I_c\)</span>, so strebt der Funktionswert der Lösung gegen <span class="math notranslate nohighlight">\(+\infty\)</span>.
-Für <span class="math notranslate nohighlight">\(c&lt;0\)</span> ist die Lösung hingegen auf ganz <span class="math notranslate nohighlight">\(\R\)</span> definiert.
-\end{bsp}</p>
 </div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -1065,10 +631,10 @@ Für <span class="math notranslate nohighlight">\(c&lt;0\)</span> ist die Lösun
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../references.html" title="next page">
+        <a class="right-next" href="higher_order.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Bibliography</p>
+                <p class="prevnext-title"><span class="section-number">7.3. </span>Differentialgleichungen höherer Ordnung</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

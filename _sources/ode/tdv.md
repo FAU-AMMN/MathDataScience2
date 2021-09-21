@@ -1,3 +1,4 @@
+(s:trennung_variablen)=
 # Trennung der Variablen
 
 Nachdem wir im letzten Abschnitt einige motivierende Beispiele für gewöhnliche Differentialgleichungen aus der Physik diskutiert haben, wollen wir im Folgenden eine erste Technik zur Bestimmung von Lösungen für bestimmte Spezialfälle herleiten.
@@ -46,7 +47,7 @@ Wir bemerken zunächst, dass wir für $g(y) \neq 0$ für alle $y \in J$ die sepa
 \frac{y'(x)}{g(y)} \ = \ f(x).
 \end{equation*}
 Außerdem wissen wir, dass die stetige Funktion $g \colon J \rightarrow \R$ entweder positiv mit $g(y) > 0$ oder negativ mit $g(y) < 0$ für alle $y \in J$ sein muss.
-Denn ansonsten würde es nach dem Zwischenwertsatz \cite[Satz 5.13]{burger_2020} eine Stelle $y_0 \in J$ geben mit $g(y_0) = 0$, was nach Voraussetzung ausgeschlossen ist.
+Denn ansonsten würde es nach dem Zwischenwertsatz Satz 5.13 {cite:p}`burger_2020` eine Stelle $y_0 \in J$ geben mit $g(y_0) = 0$, was nach Voraussetzung ausgeschlossen ist.
 Damit folgt aber schon, dass die Funktion $G \colon J \rightarrow \R$ mit
 \begin{equation*}
 G(y) \ = \ \int\limits_{y_0}^y \frac{1}{g(s)}\,\mathrm{d}s

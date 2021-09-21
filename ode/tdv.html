@@ -356,6 +356,16 @@
      7.2. Variation der Konstanten
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="higher_order.html">
+     7.3. Differentialgleichungen höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="existence.html">
+     7.4. Existenz und Eindeutigkeit von Lösungen
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -445,7 +455,7 @@
               <div>
                 
   <div class="section" id="trennung-der-variablen">
-<h1><span class="section-number">7.1. </span>Trennung der Variablen<a class="headerlink" href="#trennung-der-variablen" title="Permalink to this headline">¶</a></h1>
+<span id="s-trennung-variablen"></span><h1><span class="section-number">7.1. </span>Trennung der Variablen<a class="headerlink" href="#trennung-der-variablen" title="Permalink to this headline">¶</a></h1>
 <p>Nachdem wir im letzten Abschnitt einige motivierende Beispiele für gewöhnliche Differentialgleichungen aus der Physik diskutiert haben, wollen wir im Folgenden eine erste Technik zur Bestimmung von Lösungen für bestimmte Spezialfälle herleiten.
 Die Methode der Trennung der Variablen, auch Separationsmethode genannt, erlaubt es separierbare Differentialgleichungen erster Ordnung zu lösen.</p>
 <p>Hierzu führen wir zunächst den Begriff von separierbaren Differentialgleichungen ein.</p>
@@ -491,7 +501,7 @@ G(\varphi(x)) \ = \ F(x) \qquad \text{ für alle } \ x\in I^\prime.
 \frac{y'(x)}{g(y)} \ = \ f(x).
 \end{equation*}\]</div>
 <p>Außerdem wissen wir, dass die stetige Funktion <span class="math notranslate nohighlight">\(g \colon J \rightarrow \R\)</span> entweder positiv mit <span class="math notranslate nohighlight">\(g(y) &gt; 0\)</span> oder negativ mit <span class="math notranslate nohighlight">\(g(y) &lt; 0\)</span> für alle <span class="math notranslate nohighlight">\(y \in J\)</span> sein muss.
-Denn ansonsten würde es nach dem Zwischenwertsatz \cite[Satz 5.13]{burger_2020} eine Stelle <span class="math notranslate nohighlight">\(y_0 \in J\)</span> geben mit <span class="math notranslate nohighlight">\(g(y_0) = 0\)</span>, was nach Voraussetzung ausgeschlossen ist.
+Denn ansonsten würde es nach dem Zwischenwertsatz Satz 5.13 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> eine Stelle <span class="math notranslate nohighlight">\(y_0 \in J\)</span> geben mit <span class="math notranslate nohighlight">\(g(y_0) = 0\)</span>, was nach Voraussetzung ausgeschlossen ist.
 Damit folgt aber schon, dass die Funktion <span class="math notranslate nohighlight">\(G \colon J \rightarrow \R\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}

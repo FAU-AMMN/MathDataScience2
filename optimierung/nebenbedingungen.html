@@ -356,6 +356,16 @@
      7.2. Variation der Konstanten
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/higher_order.html">
+     7.3. Differentialgleichungen höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/existence.html">
+     7.4. Existenz und Eindeutigkeit von Lösungen
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -537,8 +547,8 @@ F(x,y) \ \coloneqq \ x + y
 \end{equation*}\]</div>
 <p>minimieren unter der Nebenbedingung, dass der Lösungsvektor <span class="math notranslate nohighlight">\(x^* = (x,y)^T \in \R^2\)</span> normiert sein soll, d.h., <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>.
 Dies führt also zu einem Optimierungsproblem mit Nebenbedingung der folgenden Gestalt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-31f18e8c-5558-4a79-9262-6f7699d56aa7">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-31f18e8c-5558-4a79-9262-6f7699d56aa7" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:lagrange_bsp}
+<div class="amsmath math notranslate nohighlight" id="equation-ba95f744-ef08-4f64-8ad4-b11d1f1b1b48">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-ba95f744-ef08-4f64-8ad4-b11d1f1b1b48" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:lagrange_bsp}
 \min_{(x,y)\in \R^2} \, F(x,y) \, = \,  x+y \qquad \text{ mit } \qquad c(x,y) \, = \, x^2+y^2 - 1 \, = \, 0.
 \end{equation}\]</div>
 <p>Wir identifizieren zunächst Punkte in denen der Gradient von <span class="math notranslate nohighlight">\(c(x,y)\)</span> verschwindet, d.h.,</p>

@@ -1,0 +1,804 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.4. Existenz und Eindeutigkeit von Lösungen &#8212; Mathematik für Data Science 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "C": "\\mathbb{C}", "Q": "\\mathbb{Q}", "K": "\\mathbb{K}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "R": ["\\mathbb{R}"], "norm": ["{\\Vert#1\\Vert}", 1], "abs": ["{|#1|}", 1], "coloneqq": ["{:=}"], "eqqcolon": ["{=:}"], "emph": ["\\pmb#1", 1], "tr": "\\operatorname{Spur}", "lin": "\\operatorname{lin}", "dv": "\\mathrm{div}~", "rot": "\\mathrm{rot}~", "Dim": "\\operatorname{dim}", "diag": "\\operatorname{diag}", "Kern": "\\operatorname{Kern}", "Bild": "\\operatorname{Bild}", "Rang": "\\operatorname{Rang}", "GL": "\\operatorname{GL}", "Eig": "\\operatorname{Eig}", "End": "\\operatorname{End}", "Hau": "\\operatorname{Haupt}", "mymathbb": ["\\boldsymbol{#1}", 1], "idx": "\\mathrm{d}x", "d": "\\mathrm{d}}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="../references.html" />
+    <link rel="prev" title="7.3. Differentialgleichungen höherer Ordnung" href="higher_order.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/FAU-DMM-Logo-rgb-10cm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematik für Data Science 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Mathematik für DataScience 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lineare Algebra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../eigenwerte/eigenwerte.html">
+   1. Eigenwerte
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/prelim.html">
+     1.1. Mathematische Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/werte_vektoren.html">
+     1.2. Eigenwerte und Eigenvektoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/char_pol.html">
+     1.3. Das charakteristische Polynom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/diag.html">
+     1.4. Diagonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/triag.html">
+     1.5. Trigonalisierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../eigenwerte/jordan.html">
+     1.6. Die Jordansche Normalform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vektoraeume/vektoraeume.html">
+   2. Euklidische und unitäre Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/standard_skalar.html">
+     2.1. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/vektor_produkt.html">
+     2.2. Das Vektorprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{R}^3\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/complex_skalar.html">
+     2.3. Das kanonische Skalarprodukt in
+     <span class="math notranslate nohighlight">
+      \(\mathbb{C}^n\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/sesqui.html">
+     2.4. Bilinear- und Sesquilinearformen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth.html">
+     2.5. Orthogonalisierung und Orthonormalisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/orth_endo.html">
+     2.6. Orthogonale und unitäre Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/selbstadjungiert.html">
+     2.7. Selbstadjungierte Endomorphismen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vektoraeume/normal.html">
+     2.8. Normale Endomorphismen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
+   3. Normierte Vektorräume
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
+     3.1. Konvergenz von Folgen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
+     3.2. Stetigkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
+     3.3. Kompaktheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
+     3.4. Hilberträume
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/dual.html">
+     3.5. Dualräume
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../integrale/integrale.html">
+   4. Integralrechnung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/part_int.html">
+     4.1. Partielle Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/substitution.html">
+     4.2. Substitutionsregel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integrale/rat_func.html">
+     4.3. Integration rationaler Funktionen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ableitungen/ableitungen.html">
+   5. Differentiation von Funktionen mehrerer Veränderlicher
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/part_diff.html">
+     5.1. Partielle Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/first_order.html">
+     5.2. Differentialoperatoren erster Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/higher_order.html">
+     5.3. Differentialoperatoren höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/tot_diff.html">
+     5.4. Totale Differenzierbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ableitungen/taylor.html">
+     5.5. Taylor-Formel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../optimierung/optimierung.html">
+   6. Optimierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/unrestringiert.html">
+     6.1. Unrestringierte Optimierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../optimierung/nebenbedingungen.html">
+     6.2. Optimierung unter Nebenbedingungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ode.html">
+   7. Gewöhnliche Differentialgleichungen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="tdv.html">
+     7.1. Trennung der Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vdk.html">
+     7.2. Variation der Konstanten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="higher_order.html">
+     7.3. Differentialgleichungen höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     7.4. Existenz und Eindeutigkeit von Lösungen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ode/existence.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="existenz-und-eindeutigkeit-von-losungen">
+<h1><span class="section-number">7.4. </span>Existenz und Eindeutigkeit von Lösungen<a class="headerlink" href="#existenz-und-eindeutigkeit-von-losungen" title="Permalink to this headline">¶</a></h1>
+<p>Bisher haben wir uns vornehmlich um analytische Lösungsverfahren für lineare gewöhnliche Differentialgleichungen erster Ordnung beschäftigt.
+Dabei haben wir theoretische Überlegungen zur Existenz und Eindeutigkeit von Lösungen allgemeiner gewöhnlicher Differentialgleichungen vernachlässigt.
+Daher wollen wir uns in diesem Abschnitt den notwendigen und hinreichenden Bedingungen widmen, die uns sagen wann eine Differentialgleichung lösbar ist und wann ihre Lösung sogar eindeutig ist.</p>
+<p>Da wir in Kapitel \ref{s:dgl_hoehere_ordnung} gesehen haben, dass sich beliebige gewöhnliche Differentialgleichungen höherer Ordnung in ein Differentialgleichungssystem erster Ordnung transformieren lassen, beschränken wir uns auf diese Differentialgleichungssysteme.
+Dies motiviert die folgende Definition.</p>
+<div class="proof definition admonition" id="def:dglsystem_erster_ordnung">
+<p class="admonition-title"><span class="caption-number">Definition 7.4 </span> (Differentialgleichungssystem erster Ordnung)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(G\subset\R\times\R^n\)</span> eine offene Teilmenge und</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f\colon G \ &amp;\to \ \R^n, \\
+(x,y) \ &amp;\mapsto \ f(x,y)
+\end{align*}\]</div>
+<p>eine vektorwertige stetige Funktion.</p>
+<p>Dann nennt man die folgende Gleichung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+y^\prime(x)  \ = \ f(x,y(x))
+\end{equation*}\]</div>
+<p>ein <em>System von <span class="math notranslate nohighlight">\(n\)</span> Differentialgleichungen erster Ordnung</em>.
+Eine Lösung dieser Gleichung ist eine auf dem offenen Intervall <span class="math notranslate nohighlight">\(I\subset \R\)</span> total differenzierbare Funktion <span class="math notranslate nohighlight">\(\varphi\colon I\to\R^n\)</span>, für die die folgenden Eigenschaften gelten:</p>
+<ul class="simple">
+<li><p>Der Graph <span class="math notranslate nohighlight">\(\Gamma_\varphi\)</span> von <span class="math notranslate nohighlight">\(\varphi\)</span> liegt in der Teilmenge <span class="math notranslate nohighlight">\(G\)</span>, d.h,</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Gamma_\varphi \ \coloneqq  \ \lbrace (x,y)\in I\times \R^n~\vert~ y=\varphi(x)\rbrace \, \subset \, G.
+\end{equation*}\]</div>
+<ul class="simple">
+<li><p>Die Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> erfüllt die Gleichung</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varphi^\prime(x) \: = \: f(x, \varphi(x))\qquad \text{für alle} \ x\in I.
+\end{equation*}\]</div>
+<p>\end{enumerate}</p>
+</div>
+</div><div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 7.2 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Im Gegensatz zu vorigen Abschnitten handelt es sich in Definition <a class="reference internal" href="#def:dglsystem_erster_ordnung">Definition 7.4</a> nicht um eine Differentialgleichung einer skalarwertigen Funktion sondern um ein Differentialgleichungssystem einer vektorwertigen Funktion.
+Wir können die vektorwertigen Funktionen <span class="math notranslate nohighlight">\(y\)</span> und <span class="math notranslate nohighlight">\(f\)</span> also komponentenweise notieren als</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+y (x) \ = \ \left(\begin{array}{c}y_1(x)\\\vdots\\y_n(x)\end{array}\right) \qquad\text{und}\qquad f(x,y) \ = \ \left(\begin{array}{c}
+f_1(x,y) \\\vdots\\f_n(x,y) \end{array}\right),
+\end{equation*}\]</div>
+<p>was zu folgendem Differentialgleichungssystem erster Ordnung führt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\left\{\begin{array}{c}
+y_1^\prime(x) \, = \, f_1 (x, y_1(x), \ldots, y_n(x)),\\
+y_2^\prime(x) \, = \, f_2 (x, y_1(x), \ldots, y_n(x)),\\
+\ldots\\
+y_n^\prime(x) \, = \, f_n (x, y_1(x), \ldots, y_n(x)).
+\end{array}\right.
+\end{equation*}\]</div>
+</div>
+</div><p>Der folgende Satz charakterisiert die Lösung eines Differentialgleichungssystems mit Anfangswertbedingungen als Lösung einer zugehörigen Integralgleichung.</p>
+<div class="proof theorem admonition" id="satz:ode_integralgleichung">
+<p class="admonition-title"><span class="caption-number">Theorem 7.4 </span> (Integralgleichung)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(G\subset \R\times \R^n\)</span> eine offene Teilmenge, <span class="math notranslate nohighlight">\(I \subset R\)</span> ein offenes Intervall und sei <span class="math notranslate nohighlight">\(f\colon G\to\R^n\)</span> eine stetige Abbildung.
+Weiter seien die Anfangwerte <span class="math notranslate nohighlight">\((x_0,c)\in G\)</span> mit <span class="math notranslate nohighlight">\(x_0 \in I\)</span> gegeben.
+Sei nun <span class="math notranslate nohighlight">\(\varphi\colon I\to \R^n\)</span> eine total differenzierbare Funktion, deren Graph in <span class="math notranslate nohighlight">\(G\)</span> enthalten ist</p>
+<p>Die Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> ist genau dann eine Lösung der Differentialgleichung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+y^\prime(x) \ = \ f(x,y(x))
+\end{equation*}\]</div>
+<p>unter der Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span>, wenn sie die folgende Integralgleichung erfüllt:</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-integralgleichung">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-eq-ode-integralgleichung" title="Permalink to this equation">¶</a></span>\[\varphi(x) \ = \ c + \int\limits_{x_0}^x f(t,\varphi(t))\,\mathrm{d}t \qquad \text{für alle } \ x\in I.\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir zeigen zunächst die Rückrichtung des Satzes.
+Sei also die Integralgleichung <a class="reference internal" href="#equation-eq-ode-integralgleichung">(7.7)</a> erfüllt.
+Für die Anfangswertbedingung setzen wir <span class="math notranslate nohighlight">\(x = x_0\)</span> und sehen somit, dass <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span> gilt.
+Da die Funktion <span class="math notranslate nohighlight">\(f\)</span> nach Voraussetzung stetig ist, folgt aus dem Hauptsatz der Integral- und Differentialrechnung \cite[Kapitel 7.2]{burger_2020}, dass</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\frac{\mathrm{d}}{\mathrm{d}x} \int_{x_0}^x f(t, \varphi(t)) \, \mathrm{d}t \ = \ f(x, \varphi(x)).
+\end{equation*}\]</div>
+<p>Damit folgt aus der Definition der Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> in \eqref{eq:ode_integralgleichung}, dass <span class="math notranslate nohighlight">\(\varphi\)</span> total differenzierbar ist und die gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(\varphi'(x) = f(x, \varphi(x))\)</span> erfüllt.</p>
+<p>Für die Hinrichtung des Beweises nehmen wir an, dass die Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> eine Lösung der gewöhnlichen Differentialgleichung <span class="math notranslate nohighlight">\(\varphi'(x) = f(x, \varphi(x))\)</span> ist, total differenzierbar sei und die Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span> erfülle.
+Dann können wir das folgende Integral betrachten und erhalten aus dem Hauptsatz der Integral- und Differentialrechnung:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\int_{x_0}^x f(t, \varphi(t)) \, \mathrm{d}t \ = \ \int_{x_0}^x \varphi'(t) \, \mathrm{d}t \ = \ \varphi(x) - \varphi(x_0) \ = \ \varphi(x) - c.
+\end{equation*}\]</div>
+<p>Durch Umstellen von <span class="math notranslate nohighlight">\(c\)</span> auf die linke Seite erhält man die Identität der Integralgleichung in \eqref{eq:ode_integralgleichung}.</p>
+</div>
+<p>Das folgende Lemma liefert uns ein hinreichendes Kriterium für die Lipschitz-Stetigkeit einer Funktion.
+Diese Eigenschaft wird für die Existenz und Eindeutigkeit von Lösungen gewöhnlicher Differentialgleichungen entscheidend sein.</p>
+<div class="proof lemma admonition" id="lem:ode_lokalLipschitz">
+<p class="admonition-title"><span class="caption-number">Lemma 7.1 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(G\subset \R\times\R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f\colon G\to\R^n\)</span> eine bezüglich der Variablen <span class="math notranslate nohighlight">\(y=(y_1,\ldots,y_n)\)</span> stetig partiell differenzierbare Funktion.</p>
+<p>Dann ist die Funktion <span class="math notranslate nohighlight">\(f\)</span> lokal Lipschitz-stetig in <span class="math notranslate nohighlight">\(G\)</span> bezüglich des <span class="math notranslate nohighlight">\(y\)</span>-Variable.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Sei <span class="math notranslate nohighlight">\((a,b) \in G\)</span> ein beliebiger Punkt.
+Dann existiert ein <span class="math notranslate nohighlight">\(r &gt; 0\)</span>, so dass die kompakte Menge</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+B_r(a,b) \ \coloneqq \ \lbrace (x,y) \in \R \times \R^n \: \colon \: |x - a| \leq r, \ ||y - b|| \leq r \rbrace
+\end{equation*}\]</div>
+<p>ganz in <span class="math notranslate nohighlight">\(G\)</span> liegt.
+Da nach Voraussetzung alle Komponenten der Jacobi-Matrix <span class="math notranslate nohighlight">\(J \coloneqq (\frac{\partial f_i}{\partial y_j})_{1 \leq i,j \leq n}\)</span> stetige Funktionen sind, können wir eine Konstante <span class="math notranslate nohighlight">\(L \in R_0^+\)</span> finden mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+L \ \coloneqq \ \sup_{(x,y) \in B_r(a,b)} \left\Vert J(x,y) \right\Vert \ &lt; \ +\infty.
+\end{equation*}\]</div>
+<p>Aus einer Folgerung des Mittelwertsatzes in \ref{thm:meanest} folgt für alle <span class="math notranslate nohighlight">\((x,y), (x,\tilde{y}) \in B_r(a,b)\)</span>, dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+||f(x,y) - f(x,\tilde{y})|| \ \leq \ L \cdot ||y - \tilde{y}||.
+\end{equation*}\]</div>
+</div>
+<p>Nun sind wir in der Lage die hinreichenden Bedingungen für die Eindeutigkeit von Lösungen gewöhnlicher Differentialgleichungen zu formulieren.</p>
+<div class="proof theorem admonition" id="satz:ode_eindeutigkeitssatz}">
+<p class="admonition-title"><span class="caption-number">Theorem 7.5 </span> (Eindeutigkeitssatz)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(G\subset \R\times\R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f\colon G\to\R^n\)</span> eine stetige Funktion, die lokal Lipschitz-stetig in <span class="math notranslate nohighlight">\(G\)</span> bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist.
+Seien nun <span class="math notranslate nohighlight">\(\varphi,\vartheta\colon I\to \R^n\)</span> zwei Lösungen der Differentialgleichung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+y^\prime(x) \, = \, f(x,y(x)) \qquad \text{ für alle } x\in I.
+\end{equation*}\]</div>
+<p>Stimmen die beiden Lösungen der Differentialgleichung in einem Punkt <span class="math notranslate nohighlight">\(x_0 \in I\)</span> überein, d.h., es gilt <span class="math notranslate nohighlight">\(\varphi(x_0) \, = \, \vartheta(x_0)\)</span>,
+so folgt schon</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varphi(x) \, = \, \vartheta(x)\qquad \text{ für alle } x\in I.
+\end{equation*}\]</div>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir beginnen zunächst damit die Eindeutigkeit von Lösungen in einer lokalen <span class="math notranslate nohighlight">\(\epsilon\)</span>-Umgebung zu zeigen.
+Sei <span class="math notranslate nohighlight">\(x_0 \in I\)</span> ein Punkt, so dass für die beiden Lösungen <span class="math notranslate nohighlight">\(\varphi, \vartheta \colon I \rightarrow \R^n\)</span> der gewöhnlichen Differentialgleichung gilt <span class="math notranslate nohighlight">\(\varphi(x_0) = \vartheta(x_0)\)</span>.
+Auf Grund der Integraldarstellung in Satz \ref{satz:ode_integralgleichung} folgt nun</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7b331002-cbaf-4703-9be9-17dc54f5b20d">
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-7b331002-cbaf-4703-9be9-17dc54f5b20d" title="Permalink to this equation">¶</a></span>\[\begin{equation}:label: eq:ode_eindeutigkeit_integralgleichung}
+\varphi(x) - \vartheta(x) \ = \ \int_{x_0}^x f(t, \varphi(t)) - f(t, \vartheta(t)) \, \mathrm{d}t.
+\end{equation}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(f\)</span> nach Voraussetzung lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist, existieren Konstanten <span class="math notranslate nohighlight">\(L \geq 0\)</span> und <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span>, so dass für alle <span class="math notranslate nohighlight">\(t \in I \cap B_\delta(x_0) \coloneqq \lbrace t \in I \colon |t - x_0| &lt; \delta \rbrace\)</span> gilt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}:label: eq:ode_eindeutigkeit_lipschitz}
+||f(t, \varphi(t)) - f(t, \vartheta(t))|| \ \leq \ L \cdot ||\varphi(t) - \vartheta(t)||.
+\end{equation*}\]</div>
+<p>Wir definieren nun die zwei Variablen</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\epsilon \, \coloneqq \, \min( \delta, \frac{1}{2L} ) \quad \text{ und } \quad M \, \coloneqq \, \sup\{ ||\varphi(x) - \vartheta(x)|| \, \colon \, x \in I \cap B_\epsilon(x_0) \}.
+\end{equation*}\]</div>
+<p>Aus Gleichung \eqref{eq:ode_eindeutigkeit_integralgleichung} und \eqref{eq:ode_eindeutigkeit_lipschitz} können wir nun für alle <span class="math notranslate nohighlight">\(x \in I \cap B_\epsilon(x_0)\)</span> folgern</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+||\varphi(x) - \vartheta(x)|| \ \leq \ L \cdot \left| \int_{x_0}^x ||\varphi(t) - \vartheta(t)||\, \mathrm{d}t \, \right| \ \leq \ L \cdot |x - x_0| \cdot M \ \leq \ \frac{M}{2}.
+\end{equation*}\]</div>
+<p>Da diese Abschätzung auch für den Punkt <span class="math notranslate nohighlight">\(x \in I \cap B_\epsilon(x_0)\)</span> gilt, für den das Supremum <span class="math notranslate nohighlight">\(M\)</span> angenommen wird, folgt also <span class="math notranslate nohighlight">\(M \leq \frac{M}{2}\)</span>.
+Dies ist jedoch nur möglich, wenn <span class="math notranslate nohighlight">\(M=0\)</span> gilt, d.h., wenn die Funktionen <span class="math notranslate nohighlight">\(\varphi\)</span> und <span class="math notranslate nohighlight">\(\vartheta\)</span> in <span class="math notranslate nohighlight">\(I \cap B_\epsilon(x_0)\)</span> übereinstimmen.</p>
+<p>Basierend auf obigem Resultat zeigen wir nun, dass <span class="math notranslate nohighlight">\(\varphi(x) = \vartheta(x)\)</span> für alle <span class="math notranslate nohighlight">\(x \in I\)</span> mit <span class="math notranslate nohighlight">\(x \geq x_0\)</span> gilt.
+Der Beweis für den Fall <span class="math notranslate nohighlight">\(x \leq x_0\)</span> funktioniert analog und wird daher nicht näher diskutiert.
+Wir definieren zunächst den am weitest rechts liegenden Punkt <span class="math notranslate nohighlight">\(\xi \in I\)</span>, so dass die Funktionen <span class="math notranslate nohighlight">\(\varphi\)</span> und <span class="math notranslate nohighlight">\(\vartheta\)</span> noch übereinstimmen durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+x_1 \ \coloneqq \ \sup\, \{ \xi \in I \: \colon \: \varphi|_{[x_0, \xi]} \equiv \vartheta|_{[x_0, \xi]} \}.
+\end{equation*}\]</div>
+<p>Falls <span class="math notranslate nohighlight">\(x_1 = \infty\)</span> oder gleich dem rechten Rand des Intervalls <span class="math notranslate nohighlight">\(I\)</span> gilt, so ist die Aussage bereits bewiesen.
+Nehmen wir also an, dass ein Punkt <span class="math notranslate nohighlight">\(x_1 \in I\)</span> existiert bis zu dem die Funktionen <span class="math notranslate nohighlight">\(\varphi\)</span> und <span class="math notranslate nohighlight">\(\vartheta\)</span> übereinstimmen und darüber hinaus ein <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> existiert, so dass <span class="math notranslate nohighlight">\([x_1, x_1 + \delta] \subset I\)</span> gilt.
+Nach Voraussetzung wissen wir nun, dass <span class="math notranslate nohighlight">\(\varphi(x_1) = \vartheta(x_1)\)</span> gilt und die Funktionen stetig sind.
+Nun wissen wir aus dem ersten Teil des Beweises, dass ein <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> existiert, so dass gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varphi(x) \ = \ \vartheta(x) \qquad \text{ für alle } x \in I \cap B_\epsilon(x_1).
+\end{equation*}\]</div>
+<p>Das widerspricht jedoch offensichtlich der Definition von <span class="math notranslate nohighlight">\(x_1 \in I\)</span>.
+Daher gilt also <span class="math notranslate nohighlight">\(\varphi(x) = \vartheta(x)\)</span> für alle <span class="math notranslate nohighlight">\(x\in I\)</span> mit <span class="math notranslate nohighlight">\(x \geq x_0\)</span>.</p>
+</div>
+<p>Um zu verstehen, wann die Lösung einer gewöhnlichen Differentialgleichung nicht eindeutig ist, diskutieren wir im Folgenden ein Gegenbeispiel.</p>
+<div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 7.9 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir betrachten die folgende nichtlineare gewöhnliche Differentialgleichung</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f49922b4-8a56-40a1-b542-831172137cff">
+<span class="eqno">(7.9)<a class="headerlink" href="#equation-f49922b4-8a56-40a1-b542-831172137cff" title="Permalink to this equation">¶</a></span>\[\begin{equation}:label: eq:bsp_dgl_nichteindeutig}
+y^\prime(x) \ = \ (y(x))^{\frac23}.
+\end{equation}\]</div>
+<p>Wie man sofort einsieht ist eine spezielle Lösung der Differentialgleichung gegeben durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varphi_0(x) \ \equiv \ 0, \qquad \text{ für alle } x\in\R.
+\end{equation*}\]</div>
+<p>Da die Differentialgleichung separierbar ist, lassen sich die Lösungen unter der Annahme <span class="math notranslate nohighlight">\(y\neq 0\)</span> mit Hilfe von Satz <a class="reference internal" href="tdv.html#satz:ode_getrennteVariablen">Theorem 7.1</a> bestimmen.</p>
+<p>Man sieht aber auch leicht, dass für beliebiges <span class="math notranslate nohighlight">\(a\in\R\)</span> die Funktion <span class="math notranslate nohighlight">\(\vartheta_a\colon\R\to\R\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\vartheta_a(x) \ \coloneqq \ \frac1{27}(x-a)^3
+\end{equation*}\]</div>
+<p>die gewöhnliche Differentialgleichung <code class="xref eq docutils literal notranslate"><span class="pre">eq:bsp_dgl_nichteindeutig</span></code> erfüllt, denn es gilt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\vartheta'_a(x) \ = \ \frac19(x-a)^2 \ = \ \left(\frac1{27}(x-a)^3\right)^{\frac{2}{3}} \ = \ \vartheta_a(x)^{\frac23}.
+\end{equation*}\]</div>
+<p>Obwohl die Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> und <span class="math notranslate nohighlight">\(\vartheta_0\)</span> im Punkt <span class="math notranslate nohighlight">\(x_0 = a\)</span> übereinstimmen mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varphi_0(a) \, = \, \vartheta_a(a) \, = \, 0,
+\end{equation*}\]</div>
+<p>sieht man ein, dass der der Eindeutigkeitssatz \ref{satz:ode_eindeutigkeitssatz} nicht gilt.
+Der Grund hierfür ist eine Verletzung der Voraussetzungen des Satzes, denn die Funktion <span class="math notranslate nohighlight">\(f(x,y) \coloneqq y^{\frac23}\)</span> ist nicht für alle Punkte <span class="math notranslate nohighlight">\(y\in \R\)</span> bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variable Lipschitz-stetig.
+Zwar ist <span class="math notranslate nohighlight">\(f\)</span> für <span class="math notranslate nohighlight">\(y\neq 0\)</span> stetig partiell differenzierbar bezüglich der Variablen <span class="math notranslate nohighlight">\(y\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\frac{\partial f}{\partial y}(x,y) \ = \ \frac23 y^{-\frac13}.
+\end{equation*}\]</div>
+<p>Nach Lemma \ref{lem:ode_lokalLipschitz} ist <span class="math notranslate nohighlight">\(f\)</span> somit lokal Lipschitz-stetig in ganz <span class="math notranslate nohighlight">\(\R\times \R\setminus \{0\}\)</span> in Bezug auf die <span class="math notranslate nohighlight">\(y\)</span>-Variable.
+Jedoch ist <span class="math notranslate nohighlight">\(f\)</span> in keiner Umgebung eines Punktes <span class="math notranslate nohighlight">\((a,0)\)</span> Lipschitz-stetig bezüglich de <span class="math notranslate nohighlight">\(y\)</span>-Variablen, da dieser Punkt eine Singularität mit unendlicher Steigung darstellt.</p>
+</div>
+</div><p>Der folgende wichtige Satz formuliert die hinreichenden Bedingungen für die Existenz von Lösungen einer gewöhnlichen Differentialgleichung.</p>
+<div class="proof theorem admonition" id="satz:ode:picardlindeloef">
+<p class="admonition-title"><span class="caption-number">Theorem 7.6 </span> (Existenzsatz von Picard-Lindelöf)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(G\subset \R\times\R^n\)</span>  eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f\colon G\to\R^n\)</span> eine stetige Funktion, die lokal Lipschitz-stetig auf <span class="math notranslate nohighlight">\(G\)</span> bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist.
+Dann existiert zu jedem Anfangswert <span class="math notranslate nohighlight">\((x_0,c) \in G\)</span> ein <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, sowie eine Lösung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varphi \colon \left[x_0-\varepsilon, x_0+\varepsilon\right] \to \R^n
+\end{equation*}\]</div>
+<p>der gewöhnlichen Differentialgleichung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+y^\prime(x) \ = \ f(x,y(x))
+\end{equation*}\]</div>
+<p>unter der Anfangsbedingung <span class="math notranslate nohighlight">\(\varphi(x_0)=c\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Siehe §12, Satz 4 <span id="id1">[<a class="reference internal" href="../references.html#id4">For17</a>]</span>.</p>
+</div>
+<p>Selbst wenn die Funktion <span class="math notranslate nohighlight">\(f\)</span> der Differentialgleichung <span class="math notranslate nohighlight">\(y^\prime(x) = f(x,y(x))\)</span> auf ganz <span class="math notranslate nohighlight">\(\R\times\R^n\)</span> definiert ist und überall lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist, so kann eine Lösung, die die Anfangsbedingung <span class="math notranslate nohighlight">\(\varphi(x_0)=c\)</span> erfüllt unter Umständen nur in einer sehr kleinen Umgebung von <span class="math notranslate nohighlight">\(x_0 \in \R\)</span> definiert sein.
+Dies wird durch das folgende Beispiel klar.</p>
+<div class="proof example admonition" id="example-7">
+<p class="admonition-title"><span class="caption-number">Example 7.10 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir betrachten die folgende nichtlineare gewöhnliche Differentialgleichung erster Ordnung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+y^\prime(x) = 2x\cdot (y(x))^2\,.
+\end{equation*}\]</div>
+<p>Die Funktion <span class="math notranslate nohighlight">\(f(x,y) = 2xy^2\)</span> ist offensichtlich auf ganz <span class="math notranslate nohighlight">\(\R\times\R\)</span> definiert und stetig partiell differenzierbar bezüglich der Variable <span class="math notranslate nohighlight">\(y\)</span> und somit nach Lemma  \ref{lem:ode_lokalLipschitz} lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen.</p>
+<p>Wir suchen eine Lösung <span class="math notranslate nohighlight">\(\phi \colon \R \rightarrow \R\)</span> der Differentialgleichung, die die Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(0) = c\)</span> erfüllt.
+Für den Fall <span class="math notranslate nohighlight">\(c=0\)</span> ist dies offensichtlich die konstante Funktion <span class="math notranslate nohighlight">\(\varphi(x) \equiv 0\)</span> für alle <span class="math notranslate nohighlight">\(x\in\R\)</span>.
+Für <span class="math notranslate nohighlight">\(c\neq0\)</span> können wir die Lösung durch Trennung der Variablen (siehe Kapitel \ref{s:trennung_variablen}) wie folgt unter der Annahme <span class="math notranslate nohighlight">\(y(x) \neq 0\)</span> berechnen:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+y' \ = \ \frac{\mathrm{d}y}{\mathrm{d}x} \ &amp;= \ 2xy^2 \\
+\Rightarrow \quad \frac{1}{y^2}\, \mathrm{d}y \ &amp;= \ 2x\, \mathrm{d}x\,,\\
+\Rightarrow \quad \int\limits_c^y\frac{1}{\eta^2}\, \mathrm{d}\eta \ &amp;= \ \int\limits_0^x 2\xi\,\mathrm{d}\xi,\\
+\Rightarrow \quad -\frac1y+\frac1c \ &amp;= \ x^2\,,\\
+\Rightarrow \quad \varphi(x) \ \coloneqq \ y \ &amp;= \ \frac1{\gamma - x^2},\qquad \text{ mit } \ \gamma \, \coloneqq \, \frac{1}{c}.
+\end{align*}\]</div>
+<p>Dies ist die Lösung der gewöhnlichen Differentialgleichung unter der Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(0)=c\)</span>, was man direkt durch Einsetzen verifizieren kann.</p>
+<p>Falls <span class="math notranslate nohighlight">\(c&gt;0\)</span> gilt, so ist der maximale Definitionsbereich dieser Lösung gegeben durch</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+I_c \ \coloneqq \ \left\{x\in\R~\colon~\vert x\vert &lt; \sqrt{\gamma}=c^{-\frac12}\right\}\,.
+\end{equation*}\]</div>
+<p>Nähert sich <span class="math notranslate nohighlight">\(x\)</span> von innen dem Rand des Intervalls <span class="math notranslate nohighlight">\(I_c\)</span>, so strebt der Funktionswert der Lösung gegen <span class="math notranslate nohighlight">\(+\infty\)</span>.
+Für <span class="math notranslate nohighlight">\(c&lt;0\)</span> ist die Lösung hingegen auf ganz <span class="math notranslate nohighlight">\(\R\)</span> definiert.</p>
+</div>
+</div></div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ode"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="higher_order.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">7.3. </span>Differentialgleichungen höherer Ordnung</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../references.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Bibliography</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.2. Stetigkeit &#8212; Mathematik für Data Science 2</title>
+    <title>7.3. Differentialgleichungen höherer Ordnung &#8212; Mathematik für Data Science 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../_static/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.3. Kompaktheit" href="kompaktheit.html" />
-    <link rel="prev" title="3.1. Konvergenz von Folgen" href="konvergenz.html" />
+    <link rel="next" title="7.4. Existenz und Eindeutigkeit von Lösungen" href="existence.html" />
+    <link rel="prev" title="7.2. Variation der Konstanten" href="vdk.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -213,38 +213,38 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="normierte_raeume.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../normierte_raeume/normierte_raeume.html">
    3. Normierte Vektorräume
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="konvergenz.html">
+    <a class="reference internal" href="../normierte_raeume/konvergenz.html">
      3.1. Konvergenz von Folgen
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../normierte_raeume/stetigkeit.html">
      3.2. Stetigkeit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="kompaktheit.html">
+    <a class="reference internal" href="../normierte_raeume/kompaktheit.html">
      3.3. Kompaktheit
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="hilbert.html">
+    <a class="reference internal" href="../normierte_raeume/hilbert.html">
      3.4. Hilberträume
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="dual.html">
+    <a class="reference internal" href="../normierte_raeume/dual.html">
      3.5. Dualräume
     </a>
    </li>
@@ -336,33 +336,33 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ode/ode.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ode.html">
    7. Gewöhnliche Differentialgleichungen
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../ode/tdv.html">
+    <a class="reference internal" href="tdv.html">
      7.1. Trennung der Variablen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ode/vdk.html">
+    <a class="reference internal" href="vdk.html">
      7.2. Variation der Konstanten
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ode/higher_order.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      7.3. Differentialgleichungen höherer Ordnung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ode/existence.html">
+    <a class="reference internal" href="existence.html">
      7.4. Existenz und Eindeutigkeit von Lösungen
     </a>
    </li>
@@ -421,7 +421,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/normierte_raeume/stetigkeit.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/ode/higher_order.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -446,19 +446,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homoomorphismen">
-   3.2.1. Homöomorphismen
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -467,163 +454,194 @@
         
               <div>
                 
-  <div class="section" id="stetigkeit">
-<h1><span class="section-number">3.2. </span>Stetigkeit<a class="headerlink" href="#stetigkeit" title="Permalink to this headline">¶</a></h1>
-<p>Aus Kapitel 5 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span> sind Sie bereits mit den verschiedenen Stetigkeitsbegriffen auf metrischen Räumen vertraut.
-Im Fall von normierten Vektorräumen lassen sich diese Konzepte durch Verwendung der Norm für den Abstandsbegriff analog definieren.</p>
+  <div class="section" id="differentialgleichungen-hoherer-ordnung">
+<span id="s-dgl-hoehere-ordnung"></span><h1><span class="section-number">7.3. </span>Differentialgleichungen höherer Ordnung<a class="headerlink" href="#differentialgleichungen-hoherer-ordnung" title="Permalink to this headline">¶</a></h1>
+<p>Obwohl wir gewöhnliche Differentialgleichungen höherer Ordnung bereits im vorigen Abschnitt erwähnt haben, haben wir diese noch nicht näher diskutiert. Wir wollen im Folgenden ein zusätzliches Kriterium zur Klassifikation von gewöhnlichen Differentialgleichungen einführen und beschreiben, wie sich eine gewöhnliche Differentialgleichung höherer Ordnung in ein System von gewöhnlichen Differentialgleichungen erster Ordnung umformulieren lässt.</p>
+<p>Beginnen wir zunächst mit der Definition einer gewöhnlichen Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung.
+Eine Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung schreibt eine Bedingung für die <span class="math notranslate nohighlight">\(n\)</span>-te Ableitung der gesuchten Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> vor.
+Diese <span class="math notranslate nohighlight">\(n\)</span>-te Ableitung hängt sowohl von <span class="math notranslate nohighlight">\(x\)</span> als auch von der Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> und ihren Ableitungen bis zur <span class="math notranslate nohighlight">\((n-1)\)</span>-ten Ordnung im Punkt <span class="math notranslate nohighlight">\(x\)</span> ab.</p>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 3.8 </span> (Stetigkeit)</p>
+<p class="admonition-title"><span class="caption-number">Definition 7.3 </span> (Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung)</p>
 <div class="definition-content section" id="proof-content">
-<p>Wir betrachten eine Funktion <span class="math notranslate nohighlight">\( f\colon X \rightarrow Y \)</span> zwischen zwei normierten Vektorräumen <span class="math notranslate nohighlight">\((X, ||\cdot||_X)\)</span> und <span class="math notranslate nohighlight">\((Y, ||\cdot||_Y)\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(i)\)</span> Die Funktion <span class="math notranslate nohighlight">\(f\)</span>  ist genau dann <em>stetig</em> in einem Punkt <span class="math notranslate nohighlight">\(x_0 \in X\)</span>, wenn es für alle <span class="math notranslate nohighlight">\( \varepsilon &gt; 0 \)</span> ein <span class="math notranslate nohighlight">\( \delta &gt; 0 \)</span> gibt, so dass  für alle Punkte <span class="math notranslate nohighlight">\(x \in X\)</span> mit</p>
+<p>Sei <span class="math notranslate nohighlight">\(G\subset\R\times\R^n\)</span> eine offene Teilmenge und</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f\colon G&amp;\to\R
+\end{align*}\]</div>
+<p>eine stetige Funktion.</p>
+<p>Wir nennen eine Gleichung der Form</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-||x - x_0||_X \: &lt; \: \delta
+y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots, y^{(n-1)}(x))
 \end{equation*}\]</div>
-<p>für den Abstand der Funktionswerte gilt</p>
+<p>eine \emph{explizite} gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung. Ist die gewöhnliche Differentialgleichung nicht nach der höchsten vorkommenden Ableitung aufgelöst, d.h. wenn sie von der folgenden Form ist</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-||f(x) - f(x_0)||_Y \: &lt; \: \epsilon.
+f(x,y(x),y^\prime(x), \ldots, y^{(n-1)}(x), y^{(n)}(x)) \, = \, 0,
 \end{equation*}\]</div>
-<p><span class="math notranslate nohighlight">\(ii)\)</span> Die Funktion <span class="math notranslate nohighlight">\(f\)</span> ist genau dann \emph{gleichmäßig stetig}, wenn es für alle <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span> ein
-<span class="math notranslate nohighlight">\( \delta &gt; 0 \)</span> so gibt, dass für alle Punkte <span class="math notranslate nohighlight">\(x, y \in X\)</span> mit</p>
+<p>so nennen wir sie eine \emph{implizite} gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung.</p>
+<p>Wir nennen eine <span class="math notranslate nohighlight">\(n\)</span>-mal differenzierbare Funktion <span class="math notranslate nohighlight">\(\varphi\colon I\to\R\)</span> auf dem offenen Intervall <span class="math notranslate nohighlight">\(I \subset \R\)</span> eine \emph{Lösung der Differentialgleichung}, wenn sie die folgenden Eigenschaften besitzt:</p>
+<p><span class="math notranslate nohighlight">\(i)\)</span> Der von der unbekannten Lösung <span class="math notranslate nohighlight">\(\varphi\)</span>  abhängende Menge</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\norm{x-y}_X \: &lt; \: \delta
+\Gamma_\varphi \ \coloneqq \ \left\{(x,y_1, y_2, \ldots, y_{n})\in I\times \R^n~\Big\vert~y_k = \varphi^{(k-1)}(x), \ 1\leq k\leq n\right\}
 \end{equation*}\]</div>
-<p>für den Abstand der Funktionswerte gilt</p>
+<p>ist eine Teilmenge von <span class="math notranslate nohighlight">\(G\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(ii)\)</span> Für alle Punkte <span class="math notranslate nohighlight">\(x\in I\)</span> gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\norm{f(x)-f(y)}_Y \: &lt; \: \varepsilon.
+\varphi^{(n)}(x) \ = \ f(x,\varphi (x), \varphi^\prime(x), \ldots, \varphi^{(n-1)}(x))\,.
 \end{equation*}\]</div>
-<p><span class="math notranslate nohighlight">\(iii)\)</span> Die Funktion <span class="math notranslate nohighlight">\(f\)</span> ist genau dann \emph{Hölder-stetig} mit Exponent <span class="math notranslate nohighlight">\( 0 &lt; \alpha \leq 1 \)</span>, wenn
-für alle <span class="math notranslate nohighlight">\( x, y \in X \)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\norm{f(x) - f(y)}_Y \: \leq \: L \cdot \norm[X]{x-y}^\alpha
-\end{equation*}\]</div>
-<p>für eine nicht-negative Konstante <span class="math notranslate nohighlight">\(L \in \R^+_0\)</span>.</p>
-<p>Im Spezialfall <span class="math notranslate nohighlight">\(\alpha = 1\)</span> nennen wir <span class="math notranslate nohighlight">\(f\)</span> auch \emph{Lipschitz-stetig}.
-Gilt sogar <span class="math notranslate nohighlight">\(0 \leq L &lt; 1\)</span>, so nennen wir die Funktion <span class="math notranslate nohighlight">\(f\)</span> eine Kontraktion.</p>
 </div>
-</div><p>Natürlich sind diese Stetigkeitsbegriffe unterschiedlich stark, wie folgende Bemerkung feststellt.</p>
-<div class="proof remark admonition" id="remark-1">
-<p class="admonition-title"><span class="caption-number">Remark 3.2 </span></p>
+</div><p>Das folgende Beispiel illustriert den Begriff einer gewöhnlichen Differentialgleichung in expliziter und impliziter Form.</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 7.7 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(I \subset \R\)</span> ein offenes Intervall.
+Die Gleichung</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+y'(x)\cdot y(x) + x \, = \, 0
+\end{equation*}\]</div>
+<p>ist eine nichtlineare, implizite gewöhnliche Differentialgleichung erster Ordnung.
+Diese Differentialgleichung lässt sich in die folgende explizite Form umschreiben</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+y'(x) \, = \, -\frac{x}{y(x)}
+\end{equation*}\]</div>
+<p>wenn wir annehmen, dass <span class="math notranslate nohighlight">\(y(x) \neq 0\)</span> für alle Punkte <span class="math notranslate nohighlight">\(x \in I\)</span> gilt.
+Aus der Kreisgleichung <span class="math notranslate nohighlight">\(x^2 + y^2 = c &gt; 0\)</span> lässt sich eine explizite Lösung dieser gewöhnlichen Differentialgleichung angeben mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varphi(x) \ = \ \pm \sqrt{c - x^2}, \qquad \text{für} \ |x| &lt; \sqrt{c}.
+\end{equation*}\]</div>
+</div>
+</div><p>Man kann eine gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung in ein System von gewöhnlichen Differentialgleichungen erster Ordnung überführen wie folgende Bemerkung zeigt.
+Diese Beobachtung hat den großen Vorteil, dass man sich bei Lösungsmethoden von gewöhnlichen Differentialgleichungen, egal ob analytisch oder numerisch, nur auf das Lösen von Differentialgleichungssystemen erster Ordnung konzentrieren muss.</p>
+<div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Remark 7.1 </span></p>
 <div class="remark-content section" id="proof-content">
-<p>Für eine Funktion <span class="math notranslate nohighlight">\(f \colon X \rightarrow Y\)</span> zwischen normierten Vektorräumen <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> gelten folgende Implikationen:</p>
+<p>Sei <span class="math notranslate nohighlight">\(G \subset \R \times \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f\colon G\to\R\)</span>  eine stetige Funktion.
+Wir betrachten im Folgenden die explizite gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3c24422c-be09-4a0b-90d4-88104a9b6ce7">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-3c24422c-be09-4a0b-90d4-88104a9b6ce7" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode:redODEOri}
+y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots,y^{(n-1)}(x)).
+\end{equation}\]</div>
+<p>Wir können die Gleichung \eqref{eq:ode:redODEOri} zu einem Differentialgleichungssystem erster Ordnung umformulieren bestehend aus <span class="math notranslate nohighlight">\(n+1\)</span> Gleichungen mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-f \text{ ist Hölder-stetig } \ \Rightarrow \ f \text{ ist gleichmäßig stetig } \ \Rightarrow \ f \text{ ist stetig }.
+\left\{\begin{array}{rl}
+y &amp;=~y_1,\\
+y_1^\prime&amp;=~y_2,\\
+&amp;\vdots\\
+y_{n-1}^\prime&amp;=~y_{n},\\
+y_{n}^\prime&amp;=~f(x,y_1, \ldots,y_{n}).
+\end{array}\right.\label{eq:ode:redODE}
 \end{equation*}\]</div>
+<p>Definieren wir nun zwei <span class="math notranslate nohighlight">\(n\)</span>-dimensionale Vektoren <span class="math notranslate nohighlight">\(Y,F \in \R^n\)</span> mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+Y(x) \, \coloneqq \, \left(\begin{array}{c}y_1(x)\\\vdots\\y_{n-1}(x)\\y_{n}(x)\end{array}\right)
+\qquad \text{und} \qquad 
+F(x,Y) \, \coloneqq \, \left(\begin{array}{c}y_2(x)\\\vdots\\y_{n}(x)\\f(x,Y(x))\end{array}\right)
+\end{equation*}\]</div>
+<p>dann können wir  das Differentialgleichungssystem \eqref{eq:ode:redODE} umschreiben zu</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+Y^\prime(x) \, = \, F(x,Y(x)).
+\end{equation*}\]</div>
+<p>Die Ableitung <span class="math notranslate nohighlight">\(Y'\)</span> ist hierbei komponentenweise zu interpretieren.</p>
+<p>Sei nun <span class="math notranslate nohighlight">\(\varphi\colon I\to\R\)</span> eine Lösung der expliziten gewöhnlichen Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung in \eqref{eq:ode:redODEOri}, d.h.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varphi^{(n)}(x) \ = \ f(x,\varphi(x), \varphi^\prime(x), \ldots, \varphi^{(n-1)}(x)).
+\end{equation*}\]</div>
+<p>Basierend auf <span class="math notranslate nohighlight">\(\varphi\)</span> können wir uns nun eine vektorwertige Funktion <span class="math notranslate nohighlight">\(\Phi \colon I \rightarrow \R^n\)</span> definieren mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Phi(x) \ \coloneqq \ \left(\begin{array}{c}\varphi_1(x)\\\varphi_2(x)\\\vdots\\\varphi_{n}(x)\end{array}\right) \ = \ \left(\begin{array}{c} \varphi(x) \\ \varphi'(x) \\ \vdots \\ \varphi^{(n-1)}(x) \end{array}\right) .
+\end{equation*}\]</div>
+<p>Dann wird aus der obigen Definition klar, dass <span class="math notranslate nohighlight">\(\Phi\)</span> eine Lösung des Differentialgleichungssystems <code class="xref eq docutils literal notranslate"><span class="pre">eq:ode:redODE</span></code> ist.</p>
+<p>Ist nun umgekehrt vorausgesetzt, dass <span class="math notranslate nohighlight">\(\Phi \colon I \to \R^n\)</span> eine Lösung des Differentialgleichungssystems erster Ordnung in <code class="xref eq docutils literal notranslate"><span class="pre">eq:ode:redODE</span></code> ist, dann ist</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varphi \, \coloneqq\, \varphi_1 \colon I\to\R
+\end{equation*}\]</div>
+<p>eine Lösung der Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung \eqref{eq:ode:redODEOri}.
+Dieser Zusammenhang gilt, da aus den ersten <span class="math notranslate nohighlight">\(n\)</span> Gleichungen des Systems \eqref{eq:ode:redODE} folgt</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\varphi_1(x) \, &amp;= \, \varphi(x)\\
+\varphi_2(x) \, &amp;= \, \varphi_1^\prime(x) \, = \, \varphi^{\prime}(x),\\
+\varphi_3(x) \, &amp;= \, \varphi_2^\prime(x) \, = \, \varphi_1^{\prime\prime}(x) \, = \, \varphi^{\prime\prime}(x),\\
+&amp;\vdots\\
+\varphi_{n}(x) \, &amp;= \, \varphi_{n-1}^\prime(x) \, = \, \ldots \, = \, \varphi^{(n-1)}(x).
+\end{align*}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(\varphi_{n}\)</span> einmal differenzierbar ist, folgt daraus, dass <span class="math notranslate nohighlight">\(\varphi\)</span> <span class="math notranslate nohighlight">\(n\)</span>-mal differenzierbar sein muss.
+Die <span class="math notranslate nohighlight">\((n+1)\)</span>-te Gleichung von \eqref{eq:ode:redODE} liefert dann</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varphi_n^\prime(x) \ = \ \varphi^{(n)}(x) \ = \ f(x,\varphi(x),\varphi^\prime(x), \ldots, \varphi^{(n-1)}(x)).
+\end{equation*}\]</div>
+<p>Wir sehen also, dass die Lösungen von \eqref{eq:ode:redODEOri} und \eqref{eq:ode:redODE} in einer eindeutigen Beziehung zueinander stehen.</p>
 </div>
-</div><p>Folgende Beispiele zeigen den Unterschied zwischen den Stetigkeitsbegriffen.</p>
-<div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 3.5 </span></p>
+</div><div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 7.8 </span></p>
 <div class="example-content section" id="proof-content">
-<p>Die Wurzel-Funktion</p>
+<p>Die Gleichung</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-2ordnsincos">
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-eq-ode-2ordnsincos" title="Permalink to this equation">¶</a></span>\[y^{\prime\prime}(x) + y(x) \, = \, 0\]</div>
+<p>für <span class="math notranslate nohighlight">\(x\in \R\)</span> ist eine implizite gewöhnliche  Differentialgleichung zweiter Ordnung.
+Um diese Differentialgleichung in ein Differentialgleichungssystem erster Ordnung zu transformieren führen wir zwei neue Variablen wie folgt ein:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\sqrt{\cdot} \: \colon \R_0^+ \ \rightarrow \ \R_0^+
+y_1 \, \coloneqq \, y, \qquad y_2 \, \coloneqq \, y_1'.
 \end{equation*}\]</div>
-<p>ist stetig.
-Sie ist jedoch nicht Lipschitz-stetig in <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
-</div>
-</div><div class="proof admonition" id="proof">
-<p>Proof. In der Hausaufgabe zu zeigen.</p>
-</div>
-<div class="proof example admonition" id="example-3">
-<p class="admonition-title"><span class="caption-number">Example 3.6 </span></p>
-<div class="example-content section" id="proof-content">
-<p>Die Betragsfunktion</p>
+<p>Mit diesen Variablen können wir die Differentialgleichung \eqref{eq:ode:2ordnSinCos} umschreiben in die Gleichung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-|\cdot| \: \colon \R \ \rightarrow \ \R_0^+
+y_2' + y_1 \, = \, 0.
 \end{equation*}\]</div>
-<p>Lipschitz-stetig mit Lipschitz Konstante <span class="math notranslate nohighlight">\(L = 1\)</span>.</p>
-</div>
-</div><div class="section" id="homoomorphismen">
-<h2><span class="section-number">3.2.1. </span>Homöomorphismen<a class="headerlink" href="#homoomorphismen" title="Permalink to this headline">¶</a></h2>
-<p>Eine besonders interessante Klasse von stetigen Funktionen sind sogenannte <em>Homöomorphismen</em>.
-Diese Funktionen erlauben es zu untersuchen wann Teilmengen (topologischer) Vektorräume ineinander überführt werden können, z.B. durch Dehnen, Stauchen, Drehen oder Verzerren der Mengen.
-Die folgende Definition charakterisiert Homöomorphismen genauer</p>
-<div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 3.9 </span> (Homöomorphismus)</p>
-<div class="definition-content section" id="proof-content">
-<p>Seien <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> zwei normierte Vektorräume.
-Wir nennen eine Funktion <span class="math notranslate nohighlight">\(f \colon X \rightarrow Y\)</span> einen \emph{Homöomorphismus}, falls folgende Bedingungen erfüllt sind:</p>
-<ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(f\)</span> ist stetig,</p></li>
-<li><p><span class="math notranslate nohighlight">\(f\)</span> ist bijektiv,</p></li>
-<li><p>die Umkehrfunktion <span class="math notranslate nohighlight">\(f^{-1}\)</span> ist ebenfalls stetig.</p></li>
-</ol>
-</div>
-</div><p>Der folgende berühmte Satz ist ein wichtiges Hilfsmittel zur Untersuchung von Fixpunktgleichungen, z.B. in der Numerik, und wird uns später bei der Behandlung von gewöhnlichen Differentialgleichungen noch hilfreich sein.</p>
-<div class="proof theorem admonition" id="theorem-5">
-<p class="admonition-title"><span class="caption-number">Theorem 3.2 </span> (Fixpunktsatz von Banach)</p>
-<div class="theorem-content section" id="proof-content">
-<p>Es sei <span class="math notranslate nohighlight">\(X\)</span> ein Banachraum und <span class="math notranslate nohighlight">\( F\colon X\rightarrow X \)</span> eine Lipschitz-stetige Funktion mit Lipschitz-Konstante <span class="math notranslate nohighlight">\( L &lt; 1 \)</span>, d.h. es gilt</p>
+<p>Zusammen mit der Bedingung <span class="math notranslate nohighlight">\(y_1' = y_2\)</span> ergibt sich damit das folgende lineare, homogene Differentialgleichungssystem erster Ordnung:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-  	 ||F(x) - F(y)|| \ \leq \ L \cdot ||x - y|| \quad \text{ für alle } x, y \in X.
+Y' \ \coloneqq \
+\begin{pmatrix}
+y_1'\\ 
+y_2'
+\end{pmatrix} \ = \ 
+\begin{pmatrix}
+0 &amp; 1\\
+-1 &amp; 0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+y_1\\
+y_2
+\end{pmatrix}.
 \end{equation*}\]</div>
-<p>Dann existiert ein genau ein Fixpunkt <span class="math notranslate nohighlight">\(\bar{x} \in X \)</span>, so dass</p>
+<p>Die gewöhnliche Differentialgleichung \eqref{eq:ode:2ordnSinCos} besitzt offensichtlich die auf ganz <span class="math notranslate nohighlight">\(\R\)</span> definierten Lösungen</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-F(\bar{x}) \ = \ \bar{x}.
+\varphi(x) \ \coloneqq \ \cos x, \qquad\text{und}\qquad \varphi(x) \ \coloneqq \ \sin x.
 \end{equation*}\]</div>
-</div>
-</div><div class="proof admonition" id="proof">
-<p>Proof. Es sei <span class="math notranslate nohighlight">\(x_0 \in X\)</span> beliebiger Startwert der Folge <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span>, die durch wiederholte Anwendung der Funktion <span class="math notranslate nohighlight">\(F\)</span> definiert ist, d.h,</p>
+<p>Aufgrund der Linearität der Ableitung sind in diesem Fall auch sämtliche Linearkombinationen von Lösungen wiederum Lösungen.
+Das heißt wir können eine allgemeine Lösung der gewöhnlichen Differentialgleichung angeben für beliebige Konstanten <span class="math notranslate nohighlight">\(c_0,c_1\in\R\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-x_k \ \coloneqq \ F(x_{k-1}), \quad k \geq 1.
+\varphi_{c_0,c_1}(x) \ \coloneqq \ c_0\cdot \cos x + c_1\cdot \sin x.
 \end{equation*}\]</div>
-<p>Wir werden im Folgenden zeigen, dass <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span> eine Cauchy-Folge in <span class="math notranslate nohighlight">\(X\)</span> ist.
-Da <span class="math notranslate nohighlight">\(F\)</span> Lipschitz-stetig mit Lipschitz Konstante <span class="math notranslate nohighlight">\(L\)</span> ist, gilt offensichtlich für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span></p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-||x_{n+1} - x_n|| \ = \ ||F(x_n) - F(x_{n-1})|| \ \leq L \cdot || x_n - x_{n-1}||.
-\end{equation*}\]</div>
-<p>Damit folgt induktiv aber auch schon, dass</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-||x_{n+1} - x_n|| \ \leq L^n \cdot || x_1 - x_0||.
-\end{equation*}\]</div>
-<p>Seien nun <span class="math notranslate nohighlight">\(n,m \in \mathbb{N}\)</span> zwei beliebige Indizes mit <span class="math notranslate nohighlight">\(1 \leq n &lt; m\)</span>, dann gilt wegen der Dreiecksungleichung der Norm und unter Ausnutzung der geometrischen Reihe:</p>
+<p>Betrachten wir die beiden Anfangswertgleichungen</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \begin{split}
-||x_m - x_n|| \ &amp;\leq \ \sum_{k=n+1}^m ||x_k - x_{k-1}|| \ \leq \ ||x_1 - x_0|| \cdot \sum_{k=n+1}^m L^{k-1} \\
-\ &amp;= \ ||x_1 - x_0|| \cdot L^n \sum_{k=0}^{m-n-1} L^{k} \ \leq \ ||x_1 - x_0|| \cdot L^n \sum_{k=0}^\infty L^{k} \ = \ ||x_1 - x_0|| \cdot \frac{L^n}{1 - L}.
-\end{split} 
+\varphi_{c_0,c_1}(0) \ &amp;= \ c_0 \cdot \cos(0) + c_1 \cdot \sin (0) \ = \ c_0\\
+\varphi^\prime_{c_0,c_1}(0) \ &amp;= \ - c_0 \cdot \sin (0) + c_1 \cdot \cos (0) \ = \ c_1\,,
+\end{split}
 \end{equation*}\]</div>
-<p>Da <span class="math notranslate nohighlight">\(L &lt; 1\)</span> nach Voraussetzung ist folgt, dass <span class="math notranslate nohighlight">\(L^n \rightarrow 0\)</span> für <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> und somit gilt auch</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\lim_{n, m \rightarrow \infty} ||x_m - x_n|| \ = \ 0
-\end{equation*}\]</div>
-<p>und daraus folgt, dass <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span> eine Cauchy-Folge in <span class="math notranslate nohighlight">\(X\)</span> ist.
-Da <span class="math notranslate nohighlight">\(X\)</span> vollständig ist, muss <span class="math notranslate nohighlight">\((x_k)_{k\in\N}\)</span> nach Definition \ref{def:banachraum} konvergieren gegen einen Grenzwert <span class="math notranslate nohighlight">\(\bar{x} \in X\)</span>.
-Das heißt wir haben gezeigt, dass die Funktion einen Fixpunkt <span class="math notranslate nohighlight">\(\bar{x} = F(\bar{x})\)</span> besitzt, da gilt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\lim_{k \rightarrow \infty} F(x_k) \ = \ \lim_{k \rightarrow \infty} x_{k+1} \ = \ \bar{x}.
-\end{equation*}\]</div>
-<p>Sei <span class="math notranslate nohighlight">\(\hat{x} \in X\)</span> nun ein weiterer Fixpunkt von <span class="math notranslate nohighlight">\(F\)</span> mit <span class="math notranslate nohighlight">\(F(\hat{x}) = \hat{x}\)</span>, dann gilt</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-||\bar{x} - \hat{x}|| \ = \ ||F(\bar{x}) - F(\hat{x})|| \ \leq \ L \cdot ||\bar{x} - \hat{x}||.
-\end{equation*}\]</div>
-<p>Da <span class="math notranslate nohighlight">\(L &lt; 1\)</span> ist kann diese Ungleichung nur gelten wenn <span class="math notranslate nohighlight">\(||\bar{x} - \hat{x}||  = 0\)</span> ist.
-Aus der positiven Definitheit der Norm folgt dann schon, dass <span class="math notranslate nohighlight">\(\bar{x} = \hat{x}\)</span> sein muss, d.h., der Fixpunkt ist eindeutig.</p>
-</div>
-<div class="proof remark admonition" id="remark-6">
-<p class="admonition-title"><span class="caption-number">Remark 3.3 </span></p>
-<div class="remark-content section" id="proof-content">
-<p>Der Banach’sche Fixpunktsatz kann noch allgemeiner für abgeschlossene Untermengen vollständiger metrischer Vektorräume formuliert werden, da man nur einen Abstandsbegriff (also eine Metrik) und die Existenz des Grenzwertes benötigt.</p>
+<p>so stellen wir fest, dass <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1} \colon \R \rightarrow \R\)</span> die eindeutig bestimmte Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> der Differentialgleichung \eqref{eq:ode:2ordnSinCos} mit den Anfangswertbedingungen <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1}(0)=c_0\)</span> und <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1}^\prime(0)=c_1\)</span> ist.</p>
 </div>
 </div></div>
-</div>
 
     <script type="text/x-thebe-config">
     {
@@ -638,7 +656,7 @@ Aus der positiven Definitheit der Norm folgt dann schon, dass <span class="math 
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./normierte_raeume"
+            path: "./ode"
         },
         predefinedOutput: true
     }
@@ -655,19 +673,19 @@ Aus der positiven Definitheit der Norm folgt dann schon, dass <span class="math 
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="konvergenz.html" title="previous page">
+        <a class="left-prev" href="vdk.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">3.1. </span>Konvergenz von Folgen</p>
+                <p class="prevnext-title"><span class="section-number">7.2. </span>Variation der Konstanten</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="kompaktheit.html" title="next page">
+        <a class="right-next" href="existence.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">3.3. </span>Kompaktheit</p>
+                <p class="prevnext-title"><span class="section-number">7.4. </span>Existenz und Eindeutigkeit von Lösungen</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

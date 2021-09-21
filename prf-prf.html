@@ -352,6 +352,16 @@
      7.2. Variation der Konstanten
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ode/higher_order.html">
+     7.3. Differentialgleichungen höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ode/existence.html">
+     7.4. Existenz und Eindeutigkeit von Lösungen
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -466,6 +476,7 @@
    <a href="#cap-def:banachraum"><strong>def:banachraum</strong></a> | 
    <a href="#cap-def:char_polynom"><strong>def:char_polynom</strong></a> | 
    <a href="#cap-def:dgl_linear"><strong>def:dgl_linear</strong></a> | 
+   <a href="#cap-def:dglsystem_erster_ordnung"><strong>def:dglsystem_erster_ordnung</strong></a> | 
    <a href="#cap-def:diagonalisierbarkeit"><strong>def:diagonalisierbarkeit</strong></a> | 
    <a href="#cap-def:eigenwert"><strong>def:eigenwert</strong></a> | 
    <a href="#cap-def:endomorphismus_normal"><strong>def:endomorphismus_normal</strong></a> | 
@@ -524,6 +535,7 @@
    <a href="#cap-lem:norm_integral_abschaetzung"><strong>lem:norm_integral_abschaetzung</strong></a> | 
    <a href="#cap-lem:normal_eigenschaften"><strong>lem:normal_eigenschaften</strong></a> | 
    <a href="#cap-lem:nullstelle_komplex_kojugiert"><strong>lem:nullstelle_komplex_kojugiert</strong></a> | 
+   <a href="#cap-lem:ode_lokalLipschitz"><strong>lem:ode_lokalLipschitz</strong></a> | 
    <a href="#cap-lem:orthogonal_2d"><strong>lem:orthogonal_2d</strong></a> | 
    <a href="#cap-lem:orthogonal_2d_unterraum"><strong>lem:orthogonal_2d_unterraum</strong></a> | 
    <a href="#cap-lem:rang_determinante"><strong>lem:rang_determinante</strong></a> | 
@@ -575,7 +587,11 @@
    <a href="#cap-satz:nilpotenz"><strong>satz:nilpotenz</strong></a> | 
    <a href="#cap-satz:normalform_jordan"><strong>satz:normalform_jordan</strong></a> | 
    <a href="#cap-satz:normalform_nilpotent"><strong>satz:normalform_nilpotent</strong></a> | 
+   <a href="#cap-satz:ode:picardlindeloef"><strong>satz:ode:picardlindeloef</strong></a> | 
+   <a href="#cap-satz:ode:varDerKonstanten"><strong>satz:ode:varDerKonstanten</strong></a> | 
+   <a href="#cap-satz:ode_eindeutigkeitssatz}"><strong>satz:ode_eindeutigkeitssatz}</strong></a> | 
    <a href="#cap-satz:ode_getrennteVariablen"><strong>satz:ode_getrennteVariablen</strong></a> | 
+   <a href="#cap-satz:ode_integralgleichung"><strong>satz:ode_integralgleichung</strong></a> | 
    <a href="#cap-satz:ode_lin_hom"><strong>satz:ode_lin_hom</strong></a> | 
    <a href="#cap-satz:orthogonale_endomorphismen"><strong>satz:orthogonale_endomorphismen</strong></a> | 
    <a href="#cap-satz:orthogonale_matrizen"><strong>satz:orthogonale_matrizen</strong></a> | 
@@ -917,6 +933,14 @@
        <td></td>
        <td>
        <a href="ode/ode.html#def:dgl_linear"><code class="xref">def:dgl_linear</code></a> <em>(ode/ode)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def:dglsystem_erster_ordnung"><td></td><td>
+       <strong>def:dglsystem_erster_ordnung</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ode/existence.html#def:dglsystem_erster_ordnung"><code class="xref">def:dglsystem_erster_ordnung</code></a> <em>(ode/existence)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-def:diagonalisierbarkeit"><td></td><td>
@@ -1268,7 +1292,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="eigenwerte/diag.html#example-7"><code class="xref">example-7</code></a> <em>(eigenwerte/diag)</em></td><td>
+       <a href="ode/existence.html#example-7"><code class="xref">example-7</code></a> <em>(ode/existence)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-8"><td></td><td>
@@ -1381,6 +1405,14 @@
        <td></td>
        <td>
        <a href="integrale/rat_func.html#lem:nullstelle_komplex_kojugiert"><code class="xref">lem:nullstelle_komplex_kojugiert</code></a> <em>(integrale/rat_func)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-lem:ode_lokalLipschitz"><td></td><td>
+       <strong>lem:ode_lokalLipschitz</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ode/existence.html#lem:ode_lokalLipschitz"><code class="xref">lem:ode_lokalLipschitz</code></a> <em>(ode/existence)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-lem:orthogonal_2d"><td></td><td>
@@ -1540,7 +1572,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="normierte_raeume/stetigkeit.html#remark-1"><code class="xref">remark-1</code></a> <em>(normierte_raeume/stetigkeit)</em></td><td>
+       <a href="ode/existence.html#remark-1"><code class="xref">remark-1</code></a> <em>(ode/existence)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-10"><td></td><td>
@@ -1572,7 +1604,7 @@
      <tr>
        <td></td>
        <td>
-       <a href="normierte_raeume/kompaktheit.html#remark-2"><code class="xref">remark-2</code></a> <em>(normierte_raeume/kompaktheit)</em></td><td>
+       <a href="ode/higher_order.html#remark-2"><code class="xref">remark-2</code></a> <em>(ode/higher_order)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-3"><td></td><td>
@@ -1791,12 +1823,44 @@
        <a href="eigenwerte/jordan.html#satz:normalform_nilpotent"><code class="xref">satz:normalform_nilpotent</code></a> <em>(eigenwerte/jordan)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:ode:picardlindeloef"><td></td><td>
+       <strong>satz:ode:picardlindeloef</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ode/existence.html#satz:ode:picardlindeloef"><code class="xref">satz:ode:picardlindeloef</code></a> <em>(ode/existence)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:ode:varDerKonstanten"><td></td><td>
+       <strong>satz:ode:varDerKonstanten</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ode/vdk.html#satz:ode:varDerKonstanten"><code class="xref">satz:ode:varDerKonstanten</code></a> <em>(ode/vdk)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:ode_eindeutigkeitssatz}"><td></td><td>
+       <strong>satz:ode_eindeutigkeitssatz}</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ode/existence.html#satz:ode_eindeutigkeitssatz}"><code class="xref">satz:ode_eindeutigkeitssatz}</code></a> <em>(ode/existence)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-satz:ode_getrennteVariablen"><td></td><td>
        <strong>satz:ode_getrennteVariablen</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="ode/tdv.html#satz:ode_getrennteVariablen"><code class="xref">satz:ode_getrennteVariablen</code></a> <em>(ode/tdv)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-satz:ode_integralgleichung"><td></td><td>
+       <strong>satz:ode_integralgleichung</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ode/existence.html#satz:ode_integralgleichung"><code class="xref">satz:ode_integralgleichung</code></a> <em>(ode/existence)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-satz:ode_lin_hom"><td></td><td>

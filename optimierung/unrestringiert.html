@@ -356,6 +356,16 @@
      7.2. Variation der Konstanten
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/higher_order.html">
+     7.3. Differentialgleichungen höherer Ordnung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ode/existence.html">
+     7.4. Existenz und Eindeutigkeit von Lösungen
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -474,8 +484,8 @@ Für eine genaue Charakterisierung führen wir zunächst den Begriff eines lokal
 \begin{definition}[Lokales und globales Minimum]
 Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
 Wir nennen einen Punkt <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> ein \emph{lokales Minimum} der Funktion <span class="math notranslate nohighlight">\(F\)</span>, falls es eine lokale Umgebung <span class="math notranslate nohighlight">\(U \subset \Omega\)</span> von <span class="math notranslate nohighlight">\(x^* \in U\)</span> gibt, so dass für alle <span class="math notranslate nohighlight">\(x \in U\)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-af532bfd-08c8-467d-b164-d44a829c7734">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-af532bfd-08c8-467d-b164-d44a829c7734" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bb397b4d-f5f6-496b-8bb9-31258c3e6387">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-bb397b4d-f5f6-496b-8bb9-31258c3e6387" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \label{eq:lokales_minimum}
 F(x^*) \, \leq \, F(x), \quad \text{ für alle } x \in U.
 \end{equation}\]</div>
@@ -710,8 +720,8 @@ Da die Hesse-Matrix auf ganz <span class="math notranslate nohighlight">\(\R^2\)
 \begin{definition}[Konvexität]
 Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
 Wir nennen <span class="math notranslate nohighlight">\(F\)</span> \emph{konvex} wenn für beliebige Vektoren <span class="math notranslate nohighlight">\(x,y \in \Omega\)</span> die folgende Ungleichung für alle <span class="math notranslate nohighlight">\(0 \leq \alpha \leq 1\)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-28912894-a835-43b3-a2e3-b6757a7c28be">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-28912894-a835-43b3-a2e3-b6757a7c28be" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:konvex}
+<div class="amsmath math notranslate nohighlight" id="equation-7370f52e-7117-4727-bb30-53399f1d41a3">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-7370f52e-7117-4727-bb30-53399f1d41a3" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:konvex}
 F(\alpha x + (1-\alpha)y) \ \leq \ \alpha F(x) + (1-\alpha)F(y).
 \end{equation}\]</div>
 <p>Wir nennen die Funktion <span class="math notranslate nohighlight">\(F\)</span> \emph{strikt konvex}, falls \eqref{eq:konvex} eine echte Ungleichung ist.</p>
