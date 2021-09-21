@@ -1,23 +1,28 @@
 # Trennung der Variablen
 
 Nachdem wir im letzten Abschnitt einige motivierende Beispiele für gewöhnliche Differentialgleichungen aus der Physik diskutiert haben, wollen wir im Folgenden eine erste Technik zur Bestimmung von Lösungen für bestimmte Spezialfälle herleiten.
-Die Methode der Trennung der Variablen, auch Separationsmethode genannt, erlaubt es separierbare Differentialgleichungen erster Ordnung zu lösen. 
+Die Methode der Trennung der Variablen, auch Separationsmethode genannt, erlaubt es separierbare Differentialgleichungen erster Ordnung zu lösen.
 
 Hierzu führen wir zunächst den Begriff von separierbaren Differentialgleichungen ein.
-\begin{definition}[Separierbare Differentialgleichung]\label{def:ode:getrenntVar}
+
+````{prf:definition} Separierbare Differentialgleichung
+:label: def:ode:getrenntVar
+
 Seien $I,J\subset \R$ zwei offene Intervalle und es seien $f\colon I\to\R$ und $g\colon J\to\R$ zwei stetige Funktionen.
 Wir setzen voraus, dass $g(y)\neq 0$ für alle $y\in J$.
 Eine gewöhnliche Differentialgleichung erster Ordnung der Form
 \begin{equation*}
 y^\prime(x) \ = \ f(x) \cdot g(y(x)) \ = \ f(x) \cdot g(y)
 \end{equation*}
-heißt \emph{separierbare Differentialgleichung} und wird häufig auch \emph{Differentialgleichung mit getrennten Variablen} genannt.
-\end{definition}
+heißt _separierbare Differentialgleichung_ und wird häufig auch _Differentialgleichung mit getrennten Variablen_ genannt.
+````
 
 Der folgende Satz sagt aus unter welchen Voraussetzungen eindeutige Lösungen für separierbare Differentialgleichungen existieren und welche Gestalt diese besitzen.
-\begin{satz}[Trennung der Variablen]\label{satz:ode_getrennteVariablen}
-Seien $I,J\subset \R$ zwei offene Intervalle und $(x_0, y_0) \in I \times J$ ein beliebiger Punkt. 
-Es seien nun $f\colon I\to\R$ und $g\colon J\to\R$ zwei stetige Funktionen, wobei $g(y)\neq 0$ für alle $y\in J$ gelte.
+
+````{prf:theorem} Trennung der Variablen
+:label: satz:ode_getrennteVariablen
+
+Seien $I,J\subset \R$ zwei offene Intervalle und $(x_0, y_0) \in I \times J$ ein beliebiger Punkt. Es seien nun $f\colon I\to\R$ und $g\colon J\to\R$ zwei stetige Funktionen, wobei $g(y)\neq 0$ für alle $y\in J$ gelte.
 Wir betrachten die separierbare Differentialgleichung
 \begin{equation*}
 y^\prime(x) \ = \  f(x) \cdot g(y).
@@ -33,8 +38,9 @@ Die Lösung genügt außerdem der folgenden Beziehung
 \begin{equation*}
 G(\varphi(x)) \ = \ F(x) \qquad \text{ für alle } \ x\in I^\prime.
 \end{equation*}
-\end{satz}
-\begin{proof}
+````
+
+````{prf:proof}
 Wir bemerken zunächst, dass wir für $g(y) \neq 0$ für alle $y \in J$ die separierbare Differentialgleichung umschreiben können in
 \begin{equation*}
 \frac{y'(x)}{g(y)} \ = \ f(x).
@@ -75,10 +81,13 @@ Außerdem gilt $\varphi(x_0) = y_0$, wie man nachrechnen kann:
 \begin{equation*}
 \varphi(x_0) \ = \ G^{-1}(F(x_0)) \ = \ G^{-1}\left( \int_{x_0}^{x_0} f(t)\, \mathrm{d}t \right) \ = \ G^{-1}(0) \ = \ y_0.
 \end{equation*}
-\end{proof}
+````
 
 Das folgende Beispiel illustriert wie das Verfahren der Trennung der Variablen eingesetzt werden kann, um analytische Lösungen für separierbare Differentialgleichungen zu erhalten.
-\begin{bsp}[Trennung der Variablen]\label{bsp:ode_getrennteVariablen}
+
+````{prf:example} Trennung der Variablen
+:label: bsp:ode_getrennteVariablen
+
 Betrachten wie die folgende gewöhnliche Differentialgleichung erster Ordnung
 \begin{equation*}
 y^\prime(x) \ = \ -\frac{y(x)}{x},
@@ -111,10 +120,13 @@ Die Korrektheit der Lösung lässt sich leicht überprüfen, denn es gilt
 \begin{equation*}
 \varphi'(x) \ = \ \left( \frac{c}{x} \right)' \ = \ - \frac{c}{x^2} \ = \ - \frac{c}{x} \cdot \frac{1}{x} \ = \ - \frac{\varphi(x)}{x}.
 \end{equation*}
-\end{bsp}
+````
 
 Die Trennung der Variablen lässt sich von Beispiel \ref{bsp:ode_getrennteVariablen} auf allgemeine lineare, homogene Differentialgleichungen erster Ordnung mit beliebiger Koeffizientenfunktion verallgemeinern, wie der folgende Satz zeigt.
-\begin{satz}[Lineare und homogene gewöhnliche Differentialgleichung erster Ordnung]\label{satz:ode_lin_hom}
+
+````{prf:theorem} Lineare und homogene gewöhnliche Differentialgleichung erster Ordnung
+:label: satz:ode_lin_hom
+
 Sei $I \subset \R$ ein offenes Intervall. 
 Betrachten wir eine lineare und homogene Differentialgleichung erster Ordnung, die im Allgemeinen von folgender Form ist:
 \begin{equation*}
@@ -125,8 +137,10 @@ Diese ist für alle $x \in I$ von der Form
 \begin{equation*}
 \varphi(x) \ \coloneqq \ c \cdot \exp\left(\, \int\limits_{x_0}^xa(t)\,\mathrm{d}t\right).
 \end{equation*}
-\begin{proof}
-Jede homogene lineare Differentialgleichung erster Ordnung ist ein Spezialfall einer separierbaren Differentialgleichung in Satz \ref{satz:ode_getrennteVariablen} für $f(x) \coloneqq a(x)$ und $g(y) \coloneqq y$.
+````
+
+````{prf:proof}
+Jede homogene lineare Differentialgleichung erster Ordnung ist ein Spezialfall einer separierbaren Differentialgleichung in Satz {prf:ref}`satz:ode_getrennteVariablen` für $f(x) \coloneqq a(x)$ und $g(y) \coloneqq y$.
 
 Zuerst zeigen wir, dass $\varphi$ eine Lösung der Differentialgleichung ist.
 Man rechnet leicht nach, dass die Anfangsbedingung erfüllt ist, da
@@ -158,5 +172,4 @@ Damit folgt nun schließlich aus $\vartheta_0(x) = \vartheta(x)\cdot \varphi_0(x
 \vartheta(x) \ = \ c \cdot \varphi_0(x)^{-1} \ = \ c\cdot \exp\left(\,\int\limits_{x_0}^xa(t)\, \mathrm{d}t\right).
 \end{equation*}
 Hierbei können wir die Umkehrfunktion $\varphi_0^{-1}$ betrachten, da die Exponentialfunktion streng monoton und somit insbesondere injektiv ist.
-\end{proof}
-\end{satz}
+````
