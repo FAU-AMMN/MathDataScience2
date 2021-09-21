@@ -7,7 +7,7 @@ Während insbesondere in der Analysis die Existenz und Eindeutigkeit von Lösung
 
 Mathematisch gesehen ist eine Differentialgleichung eine Gleichung, in der eine unbekannte Funktion und ihre Ableitungen auftreten.
 Die größte vorkommende Ableitung bestimmt hierbei die _Ordnung der Differentialgleichung_. Je nachdem ob die es sich um eine Funktion in einer oder mehreren Veränderlichen handelt sprechen wir von einer _Gewöhnlichen Differentialgleichung_ oder einer _Partiellen Differentialgleichung_.
-Werden gleich mehrere solche Funktionen durch mehrere Gleichungen beschrieben, so spricht man von einem \emph{Differentialgleichungssystem}.
+Werden gleich mehrere solche Funktionen durch mehrere Gleichungen beschrieben, so spricht man von einem _Differentialgleichungssystem_.
 Im Folgenden beschränken wir uns auf die Diskussion von gewöhnlichen Differentialgleichungen, d.h., wir untersuchen Gleichungen in denen eine unbekannte Funktion mit einer Variablen und deren Ableitungen vorkommen.
 
 Das folgende Beispiel soll ein grundlegendes Verständnis von gewöhnlichen Differentialgleichungen und den zugehörigen mathematischen Fragestellungen liefern.

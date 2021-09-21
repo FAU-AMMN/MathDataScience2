@@ -52,6 +52,8 @@ parts:
       sections:
       - file: ode/tdv.md
       - file: ode/vdk.md
+      - file: ode/higher_order.md
+      - file: ode/existence.md
   - caption: Anhang
     chapters:
     - file: references.md
