@@ -449,7 +449,7 @@ Die mehrdimensionale Kettenregel liefert also das gleiche Ergebnis für das Diff
 
 ## Richtungsableitung
 
-Wir führen nun zusätzlich noch das Konzept der Richtungsableitung ein, welches analog zur partiellen Ableitung in Kapitel \ref{s:partielle_ableitungen} Differenzen entlang eindimensionaler Linien betrachtet, mit dem wichtigen Unterschied, dass wir nun beliebige Richtungen im $\R^n$ zulassen werden.
+Wir führen nun zusätzlich noch das Konzept der Richtungsableitung ein, welches analog zur partiellen Ableitung in Kapitel {ref}`s:partielle_ableitungen` Differenzen entlang eindimensionaler Linien betrachtet, mit dem wichtigen Unterschied, dass wir nun beliebige Richtungen im $\R^n$ zulassen werden.
 
 ````{prf:definiton}
 Sei $U\subset\R^n$ eine offene Teilmenge und sei $f\colon U\rightarrow\R$ eine Funktion. 

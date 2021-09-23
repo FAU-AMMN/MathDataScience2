@@ -73,7 +73,9 @@ y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots,y^{(n-1)}(x)).
 ```
 
 Wir können die Gleichung {eq}`eq:ode:redODEOri` zu einem Differentialgleichungssystem erster Ordnung umformulieren bestehend aus $n+1$ Gleichungen mit
-\begin{equation*}
+
+```{math}
+:label: eq:ode:redODE
 \left\{\begin{array}{rl}
 y &=~y_1,\\
 y_1^\prime&=~y_2,\\
@@ -81,8 +83,7 @@ y_1^\prime&=~y_2,\\
 y_{n-1}^\prime&=~y_{n},\\
 y_{n}^\prime&=~f(x,y_1, \ldots,y_{n}).
 \end{array}\right.
-:label: eq:ode:redODE
-\end{equation*}
+```
 
 Definieren wir nun zwei $n$-dimensionale Vektoren $Y,F \in \R^n$ mit
 \begin{equation*}

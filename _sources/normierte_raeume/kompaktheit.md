@@ -53,9 +53,8 @@ d.h., der Abstand eines beliebigen Folgeglieds zu allen anderen Folgegliedern is
 Somit kann keine konvergente Teilfolge von $(x_n)_{n\in\N}$ existieren und damit ist die Einheitskugel in $\ell^2(\R)$ nicht kompakt.
 ````
 
-Wir können über den Begriff der Kompaktheit sogar erkennen, ob ein Vektorraum endlich erzeugt ist. 
-Als Vorbereitung dieser Beobachtung benötigen wir jedoch zuerst das folgende Hilfslemma.
-Die Motivation für dieses Lemma ist, dass wir den Begriff eines senkrechten Vektors auf einen Unterraum aus Kapitel {prf:ref}`s:orthonormalisierung` nicht in beliebigen normierten Vektorräumen anwenden können (da ggfs. kein Skalarprodukt existiert).
+Wir können über den Begriff der Kompaktheit sogar erkennen, ob ein Vektorraum endlich erzeugt ist. Als Vorbereitung dieser Beobachtung benötigen wir jedoch zuerst das folgende Hilfslemma.
+Die Motivation für dieses Lemma ist, dass wir den Begriff eines senkrechten Vektors auf einen Unterraum aus Kapitel {ref}`s:orthonormalisierung` nicht in beliebigen normierten Vektorräumen anwenden können (da ggfs. kein Skalarprodukt existiert).
 Dennoch können wir nach dem folgenden Lemma Einheitsvektoren finden, die außerhalb dieses Unterraums liegen und einen positiven Abstand zu diesem besitzen.
 
  ````{prf:lemma} Lemma von Riesz

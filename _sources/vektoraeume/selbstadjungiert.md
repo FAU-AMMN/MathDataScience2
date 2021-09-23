@@ -20,7 +20,7 @@ Wir nennen eine Abbildung $F^* \colon V \to V$ den \emph{adjungierten Endomorphi
 \end{equation*}
 ````
 
-Für orthogonale bzw. unitäre Matrizen haben wir bereits in Kapitel {prf:ref}`s:unitäre_endomorphismen` gesehen, dass $A^* = A^{-1}$ gilt.
+Für orthogonale bzw. unitäre Matrizen haben wir bereits in Kapitel {ref}`s:unitäre_endomorphismen` gesehen, dass $A^* = A^{-1}$ gilt.
 Diese Beobachtung überträgt sich mit folgendem Lemma auch auf adjungierte Endomorphismen.
 
 ````{prf:lemma}

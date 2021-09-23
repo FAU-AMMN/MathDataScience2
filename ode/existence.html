@@ -529,25 +529,25 @@ y^\prime(x) \ = \ f(x,y(x))
 \end{equation*}\]</div>
 <p>unter der Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span>, wenn sie die folgende Integralgleichung erfüllt:</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-integralgleichung">
-<span class="eqno">(7.7)<a class="headerlink" href="#equation-eq-ode-integralgleichung" title="Permalink to this equation">¶</a></span>\[\varphi(x) \ = \ c + \int\limits_{x_0}^x f(t,\varphi(t))\,\mathrm{d}t \qquad \text{für alle } \ x\in I.\]</div>
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-eq-ode-integralgleichung" title="Permalink to this equation">¶</a></span>\[\varphi(x) \ = \ c + \int\limits_{x_0}^x f(t,\varphi(t))\,\mathrm{d}t \qquad \text{für alle } \ x\in I.\]</div>
 </div>
 </div><div class="proof admonition" id="proof">
 <p>Proof. Wir zeigen zunächst die Rückrichtung des Satzes.
-Sei also die Integralgleichung <a class="reference internal" href="#equation-eq-ode-integralgleichung">(7.7)</a> erfüllt.
+Sei also die Integralgleichung <a class="reference internal" href="#equation-eq-ode-integralgleichung">(7.8)</a> erfüllt.
 Für die Anfangswertbedingung setzen wir <span class="math notranslate nohighlight">\(x = x_0\)</span> und sehen somit, dass <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span> gilt.
 Da die Funktion <span class="math notranslate nohighlight">\(f\)</span> nach Voraussetzung stetig ist, folgt aus dem Hauptsatz der Integral- und Differentialrechnung Kapitel 7.2 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span>, dass</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \frac{\mathrm{d}}{\mathrm{d}x} \int_{x_0}^x f(t, \varphi(t)) \, \mathrm{d}t \ = \ f(x, \varphi(x)).
 \end{equation*}\]</div>
-<p>Damit folgt aus der Definition der Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> in <a class="reference internal" href="#equation-eq-ode-integralgleichung">(7.7)</a>, dass <span class="math notranslate nohighlight">\(\varphi\)</span> total differenzierbar ist und die gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(\varphi'(x) = f(x, \varphi(x))\)</span> erfüllt.</p>
+<p>Damit folgt aus der Definition der Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> in <a class="reference internal" href="#equation-eq-ode-integralgleichung">(7.8)</a>, dass <span class="math notranslate nohighlight">\(\varphi\)</span> total differenzierbar ist und die gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(\varphi'(x) = f(x, \varphi(x))\)</span> erfüllt.</p>
 <p>Für die Hinrichtung des Beweises nehmen wir an, dass die Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> eine Lösung der gewöhnlichen Differentialgleichung <span class="math notranslate nohighlight">\(\varphi'(x) = f(x, \varphi(x))\)</span> ist, total differenzierbar sei und die Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span> erfülle.
 Dann können wir das folgende Integral betrachten und erhalten aus dem Hauptsatz der Integral- und Differentialrechnung:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \int_{x_0}^x f(t, \varphi(t)) \, \mathrm{d}t \ = \ \int_{x_0}^x \varphi'(t) \, \mathrm{d}t \ = \ \varphi(x) - \varphi(x_0) \ = \ \varphi(x) - c.
 \end{equation*}\]</div>
-<p>Durch Umstellen von <span class="math notranslate nohighlight">\(c\)</span> auf die linke Seite erhält man die Identität der Integralgleichung in <a class="reference internal" href="#equation-eq-ode-integralgleichung">(7.7)</a>.</p>
+<p>Durch Umstellen von <span class="math notranslate nohighlight">\(c\)</span> auf die linke Seite erhält man die Identität der Integralgleichung in <a class="reference internal" href="#equation-eq-ode-integralgleichung">(7.8)</a>.</p>
 </div>
 <p>Das folgende Lemma liefert uns ein hinreichendes Kriterium für die Lipschitz-Stetigkeit einer Funktion.
 Diese Eigenschaft wird für die Existenz und Eindeutigkeit von Lösungen gewöhnlicher Differentialgleichungen entscheidend sein.</p>
@@ -598,16 +598,16 @@ so folgt schon</p>
 Sei <span class="math notranslate nohighlight">\(x_0 \in I\)</span> ein Punkt, so dass für die beiden Lösungen <span class="math notranslate nohighlight">\(\varphi, \vartheta \colon I \rightarrow \R^n\)</span> der gewöhnlichen Differentialgleichung gilt <span class="math notranslate nohighlight">\(\varphi(x_0) = \vartheta(x_0)\)</span>.
 Auf Grund der Integraldarstellung in Satz <a class="reference internal" href="#satz:ode_integralgleichung">Theorem 7.4</a> folgt nun</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-eindeutigkeit-integralgleichung">
-<span class="eqno">(7.8)<a class="headerlink" href="#equation-eq-ode-eindeutigkeit-integralgleichung" title="Permalink to this equation">¶</a></span>\[\varphi(x) - \vartheta(x) \ = \ \int_{x_0}^x f(t, \varphi(t)) - f(t, \vartheta(t)) \, \mathrm{d}t.\]</div>
+<span class="eqno">(7.9)<a class="headerlink" href="#equation-eq-ode-eindeutigkeit-integralgleichung" title="Permalink to this equation">¶</a></span>\[\varphi(x) - \vartheta(x) \ = \ \int_{x_0}^x f(t, \varphi(t)) - f(t, \vartheta(t)) \, \mathrm{d}t.\]</div>
 <p>Da <span class="math notranslate nohighlight">\(f\)</span> nach Voraussetzung lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist, existieren Konstanten <span class="math notranslate nohighlight">\(L \geq 0\)</span> und <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span>, so dass für alle <span class="math notranslate nohighlight">\(t \in I \cap B_\delta(x_0) \coloneqq \lbrace t \in I \colon |t - x_0| &lt; \delta \rbrace\)</span> gilt:</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-eindeutigkeit-lipschitz">
-<span class="eqno">(7.9)<a class="headerlink" href="#equation-eq-ode-eindeutigkeit-lipschitz" title="Permalink to this equation">¶</a></span>\[||f(t, \varphi(t)) - f(t, \vartheta(t))|| \ \leq \ L \cdot ||\varphi(t) - \vartheta(t)||.\]</div>
+<span class="eqno">(7.10)<a class="headerlink" href="#equation-eq-ode-eindeutigkeit-lipschitz" title="Permalink to this equation">¶</a></span>\[||f(t, \varphi(t)) - f(t, \vartheta(t))|| \ \leq \ L \cdot ||\varphi(t) - \vartheta(t)||.\]</div>
 <p>Wir definieren nun die zwei Variablen</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \epsilon \, \coloneqq \, \min( \delta, \frac{1}{2L} ) \quad \text{ und } \quad M \, \coloneqq \, \sup\{ ||\varphi(x) - \vartheta(x)|| \, \colon \, x \in I \cap B_\epsilon(x_0) \}.
 \end{equation*}\]</div>
-<p>Aus Gleichung <a class="reference internal" href="#equation-eq-ode-eindeutigkeit-integralgleichung">(7.8)</a> und <a class="reference internal" href="#equation-eq-ode-eindeutigkeit-lipschitz">(7.9)</a> können wir nun für alle <span class="math notranslate nohighlight">\(x \in I \cap B_\epsilon(x_0)\)</span> folgern</p>
+<p>Aus Gleichung <a class="reference internal" href="#equation-eq-ode-eindeutigkeit-integralgleichung">(7.9)</a> und <a class="reference internal" href="#equation-eq-ode-eindeutigkeit-lipschitz">(7.10)</a> können wir nun für alle <span class="math notranslate nohighlight">\(x \in I \cap B_\epsilon(x_0)\)</span> folgern</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||\varphi(x) - \vartheta(x)|| \ \leq \ L \cdot \left| \int_{x_0}^x ||\varphi(t) - \vartheta(t)||\, \mathrm{d}t \, \right| \ \leq \ L \cdot |x - x_0| \cdot M \ \leq \ \frac{M}{2}.
@@ -638,7 +638,7 @@ Daher gilt also <span class="math notranslate nohighlight">\(\varphi(x) = \varth
 <div class="example-content section" id="proof-content">
 <p>Wir betrachten die folgende nichtlineare gewöhnliche Differentialgleichung</p>
 <div class="math notranslate nohighlight" id="equation-eq-bsp-dgl-nichteindeutig">
-<span class="eqno">(7.10)<a class="headerlink" href="#equation-eq-bsp-dgl-nichteindeutig" title="Permalink to this equation">¶</a></span>\[y^\prime(x) \ = \ (y(x))^{\frac23}.\]</div>
+<span class="eqno">(7.11)<a class="headerlink" href="#equation-eq-bsp-dgl-nichteindeutig" title="Permalink to this equation">¶</a></span>\[y^\prime(x) \ = \ (y(x))^{\frac23}.\]</div>
 <p>Wie man sofort einsieht ist eine spezielle Lösung der Differentialgleichung gegeben durch</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -650,7 +650,7 @@ Daher gilt also <span class="math notranslate nohighlight">\(\varphi(x) = \varth
 \[\begin{equation*}
 \vartheta_a(x) \ \coloneqq \ \frac1{27}(x-a)^3
 \end{equation*}\]</div>
-<p>die gewöhnliche Differentialgleichung <a class="reference internal" href="#equation-eq-bsp-dgl-nichteindeutig">(7.10)</a> erfüllt, denn es gilt</p>
+<p>die gewöhnliche Differentialgleichung <a class="reference internal" href="#equation-eq-bsp-dgl-nichteindeutig">(7.11)</a> erfüllt, denn es gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \vartheta'_a(x) \ = \ \frac19(x-a)^2 \ = \ \left(\frac1{27}(x-a)^3\right)^{\frac{2}{3}} \ = \ \vartheta_a(x)^{\frac23}.
@@ -779,7 +779,7 @@ Für <span class="math notranslate nohighlight">\(c&lt;0\)</span> ist die Lösun
     <div class="container">
       <p>
         
-          By The Jupyter Book community<br/>
+          By T. Roith, D. Tenbrinck<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
