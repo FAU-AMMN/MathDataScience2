@@ -474,13 +474,13 @@ f\colon G&amp;\to\R
 \[\begin{equation*}
 y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots, y^{(n-1)}(x))
 \end{equation*}\]</div>
-<p>eine \emph{explizite} gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung. Ist die gewöhnliche Differentialgleichung nicht nach der höchsten vorkommenden Ableitung aufgelöst, d.h. wenn sie von der folgenden Form ist</p>
+<p>eine <em>explizite</em> gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung. Ist die gewöhnliche Differentialgleichung nicht nach der höchsten vorkommenden Ableitung aufgelöst, d.h. wenn sie von der folgenden Form ist</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 f(x,y(x),y^\prime(x), \ldots, y^{(n-1)}(x), y^{(n)}(x)) \, = \, 0,
 \end{equation*}\]</div>
-<p>so nennen wir sie eine \emph{implizite} gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung.</p>
-<p>Wir nennen eine <span class="math notranslate nohighlight">\(n\)</span>-mal differenzierbare Funktion <span class="math notranslate nohighlight">\(\varphi\colon I\to\R\)</span> auf dem offenen Intervall <span class="math notranslate nohighlight">\(I \subset \R\)</span> eine \emph{Lösung der Differentialgleichung}, wenn sie die folgenden Eigenschaften besitzt:</p>
+<p>so nennen wir sie eine <em>implizite</em> gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung.</p>
+<p>Wir nennen eine <span class="math notranslate nohighlight">\(n\)</span>-mal differenzierbare Funktion <span class="math notranslate nohighlight">\(\varphi\colon I\to\R\)</span> auf dem offenen Intervall <span class="math notranslate nohighlight">\(I \subset \R\)</span> eine <em>Lösung der Differentialgleichung</em>, wenn sie die folgenden Eigenschaften besitzt:</p>
 <p><span class="math notranslate nohighlight">\(i)\)</span> Der von der unbekannten Lösung <span class="math notranslate nohighlight">\(\varphi\)</span>  abhängende Menge</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -523,11 +523,9 @@ Diese Beobachtung hat den großen Vorteil, dass man sich bei Lösungsmethoden vo
 <div class="remark-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(G \subset \R \times \R^n\)</span> eine offene Teilmenge und <span class="math notranslate nohighlight">\(f\colon G\to\R\)</span>  eine stetige Funktion.
 Wir betrachten im Folgenden die explizite gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c24422c-be09-4a0b-90d4-88104a9b6ce7">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-3c24422c-be09-4a0b-90d4-88104a9b6ce7" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:ode:redODEOri}
-y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots,y^{(n-1)}(x)).
-\end{equation}\]</div>
-<p>Wir können die Gleichung \eqref{eq:ode:redODEOri} zu einem Differentialgleichungssystem erster Ordnung umformulieren bestehend aus <span class="math notranslate nohighlight">\(n+1\)</span> Gleichungen mit</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-redodeori">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-ode-redodeori" title="Permalink to this equation">¶</a></span>\[y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots,y^{(n-1)}(x)).\]</div>
+<p>Wir können die Gleichung <a class="reference internal" href="#equation-eq-ode-redodeori">(7.5)</a> zu einem Differentialgleichungssystem erster Ordnung umformulieren bestehend aus <span class="math notranslate nohighlight">\(n+1\)</span> Gleichungen mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \left\{\begin{array}{rl}
@@ -536,7 +534,8 @@ y_1^\prime&amp;=~y_2,\\
 &amp;\vdots\\
 y_{n-1}^\prime&amp;=~y_{n},\\
 y_{n}^\prime&amp;=~f(x,y_1, \ldots,y_{n}).
-\end{array}\right.\label{eq:ode:redODE}
+\end{array}\right.
+:label: eq:ode:redODE
 \end{equation*}\]</div>
 <p>Definieren wir nun zwei <span class="math notranslate nohighlight">\(n\)</span>-dimensionale Vektoren <span class="math notranslate nohighlight">\(Y,F \in \R^n\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
@@ -545,13 +544,13 @@ Y(x) \, \coloneqq \, \left(\begin{array}{c}y_1(x)\\\vdots\\y_{n-1}(x)\\y_{n}(x)\
 \qquad \text{und} \qquad 
 F(x,Y) \, \coloneqq \, \left(\begin{array}{c}y_2(x)\\\vdots\\y_{n}(x)\\f(x,Y(x))\end{array}\right)
 \end{equation*}\]</div>
-<p>dann können wir  das Differentialgleichungssystem \eqref{eq:ode:redODE} umschreiben zu</p>
+<p>dann können wir  das Differentialgleichungssystem <code class="xref eq docutils literal notranslate"><span class="pre">eq:ode:redODE</span></code> umschreiben zu</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 Y^\prime(x) \, = \, F(x,Y(x)).
 \end{equation*}\]</div>
 <p>Die Ableitung <span class="math notranslate nohighlight">\(Y'\)</span> ist hierbei komponentenweise zu interpretieren.</p>
-<p>Sei nun <span class="math notranslate nohighlight">\(\varphi\colon I\to\R\)</span> eine Lösung der expliziten gewöhnlichen Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung in \eqref{eq:ode:redODEOri}, d.h.,</p>
+<p>Sei nun <span class="math notranslate nohighlight">\(\varphi\colon I\to\R\)</span> eine Lösung der expliziten gewöhnlichen Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung in <a class="reference internal" href="#equation-eq-ode-redodeori">(7.5)</a>, d.h.,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \varphi^{(n)}(x) \ = \ f(x,\varphi(x), \varphi^\prime(x), \ldots, \varphi^{(n-1)}(x)).
@@ -567,8 +566,8 @@ Y^\prime(x) \, = \, F(x,Y(x)).
 \[\begin{equation*}
 \varphi \, \coloneqq\, \varphi_1 \colon I\to\R
 \end{equation*}\]</div>
-<p>eine Lösung der Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung \eqref{eq:ode:redODEOri}.
-Dieser Zusammenhang gilt, da aus den ersten <span class="math notranslate nohighlight">\(n\)</span> Gleichungen des Systems \eqref{eq:ode:redODE} folgt</p>
+<p>eine Lösung der Differentialgleichung <span class="math notranslate nohighlight">\(n\)</span>-ter Ordnung <a class="reference internal" href="#equation-eq-ode-redodeori">(7.5)</a>.
+Dieser Zusammenhang gilt, da aus den ersten <span class="math notranslate nohighlight">\(n\)</span> Gleichungen des Systems <code class="xref eq docutils literal notranslate"><span class="pre">eq:ode:redODE</span></code> folgt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \varphi_1(x) \, &amp;= \, \varphi(x)\\
@@ -578,12 +577,12 @@ Dieser Zusammenhang gilt, da aus den ersten <span class="math notranslate nohigh
 \varphi_{n}(x) \, &amp;= \, \varphi_{n-1}^\prime(x) \, = \, \ldots \, = \, \varphi^{(n-1)}(x).
 \end{align*}\]</div>
 <p>Da <span class="math notranslate nohighlight">\(\varphi_{n}\)</span> einmal differenzierbar ist, folgt daraus, dass <span class="math notranslate nohighlight">\(\varphi\)</span> <span class="math notranslate nohighlight">\(n\)</span>-mal differenzierbar sein muss.
-Die <span class="math notranslate nohighlight">\((n+1)\)</span>-te Gleichung von \eqref{eq:ode:redODE} liefert dann</p>
+Die <span class="math notranslate nohighlight">\((n+1)\)</span>-te Gleichung von <code class="xref eq docutils literal notranslate"><span class="pre">eq:ode:redODE</span></code> liefert dann</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \varphi_n^\prime(x) \ = \ \varphi^{(n)}(x) \ = \ f(x,\varphi(x),\varphi^\prime(x), \ldots, \varphi^{(n-1)}(x)).
 \end{equation*}\]</div>
-<p>Wir sehen also, dass die Lösungen von \eqref{eq:ode:redODEOri} und \eqref{eq:ode:redODE} in einer eindeutigen Beziehung zueinander stehen.</p>
+<p>Wir sehen also, dass die Lösungen von <a class="reference internal" href="#equation-eq-ode-redodeori">(7.5)</a> und <code class="xref eq docutils literal notranslate"><span class="pre">eq:ode:redODE</span></code> in einer eindeutigen Beziehung zueinander stehen.</p>
 </div>
 </div><div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 7.8 </span></p>
@@ -597,7 +596,7 @@ Um diese Differentialgleichung in ein Differentialgleichungssystem erster Ordnun
 \[\begin{equation*}
 y_1 \, \coloneqq \, y, \qquad y_2 \, \coloneqq \, y_1'.
 \end{equation*}\]</div>
-<p>Mit diesen Variablen können wir die Differentialgleichung \eqref{eq:ode:2ordnSinCos} umschreiben in die Gleichung</p>
+<p>Mit diesen Variablen können wir die Differentialgleichung <a class="reference internal" href="#equation-eq-ode-2ordnsincos">(7.6)</a> umschreiben in die Gleichung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 y_2' + y_1 \, = \, 0.
@@ -620,7 +619,7 @@ y_1\\
 y_2
 \end{pmatrix}.
 \end{equation*}\]</div>
-<p>Die gewöhnliche Differentialgleichung \eqref{eq:ode:2ordnSinCos} besitzt offensichtlich die auf ganz <span class="math notranslate nohighlight">\(\R\)</span> definierten Lösungen</p>
+<p>Die gewöhnliche Differentialgleichung <a class="reference internal" href="#equation-eq-ode-2ordnsincos">(7.6)</a> besitzt offensichtlich die auf ganz <span class="math notranslate nohighlight">\(\R\)</span> definierten Lösungen</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \varphi(x) \ \coloneqq \ \cos x, \qquad\text{und}\qquad \varphi(x) \ \coloneqq \ \sin x.
@@ -639,7 +638,7 @@ Das heißt wir können eine allgemeine Lösung der gewöhnlichen Differentialgle
 \varphi^\prime_{c_0,c_1}(0) \ &amp;= \ - c_0 \cdot \sin (0) + c_1 \cdot \cos (0) \ = \ c_1\,,
 \end{split}
 \end{equation*}\]</div>
-<p>so stellen wir fest, dass <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1} \colon \R \rightarrow \R\)</span> die eindeutig bestimmte Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> der Differentialgleichung \eqref{eq:ode:2ordnSinCos} mit den Anfangswertbedingungen <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1}(0)=c_0\)</span> und <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1}^\prime(0)=c_1\)</span> ist.</p>
+<p>so stellen wir fest, dass <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1} \colon \R \rightarrow \R\)</span> die eindeutig bestimmte Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> der Differentialgleichung <a class="reference internal" href="#equation-eq-ode-2ordnsincos">(7.6)</a> mit den Anfangswertbedingungen <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1}(0)=c_0\)</span> und <span class="math notranslate nohighlight">\(\varphi_{c_0,c_1}^\prime(0)=c_1\)</span> ist.</p>
 </div>
 </div></div>
 

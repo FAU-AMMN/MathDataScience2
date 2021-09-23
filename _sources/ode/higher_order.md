@@ -20,13 +20,13 @@ Wir nennen eine Gleichung der Form
 \begin{equation*}
 y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots, y^{(n-1)}(x))
 \end{equation*}
-eine \emph{explizite} gewöhnliche Differentialgleichung $n$-ter Ordnung. Ist die gewöhnliche Differentialgleichung nicht nach der höchsten vorkommenden Ableitung aufgelöst, d.h. wenn sie von der folgenden Form ist
+eine _explizite_ gewöhnliche Differentialgleichung $n$-ter Ordnung. Ist die gewöhnliche Differentialgleichung nicht nach der höchsten vorkommenden Ableitung aufgelöst, d.h. wenn sie von der folgenden Form ist
 \begin{equation*}
 f(x,y(x),y^\prime(x), \ldots, y^{(n-1)}(x), y^{(n)}(x)) \, = \, 0,
 \end{equation*}
-so nennen wir sie eine \emph{implizite} gewöhnliche Differentialgleichung $n$-ter Ordnung.
+so nennen wir sie eine _implizite_ gewöhnliche Differentialgleichung $n$-ter Ordnung.
 
-Wir nennen eine $n$-mal differenzierbare Funktion $\varphi\colon I\to\R$ auf dem offenen Intervall $I \subset \R$ eine \emph{Lösung der Differentialgleichung}, wenn sie die folgenden Eigenschaften besitzt:
+Wir nennen eine $n$-mal differenzierbare Funktion $\varphi\colon I\to\R$ auf dem offenen Intervall $I \subset \R$ eine _Lösung der Differentialgleichung_, wenn sie die folgenden Eigenschaften besitzt:
 
 $i)$ Der von der unbekannten Lösung $\varphi$  abhängende Menge
 \begin{equation*}
@@ -66,11 +66,13 @@ Diese Beobachtung hat den großen Vorteil, dass man sich bei Lösungsmethoden vo
 ````{prf:remark}
 Sei $G \subset \R \times \R^n$ eine offene Teilmenge und $f\colon G\to\R$  eine stetige Funktion.
 Wir betrachten im Folgenden die explizite gewöhnliche Differentialgleichung $n$-ter Ordnung
-\begin{equation}\label{eq:ode:redODEOri}
-y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots,y^{(n-1)}(x)).
-\end{equation}
 
-Wir können die Gleichung \eqref{eq:ode:redODEOri} zu einem Differentialgleichungssystem erster Ordnung umformulieren bestehend aus $n+1$ Gleichungen mit
+```{math}
+:label: eq:ode:redODEOri
+y^{(n)}(x) \, = \, f(x,y(x),y^\prime(x), \ldots,y^{(n-1)}(x)).
+```
+
+Wir können die Gleichung {eq}`eq:ode:redODEOri` zu einem Differentialgleichungssystem erster Ordnung umformulieren bestehend aus $n+1$ Gleichungen mit
 \begin{equation*}
 \left\{\begin{array}{rl}
 y &=~y_1,\\
@@ -78,7 +80,8 @@ y_1^\prime&=~y_2,\\
 &\vdots\\
 y_{n-1}^\prime&=~y_{n},\\
 y_{n}^\prime&=~f(x,y_1, \ldots,y_{n}).
-\end{array}\right.\label{eq:ode:redODE}
+\end{array}\right.
+:label: eq:ode:redODE
 \end{equation*}
 
 Definieren wir nun zwei $n$-dimensionale Vektoren $Y,F \in \R^n$ mit
@@ -87,13 +90,13 @@ Y(x) \, \coloneqq \, \left(\begin{array}{c}y_1(x)\\\vdots\\y_{n-1}(x)\\y_{n}(x)\
 \qquad \text{und} \qquad 
 F(x,Y) \, \coloneqq \, \left(\begin{array}{c}y_2(x)\\\vdots\\y_{n}(x)\\f(x,Y(x))\end{array}\right)
 \end{equation*}
-dann können wir  das Differentialgleichungssystem \eqref{eq:ode:redODE} umschreiben zu
+dann können wir  das Differentialgleichungssystem {eq}`eq:ode:redODE` umschreiben zu
 \begin{equation*}
 Y^\prime(x) \, = \, F(x,Y(x)).
 \end{equation*}
 Die Ableitung $Y'$ ist hierbei komponentenweise zu interpretieren.
 
-Sei nun $\varphi\colon I\to\R$ eine Lösung der expliziten gewöhnlichen Differentialgleichung $n$-ter Ordnung in \eqref{eq:ode:redODEOri}, d.h.,
+Sei nun $\varphi\colon I\to\R$ eine Lösung der expliziten gewöhnlichen Differentialgleichung $n$-ter Ordnung in {eq}`eq:ode:redODEOri`, d.h.,
 \begin{equation*}
 \varphi^{(n)}(x) \ = \ f(x,\varphi(x), \varphi^\prime(x), \ldots, \varphi^{(n-1)}(x)).
 \end{equation*}
@@ -107,8 +110,8 @@ Ist nun umgekehrt vorausgesetzt, dass $\Phi \colon I \to \R^n$ eine Lösung des 
 \begin{equation*}
 \varphi \, \coloneqq\, \varphi_1 \colon I\to\R
 \end{equation*}
-eine Lösung der Differentialgleichung $n$-ter Ordnung \eqref{eq:ode:redODEOri}.
-Dieser Zusammenhang gilt, da aus den ersten $n$ Gleichungen des Systems \eqref{eq:ode:redODE} folgt
+eine Lösung der Differentialgleichung $n$-ter Ordnung {eq}`eq:ode:redODEOri`.
+Dieser Zusammenhang gilt, da aus den ersten $n$ Gleichungen des Systems {eq}`eq:ode:redODE` folgt
 \begin{align*}
 \varphi_1(x) \, &= \, \varphi(x)\\
 \varphi_2(x) \, &= \, \varphi_1^\prime(x) \, = \, \varphi^{\prime}(x),\\
@@ -117,11 +120,11 @@ Dieser Zusammenhang gilt, da aus den ersten $n$ Gleichungen des Systems \eqref{e
 \varphi_{n}(x) \, &= \, \varphi_{n-1}^\prime(x) \, = \, \ldots \, = \, \varphi^{(n-1)}(x).
 \end{align*}
 Da $\varphi_{n}$ einmal differenzierbar ist, folgt daraus, dass $\varphi$ $n$-mal differenzierbar sein muss.
-Die $(n+1)$-te Gleichung von \eqref{eq:ode:redODE} liefert dann
+Die $(n+1)$-te Gleichung von {eq}`eq:ode:redODE` liefert dann
 \begin{equation*}
 \varphi_n^\prime(x) \ = \ \varphi^{(n)}(x) \ = \ f(x,\varphi(x),\varphi^\prime(x), \ldots, \varphi^{(n-1)}(x)).
 \end{equation*}
-Wir sehen also, dass die Lösungen von \eqref{eq:ode:redODEOri} und \eqref{eq:ode:redODE} in einer eindeutigen Beziehung zueinander stehen.
+Wir sehen also, dass die Lösungen von {eq}`eq:ode:redODEOri` und {eq}`eq:ode:redODE` in einer eindeutigen Beziehung zueinander stehen.
 ````
 
 ````{prf:example}
@@ -137,7 +140,7 @@ Um diese Differentialgleichung in ein Differentialgleichungssystem erster Ordnun
 \begin{equation*}
 y_1 \, \coloneqq \, y, \qquad y_2 \, \coloneqq \, y_1'.
 \end{equation*}
-Mit diesen Variablen können wir die Differentialgleichung \eqref{eq:ode:2ordnSinCos} umschreiben in die Gleichung
+Mit diesen Variablen können wir die Differentialgleichung {eq}`eq:ode:2ordnSinCos` umschreiben in die Gleichung
 \begin{equation*}
 y_2' + y_1 \, = \, 0.
 \end{equation*}
@@ -159,7 +162,7 @@ y_2
 \end{pmatrix}.
 \end{equation*}
 
-Die gewöhnliche Differentialgleichung \eqref{eq:ode:2ordnSinCos} besitzt offensichtlich die auf ganz $\R$ definierten Lösungen
+Die gewöhnliche Differentialgleichung {eq}`eq:ode:2ordnSinCos` besitzt offensichtlich die auf ganz $\R$ definierten Lösungen
 \begin{equation*}
 \varphi(x) \ \coloneqq \ \cos x, \qquad\text{und}\qquad \varphi(x) \ \coloneqq \ \sin x.
 \end{equation*}
@@ -175,6 +178,5 @@ Betrachten wir die beiden Anfangswertgleichungen
 \varphi^\prime_{c_0,c_1}(0) \ &= \ - c_0 \cdot \sin (0) + c_1 \cdot \cos (0) \ = \ c_1\,,
 \end{split}
 \end{equation*}
-so stellen wir fest, dass $\varphi_{c_0,c_1} \colon \R \rightarrow \R$ die eindeutig bestimmte Lösung $\varphi$ der Differentialgleichung \eqref{eq:ode:2ordnSinCos} mit den Anfangswertbedingungen $\varphi_{c_0,c_1}(0)=c_0$ und $\varphi_{c_0,c_1}^\prime(0)=c_1$ ist.
+so stellen wir fest, dass $\varphi_{c_0,c_1} \colon \R \rightarrow \R$ die eindeutig bestimmte Lösung $\varphi$ der Differentialgleichung {eq}`eq:ode:2ordnSinCos` mit den Anfangswertbedingungen $\varphi_{c_0,c_1}(0)=c_0$ und $\varphi_{c_0,c_1}^\prime(0)=c_1$ ist.
 ````
-

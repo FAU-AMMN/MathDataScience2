@@ -456,60 +456,69 @@
                 
   <div class="section" id="unrestringierte-optimierung">
 <h1><span class="section-number">6.1. </span>Unrestringierte Optimierung<a class="headerlink" href="#unrestringierte-optimierung" title="Permalink to this headline">¶</a></h1>
-<p>Im Folgenden wollen wir uns auf eine bestimmte Klasse von allgemeinen Optimierungsproblemen konzentrieren, den \textit{unbeschränkten} oder \textit{unrestringierten} Optimierungsproblemen.
-\begin{definition}[Unrestringierte Optimierung]
-Liegt ein allgemeines Optimierungsproblem der Form \eqref{eq:optimierungsproblem_allgemein} ohne Nebenbedingungen vor, d.h., für die Indexmengen gilt <span class="math notranslate nohighlight">\(\mathcal{E} = \mathcal{I} = \emptyset\)</span>, so sprechen wir von einem \emph{unbeschränkten} oder \emph{unrestringierten Optimierungsproblem}.
-\end{definition}
-\begin{remark}
-Häufig lassen sich restringierte Optimierungsprobleme in unrestringierte Optimierungsprobleme überführen, indem man zusätzliche Strafterme zur Zielfunktion hinzufügt, die eine Verletzung der ursprünglichen Nebenbedingungen zwar mit Kosten belegt, diese jedoch grundsätzlich erlaubt. Hierbei spricht man auch von \emph{relaxierten Optimierungsproblemen}.</p>
+<p>Im Folgenden wollen wir uns auf eine bestimmte Klasse von allgemeinen Optimierungsproblemen konzentrieren, den <em>unbeschränkten</em> oder <em>unrestringierten</em> Optimierungsproblemen.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 6.2 </span> (Unrestringierte Optimierung)</p>
+<div class="definition-content section" id="proof-content">
+<p>Liegt ein allgemeines Optimierungsproblem der Form \eqref{eq:optimierungsproblem_allgemein} ohne Nebenbedingungen vor, d.h., für die Indexmengen gilt <span class="math notranslate nohighlight">\(\mathcal{E} = \mathcal{I} = \emptyset\)</span>, so sprechen wir von einem <em>unbeschränkten</em> oder <em>unrestringierten Optimierungsproblem</em>.</p>
+</div>
+</div><div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 6.1 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Häufig lassen sich restringierte Optimierungsprobleme in unrestringierte Optimierungsprobleme überführen, indem man zusätzliche Strafterme zur Zielfunktion hinzufügt, die eine Verletzung der ursprünglichen Nebenbedingungen zwar mit Kosten belegt, diese jedoch grundsätzlich erlaubt. Hierbei spricht man auch von <em>relaxierten Optimierungsproblemen</em>.</p>
 <p>Möchte man eine Zielfunktion <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \R\)</span> unter der Nebenbedingung <span class="math notranslate nohighlight">\(c(x) = 0\)</span> für <span class="math notranslate nohighlight">\(x\in \Omega\)</span> minimieren, so lässt sich beispielsweise folgendes relaxierte Optimierungsproblem gewinnen</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \min_{x\in\Omega} G_\lambda(x) \ \coloneqq \ \min_{x\in\Omega} F(x) + \lambda\cdot ||c(x)||^2.
 \end{equation*}\]</div>
-<p>Hierbei ist <span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span> ein fest gewählter Parameter, der es erlaubt den Einfluss der Nebenbedingung auf die Minimerung der Zielfunktion zu steuern.
-\end{remark}</p>
-<p>Zur Bestimmung von Optima müssen wir zunächst den Begriff eines stationären Punkts einer zu optimierenden Zielfunktion einführen.
-\begin{definition}[Stationärer Punkt]
-Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
-Wir nennen einen Punkt <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> \emph{stationären Punkt} von <span class="math notranslate nohighlight">\(F\)</span>, falls er die Bedingung</p>
+<p>Hierbei ist <span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span> ein fest gewählter Parameter, der es erlaubt den Einfluss der Nebenbedingung auf die Minimerung der Zielfunktion zu steuern.</p>
+</div>
+</div><p>Zur Bestimmung von Optima müssen wir zunächst den Begriff eines stationären Punkts einer zu optimierenden Zielfunktion einführen.</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 6.3 </span> (Stationärer Punkt)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
+Wir nennen einen Punkt <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> <em>stationären Punkt</em> von <span class="math notranslate nohighlight">\(F\)</span>, falls er die Bedingung</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \nabla F(x^*) \, = \, 0
 \end{equation*}\]</div>
-<p>erfüllt.
-\end{definition}</p>
-<p>Stationäre Punkte sind in der Optimierung interessante Kandidaten für Extremstellen.
-Für eine genaue Charakterisierung führen wir zunächst den Begriff eines lokalen bzw. globalen Minimums ein.
-\begin{definition}[Lokales und globales Minimum]
-Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
-Wir nennen einen Punkt <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> ein \emph{lokales Minimum} der Funktion <span class="math notranslate nohighlight">\(F\)</span>, falls es eine lokale Umgebung <span class="math notranslate nohighlight">\(U \subset \Omega\)</span> von <span class="math notranslate nohighlight">\(x^* \in U\)</span> gibt, so dass für alle <span class="math notranslate nohighlight">\(x \in U\)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bb397b4d-f5f6-496b-8bb9-31258c3e6387">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-bb397b4d-f5f6-496b-8bb9-31258c3e6387" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\label{eq:lokales_minimum}
-F(x^*) \, \leq \, F(x), \quad \text{ für alle } x \in U.
-\end{equation}\]</div>
-<p>Wir nennen <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> ein \emph{globales Minimum} von <span class="math notranslate nohighlight">\(F\)</span>, falls die Ungleichung \eqref{eq:lokales_minimum} für jede beliebige Umgebung <span class="math notranslate nohighlight">\(U \subset \Omega\)</span> gilt und somit insbesondere für <span class="math notranslate nohighlight">\(U = \Omega\)</span>.
-\end{definition}
-\begin{remark}</p>
+<p>erfüllt.</p>
+</div>
+</div><p>Stationäre Punkte sind in der Optimierung interessante Kandidaten für Extremstellen.
+Für eine genaue Charakterisierung führen wir zunächst den Begriff eines lokalen bzw. globalen Minimums ein.</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 6.4 </span> (Lokales und globales Minimum)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
+Wir nennen einen Punkt <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> ein <em>lokales Minimum</em> der Funktion <span class="math notranslate nohighlight">\(F\)</span>, falls es eine lokale Umgebung <span class="math notranslate nohighlight">\(U \subset \Omega\)</span> von <span class="math notranslate nohighlight">\(x^* \in U\)</span> gibt, so dass für alle <span class="math notranslate nohighlight">\(x \in U\)</span> gilt:</p>
+<div class="math notranslate nohighlight" id="equation-eq-lokales-minimum">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-eq-lokales-minimum" title="Permalink to this equation">¶</a></span>\[F(x^*) \, \leq \, F(x), \quad \text{ für alle } x \in U.\]</div>
+<p>Wir nennen <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> ein <em>globales Minimum</em> von <span class="math notranslate nohighlight">\(F\)</span>, falls die Ungleichung \eqref{eq:lokales_minimum} für jede beliebige Umgebung <span class="math notranslate nohighlight">\(U \subset \Omega\)</span> gilt und somit insbesondere für <span class="math notranslate nohighlight">\(U = \Omega\)</span>.</p>
+</div>
+</div><div class="proof remark admonition" id="remark-4">
+<p class="admonition-title"><span class="caption-number">Remark 6.2 </span></p>
+<div class="remark-content section" id="proof-content">
 <p>In obiger Definition sprechen wir nur von Minima, jedoch ist klar, dass sich jedes Maximierungsproblem durch einen Vorzeichenwechsel leicht in ein Minimierungsproblem umschreiben lässt, d.h.,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \max_{x\in\Omega} F(x) \ \Leftrightarrow \ \min_{x\in\Omega} -F(x) \ \eqqcolon \ \min_{x_\in\Omega} G(x).
 \end{equation*}\]</div>
-<p>\end{remark}</p>
-<p>Da wir nun eine Bedingung für das Vorliegen eines lokalen Minimums haben, können wir mit folgenden Satz die notwendigen Bedingungen für solch ein lokales Minimum angeben.
-\begin{thm}[Notwendige Optimalitätsbedingungen erster Ordnung]\label{satz:minimum_notwendig_ersteOrdnung}
-Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
+</div>
+</div><p>Da wir nun eine Bedingung für das Vorliegen eines lokalen Minimums haben, können wir mit folgenden Satz die notwendigen Bedingungen für solch ein lokales Minimum angeben.</p>
+<div class="proof theorem admonition" id="satz:minimum_notwendig_ersteOrdnung">
+<p class="admonition-title"><span class="caption-number">Theorem 6.1 </span> (Notwendige Optimalitätsbedingungen erster Ordnung)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
 Sei <span class="math notranslate nohighlight">\(x^*\in \Omega\)</span> ein lokales Minimum von <span class="math notranslate nohighlight">\(F\)</span> in <span class="math notranslate nohighlight">\(\Omega\)</span> und die Funktion <span class="math notranslate nohighlight">\(F\)</span> sei stetig partiell differenzierbar in einer lokalen, offenen Umgebung <span class="math notranslate nohighlight">\(U \subset \Omega\)</span> von <span class="math notranslate nohighlight">\(x^*\)</span>.
 Dann gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \nabla F(x^*) \: = \: 0.
 \end{equation*}\]</div>
-<p>\end{thm}
-\begin{proof}[Beweis:]
-Wir führen einen Beweis durch Widerspruch.
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Wir führen einen Beweis durch Widerspruch.
 Nehmen wir also an, dass <span class="math notranslate nohighlight">\(x^* \in \mathbb{R}\)</span> ein lokales Minimum von <span class="math notranslate nohighlight">\(F\)</span> sei, jedoch aber <span class="math notranslate nohighlight">\(\nabla F(x^*) \neq 0\)</span> gelte.
 Wir wählen den Richtungsvektor <span class="math notranslate nohighlight">\(\vec{p} \coloneqq -\nabla F(x^*) \neq 0\)</span>.
 Es ist somit klar, dass</p>
@@ -529,36 +538,42 @@ F(x^* + t\vec{p}) \ = \ F(x^*) +~\underbrace{t\langle \vec{p}, \nabla F(x^* + \t
 \end{equation*}\]</div>
 <p>Somit gilt also <span class="math notranslate nohighlight">\(F(x^* + t\vec{p}) &lt; F(x^*)\)</span> und wir haben offenbar eine Richtung <span class="math notranslate nohighlight">\(\vec{p} \in \mathbb{R}^n \setminus \lbrace 0\rbrace\)</span> gefunden in der die Funktionswerte von <span class="math notranslate nohighlight">\(F\)</span> abnehmen.
 Also ist <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> kein lokales Minimum von <span class="math notranslate nohighlight">\(F\)</span>.
-Das ist aber ein Widerspruch zur Annahme und somit ist die Behauptung bewiesen.
-\end{proof}</p>
-<p>Die Aussage des Satzes \ref{satz:minimum_notwendig_ersteOrdnung} lässt sich wie folgt zusammenfassen.
-\begin{cor}
-Jedes lokale Minimum <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> einer Zielfunktion <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> ist ein stationärer Punkt.
-\end{cor}</p>
-<p>Die Umkehrung der Aussage in Satz \ref{satz:minimum_notwendig_ersteOrdnung} gilt im Allgemeinen nicht, wie uns das folgende Beispiel zeigt.
-\begin{bsp}
-Wir betrachten die Funktion</p>
+Das ist aber ein Widerspruch zur Annahme und somit ist die Behauptung bewiesen.</p>
+</div>
+<p>Die Aussage des Satzes <a class="reference internal" href="#satz:minimum_notwendig_ersteOrdnung">Theorem 6.1</a> lässt sich wie folgt zusammenfassen.</p>
+<div class="proof corollary admonition" id="corollary-6">
+<p class="admonition-title"><span class="caption-number">Corollary 6.1 </span></p>
+<div class="corollary-content section" id="proof-content">
+<p>Jedes lokale Minimum <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> einer Zielfunktion <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> ist ein stationärer Punkt.</p>
+</div>
+</div><p>Die Umkehrung der Aussage in Satz \ref{satz:minimum_notwendig_ersteOrdnung} gilt im Allgemeinen nicht, wie uns das folgende Beispiel zeigt.</p>
+<div class="proof example admonition" id="example-7">
+<p class="admonition-title"><span class="caption-number">Example 6.2 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir betrachten die Funktion</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 F(x) \, \coloneqq \, -x^3.
 \end{equation*}\]</div>
 <p>Diese besitzt einen stationären Punkt in <span class="math notranslate nohighlight">\(x^* = 0\)</span>, d.h., es gilt <span class="math notranslate nohighlight">\(\nabla F(0) = 0\)</span>.
-Dennoch handelt es sich hierbei nicht um ein lokales Optimum, sondern lediglich um einen \emph{Sattelpunkt}.
-\end{bsp}</p>
-<p>Bei der Suche nach lokalen Minima einer Zielfunktion <span class="math notranslate nohighlight">\(F\)</span> lässt sich ein weiteres Kriterium anwenden, welches die zweite Ableitung der Funktion verwendet.
-\begin{thm}[Notwendige Optimalitätsbedingungen zweiter Ordnung]
-Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> ein offenes, zusammenhängendes Gebiet und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
+Dennoch handelt es sich hierbei nicht um ein lokales Optimum, sondern lediglich um einen <em>Sattelpunkt</em>.</p>
+</div>
+</div><p>Bei der Suche nach lokalen Minima einer Zielfunktion <span class="math notranslate nohighlight">\(F\)</span> lässt sich ein weiteres Kriterium anwenden, welches die zweite Ableitung der Funktion verwendet.</p>
+<div class="proof theorem admonition" id="theorem-8">
+<p class="admonition-title"><span class="caption-number">Theorem 6.2 </span> (Notwendige Optimalitätsbedingungen zweiter Ordnung)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> ein offenes, zusammenhängendes Gebiet und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
 Sei <span class="math notranslate nohighlight">\(x^*\in \Omega\)</span> ein lokales Minimum von <span class="math notranslate nohighlight">\(F\)</span> in <span class="math notranslate nohighlight">\(\Omega\)</span> und die Hessematrix <span class="math notranslate nohighlight">\(H_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span> sei stetig in einer offenen Umgebung <span class="math notranslate nohighlight">\(U \subset \Omega\)</span> von <span class="math notranslate nohighlight">\(x^*\)</span>, d.h., die Funktion <span class="math notranslate nohighlight">\(F\)</span> ist zweimal stetig partiell differenzierbar auf der Teilmenge <span class="math notranslate nohighlight">\(U\)</span>.
 Dann gilt <span class="math notranslate nohighlight">\(\nabla F(x^*) = 0\)</span> und <span class="math notranslate nohighlight">\(H_F(x^*)\)</span> ist positiv semidefinit, d.h., es gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \langle \vec{p}, H_F(x^*) \vec{p} \rangle \ \geq \ 0 \quad \text{ für alle } \ \vec{p} \in \mathbb{R}^n.
 \end{equation*}\]</div>
-<p>\end{thm}
-\begin{proof}[Beweis:]
-Der erste Teil der Behauptung folgt bereits aus Satz \ref{satz:minimum_notwendig_ersteOrdnung}, so dass wir uns nur auf den Beweis für die zweite Behauptung konzentrieren müssen.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Der erste Teil der Behauptung folgt bereits aus Satz <a class="reference internal" href="#satz:minimum_notwendig_ersteOrdnung">Theorem 6.1</a>, so dass wir uns nur auf den Beweis für die zweite Behauptung konzentrieren müssen.</p>
 <p>Wir führen wieder einen Beweis durch Widerspruch.
-Sei <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> nach Voraussetzung ein lokaler Minimierer von <span class="math notranslate nohighlight">\(F\)</span>, das heißt nach Satz \ref{satz:minimum_notwendig_ersteOrdnung} gilt <span class="math notranslate nohighlight">\(\nabla F(x^*) = 0\)</span>.
+Sei <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> nach Voraussetzung ein lokaler Minimierer von <span class="math notranslate nohighlight">\(F\)</span>, das heißt nach Satz <a class="reference internal" href="#satz:minimum_notwendig_ersteOrdnung">Theorem 6.1</a> gilt <span class="math notranslate nohighlight">\(\nabla F(x^*) = 0\)</span>.
 Wir nehmen an, dass <span class="math notranslate nohighlight">\(H_F F(x^*)\)</span> nicht positiv semidefinit ist.
 Dann können wir einen Vektor <span class="math notranslate nohighlight">\(\vec{p} \in \mathbb{R}^n / \lbrace 0\rbrace\)</span> finden, so dass</p>
 <div class="amsmath math notranslate nohighlight">
@@ -579,22 +594,21 @@ F(x^* + t\vec{p}) \ = \ F(x^*) + \underbrace{t\langle \vec{p}, \nabla F(x^*) \ra
 <p>Durch Weglassen des Terms auf der rechten Seite der Gleichung folgt also, dass <span class="math notranslate nohighlight">\(F(x^* + \hat{t}\vec{p}) &lt; F(x^*)\)</span> gilt.
 Wir haben also eine Richtung <span class="math notranslate nohighlight">\(\vec{p} \in \mathbb{R}^n/\lbrace 0 \rbrace\)</span> gefunden entlang der die Funktionswerte von <span class="math notranslate nohighlight">\(F\)</span> abnehmen.
 Damit folgt, dass <span class="math notranslate nohighlight">\(x^*\)</span> kein lokales Minimum von <span class="math notranslate nohighlight">\(F\)</span> ist, was aber im Widerspruch zur Annahme steht.
-Das beweist die Aussage des Satzes.
-\end{proof}</p>
-<p>Schlussendlich wollen wir auch eine hinreichende Bedingung für das Vorliegen eines lokalen Minimums angeben.
-\begin{thm}[Hinreichende Optimalitätsbedingungen zweiter Ordnung]
-\label{thm:minimum_hinreichend}
-Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
-Sei <span class="math notranslate nohighlight">\(x^*\in \Omega\)</span> ein Punkt für den gelte
-\begin{enumerate}[(i)]
-\item <span class="math notranslate nohighlight">\(\nabla F(x^*) \ = \ 0\)</span>,
-\item <span class="math notranslate nohighlight">\(H_F(x^*)\)</span> ist positiv definit.
-\end{enumerate}
-Außerdem sei die Hesse-Matrix <span class="math notranslate nohighlight">\(H_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span> stetig in einer offenen Umgebung <span class="math notranslate nohighlight">\(U \subset \Omega\)</span> von <span class="math notranslate nohighlight">\(x^* \in U\)</span>.
-Dann ist <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> ein striktes lokales Minimum von <span class="math notranslate nohighlight">\(F\)</span>.
-\end{thm}
-\begin{proof}
-Da die Hesse-Matrix <span class="math notranslate nohighlight">\(H_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span> stetig und positiv definit in <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> ist nach Voraussetzung können wir einen Radius <span class="math notranslate nohighlight">\(r &gt; 0\)</span> finden, so dass <span class="math notranslate nohighlight">\(H_F(x)\)</span> positiv definit ist für alle <span class="math notranslate nohighlight">\(x \in B_r(x^*)\)</span>.
+Das beweist die Aussage des Satzes.</p>
+</div>
+<p>Schlussendlich wollen wir auch eine hinreichende Bedingung für das Vorliegen eines lokalen Minimums angeben.</p>
+<div class="proof theorem admonition" id="thm:minimum_hinreichend">
+<p class="admonition-title"><span class="caption-number">Theorem 6.3 </span> (Hinreichende Optimalitätsbedingungen zweiter Ordnung)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
+Sei <span class="math notranslate nohighlight">\(x^*\in \Omega\)</span> ein Punkt für den gelte</p>
+<p><span class="math notranslate nohighlight">\(i)\)</span> <span class="math notranslate nohighlight">\(\nabla F(x^*) \ = \ 0\)</span>,
+<span class="math notranslate nohighlight">\(ii)\)</span> <span class="math notranslate nohighlight">\(H_F(x^*)\)</span> ist positiv definit.</p>
+<p>Außerdem sei die Hesse-Matrix <span class="math notranslate nohighlight">\(H_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span> stetig in einer offenen Umgebung <span class="math notranslate nohighlight">\(U \subset \Omega\)</span> von <span class="math notranslate nohighlight">\(x^* \in U\)</span>.
+Dann ist <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> ein striktes lokales Minimum von <span class="math notranslate nohighlight">\(F\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Da die Hesse-Matrix <span class="math notranslate nohighlight">\(H_F\)</span> von <span class="math notranslate nohighlight">\(F\)</span> stetig und positiv definit in <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> ist nach Voraussetzung können wir einen Radius <span class="math notranslate nohighlight">\(r &gt; 0\)</span> finden, so dass <span class="math notranslate nohighlight">\(H_F(x)\)</span> positiv definit ist für alle <span class="math notranslate nohighlight">\(x \in B_r(x^*)\)</span>.
 Für jeden Vektor <span class="math notranslate nohighlight">\(\vec{p} \in \mathbb{R}^n / \lbrace 0\rbrace\)</span> mit <span class="math notranslate nohighlight">\(||\vec{p}|| &lt; r\)</span> gilt dann nach dem Satz \ref{satz:taylorformel_mehrdimensional} von Taylor:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -606,24 +620,28 @@ F(x^* + \vec{p}) \ = \ F(x^*) +~\underbrace{\langle \vec{p}, \nabla F(x^*) \rang
 \langle \vec{p}, H_F(x^* + t\vec{p})\vec{p} \rangle \ &gt; \ 0
 \end{equation*}\]</div>
 <p>gilt und somit schon <span class="math notranslate nohighlight">\(F(x^* + \vec{p}) &gt; F(x^*)\)</span> gelten muss.
-Da <span class="math notranslate nohighlight">\(\vec{p} \in \mathbb{R}^n / \lbrace 0 \rbrace\)</span> mit <span class="math notranslate nohighlight">\(||\vec{p}|| &lt; r\)</span> beliebig gewählt war handelt es sich bei <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> um ein striktes lokales Minimum der Funktion <span class="math notranslate nohighlight">\(F\)</span>.
-\end{proof}</p>
-<p>\begin{remark}
-An Hand der Definitheit der Hesse-Matrix können wir also in vielen Fällen die Art des stationären Punkts charakterisieren.
-Es stellt sich heraus, dass folgende Beobachtungen gelten:
-\begin{itemize}
-\item Ist die Hesse-Matrix \emph{positiv definit}, handelt es sich um ein \textbf{lokales Minimum}.
-\item Falls die Hesse-Matrix \emph{negativ definit} ist, so ist der stationäre Punkt ein \textbf{lokales Maximum}.
-\item Ist die Hesse-Matrix \emph{indefinit}, so handelt es sich um einen \textbf{Sattelpunkt}.
-\end{itemize}
-Sollte die Hesse-Matrix in einem stationären Punkt \emph{semidefinit} sein, so lässt sich keine eindeutige Aussage treffen.
-\end{remark}</p>
-<p>Im Folgenden wollen wir die  notwendigen und hinreichenden Optimalitätsbedingungen für verschiedene Zielfunktionen prüfen.
-\begin{example}
-Wir untersuchen zwei unterschiedliche Zielfunktionen auf mögliche Extremstellen.
-\begin{enumerate}
-\item
-Zuerst diskutieren wir eine einfache eindimensionale Zielfunktion <span class="math notranslate nohighlight">\(F \colon \R \rightarrow \R\)</span> mit</p>
+Da <span class="math notranslate nohighlight">\(\vec{p} \in \mathbb{R}^n / \lbrace 0 \rbrace\)</span> mit <span class="math notranslate nohighlight">\(||\vec{p}|| &lt; r\)</span> beliebig gewählt war handelt es sich bei <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> um ein striktes lokales Minimum der Funktion <span class="math notranslate nohighlight">\(F\)</span>.</p>
+</div>
+<div class="proof remark admonition" id="remark-10">
+<p class="admonition-title"><span class="caption-number">Remark 6.3 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>An Hand der Definitheit der Hesse-Matrix können wir also in vielen Fällen die Art des stationären Punkts charakterisieren.
+Es stellt sich heraus, dass folgende Beobachtungen gelten:</p>
+<ul class="simple">
+<li><p>Ist die Hesse-Matrix <em>positiv definit</em>, handelt es sich um ein <strong>lokales Minimum</strong>.</p></li>
+<li><p>Falls die Hesse-Matrix <em>negativ definit</em> ist, so ist der stationäre Punkt ein <strong>lokales Maximum</strong>.</p></li>
+<li><p>Ist die Hesse-Matrix <em>indefinit</em>, so handelt es sich um einen <strong>Sattelpunkt</strong>.</p></li>
+</ul>
+<p>Sollte die Hesse-Matrix in einem stationären Punkt <em>semidefinit</em> sein, so lässt sich keine eindeutige Aussage treffen.</p>
+</div>
+</div><p>Im Folgenden wollen wir die  notwendigen und hinreichenden Optimalitätsbedingungen für verschiedene Zielfunktionen prüfen.</p>
+<div class="proof example admonition" id="example-11">
+<p class="admonition-title"><span class="caption-number">Example 6.3 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir untersuchen zwei unterschiedliche Zielfunktionen auf mögliche Extremstellen.</p>
+<ul class="simple">
+<li><p>Zuerst diskutieren wir eine einfache eindimensionale Zielfunktion <span class="math notranslate nohighlight">\(F \colon \R \rightarrow \R\)</span> mit</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 F(x) = x^4.
@@ -636,9 +654,10 @@ F'(x) \ = \ 4x^3 \ = \ 0 \quad \Leftrightarrow \ x \ = \ 0.
 <p>Da <span class="math notranslate nohighlight">\(F''(x) = 12x^2\)</span> ist gilt im stationären Punkt <span class="math notranslate nohighlight">\(x^* = 0\)</span> nur <span class="math notranslate nohighlight">\(F''(0) = 0\)</span>.
 Daher können wir nicht die hinreichenden Optimalitätsbedingungen zweiter Ordnung aus Satz \ref{thm:minimum_hinreichend} anwenden, da die zweite Ableitung nicht positiv ist.
 Dennoch erkennen wir, dass <span class="math notranslate nohighlight">\(F\)</span> ein striktes lokales Minimum in <span class="math notranslate nohighlight">\(x=0\)</span> besitzt mit <span class="math notranslate nohighlight">\(\nabla F(0) = 0\)</span>.
-Dies zeigt uns, dass die in Satz \ref{thm:minimum_hinreichend} genannten Bedingungen nur hinreichend sind, jedoch nicht notwendig für das Vorliegen eines strikten lokalen Minimums.
-\item
-Nun diskutieren wir eine zweidimensionale Zielfunktion <span class="math notranslate nohighlight">\(F \colon \R^2 \rightarrow \R\)</span> mit</p>
+Dies zeigt uns, dass die in Satz \ref{thm:minimum_hinreichend} genannten Bedingungen nur hinreichend sind, jedoch nicht notwendig für das Vorliegen eines strikten lokalen Minimums.</p>
+<ul class="simple">
+<li><p>Nun diskutieren wir eine zweidimensionale Zielfunktion <span class="math notranslate nohighlight">\(F \colon \R^2 \rightarrow \R\)</span> mit</p></li>
+</ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 F(x,y) \ = \ 6 x^2-2 x-4 x y+y^2+1
@@ -714,26 +733,27 @@ P_{H_F}(t) \ = \ (12 - t)*(2-t) - 16 \ = \ t^2 - 14t + 8.
 <p>Da beide Eigenwerte <span class="math notranslate nohighlight">\(\lambda_{1/2} = 7 \pm \sqrt{41}\)</span> von <span class="math notranslate nohighlight">\(H_F\)</span> positiv sind, ist die Hesse-Matrix positiv definit.
 Damit sind die hinreichenden Bedingungen aus Satz \ref{thm:minimum_hinreichend} für ein striktes lokales Minimum von <span class="math notranslate nohighlight">\(F\)</span> im Punkt <span class="math notranslate nohighlight">\(x^* \ = \ (0.5, 1)\)</span> erfüllt.
 Da die Hesse-Matrix auf ganz <span class="math notranslate nohighlight">\(\R^2\)</span> positiv definit ist, handelt es sich sogar um ein globales Minimum.</p>
-<p>\end{enumerate}
-\end{example}</p>
-<p>Eine äußerst wertvolle Eigenschaft bei der Optimierung ist die Konvexität einer Zielfunktion, da jedes lokale Optimum einer konvexen Funktion bereits ein globales Optimum ist.
-\begin{definition}[Konvexität]
-Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
-Wir nennen <span class="math notranslate nohighlight">\(F\)</span> \emph{konvex} wenn für beliebige Vektoren <span class="math notranslate nohighlight">\(x,y \in \Omega\)</span> die folgende Ungleichung für alle <span class="math notranslate nohighlight">\(0 \leq \alpha \leq 1\)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7370f52e-7117-4727-bb30-53399f1d41a3">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-7370f52e-7117-4727-bb30-53399f1d41a3" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:konvex}
-F(\alpha x + (1-\alpha)y) \ \leq \ \alpha F(x) + (1-\alpha)F(y).
-\end{equation}\]</div>
-<p>Wir nennen die Funktion <span class="math notranslate nohighlight">\(F\)</span> \emph{strikt konvex}, falls \eqref{eq:konvex} eine echte Ungleichung ist.</p>
-<p>Anschaulich bedeutet Konvexität einer Funktion <span class="math notranslate nohighlight">\(F\)</span>, dass jede Verbindungsgerade zwischen zwei Punkten <span class="math notranslate nohighlight">\(x,y \in \Omega\)</span> oberhalb des Graphen der Funktion <span class="math notranslate nohighlight">\(F\)</span> durch die Punkte <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> verläuft.
-\end{definition}</p>
-<p>Folgende Bemerkung stellt die Bedeutung von Konvexität für die Optimierung fest.
-\begin{remark}
-Sei <span class="math notranslate nohighlight">\(\Omega \subset \R^n\)</span> eine offene, zusammenhängende Teilmenge und <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \R\)</span> eine Zielfunktion.
-Man kann zeigen, dass die Hesse-Matrix <span class="math notranslate nohighlight">\(H_F(x)\)</span> genau dann positiv definit ist für alle <span class="math notranslate nohighlight">\(x\in \Omega\)</span>, wenn <span class="math notranslate nohighlight">\(F\)</span> eine strikt konvexe Funktion ist.</p>
-<p>Dies hat zur Konsequenz, dass wenn man einen stationären Punkt <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> findet mit <span class="math notranslate nohighlight">\(\nabla F(x^*) = 0\)</span>, so ist dieser Punkt das eindeutige, globale Minimum der Zielfunktion.
-\end{remark}</p>
 </div>
+</div><p>Eine äußerst wertvolle Eigenschaft bei der Optimierung ist die Konvexität einer Zielfunktion, da jedes lokale Optimum einer konvexen Funktion bereits ein globales Optimum ist.</p>
+<div class="proof definition admonition" id="definition-12">
+<p class="admonition-title"><span class="caption-number">Definition 6.5 </span> (Konvexität)</p>
+<div class="definition-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Zielfunktion.
+Wir nennen <span class="math notranslate nohighlight">\(F\)</span> <em>konvex</em> wenn für beliebige Vektoren <span class="math notranslate nohighlight">\(x,y \in \Omega\)</span> die folgende Ungleichung für alle <span class="math notranslate nohighlight">\(0 \leq \alpha \leq 1\)</span> gilt:</p>
+<div class="math notranslate nohighlight" id="equation-eq-konvex">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-eq-konvex" title="Permalink to this equation">¶</a></span>\[F(\alpha x + (1-\alpha)y) \ \leq \ \alpha F(x) + (1-\alpha)F(y).\]</div>
+<p>Wir nennen die Funktion <span class="math notranslate nohighlight">\(F\)</span> <em>strikt konvex</em>, falls <a class="reference internal" href="#equation-eq-konvex">(6.3)</a> eine echte Ungleichung ist.</p>
+<p>Anschaulich bedeutet Konvexität einer Funktion <span class="math notranslate nohighlight">\(F\)</span>, dass jede Verbindungsgerade zwischen zwei Punkten <span class="math notranslate nohighlight">\(x,y \in \Omega\)</span> oberhalb des Graphen der Funktion <span class="math notranslate nohighlight">\(F\)</span> durch die Punkte <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> verläuft.</p>
+</div>
+</div><p>Folgende Bemerkung stellt die Bedeutung von Konvexität für die Optimierung fest.</p>
+<div class="proof remark admonition" id="remark-13">
+<p class="admonition-title"><span class="caption-number">Remark 6.4 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(\Omega \subset \R^n\)</span> eine offene, zusammenhängende Teilmenge und <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \R\)</span> eine Zielfunktion.
+Man kann zeigen, dass die Hesse-Matrix <span class="math notranslate nohighlight">\(H_F(x)\)</span> genau dann positiv definit ist für alle <span class="math notranslate nohighlight">\(x\in \Omega\)</span>, wenn <span class="math notranslate nohighlight">\(F\)</span> eine strikt konvexe Funktion ist.</p>
+<p>Dies hat zur Konsequenz, dass wenn man einen stationären Punkt <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span> findet mit <span class="math notranslate nohighlight">\(\nabla F(x^*) = 0\)</span>, so ist dieser Punkt das eindeutige, globale Minimum der Zielfunktion.</p>
+</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {

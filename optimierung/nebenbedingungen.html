@@ -459,12 +459,14 @@
 <p>Bisher haben wir uns nur mit unrestringierten Optimierungsproblemen beschäftigt und für diese Optimalitätsbedingungen hergeleitet.
 Viele reale Aufgabenstellungen erfordern jedoch die Optimierung einer Zielfunktion unter Nebenbedingungen.
 Daher wollen wir uns im Folgenden mit solchen Problemen beschäftigen und eine Möglichkeit aufzeigen stationäre Punkte unter Nebenbedingungen zu identifizieren.</p>
-<p>Wir beschränken uns hierbei auf Optimierungsprobleme, bei denen die Nebenbedingung eine Gleichheit erfüllen müssen, lassen jedoch keine Ungleichungen zu, d.h., für die Indexmenge <span class="math notranslate nohighlight">\(\mathcal{I}\)</span> der Ungleichungen im allgemeinen Optimierungsproblem \eqref{eq:optimierungsproblem_allgemein} gilt <span class="math notranslate nohighlight">\(\mathcal{I} = \emptyset\)</span>.
-Der Grund für diese Einschränkung ist, dass die zugehörige Theorie der sogenannten \emph{Karush-Kuhn-Tucker (KKT)} Bedingungen für Optimierungsprobleme mit Ungleichungsnebenbedingungen den Rahmen dieser Vorlesung sprengen würde.
-Interessierte Leser*innen seien auf \cite[Kapitel 12.3]{nocedal_2006} verwiesen.</p>
-<p>Wir beginnen direkt mit der wichtigen geometrischen Beobachtung, dass die Gradienten einer Zielfunktion und der zugehörigen Nebenbedingung in einem Minimierer parallel ausgerichtet sein müssen.
-\begin{satz}[Lagrange-Multiplikatoren]\label{satz:lagrange_multiplikator}
-Seien <span class="math notranslate nohighlight">\(F,c \colon \Omega \rightarrow \R\)</span> zwei stetig partiell differenzierbare Funktionen und sei</p>
+<p>Wir beschränken uns hierbei auf Optimierungsprobleme, bei denen die Nebenbedingung eine Gleichheit erfüllen müssen, lassen jedoch keine Ungleichungen zu, d.h., für die Indexmenge <span class="math notranslate nohighlight">\(\mathcal{I}\)</span> der Ungleichungen im allgemeinen Optimierungsproblem <a class="reference internal" href="optimierung.html#equation-eq-optimierungsproblem-allgemein">(6.1)</a> gilt <span class="math notranslate nohighlight">\(\mathcal{I} = \emptyset\)</span>.
+Der Grund für diese Einschränkung ist, dass die zugehörige Theorie der sogenannten <em>Karush-Kuhn-Tucker (KKT)</em> Bedingungen für Optimierungsprobleme mit Ungleichungsnebenbedingungen den Rahmen dieser Vorlesung sprengen würde.
+Interessierte Leser*innen seien auf Kapitel 12.3 <span id="id1">[<a class="reference internal" href="../references.html#id6">uSJW06</a>]</span> verwiesen.</p>
+<p>Wir beginnen direkt mit der wichtigen geometrischen Beobachtung, dass die Gradienten einer Zielfunktion und der zugehörigen Nebenbedingung in einem Minimierer parallel ausgerichtet sein müssen.</p>
+<div class="proof theorem admonition" id="satz:lagrange_multiplikator">
+<p class="admonition-title"><span class="caption-number">Theorem 6.4 </span> (Lagrange-Multiplikatoren)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(F,c \colon \Omega \rightarrow \R\)</span> zwei stetig partiell differenzierbare Funktionen und sei</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 M \, \coloneqq \, \lbrace x \in \Omega\colon c(x) = 0 \rbrace \subset \Omega
@@ -475,17 +477,17 @@ M \, \coloneqq \, \lbrace x \in \Omega\colon c(x) = 0 \rbrace \subset \Omega
 \[\begin{equation*}
 \min_{x\in \Omega} \, F(x) \qquad \text{ mit } \qquad c(x) \ = \ 0
 \end{equation*}\]</div>
-<p>und <span class="math notranslate nohighlight">\(\nabla c(x^*) \neq 0\)</span> existiert ein \emph{Lagrange-Multiplikator} <span class="math notranslate nohighlight">\(\lambda^* \in \R\)</span>, so dass</p>
+<p>und <span class="math notranslate nohighlight">\(\nabla c(x^*) \neq 0\)</span> existiert ein <em>Lagrange-Multiplikator</em> <span class="math notranslate nohighlight">\(\lambda^* \in \R\)</span>, so dass</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \nabla F (x^*) + \lambda^* \nabla c(x^*) \ = \ 0.
 \end{equation*}\]</div>
-<p>Das heißt die beiden Gradienten <span class="math notranslate nohighlight">\(\nabla F\)</span> und <span class="math notranslate nohighlight">\(\nabla c\)</span> sind parallel in <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span>.
-\end{satz}
-\begin{proof}
-Sei <span class="math notranslate nohighlight">\(x^* \in M\)</span> eine Lösung des Minimierungsproblems mit Nebenbedingung.
+<p>Das heißt die beiden Gradienten <span class="math notranslate nohighlight">\(\nabla F\)</span> und <span class="math notranslate nohighlight">\(\nabla c\)</span> sind parallel in <span class="math notranslate nohighlight">\(x^* \in \Omega\)</span>.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Sei <span class="math notranslate nohighlight">\(x^* \in M\)</span> eine Lösung des Minimierungsproblems mit Nebenbedingung.
 Wir sehen zunächst ein, dass der Gradient <span class="math notranslate nohighlight">\(\nabla c(x^*)\)</span> senkrecht zu allen Tangentialvektoren der Untermannigfaltigkeit <span class="math notranslate nohighlight">\(M\)</span> steht, da sich <span class="math notranslate nohighlight">\(c\)</span> entlang aller Tangentialrichtungen von <span class="math notranslate nohighlight">\(M\)</span> nicht ändert.
-Wir schreiben nun den Gradienten der Zielfunktion <span class="math notranslate nohighlight">\(\nabla F\)</span> mittels orthogonaler Projektion (vgl. Kapitel \ref{s:orthonormalisierung}) als eindeutige Summe zweier Vektoren <span class="math notranslate nohighlight">\(v_\perp \in \R^n\)</span> und <span class="math notranslate nohighlight">\(v_\parallel \in \R^n\)</span>, die jeweils orthogonal und parallel zu <span class="math notranslate nohighlight">\(\nabla c\)</span> sind mit</p>
+Wir schreiben nun den Gradienten der Zielfunktion <span class="math notranslate nohighlight">\(\nabla F\)</span> mittels orthogonaler Projektion (vgl. Kapitel <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">s:orthonormalisierung</span></code>) als eindeutige Summe zweier Vektoren <span class="math notranslate nohighlight">\(v_\perp \in \R^n\)</span> und <span class="math notranslate nohighlight">\(v_\parallel \in \R^n\)</span>, die jeweils orthogonal und parallel zu <span class="math notranslate nohighlight">\(\nabla c\)</span> sind mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \nabla F(x^*) \ = \ v_\perp + v_\parallel.
@@ -507,11 +509,13 @@ Also müssen <span class="math notranslate nohighlight">\(\nabla F\)</span> und 
 \[\begin{equation*}
 \nabla F(x^*) \ = \ -\lambda \cdot \nabla c(x^*).
 \end{equation*}\]</div>
-<p>Der Lagrange-Multiplikator <span class="math notranslate nohighlight">\(\lambda \in \R\)</span> taucht in der Formel auf, da die Gradienten parallel aber nicht gleich lang sein müssen.
-\end{proof}</p>
-<p>Die folgenden Bemerkungen erklären wie aus Satz \ref{satz:lagrange_multiplikator} das sogenannte \emph{Verfahren der Lagrange-Multiplikatoren} gewonnen werden kann, welches beispielsweise in der Physik bei Anwendungen der klassischen Mechanik eine Schlüsselrolle spielt.
-\begin{remark}
-Wir wollen folgende Beobachtungen festhalten.
+<p>Der Lagrange-Multiplikator <span class="math notranslate nohighlight">\(\lambda \in \R\)</span> taucht in der Formel auf, da die Gradienten parallel aber nicht gleich lang sein müssen.</p>
+</div>
+<p>Die folgenden Bemerkungen erklären wie aus Satz <a class="reference internal" href="#satz:lagrange_multiplikator">Theorem 6.4</a> das sogenannte <em>Verfahren der Lagrange-Multiplikatoren</em> gewonnen werden kann, welches beispielsweise in der Physik bei Anwendungen der klassischen Mechanik eine Schlüsselrolle spielt.</p>
+<div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 6.5 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Wir wollen folgende Beobachtungen festhalten.
 \begin{enumerate}
 \item Die notwendige Bedingung, dass die Gradienten der Zielfunktion <span class="math notranslate nohighlight">\(F\)</span> und der Nebenbedingung <span class="math notranslate nohighlight">\(c\)</span> in einem Minimierer <span class="math notranslate nohighlight">\(x^* \in M\)</span> parallel ausgerichtet sein müssen, d.h.,</p>
 <div class="amsmath math notranslate nohighlight">
@@ -519,7 +523,7 @@ Wir wollen folgende Beobachtungen festhalten.
 \nabla F (x^*) + \lambda^* \nabla c(x^*) \ = \ 0
 \end{equation*}\]</div>
 <p>lässt sich für das Verfahren der Lagrange-Multiplikatoren ausnutzen.
-Hierzu definieren wir zunächst eine neue Funktion <span class="math notranslate nohighlight">\(\Lambda \colon \Omega \times \R \rightarrow \R\)</span>, genannt \emph{Lagrange-Funktion}, die eine zusätzliche Variable <span class="math notranslate nohighlight">\(\lambda \in \R\)</span> für die Nebenbedingung besitzt, als</p>
+Hierzu definieren wir zunächst eine neue Funktion <span class="math notranslate nohighlight">\(\Lambda \colon \Omega \times \R \rightarrow \R\)</span>, genannt <em>Lagrange-Funktion</em>, die eine zusätzliche Variable <span class="math notranslate nohighlight">\(\lambda \in \R\)</span> für die Nebenbedingung besitzt, als</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \Lambda(x, \lambda) \ \coloneqq \ F(x) + \lambda \cdot c(x).
@@ -537,18 +541,21 @@ Hierzu wird die Lagrange-Funktion als eine Linearkombination der Zielfunktion un
 \Lambda(x, \lambda) \ = \ F(x) + \sum_{i=1}^m \lambda_i c_i(x).
 \end{equation*}\]</div>
 <p>Zur Bestimmung stationärer Punkte geht man nun analog zum Fall mit nur einer Nebenbedingung vor.
-\end{enumerate}
-\end{remark}</p>
-<p>\begin{bsp}
-Wir wollen im Folgenden eine Zielfunktion <span class="math notranslate nohighlight">\(F \colon \R^2 \rightarrow \R\)</span> mit</p>
+\end{enumerate}</p>
+</div>
+</div><div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 6.4 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir wollen im Folgenden eine Zielfunktion <span class="math notranslate nohighlight">\(F \colon \R^2 \rightarrow \R\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 F(x,y) \ \coloneqq \ x + y
 \end{equation*}\]</div>
 <p>minimieren unter der Nebenbedingung, dass der Lösungsvektor <span class="math notranslate nohighlight">\(x^* = (x,y)^T \in \R^2\)</span> normiert sein soll, d.h., <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>.
 Dies führt also zu einem Optimierungsproblem mit Nebenbedingung der folgenden Gestalt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ba95f744-ef08-4f64-8ad4-b11d1f1b1b48">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-ba95f744-ef08-4f64-8ad4-b11d1f1b1b48" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:lagrange_bsp}
+<div class="amsmath math notranslate nohighlight" id="equation-9b6939b7-41f3-4ae2-a999-e0aa83b1ecb8">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-9b6939b7-41f3-4ae2-a999-e0aa83b1ecb8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+:label: eq:lagrange_bsp
 \min_{(x,y)\in \R^2} \, F(x,y) \, = \,  x+y \qquad \text{ mit } \qquad c(x,y) \, = \, x^2+y^2 - 1 \, = \, 0.
 \end{equation}\]</div>
 <p>Wir identifizieren zunächst Punkte in denen der Gradient von <span class="math notranslate nohighlight">\(c(x,y)\)</span> verschwindet, d.h.,</p>
@@ -563,7 +570,7 @@ Da dieser Punkt nicht die Nebenbedingung erfüllt, müssen wir ihn also bei den 
 \[\begin{equation*}
 \Lambda(x,y,\lambda) \ \coloneqq \ F(x,y) + \lambda \cdot c(x,y) \ = \ x+y + \lambda \cdot (x^2+y^2 - 1).
 \end{equation*}\]</div>
-<p>Nach dem Satz \ref{satz:lagrange_multiplikator} müssen wir für potentielle Lösungen des Optimierungsproblems \eqref{eq:lagrange_bsp} nur Extremstellen der Lagrange-Funktion berechnen, d.h., wir betrachten stationäre Punkte von <span class="math notranslate nohighlight">\(\Lambda\)</span> durch</p>
+<p>Nach dem Satz <a class="reference internal" href="#satz:lagrange_multiplikator">Theorem 6.4</a> müssen wir für potentielle Lösungen des Optimierungsproblems <code class="xref eq docutils literal notranslate"><span class="pre">eq:lagrange_bsp</span></code> nur Extremstellen der Lagrange-Funktion berechnen, d.h., wir betrachten stationäre Punkte von <span class="math notranslate nohighlight">\(\Lambda\)</span> durch</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \nabla \Lambda(x,y,\lambda) \ = \ 
@@ -612,8 +619,8 @@ x^*_1 \ = \ (\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2})^T, \quad x^*_2 \ = \ (-\fra
 \[\begin{equation*}
 F(x_1^*) \ = \ \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} \ = \ \sqrt{2}, \qquad F(x_2^*) \ = \ -\frac{\sqrt{2}}{2} -\frac{\sqrt{2}}{2} \ = \ -\sqrt{2}.
 \end{equation*}\]</div>
-<p>\end{bsp}</p>
 </div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {

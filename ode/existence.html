@@ -459,7 +459,7 @@
 <p>Bisher haben wir uns vornehmlich um analytische Lösungsverfahren für lineare gewöhnliche Differentialgleichungen erster Ordnung beschäftigt.
 Dabei haben wir theoretische Überlegungen zur Existenz und Eindeutigkeit von Lösungen allgemeiner gewöhnlicher Differentialgleichungen vernachlässigt.
 Daher wollen wir uns in diesem Abschnitt den notwendigen und hinreichenden Bedingungen widmen, die uns sagen wann eine Differentialgleichung lösbar ist und wann ihre Lösung sogar eindeutig ist.</p>
-<p>Da wir in Kapitel \ref{s:dgl_hoehere_ordnung} gesehen haben, dass sich beliebige gewöhnliche Differentialgleichungen höherer Ordnung in ein Differentialgleichungssystem erster Ordnung transformieren lassen, beschränken wir uns auf diese Differentialgleichungssysteme.
+<p>Da wir in Kapitel <a class="reference internal" href="higher_order.html#s-dgl-hoehere-ordnung"><span class="std std-ref">Differentialgleichungen höherer Ordnung</span></a> gesehen haben, dass sich beliebige gewöhnliche Differentialgleichungen höherer Ordnung in ein Differentialgleichungssystem erster Ordnung transformieren lassen, beschränken wir uns auf diese Differentialgleichungssysteme.
 Dies motiviert die folgende Definition.</p>
 <div class="proof definition admonition" id="def:dglsystem_erster_ordnung">
 <p class="admonition-title"><span class="caption-number">Definition 7.4 </span> (Differentialgleichungssystem erster Ordnung)</p>
@@ -535,19 +535,19 @@ y^\prime(x) \ = \ f(x,y(x))
 <p>Proof. Wir zeigen zunächst die Rückrichtung des Satzes.
 Sei also die Integralgleichung <a class="reference internal" href="#equation-eq-ode-integralgleichung">(7.7)</a> erfüllt.
 Für die Anfangswertbedingung setzen wir <span class="math notranslate nohighlight">\(x = x_0\)</span> und sehen somit, dass <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span> gilt.
-Da die Funktion <span class="math notranslate nohighlight">\(f\)</span> nach Voraussetzung stetig ist, folgt aus dem Hauptsatz der Integral- und Differentialrechnung \cite[Kapitel 7.2]{burger_2020}, dass</p>
+Da die Funktion <span class="math notranslate nohighlight">\(f\)</span> nach Voraussetzung stetig ist, folgt aus dem Hauptsatz der Integral- und Differentialrechnung Kapitel 7.2 <span id="id1">[<a class="reference internal" href="../references.html#id2">Bur20</a>]</span>, dass</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \frac{\mathrm{d}}{\mathrm{d}x} \int_{x_0}^x f(t, \varphi(t)) \, \mathrm{d}t \ = \ f(x, \varphi(x)).
 \end{equation*}\]</div>
-<p>Damit folgt aus der Definition der Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> in \eqref{eq:ode_integralgleichung}, dass <span class="math notranslate nohighlight">\(\varphi\)</span> total differenzierbar ist und die gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(\varphi'(x) = f(x, \varphi(x))\)</span> erfüllt.</p>
+<p>Damit folgt aus der Definition der Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> in <a class="reference internal" href="#equation-eq-ode-integralgleichung">(7.7)</a>, dass <span class="math notranslate nohighlight">\(\varphi\)</span> total differenzierbar ist und die gewöhnliche Differentialgleichung <span class="math notranslate nohighlight">\(\varphi'(x) = f(x, \varphi(x))\)</span> erfüllt.</p>
 <p>Für die Hinrichtung des Beweises nehmen wir an, dass die Funktion <span class="math notranslate nohighlight">\(\varphi\)</span> eine Lösung der gewöhnlichen Differentialgleichung <span class="math notranslate nohighlight">\(\varphi'(x) = f(x, \varphi(x))\)</span> ist, total differenzierbar sei und die Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(x_0) = c\)</span> erfülle.
 Dann können wir das folgende Integral betrachten und erhalten aus dem Hauptsatz der Integral- und Differentialrechnung:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \int_{x_0}^x f(t, \varphi(t)) \, \mathrm{d}t \ = \ \int_{x_0}^x \varphi'(t) \, \mathrm{d}t \ = \ \varphi(x) - \varphi(x_0) \ = \ \varphi(x) - c.
 \end{equation*}\]</div>
-<p>Durch Umstellen von <span class="math notranslate nohighlight">\(c\)</span> auf die linke Seite erhält man die Identität der Integralgleichung in \eqref{eq:ode_integralgleichung}.</p>
+<p>Durch Umstellen von <span class="math notranslate nohighlight">\(c\)</span> auf die linke Seite erhält man die Identität der Integralgleichung in <a class="reference internal" href="#equation-eq-ode-integralgleichung">(7.7)</a>.</p>
 </div>
 <p>Das folgende Lemma liefert uns ein hinreichendes Kriterium für die Lipschitz-Stetigkeit einer Funktion.
 Diese Eigenschaft wird für die Existenz und Eindeutigkeit von Lösungen gewöhnlicher Differentialgleichungen entscheidend sein.</p>
@@ -570,14 +570,14 @@ Da nach Voraussetzung alle Komponenten der Jacobi-Matrix <span class="math notra
 \[\begin{equation*}
 L \ \coloneqq \ \sup_{(x,y) \in B_r(a,b)} \left\Vert J(x,y) \right\Vert \ &lt; \ +\infty.
 \end{equation*}\]</div>
-<p>Aus einer Folgerung des Mittelwertsatzes in \ref{thm:meanest} folgt für alle <span class="math notranslate nohighlight">\((x,y), (x,\tilde{y}) \in B_r(a,b)\)</span>, dass gilt</p>
+<p>Aus einer Folgerung des Mittelwertsatzes in <a class="reference internal" href="../ableitungen/tot_diff.html#thm:meanest">Theorem 5.8</a> folgt für alle <span class="math notranslate nohighlight">\((x,y), (x,\tilde{y}) \in B_r(a,b)\)</span>, dass gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||f(x,y) - f(x,\tilde{y})|| \ \leq \ L \cdot ||y - \tilde{y}||.
 \end{equation*}\]</div>
 </div>
 <p>Nun sind wir in der Lage die hinreichenden Bedingungen für die Eindeutigkeit von Lösungen gewöhnlicher Differentialgleichungen zu formulieren.</p>
-<div class="proof theorem admonition" id="satz:ode_eindeutigkeitssatz}">
+<div class="proof theorem admonition" id="satz:ode_eindeutigkeitssatz">
 <p class="admonition-title"><span class="caption-number">Theorem 7.5 </span> (Eindeutigkeitssatz)</p>
 <div class="theorem-content section" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(G\subset \R\times\R^n\)</span> eine offene Teilmenge und sei <span class="math notranslate nohighlight">\(f\colon G\to\R^n\)</span> eine stetige Funktion, die lokal Lipschitz-stetig in <span class="math notranslate nohighlight">\(G\)</span> bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist.
@@ -596,22 +596,18 @@ so folgt schon</p>
 </div><div class="proof admonition" id="proof">
 <p>Proof. Wir beginnen zunächst damit die Eindeutigkeit von Lösungen in einer lokalen <span class="math notranslate nohighlight">\(\epsilon\)</span>-Umgebung zu zeigen.
 Sei <span class="math notranslate nohighlight">\(x_0 \in I\)</span> ein Punkt, so dass für die beiden Lösungen <span class="math notranslate nohighlight">\(\varphi, \vartheta \colon I \rightarrow \R^n\)</span> der gewöhnlichen Differentialgleichung gilt <span class="math notranslate nohighlight">\(\varphi(x_0) = \vartheta(x_0)\)</span>.
-Auf Grund der Integraldarstellung in Satz \ref{satz:ode_integralgleichung} folgt nun</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b331002-cbaf-4703-9be9-17dc54f5b20d">
-<span class="eqno">(7.8)<a class="headerlink" href="#equation-7b331002-cbaf-4703-9be9-17dc54f5b20d" title="Permalink to this equation">¶</a></span>\[\begin{equation}:label: eq:ode_eindeutigkeit_integralgleichung}
-\varphi(x) - \vartheta(x) \ = \ \int_{x_0}^x f(t, \varphi(t)) - f(t, \vartheta(t)) \, \mathrm{d}t.
-\end{equation}\]</div>
+Auf Grund der Integraldarstellung in Satz <a class="reference internal" href="#satz:ode_integralgleichung">Theorem 7.4</a> folgt nun</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-eindeutigkeit-integralgleichung">
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-eq-ode-eindeutigkeit-integralgleichung" title="Permalink to this equation">¶</a></span>\[\varphi(x) - \vartheta(x) \ = \ \int_{x_0}^x f(t, \varphi(t)) - f(t, \vartheta(t)) \, \mathrm{d}t.\]</div>
 <p>Da <span class="math notranslate nohighlight">\(f\)</span> nach Voraussetzung lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist, existieren Konstanten <span class="math notranslate nohighlight">\(L \geq 0\)</span> und <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span>, so dass für alle <span class="math notranslate nohighlight">\(t \in I \cap B_\delta(x_0) \coloneqq \lbrace t \in I \colon |t - x_0| &lt; \delta \rbrace\)</span> gilt:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}:label: eq:ode_eindeutigkeit_lipschitz}
-||f(t, \varphi(t)) - f(t, \vartheta(t))|| \ \leq \ L \cdot ||\varphi(t) - \vartheta(t)||.
-\end{equation*}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-ode-eindeutigkeit-lipschitz">
+<span class="eqno">(7.9)<a class="headerlink" href="#equation-eq-ode-eindeutigkeit-lipschitz" title="Permalink to this equation">¶</a></span>\[||f(t, \varphi(t)) - f(t, \vartheta(t))|| \ \leq \ L \cdot ||\varphi(t) - \vartheta(t)||.\]</div>
 <p>Wir definieren nun die zwei Variablen</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \epsilon \, \coloneqq \, \min( \delta, \frac{1}{2L} ) \quad \text{ und } \quad M \, \coloneqq \, \sup\{ ||\varphi(x) - \vartheta(x)|| \, \colon \, x \in I \cap B_\epsilon(x_0) \}.
 \end{equation*}\]</div>
-<p>Aus Gleichung \eqref{eq:ode_eindeutigkeit_integralgleichung} und \eqref{eq:ode_eindeutigkeit_lipschitz} können wir nun für alle <span class="math notranslate nohighlight">\(x \in I \cap B_\epsilon(x_0)\)</span> folgern</p>
+<p>Aus Gleichung <a class="reference internal" href="#equation-eq-ode-eindeutigkeit-integralgleichung">(7.8)</a> und <a class="reference internal" href="#equation-eq-ode-eindeutigkeit-lipschitz">(7.9)</a> können wir nun für alle <span class="math notranslate nohighlight">\(x \in I \cap B_\epsilon(x_0)\)</span> folgern</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 ||\varphi(x) - \vartheta(x)|| \ \leq \ L \cdot \left| \int_{x_0}^x ||\varphi(t) - \vartheta(t)||\, \mathrm{d}t \, \right| \ \leq \ L \cdot |x - x_0| \cdot M \ \leq \ \frac{M}{2}.
@@ -641,10 +637,8 @@ Daher gilt also <span class="math notranslate nohighlight">\(\varphi(x) = \varth
 <p class="admonition-title"><span class="caption-number">Example 7.9 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Wir betrachten die folgende nichtlineare gewöhnliche Differentialgleichung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f49922b4-8a56-40a1-b542-831172137cff">
-<span class="eqno">(7.9)<a class="headerlink" href="#equation-f49922b4-8a56-40a1-b542-831172137cff" title="Permalink to this equation">¶</a></span>\[\begin{equation}:label: eq:bsp_dgl_nichteindeutig}
-y^\prime(x) \ = \ (y(x))^{\frac23}.
-\end{equation}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-bsp-dgl-nichteindeutig">
+<span class="eqno">(7.10)<a class="headerlink" href="#equation-eq-bsp-dgl-nichteindeutig" title="Permalink to this equation">¶</a></span>\[y^\prime(x) \ = \ (y(x))^{\frac23}.\]</div>
 <p>Wie man sofort einsieht ist eine spezielle Lösung der Differentialgleichung gegeben durch</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -656,7 +650,7 @@ y^\prime(x) \ = \ (y(x))^{\frac23}.
 \[\begin{equation*}
 \vartheta_a(x) \ \coloneqq \ \frac1{27}(x-a)^3
 \end{equation*}\]</div>
-<p>die gewöhnliche Differentialgleichung <code class="xref eq docutils literal notranslate"><span class="pre">eq:bsp_dgl_nichteindeutig</span></code> erfüllt, denn es gilt</p>
+<p>die gewöhnliche Differentialgleichung <a class="reference internal" href="#equation-eq-bsp-dgl-nichteindeutig">(7.10)</a> erfüllt, denn es gilt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \vartheta'_a(x) \ = \ \frac19(x-a)^2 \ = \ \left(\frac1{27}(x-a)^3\right)^{\frac{2}{3}} \ = \ \vartheta_a(x)^{\frac23}.
@@ -666,14 +660,14 @@ y^\prime(x) \ = \ (y(x))^{\frac23}.
 \[\begin{equation*}
 \varphi_0(a) \, = \, \vartheta_a(a) \, = \, 0,
 \end{equation*}\]</div>
-<p>sieht man ein, dass der der Eindeutigkeitssatz \ref{satz:ode_eindeutigkeitssatz} nicht gilt.
+<p>sieht man ein, dass der der Eindeutigkeitssatz <a class="reference internal" href="#satz:ode_eindeutigkeitssatz">Theorem 7.5</a> nicht gilt.
 Der Grund hierfür ist eine Verletzung der Voraussetzungen des Satzes, denn die Funktion <span class="math notranslate nohighlight">\(f(x,y) \coloneqq y^{\frac23}\)</span> ist nicht für alle Punkte <span class="math notranslate nohighlight">\(y\in \R\)</span> bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variable Lipschitz-stetig.
 Zwar ist <span class="math notranslate nohighlight">\(f\)</span> für <span class="math notranslate nohighlight">\(y\neq 0\)</span> stetig partiell differenzierbar bezüglich der Variablen <span class="math notranslate nohighlight">\(y\)</span> mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \frac{\partial f}{\partial y}(x,y) \ = \ \frac23 y^{-\frac13}.
 \end{equation*}\]</div>
-<p>Nach Lemma \ref{lem:ode_lokalLipschitz} ist <span class="math notranslate nohighlight">\(f\)</span> somit lokal Lipschitz-stetig in ganz <span class="math notranslate nohighlight">\(\R\times \R\setminus \{0\}\)</span> in Bezug auf die <span class="math notranslate nohighlight">\(y\)</span>-Variable.
+<p>Nach Lemma <a class="reference internal" href="#lem:ode_lokalLipschitz">Lemma 7.1</a> ist <span class="math notranslate nohighlight">\(f\)</span> somit lokal Lipschitz-stetig in ganz <span class="math notranslate nohighlight">\(\R\times \R\setminus \{0\}\)</span> in Bezug auf die <span class="math notranslate nohighlight">\(y\)</span>-Variable.
 Jedoch ist <span class="math notranslate nohighlight">\(f\)</span> in keiner Umgebung eines Punktes <span class="math notranslate nohighlight">\((a,0)\)</span> Lipschitz-stetig bezüglich de <span class="math notranslate nohighlight">\(y\)</span>-Variablen, da dieser Punkt eine Singularität mit unendlicher Steigung darstellt.</p>
 </div>
 </div><p>Der folgende wichtige Satz formuliert die hinreichenden Bedingungen für die Existenz von Lösungen einer gewöhnlichen Differentialgleichung.</p>
@@ -694,7 +688,7 @@ y^\prime(x) \ = \ f(x,y(x))
 <p>unter der Anfangsbedingung <span class="math notranslate nohighlight">\(\varphi(x_0)=c\)</span>.</p>
 </div>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Siehe §12, Satz 4 <span id="id1">[<a class="reference internal" href="../references.html#id4">For17</a>]</span>.</p>
+<p>Proof. Siehe §12, Satz 4 <span id="id2">[<a class="reference internal" href="../references.html#id4">For17</a>]</span>.</p>
 </div>
 <p>Selbst wenn die Funktion <span class="math notranslate nohighlight">\(f\)</span> der Differentialgleichung <span class="math notranslate nohighlight">\(y^\prime(x) = f(x,y(x))\)</span> auf ganz <span class="math notranslate nohighlight">\(\R\times\R^n\)</span> definiert ist und überall lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen ist, so kann eine Lösung, die die Anfangsbedingung <span class="math notranslate nohighlight">\(\varphi(x_0)=c\)</span> erfüllt unter Umständen nur in einer sehr kleinen Umgebung von <span class="math notranslate nohighlight">\(x_0 \in \R\)</span> definiert sein.
 Dies wird durch das folgende Beispiel klar.</p>
@@ -706,10 +700,10 @@ Dies wird durch das folgende Beispiel klar.</p>
 \[\begin{equation*}
 y^\prime(x) = 2x\cdot (y(x))^2\,.
 \end{equation*}\]</div>
-<p>Die Funktion <span class="math notranslate nohighlight">\(f(x,y) = 2xy^2\)</span> ist offensichtlich auf ganz <span class="math notranslate nohighlight">\(\R\times\R\)</span> definiert und stetig partiell differenzierbar bezüglich der Variable <span class="math notranslate nohighlight">\(y\)</span> und somit nach Lemma  \ref{lem:ode_lokalLipschitz} lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen.</p>
+<p>Die Funktion <span class="math notranslate nohighlight">\(f(x,y) = 2xy^2\)</span> ist offensichtlich auf ganz <span class="math notranslate nohighlight">\(\R\times\R\)</span> definiert und stetig partiell differenzierbar bezüglich der Variable <span class="math notranslate nohighlight">\(y\)</span> und somit nach Lemma  <a class="reference internal" href="#lem:ode_lokalLipschitz">Lemma 7.1</a> lokal Lipschitz-stetig bezüglich der <span class="math notranslate nohighlight">\(y\)</span>-Variablen.</p>
 <p>Wir suchen eine Lösung <span class="math notranslate nohighlight">\(\phi \colon \R \rightarrow \R\)</span> der Differentialgleichung, die die Anfangswertbedingung <span class="math notranslate nohighlight">\(\varphi(0) = c\)</span> erfüllt.
 Für den Fall <span class="math notranslate nohighlight">\(c=0\)</span> ist dies offensichtlich die konstante Funktion <span class="math notranslate nohighlight">\(\varphi(x) \equiv 0\)</span> für alle <span class="math notranslate nohighlight">\(x\in\R\)</span>.
-Für <span class="math notranslate nohighlight">\(c\neq0\)</span> können wir die Lösung durch Trennung der Variablen (siehe Kapitel \ref{s:trennung_variablen}) wie folgt unter der Annahme <span class="math notranslate nohighlight">\(y(x) \neq 0\)</span> berechnen:</p>
+Für <span class="math notranslate nohighlight">\(c\neq0\)</span> können wir die Lösung durch Trennung der Variablen (siehe Kapitel <a class="reference internal" href="tdv.html#s-trennung-variablen"><span class="std std-ref">Trennung der Variablen</span></a>) wie folgt unter der Annahme <span class="math notranslate nohighlight">\(y(x) \neq 0\)</span> berechnen:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 y' \ = \ \frac{\mathrm{d}y}{\mathrm{d}x} \ &amp;= \ 2xy^2 \\

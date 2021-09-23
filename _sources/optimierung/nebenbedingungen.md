@@ -4,12 +4,14 @@ Bisher haben wir uns nur mit unrestringierten Optimierungsproblemen beschäftigt
 Viele reale Aufgabenstellungen erfordern jedoch die Optimierung einer Zielfunktion unter Nebenbedingungen.
 Daher wollen wir uns im Folgenden mit solchen Problemen beschäftigen und eine Möglichkeit aufzeigen stationäre Punkte unter Nebenbedingungen zu identifizieren.
 
-Wir beschränken uns hierbei auf Optimierungsprobleme, bei denen die Nebenbedingung eine Gleichheit erfüllen müssen, lassen jedoch keine Ungleichungen zu, d.h., für die Indexmenge $\mathcal{I}$ der Ungleichungen im allgemeinen Optimierungsproblem \eqref{eq:optimierungsproblem_allgemein} gilt $\mathcal{I} = \emptyset$.
-Der Grund für diese Einschränkung ist, dass die zugehörige Theorie der sogenannten \emph{Karush-Kuhn-Tucker (KKT)} Bedingungen für Optimierungsprobleme mit Ungleichungsnebenbedingungen den Rahmen dieser Vorlesung sprengen würde.
-Interessierte Leser*innen seien auf \cite[Kapitel 12.3]{nocedal_2006} verwiesen.
+Wir beschränken uns hierbei auf Optimierungsprobleme, bei denen die Nebenbedingung eine Gleichheit erfüllen müssen, lassen jedoch keine Ungleichungen zu, d.h., für die Indexmenge $\mathcal{I}$ der Ungleichungen im allgemeinen Optimierungsproblem {eq}`eq:optimierungsproblem_allgemein` gilt $\mathcal{I} = \emptyset$.
+Der Grund für diese Einschränkung ist, dass die zugehörige Theorie der sogenannten _Karush-Kuhn-Tucker (KKT)_ Bedingungen für Optimierungsprobleme mit Ungleichungsnebenbedingungen den Rahmen dieser Vorlesung sprengen würde.
+Interessierte Leser*innen seien auf Kapitel 12.3 {cite:p}`nocedal_2006` verwiesen.
 
 Wir beginnen direkt mit der wichtigen geometrischen Beobachtung, dass die Gradienten einer Zielfunktion und der zugehörigen Nebenbedingung in einem Minimierer parallel ausgerichtet sein müssen.
-\begin{satz}[Lagrange-Multiplikatoren]\label{satz:lagrange_multiplikator}
+
+````{prf:theorem} Lagrange-Multiplikatoren
+:label: satz:lagrange_multiplikator
 Seien $F,c \colon \Omega \rightarrow \R$ zwei stetig partiell differenzierbare Funktionen und sei
 \begin{equation*}
 M \, \coloneqq \, \lbrace x \in \Omega\colon c(x) = 0 \rbrace \subset \Omega
@@ -20,16 +22,17 @@ Zu jeder Lösung $x^*\in M$ des Minimierungsproblems
 \begin{equation*}
 \min_{x\in \Omega} \, F(x) \qquad \text{ mit } \qquad c(x) \ = \ 0
 \end{equation*}
-und $\nabla c(x^*) \neq 0$ existiert ein \emph{Lagrange-Multiplikator} $\lambda^* \in \R$, so dass
+und $\nabla c(x^*) \neq 0$ existiert ein _Lagrange-Multiplikator_ $\lambda^* \in \R$, so dass
 \begin{equation*}
 \nabla F (x^*) + \lambda^* \nabla c(x^*) \ = \ 0.
 \end{equation*}
 Das heißt die beiden Gradienten $\nabla F$ und $\nabla c$ sind parallel in $x^* \in \Omega$.
-\end{satz}
-\begin{proof}
+````
+
+````{prf:proof}
 Sei $x^* \in M$ eine Lösung des Minimierungsproblems mit Nebenbedingung.
 Wir sehen zunächst ein, dass der Gradient $\nabla c(x^*)$ senkrecht zu allen Tangentialvektoren der Untermannigfaltigkeit $M$ steht, da sich $c$ entlang aller Tangentialrichtungen von $M$ nicht ändert.
-Wir schreiben nun den Gradienten der Zielfunktion $\nabla F$ mittels orthogonaler Projektion (vgl. Kapitel \ref{s:orthonormalisierung}) als eindeutige Summe zweier Vektoren $v_\perp \in \R^n$ und $v_\parallel \in \R^n$, die jeweils orthogonal und parallel zu $\nabla c$ sind mit
+Wir schreiben nun den Gradienten der Zielfunktion $\nabla F$ mittels orthogonaler Projektion (vgl. Kapitel {prf:ref}`s:orthonormalisierung`) als eindeutige Summe zweier Vektoren $v_\perp \in \R^n$ und $v_\parallel \in \R^n$, die jeweils orthogonal und parallel zu $\nabla c$ sind mit
 \begin{equation*}
 \nabla F(x^*) \ = \ v_\perp + v_\parallel.
 \end{equation*}
@@ -50,10 +53,11 @@ Also müssen $\nabla F$ und $\nabla c$ parallel sein und es gilt:
 \nabla F(x^*) \ = \ -\lambda \cdot \nabla c(x^*).
 \end{equation*}
 Der Lagrange-Multiplikator $\lambda \in \R$ taucht in der Formel auf, da die Gradienten parallel aber nicht gleich lang sein müssen.
-\end{proof}
+````
 
-Die folgenden Bemerkungen erklären wie aus Satz \ref{satz:lagrange_multiplikator} das sogenannte \emph{Verfahren der Lagrange-Multiplikatoren} gewonnen werden kann, welches beispielsweise in der Physik bei Anwendungen der klassischen Mechanik eine Schlüsselrolle spielt.
-\begin{remark}
+Die folgenden Bemerkungen erklären wie aus Satz {prf:ref}`satz:lagrange_multiplikator` das sogenannte _Verfahren der Lagrange-Multiplikatoren_ gewonnen werden kann, welches beispielsweise in der Physik bei Anwendungen der klassischen Mechanik eine Schlüsselrolle spielt.
+
+````{prf:remark}
 Wir wollen folgende Beobachtungen festhalten.
 \begin{enumerate}
 \item Die notwendige Bedingung, dass die Gradienten der Zielfunktion $F$ und der Nebenbedingung $c$ in einem Minimierer $x^* \in M$ parallel ausgerichtet sein müssen, d.h.,
@@ -61,7 +65,7 @@ Wir wollen folgende Beobachtungen festhalten.
 \nabla F (x^*) + \lambda^* \nabla c(x^*) \ = \ 0
 \end{equation*}
 lässt sich für das Verfahren der Lagrange-Multiplikatoren ausnutzen.
-Hierzu definieren wir zunächst eine neue Funktion $\Lambda \colon \Omega \times \R \rightarrow \R$, genannt \emph{Lagrange-Funktion}, die eine zusätzliche Variable $\lambda \in \R$ für die Nebenbedingung besitzt, als
+Hierzu definieren wir zunächst eine neue Funktion $\Lambda \colon \Omega \times \R \rightarrow \R$, genannt _Lagrange-Funktion_, die eine zusätzliche Variable $\lambda \in \R$ für die Nebenbedingung besitzt, als
 \begin{equation*}
 \Lambda(x, \lambda) \ \coloneqq \ F(x) + \lambda \cdot c(x).
 \end{equation*}
@@ -77,16 +81,17 @@ Hierzu wird die Lagrange-Funktion als eine Linearkombination der Zielfunktion un
 \end{equation*}
 Zur Bestimmung stationärer Punkte geht man nun analog zum Fall mit nur einer Nebenbedingung vor.
 \end{enumerate}
-\end{remark}
+````
 
-\begin{bsp}
+````{prf:example}
 Wir wollen im Folgenden eine Zielfunktion $F \colon \R^2 \rightarrow \R$ mit
 \begin{equation*}
 F(x,y) \ \coloneqq \ x + y
 \end{equation*}
 minimieren unter der Nebenbedingung, dass der Lösungsvektor $x^* = (x,y)^T \in \R^2$ normiert sein soll, d.h., $x^2 + y^2 = 1$.
 Dies führt also zu einem Optimierungsproblem mit Nebenbedingung der folgenden Gestalt:
-\begin{equation}\label{eq:lagrange_bsp}
+\begin{equation}
+:label: eq:lagrange_bsp
 \min_{(x,y)\in \R^2} \, F(x,y) \, = \,  x+y \qquad \text{ mit } \qquad c(x,y) \, = \, x^2+y^2 - 1 \, = \, 0.
 \end{equation}
 Wir identifizieren zunächst Punkte in denen der Gradient von $c(x,y)$ verschwindet, d.h.,
@@ -100,7 +105,7 @@ Um das Verfahren der Lagrange-Multiplikatoren anwenden zu können, stellen wir z
 \begin{equation*}
 \Lambda(x,y,\lambda) \ \coloneqq \ F(x,y) + \lambda \cdot c(x,y) \ = \ x+y + \lambda \cdot (x^2+y^2 - 1).
 \end{equation*}
-Nach dem Satz \ref{satz:lagrange_multiplikator} müssen wir für potentielle Lösungen des Optimierungsproblems \eqref{eq:lagrange_bsp} nur Extremstellen der Lagrange-Funktion berechnen, d.h., wir betrachten stationäre Punkte von $\Lambda$ durch
+Nach dem Satz {prf:ref}`satz:lagrange_multiplikator` müssen wir für potentielle Lösungen des Optimierungsproblems {eq}`eq:lagrange_bsp` nur Extremstellen der Lagrange-Funktion berechnen, d.h., wir betrachten stationäre Punkte von $\Lambda$ durch
 \begin{equation*}
 \nabla \Lambda(x,y,\lambda) \ = \ 
 \begin{pmatrix}
@@ -143,4 +148,4 @@ Durch Einsetzen der Punkte in die Zielfunktion $F$ sehen wir, dass es sich bei $
 \begin{equation*}
 F(x_1^*) \ = \ \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} \ = \ \sqrt{2}, \qquad F(x_2^*) \ = \ -\frac{\sqrt{2}}{2} -\frac{\sqrt{2}}{2} \ = \ -\sqrt{2}.
 \end{equation*}
-\end{bsp}
+````

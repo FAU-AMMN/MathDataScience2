@@ -460,29 +460,27 @@
 Moleküle formieren sich in einer Art, die die Gesamtenergie des Teilchensystems unter Berücksichtigung aller wechselseitigen Kräfte minimiert.
 Gleichzeitig strebt das Universum mit all seinen Planeten, Sternen und Galaxien nach einem Zustand von maximaler Verteilung, beschrieben durch die thermodynamische Größe der Entropie.
 Auch hier folgt die Zunahme der Entropie dem Prinzip der Energieminimierung des Gesamtsystems.</p>
-<p>Menschen betreiben seit jeher Optimierung in den verschiedensten Anwendungen, oft mit unterschiedlichen Motivationen.
-Flugzeuge werden von Ingenieuren so entworfen und gebaut, dass sie möglichst stromlinienförmig aussehen, um damit den Reibungswiderstand in der Luft zu minimieren und gleichzeitig den nötigen Auftrieb für einen sicheren Flug zu erzeugen.
-Fondmanager streben danach Portfolios zu erstellen, deren Gewinn möglichst maximal ist und dennoch Spekulationsrisiken vermeiden.</p>
+<p>Menschen betreiben seit jeher Optimierung in den verschiedensten Anwendungen, oft mit unterschiedlichen Motivationen. Flugzeuge werden von Ingenieuren so entworfen und gebaut, dass sie möglichst stromlinienförmig aussehen, um damit den Reibungswiderstand in der Luft zu minimieren und gleichzeitig den nötigen Auftrieb für einen sicheren Flug zu erzeugen. Fondmanager streben danach Portfolios zu erstellen, deren Gewinn möglichst maximal ist und dennoch Spekulationsrisiken vermeiden.</p>
 <p>Im Folgenden wollen wir die mathematischen Grundlagen zur Untersuchung von allgemeinen Optimierungsproblemen einführen.
-Wir beginnen mit der Definition des allgemeinen Optimierungsproblems, welches wir im weiteren Verlauf noch näher spezifizieren werden.
-\begin{definition}[Allgemeines Optimierungsproblem]
-Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Funktion, welche wir \emph{Zielfunktion} nennen.
-Unser Ziel ist es einen unbekannten Vektor <span class="math notranslate nohighlight">\(x \in \Omega\)</span>, auch \emph{Parametervektor} genannt, zu finden, welcher das folgende \emph{allgemeine Optimierungsproblem} löst.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a10238a-cb84-4c7b-b45d-07f0284aa17c">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-0a10238a-cb84-4c7b-b45d-07f0284aa17c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\label{eq:optimierungsproblem_allgemein}
-\min_{x \in \Omega} F(x) \quad \text{ mit } \quad
+Wir beginnen mit der Definition des allgemeinen Optimierungsproblems, welches wir im weiteren Verlauf noch näher spezifizieren werden.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 6.1 </span> (definition)</p>
+<div class="definition-content section" id="proof-content">
+<p>label: Allgemeines Optimierungsproblem</p>
+<p>Sei <span class="math notranslate nohighlight">\(\Omega \subset \mathbb{R}^n\)</span> eine offene, zusammenhängende Teilmenge und sei <span class="math notranslate nohighlight">\(F \colon \Omega \rightarrow \mathbb{R}\)</span> eine reellwertige Funktion, welche wir <em>Zielfunktion</em> nennen. Unser Ziel ist es einen unbekannten Vektor <span class="math notranslate nohighlight">\(x \in \Omega\)</span>, auch <em>Parametervektor</em> genannt, zu finden, welcher das folgende <em>allgemeine Optimierungsproblem</em> löst.</p>
+<div class="math notranslate nohighlight" id="equation-eq-optimierungsproblem-allgemein">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-optimierungsproblem-allgemein" title="Permalink to this equation">¶</a></span>\[\begin{split}\min_{x \in \Omega} F(x) \quad \text{ mit } \quad
 \begin{cases}
 \ c_i(x) \ = \ 0, \quad &amp;i \in \mathcal{E},\\
 \ c_j(x) \ \geq \ 0, \quad &amp;j \in \mathcal{I}.
-\end{cases}
-\end{equation}\]</div>
-<p>Die reellwertigen Funktionen <span class="math notranslate nohighlight">\(c_i, c_j \colon \Omega \rightarrow \mathbb{R}\)</span> bilden einen Vektor von \emph{Nebenbedingungen}, welcher das Optimierungsproblem restringiert.
-Die Indexmengen <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> und <span class="math notranslate nohighlight">\(\mathcal{I}\)</span> legen hierbei fest, ob es ich bei der jeweiligen Nebenbedingung um eine Gleichung oder eine Ungleichung handelt.
-\end{definition}</p>
-<p>Zur Veranschaulichung betrachten wir ein zweidimensionales Beispiel für ein beschränktes, nichtlineares Optimierungsproblem.
-\begin{example}\label{bsp:allgemeines_optimierungsproblem}
-Wir interessieren uns für das folgende Optimierungsproblem</p>
+\end{cases}\end{split}\]</div>
+<p>Die reellwertigen Funktionen <span class="math notranslate nohighlight">\(c_i, c_j \colon \Omega \rightarrow \mathbb{R}\)</span> bilden einen Vektor von <em>Nebenbedingungen</em>, welcher das Optimierungsproblem restringiert. Die Indexmengen <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> und <span class="math notranslate nohighlight">\(\mathcal{I}\)</span> legen hierbei fest, ob es ich bei der jeweiligen Nebenbedingung um eine Gleichung oder eine Ungleichung handelt.</p>
+</div>
+</div><p>Zur Veranschaulichung betrachten wir ein zweidimensionales Beispiel für ein beschränktes, nichtlineares Optimierungsproblem.</p>
+<div class="proof example admonition" id="bsp:allgemeines_optimierungsproblem">
+<p class="admonition-title"><span class="caption-number">Example 6.1 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Wir interessieren uns für das folgende Optimierungsproblem</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \min_{x \in \mathbb{R}^2}~(x_1 - 2)^2 + (x_2 - 1)^2
@@ -499,16 +497,16 @@ Wir können dieses Problem in die allgemeine Form des Optimierungsproblems \eqre
 \end{equation*}\]</div>
 <p>Hierbei gilt für die Indexmengen <span class="math notranslate nohighlight">\(\mathcal{I} = \lbrace 1,2 \rbrace\)</span> und <span class="math notranslate nohighlight">\(\mathcal{E} = \emptyset\)</span>.
 Visualisiert man die Niveaulinien der Zielfunktion <span class="math notranslate nohighlight">\(F\)</span> zusammen mit den Nebenbedingungen, so sieht man, dass das globale Minimum der quadratischen Funktion <span class="math notranslate nohighlight">\(F\)</span>, nämlich <span class="math notranslate nohighlight">\(x = (x_1, x_2)^T = (2,1)^T\)</span>, nicht in der erlaubten Menge der Parameter liegt, welche durch die Nebenbedingungen beschrieben ist.
-Trotzdem existiert ein eindeutiges globales Minimum des beschränkten Optimierungsproblems, nämlich <span class="math notranslate nohighlight">\(x = (x_1, x_2)^T = (1,1)^T\)</span>.
-\end{example}</p>
-<p>Neben der Unterscheidung von Optimierungsproblemen in beschränkte und unbeschränkte Formulierungen, lassen sich noch weitere Kriterien zur Charakterisierung eines Optimierungsproblems heran ziehen:
-\begin{itemize}
-\item \textbf{Anzahl der unbekannten Parameter}, z.B. groß oder klein
-\item \textbf{Eigenschaften der Zielfunktion}, z.B. Linearität, Konvexität, Differenzierbarkeit
-\item \textbf{Charakteristik des Optimums}, z.B. Sattelpunkt, lokales oder globales Optimum
-\item \textbf{Modelleigenschaften}, z.B. stochastisch oder deterministisch
-\item \textbf{Wertebereich}, z.B. diskret oder kontinuierlich
-\end{itemize}</p>
+Trotzdem existiert ein eindeutiges globales Minimum des beschränkten Optimierungsproblems, nämlich <span class="math notranslate nohighlight">\(x = (x_1, x_2)^T = (1,1)^T\)</span>.</p>
+</div>
+</div><p>Neben der Unterscheidung von Optimierungsproblemen in beschränkte und unbeschränkte Formulierungen, lassen sich noch weitere Kriterien zur Charakterisierung eines Optimierungsproblems heran ziehen:</p>
+<ul class="simple">
+<li><p><em>Anzahl der unbekannten Parameter</em>, z.B. groß oder klein,</p></li>
+<li><p><em>Eigenschaften der Zielfunktion</em>, z.B. Linearität, Konvexität, Differenzierbarkeit,</p></li>
+<li><p><em>Charakteristik des Optimums</em>, z.B. Sattelpunkt, lokales oder globales Optimum,</p></li>
+<li><p><em>Modelleigenschaften</em>, z.B. stochastisch oder deterministisch,</p></li>
+<li><p><em>Wertebereich</em>, z.B. diskret oder kontinuierlich</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </div>
