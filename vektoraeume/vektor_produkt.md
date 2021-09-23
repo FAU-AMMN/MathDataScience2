@@ -51,7 +51,7 @@ Daher verzichten wir an dieser Stelle auf einen Beweis.
 Es sei jedoch angemerkt, dass man sowohl aus Eigenschaft $ii)$ als auch Eigenschaft $iii)$ des Vektorprodukts folgern kann, dass $x \times x = \vec{0}$ gilt.
 ````
 
-Es gibt außerdem einen engen Zusammenhang zwischen dem Vektorprodukt in $\mathbb{R}^3$ und dem kanonischen Skalarprodukt aus Kapitel {prf:ref}`s:skalarprodukt_r`, wie die folgenden Rechenregeln zeigen.
+Es gibt außerdem einen engen Zusammenhang zwischen dem Vektorprodukt in $\mathbb{R}^3$ und dem kanonischen Skalarprodukt aus Kapitel {ref}`s:skalarprodukt_r`, wie die folgenden Rechenregeln zeigen.
 
 ````{prf:lemma}
 :label: lem:vektorprodukt_skalarprodukt
