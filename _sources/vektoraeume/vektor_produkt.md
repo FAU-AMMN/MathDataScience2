@@ -20,7 +20,7 @@ Dann wird das _Vektorprodukt_ von $x$ und $y$, auch häufig _Kreuzprodukt_ oder 
 
 Wir wollen zuerst einige grundlegende Eigenschaften des Vektorprodukts in $\mathbb{R}^3$ festhalten.
 
-````{prf:lemma} Eigenschaften des Vektorprodukts 
+````{prf:lemma} Eigenschaften des Vektorprodukts
 :label: lem:vektorprodukt
 
 Seien $x, x', y, y' \in \mathbb{R}^3$ Vektoren und $\lambda \in \mathbb{R}$ ein Skalar.
@@ -58,12 +58,16 @@ Es gibt außerdem einen engen Zusammenhang zwischen dem Vektorprodukt in $\mathb
 
 Seien $x,y,z \in \mathbb{R}^3$ Vektoren, dann gelten die folgenden Rechenregeln für das Vektorprodukt in $\mathbb{R}^3$:
 
-i) $\langle x \times y, z \rangle \ = \ \det
+i) 
+
+```{math}
+\langle x \times y, z \rangle \ = \ \det
 \begin{pmatrix}
 x_1 & x_2 & x_3 \\
 y_1 & y_2 & y_3 \\
 z_1 & z_2 & z_3 
-\end{pmatrix}$,
+\end{pmatrix},
+```
 
 ii) $\langle x \times y, x \rangle \ = \ \langle x \times y, y \rangle \ = \ 0$,
 

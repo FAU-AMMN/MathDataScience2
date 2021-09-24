@@ -800,7 +800,7 @@ Die nilpotenten Anteile $N_i$ für $i=1,\ldots,k$ liegen hierbei (blockweise) in
 
 \lambda_i I_{r_i} + N_i \ = \ 
 \begin{pmatrix}
- \lambda_i & 1 & & & & & & & & &\\
+\lambda_i & 1 & & & & & & & & &\\
 & \ddots & \ddots & & & & & & & &\\
 & & \ddots & 1 & & & & & & &\\
 & & & \lambda_i & 0 & & & & & &\\
@@ -1127,7 +1127,7 @@ B_1 \ \coloneqq \
 
 Für den **zweiten Jordanblock** zum Eigenwert $\lambda_1 = 4$ von $A$ betrachten wir zunächst den Endomorphismus
 \begin{equation*}
-G_2 \ \colonequals \ A - 4\cdot I_5 \ = \
+G_2 \ \coloneqq \ A - 4\cdot I_5 \ = \
 \begin{pmatrix}
     1 & 0 & 1 & 0 & 0 \\
     0 & -\frac{7}{2}& 0 & -\frac{1}{2} & 0 \\
