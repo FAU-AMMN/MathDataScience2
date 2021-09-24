@@ -125,7 +125,7 @@ wobei $(*)$ wegen {eq}`eq:riesz_lemma` gilt.
 Mit Hilfe des obigen Lemmas können wir den folgenden interessanten Kompaktheitssatz beweisen, der es uns erlaubt einen endlich-dimensionalen Vektorraum an der Kompaktheit seiner Einheitskugel zu erkennen.
 
 ````{prf:theorem} Kompaktheitssatz von Riesz
-:label: satz:kompaktheit_riesz}
+:label: satz:kompaktheit_riesz
 Ein normierter Vektorraum $X$ ist genau dann endlich-dimensional, wenn seine entsprechende Einheitskugel 
 \begin{equation*}
 B_1(0) \ \coloneqq \ \{ x \in X : ||x||_X \leq 1 \}    

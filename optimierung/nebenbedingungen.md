@@ -32,7 +32,7 @@ Das heißt die beiden Gradienten $\nabla F$ und $\nabla c$ sind parallel in $x^*
 ````{prf:proof}
 Sei $x^* \in M$ eine Lösung des Minimierungsproblems mit Nebenbedingung.
 Wir sehen zunächst ein, dass der Gradient $\nabla c(x^*)$ senkrecht zu allen Tangentialvektoren der Untermannigfaltigkeit $M$ steht, da sich $c$ entlang aller Tangentialrichtungen von $M$ nicht ändert.
-Wir schreiben nun den Gradienten der Zielfunktion $\nabla F$ mittels orthogonaler Projektion (vgl. Kapitel {prf:ref}`s:orthonormalisierung`) als eindeutige Summe zweier Vektoren $v_\perp \in \R^n$ und $v_\parallel \in \R^n$, die jeweils orthogonal und parallel zu $\nabla c$ sind mit
+Wir schreiben nun den Gradienten der Zielfunktion $\nabla F$ mittels orthogonaler Projektion (vgl. Kapitel {ref}`s:orthonormalisierung`) als eindeutige Summe zweier Vektoren $v_\perp \in \R^n$ und $v_\parallel \in \R^n$, die jeweils orthogonal und parallel zu $\nabla c$ sind mit
 \begin{equation*}
 \nabla F(x^*) \ = \ v_\perp + v_\parallel.
 \end{equation*}
@@ -90,10 +90,12 @@ F(x,y) \ \coloneqq \ x + y
 \end{equation*}
 minimieren unter der Nebenbedingung, dass der Lösungsvektor $x^* = (x,y)^T \in \R^2$ normiert sein soll, d.h., $x^2 + y^2 = 1$.
 Dies führt also zu einem Optimierungsproblem mit Nebenbedingung der folgenden Gestalt:
-\begin{equation}
+
+```{math}
 :label: eq:lagrange_bsp
 \min_{(x,y)\in \R^2} \, F(x,y) \, = \,  x+y \qquad \text{ mit } \qquad c(x,y) \, = \, x^2+y^2 - 1 \, = \, 0.
-\end{equation}
+```
+
 Wir identifizieren zunächst Punkte in denen der Gradient von $c(x,y)$ verschwindet, d.h.,
 \begin{equation*}
 \nabla c(x,y) \ = \ (2x,2y)^T \ \overset{!}{=} \ 0.

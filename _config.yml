@@ -16,11 +16,17 @@ parse:
     - dollarmath
     - colon_fence
 
+
+
 sphinx:
   extra_extensions:
     - sphinx_proof
     - sphinx_tojupyter
+    - sphinx_jupyterbook_latex
+        
+
   config:
+    latex_engine: pdflatex
     mathjax_config:
       TeX:
         Macros:
