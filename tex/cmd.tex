@@ -1,7 +1,7 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
-\newcommand{\RR}{\mathbb{R}}
+%\newcommand{\RR}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\K}{\mathbb{K}}
@@ -19,6 +19,9 @@
 \newcommand{\di}{\displaystyle}
 \newcommand{\lk}{\left(}
 \newcommand{\rk}{\right)}
+
+\newcommand{\coloneqq}{{:=}}
+\newcommand{\eqqcolon}{{=:}}
 
 \newcommand{\energy}{{\cal E}}
 \newcommand{\x}{{\bf x}}
@@ -58,10 +61,6 @@
 \newcommand{\idx}{\mathrm{d}x}
 \renewcommand{\d}{\mathrm{d}}
 
-% Define some colors
-\newcommand{\warn}[1]{{\color{red} #1}}
-\newcommand{\Tafeluebung}[1]{{\color{blue} #1}}
-\newcommand{\Uebung}[1]{{\color{violet} #1}}
+% Hack for mathbb{0}
+\DeclareMathAlphabet{\mymathbb}{U}{BOONDOX-ds}{m}{n}
 
-% Roman numbers
-\newcommand{\uproman}[1]{\uppercase\expandafter{\romannumeral#1}}

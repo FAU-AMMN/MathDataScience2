@@ -16,7 +16,9 @@ parse:
     - dollarmath
     - colon_fence
 
-
+latex:
+  latex_documents:
+    targetname: skript.tex
 
 sphinx:
   extra_extensions:
