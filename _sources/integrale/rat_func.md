@@ -122,9 +122,12 @@ Dann existieren Koeffizienten $a_1, \ldots, a_l, b_1, \ldots, b_l, c_1, \ldots, 
 2l+m \, = \, n, \qquad a_i^2-b_i \, < \, 0,
 \end{equation*}
 so dass sich das Polynom $p$ faktorisieren lässt in die folgende Form
-\begin{equation}\label{eq:polynom_faktorisierung}
+
+```{math}
+:label: eq:polynom_faktorisierung
   p(x) \ = \ \prod\limits_{i=1}^l(x^2 - 2a_ix+b_i) \: \cdot \: \prod\limits_{j=1}^m(x-c_j)\,.
-\end{equation}
+```
+
 ````
 
 ````{prf:proof}

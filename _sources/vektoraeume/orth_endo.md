@@ -1,4 +1,4 @@
-(s:unitäre_endomorphismen)=
+(s:unitaere_endomorphismen)=
 # Orthogonale und unitäre Endomorphismen
 
 Mit Hilfe des in den vorangegangenen Kapiteln eingeführten Skalarprodukts ist es uns möglich eine besondere Gruppe von Endomorphismen zu untersuchen - die orthogonalen und unitären Endomorphismen.
@@ -299,7 +299,7 @@ Sei $A:= M_B(F)\in \mathbb{K}^{n\times n}$ die darstellende Matrix von $F$ bezü
 ## Diagonalisierung
 
 Wir wollen im folgenden untersuchen wie die Normalform eines orthogonalen bzw. unitären Endomorphismus aussieht.
-Hierbei werden wir die mathematischen Werkzeuge aus der Eigenwerttheorie in Kapitel {prf:ref}`ch:eigenwerttheorie` einsetzen können.
+Hierbei werden wir die mathematischen Werkzeuge aus der Eigenwerttheorie in Kapitel {ref}`ch:eigenwerttheorie` einsetzen können.
 Hierzu beginnen wir mit der (mathematisch schöneren) **Normalform von unitären Endomorphismen,** die im folgenden Satz beschrieben ist.
 
 ````{prf:theorem} Diagonalisierungssatz

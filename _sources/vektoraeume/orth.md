@@ -1,3 +1,4 @@
+(s:orthonormalisierung)=
 # Orthogonalisierung und Orthonormalisierung
 
 In vielen Fällen ist es sinnvoll nicht eine beliebige Basis eines endlich-dimensionalen Vektorraums $V$ zu betrachten, sondern eine Familie von Vektoren, die _orthogonal_ oder sogar _orthonormal_ sind.

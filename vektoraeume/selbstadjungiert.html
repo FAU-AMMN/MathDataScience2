@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -463,18 +463,16 @@ Da diese Familie von Matrizen auch in der Theorie sehr häufig auftaucht haben s
 <div class="proof definition admonition" id="def:adjungierte">
 <p class="admonition-title"><span class="caption-number">Definition 2.20 </span> ((Selbst-)Adjungierter Endomorphismus)</p>
 <div class="definition-content section" id="proof-content">
-<p>Wir nennen eine Abbildung <span class="math notranslate nohighlight">\(F^* \colon V \to V\)</span> den \emph{adjungierten Endomorphismus} von <span class="math notranslate nohighlight">\(F\)</span>, falls die folgende Beziehung bezüglich des Standardskalarprodukts gilt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fe87d127-b07c-4f94-9eac-40f65614bf46">
-<span class="eqno">(2.10)<a class="headerlink" href="#equation-fe87d127-b07c-4f94-9eac-40f65614bf46" title="Permalink to this equation">¶</a></span>\[\begin{equation}:label: eq:endoAdj}
-\langle F(v), w\rangle \ = \ \langle v, F^* (w)\rangle\qquad\text{ für alle } v,w\in V.
-\end{equation}\]</div>
+<p>Wir nennen eine Abbildung <span class="math notranslate nohighlight">\(F^* \colon V \to V\)</span> den <em>adjungierten Endomorphismus</em> von <span class="math notranslate nohighlight">\(F\)</span>, falls die folgende Beziehung bezüglich des Standardskalarprodukts gilt:</p>
+<div class="math notranslate nohighlight" id="equation-eq-endoadj">
+<span class="eqno">(2.10)<a class="headerlink" href="#equation-eq-endoadj" title="Permalink to this equation">¶</a></span>\[\langle F(v), w\rangle \ = \ \langle v, F^* (w)\rangle\qquad\text{ für alle } v,w\in V.\]</div>
 <p>Ein Endomorphismus <span class="math notranslate nohighlight">\(F\)</span> eines Euklidischen bzw. unitären Vektorraums <span class="math notranslate nohighlight">\(V\)</span> heißt \emph{selbstadjungiert}, wenn <span class="math notranslate nohighlight">\(F=F^*\)</span>, d.h.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
   \langle F(v), w\rangle \ = \ \langle v, F(w)\rangle \qquad\text{ für alle } v,w\in V.
 \end{equation*}\]</div>
 </div>
-</div><p>Für orthogonale bzw. unitäre Matrizen haben wir bereits in Kapitel <span class="xref std std-ref">s:unitäre_endomorphismen</span> gesehen, dass <span class="math notranslate nohighlight">\(A^* = A^{-1}\)</span> gilt.
+</div><p>Für orthogonale bzw. unitäre Matrizen haben wir bereits in Kapitel <a class="reference internal" href="orth_endo.html#s-unitaere-endomorphismen"><span class="std std-ref">Orthogonale und unitäre Endomorphismen</span></a> gesehen, dass <span class="math notranslate nohighlight">\(A^* = A^{-1}\)</span> gilt.
 Diese Beobachtung überträgt sich mit folgendem Lemma auch auf adjungierte Endomorphismen.</p>
 <div class="proof lemma admonition" id="lemma-1">
 <p class="admonition-title"><span class="caption-number">Lemma 2.14 </span></p>

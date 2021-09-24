@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -510,7 +510,7 @@ Dennoch besitzt die Folge keine konvergente Teilfolge, da</p>
 Somit kann keine konvergente Teilfolge von <span class="math notranslate nohighlight">\((x_n)_{n\in\N}\)</span> existieren und damit ist die Einheitskugel in <span class="math notranslate nohighlight">\(\ell^2(\R)\)</span> nicht kompakt.</p>
 </div>
 </div><p>Wir können über den Begriff der Kompaktheit sogar erkennen, ob ein Vektorraum endlich erzeugt ist. Als Vorbereitung dieser Beobachtung benötigen wir jedoch zuerst das folgende Hilfslemma.
-Die Motivation für dieses Lemma ist, dass wir den Begriff eines senkrechten Vektors auf einen Unterraum aus Kapitel <span class="xref std std-ref">s:orthonormalisierung</span> nicht in beliebigen normierten Vektorräumen anwenden können (da ggfs. kein Skalarprodukt existiert).
+Die Motivation für dieses Lemma ist, dass wir den Begriff eines senkrechten Vektors auf einen Unterraum aus Kapitel <a class="reference internal" href="../vektoraeume/orth.html#s-orthonormalisierung"><span class="std std-ref">Orthogonalisierung und Orthonormalisierung</span></a> nicht in beliebigen normierten Vektorräumen anwenden können (da ggfs. kein Skalarprodukt existiert).
 Dennoch können wir nach dem folgenden Lemma Einheitsvektoren finden, die außerhalb dieses Unterraums liegen und einen positiven Abstand zu diesem besitzen.</p>
 <div class="proof lemma admonition" id="lem:lemma von Riesz">
 <p class="admonition-title"><span class="caption-number">Lemma 3.1 </span> (Lemma von Riesz)</p>
@@ -577,7 +577,7 @@ y \ \coloneqq \ \frac{z-u_0\phantom{X}}{\norm{z-u_0}_X},
 <p>wobei <span class="math notranslate nohighlight">\((*)\)</span> wegen <a class="reference internal" href="#equation-eq-riesz-lemma">(3.1)</a> gilt.</p>
 </div>
 <p>Mit Hilfe des obigen Lemmas können wir den folgenden interessanten Kompaktheitssatz beweisen, der es uns erlaubt einen endlich-dimensionalen Vektorraum an der Kompaktheit seiner Einheitskugel zu erkennen.</p>
-<div class="proof theorem admonition" id="satz:kompaktheit_riesz}">
+<div class="proof theorem admonition" id="satz:kompaktheit_riesz">
 <p class="admonition-title"><span class="caption-number">Theorem 3.4 </span> (Kompaktheitssatz von Riesz)</p>
 <div class="theorem-content section" id="proof-content">
 <p>Ein normierter Vektorraum <span class="math notranslate nohighlight">\(X\)</span> ist genau dann endlich-dimensional, wenn seine entsprechende Einheitskugel</p>
@@ -625,7 +625,7 @@ Dann existiert eine aufsteigende Folge von echten, abgeschlossenen Unterräumen 
 <p>Für beliebige Wahl des ersten Einheitsvektors <span class="math notranslate nohighlight">\(y_1 \in X\)</span> mit <span class="math notranslate nohighlight">\(||y_1|| = 1\)</span> haben wir damit ein Folge <span class="math notranslate nohighlight">\((y_k)_{k\in\N}\)</span> auf der Einheitskugel <span class="math notranslate nohighlight">\(B_1^X(0)\)</span> konstruiert, welche beschränkt ist, jedoch keine Cauchy-Folge sein kann, da der Abstand zwischen den Folgegliedern immer mindestens <span class="math notranslate nohighlight">\(\delta\)</span> beträgt.
 Daraus folgt, dass die Einheitskugel in einem unendlich-dimensionalen Vektorraum <span class="math notranslate nohighlight">\(X\)</span> nicht kompakt sein kann.</p>
 </div>
-<p>Der Kompaktheitssatz <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">satz:kompaktheit_riesz</span></code> von Riesz besagt zwar, dass Kugeln in unendlich-dimensio-nalen Banachräumen nicht kompakt sind.
+<p>Der Kompaktheitssatz <a class="reference internal" href="#satz:kompaktheit_riesz">Theorem 3.4</a> von Riesz besagt zwar, dass Kugeln in unendlich-dimensio-nalen Banachräumen nicht kompakt sind.
 Dennoch heißt das nicht, dass es in unendlich-dimensio-nalen Banachräumen keine kompakten Teilmengen gibt.
 Um dies zu verdeutlichen beschäftigen uns abschließend mit einem fundamentalen Satz, der Aussagen über die Kompaktheit bestimmter Teilmengen des Funktionenraumes <span class="math notranslate nohighlight">\((C([a,b],\R^n), \norm{\cdot}_\infty)\)</span> der stetigen Funktionen auf einem Intervall <span class="math notranslate nohighlight">\([a,b] \subset \R\)</span> zusammen mit der Supremumsnorm erlaubt.
 Dies ist nur ein Spezialfall des Satzes von Arzelà-Ascoli, der in der allgemeinen Formulierung abstraktere Räume untersucht.</p>

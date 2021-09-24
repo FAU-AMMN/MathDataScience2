@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -487,7 +487,7 @@ M \, \coloneqq \, \lbrace x \in \Omega\colon c(x) = 0 \rbrace \subset \Omega
 </div><div class="proof admonition" id="proof">
 <p>Proof. Sei <span class="math notranslate nohighlight">\(x^* \in M\)</span> eine Lösung des Minimierungsproblems mit Nebenbedingung.
 Wir sehen zunächst ein, dass der Gradient <span class="math notranslate nohighlight">\(\nabla c(x^*)\)</span> senkrecht zu allen Tangentialvektoren der Untermannigfaltigkeit <span class="math notranslate nohighlight">\(M\)</span> steht, da sich <span class="math notranslate nohighlight">\(c\)</span> entlang aller Tangentialrichtungen von <span class="math notranslate nohighlight">\(M\)</span> nicht ändert.
-Wir schreiben nun den Gradienten der Zielfunktion <span class="math notranslate nohighlight">\(\nabla F\)</span> mittels orthogonaler Projektion (vgl. Kapitel <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">s:orthonormalisierung</span></code>) als eindeutige Summe zweier Vektoren <span class="math notranslate nohighlight">\(v_\perp \in \R^n\)</span> und <span class="math notranslate nohighlight">\(v_\parallel \in \R^n\)</span>, die jeweils orthogonal und parallel zu <span class="math notranslate nohighlight">\(\nabla c\)</span> sind mit</p>
+Wir schreiben nun den Gradienten der Zielfunktion <span class="math notranslate nohighlight">\(\nabla F\)</span> mittels orthogonaler Projektion (vgl. Kapitel <a class="reference internal" href="../vektoraeume/orth.html#s-orthonormalisierung"><span class="std std-ref">Orthogonalisierung und Orthonormalisierung</span></a>) als eindeutige Summe zweier Vektoren <span class="math notranslate nohighlight">\(v_\perp \in \R^n\)</span> und <span class="math notranslate nohighlight">\(v_\parallel \in \R^n\)</span>, die jeweils orthogonal und parallel zu <span class="math notranslate nohighlight">\(\nabla c\)</span> sind mit</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \nabla F(x^*) \ = \ v_\perp + v_\parallel.
@@ -553,11 +553,8 @@ F(x,y) \ \coloneqq \ x + y
 \end{equation*}\]</div>
 <p>minimieren unter der Nebenbedingung, dass der Lösungsvektor <span class="math notranslate nohighlight">\(x^* = (x,y)^T \in \R^2\)</span> normiert sein soll, d.h., <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>.
 Dies führt also zu einem Optimierungsproblem mit Nebenbedingung der folgenden Gestalt:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-587761e0-72d0-4cbb-b74b-bd1a5fc3e6ad">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-587761e0-72d0-4cbb-b74b-bd1a5fc3e6ad" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-:label: eq:lagrange_bsp
-\min_{(x,y)\in \R^2} \, F(x,y) \, = \,  x+y \qquad \text{ mit } \qquad c(x,y) \, = \, x^2+y^2 - 1 \, = \, 0.
-\end{equation}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-lagrange-bsp">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-lagrange-bsp" title="Permalink to this equation">¶</a></span>\[\min_{(x,y)\in \R^2} \, F(x,y) \, = \,  x+y \qquad \text{ mit } \qquad c(x,y) \, = \, x^2+y^2 - 1 \, = \, 0.\]</div>
 <p>Wir identifizieren zunächst Punkte in denen der Gradient von <span class="math notranslate nohighlight">\(c(x,y)\)</span> verschwindet, d.h.,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -570,7 +567,7 @@ Da dieser Punkt nicht die Nebenbedingung erfüllt, müssen wir ihn also bei den 
 \[\begin{equation*}
 \Lambda(x,y,\lambda) \ \coloneqq \ F(x,y) + \lambda \cdot c(x,y) \ = \ x+y + \lambda \cdot (x^2+y^2 - 1).
 \end{equation*}\]</div>
-<p>Nach dem Satz <a class="reference internal" href="#satz:lagrange_multiplikator">Theorem 6.4</a> müssen wir für potentielle Lösungen des Optimierungsproblems <code class="xref eq docutils literal notranslate"><span class="pre">eq:lagrange_bsp</span></code> nur Extremstellen der Lagrange-Funktion berechnen, d.h., wir betrachten stationäre Punkte von <span class="math notranslate nohighlight">\(\Lambda\)</span> durch</p>
+<p>Nach dem Satz <a class="reference internal" href="#satz:lagrange_multiplikator">Theorem 6.4</a> müssen wir für potentielle Lösungen des Optimierungsproblems <a class="reference internal" href="#equation-eq-lagrange-bsp">(6.4)</a> nur Extremstellen der Lagrange-Funktion berechnen, d.h., wir betrachten stationäre Punkte von <span class="math notranslate nohighlight">\(\Lambda\)</span> durch</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \nabla \Lambda(x,y,\lambda) \ = \ 

@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -522,8 +522,8 @@ Wir berechnen die ersten partiellen Ableitungen</p>
 \partial_y f(x,y) \ &amp;= \ \frac{(x^3-3xy^2)(x^2+y^2) - (x^3y-xy^3)\cdot 2y}{(x^2 + y^2)^2} \ = \ x~\frac{x^4 - 4 x^2y^2-y^4}{(x^2 + y^2)^2}.
 \end{align*}\]</div>
 <p>Wir betrachten nun die \textbf{zweiten} partiellen Ableitungen von <span class="math notranslate nohighlight">\(f\)</span> im Punkt <span class="math notranslate nohighlight">\((x,y) = (0,0)\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e41d0333-9617-4856-829e-d04ab5dbb9d9">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-e41d0333-9617-4856-829e-d04ab5dbb9d9" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:bsp_ableitungen_nicht_vertauschbar}
+<div class="amsmath math notranslate nohighlight" id="equation-eb12769a-f8f8-46fa-b538-cd24e326f1c9">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-eb12769a-f8f8-46fa-b538-cd24e326f1c9" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:bsp_ableitungen_nicht_vertauschbar}
 \begin{split}
 \partial_y\partial_x f(0,0) \ &amp;= \ \lim_{h\rightarrow 0} \frac{\partial_x f(0, h) - \partial_x f(0,0)}{h} \ = \ 
 \lim_{h\rightarrow 0} ~ \frac{h}{h}~\frac{0 + 0-h^4}{(0 + h^2)^2} - 0 \ = \ -1,\\
@@ -598,8 +598,8 @@ r^\prime(\eta_y) \ = \ \partial_2\partial_1 f(\xi_x + \bar x, \eta_y + \bar y).
 \end{split}
 \end{equation*}\]</div>
 <p>Insgesamt gilt also für alle <span class="math notranslate nohighlight">\((x,y)\in B^\infty_\delta(0,0)\)</span> die folgende Gleichung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16f2dda6-6595-49c5-a658-b8846ae53ef2">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-16f2dda6-6595-49c5-a658-b8846ae53ef2" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:schwarz_1}
+<div class="amsmath math notranslate nohighlight" id="equation-8d0a1fb4-ae11-4c7c-8f3d-4ab6e26cad3e">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-8d0a1fb4-ae11-4c7c-8f3d-4ab6e26cad3e" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:schwarz_1}
 \partial_2\partial_1 f(\xi_x + \bar x, \eta_y + \bar y) \cdot xy \ = \ f(x+\bar x, y + \bar y) - f(x + \bar x, \bar y)  - f(\bar x, y+\bar y) - f(\bar x, \bar y).
 \end{equation}\]</div>
 <p>Mit vertauschten Rollen wenden wir die Argumente für ein festes <span class="math notranslate nohighlight">\(x\in (\bar x -\delta, \bar x + \delta)\)</span> analog auf die eindimensionale Funktion</p>

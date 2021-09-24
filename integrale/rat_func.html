@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -593,10 +593,8 @@ Dann existieren Koeffizienten <span class="math notranslate nohighlight">\(a_1, 
 2l+m \, = \, n, \qquad a_i^2-b_i \, &lt; \, 0,
 \end{equation*}\]</div>
 <p>so dass sich das Polynom <span class="math notranslate nohighlight">\(p\)</span> faktorisieren lässt in die folgende Form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8dc29e4c-1614-4dcb-b5d8-b9a49f41036d">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-8dc29e4c-1614-4dcb-b5d8-b9a49f41036d" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:polynom_faktorisierung}
-  p(x) \ = \ \prod\limits_{i=1}^l(x^2 - 2a_ix+b_i) \: \cdot \: \prod\limits_{j=1}^m(x-c_j)\,.
-\end{equation}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-polynom-faktorisierung">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-eq-polynom-faktorisierung" title="Permalink to this equation">¶</a></span>\[  p(x) \ = \ \prod\limits_{i=1}^l(x^2 - 2a_ix+b_i) \: \cdot \: \prod\limits_{j=1}^m(x-c_j)\,.\]</div>
 </div>
 </div><div class="proof admonition" id="proof">
 <p>Proof. Nach dem Fundamentalsatz der Algebra können wir <span class="math notranslate nohighlight">\(p\)</span> in Linearfaktoren zerlegen mit</p>
@@ -616,7 +614,7 @@ Durch eine geeignete Umnummerierung der Indizes können wir also schreiben:</p>
 \[\begin{equation*}
   \prod\limits_{i=m+1}^n(x-x_i) \ = \ \prod\limits_{i=m+1}^{m+l}(x-x_i)\cdot(x-\bar{x}_i)\,.
 \end{equation*}\]</div>
-<p>Um die Form in <code class="xref eq docutils literal notranslate"><span class="pre">eq:polynom_faktorisierung</span></code> zu erhalten setzen wir für die Linearfaktoren</p>
+<p>Um die Form in <a class="reference internal" href="#equation-eq-polynom-faktorisierung">(4.7)</a> zu erhalten setzen wir für die Linearfaktoren</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 c_i \, \coloneqq \, x_i, \qquad i=1, \ldots, m.
@@ -859,7 +857,7 @@ r \ = \ g + \frac{\tilde{p}}{q}
 \end{equation*}\]</div>
 <p>zu überführen, wobei <span class="math notranslate nohighlight">\(g \in \K[x]\)</span> ein Polynom ist und <span class="math notranslate nohighlight">\(\deg(q) &gt; \deg(\tilde{p})\)</span> gilt.</p>
 <p><strong>2. Schritt: Bestimmung der Nullstellen des Nennerpolynoms</strong></p>
-<p>Wir bestimmen nun die Nullstellen des Nennerpolynoms <span class="math notranslate nohighlight">\(q\in\K[x]\)</span> analytisch, d.h., wir versuchen das Polynom in die in <a class="reference internal" href="#equation-eq-linearfaktorzerlegung">(4.6)</a> oder <code class="xref eq docutils literal notranslate"><span class="pre">eq:polynom_faktorisierung</span></code> beschriebene Form zu faktorisieren (in Abhängigkeit des Körpers <span class="math notranslate nohighlight">\(\K\)</span>).
+<p>Wir bestimmen nun die Nullstellen des Nennerpolynoms <span class="math notranslate nohighlight">\(q\in\K[x]\)</span> analytisch, d.h., wir versuchen das Polynom in die in <a class="reference internal" href="#equation-eq-linearfaktorzerlegung">(4.6)</a> oder <a class="reference internal" href="#equation-eq-polynom-faktorisierung">(4.7)</a> beschriebene Form zu faktorisieren (in Abhängigkeit des Körpers <span class="math notranslate nohighlight">\(\K\)</span>).
 Ist eine analytische Bestimmung der Nullstellen von <span class="math notranslate nohighlight">\(q\)</span> nicht möglich, können numerische Methoden angewendet werden zur Approximation der Nullstellen.</p>
 <p><strong>3. Schritt: Bestimmung der Partialbruchzerlegung</strong></p>
 <p>Basierend auf den im 2. Schritt bestimmten Nullstellen von <span class="math notranslate nohighlight">\(q\)</span> kann eine Partialbruchzerlegung der Form <a class="reference internal" href="#equation-eq-partialbruchzerlegung-vollstandig">(4.10)</a> oder <a class="reference internal" href="#equation-eq-partialbruchzerlegung-vollstandig-reell">(4.11)</a> durchgeführt werden (in Abhängigkeit des Körpers <span class="math notranslate nohighlight">\(\K\)</span>).</p>

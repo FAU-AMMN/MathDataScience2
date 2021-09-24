@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -506,13 +506,13 @@ Wir betrachten nun eine sogenannte Ansatzfunktion <span class="math notranslate 
 u(x) \ \coloneqq \ \varphi(x) \cdot \varphi_0^{-1}(x) \ = \ \varphi(x) \cdot \exp\left(\,-\int\limits_{x_0}^x a(t)\,\mathrm{d}t\right).
 \end{equation*}\]</div>
 <p>Durch Multiplikation mit <span class="math notranslate nohighlight">\(\varphi_0\)</span> lässt sich der Ausdruck dieser Funktion nun umstellen zur unbekannten Lösung <span class="math notranslate nohighlight">\(\varphi\)</span> mit</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3100abd9-d26f-44ce-b4f0-31f1a6861b0b">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-3100abd9-d26f-44ce-b4f0-31f1a6861b0b" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_varphi}
+<div class="amsmath math notranslate nohighlight" id="equation-edf0cad7-c1d2-452c-a89a-5120e1fa6a51">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-edf0cad7-c1d2-452c-a89a-5120e1fa6a51" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_varphi}
 \varphi(x) \ = \ \varphi_0(x) \cdot  u(x) \ = \ \exp\left(\,\int\limits_{x_0}^xa(t)\,\mathrm{d}t\right) \cdot u(x).
 \end{equation}\]</div>
 <p>Setzen wir diesen Ausdruck nun in die inhomogene Differentialgleichung ein, so erhalten wir für alle <span class="math notranslate nohighlight">\(x \in I\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-9a4ef7e8-46f8-4131-808a-1b3140bf249f">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-9a4ef7e8-46f8-4131-808a-1b3140bf249f" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_u}
+<div class="amsmath math notranslate nohighlight" id="equation-8246b45f-e0d8-43e6-89e1-84f5846f71ea">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-8246b45f-e0d8-43e6-89e1-84f5846f71ea" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen_u}
 (u\cdot \varphi_0)'(x) \ = \ a(x) \cdot u(x) \cdot \varphi_0(x) + b(x).
 \end{equation}\]</div>
 <p>Durch Anwendung der Produkt- und Kettenregel der Differentiation und des Hauptsatzes der Differential- und Integralrechnung lässt sich die linke Seite der Gleichung noch vereinfachen zu</p>
@@ -560,8 +560,8 @@ Setzen wir dies nun in die Gleichung \eqref{eq:dgl_inhomogen_varphi} für die L�
 <p class="admonition-title"><span class="caption-number">Example 7.6 </span> (Variation der Konstanten)</p>
 <div class="example-content section" id="proof-content">
 <p>Wir betrachten die folgende lineare, inhomogene Differentialgleichung erster Ordnung</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c288af2d-2245-4af0-b460-2f6fdb8ff1e9">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-c288af2d-2245-4af0-b460-2f6fdb8ff1e9" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen}
+<div class="amsmath math notranslate nohighlight" id="equation-88e4b593-feec-4812-89da-1a994622e92e">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-88e4b593-feec-4812-89da-1a994622e92e" title="Permalink to this equation">¶</a></span>\[\begin{equation}\label{eq:dgl_inhomogen}
 y^\prime(x) \ = \ 2x\cdot y(x) + x^3,
 \end{equation}\]</div>
 <p>für die die Anfangsbedingung <span class="math notranslate nohighlight">\(y(0) = c\)</span> mit <span class="math notranslate nohighlight">\(c \in \R\)</span> erfüllt sein soll.

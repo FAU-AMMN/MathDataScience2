@@ -1,3 +1,4 @@
+(s:partielle_ableitungen)=
 # Partielle Integration
 
 Aus der Produktregel in Satz {prf:ref}`satz:produktregel` können wir eine Regel für die _Partielle Integration_ ableiten:

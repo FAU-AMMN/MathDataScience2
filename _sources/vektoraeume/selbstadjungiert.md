@@ -9,10 +9,12 @@ Wir beginnen mit der Definition von adjungierten und selbstadjungierten Endomorp
 ````{prf:definition} (Selbst-)Adjungierter Endomorphismus
 :label: def:adjungierte
 
-Wir nennen eine Abbildung $F^* \colon V \to V$ den \emph{adjungierten Endomorphismus} von $F$, falls die folgende Beziehung bezüglich des Standardskalarprodukts gilt:
-\begin{equation}:label: eq:endoAdj}
+Wir nennen eine Abbildung $F^* \colon V \to V$ den _adjungierten Endomorphismus_ von $F$, falls die folgende Beziehung bezüglich des Standardskalarprodukts gilt:
+
+```{math}
+:label: eq:endoAdj
 \langle F(v), w\rangle \ = \ \langle v, F^* (w)\rangle\qquad\text{ für alle } v,w\in V.
-\end{equation}
+```
 
  Ein Endomorphismus $F$ eines Euklidischen bzw. unitären Vektorraums $V$ heißt \emph{selbstadjungiert}, wenn $F=F^*$, d.h.
 \begin{equation*}
@@ -20,7 +22,7 @@ Wir nennen eine Abbildung $F^* \colon V \to V$ den \emph{adjungierten Endomorphi
 \end{equation*}
 ````
 
-Für orthogonale bzw. unitäre Matrizen haben wir bereits in Kapitel {ref}`s:unitäre_endomorphismen` gesehen, dass $A^* = A^{-1}$ gilt.
+Für orthogonale bzw. unitäre Matrizen haben wir bereits in Kapitel {ref}`s:unitaere_endomorphismen` gesehen, dass $A^* = A^{-1}$ gilt.
 Diese Beobachtung überträgt sich mit folgendem Lemma auch auf adjungierte Endomorphismen.
 
 ````{prf:lemma}
