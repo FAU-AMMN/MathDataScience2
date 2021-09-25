@@ -7,6 +7,8 @@ execute:
 
 html:
   favicon: "img/cropped-fau_solo_aufblau_192x192_rgb-180x180.png"
+  comments:
+    hypothesis: true
 
 parse:
   myst_enable_extensions:
