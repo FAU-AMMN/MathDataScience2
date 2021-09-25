@@ -422,9 +422,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/ode/ode.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/ode/ode.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -441,6 +441,23 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/ode/ode.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
 
         </div>
 
@@ -493,11 +510,11 @@ Dann nennen wir eine gewöhnliche Differentialgleichung <span class="math notran
 <div class="math notranslate nohighlight" id="equation-eq-dgl-linear">
 <span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-dgl-linear" title="Permalink to this equation">¶</a></span>\[\sum\limits_{i=0}^na_i(t)x^{(i)}(t) \ = \ a_0(t)\cdot x(t) + a_1(t) \cdot x'(t) + \ldots + a_n(t)\cdot x^{(n)}(t) \ = \  b(t).\]</div>
 <p>Hierbei bezeichnen wir mit <span class="math notranslate nohighlight">\(x^{(k)}(t)\)</span> die <span class="math notranslate nohighlight">\(k\)</span>-te Ableitung der Funktion <span class="math notranslate nohighlight">\(x\)</span> im Punkt <span class="math notranslate nohighlight">\(t \in I\)</span>.</p>
-<p>Ist eine Differentialgleichung nicht in der Form \eqref{eq:dgl_linear}, so bezeichnen wir sie als <em>nichtlinear</em>.</p>
+<p>Ist eine Differentialgleichung nicht in der Form <a class="reference internal" href="#equation-eq-dgl-linear">(7.1)</a>, so bezeichnen wir sie als <em>nichtlinear</em>.</p>
 <p>Eine lineare Differentialgleichung heißt <em>homogen</em>, falls <span class="math notranslate nohighlight">\(b(t) \equiv 0\)</span> für alle <span class="math notranslate nohighlight">\(t\in\R\)</span>.
 Der Term <span class="math notranslate nohighlight">\(b\)</span> wird auch häufig <em>Störfunktion</em> genannt.</p>
 </div>
-</div><p>Im Folgenden wollen wir verschiedene gewöhnliche Differentialgleichungen diskutieren und gemäß der Definition \ref{def:dgl_linear} klassifizieren.</p>
+</div><p>Im Folgenden wollen wir verschiedene gewöhnliche Differentialgleichungen diskutieren und gemäß der Definition <a class="reference internal" href="#def:dgl_linear">Definition 7.1</a> klassifizieren.</p>
 <div class="proof example admonition" id="ode:radio">
 <p class="admonition-title"><span class="caption-number">Example 7.2 </span> (Radioaktiver Zerfall)</p>
 <div class="example-content section" id="proof-content">
@@ -544,7 +561,37 @@ x_1(t) \ = \ z_1 + w_1\cdot t, \qquad x_2(t) \ = \ z_2 + w_2 \cdot t - \frac12 \
 v_1(t) \ \coloneqq \ \frac{d}{dt}x_1(t) \ = \ x'_1(t) \ = \ w_1, \qquad v_2(t) \ \coloneqq \ \frac{d}{dt}x_2(t) \ = \ x'_2(t) \ = \ w_2 - g\cdot t.
 \end{equation*}\]</div>
 </div>
-</div><div class="proof example admonition" id="example-4">
+</div><div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">wdg</span> 
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">get_plot</span><span class="p">(</span><span class="n">z_1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">z_2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">w_1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">w_2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+    <span class="n">x_1</span> <span class="o">=</span> <span class="n">z_1</span> <span class="o">+</span> <span class="n">w_1</span> <span class="o">*</span> <span class="n">t</span>
+    <span class="n">x_2</span> <span class="o">=</span> <span class="n">z_2</span> <span class="o">+</span> <span class="n">w_2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+    
+    <span class="k">return</span> <span class="n">x_1</span><span class="p">,</span> <span class="n">x_2</span>
+
+<span class="n">x_1</span><span class="p">,</span> <span class="n">x_2</span> <span class="o">=</span> <span class="n">get_plot</span><span class="p">(</span><span class="n">z_2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">w_1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">w_2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x_2</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">[:</span><span class="n">idx</span><span class="p">],</span> <span class="n">x_2</span><span class="p">[:</span><span class="n">idx</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">x_2</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ode_1_0.png" src="../_images/ode_1_0.png" />
+</div>
+</div>
+<div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 7.4 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Beschleunigung eines Raumschiffs durch Gravitation
