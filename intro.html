@@ -419,9 +419,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -439,11 +439,46 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referenz">
+   Referenz
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#danksagung">
+   Danksagung
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -454,12 +489,23 @@
                 
   <div class="section" id="mathematik-fur-datascience-2">
 <h1>Mathematik für DataScience 2<a class="headerlink" href="#mathematik-fur-datascience-2" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/intro_1_0.png" src="_images/intro_1_0.png" />
+</div>
+</div>
 <p>Das vorliegende Skript begleitet die Vorlesung <strong>Mathematik für Data Science 2 / Physikstudierende B</strong> und ist im Sommersemester 2021 an der FAU Erlangen-Nürnberg entstanden.
 Es soll den Studierenden zusätzlich zur virtuellen Vorlesung (in Form einer Videoreihe) als Nachschlagewerk dienen und ist ausführlicher und genauer gehalten als die Vorlesungsnotizen.</p>
+<div class="section" id="referenz">
+<h2>Referenz<a class="headerlink" href="#referenz" title="Permalink to this headline">¶</a></h2>
 <p>Das Skript orientiert sich teilweise an dem Vorlesungsskript <em>“Mathematik für Physikstudierende 2”</em> <span id="id1">[<a class="reference internal" href="references.html#id5">Kna20</a>]</span> von Prof.Dr.Andreas Knauf (FAU) aus dem Sommersemester 2020. Der Inhalt der Vorlesung wird in diesem Skript in grob zwei Teile untergliedert, nämlich mathematischen Theorien der <em>Linearen Algebra</em> und der <em>Analysis</em>.
 Für die Inhalte der Linearen Algebra wird häufig auf das Standardlehrbuch <em>“Lineare Algebra”</em> <span id="id2">[<a class="reference internal" href="references.html#id3">Fis05</a>]</span> von Prof.Dr.Gerd Fischer (TU München) verwiesen, das eine gute Balance zwischen Theorie und Anwendung bietet.
 Teile der Analysis sind dem Standardlehrbuch <em>“Analysis 2”</em> <span id="id3">[<a class="reference internal" href="references.html#id4">For17</a>]</span> von Prof.Dr.Otto Forster (LMU München) entnommen. Für die Optimierung wird zu großen Teilen der Notation von Jorge Nocedal und Stephen J. Wright <span id="id4">[<a class="reference internal" href="references.html#id6">uSJW06</a>]</span> gefolgt.</p>
-<p>Mein besonderer Dank gilt Lea Föcke, Tim Roith und Philipp Werner für ihre Unterstützung bei der Erstellung dieses Skripts, sowie Doris Schneider für ihre gute Organisation und die Durchführung der Tafelübung.</p>
+</div>
+<div class="section" id="danksagung">
+<h2>Danksagung<a class="headerlink" href="#danksagung" title="Permalink to this headline">¶</a></h2>
+<p>Mein besonderer Dank gilt Lea Föcke, Tim Roith und Dr.Philipp Werner für ihre Unterstützung bei der Erstellung dieses Skripts, sowie Doris Schneider für ihre gute Organisation und die Durchführung der Tafelübung.</p>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
