@@ -8,11 +8,11 @@ Auch hier folgt die Zunahme der Entropie dem Prinzip der Energieminimierung des 
 
 Menschen betreiben seit jeher Optimierung in den verschiedensten Anwendungen, oft mit unterschiedlichen Motivationen. Flugzeuge werden von Ingenieuren so entworfen und gebaut, dass sie möglichst stromlinienförmig aussehen, um damit den Reibungswiderstand in der Luft zu minimieren und gleichzeitig den nötigen Auftrieb für einen sicheren Flug zu erzeugen. Fondmanager streben danach Portfolios zu erstellen, deren Gewinn möglichst maximal ist und dennoch Spekulationsrisiken vermeiden.
 
-Im Folgenden wollen wir die mathematischen Grundlagen zur Untersuchung von allgemeinen Optimierungsproblemen einführen. 
+Im Folgenden wollen wir die mathematischen Grundlagen zur Untersuchung von allgemeinen Optimierungsproblemen einführen.
 Wir beginnen mit der Definition des allgemeinen Optimierungsproblems, welches wir im weiteren Verlauf noch näher spezifizieren werden.
 
-````{prf:definition} definition
-label: Allgemeines Optimierungsproblem
+````{prf:definition}
+:label: Allgemeines Optimierungsproblem
 
 Sei $\Omega \subset \mathbb{R}^n$ eine offene, zusammenhängende Teilmenge und sei $F \colon \Omega \rightarrow \mathbb{R}$ eine reellwertige Funktion, welche wir _Zielfunktion_ nennen. Unser Ziel ist es einen unbekannten Vektor $x \in \Omega$, auch _Parametervektor_ genannt, zu finden, welcher das folgende _allgemeine Optimierungsproblem_ löst.
 
