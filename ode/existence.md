@@ -11,16 +11,20 @@ Dies motiviert die folgende Definition.
 :label: def:dglsystem_erster_ordnung
 
 Sei $G\subset\R\times\R^n$ eine offene Teilmenge und
+
 \begin{align*}
 f\colon G \ &\to \ \R^n, \\
 (x,y) \ &\mapsto \ f(x,y)
 \end{align*}
+
 eine vektorwertige stetige Funktion.
 
 Dann nennt man die folgende Gleichung
+
 \begin{equation*}
 y^\prime(x)  \ = \ f(x,y(x))
 \end{equation*}
+
 ein _System von $n$ Differentialgleichungen erster Ordnung_.
 Eine Lösung dieser Gleichung ist eine auf dem offenen Intervall $I\subset \R$ total differenzierbare Funktion $\varphi\colon I\to\R^n$, für die die folgenden Eigenschaften gelten:
 
@@ -30,10 +34,11 @@ Eine Lösung dieser Gleichung ist eine auf dem offenen Intervall $I\subset \R$ t
 \end{equation*}
 
 * Die Funktion $\varphi$ erfüllt die Gleichung
+
 \begin{equation*}
 \varphi^\prime(x) \: = \: f(x, \varphi(x))\qquad \text{für alle} \ x\in I.
 \end{equation*}
-\end{enumerate}
+
 ````
 
 ````{prf:remark}
